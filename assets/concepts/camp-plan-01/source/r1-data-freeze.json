@@ -1,0 +1,35 @@
+{
+  "status": "R1 data frozen; ready for coordinator overview",
+  "date": "2026-10-23",
+  "pathBase": "repository-root",
+  "hashes": {
+    "src/camp-layout.js": "0733de9520ad2dea7852566318e35aabb938b0f7d5e066f4e34f4caec4c18774",
+    "tests/camp-layout.test.js": "1f901efb0653e5717456086c5211804f82aca92836d3bb60a129cf87e9bdd06c",
+    "assets/concepts/camp-plan-01/source/layout.json": "893ed12f8497fb63993aa5e0b7abc8fadde2187d15719f983ec3d6defa705e89",
+    "assets/concepts/camp-plan-01/source/navigation.json": "1a9c9a3e5868e5c4fac0d62b59c862d45389f75ea1f54f3c24b977af93eda13d",
+    "assets/concepts/camp-plan-01/source/metrics.json": "df520bc30ae43cb971d3c3f7159dbc1f36b005a9f62e892a8888db1e74f8f678",
+    "assets/concepts/camp-plan-01/source/natural-contacts.json": "eeeb488ed2d7d2fb8eabff3de8b872d2ff9c4eaa3b156eeb12de394fb806f259",
+    "assets/concepts/camp-plan-01/source/natural-registration-check.json": "bef3f4a34506c0d97288a3d91d1849ada5965806bc14f0f52befb77009a18ecd",
+    "assets/game/pixel-v4/landscape/landscape.png": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731"
+  },
+  "checks": {
+    "focused": {
+      "passed": 3,
+      "failed": 0
+    },
+    "campGameplay": {
+      "passed": 57,
+      "failed": 0
+    },
+    "fullSuite": {
+      "passed": 233,
+      "failed": 0
+    }
+  },
+  "geometryHashes": {
+    "obstacles": "30c0fd3ed2e2657c25e30aaae1e3fc71a6e0bdc4063d5b064a5edbe5d7ed9937",
+    "tiles": "ebea8b7b93f7dd427fe5b0ee5b961ffb0e77af0bcc9ecf73c4b2a155e1eae5d4",
+    "paving": "ac4830833eb6504e30b244dfe37643adc679f20ba2bd5f95dc70de6ca4e60d35"
+  },
+  "next": "Update accepted Paper plan diagram/footer only; replace isometric capture after coordinator supplies the post-R1 and post-terrain overview."
+}

@@ -1,0 +1,52 @@
+{
+  "assetTests": {
+    "command": "node --test tests/camp-assets.test.js",
+    "passed": 10,
+    "failed": 0
+  },
+  "verifyOnly": {
+    "command": "python3 -B scripts/build-camp-assets.py --verify-only",
+    "status": "passed",
+    "rebuildMatches": true,
+    "sourceHashesMatch": true,
+    "managedArtifacts": 32
+  },
+  "relocation": {
+    "status": "passed",
+    "independentCheckout": true,
+    "noBytesOrMtimesChanged": true,
+    "negativeControls": [
+      "missing reference",
+      "corrupted original",
+      "corrupted atlas"
+    ]
+  },
+  "fullSuite": {
+    "command": "npm test",
+    "tests": 228,
+    "passed": 228,
+    "failed": 0,
+    "durationMs": 10818.259792
+  },
+  "layoutFollowup": {
+    "command": "node --test --test-reporter=spec tests/camp-layout.test.js",
+    "passed": 15,
+    "failed": 0,
+    "note": "Layout owner updated the shared checkout after the five initial integration failures."
+  },
+  "preservation": {
+    "baseline": "night-ritual-pre-camp-transfer-20261023",
+    "priorAssetFilesCompared": 478,
+    "changed": 0
+  },
+  "environment": {
+    "node": "24.13.0",
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "limits": [
+    "No browser/Paper/runtime visual acceptance by this worker.",
+    "Ground outlines are approximate manual registration, not authored collision.",
+    "Byte-exact normalization is verified with the recorded Pillow version."
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "pathConvention": "promptFile and originalFile are relative to this hero directory; reference paths are relative to repository root.",
+  "rightsNote": "Generated for this project using the supplied project references. No external stock artwork added. This records provenance, not a new license grant.",
+  "generationMode": "Built-in image tool only; no CLI/API-key fallback and no Paper-native paid generation calls.",
+  "generationCount": 8,
+  "generations": [
+    {
+      "id": "01-locomotion",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by the built-in tool",
+      "transparentBackground": false,
+      "promptFile": "prompts/01-monk-locomotion.txt",
+      "originalFile": "originals/01-monk-locomotion-v1.png",
+      "references": [
+        {
+          "path": "assets/game/pixel-v1/source/monk-sheet.png",
+          "role": "User-approved project style/identity reference or documented derivative"
+        }
+      ],
+      "status": "Partially retained: idle, run keys 1–3 and direction references. Original run keys 4–6 superseded.",
+      "promptSha256": "b1c53addd04e848a5fa962e69522f874cc0865d82e078c00348372a95438d53a",
+      "originalSha256": "dc88cea80cbfe73e6b480d983cc66094bcfb02f2b2c8f7833d585ffc7c773d24",
+      "originalDimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "02-combo",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by the built-in tool",
+      "transparentBackground": false,
+      "promptFile": "prompts/02-monk-combo.txt",
+      "originalFile": "originals/02-monk-combo.png",
+      "references": [
+        {
+          "path": "assets/concepts/animation-bible-01/hero/originals/01-monk-locomotion-v1.png",
+          "role": "User-approved project style/identity reference or documented derivative"
+        }
+      ],
+      "status": "retained",
+      "promptSha256": "e745d900b7cd6203da168333a52a56c3abda7f14ba63ca6b90a0abc71c6895e1",
+      "originalSha256": "89295461881cb768b9e6d99022a3fc2aefa24a8a507af823872867d260c37b0b",
+      "originalDimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "03-abilities",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by the built-in tool",
+      "transparentBackground": false,
+      "promptFile": "prompts/03-monk-abilities.txt",
+      "originalFile": "originals/03-monk-abilities.png",
+      "references": [
+        {
+          "path": "assets/concepts/animation-bible-01/hero/originals/01-monk-locomotion-v1.png",
+          "role": "User-approved project style/identity reference or documented derivative"
+        }
+      ],
+      "status": "retained",
+      "promptSha256": "f3b6d337997c0d797e41cc4361f7d8937027116054805d6a97a2e3c302fe1e68",
+      "originalSha256": "3280a91b1dafa106e7061120c65102971515d72e4bfa160abe1982720ff81752",
+      "originalDimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "04-lifecycle",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by the built-in tool",
+      "transparentBackground": false,
+      "promptFile": "prompts/04-monk-lifecycle.txt",
+      "originalFile": "originals/04-monk-lifecycle.png",
+      "references": [
+        {
+          "path": "assets/concepts/animation-bible-01/hero/originals/01-monk-locomotion-v1.png",
+          "role": "User-approved project style/identity reference or documented derivative"
+        }
+      ],
+      "status": "retained",
+      "promptSha256": "a6cd2a7ea3dec03fc4d1700ac103e5a26a1374d316c91e6d49ddd2fa8d8f2f89",
+      "originalSha256": "3ff9de6d5af19ff5b2f5b155808cd1d5586e4d6fb4d7555b64f80ec2afd822e9",
+      "originalDimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "14-effects",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by the built-in tool",
+      "transparentBackground": false,
+      "promptFile": "prompts/14-combat-effects.txt",
+      "originalFile": "originals/14-combat-effects.png",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p10-pixel-effects.png",
+          "role": "User-approved project style/identity reference or documented derivative"
+        }
+      ],
+      "status": "retained",
+      "promptSha256": "60795e1bdfd99f307a442e0282e2a22a24483b51c7b5bbe56e6bfe8d4137c2a9",
+      "originalSha256": "7bcd6a777ddbb2084c4f1825f276301a0764215dccf1af8210b7aeb5501424df",
+      "originalDimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "01-run-v2",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by the built-in tool",
+      "transparentBackground": false,
+      "promptFile": "prompts/01-run-refinement.txt",
+      "originalFile": "originals/01-run-v2-rejected.png",
+      "references": [
+        {
+          "path": "assets/concepts/animation-bible-01/hero/originals/01-monk-locomotion-v1.png",
+          "role": "User-approved project style/identity reference or documented derivative"
+        }
+      ],
+      "status": "rejected: repeated limb phases",
+      "promptSha256": "517d29340477d56f104decd7a752270073d0a9761110687b53725a20b7649bf6",
+      "originalSha256": "de2b472046e63029f7f3cd0cf0aa1187d48083650a153429f2d8bf18a720c02b",
+      "originalDimensions": [
+        2172,
+        724
+      ]
+    },
+    {
+      "id": "01-run-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by the built-in tool",
+      "transparentBackground": false,
+      "promptFile": "prompts/01-run-opposite-half-v3.txt",
+      "originalFile": "originals/01-run-opposite-half-v3.png",
+      "references": [
+        {
+          "path": "assets/concepts/animation-bible-01/hero/originals/01-monk-locomotion-v1.png",
+          "role": "User-approved project style/identity reference or documented derivative"
+        }
+      ],
+      "status": "intermediate: opposite arm corrected; leg overlap refined in v4",
+      "promptSha256": "099be46fb8368f7bb9bfb1387682a4b21e82a92ad5bb4c1ad7fef6e829ec708d",
+      "originalSha256": "f83120239a101dc87ab11302b7d00f3a8e256ba1db7ac0c4cd9c9782c80256c0",
+      "originalDimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "01-run-v4",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by the built-in tool",
+      "transparentBackground": false,
+      "promptFile": "prompts/01-run-leg-overlap-v4.txt",
+      "originalFile": "originals/01-run-opposite-half-v4.png",
+      "references": [
+        {
+          "path": "assets/concepts/animation-bible-01/hero/originals/01-run-opposite-half-v3.png",
+          "role": "User-approved project style/identity reference or documented derivative"
+        }
+      ],
+      "status": "retained: corrected opposite half, keys 4–6",
+      "promptSha256": "8c333496d31b9261da9fa51179f4418267536766f1a20621df1a12522d840471",
+      "originalSha256": "719210144180d1684f8df83133f4c8696876122c930e8fcee80cd83e5fb0a6cc",
+      "originalDimensions": [
+        1774,
+        887
+      ]
+    }
+  ],
+  "derivatives": {
+    "run": "Original keys 1–3 plus newly drawn v4 keys 4–6; deterministic 0.5 nearest-neighbor scaling/cropping only, no mirroring. See normalization.json.",
+    "rowCrops": "Separate sequence strips from source sheets; lifecycle crop boundaries adjusted to prevent adjacent-row particle leakage.",
+    "paper": "Native Paper text, typography, labels, timing notes and links; source rasters imported with paper-asset URLs.",
+    "exports": "Six PNGs exported natively from final Paper artboards at 1x, copied byte-for-byte into exports/."
+  },
+  "reviewAuthority": "Main agent's internal acceptance, communicated through the conversation. Not misattributed as separate direct user art approval.",
+  "verification": "All eight originals and exact prompt files exist; image formats decode; SHA-256 recorded."
+}

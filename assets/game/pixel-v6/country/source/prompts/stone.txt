@@ -1,0 +1,8 @@
+Use case: style-transfer.
+Asset type: tileable 128x128 pixel-art ground material in the approved countryside family.
+Input image role: approved soil source, only a style/detail-density reference. Transform this flat brown earth material into quiet weathered GRAY STONE.
+Primary request: smooth worn natural gray stone fragments merging into a flat continuous outdoor courtyard surface, subtle softly worn shallow irregular fissures and broad gentle mineral mottling. Fine-scale surface wear, no raised boulders. No repeating rectangular masonry grid, no strong dark mortar.
+Preserve: square TOP-DOWN view, seamless repeat intent, uniform diffuse ambient light, subtle low contrast, deliberate simple square-pixel clusters, coherent density with approved grass/soil. Logical native resolution 128x128, clean enlargement.
+Color palette: near-neutral gray around RGB 119,121,118, only 12–20 close shades, highlights around 136,137,132 and shadows around 106,108,106. Very faint desaturated olive stone staining is allowed, but the overall surface is neutral gray.
+Composition: full-frame flat texture without borders, motifs continue across opposite edges, even density.
+Avoid: cobbled grid, isometric diamond, perspective, scene, yellow sand, high contrast cracks, black outlines, shiny white glare, objects, plants, text, labels, frame, watermark.

@@ -1,0 +1,103 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "date": "2026-10-22",
+  "records": [
+    {
+      "id": "cypress",
+      "transparent_background": true,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png",
+        "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-5fede545-3c43-445c-b073-45fe5eabae9d.png"
+    },
+    {
+      "id": "dead-tree",
+      "transparent_background": true,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+        "assets/game/pixel-v4/landscape/source/originals/cypress.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-93077cb0-8dfa-428e-ad70-1350488495f1.png"
+    },
+    {
+      "id": "rock-large",
+      "transparent_background": true,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+        "assets/game/pixel-v4/landscape/source/originals/cypress.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-018fc7d0-3000-4f3d-91b6-5038eb967f62.png"
+    },
+    {
+      "id": "rock-small",
+      "transparent_background": true,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+        "assets/game/pixel-v4/landscape/source/originals/cypress.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-b412b193-fe03-4b47-8265-428a047cbbcf.png"
+    },
+    {
+      "id": "shrub",
+      "transparent_background": true,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+        "assets/game/pixel-v4/landscape/source/originals/cypress.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-49377a5c-bff0-4f7d-b1d6-307453ae2796.png"
+    },
+    {
+      "id": "grass",
+      "transparent_background": true,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+        "assets/game/pixel-v4/landscape/source/originals/cypress.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-4f0d630b-182c-4193-b591-9dbe11eac8bc.png"
+    },
+    {
+      "id": "ruin-pile",
+      "transparent_background": true,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+        "assets/game/pixel-v4/landscape/source/originals/cypress.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-5dcda9ad-ad82-4552-b22a-98c301c74893.png"
+    },
+    {
+      "id": "supplies",
+      "transparent_background": true,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+        "assets/game/pixel-v4/landscape/source/originals/cypress.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-1642c0e7-24ab-4327-87cf-55215bc6a948.png"
+    },
+    {
+      "id": "earth",
+      "transparent_background": false,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-f6f6d6bc-2f9d-430e-9a8e-7d345737a9be.png"
+    },
+    {
+      "id": "moss",
+      "transparent_background": false,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-cf9dd12f-db0e-42c7-be50-4be3872b3f20.png"
+    },
+    {
+      "id": "cliff",
+      "transparent_background": false,
+      "references": [
+        "assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-fc22a370-827c-417b-9e9e-401b8bfde6e9.png"
+    }
+  ]
+}

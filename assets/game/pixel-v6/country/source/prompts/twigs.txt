@@ -1,0 +1,7 @@
+Use case: style-transfer.
+Asset type: one transparent low ground-decoration sprite for a fixed-isometric pixel-art RPG.
+Input image role: the coordinator-approved low grass source is the family reference to transform; retain its coarse deliberate pixel-art treatment, restrained outdoor shading and ground-facing view.
+Primary request: Replace the tuft with one loose small ground scatter of three thin broken brown-gray twigs, lying completely flat. One twig has a short fork and another crosses it; one tiny detached fragment. Thin irregular tapered pixel lines, no thick logs or branches standing upright. Quiet bark-brown with soft cool gray highlights. Native silhouette about 38 by 13 logical pixels.
+Preserve: fixed isometric three-quarter view, ground viewed from above about 30 degrees, upper-left diffuse light, crisp square pixels, small clustered color shapes, muted natural medieval countryside palette. This decor is subordinate to the monk and must read at ankle height. Render the tiny logical pixel silhouette enlarged clearly.
+Composition: exactly one isolated decorative group centered with generous transparent margins on all sides. Real fully transparent background. Entire shape visible. No painted floor, no ground island or circular drop shadow.
+Avoid: scene, tall bush/tree, potted plant, giant shapes, saturated bright accents, regular pattern, duplicated groups, text, numbers, labels, watermark, border, glossy gradient, blur, antialiased halo.

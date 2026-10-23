@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-10-22",
+  "sourceAuthority": "assets/concepts/animation-bible-01/hero/manifest.json and provenance.json; retained byte-for-byte as source/hero-*.json",
+  "generationMode": "Built-in image_gen.imagegen only. No API key, CLI generation, external stock, Paper writes or browser automation.",
+  "rightsNote": "Project artwork generated from supplied project references; inherited source provenance retained. This is provenance documentation, not a new license grant.",
+  "builder": {
+    "path": "scripts/build-monk-animation.py",
+    "sha256": "a70ba6afecae0d03510eb6574e836f04c184fa56c56069f6f4e0ed4b5b5fad96",
+    "requirements": "Python >=3.10 and Pillow >=10,<13; no additional dependencies"
+  },
+  "selection": {
+    "front": "50 approved SE keys from copied hero strips; run is exactly 01-run-final.png (original 1–3 plus v4 4–6).",
+    "back": "50 separately drawn NE keys; no front or mirrored-front pixels used for back artwork.",
+    "runBack": "keys 1–3: back-locomotion-v1.png lower row 1–3; keys 4–6: back-run-proportions-v4.png, all three.",
+    "heavyBack": "back-combo-v1.png bottom row, replacing anticipation/recovery keys 2/5 with back-heavy-occlusion-v2.png.",
+    "bodyOnly": "Blue concept paper, source ground shadows, detached particles, cyan wave/ghost and coral impacts removed. Runtime owns world-space wave and hit effects."
+  },
+  "normalization": "source/normalization.json has source crop, source key, batch scale, output placement and anchor for every absolute atlas index.",
+  "acceptance": {
+    "schemaVersion": 1,
+    "date": "2026-10-22",
+    "atlasSha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e",
+    "status": "accepted",
+    "authority": "main Codex coordinator acting under user-authorized delegation",
+    "evidence": "The main Codex coordinator acting under user-authorized delegation inspected contact-front-native.png and contact-back-native.png: all nine clips read; corrected back run opposite half accepted for integration; character and scale also appeared correct in game. The end user was absent and did not personally perform this inspection.",
+    "lockedSelection": "Back run 1–3 from back-locomotion-v1; 4–6 from back-run-proportions-v4. No subsequent artwork incorporated.",
+    "authorInspection": "Every key inspected on native contact sheets by this asset owner. Whole game/Chrome inspection was reported by the main Codex coordinator acting under user-authorized delegation, not by the end user or this asset owner."
+  },
+  "generationRecords": {
+    "pathConvention": "File paths relative to source/ except toolOutputPath (historical absolute tool location). All selected originals are retained locally.",
+    "completedAndRetainedGenerations": 9,
+    "unconsumedInvocationCount": 1,
+    "records": [
+      {
+        "id": "back-locomotion-v1",
+        "tool": "image_gen.imagegen (built-in)",
+        "model": "Not exposed by built-in tool",
+        "transparentBackgroundRequested": true,
+        "originalFile": "originals/back-locomotion-v1.png",
+        "promptFile": "prompts/back-locomotion-v1.txt",
+        "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-5ffe5075-4ded-4825-ba89-dea3e28960e1.png",
+        "referenceFiles": [
+          "references/approved-back-ne.png",
+          "strips/01-run-final.png",
+          "originals/01-monk-locomotion-v1.png"
+        ],
+        "selectedAtlasIndices": [
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56
+        ],
+        "review": "Retain four idle keys and first three run keys. Run keys 4–6 rejected for repeated limb phase."
+      },
+      {
+        "id": "back-combo-v1",
+        "tool": "image_gen.imagegen (built-in)",
+        "model": "Not exposed by built-in tool",
+        "transparentBackgroundRequested": true,
+        "originalFile": "originals/back-combo-v1.png",
+        "promptFile": "prompts/back-combo-v1.txt",
+        "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-9973edd4-45f4-4991-ac2f-51ac37816c6e.png",
+        "referenceFiles": [
+          "references/approved-back-ne.png",
+          "originals/02-monk-combo.png"
+        ],
+        "selectedAtlasIndices": [
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          74,
+          75,
+          77
+        ],
+        "review": "Retain sixteen keys. Heavy anticipation/recovery replaced because hands incorrectly occluded the back."
+      },
+      {
+        "id": "back-abilities-v1",
+        "tool": "image_gen.imagegen (built-in)",
+        "model": "Not exposed by built-in tool",
+        "transparentBackgroundRequested": true,
+        "originalFile": "originals/back-abilities-v1.png",
+        "promptFile": "prompts/back-abilities-v1.txt",
+        "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-f459936a-c17c-475f-aa22-025a76e659c7.png",
+        "referenceFiles": [
+          "references/approved-back-ne.png",
+          "originals/03-monk-abilities.png"
+        ],
+        "selectedAtlasIndices": [
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93
+        ],
+        "review": "Retain all sixteen dash, wave and hurt keys."
+      },
+      {
+        "id": "back-death-v1",
+        "tool": "image_gen.imagegen (built-in)",
+        "model": "Not exposed by built-in tool",
+        "transparentBackgroundRequested": true,
+        "originalFile": "originals/back-death-v1.png",
+        "promptFile": "prompts/back-death-v1.txt",
+        "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-8e18873c-5ef3-43fc-8997-6c3610439fc0.png",
+        "referenceFiles": [
+          "references/approved-back-ne.png",
+          "originals/04-monk-lifecycle.png"
+        ],
+        "selectedAtlasIndices": [
+          94,
+          95,
+          96,
+          97,
+          98,
+          99
+        ],
+        "review": "Retain all six death keys."
+      },
+      {
+        "id": "back-run-opposite-v2",
+        "tool": "image_gen.imagegen (built-in)",
+        "model": "Not exposed by built-in tool",
+        "transparentBackgroundRequested": true,
+        "originalFile": "originals/back-run-opposite-v2.png",
+        "promptFile": "prompts/back-run-opposite-v2.txt",
+        "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-34890f16-a028-4ac8-91e3-27f36d617df9.png",
+        "referenceFiles": [
+          "originals/back-locomotion-v1.png",
+          "references/front-run-opposite-4-6.png",
+          "references/approved-back-ne.png"
+        ],
+        "selectedAtlasIndices": [],
+        "review": "Rejected: insufficient change to the repeated arm/leg phase."
+      },
+      {
+        "id": "back-heavy-occlusion-v2",
+        "tool": "image_gen.imagegen (built-in)",
+        "model": "Not exposed by built-in tool",
+        "transparentBackgroundRequested": true,
+        "originalFile": "originals/back-heavy-occlusion-v2.png",
+        "promptFile": "prompts/back-heavy-occlusion-v2.txt",
+        "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-4657d527-4c33-452b-af50-f9c3264523fb.png",
+        "referenceFiles": [
+          "references/approved-back-ne.png",
+          "originals/back-combo-v1.png"
+        ],
+        "selectedAtlasIndices": [
+          73,
+          76
+        ],
+        "review": "Retain both replacements. Palms are correctly hidden in front of the torso instead of appearing on the back."
+      },
+      {
+        "id": "back-run-opposite-v3",
+        "tool": "image_gen.imagegen (built-in)",
+        "model": "Not exposed by built-in tool",
+        "transparentBackgroundRequested": true,
+        "originalFile": "originals/back-run-opposite-v3.png",
+        "promptFile": "prompts/back-run-opposite-v3.txt",
+        "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-60b51481-9cb5-480e-a9f3-2e24a02b2eb7.png",
+        "referenceFiles": [
+          "references/approved-back-ne.png"
+        ],
+        "selectedAtlasIndices": [],
+        "review": "Superseded by v4: correct distinct leg crossing but body proportions too slender at native scale."
+      },
+      {
+        "id": "back-run-proportions-v4",
+        "tool": "image_gen.imagegen (built-in)",
+        "model": "Not exposed by built-in tool",
+        "transparentBackgroundRequested": true,
+        "originalFile": "originals/back-run-proportions-v4.png",
+        "promptFile": "prompts/back-run-proportions-v4.txt",
+        "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-5c5ce84e-f19e-4e98-8485-7e433f725612.png",
+        "referenceFiles": [
+          "originals/back-run-opposite-v3.png",
+          "references/approved-back-ne.png"
+        ],
+        "selectedAtlasIndices": [
+          57,
+          58,
+          59
+        ],
+        "review": "Retain all three. The main Codex coordinator acting under user-authorized delegation accepted corrected opposite half in native contact sheets and accepted character scale in game."
+      },
+      {
+        "id": "back-cross-contact-v2",
+        "tool": "image_gen.imagegen (built-in)",
+        "model": "Not exposed by built-in tool",
+        "transparentBackgroundRequested": true,
+        "originalFile": "originals/back-cross-contact-v2-rejected.png",
+        "promptFile": "prompts/back-cross-contact-v2.txt",
+        "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-1f232c06-53c0-4116-bcc0-a326bd036263.png",
+        "referenceFiles": [
+          "references/approved-back-ne.png"
+        ],
+        "selectedAtlasIndices": [],
+        "review": "Rejected exploratory contact variant; no advantage over accepted combo. No pixels shipped."
+      },
+      {
+        "id": "back-run-arm-swap-v5",
+        "tool": "image_gen.imagegen (built-in)",
+        "model": "Not exposed by built-in tool",
+        "transparentBackgroundRequested": true,
+        "promptFile": "prompts/back-run-arm-swap-v5.txt",
+        "originalFile": null,
+        "referenceFiles": [
+          "originals/back-run-proportions-v4.png",
+          "references/approved-back-ne.png"
+        ],
+        "selectedAtlasIndices": [],
+        "review": "Invocation was already pending when the main Codex coordinator acting under user-authorized delegation accepted v4 and requested art freeze. Execution wrapper terminated; no result consumed/imported and no pixels shipped. Kept exact prompt as audit history."
+      }
+    ]
+  },
+  "retainedSourceFiles": [
+    {
+      "path": "source/generation-records.json",
+      "sha256": "b7b9df2222f84ac0ed5320d3067cbe1ad9374624e1aeee113dda8b159ebf9506"
+    },
+    {
+      "path": "source/hero-manifest.json",
+      "sha256": "6782fb28de9338932e8f57fc54c11e86216ee1f4009b2c64324eafc162ee8dd1"
+    },
+    {
+      "path": "source/hero-normalization.json",
+      "sha256": "f3fecd03cb4f997a10e5bd42903042a8dcb519618ea0118aea9d00502a609ba8"
+    },
+    {
+      "path": "source/hero-provenance.json",
+      "sha256": "c0d9b2efbcf1835771c62cef26f0c095f00efc0e6830c09f94b828323a5be074"
+    },
+    {
+      "path": "source/originals/01-monk-locomotion-v1.png",
+      "sha256": "dc88cea80cbfe73e6b480d983cc66094bcfb02f2b2c8f7833d585ffc7c773d24",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/originals/01-run-opposite-half-v3.png",
+      "sha256": "f83120239a101dc87ab11302b7d00f3a8e256ba1db7ac0c4cd9c9782c80256c0",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/originals/01-run-opposite-half-v4.png",
+      "sha256": "719210144180d1684f8df83133f4c8696876122c930e8fcee80cd83e5fb0a6cc",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/originals/02-monk-combo.png",
+      "sha256": "89295461881cb768b9e6d99022a3fc2aefa24a8a507af823872867d260c37b0b",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/originals/03-monk-abilities.png",
+      "sha256": "3280a91b1dafa106e7061120c65102971515d72e4bfa160abe1982720ff81752",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/originals/04-monk-lifecycle.png",
+      "sha256": "3ff9de6d5af19ff5b2f5b155808cd1d5586e4d6fb4d7555b64f80ec2afd822e9",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/originals/back-abilities-v1.png",
+      "sha256": "0c1ddf0b93052a0e4ed0324a0c4a457e239468d78c38bca3547e8087fc734cc1",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "source/originals/back-combo-v1.png",
+      "sha256": "d82b989162371ed504c320368cce568ec9ca162eec57a30632e2f5d67c34125e",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "source/originals/back-cross-contact-v2-rejected.png",
+      "sha256": "b2af009a16bada51ab393f3ba1f9d275494f9eb392ce99869075d00f14d7297c",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "source/originals/back-death-v1.png",
+      "sha256": "47e6463a0a6860aded981acf81d847db1caf02961ad1461c4b4edcc2800e4c8e",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "source/originals/back-heavy-occlusion-v2.png",
+      "sha256": "e26c1d28c8b539080e90f2d7c23c09bab85dd07db545bd6790d1c93c28cf9ed5",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "source/originals/back-locomotion-v1.png",
+      "sha256": "f41930cb306d2619774a9c63063d13655fe73f81974578f6735b497fa18f55c5",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "source/originals/back-run-opposite-v2.png",
+      "sha256": "7fd9bbdc32223bca11ba124061b47e12351743d3229ca9ba74976b5132e56988",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "source/originals/back-run-opposite-v3.png",
+      "sha256": "6a199b4bc804bd6cd552819631b9ef8aef66da3ed4f8f80c7bee1b3892a70e0e",
+      "dimensions": [
+        1925,
+        817
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "source/originals/back-run-proportions-v4.png",
+      "sha256": "a59f002dc568544dfc9692be64da7fd6f95b4bc60437d44e488166597083139a",
+      "dimensions": [
+        1925,
+        817
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "source/planned-manifest.json",
+      "sha256": "c14ef29e0e96745d259216b6e5f282b3afe069c2bae5f3a7a6324fda2a474d01"
+    },
+    {
+      "path": "source/prompts/01-monk-locomotion.txt",
+      "sha256": "b1c53addd04e848a5fa962e69522f874cc0865d82e078c00348372a95438d53a"
+    },
+    {
+      "path": "source/prompts/01-run-leg-overlap-v4.txt",
+      "sha256": "8c333496d31b9261da9fa51179f4418267536766f1a20621df1a12522d840471"
+    },
+    {
+      "path": "source/prompts/01-run-opposite-half-v3.txt",
+      "sha256": "099be46fb8368f7bb9bfb1387682a4b21e82a92ad5bb4c1ad7fef6e829ec708d"
+    },
+    {
+      "path": "source/prompts/02-monk-combo.txt",
+      "sha256": "e745d900b7cd6203da168333a52a56c3abda7f14ba63ca6b90a0abc71c6895e1"
+    },
+    {
+      "path": "source/prompts/03-monk-abilities.txt",
+      "sha256": "f3b6d337997c0d797e41cc4361f7d8937027116054805d6a97a2e3c302fe1e68"
+    },
+    {
+      "path": "source/prompts/04-monk-lifecycle.txt",
+      "sha256": "a6cd2a7ea3dec03fc4d1700ac103e5a26a1374d316c91e6d49ddd2fa8d8f2f89"
+    },
+    {
+      "path": "source/prompts/back-abilities-v1.txt",
+      "sha256": "bbaf00b6d10a52efcf27fdac400140ee973bb32be75094a0411a1e13c33bd153"
+    },
+    {
+      "path": "source/prompts/back-combo-v1.txt",
+      "sha256": "9082780c73fa65a4ebcb7f8496ec9c385a8236b2f3991620a48950516f4252d5"
+    },
+    {
+      "path": "source/prompts/back-cross-contact-v2.txt",
+      "sha256": "720555636c9a5bf3f0ac4e728a45ccbe809b9a53df732d98d634facc0fad3f19"
+    },
+    {
+      "path": "source/prompts/back-death-v1.txt",
+      "sha256": "bc528541ae2dce624f0c0087d868f1f56c85dfe8c20e606f949ae60b4b6a709c"
+    },
+    {
+      "path": "source/prompts/back-heavy-occlusion-v2.txt",
+      "sha256": "7b6e434c19bfbb6f7500bcdcb5b7e3e090e229e7cd95f5d62e14abb13a3f6ad8"
+    },
+    {
+      "path": "source/prompts/back-locomotion-v1.txt",
+      "sha256": "e1d6b5b4fc20c540665734c57afea7bb22a15b8a14f9373d701cea286564c8f1"
+    },
+    {
+      "path": "source/prompts/back-run-arm-swap-v5.txt",
+      "sha256": "70715538edd7284ffad0d8e5c53423017a4b49ae28328fced0e689acd478291c"
+    },
+    {
+      "path": "source/prompts/back-run-opposite-v2.txt",
+      "sha256": "2a24007bf029fa8c67ab3cf279cb38a38b9343f571eea36310b14d3e5ae1e025"
+    },
+    {
+      "path": "source/prompts/back-run-opposite-v3.txt",
+      "sha256": "b1f39e9b2a500eb1c4849ec6e4cf5f56a7724d74bfe659ac18a984a77169022b"
+    },
+    {
+      "path": "source/prompts/back-run-proportions-v4.txt",
+      "sha256": "adb3053b752dbe8a06aed7a8e77626123bc116d915fd3bc970d168f62cc6052d"
+    },
+    {
+      "path": "source/references/approved-back-ne.png",
+      "sha256": "13a0631bea958c5bdbcb0937a39caf499236d68c84fe499e1c5b6ff168e32b92",
+      "dimensions": [
+        384,
+        341
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/references/front-run-opposite-4-6.png",
+      "sha256": "751102c9ed43fb853a619d565ce56f397ca5f85593d01590aa7c009899574525",
+      "dimensions": [
+        768,
+        342
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/references/qa-floor.png",
+      "sha256": "6f4894b7f4a538504def073685ff793e6c9e5cac34b6b2f492d8f4b5e78066e9",
+      "dimensions": [
+        32,
+        32
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/strips/01-monk-locomotion-v1-row-1.png",
+      "sha256": "183993cc1e5d2d9619d274c824cca03b717183e6ab46513be701d96852a1213c",
+      "dimensions": [
+        1536,
+        341
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/strips/01-monk-locomotion-v1-row-3.png",
+      "sha256": "1c34709c8c7f397309d6501b441c491e3f956180a03c026761f9132e0467c08c",
+      "dimensions": [
+        1536,
+        341
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/strips/01-run-final.png",
+      "sha256": "2f91b2819b5660094d9cf84d13c6008e53f34d80f72fa7cd4e1180a31c53ecc4",
+      "dimensions": [
+        1536,
+        342
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/strips/02-monk-combo-row-1.png",
+      "sha256": "680a2e4bdfe1f97ceaefc400e35c824db0276acdb48e32e4d38ca09d3c53f5ef",
+      "dimensions": [
+        1536,
+        341
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/strips/02-monk-combo-row-2.png",
+      "sha256": "3e08421cd541da83eecb7bb6db2ce202cc538d5deec80fb253369cb0aa19d516",
+      "dimensions": [
+        1536,
+        342
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/strips/02-monk-combo-row-3.png",
+      "sha256": "a6c58e57f9ec1a88b43103cb0471e894272a69330865f036f0a976a7f6403b02",
+      "dimensions": [
+        1536,
+        341
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/strips/03-monk-abilities-row-1.png",
+      "sha256": "486741554725230462a25fd3da73dfd7743f592ec3e690bf8f9700946f119f71",
+      "dimensions": [
+        1536,
+        341
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/strips/03-monk-abilities-row-2.png",
+      "sha256": "e8bb4d82ef8d27e20d1f5575e91a8a9b8f3c8ae250d16329b60629207c1ba733",
+      "dimensions": [
+        1536,
+        342
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/strips/03-monk-abilities-row-3.png",
+      "sha256": "4b7cfea6207e901c86537d75e71b4358f6549a6ef1bec2558a16dd46bbd95fd3",
+      "dimensions": [
+        1536,
+        341
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/strips/04-monk-lifecycle-row-1.png",
+      "sha256": "c943245b42f44af3feeda5a26f9b166a436687cb2e69703b733269940e8e693f",
+      "dimensions": [
+        1536,
+        341
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "source/visual-acceptance.json",
+      "sha256": "e9e89b5cd4f43bee945fd23ead85d0fa7747f8f381e0ebda2fa9e0f10336b830"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "nativePixelsPerUnit": 32,
+  "alphaThreshold": 128,
+  "resize": "nearest",
+  "surfaceColors": 20,
+  "detailColors": 32,
+  "seamWidth": 4,
+  "seamMethod": "symmetric opposite-edge crossfade before palette reduction; outer pixels equal",
+  "paletteMethod": "median cut, no dithering; one shared detail palette",
+  "surfaces": [
+    { "id": "grass", "meanRgb": [112, 126, 95], "contrast": 0.48 },
+    { "id": "soil", "meanRgb": [128, 110, 91], "contrast": 0.48 },
+    { "id": "stone", "meanRgb": [119, 121, 118], "contrast": 0.48 }
+  ],
+  "details": [
+    { "id": "grass-low", "fit": [26, 18] },
+    { "id": "grass-wide", "fit": [40, 18] },
+    { "id": "fern-low", "fit": [34, 24] },
+    { "id": "flowers-white", "fit": [28, 22] },
+    { "id": "flowers-ochre", "fit": [27, 21] },
+    { "id": "leaves", "fit": [36, 14] },
+    { "id": "twigs", "fit": [38, 13] },
+    { "id": "pebbles-flat", "fit": [36, 16] }
+  ],
+  "runtimeCollision": "none; low decorations never introduce blockers"
+}

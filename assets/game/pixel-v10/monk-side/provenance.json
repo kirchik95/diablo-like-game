@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "generationMode": "No image generation. Deterministic cut-out rig: reused v2/v3 upper-body pixels plus a programmatic profile lower body.",
+  "rightsNote": "Derived from project artwork; inherited provenance of pixel-v2/monk and pixel-v3/appearance applies. Not a new license grant.",
+  "acceptance": {
+    "status": "worker-inspected-awaiting-coordinator",
+    "authority": "Coordinator accepts under user delegation. No personal user approval is claimed.",
+    "boundary": "Asset owner inspected native contact sheets, the foot-track onion sheet and exported pixels; in-game acceptance belongs to the coordinator."
+  },
+  "method": {
+    "upperBodies": {
+      "run-1": 4,
+      "run-2": 5,
+      "run-3": 6,
+      "run-4": 7,
+      "run-5": 8,
+      "run-6": 9,
+      "guard": 14
+    },
+    "lowerBody": "Two-bone legs (thigh 14, shin 14.5 px), baggy capsules, upper-left light, v2 trouser/skin ramps, 1 px ink rim.",
+    "appearance": "Upper bodies copied from each v3 variant atlas (its own skin/sash/hair pixels); drawn skin uses the same v3 seven-step map.",
+    "poseReference": "assets/concepts/pixel-art-01/raw/p8-pixel-run-and-hit.png (profile run phases; not sampled)"
+  },
+  "builder": "scripts/build-monk-side-animation.py",
+  "toolchain": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "inputs": [
+    {
+      "path": "assets/game/pixel-v1/floor.png",
+      "sha256": "6f4894b7f4a538504def073685ff793e6c9e5cac34b6b2f492d8f4b5e78066e9"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/manifest.json",
+      "sha256": "9b31e2aeb75335a9975b348c63b71d1f1251e47b2038da78c3ac0111e1e98696"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/monk-v2.png",
+      "sha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/palette.json",
+      "sha256": "818b8bf6509d47520241dfac289910308e403ce5e4891142d103d23fc3eea02b"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-shaved-ochre.png",
+      "sha256": "e4f7cceb06d679f248e588146b97c0d45dd988c521d08b0b76d781c41c8e181a"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-shaved-teal.png",
+      "sha256": "e1979cdac14af51e4d2a85542febfd1f29a7d412dd450aac2696157bb4b73d59"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-shaved-wine.png",
+      "sha256": "4a3d6dd7907f2ad9d87347b12d2b104f448147173e52b2b89db06cf45944b50a"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-short-ochre.png",
+      "sha256": "3fdddbb9f394c3e25786710a2bc65a1539eff8da85a692049968a0f340a170d2"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-short-teal.png",
+      "sha256": "7fcbdb323422dfe115d9c8c63937e1be9b20fc99c794b8262e478b9dd5b1cc53"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-short-wine.png",
+      "sha256": "705f2c9396133925f04c6b5d95a4921eaf4e3c9f42c8aa661d07a77d5425745b"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/manifest.json",
+      "sha256": "736ed7a9b5914dc5593a63bfb555666fca59f0b8f856645d49f72914343f1fb8"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-shaved-ochre.png",
+      "sha256": "77eb6bdc20ec370b0eb0a112de74784a5903ef2a0021580cafb1a729c879d8a6"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-shaved-teal.png",
+      "sha256": "f40541e627d004144c4a1d236cd212020c689663067b3d18e4a27fc96e97c8ef"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-shaved-wine.png",
+      "sha256": "a14c9c3e919909c1d0745fbfde4c65e1d1982ccdc15e96ce660b02b36d9ce44d"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-short-ochre.png",
+      "sha256": "0a98eb21ce5542c62ef14e84537d56fe182619e1b75bcd247003f9e5d89a98da"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-short-teal.png",
+      "sha256": "f73261301534249435aa5cb31ffd8a3261c21808b1be88019ee620304a5e7889"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-short-wine.png",
+      "sha256": "9806ac675eee85054d50472bccce3e9dfeba2a8fc888dfdd70487803181978b9"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/head-regions.json",
+      "sha256": "077cbec85b273739f9b6dc2d014e26acc7def38d20780591a4580249b0c89811"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/palette-ramps.json",
+      "sha256": "05a80679520f950163028f44df764d7f8a9bc7b8b83b4a400701f17e7d136434"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-shaved-ochre.png",
+      "sha256": "8e404999601392041e90a3de589ac3bf9e06a598cf57aedc0a4ecf8d073b5269"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-shaved-teal.png",
+      "sha256": "e5dc577a3d644c413bbc053ee5e77ba2dfb241b88fd4eed297eb93defb2821eb"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-shaved-wine.png",
+      "sha256": "02eb610f3d690ab55bc18ca8ab1b46881d1c39238d6258bdb369a4c57097909f"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-short-ochre.png",
+      "sha256": "2f31e6532af375d626fef05c016dd5a6440230f1648ff3ddb069eada3480cc0c"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-short-teal.png",
+      "sha256": "3c7e7bf6a3baee593d6775fe37429bc0c5290457bf09ddfd7f20fbc3651e1f89"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-short-wine.png",
+      "sha256": "6076e99c6f8a45610618c60ff305635b94730cfc842f3a55420ff855441686d2"
+    },
+    {
+      "path": "scripts/build-monk-side-animation.py",
+      "sha256": "d9d896a2cd1d337c0b93a664819a7b64faca940f66390c7963f42a2a973424fb"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/deep-shaved-ochre.png",
+      "sha256": "a3da2c508539234619b4be64c9be63be99d984f098c519b95f5fade7adb68f9e",
+      "bytes": 218521
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/deep-shaved-teal.png",
+      "sha256": "b1bdc7ff2dfd3ac315d5f322d5e630514e8161bf48e625becb89c88f4c22a45e",
+      "bytes": 217618
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/deep-shaved-wine.png",
+      "sha256": "de8b439e5504b85810abd52762117cf5ad47de0df5d0546feaa28de5817ed9c7",
+      "bytes": 217658
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/deep-short-ochre.png",
+      "sha256": "ed40cad9fa18b2231027dd20ec540a2e29df22b03c12eeac477930e4232b4c5a",
+      "bytes": 216923
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/deep-short-teal.png",
+      "sha256": "867d0b82a24b241e93814599f13125281514956c05bb13891a49e6f44c31a703",
+      "bytes": 216065
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/deep-short-wine.png",
+      "sha256": "2ce916aa7be2e9cf0f26f8ffe629a7365fcd3c54e9658aef6df70860935774f9",
+      "bytes": 216117
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/pale-shaved-ochre.png",
+      "sha256": "d2d2305c6574a769bcc385788fd088a5b1e1f3b71221e350945475941171587c",
+      "bytes": 215148
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/pale-shaved-teal.png",
+      "sha256": "2ffe9046c813039d0f32803e6a02b5a0955eb079d86301f8c2e4fea64c002e49",
+      "bytes": 214605
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/pale-shaved-wine.png",
+      "sha256": "fa0c296984e79d519de56272ed7c69c64ca7f16fe7258ad63dd10fd37f62bdd3",
+      "bytes": 214330
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/pale-short-ochre.png",
+      "sha256": "9234031d9d691c6957b145da1291bbfd8b9581ae017e7cca357f62ed3f05663a",
+      "bytes": 214093
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/pale-short-teal.png",
+      "sha256": "631d530cd927e754e14e35886f13a6a5479494da4e2d7bea5fb8b2d770521a59",
+      "bytes": 213844
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/pale-short-wine.png",
+      "sha256": "d7caebdf4c1e9a795a473d5c64e6befe8bac6d8e12fb132caf9a893713da603c",
+      "bytes": 213615
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/warm-shaved-ochre.png",
+      "sha256": "ba1e74efb306ea2a9bf74b936de25d45b46626583e2d349fb05308c94689b513",
+      "bytes": 217545
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/warm-shaved-teal.png",
+      "sha256": "8e3fc47d7a5ad413e227d2cd37f0763069ef42b5172f1fe2f666c547e9c1b7d2",
+      "bytes": 217208
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/warm-shaved-wine.png",
+      "sha256": "8706394fcad702e337a0b7890d7b5f5a3cd44d901599be24a4b567f9ee903ef1",
+      "bytes": 216905
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/warm-short-ochre.png",
+      "sha256": "322662bcd4728563073dd6a20ca73f96af9eb3f4fd844e4e23e88eb8a43359c2",
+      "bytes": 216593
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/warm-short-teal.png",
+      "sha256": "27bc1c4bec0a301e11fb815e55f7d075a833ed8423863b4921c3148daaf0b4cf",
+      "bytes": 216248
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/appearance/warm-short-wine.png",
+      "sha256": "7d81c4a2ef2a5fea1b77298fcf92e3d3435eea3fedf7482f0ded2305ce5d785a",
+      "bytes": 215849
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/hit-masks.json",
+      "sha256": "c2463628ca7042a3c1ab4e65d9f56b20440a92223ae0938716785f189cd9e359",
+      "bytes": 169042
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/manifest.json",
+      "sha256": "6b0fa8b621b478cfd104edcef55465f526273aa68f6dbe9ebeac0755b86348f6",
+      "bytes": 11165
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/monk-side.png",
+      "sha256": "8706394fcad702e337a0b7890d7b5f5a3cd44d901599be24a4b567f9ee903ef1",
+      "bytes": 216905
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/all-looks-2x.png",
+      "sha256": "a7023bf8a72eacdcbba72c35487f64b7136e8da74c3c4d896dea335a35d453a2",
+      "bytes": 44550
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/all-looks-native.png",
+      "sha256": "52140acec15a4c1312263ae6ababf7314dc53123996470ff136c2487e7a7c59f",
+      "bytes": 31784
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/compare-3x.png",
+      "sha256": "77cd91d86cf7dad4e331ce1e8e6e4e52bc7e73bcacc47446c70fefe2eba11a74",
+      "bytes": 69570
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/compare-native.png",
+      "sha256": "9b3a740b201de2db79d3c7c2cceb64c3ccc2fc6520ad56b847912c9a7cea0f08",
+      "bytes": 47578
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/compare-run.gif",
+      "sha256": "bdca15e925af9d72dce677657ea3c21d20ce5b28d5f3fd0075b293736e8769d3",
+      "bytes": 147765
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/foot-track-3x.png",
+      "sha256": "9d16f78dba33acd8200d288e760958cf79a3e1780a647ad51e87b32a0ee428cb",
+      "bytes": 29782
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/idle-side.gif",
+      "sha256": "9aae2abcd108d138959ab9ce869be3be928d189ea7aa0f7d35456c41748d3570",
+      "bytes": 54689
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/index.html",
+      "sha256": "d0019740b9e48f33a67b6a4c0af19e258528693a240dd4031c51aecb636edfaa",
+      "bytes": 6906
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/run-side.gif",
+      "sha256": "e636064e4f1c16d84e855bea3a7eac98460bfa7cdb9906110386c5155046292d",
+      "bytes": 77231
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/run-track.gif",
+      "sha256": "eb659085d40904cfd424fb0c9c1b6e871d3b2a0e79af5ee174398901f3be7215",
+      "bytes": 281367
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/side-4x.png",
+      "sha256": "b0270e1782a69f08cc3f98859a28f61614cca29baef206c3609c76c1095a30f6",
+      "bytes": 59970
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/previews/side-native.png",
+      "sha256": "b5b230ee9228210c6322e5b92356d90ea6d1888dc3a0e386b9719b65ef659d89",
+      "bytes": 34927
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/source/rig.json",
+      "sha256": "68b285ea65b7974995257184a5bb1fffc38924400495e377ba6d905df9f33f52",
+      "bytes": 8277
+    }
+  ]
+}

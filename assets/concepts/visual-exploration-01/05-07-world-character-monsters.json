@@ -1,0 +1,46 @@
+{
+  "paperUrl": "https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-1-0",
+  "status": "Concept art and a static character-creation mockup; no game implementation yet.",
+  "confirmedRequirements": {
+    "platform": "Browser RPG",
+    "visualDirection": "Neon palette from variant 02 with dimensional isometric presentation",
+    "world": "Large connected locations with transitions",
+    "characterCreation": "Light customization",
+    "combatOpponents": "Monsters"
+  },
+  "draftDesignChoices": {
+    "region": "Monastery outskirts with a safe camp, branching paths, shrine, bridge and optional crypt",
+    "characterControls": [
+      "Name",
+      "Three base appearances",
+      "Five skin tones",
+      "Three hairstyles",
+      "Four sash colors"
+    ],
+    "monsterRoles": [
+      "Fast horned hounds",
+      "Heavy stone-carapace creature",
+      "Floating ranged spirits"
+    ],
+    "customizationAffects": "Appearance only"
+  },
+  "generation": {
+    "provider": "Paper",
+    "model": "google-nano-banana-2-1",
+    "referenceNode": "2Y-0"
+  },
+  "assets": [
+    {
+      "image": "05-monastery-outskirts.png",
+      "prompt": "Use case: stylized-concept. The attached reference establishes the approved art direction and hero design. Make a NEW WIDE ENVIRONMENT CONCEPT for the SAME browser action RPG, expanding that look into ONE LARGE OPEN EXPLORABLE OUTDOOR REGION. Preserve its bold stylized dimensional isometric graphics, faceted solid stone, controlled black ink contours, some pixel-sharp texture detail, pale monk in white and black with a wine-red sash, distinct nonhuman fantasy monsters, and striking raspberry-magenta plus cyan-turquoise ritual lighting.\n\nThis is a regional panorama showing several game screens of connected countryside around a ruined monastery. Fixed orthographic three-quarter isometric camera like the reference, pulled back to show space for exploration. Build broad irregular organic terrain continuously filling every edge of a 16:9 image: slate cliffs with visible height, open gray-green grasslands, patches of twisted trees, pale dirt and broken cobblestone paths, shallow water, ruined stone fragments. No enclosing square courtyard, no repeating arena cells, no floating tabletop slab, no black void, no continuous boundary wall. Routes visibly continue outside the frame at multiple edges.\n\nLayout in real landscape: a small safe traveler camp with tents, a campfire and cart at lower left; from it a broad walkable road branches through an OPEN MEADOW at center. One route crosses an old intact arched stone bridge over a narrow turquoise stream to a large ruined monastery gateway on an upper-right rocky terrace, the main distant landmark. A second broad side route loops around a sparse grove and a magenta-lit wayside shrine, reconnecting near the bridge. Another path descends to a small cyan-lit crypt entrance set into the lower-right hillside. Include a discreet treasure chest in a ruined side building off the main route. Use natural landscape and readable path surfaces to communicate all connections, not diagram arrows. Plenty of optional walkable space between paths.\n\nCombat: three separate small monster packs occupy different places in the region. All hostile creatures are clearly NONHUMAN: lean four-legged horned shadow hounds along the main road; one hulking beetle-like stone-armored brute with six legs near the ruined shrine; hovering spectral jellyfish-like wraiths with trailing tendrils at the crypt. No hooded guards, soldiers, humans, humanoid weapons or shields. Near the center-left road one tiny full-body white-clad monk is dash-striking two horned hounds, a SHORT cyan afterimage and coral strike accent. Hero is 4 percent of image height; maintain plausible consistent scale. Separate monster packs with substantial peaceful traversal space. Most of the image is exploration landscape rather than a fight.\n\nLighting: blue-violet night and soft mist at lower cliff edges, desaturated mineral ground remains readable, isolated intense magenta braziers at shrines and cyan lamps at the crypt and bridge, small warm campfire in the safe camp. Deliberate saturated local accents rather than a uniform pink or blue filter. Solid block bevels, thick stairs, cast shadows, layered height and consistent isometric axes make the architecture dimensional. Maintain the reference's crisp graphic illustrated 2.5D finish, not photorealism or generic smooth 3D rendering. No skyline horizon, giant hero, central ring or mandala, roof occluding paths, UI, text, labels, arrows, logo, watermark or border. The image should invite the question 'what is down that other path?' while clearly showing one cohesive place."
+    },
+    {
+      "image": "06-character-creation.png",
+      "prompt": "Use case: stylized-concept, character-creation preview. Use the reference image ONLY for the approved original monk identity, wardrobe and illustrated dimensional game art style.\nCreate a single FULL-BODY CHARACTER PREVIEW for a browser action RPG character creation screen. One adult male martial-arts monk, age about 30, lean athletic body, shaved head, warm medium tan skin, clean-shaven angular adult face. Bone-white sleeveless wrapped tunic, black wide loose trousers, burgundy-red long sash, bronze wrist wraps and prayer beads. Empty open hands in a calm ready stance, weight balanced, full body seen at three-quarter angle with both feet visible. Strong readable silhouette, slight asymmetry of cloth, clearly sculpted 3D volume with hand-painted cel-shaded surfaces and crisp graphic edges, restrained pixel texture accents. Match the reference's stylized anatomy, not a realistic actor, not a toy or child. No giant armor, no sword, no staff.\nWide 16:9 canvas with the single figure centered. The WHOLE figure and feet must fit inside the central 42 percent of image width, and occupy about 83 percent of image height. Leave ample empty dark background on both sides; this preview will be cropped to a near-square panel. Keep the head and both feet fully within image boundaries.\nBackdrop: a quiet dark plum-black monastery alcove with a simple round stone platform and faint blurred architecture. Gentle magenta edge light on the left of the figure, cyan edge light on the right; neutral soft fill ensures skin, face, tunic and red sash remain readable and correctly colored. Sharp subject, subdued non-distracting environment, believable cloth fold volume. No combat, monsters, extra people, afterimages or particles. No UI, words, frame, labels, logos or watermark."
+    },
+    {
+      "image": "07-monster-combat.png",
+      "prompt": "Edit the reference artwork into the next concept of the SAME original browser action RPG. Preserve the exact isometric camera, dimensional low-poly cel-shaded illustrated finish, ancient stone arena, stairs, pillars, bell, large pale-tiled floor, magenta illumination from the left and cyan illumination from the right. Preserve the same adult bald monk with white sleeveless tunic, dark trousers, red sash, low palm-strike pose, cyan dash afterimages and short coral impact arc. Keep the camera framing and architecture stable.\nThe requested essential change: REPLACE EVERY HOODED HUMAN GUARD WITH CLEARLY NONHUMAN FANTASY MONSTERS. No humans, soldiers, guards, humanoid armored warriors, spears or shields as enemies. The monk is the only human fighter.\nExactly six distinct creatures spaced around the monk, all completely visible: THREE sleek four-legged horned shadow hounds with charcoal skin, elongated jaws, claws, sharp shoulder spines and small magenta eyes, including one recoiling from the monk's palm strike; ONE large low-slung six-legged armored beetle-like monster with a thick cracked stone carapace, short curved horns, heavy claws and a broad squat silhouette, preparing a slow attack at the upper right; TWO hovering ghostly jellyfish-like wraiths with irregular pale violet luminous cores and several trailing ribbon-tentacles rather than legs, one high left and one far rear. Their bodies must be unmistakably inhuman, visually different from one another and from the hero. The hounds are about the monk's waist height, the beetle is broad and slightly taller than the monk, the ghosts float one body-height above the ground and cast faint contact glow. Add subtle violet rim lights to dark monster forms so they read against the floor. Enemy glow is violet or magenta, keep intense cyan for the hero dash and environmental braziers.\nReadable angular handcrafted design, strong silhouettes, restrained contour ink, crisp painterly/pixel-like texture, dimensional shading. Dynamic confrontation with clear distance between characters, no overlapping unreadable pile. No gore. No labels, text, UI, health bars, logo, watermark or border. This is a targeted enemy redesign, retain the original approved scene style."
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ночной ритуал · Task 2 · Native animation QA</title>
+<style>
+  :root { color-scheme: dark; font: 15px/1.5 system-ui, sans-serif; background: #15121e; color: #e4d9e5; }
+  body { max-width: 1240px; margin: 24px auto; padding: 0 20px; }
+  h1 { font-size: 22px; font-weight: 600; }
+  label { display: inline-flex; align-items: center; gap: 8px; margin: 0 16px 12px 0; }
+  button, select, input { font: inherit; accent-color: #dc79b6; }
+  button, select { border: 1px solid #66506e; background: #292234; color: inherit; border-radius: 5px; padding: 5px 10px; }
+  button { cursor: pointer; }
+  canvas { image-rendering: pixelated; image-rendering: crisp-edges; display: block; }
+  #stage { margin-top: 12px; border: 1px solid #45354e; }
+  #strip { margin: 16px 0; }
+  .scroll { overflow-x: auto; }
+  .note { color: #bcaac0; }
+  a { color: #b8ded3; }
+</style>
+<h1>Ночной ритуал · Гончая, мир и эффекты</h1>
+<p class="note">Реальные кадры атласов, 32 px/unit. Масштаб 1× — нативный. Однократные действия удерживают последний кадр.</p>
+<label>Атлас <select id="family"></select></label>
+<label>Действие <select id="clip"></select></label>
+<label>Ракурс <select id="facing"></select></label>
+<label>Масштаб <select id="scale"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+<label><input id="mirror" type="checkbox"> Зеркало</label>
+<label><input id="anchors" type="checkbox" checked> Опора</label>
+<label><input id="light" type="checkbox"> Светлый фон</label>
+<p><button id="play">Пауза</button> <button id="restart">Сначала</button> <label>Кадр <input id="frame" type="range" min="0" value="0" step="1"></label> <span id="readout"></span></p>
+<div class="scroll"><canvas id="stage" width="256" height="256"></canvas></div>
+<div class="scroll"><canvas id="strip"></canvas></div>
+<p id="timing" class="note"></p>
+<p class="note">Пунктир отмечает anchor, не является частью спрайта. GIF повторяет цикл после паузы для просмотра; этот проигрыватель соблюдает loop/hold. Бег в игре привязан к пройденному расстоянию.</p>
+<p><a href="hound-contact-native.png">Гончая: все кадры 1×</a> · <a href="world-contact-native.png">Мир: все кадры 1×</a> · <a href="effects-contact-native.png">Эффекты: все кадры 1×</a> · <a href="../qa-report.json">Проверки</a></p>
+<script>
+const manifest = __MANIFEST__;
+const timings = __TIMINGS__;
+const $ = id => document.getElementById(id);
+const images = {};
+let elapsed = 0, playing = true, lastTime = null, current = 0;
+function options(node, values) {
+  node.replaceChildren(...values.map(value => Object.assign(document.createElement('option'), { value, textContent: value })));
+}
+options($('family'), ['hound', 'world', 'effects']);
+function reset() { elapsed = 0; current = 0; lastTime = null; $('frame').value = 0; }
+function chooseClip() {
+  options($('facing'), Object.keys(manifest[$('family').value].clips[$('clip').value]));
+  $('frame').max = manifest[$('family').value].clips[$('clip').value].front.length - 1;
+  reset();
+}
+function chooseFamily() { options($('clip'), Object.keys(manifest[$('family').value].clips)); chooseClip(); }
+$('family').onchange = chooseFamily;
+$('clip').onchange = chooseClip;
+$('facing').onchange = reset;
+$('restart').onclick = () => { reset(); playing = true; $('play').textContent = 'Пауза'; };
+$('play').onclick = () => { playing = !playing; lastTime = null; $('play').textContent = playing ? 'Пауза' : 'Играть'; };
+$('frame').oninput = () => {
+  playing = false; current = Number($('frame').value);
+  elapsed = timings[$('family').value][$('clip').value].ms.slice(0, current).reduce((a, b) => a + b, 0);
+  $('play').textContent = 'Играть';
+};
+document.addEventListener('visibilitychange', () => { lastTime = null; });
+chooseFamily();
+function background(ctx, width, height) {
+  const colors = $('light').checked ? ['#a7a1b0', '#b4acba'] : ['#292537', '#302b3e'];
+  ctx.fillStyle = colors[0]; ctx.fillRect(0, 0, width, height);
+  ctx.fillStyle = colors[1];
+  for (let y = 0; y < height; y += 8) for (let x = 0; x < width; x += 8) if ((x / 8 + y / 8) % 2) ctx.fillRect(x, y, 8, 8);
+}
+function sprite(ctx, family, index, x, y, mirror) {
+  const m = manifest[family], cell = m.cell;
+  ctx.save(); ctx.imageSmoothingEnabled = false;
+  ctx.translate(x + (mirror ? cell : 0), y); if (mirror) ctx.scale(-1, 1);
+  ctx.drawImage(images[family], index % m.columns * cell, Math.floor(index / m.columns) * cell, cell, cell, 0, 0, cell, cell);
+  ctx.restore();
+  if ($('anchors').checked) {
+    const ax = x + (mirror ? cell - m.anchor[0] : m.anchor[0]), ay = y + m.anchor[1];
+    ctx.strokeStyle = '#72baaa'; ctx.setLineDash([2, 2]);
+    ctx.beginPath(); ctx.moveTo(ax - 12, ay + .5); ctx.lineTo(ax + 12, ay + .5); ctx.moveTo(ax + .5, ay - 5); ctx.lineTo(ax + .5, ay + 5); ctx.stroke(); ctx.setLineDash([]);
+  }
+}
+function draw(time) {
+  const family = $('family').value, clip = $('clip').value, facing = $('facing').value;
+  const m = manifest[family], ids = m.clips[clip][facing], timing = timings[family][clip];
+  if (playing && lastTime !== null) elapsed += Math.min(time - lastTime, 100);
+  lastTime = time;
+  if (playing) {
+    const total = timing.ms.reduce((a, b) => a + b, 0);
+    let t = timing.loop ? elapsed % total : Math.min(elapsed, total - .001);
+    current = 0; while (current < ids.length - 1 && t >= timing.ms[current]) t -= timing.ms[current++];
+  }
+  $('frame').value = current;
+  $('readout').textContent = `${current + 1}/${ids.length} · atlas ${ids[current]} · ${timing.loop ? 'loop' : 'one shot → hold'}`;
+  $('timing').textContent = timing.note || `Preview: ${timing.ms.join(' / ')} ms`;
+  const stage = $('stage'), ctx = stage.getContext('2d'), scale = Number($('scale').value);
+  stage.style.width = `${stage.width * scale}px`; stage.style.height = `${stage.height * scale}px`;
+  background(ctx, stage.width, stage.height);
+  sprite(ctx, family, ids[current], 128 - m.anchor[0], 192 - m.anchor[1], $('mirror').checked);
+  const strip = $('strip');
+  if (strip.width !== m.cell * ids.length || strip.height !== m.cell + 22) { strip.width = m.cell * ids.length; strip.height = m.cell + 22; }
+  const sc = strip.getContext('2d'); background(sc, strip.width, strip.height);
+  ids.forEach((id, i) => {
+    sprite(sc, family, id, i * m.cell, 0, $('mirror').checked);
+    sc.fillStyle = i === current ? '#ffb8da' : '#cdbed3'; sc.font = '12px monospace'; sc.fillText(`${i + 1} · #${id}`, i * m.cell + 5, m.cell + 15);
+  });
+  requestAnimationFrame(draw);
+}
+Promise.all(['hound', 'world', 'effects'].map(family => new Promise((resolve, reject) => {
+  const img = new Image(); img.onload = () => { images[family] = img; resolve(); }; img.onerror = reject; img.src = '../' + manifest[family].path;
+}))).then(() => requestAnimationFrame(draw)).catch(() => { $('readout').textContent = 'Не удалось загрузить атласы'; });
+</script>
+</html>

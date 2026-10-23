@@ -1,0 +1,22 @@
+{
+  "id": "tent-left",
+  "sourceAlphaBox": [
+    135,
+    159,
+    1315,
+    981
+  ],
+  "nativeSize": [
+    208,
+    145
+  ],
+  "offset": [
+    24,
+    87
+  ],
+  "removedIsolatedPixels": 0,
+  "anchor": [
+    128,
+    232
+  ]
+}

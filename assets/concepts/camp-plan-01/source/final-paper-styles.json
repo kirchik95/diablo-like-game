@@ -1,0 +1,83 @@
+{
+  "styles": {
+    "17Z-0": {
+      "display": "flex",
+      "overflow": "clip",
+      "width": "1600px",
+      "height": "fit-content",
+      "left": "0px",
+      "top": "0px",
+      "flexDirection": "column",
+      "padding": "44px",
+      "gap": "32px",
+      "position": "absolute",
+      "backgroundColor": "#E3E4D8"
+    },
+    "180-0": {
+      "display": "flex",
+      "overflow": "clip",
+      "width": "1600px",
+      "height": "fit-content",
+      "left": "1680px",
+      "top": "0px",
+      "flexDirection": "column",
+      "padding": "44px",
+      "gap": "32px",
+      "position": "absolute",
+      "backgroundColor": "#E3E4D8"
+    },
+    "189-0": {
+      "width": "1032px",
+      "height": "1224px",
+      "flexShrink": "0",
+      "overflow": "clip",
+      "position": "relative",
+      "backgroundColor": "#D7DDCB"
+    },
+    "1DZ-0": {
+      "position": "absolute",
+      "left": "0px",
+      "top": "0px",
+      "width": "1032px",
+      "height": "1224px",
+      "backgroundImage": "url(https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/434H2HW5YRD4S5PZ1XYR7Q1GFA.svg)",
+      "backgroundSize": "100% 100%",
+      "backgroundPosition": "50%",
+      "backgroundRepeat": "no-repeat"
+    },
+    "1D9-0": {
+      "display": "flex",
+      "width": "1512px",
+      "height": "fit-content",
+      "flexShrink": "0",
+      "overflow": "clip",
+      "backgroundColor": "#CBD1BD"
+    },
+    "1E1-0": {
+      "width": "1512px",
+      "height": "850.5px",
+      "flexShrink": "0",
+      "imageRendering": "pixelated",
+      "backgroundImage": "url(https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/0W07Z67A2XN9QM8AD6XCREAMMQ.png)",
+      "backgroundSize": "contain",
+      "backgroundPosition": "50%",
+      "backgroundRepeat": "no-repeat"
+    },
+    "1D7-0": {
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "whiteSpace": "pre-wrap",
+      "fontFamily": "\"Golos Text\", system-ui, sans-serif",
+      "fontWeight": 400,
+      "color": "#56684F"
+    },
+    "1DS-0": {
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "whiteSpace": "pre-wrap",
+      "fontFamily": "\"Golos Text\", system-ui, sans-serif",
+      "fontWeight": 400,
+      "color": "#56684F"
+    }
+  }
+}

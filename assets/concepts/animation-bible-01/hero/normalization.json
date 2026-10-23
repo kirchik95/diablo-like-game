@@ -1,0 +1,48 @@
+{
+  "01-run-final": {
+    "unchanged": "keys 1–3 copied exactly from original 01-monk-locomotion-v1.png rectangle [0,341,768,683]",
+    "redrawn": "keys 4–6 from 01-run-opposite-half-v4.png",
+    "cropBoxes": [
+      [
+        83,
+        80,
+        595,
+        764
+      ],
+      [
+        625,
+        80,
+        1137,
+        764
+      ],
+      [
+        1205,
+        80,
+        1717,
+        764
+      ]
+    ],
+    "uniformScale": 0.5,
+    "resampling": "nearest",
+    "outputSize": [
+      1536,
+      342
+    ],
+    "note": "No whole-sprite mirroring. Idle and four-facing rows remain bit-identical to original. Not a normalized engine sprite atlas."
+  },
+  "04-lifecycle": {
+    "row2Crop": [
+      0,
+      325,
+      1536,
+      667
+    ],
+    "row3Crop": [
+      0,
+      667,
+      1536,
+      1009
+    ],
+    "reason": "Keep amber particles out of adjacent revive row."
+  }
+}

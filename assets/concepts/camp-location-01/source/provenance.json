@@ -1,0 +1,557 @@
+{
+  "schemaVersion": 1,
+  "asset": "camp-location-01",
+  "title": "Лагерь странников",
+  "date": "2026-10-22",
+  "purpose": "Finished Paper concept board for the existing first outdoor adventure location. No runtime integration.",
+  "authorization": {
+    "path": "artifacts/camp-paper-brief.md",
+    "sha256": "9b57ce965a9d25fe3f771ceb95cfda2d28828ed98bd391d5e9e8a533454d6e60",
+    "bytes": 3345
+  },
+  "skills": [
+    "create-game-assets",
+    "imagegen"
+  ],
+  "artDirection": {
+    "mood": "quiet open-air daylight in monastic foothills",
+    "projection": "dimensional 2:1 isometric camp; illustrative distant foothills",
+    "palette": {
+      "boardGround": "#E3E4D8",
+      "ink": "#242F2B",
+      "sage": "#657660",
+      "grass": "#A5AD96",
+      "stone": "#77798A",
+      "fire": "#D5974E"
+    },
+    "typography": {
+      "display": {
+        "family": "Oswald",
+        "sizePx": 64,
+        "weight": 600,
+        "lineHeightPx": 76
+      },
+      "legendHeading": {
+        "family": "Oswald",
+        "sizePx": 28,
+        "weight": 500,
+        "lineHeightPx": 36
+      },
+      "body": {
+        "family": "Golos Text",
+        "sizePx": 18,
+        "weight": 400,
+        "lineHeightPx": 27
+      }
+    },
+    "composition": "Two opposite shelters, open central clearing, monk between fire and supplies, one pale outward road between two stone markers."
+  },
+  "references": [
+    {
+      "original": {
+        "path": "assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png",
+        "sha256": "b0a292c3f84923f0148144e6ef2f05b2968328b6fd3dc8f7999ed0c5324afed7",
+        "bytes": 2701234,
+        "size": [
+          1512,
+          850
+        ],
+        "mode": "RGBA"
+      },
+      "archivedCopy": {
+        "path": "assets/concepts/camp-location-01/source/references/accepted-pixel-world.png",
+        "sha256": "b0a292c3f84923f0148144e6ef2f05b2968328b6fd3dc8f7999ed0c5324afed7",
+        "bytes": 2701234,
+        "size": [
+          1512,
+          850
+        ],
+        "mode": "RGBA"
+      },
+      "role": "Accepted pixel-art shapes, material ramps and 2:1 dimensional isometry only. Dungeon, abyss and monster subjects explicitly excluded.",
+      "passedToGeneration": true
+    },
+    {
+      "original": {
+        "path": "assets/game/pixel-v4/landscape/previews/contact-native.png",
+        "sha256": "f6c4c957c6a6c79cd95868a9703ce70defadf35b2f9e0e9ab0038d69ea609fb2",
+        "bytes": 74622,
+        "size": [
+          960,
+          400
+        ],
+        "mode": "RGBA"
+      },
+      "archivedCopy": {
+        "path": "assets/concepts/camp-location-01/source/references/landscape-contact-native.png",
+        "sha256": "f6c4c957c6a6c79cd95868a9703ce70defadf35b2f9e0e9ab0038d69ea609fb2",
+        "bytes": 74622,
+        "size": [
+          960,
+          400
+        ],
+        "mode": "RGBA"
+      },
+      "role": "Current production landscape family and monk scale. Contact-sheet layout excluded.",
+      "passedToGeneration": true
+    },
+    {
+      "original": {
+        "path": "artifacts/adventure-camp-1440x900.jpg",
+        "sha256": "09ecf0be53eac288477440fade983612691df836a59a8d5d913d64ebef63563b",
+        "bytes": 96048,
+        "size": [
+          1440,
+          900
+        ],
+        "mode": "RGB"
+      },
+      "archivedCopy": {
+        "path": "assets/concepts/camp-location-01/source/references/runtime-camp-layout.jpg",
+        "sha256": "09ecf0be53eac288477440fade983612691df836a59a8d5d913d64ebef63563b",
+        "bytes": 96048,
+        "size": [
+          1440,
+          900
+        ],
+        "mode": "RGB"
+      },
+      "role": "Actual camp relative positions only. Old black void, tiled platform, HUD and oversized hero excluded.",
+      "passedToGeneration": true
+    }
+  ],
+  "additionalInspectedReference": {
+    "path": "assets/concepts/pixel-art-01/p4-pixel-monastery.png",
+    "sha256": "fbc3b1ef2ae04ced5c65e6b3ec0b88ebc4a389227fbe9b4c3c4416012a46d194",
+    "bytes": 2630489,
+    "size": [
+      1600,
+      1254
+    ],
+    "mode": "RGBA"
+  },
+  "layoutSources": [
+    {
+      "path": "src/campaign.js",
+      "sha256": "327a3ac79f76442eee20a03e31d23720bc1caf0055411c9ed4dfcec32c27d6d5",
+      "bytes": 5336
+    },
+    {
+      "path": "src/landscape.js",
+      "sha256": "ce59da7f076bd29d579972b9103e87a11272b99c0ecac6a432c14f9003716e59",
+      "bytes": 13960
+    },
+    {
+      "path": "src/render.js",
+      "sha256": "78a7c498f2e09dafbe3efee8a4abf2945fb252cf01367e09e771a5be37d4fd3f",
+      "bytes": 32444
+    }
+  ],
+  "campContractSnapshot": {
+    "regions": [
+      [
+        -7,
+        7,
+        -4,
+        5
+      ],
+      [
+        -6,
+        6,
+        -6,
+        7
+      ],
+      [
+        -3,
+        3,
+        -8,
+        -5
+      ]
+    ],
+    "spawn": {
+      "x": 0,
+      "y": 1
+    },
+    "roadEntry": {
+      "x": 0,
+      "y": -3
+    },
+    "exit": {
+      "x": 0,
+      "y": -6
+    },
+    "fire": {
+      "x": -2,
+      "y": 1
+    },
+    "reward": {
+      "x": 2,
+      "y": 1
+    },
+    "markers": [
+      {
+        "x": -4,
+        "y": -3,
+        "height": 1.3
+      },
+      {
+        "x": 4,
+        "y": -3,
+        "height": 1.3
+      }
+    ],
+    "portalCount": 1,
+    "encounters": [],
+    "camera": {
+      "alpha": "PI/4",
+      "beta": "PI/3",
+      "mode": "ORTHOGRAPHIC_CAMERA"
+    },
+    "mappingToImage": {
+      "fire": "upper-right of monk",
+      "reward": "lower-left of monk",
+      "outgoingRoad": "upper-left",
+      "shelters": "upper-right and lower-left edges"
+    }
+  },
+  "generations": [
+    {
+      "version": 1,
+      "tool": "image_gen.imagegen",
+      "route": "built-in",
+      "modelId": null,
+      "seed": null,
+      "modelAndSeedNote": "The built-in tool did not expose a model identifier or seed.",
+      "date": "2026-10-22",
+      "transparent_background": false,
+      "referenced_image_paths": [
+        "/Users/kirchik/Documents/project/diablo-like-game/assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png",
+        "/Users/kirchik/Documents/project/diablo-like-game/assets/game/pixel-v4/landscape/previews/contact-native.png",
+        "/Users/kirchik/Documents/project/diablo-like-game/artifacts/adventure-camp-1440x900.jpg"
+      ],
+      "prompt": {
+        "path": "assets/concepts/camp-location-01/source/camp-scene-prompt.txt",
+        "sha256": "479d8fb5bbb8264d75bd485b29145bb8e157054e71ce3fa8265b248f5630e162",
+        "bytes": 4635
+      },
+      "exactPrompt": "Use case: stylized-concept.\nASSET: a finished full-environment concept illustration of the FIRST playable location, \"Traveller Camp\", in the Night Ritual game. One coherent outdoor location, not a sprite sheet, no typography. Wide landscape composition, aspect ratio 16:9.\nREFERENCE ROLES: Image 1 is the accepted pixel-art monastery art direction: retain its dimensional 2:1 isometry, clear pixel clusters and material design, but DO NOT copy its deep chasms, isolated platforms, crypt, monsters or multiple areas. Image 2 is our actual production prop family and monk, STYLE AND SCALE reference only, never copy its contact-sheet layout. Image 3 is the old running camp: use only the relative placement of the camp landmarks, never its empty black background, giant tiled platform, HUD, square floor grid or oversized hero.\nAUTHORITATIVE REAL LAYOUT: this is one safe traveller camp, a broad irregular clearing with exactly one outgoing route. The sole pale worn road leaves the clearing toward the UPPER LEFT edge of the picture, leading toward the monastery road offscreen. The route is framed by TWO modest weathered freestanding stone road markers, not an arch or a wall. One marker stands above the center of the clearing, the other to the left, naturally staggered in the isometric view.\nNear the CENTER of the clearing stands exactly ONE small bald monk wearing light cream torso cloth, dark loose trousers, a muted wine-red sash, bare forearms and feet. Calm idle pose, not fighting. His full standing height should be roughly 1/15 of the image height, small enough to establish a navigable landscape.\nA single warm amber campfire in a low stone ring burns a few steps to the UPPER RIGHT of the monk. There is a quiet circular dirt gathering area around it, with one short low log seat and a small kettle; plenty of walkable room, no crowd.\nThe main grouped supply and reward area is a few steps to the LOWER LEFT of the monk, opposite the fire: weathered wooden crates, tied flax sacks and a small faded wine-colored woven mat. It is a mundane supply cache, not a glowing magical loot chest.\nExactly TWO pitched canvas traveller shelters stand on opposite outer sides of the clearing: one at the UPPER RIGHT edge and one at the LOWER LEFT edge, in natural shallow grassy recesses. Simple triangular canvas tents on wooden poles, muted warm beige cloth, readable open entrances; each with restrained grouped bedrolls, a pack and a small crate. No other tents or buildings.\nTERRAIN / FULL FRAME: every corner and every edge must contain intentional continuous outdoor land: natural muted grass, low brush, earth banks, weathered grey-violet boulders, narrow low rocky ledges and rooted trees. Rolling foothill terrain extends past the clearing and out of the frame, never a floating island, cutout diorama, black void or bottomless chasm. The land is connected, grounded and walkable-looking where intended. Low one- or two-step ledges and dense bushes suggest the limits; no enclosing high walls. Keep the path center and clearing uncluttered, group small details around boundaries.\nVEGETATION: tall narrow blue-green cypresses in a few asymmetric clusters around the far left and right margins; one small leafless weathered tree on a distant grassy bank; low sage-green bushes, small grass tufts and patches of moss. Entire trees should fit in frame or naturally continue beyond an outside image edge; no arbitrary cut-out borders.\nLIGHT / COLOR: an ordinary outdoor world in readable soft late-afternoon daylight, not night, cave, crypt or underground. Natural sage and olive-grey ground, subdued blue-green trees, warm dusty earth, pale limestone path and cool neutral grey-violet rocks. Sunlight comes from upper left, modest consistent shadows. The fire is the single strong warm color accent. Open-air breathing room, shelter before the journey.\nSTYLE: handcrafted-looking simplified pixel art matching the supplied production family: deliberate square pixels, strong silhouettes, limited material ramps, chunky coherent pixel clusters, clean 2:1 isometric diagonals. Render a logical roughly 756x425 pixel scene enlarged 2x with nearest-neighbor clarity. No smooth painting, no photorealism, no cinematic depth of field, no smeared details, no noisy dithering. Detailed environment, simple readable shapes.\nEXCLUDE: all letters, numbers, legends, logos, watermarks, UI, health bars, combat, enemies, NPC crowds, dungeon roofs, cave entrances, crypts, high enclosing walls, floating slabs, black margins, giant cracks, extra roads or extra gameplay exits. Do not include a distant town or multiple monastery buildings.\n",
+      "originalResult": {
+        "path": "assets/concepts/camp-location-01/source/scene-original-v1.png",
+        "sha256": "59afb089552113221647e80d928ccb7e33bd16a2e11912a0a0f5d908ab510c14",
+        "bytes": 3077952,
+        "size": [
+          1672,
+          941
+        ],
+        "mode": "RGB"
+      },
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-479a80b7-0955-4135-b9f6-373be5b9d83d.png",
+      "selected": false,
+      "review": "Not selected: extra foreground exit and oversized monk."
+    },
+    {
+      "version": 2,
+      "tool": "image_gen.imagegen",
+      "route": "built-in",
+      "modelId": null,
+      "seed": null,
+      "modelAndSeedNote": "The built-in tool did not expose a model identifier or seed.",
+      "date": "2026-10-22",
+      "transparent_background": false,
+      "referenced_image_paths": [
+        "/Users/kirchik/Documents/project/diablo-like-game/assets/concepts/camp-location-01/source/scene-original-v1.png"
+      ],
+      "prompt": {
+        "path": "assets/concepts/camp-location-01/source/camp-scene-edit-v2-prompt.txt",
+        "sha256": "3e6867fca010da7147ab50812bde80ab930ef7ede8ec4168985d69dda06063ee",
+        "bytes": 1863
+      },
+      "exactPrompt": "Use case: precise-object-edit.\nEDIT TARGET: the attached full outdoor traveller camp illustration. This is an edit of this exact composition.\nMake exactly these two corrections and otherwise keep the artwork, colors, camera, objects and positions unchanged:\n1. REMOVE THE EXTRA OUTGOING FOREGROUND ROAD. In the lower foreground there is a brown path running from beside the lower-left tent diagonally to the bottom-center/right image edge. Replace that entire border-crossing road band with continuous natural grass and low shrubs, a few low stones and uneven turf that blend into the adjacent foreground. The entire BOTTOM edge must be natural vegetation and terrain, with NO path, gate, road opening or implied exit. A very short foot-worn patch directly at the left tent entrance may remain, but it ends locally inside camp. The ONLY outgoing road remains the broad pale stone path leaving at the UPPER LEFT through the pair of old stone markers. Keep that road intact.\n2. Make the SINGLE central monk substantially smaller: reduce his full height to about 60 percent of its current height, keeping his feet on exactly the same spot. His new height should be about 60-65 pixels in this image, roughly one fifteenth of total image height. Preserve the bald head, pale cream torso cloth, dark baggy trousers, wine-red sash and idle stance. Repair the small newly exposed ground around him. Do not create a second character.\nLOCKS: exactly two tents in their current places; the campfire and kettle in their current places; supply crates and sacks on the wine mat in their current place; the pair of stone road markers; every existing tree cluster, background foothill, rock grouping and the fully filled outdoor terrain. Preserve the current natural daylight palette and clear 2:1 pixel-art style. No smoothing, no blur, no typography, no HUD, no other changes.\n",
+      "originalResult": {
+        "path": "assets/concepts/camp-location-01/source/scene-original-v2.png",
+        "sha256": "9214ca0f6c3bfd247b27b97d1c7f1c8367f85223cd855fd99e26f0b9a203362e",
+        "bytes": 2985555,
+        "size": [
+          1672,
+          941
+        ],
+        "mode": "RGB"
+      },
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16559-ad15-7e03-bdd2-0d8623efe772/exec-582b4227-9351-4830-a460-7c87d3b00f26.png",
+      "selected": true,
+      "review": "Selected: foreground exit replaced with continuous turf; central monk reduced. Full outdoor scene retained."
+    }
+  ],
+  "normalization": {
+    "source": "source/scene-original-v2.png",
+    "sourceSha256": "9214ca0f6c3bfd247b27b97d1c7f1c8367f85223cd855fd99e26f0b9a203362e",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "logicalSize": [
+      756,
+      426
+    ],
+    "displaySize": [
+      1512,
+      852
+    ],
+    "displayPixelsPerLogicalPixel": 2,
+    "resampling": "nearest",
+    "quantization": "median-cut",
+    "paletteRegions": [
+      {
+        "name": "landscape",
+        "logicalBox": null,
+        "reservedColors": 88
+      },
+      {
+        "name": "campfire",
+        "logicalBox": [
+          429,
+          145,
+          495,
+          222
+        ],
+        "reservedColors": 16
+      },
+      {
+        "name": "monk",
+        "logicalBox": [
+          353,
+          180,
+          386,
+          220
+        ],
+        "reservedColors": 8
+      },
+      {
+        "name": "wine-mat",
+        "logicalBox": [
+          282,
+          246,
+          404,
+          310
+        ],
+        "reservedColors": 8
+      }
+    ],
+    "protectedWineAndFireColors": [
+      "481f34",
+      "67243e",
+      "882d50",
+      "b2465a",
+      "ffedba",
+      "ffc34e",
+      "e87e2d",
+      "ba4c20"
+    ],
+    "dithering": false,
+    "opaqueColors": 128,
+    "alphaRange": [
+      255,
+      255
+    ],
+    "crop": null,
+    "aspectRatioAdjustmentPercent": -0.12299,
+    "pillow": "12.3.0",
+    "output": "camp-scene.png",
+    "outputSha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+  },
+  "normalizationScript": {
+    "path": "assets/concepts/camp-location-01/source/normalize.py",
+    "sha256": "bee8114d91706a61bf69585b64c77b9070e81c686d5c218125522126b75a4bfb",
+    "bytes": 3093
+  },
+  "illustration": {
+    "path": "assets/concepts/camp-location-01/camp-scene.png",
+    "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510",
+    "bytes": 704663,
+    "size": [
+      1512,
+      852
+    ],
+    "mode": "RGBA"
+  },
+  "paper": {
+    "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+    "fileName": "Monk RPG — визуальный поиск",
+    "pageId": "p-A-0",
+    "pageName": "Локация 01 — Лагерь странников",
+    "rootNodeId": "root_node_p-A-0",
+    "shareUrl": "https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-A-0",
+    "artboardId": "17A-0",
+    "artboardName": "01 · Лагерь странников — открытый мир",
+    "nodes": {
+      "header": "17B-0",
+      "eyebrowRow": "17C-0",
+      "locationLabel": "17D-0",
+      "safetyLabel": "17E-0",
+      "title": "17F-0",
+      "subtitle": "17G-0",
+      "panorama": "17I-0",
+      "image": "17J-0",
+      "legend": "17L-0",
+      "clearingGroup": "17N-0",
+      "clearingHeading": "17O-0",
+      "clearingText": "17P-0",
+      "shelterGroup": "17R-0",
+      "shelterHeading": "17S-0",
+      "shelterText": "17T-0",
+      "roadGroup": "17V-0",
+      "roadHeading": "17W-0",
+      "roadText": "17X-0"
+    },
+    "importedAssetUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/3MNWD4V253VV8MS1SJRP0DPDQ9.png",
+    "imageCss": {
+      "width": 1512,
+      "height": 852,
+      "backgroundSize": "contain",
+      "imageRendering": "pixelated"
+    },
+    "nativeText": true,
+    "artboardWidthPx": 1600,
+    "artboardHeight": "fit-content",
+    "exportHeightPx": 1232,
+    "tokensHashBeforeAndAfter": "811c9dc5",
+    "existingPagesEdited": false,
+    "activePageChanged": false,
+    "screenshotsReviewed": [
+      "header",
+      "panorama",
+      "complete board with three-column legend"
+    ],
+    "finishWorkingOnNodes": {
+      "called": true,
+      "nodeIds": [
+        "17A-0"
+      ],
+      "response": "OK"
+    },
+    "export": {
+      "tool": "mcp__paper__export",
+      "format": "png",
+      "scale": "1x",
+      "toolOutputPath": "/Users/kirchik/Downloads/01 · Лагерь странников — открытый мир.png",
+      "localFile": {
+        "path": "assets/concepts/camp-location-01/camp-paper-final.png",
+        "sha256": "bb276e60d27fa705f3f8f9e0cb9df3f33733d1db284cdb2348397673e0fd4c68",
+        "bytes": 921962,
+        "size": [
+          1600,
+          1232
+        ],
+        "mode": "RGBA"
+      }
+    }
+  },
+  "verification": {
+    "checkedAtUtc": "2026-10-22T20:57:56.449664+00:00",
+    "status": "pass",
+    "scene": {
+      "size": [
+        1512,
+        852
+      ],
+      "mode": "RGBA",
+      "colors": 128,
+      "alphaRange": [
+        255,
+        255
+      ],
+      "logicalSize": [
+        756,
+        426
+      ],
+      "pixelScale": 2,
+      "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+    },
+    "paperExport": {
+      "size": [
+        1600,
+        1232
+      ],
+      "mode": "RGBA",
+      "sha256": "bb276e60d27fa705f3f8f9e0cb9df3f33733d1db284cdb2348397673e0fd4c68",
+      "iccProfile": "Display P3 Gamut with sRGB Transfer",
+      "sceneBoxFromCss": [
+        44,
+        214,
+        1556,
+        1066
+      ],
+      "innerSceneSrgbMaximumChannelDifference": [
+        1,
+        1,
+        1
+      ],
+      "innerSceneSrgbMeanAbsoluteChannelDifference": [
+        0.132747985586307,
+        0.0712927280916871,
+        0.10823094439717731
+      ],
+      "innerSceneExact2PixelGrid": true,
+      "interiorAlphaRange": [
+        255,
+        255
+      ],
+      "outerOnePixelAlphaCounts": {
+        "204": 1600,
+        "205": 1231,
+        "221": 1231,
+        "234": 1598
+      }
+    },
+    "referenceCopiesMatch": true,
+    "runtimeAudit": {
+      "baselineFileCount": 54,
+      "unchangedBaselineFileCount": 51,
+      "changedSinceBaseline": [
+        {
+          "path": "assets/game/pixel-v4/landscape/reproducibility.json",
+          "beforeSha256": "920d9e223223869a70c3a49573ed0d4ffd14fa600116f63fcbb2afe5d807395d",
+          "afterSha256": "ef97ee425d128e6edaf904356eeea5a6e390b0133fbe70b417cd01eeb9c9361e"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/source/generation-records.json",
+          "beforeSha256": "2e77a7460de38183c5a6fe6aeedc8cc3d06797a7f06a36942963de9c391c5a39",
+          "afterSha256": "191364ac75d5ab486efc9f8ed6bb13d5cdde6cc7f1fa60c44f028a186f9227d1"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/source/provenance.json",
+          "beforeSha256": "04b4667a9544bd73bb688f80b3d109cba0e48fe35dffeea8878f5d687175af3f",
+          "afterSha256": "e428335f74727e8d327ac7173bfc48c5cbc1249c11740eb3247f65f96190174a"
+        }
+      ],
+      "addedSinceBaseline": [],
+      "pngManifestAndMaskDrift": [],
+      "note": "This task did not write runtime files. Metadata drift is recorded, not reverted or attributed to an author."
+    },
+    "deterministicNormalizationRebuild": {
+      "verified": true,
+      "byteIdenticalFiles": [
+        "camp-scene.png",
+        "source/normalization.json"
+      ]
+    },
+    "toolOutputCopiesByteIdentical": [
+      "source/scene-original-v1.png",
+      "source/scene-original-v2.png",
+      "camp-paper-final.png"
+    ]
+  },
+  "rightsAndSources": {
+    "externalDownloadedStock": false,
+    "referenceOrigin": "Existing project files; existing project rights remain applicable.",
+    "generatedSource": "Built-in ImageGen original outputs preserved unmodified.",
+    "licensingNote": "No new CC0, exclusivity or other license claim is made. No third-party stock or web references were used."
+  },
+  "limitations": [
+    "Concept illustration, not a literal gameplay capture, collision map or tile atlas; runtime 32 px/unit assets were not changed.",
+    "The distant foothills and grouped terrain are artistic extensions. Individual foreground outcrops exceed monk height; there is no continuous enclosing wall.",
+    "ImageGen source is not seed-reproducible through the exposed interface. Deterministic normalization can be reproduced from the preserved v2 PNG.",
+    "The genuine Paper export uses Display P3 and has one-pixel edge antialiasing; the separate source illustration is opaque and exactly on a 2-pixel grid.",
+    "Three runtime metadata JSON files changed elsewhere during this task. Their before/after hashes are recorded; no PNG, manifest or mask changed."
+  ]
+}

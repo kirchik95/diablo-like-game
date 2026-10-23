@@ -1,0 +1,431 @@
+
+> night-ritual@0.1.0 test
+> node --test
+
+✔ wraith exports the exact v2-compatible 52-key contract (0.752333ms)
+✔ all delivered wraith cells are distinct, nonempty, unclipped and match the packed alpha mask (63.304583ms)
+✔ appearance offers all 18 combinations, exact v2 alpha and matching frame-zero previews (742.739625ms)
+✔ hair remains on the head and every pose preserves all non-target materials (572.240833ms)
+✔ read-only verifier validates provenance and deterministic reconstruction without writes (9347.512041ms)
+✔ adventure: legacy fixture remains separate; new runs copy appearance and start safely in camp (0.90175ms)
+✔ adventure: E requires a nearby portal and one press cannot transition back or carry old actions (0.247208ms)
+✔ adventure: round trips retain deaths and HP, while live enemies return to safe neutral positions (0.674084ms)
+✔ adventure: secret and restorative shrine each work once across revisits (0.199916ms)
+✔ adventure: ritual rejects damage until guardians die, then is destroyed once without counting as a monster (6.547292ms)
+✔ adventure: backtracking preserves the ritual objective, broken seal, wounds and destruction (6.946792ms)
+✔ adventure: only returning with a destroyed source awards one bead; secret is optional (1.684959ms)
+✔ adventure: defeat freezes the run; restart restores all locations and keeps the supplied look (0.95225ms)
+✔ adventure wraith: aim locks for 0.8 seconds and releases one non-homing shot before recovery (0.553584ms)
+✔ adventure wraith: stun or lethal damage cancels an unfinished shot (0.83325ms)
+✔ adventure wraith: a solid pillar blocks projectiles, including coarse updates (1.357833ms)
+✔ adventure wraith: a shot damages once at fine and coarse update sizes (0.550083ms)
+✔ adventure wraith: dash and damage immunity absorb overlapping shots without damage (0.88ms)
+✔ adventure wraith: pause freezes shot, windup, action and elapsed time, then resumes (0.60075ms)
+✔ adventure: a paused run cannot use a nearby portal, cache or reward (9.881666ms)
+✔ adventure wraith: it routes around scenery to a firing line instead of shooting through a pillar (32.703209ms)
+✔ landscape combat: the first clearing offers melee flanks without activating a second enemy (0.231833ms)
+✔ landscape combat: the main route teaches a full-HP hound and then a wraith before the pair joins (11.125167ms)
+✔ landscape combat: the upper fork teaches its wraith without pulling the main wraith or return-leg hound (13.283083ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+✔ initial appearance failure leaves common assets ready and the hidden hero recoverable (96.620125ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:35]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:35]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:35]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:35]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:35]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:36]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:36]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:36]: Babylon.js v9.32.0 - Null engine
+✔ common asset readiness does not wait for a pending appearance in the scene (87.955875ms)
+✔ common asset failure still rejects renderer readiness after an appearance applies (24.323ms)
+✔ current appearance failure is reported, deduplicated across frames/restart, and explicitly retried (533.58375ms)
+✔ retry follows the current selection even before a render frame and ignores a stale failure (35.457709ms)
+▶ same-URL retry wins races against stale success and failure
+  ✔ loading, stale success (36.828542ms)
+  ✔ loading, stale error (33.236167ms)
+  ✔ ready, stale success (35.023416ms)
+  ✔ ready, stale error (34.820208ms)
+  ✔ error, stale success (31.979709ms)
+  ✔ error, stale error (32.998833ms)
+✔ same-URL retry wins races against stale success and failure (205.384792ms)
+✔ returning to the applied appearance cancels stale work, but explicit retry still loads it anew (33.773875ms)
+✔ real appearance texture loader disposes a failed texture and can reload the same URL (34.326125ms)
+✔ real appearance retry does not join an older in-flight Babylon request for the same URL (28.699583ms)
+✔ adventure scenery consumes actual location tiles and releases every local resource (236.594666ms)
+✔ revision change replaces equal-length enemies, clears actions and snaps the camera to entry (100.605334ms)
+✔ presentation resets death/effects on a same-length location change and preserves pause (0.142375ms)
+✔ wraith uses authored front/back, locked anticipation and recovery keys, then holds death (0.088ms)
+✔ selected appearance cannot be replaced by a late texture response or change masks/frame (31.717833ms)
+✔ wraith windup and live shot render at distinct floor/flight heights and freeze on pause (71.462791ms)
+✔ ritual lock, vulnerability and destruction remain distinct on returning to the court (104.090833ms)
+✔ the outdoor courtyard uses a permanently open ruin arch without adding a transition (55.970125ms)
+✔ map fits the entire forked road and distinguishes portals, cache, shrine and reward (1.564083ms)
+✔ real overlay and minimap draw safely in all three locations including an empty camp (215.417292ms)
+✔ ranged warning stops at the first solid obstacle, along the locked shot direction (0.212833ms)
+✔ wraith target picking follows per-frame alpha through front, back, mirror and death (69.915334ms)
+✔ repeated location round trips release enemies, projectiles and effects as well as scenery (504.516583ms)
+✔ a failed stale appearance load cannot surface an error after a newer look is applied (31.523333ms)
+✔ backtracking shows retained corpses and spent shrine endpoints without replaying their actions (0.199084ms)
+✔ ritual pedestal contact center sits on its target and ground seal (65.687125ms)
+BJS - [00:12:36]: Babylon.js v9.32.0 - Null engine
+✔ published spirit package loads masks matching real front/back frames and uses nearest textures (143.585958ms)
+✔ appearance applies the helper URL and retains the selected atlas through a fresh run (72.499625ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+✔ current atlas failure blocks start until a real retry applies the chosen look, including restart (642.777459ms)
+✔ initial appearance failure is recoverable within the welcome picker (103.972167ms)
+✔ ready appearance cannot start the game while common world assets are pending (96.409834ms)
+✔ common asset failure keeps the fatal world screen and blocks direct start (77.449417ms)
+✔ stale retry resolve cannot replace the newer selection's loading state (89.792333ms)
+✔ stale retry reject cannot replace the newer selection's loading state (86.889792ms)
+✔ stale retry resolve cannot replace the newer selection's error state (80.664167ms)
+✔ stale retry reject cannot replace the newer selection's error state (85.30325ms)
+✔ appearance defaults malformed input and only replaces invalid choices (1.290917ms)
+✔ appearance normalization isolates a chosen look from its caller and defaults (0.075625ms)
+✔ every offered look resolves the matching atlas and preview without losing metadata (0.245375ms)
+✔ E queues one interaction per physical press and sampling drains the action (0.484459ms)
+✔ pause and modifier shortcuts cannot queue interactions or leak an old action (1.461917ms)
+✔ E preserves movement, aiming and the existing combat actions (0.148834ms)
+✔ clearing input on a portal or panel discards held attacks and the old pointer target (0.194209ms)
+✔ Space on HUD buttons keeps native activation and does not dash; canvas still dashes once (0.22525ms)
+✔ game keys leave form controls, links and content editors to their own keyboard handling (0.672208ms)
+✔ releasing a movement key over an editor cannot leave movement held after focus changes (0.104417ms)
+✔ M and Escape remain uncancelled for the separate global shortcuts (0.124ms)
+✔ adventure world: every spawn and entry reaches portals, objectives and encounters with actual actor radii (1037.37825ms)
+✔ adventure world: the side loop is reachable and optional for the main road (17.947041ms)
+✔ adventure world: location collision is isolated and shared geometry cannot be mutated by a run (0.337083ms)
+✔ landscape world: added earth shoulders are usable and connected to the original approach (466.350792ms)
+✔ landscape world: paving is an immutable proper subset with room for actors and prop foundations (1.468083ms)
+✔ landscape world: connected paving leads between arrivals and every interaction without crossing earth gaps (177.146875ms)
+✔ landscape world: main paths stay about three cells wide and the side loop never advertises a false exit (0.183083ms)
+✔ v2 delivery: monk runtime atlas and current-frame masks match the real PNG in both mirrors (82.202208ms)
+✔ v2 delivery: hound runtime atlas and current-frame masks match the real PNG in both mirrors (63.814417ms)
+✔ v2 delivery: world runtime atlas and current-frame masks match the real PNG in both mirrors (34.034959ms)
+✔ v2 delivery: effects runtime atlas and current-frame masks match the real PNG in both mirrors (31.627ms)
+✔ v2 masks: sprite-local masks use current atlas row, frame and mirror with no v1 fallback (0.441833ms)
+✔ v2 masks: packed little-bit-first data decodes without altering opaque pixels (0.352208ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+✔ v2 picking: real airborne front/back/mirrored bodies target the hound at an odd offset viewport (67.329834ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+✔ v2 renderer: dynamic scenery uses world clips while the existing column atlas remains intact (53.450541ms)
+✔ camp flame follows its four authored frames and freezes on pause without animating the base (43.5835ms)
+✔ v2 renderer: paused camera, pose and scenery freeze; death keeps rendering after defeat (39.930208ms)
+✔ v2 renderer: event FX expire and warning keys follow windup rather than a free-running loop (12.140625ms)
+✔ v2 renderer: pausing on an impact preserves its exact camera displacement (16.449625ms)
+✔ v2 renderer: hurt retains one camera impulse while reduced motion suppresses it (76.523ms)
+✔ v2 renderer: authored warning arrow follows eight actual windup headings on the isometric floor (53.398708ms)
+✔ v2 renderer: the healing halo is within one native pixel of the floor while impact keeps its height (7.913959ms)
+✔ v2: each palm uses its six authored keys, with contact at the simulation boundary (0.87925ms)
+✔ v2: six-key locomotion follows traveled distance rather than elapsed time (0.14925ms)
+✔ v2: both species use authored back clips and independent horizontal mirrors (0.097375ms)
+✔ v2: all six dash drawings play within 200 ms; death and dash beat hurt or a pending palm (0.07875ms)
+✔ v2: hound anticipation, actual contact and recovery select distinct attack keys (0.078417ms)
+✔ v2: death finishes after simulation stops, holds once, and locks the last facing (0.370125ms)
+✔ v2: pause freezes the full presentation, including death, effects and scenery (0.157792ms)
+✔ v2: replayed event objects do not retrigger; a new game resets deaths, one-shots and effects (0.12475ms)
+✔ v2: shrine and gate start on the event edge, show all keys, then hold endpoints (0.357041ms)
+✔ v2: braziers cycle all authored keys at independent cyan and magenta rates (0.108916ms)
+✔ v2: wave appears immediately without delaying damage; movement and dash cancel its gesture (0.535583ms)
+✔ v2: stale hit tint expires after defeat and hurt never delays control (0.149209ms)
+✔ v2: authored impact, warning and healing FX expose six keys and expire at their endpoint (0.091709ms)
+✔ camp manifest supplies exact slicing, frame keys and sampling contract (0.743583ms)
+✔ actual atlases have binary clean alpha and family-wide palette limits (105.604708ms)
+✔ six static drawings fit distinct physical sizes and rest at their ground anchors (67.085042ms)
+✔ four flame poses change substantial silhouette area while their roots remain fixed (29.2815ms)
+✔ little-bit-first hit masks match every pixel of both actual atlases (20.690584ms)
+✔ all six props publish measured ground registration without confusing it with the render anchor (66.277834ms)
+✔ saved originals, exact prompts and relative references have valid provenance hashes (19.096583ms)
+✔ native previews preserve final pixels and enlarge only by nearest neighbor (445.056625ms)
+✔ verify-only reconstructs every delivered artifact without changing package bytes or timestamps (2476.961625ms)
+✔ a relocated checkout verifies read-only and rejects missing references, altered sources and damaged outputs (4712.288ms)
+✔ rectangular obstacles block their long side without blocking space beyond the short side (5.826292ms)
+✔ camp exports one immutable materialized layout used by the campaign (0.450208ms)
+✔ expanded camp has a connected natural footprint and one northern road mouth (350.607208ms)
+✔ solid camp props use their world collider centers once, while grass stays traversable (0.326375ms)
+✔ both tent registrations match their own measured cloth footprints and exclude ropes (2.603083ms)
+✖ road-marker collision encloses its measured ground contact at the actual scale and flip (0.433375ms)
+✖ campfire-base collision encloses its measured ground contact at the actual scale and flip (0.140375ms)
+✖ supply-cache collision encloses its measured ground contact at the actual scale and flip (0.125792ms)
+✖ fallen-log collision encloses its measured ground contact at the actual scale and flip (0.107209ms)
+✖ the real fire ring blocks the old close approach and leaves the revised approach usable (2.762458ms)
+✔ the central clearing and inward tent, fire and reward approaches remain reachable (1872.615417ms)
+✔ the central camp prop foundations stay separate after art registration (0.14975ms)
+✔ camp paving connects spawn, entry and reward without crossing solid foundations (96.749875ms)
+✔ expanded camp keeps E round trips, an accessible reward and restart behavior (200.500917ms)
+✔ camp transfer preserves complete road and courtyard definitions (0.543125ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+✔ camp atlases load both filename-keyed masks with native slicing and nearest sampling (73.49725ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+✔ published camp masks follow actual PNG pixels through frames, scale and mirror (193.895917ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+✔ common readiness waits for the camp image transport (90.602583ms)
+✔ a failed camp image rejects common readiness (34.716209ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+✔ common readiness waits for the campFlame image transport (26.138458ms)
+✔ a failed campFlame image rejects common readiness (35.792708ms)
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+✔ common readiness waits for the camp mask transport (19.707791ms)
+✔ common readiness rejects missing camp.png masks (17.53175ms)
+✔ common readiness rejects short camp.png masks (19.589791ms)
+✔ common readiness rejects width camp.png masks (37.60275ms)
+✔ common readiness rejects missing camp-flame.png masks (19.792417ms)
+✔ common readiness rejects short camp-flame.png masks (20.451958ms)
+✔ common readiness rejects width camp-flame.png masks (25.008875ms)
+✔ a failed camp mask response rejects common readiness (27.56825ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+✔ real tent and enlarged tree masks reveal the hero at reachable rear approaches (331.426375ms)
+✔ authored flame root meets the base at their shared ground anchor (205.609375ms)
+✔ a swing damages each target only once, and not behind the monk (1.154917ms)
+✔ three consecutive strikes finish stronger and an idle gap resets the combo (1.819167ms)
+✔ a dash grants immunity, moves, and cannot be retriggered during its cooldown (6.39475ms)
+✔ wave damages nearby monsters, interrupts attacks, and respects cooldown (0.160167ms)
+✔ a hound telegraphs its leap, then recovers and damages once (0.392291ms)
+✔ lethal damage ends the run and a fresh run fully restores state (0.1025ms)
+✔ all encounters, shrine and exit are connected to the entrance (6.712917ms)
+✔ fast motion cannot tunnel through the edge of a platform (1.19125ms)
+✔ clearing the monsters opens the exit but victory requires reaching it (0.233917ms)
+✔ the shrine heals once and cannot be farmed (0.13525ms)
+✔ a chasing hound routes around the brazier on the path to the gate (7.540583ms)
+✔ a hound uses its full body radius when approaching the side shrine (14.440042ms)
+✔ landscape publishes the exact renderer contract at 32 native pixels per unit (0.689458ms)
+✔ eight real prop cells have binary alpha, one shared palette, connected silhouettes and native scale (32.023708ms)
+✔ packed little-bit-first hit mask matches every actual PNG alpha pixel (28.021292ms)
+✔ three surfaces are opaque, low-contrast, palette-bounded and seamless on both axes (16.536625ms)
+✔ source drafts, exact prompts and native/2x visual proof are delivered with recorded hashes (745.077625ms)
+✔ verify-only reconstructs the package and validates sources without writing any files (1085.239584ms)
+✔ relocated verification uses the copied references and never writes to the independent checkout (1918.862375ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+✔ the landscape package loads through common readiness with repeated opaque surfaces and matching sprite masks (168.199417ms)
+✔ common readiness waits for the landscape texture transport (77.9585ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:35]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:35]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:35]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:35]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:36]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:38]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:38]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:38]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:38]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:38]: Babylon.js v9.32.0 - Null engine
+✔ camp renders every shared placement once with its exact anchor, scale and mirror (268.67175ms)
+✔ walkable shoulders contain broad moss patches and camp retains an earthen fire clearing (629.544541ms)
+✔ sparse walkable grass leaves paving, interactions, columns and encounter centers clear (308.887792ms)
+✔ camp has a low earthen edge while road and courtyard retain their descending terraces (197.322791ms)
+✔ camp earth is light and its procedural forest leaves the authored boundary belt clear (69.204ms)
+✔ outdoor courtyard masonry meets the lower ground beside the plateau (27.295167ms)
+✔ tall courtyard returns do not project across reachable foot anchors (101.441166ms)
+✔ camp: real terrain covers viewport corners from every reachable edge (1534.768ms)
+✔ road: real terrain covers viewport corners from every reachable edge (1164.560291ms)
+✔ courtyard: real terrain covers viewport corners from every reachable edge (464.878125ms)
+✔ paving is a material subset; the remaining walk mask is earth and the exterior drops into real terrain (16.35675ms)
+✔ landscape composition is deterministic under tile reordering and keeps tall scenery off the walk mask (58.0775ms)
+✔ rendered tent cloth contacts agree with their separately placed world collision footprints (79.937041ms)
+✔ landscape transitions dispose owned geometry, materials and texture clones without releasing shared art (206.932167ms)
+✔ monk front/back and mirror directions agree with the isometric camera (0.656375ms)
+✔ run keyframes alternate both legs with distance and stop in a neutral pose (0.13675ms)
+✔ the palm strike is visible at the actual damage instant, and dash wins over attack (0.124625ms)
+✔ hound warning, pounce, recovery and death each have a readable distinct pose (0.2445ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+✔ occlusion samples the scaled front silhouette without adding a phantom unscaled silhouette (0.474625ms)
+✔ occlusion samples the scaled actor at its rendered screen positions (0.091708ms)
+✔ renderer fades enlarged foreground props beyond the old unscaled broad phase and restores them (14.931292ms)
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:33]: Babylon.js v9.32.0 - Null engine
+✔ picking: the reported opaque hound pixel (48,60) targets its world center (22.545959ms)
+✔ picking: aiming at the hound body through Input lands a melee hit (2.935209ms)
+✔ picking: an asymmetric opaque pixel follows horizontal sprite mirroring (1.581458ms)
+✔ picking: scaled billboard pixels follow the rendered silhouette and transparent padding (2.642875ms)
+✔ picking: the vacated side of a mirrored hound lets the pointer reach the floor (1.457083ms)
+✔ picking: changing the current pose also changes which pixels intercept the floor (5.1035ms)
+✔ picking: a moved airborne hound uses its second-row pose at an odd canvas size (1.59225ms)
+✔ picking: transparent atlas padding and gaps do not capture the floor (1.222666ms)
+✔ picking: opaque pixels of a dead hound do not capture the floor (1.225333ms)
+✔ picking: a live hound hidden by isVisible does not capture the floor (1.5185ms)
+✔ picking: a live hound hidden by visibility does not capture the floor (0.883958ms)
+✔ picking: a live hound hidden by disabled does not capture the floor (0.804291ms)
+✔ picking: floor projection round-trips at 1440x900 with a 720x450 framebuffer and offset (0.30725ms)
+✔ picking: floor projection round-trips at 1441x901 with a 720x450 framebuffer and offset (0.229125ms)
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+✔ column bases block the reachable rear-corner penetration from the render review (0.417708ms)
+✔ column contact follows the square plinth and the body radius around its corners (0.110834ms)
+✔ column sprites place their measured ground-contact diamond on the collision footprint (35.169917ms)
+✔ fast movement stops before a column base and can retreat (2.589625ms)
+✔ column footprints preserve walked shrine and exit routes for monk and hound (10.163833ms)
+✔ pixel slice: all eight movement headings aim a locked swing at the front target (4.072625ms)
+✔ pixel slice: pointer aim is independent of movement and queued actions are consumed once (0.426042ms)
+✔ pixel slice: dash follows its initial heading despite changed aim and held attack (0.894334ms)
+✔ pixel slice: dash and wave cancel a pending swing without a delayed extra hit (0.266209ms)
+✔ pixel slice: a brazier blocks both a melee hit and the spirit wave (0.136875ms)
+✔ pixel slice: dashing into a brazier or platform edge never tunnels and allows retreat (1.194208ms)
+✔ pixel slice: holding attack kills the hound once and victory needs a walked route to the exit (15.555667ms)
+✔ pixel slice: shrine and exit are reachable by body movement and full health does not consume healing (7.169ms)
+✔ pixel slice: defeat freezes state and a restart shares no mutable objects with the old run (0.282333ms)
+✔ pixel slice: a hound resumes attacking after a wave and dash end almost at its center (12.090709ms)
+✔ pixel slice: a hound completes a route around a brazier even after getting close to its target (20.623292ms)
+✔ pixel slice: the final hit flash expires while the dead hound completes then holds its corpse pose (0.226917ms)
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+BJS - [00:12:34]: Babylon.js v9.32.0 - Null engine
+✔ pointer CSS coordinates aim at the same world point on a high-DPI display (6.162375ms)
+✔ D and A move right and left on the fixed Babylon camera (0.851542ms)
+✔ movement-facing preserves a zero world component before pointer input (0.078375ms)
+ℹ tests 228
+ℹ suites 0
+ℹ pass 223
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10880.688583
+
+✖ failing tests:
+
+test at tests/camp-layout.test.js:127:3
+✖ road-marker collision encloses its measured ground contact at the actual scale and flip (0.433375ms)
+  AssertionError [ERR_ASSERTION]: marker-west: collider includes empty atlas padding
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-layout.test.js:143:18)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/camp-layout.test.js:127:3
+✖ campfire-base collision encloses its measured ground contact at the actual scale and flip (0.140375ms)
+  AssertionError [ERR_ASSERTION]: fire: the visible stone ring protrudes beyond collision
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-layout.test.js:137:16)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/camp-layout.test.js:127:3
+✖ supply-cache collision encloses its measured ground contact at the actual scale and flip (0.125792ms)
+  AssertionError [ERR_ASSERTION]: supplies: solid art exceeds its collider
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-layout.test.js:142:18)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/camp-layout.test.js:127:3
+✖ fallen-log collision encloses its measured ground contact at the actual scale and flip (0.107209ms)
+  AssertionError [ERR_ASSERTION]: log: solid art exceeds its collider
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-layout.test.js:142:18)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/camp-layout.test.js:151:1
+✖ the real fire ring blocks the old close approach and leaves the revised approach usable (2.762458ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-layout.test.js:153:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

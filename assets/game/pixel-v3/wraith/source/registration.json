@@ -1,0 +1,1406 @@
+[
+  {
+    "index": 0,
+    "frame": "front-idle-01",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-idle.png",
+    "crop": [
+      0,
+      0,
+      688,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      458.5,
+      353.44444444444446
+    ],
+    "offset": [
+      -55,
+      4
+    ],
+    "nativeBounds": [
+      32,
+      28,
+      64,
+      78
+    ],
+    "pixelsSha256": "1768c5d5965724f72c759023e1fe5bc614ca437c3dc2563d4b3ab606c9ea00b3"
+  },
+  {
+    "index": 1,
+    "frame": "front-idle-02",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-idle.png",
+    "crop": [
+      688,
+      0,
+      1376,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      215.5,
+      356.3333333333333
+    ],
+    "offset": [
+      0,
+      4
+    ],
+    "nativeBounds": [
+      34,
+      18,
+      63,
+      74
+    ],
+    "pixelsSha256": "5081c2a5ce96df66e66cca617df322fca669e1714b4b61198f21ce6d13567079"
+  },
+  {
+    "index": 2,
+    "frame": "front-idle-03",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-idle.png",
+    "crop": [
+      0,
+      384,
+      688,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      434.0,
+      317.22222222222223
+    ],
+    "offset": [
+      -50,
+      13
+    ],
+    "nativeBounds": [
+      21,
+      16,
+      74,
+      70
+    ],
+    "pixelsSha256": "6714305bcc57d013d716b77b9ca080f6d209d82fe9892da7be04e66444311ed1"
+  },
+  {
+    "index": 3,
+    "frame": "front-idle-04",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-idle.png",
+    "crop": [
+      688,
+      384,
+      1376,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      209.5,
+      315.3333333333333
+    ],
+    "offset": [
+      1,
+      13
+    ],
+    "nativeBounds": [
+      30,
+      27,
+      66,
+      75
+    ],
+    "pixelsSha256": "5fd75bdbaeb9b5796694f573c20def51b9968d9c5b3999ccbf356a77fc577333"
+  },
+  {
+    "index": 4,
+    "frame": "front-run-01",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-drift.png",
+    "crop": [
+      0,
+      0,
+      450,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      212.0,
+      354.6666666666667
+    ],
+    "offset": [
+      0,
+      4
+    ],
+    "nativeBounds": [
+      20,
+      24,
+      76,
+      71
+    ],
+    "pixelsSha256": "f2c4444d6ddf535bd99a1cf763b58aca925a2cc8e4015498c8ffef7693818317"
+  },
+  {
+    "index": 5,
+    "frame": "front-run-02",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-drift.png",
+    "crop": [
+      450,
+      0,
+      900,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      207.5,
+      375.1111111111111
+    ],
+    "offset": [
+      1,
+      0
+    ],
+    "nativeBounds": [
+      15,
+      23,
+      80,
+      67
+    ],
+    "pixelsSha256": "e05f8063e3d573eb951ee99b1a64bee0f33474d55cd0360c882b97257a7a26e5"
+  },
+  {
+    "index": 6,
+    "frame": "front-run-03",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-drift.png",
+    "crop": [
+      900,
+      0,
+      1376,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      209.5,
+      402.55555555555554
+    ],
+    "offset": [
+      1,
+      -7
+    ],
+    "nativeBounds": [
+      8,
+      21,
+      89,
+      60
+    ],
+    "pixelsSha256": "cee835bb39e453d7fd5fe0966da3edcd0c1bc060784847f4faf86ef2f03fe71d"
+  },
+  {
+    "index": 7,
+    "frame": "front-run-04",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-drift.png",
+    "crop": [
+      0,
+      384,
+      450,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      258.0,
+      330.6666666666667
+    ],
+    "offset": [
+      -10,
+      10
+    ],
+    "nativeBounds": [
+      12,
+      24,
+      84,
+      70
+    ],
+    "pixelsSha256": "f62dc02d7be6e3c7470a6b44084be291d65be7d8bdbab7f4497fdf53f5a95913"
+  },
+  {
+    "index": 8,
+    "frame": "front-run-05",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-drift.png",
+    "crop": [
+      450,
+      384,
+      900,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      229.0,
+      302.1111111111111
+    ],
+    "offset": [
+      -4,
+      16
+    ],
+    "nativeBounds": [
+      26,
+      23,
+      69,
+      74
+    ],
+    "pixelsSha256": "62f3c9f6f503ca6c1eac219090c696434d3668d873610f308f97548e364cacf0"
+  },
+  {
+    "index": 9,
+    "frame": "front-run-06",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-drift.png",
+    "crop": [
+      900,
+      384,
+      1376,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      179.0,
+      330.6666666666667
+    ],
+    "offset": [
+      8,
+      10
+    ],
+    "nativeBounds": [
+      16,
+      24,
+      80,
+      72
+    ],
+    "pixelsSha256": "63ba6787585d71e4003bfcb513d88c026c39be12ddfef048d78653d26db83b46"
+  },
+  {
+    "index": 10,
+    "frame": "front-attack-01",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-attack.png",
+    "crop": [
+      0,
+      0,
+      450,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      240.0,
+      347.6666666666667
+    ],
+    "offset": [
+      -6,
+      6
+    ],
+    "nativeBounds": [
+      34,
+      24,
+      62,
+      75
+    ],
+    "pixelsSha256": "b0de54376ac3ac452c0bd28feb5cfc13f137862df31828e3e0f56769f718337c"
+  },
+  {
+    "index": 11,
+    "frame": "front-attack-02",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-attack.png",
+    "crop": [
+      450,
+      0,
+      880,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      196.0,
+      352.6666666666667
+    ],
+    "offset": [
+      4,
+      5
+    ],
+    "nativeBounds": [
+      34,
+      24,
+      62,
+      74
+    ],
+    "pixelsSha256": "848a7acfe865a8c4fd12cc474be1fca18c0b31e4e026e6eab98b6a601c24aced"
+  },
+  {
+    "index": 12,
+    "frame": "front-attack-03",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-attack.png",
+    "crop": [
+      880,
+      0,
+      1376,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      127.5,
+      356.1111111111111
+    ],
+    "offset": [
+      19,
+      4
+    ],
+    "nativeBounds": [
+      21,
+      23,
+      74,
+      76
+    ],
+    "pixelsSha256": "9f441e9878355453a4d60af2f80dd42889d5836eb46368189df8264837cb0422"
+  },
+  {
+    "index": 13,
+    "frame": "front-attack-04",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-attack.png",
+    "crop": [
+      0,
+      384,
+      520,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      235.0,
+      302.6666666666667
+    ],
+    "offset": [
+      -5,
+      16
+    ],
+    "nativeBounds": [
+      19,
+      24,
+      77,
+      72
+    ],
+    "pixelsSha256": "6bd478869046429db78efd9fdf6fdec9544dc8d91e19f16edb00085ff84848a9"
+  },
+  {
+    "index": 14,
+    "frame": "front-attack-05",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-attack.png",
+    "crop": [
+      520,
+      384,
+      920,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      184.5,
+      325.3333333333333
+    ],
+    "offset": [
+      6,
+      11
+    ],
+    "nativeBounds": [
+      25,
+      18,
+      70,
+      77
+    ],
+    "pixelsSha256": "1f903bab313dc0e6a1dea921333b0892630ff335b4d9252cf9dcdac58c8eaf71"
+  },
+  {
+    "index": 15,
+    "frame": "front-attack-06",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-attack.png",
+    "crop": [
+      920,
+      384,
+      1376,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      216.0,
+      324.3333333333333
+    ],
+    "offset": [
+      -1,
+      11
+    ],
+    "nativeBounds": [
+      31,
+      18,
+      65,
+      77
+    ],
+    "pixelsSha256": "d03c06685c40dcbfbc502bc4bf9ba52ba26dc3c88957ee5d2973650c073ed3b9"
+  },
+  {
+    "index": 16,
+    "frame": "front-hurt-01",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-hurt.png",
+    "crop": [
+      0,
+      0,
+      688,
+      384
+    ],
+    "scale": 0.22,
+    "rootInCrop": [
+      417.5,
+      356.3636363636364
+    ],
+    "offset": [
+      -44,
+      6
+    ],
+    "nativeBounds": [
+      30,
+      21,
+      65,
+      79
+    ],
+    "pixelsSha256": "423e18bec00387187b8c16e2071c88596f3158d180d2fa652d15f3710426a578"
+  },
+  {
+    "index": 17,
+    "frame": "front-hurt-02",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-hurt.png",
+    "crop": [
+      688,
+      0,
+      1376,
+      384
+    ],
+    "scale": 0.22,
+    "rootInCrop": [
+      205.0,
+      419.8181818181818
+    ],
+    "offset": [
+      3,
+      -8
+    ],
+    "nativeBounds": [
+      15,
+      22,
+      81,
+      66
+    ],
+    "pixelsSha256": "78c7ba209cc6449d07b69b9c3a967cc075a6c280e04eec13467bfb34e9054d79"
+  },
+  {
+    "index": 18,
+    "frame": "front-hurt-03",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-hurt.png",
+    "crop": [
+      0,
+      384,
+      688,
+      768
+    ],
+    "scale": 0.22,
+    "rootInCrop": [
+      429.0,
+      331.27272727272725
+    ],
+    "offset": [
+      -46,
+      11
+    ],
+    "nativeBounds": [
+      31,
+      23,
+      65,
+      74
+    ],
+    "pixelsSha256": "384b46a1a402ec05272013cdf6dc8003ebc75af301f3c94a3b903a8a86ff78d7"
+  },
+  {
+    "index": 19,
+    "frame": "front-hurt-04",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-hurt.png",
+    "crop": [
+      688,
+      384,
+      1376,
+      768
+    ],
+    "scale": 0.22,
+    "rootInCrop": [
+      206.0,
+      332.27272727272725
+    ],
+    "offset": [
+      3,
+      11
+    ],
+    "nativeBounds": [
+      33,
+      23,
+      64,
+      76
+    ],
+    "pixelsSha256": "ad349cb41ff7ad217d6fc389469269de09cd6612a503f6d390257680b6db3b38"
+  },
+  {
+    "index": 20,
+    "frame": "front-death-01",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-death.png",
+    "crop": [
+      0,
+      0,
+      450,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      221,
+      355
+    ],
+    "offset": [
+      -2,
+      4
+    ],
+    "nativeBounds": [
+      31,
+      19,
+      64,
+      78
+    ],
+    "pixelsSha256": "8f9ce075b80e52d15c3fe031aabbe92d7049643f3f1dd30cf46c9bae25a88462"
+  },
+  {
+    "index": 21,
+    "frame": "front-death-02",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-death.png",
+    "crop": [
+      450,
+      0,
+      900,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      226,
+      355
+    ],
+    "offset": [
+      -3,
+      4
+    ],
+    "nativeBounds": [
+      31,
+      19,
+      65,
+      78
+    ],
+    "pixelsSha256": "95b16f919a6c3b9ce2210d2a37a7738b9696ab27e13f25481180f5a52221e57d"
+  },
+  {
+    "index": 22,
+    "frame": "front-death-03",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-death.png",
+    "crop": [
+      900,
+      0,
+      1376,
+      384
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      234,
+      355
+    ],
+    "offset": [
+      -5,
+      4
+    ],
+    "nativeBounds": [
+      27,
+      18,
+      67,
+      77
+    ],
+    "pixelsSha256": "2269fc1e2d4caf3b027330d965203781618afa6b489c67fc11b41e165f12c83c"
+  },
+  {
+    "index": 23,
+    "frame": "front-death-04",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-death.png",
+    "crop": [
+      0,
+      384,
+      450,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      232,
+      371
+    ],
+    "offset": [
+      -4,
+      1
+    ],
+    "nativeBounds": [
+      32,
+      18,
+      63,
+      59
+    ],
+    "pixelsSha256": "7b2a71e8be4b6e135a2cb93efbf8e4a6844dbab94cfc53dacb14fedd4e77b300"
+  },
+  {
+    "index": 24,
+    "frame": "front-death-05",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-death.png",
+    "crop": [
+      450,
+      384,
+      900,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      225,
+      386
+    ],
+    "offset": [
+      -3,
+      -3
+    ],
+    "nativeBounds": [
+      40,
+      29,
+      55,
+      39
+    ],
+    "pixelsSha256": "f00efc3cdfa5e60b0942232ab3016a8ff68963cb71462d75deb120dba1ea6987"
+  },
+  {
+    "index": 25,
+    "frame": "front-death-06",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-death.png",
+    "crop": [
+      900,
+      384,
+      1376,
+      768
+    ],
+    "scale": 0.225,
+    "rootInCrop": [
+      231,
+      391
+    ],
+    "offset": [
+      -4,
+      -4
+    ],
+    "nativeBounds": [
+      47,
+      33,
+      49,
+      34
+    ],
+    "pixelsSha256": "bd7550f45eebe11b1ee6103b456fcf438067ff25132c16c4e5ee7ee701611fc5"
+  },
+  {
+    "index": 26,
+    "frame": "back-idle-01",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+    "crop": [
+      0,
+      0,
+      887,
+      450
+    ],
+    "scale": 0.135,
+    "rootInCrop": [
+      635.5,
+      454.4074074074074
+    ],
+    "offset": [
+      -38,
+      23
+    ],
+    "nativeBounds": [
+      29,
+      29,
+      67,
+      83
+    ],
+    "pixelsSha256": "d323ad6e325438116d8f7d0da82ea21503b02266c853838098c042296b0e697e"
+  },
+  {
+    "index": 27,
+    "frame": "back-idle-02",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+    "crop": [
+      887,
+      0,
+      1774,
+      450
+    ],
+    "scale": 0.135,
+    "rootInCrop": [
+      275.0,
+      526.8888888888889
+    ],
+    "offset": [
+      11,
+      13
+    ],
+    "nativeBounds": [
+      32,
+      18,
+      64,
+      71
+    ],
+    "pixelsSha256": "d29d32ceb9db4ce735776e3e4439015c8fb611d6d2817f8601d40885bd7089cf"
+  },
+  {
+    "index": 28,
+    "frame": "back-idle-03",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+    "crop": [
+      0,
+      450,
+      887,
+      887
+    ],
+    "scale": 0.135,
+    "rootInCrop": [
+      651.5,
+      546.7037037037037
+    ],
+    "offset": [
+      -40,
+      10
+    ],
+    "nativeBounds": [
+      24,
+      16,
+      73,
+      64
+    ],
+    "pixelsSha256": "d2156eda29cab9b8479ad00560af571d19f28efdcc23de7e90228e3a478c226a"
+  },
+  {
+    "index": 29,
+    "frame": "back-idle-04",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+    "crop": [
+      887,
+      450,
+      1774,
+      887
+    ],
+    "scale": 0.135,
+    "rootInCrop": [
+      270.5,
+      457.2222222222222
+    ],
+    "offset": [
+      11,
+      22
+    ],
+    "nativeBounds": [
+      29,
+      27,
+      66,
+      76
+    ],
+    "pixelsSha256": "2e136af01c0c30a03803d9a7547de15f2ee3f9c7eaa7f73efb5241f37b632416"
+  },
+  {
+    "index": 30,
+    "frame": "back-run-01",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-run.png",
+    "crop": [
+      0,
+      0,
+      530,
+      512
+    ],
+    "scale": 0.155,
+    "rootInCrop": [
+      275.5,
+      501.0967741935484
+    ],
+    "offset": [
+      5,
+      6
+    ],
+    "nativeBounds": [
+      18,
+      24,
+      78,
+      78
+    ],
+    "pixelsSha256": "fb94a6d440c917c3bcb2928cc17d9cc6426a5e71799595740b4c0cdba9761744"
+  },
+  {
+    "index": 31,
+    "frame": "back-run-02",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-run.png",
+    "crop": [
+      530,
+      0,
+      990,
+      512
+    ],
+    "scale": 0.155,
+    "rootInCrop": [
+      234.5,
+      512.5483870967741
+    ],
+    "offset": [
+      12,
+      5
+    ],
+    "nativeBounds": [
+      16,
+      23,
+      80,
+      76
+    ],
+    "pixelsSha256": "c9db951a5e3a10a454914fea8e69ab0c7eb560eb56a95867aac77b9f183ed1d9"
+  },
+  {
+    "index": 32,
+    "frame": "back-run-03",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-run.png",
+    "crop": [
+      990,
+      0,
+      1536,
+      512
+    ],
+    "scale": 0.155,
+    "rootInCrop": [
+      263.5,
+      519.0
+    ],
+    "offset": [
+      7,
+      4
+    ],
+    "nativeBounds": [
+      10,
+      22,
+      86,
+      77
+    ],
+    "pixelsSha256": "11c9c1a499e3806ab5adc5b054225abb435617fd77f379c5039bfb3bed8852f2"
+  },
+  {
+    "index": 33,
+    "frame": "back-run-04",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-run.png",
+    "crop": [
+      0,
+      512,
+      560,
+      1024
+    ],
+    "scale": 0.155,
+    "rootInCrop": [
+      298.0,
+      466.0967741935484
+    ],
+    "offset": [
+      2,
+      12
+    ],
+    "nativeBounds": [
+      12,
+      24,
+      84,
+      76
+    ],
+    "pixelsSha256": "9a9dad88834bd9353c971e118bad6b34b6c1bed2b395cc4d14dbf5114f0e7a99"
+  },
+  {
+    "index": 34,
+    "frame": "back-run-05",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-run.png",
+    "crop": [
+      560,
+      512,
+      980,
+      1024
+    ],
+    "scale": 0.155,
+    "rootInCrop": [
+      233.5,
+      439.5483870967742
+    ],
+    "offset": [
+      12,
+      16
+    ],
+    "nativeBounds": [
+      25,
+      23,
+      71,
+      81
+    ],
+    "pixelsSha256": "c2b7f569b453a12679ed1abfdb388008939d4e2eb5e9184c27d9194e0dbc38ca"
+  },
+  {
+    "index": 35,
+    "frame": "back-run-06",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-run.png",
+    "crop": [
+      980,
+      512,
+      1536,
+      1024
+    ],
+    "scale": 0.155,
+    "rootInCrop": [
+      274.0,
+      465.0967741935484
+    ],
+    "offset": [
+      6,
+      12
+    ],
+    "nativeBounds": [
+      11,
+      24,
+      86,
+      76
+    ],
+    "pixelsSha256": "b9ef69be06c168d33fc0b1d57c38c66b1ec077f03082b03c736bfeedd4414625"
+  },
+  {
+    "index": 36,
+    "frame": "back-attack-01",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-attack.png",
+    "crop": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "scale": 0.14,
+    "rootInCrop": [
+      275.0,
+      531.5714285714286
+    ],
+    "offset": [
+      9,
+      10
+    ],
+    "nativeBounds": [
+      32,
+      24,
+      63,
+      78
+    ],
+    "pixelsSha256": "11e7a321ef43f7fa4ffb52c5c5d468a77cddbf36da0b2eec4ef263f6e2669078"
+  },
+  {
+    "index": 37,
+    "frame": "back-attack-02",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-attack.png",
+    "crop": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "scale": 0.14,
+    "rootInCrop": [
+      240.0,
+      532.5714285714286
+    ],
+    "offset": [
+      14,
+      9
+    ],
+    "nativeBounds": [
+      32,
+      24,
+      63,
+      75
+    ],
+    "pixelsSha256": "6cb43bb21633db575526c79c939f300f823a33233d876d1eb8460dea3c7924c2"
+  },
+  {
+    "index": 38,
+    "frame": "back-attack-03",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-attack.png",
+    "crop": [
+      1024,
+      0,
+      1536,
+      512
+    ],
+    "scale": 0.14,
+    "rootInCrop": [
+      220.0,
+      531.7142857142857
+    ],
+    "offset": [
+      17,
+      10
+    ],
+    "nativeBounds": [
+      18,
+      23,
+      78,
+      78
+    ],
+    "pixelsSha256": "167caf033e7aab152191a40ab8ee3489f440db165633abecf6646f27f466c866"
+  },
+  {
+    "index": 39,
+    "frame": "back-attack-04",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-attack.png",
+    "crop": [
+      0,
+      512,
+      550,
+      1024
+    ],
+    "scale": 0.14,
+    "rootInCrop": [
+      296.0,
+      500.57142857142856
+    ],
+    "offset": [
+      7,
+      14
+    ],
+    "nativeBounds": [
+      18,
+      24,
+      78,
+      74
+    ],
+    "pixelsSha256": "98679e61e5e6971da2c54a76b7c9f98c70a86437e27366e29a96c005f50c1be1"
+  },
+  {
+    "index": 40,
+    "frame": "back-attack-05",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-attack.png",
+    "crop": [
+      550,
+      512,
+      1000,
+      1024
+    ],
+    "scale": 0.14,
+    "rootInCrop": [
+      198.0,
+      536.4285714285713
+    ],
+    "offset": [
+      20,
+      9
+    ],
+    "nativeBounds": [
+      24,
+      18,
+      71,
+      73
+    ],
+    "pixelsSha256": "8dd3b108e0c763423717f6b6af07dc0d8d5283c83dde495463aa6ce65cc2f5fc"
+  },
+  {
+    "index": 41,
+    "frame": "back-attack-06",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-attack.png",
+    "crop": [
+      1000,
+      512,
+      1536,
+      1024
+    ],
+    "scale": 0.14,
+    "rootInCrop": [
+      247.5,
+      535.4285714285713
+    ],
+    "offset": [
+      13,
+      9
+    ],
+    "nativeBounds": [
+      28,
+      18,
+      67,
+      73
+    ],
+    "pixelsSha256": "2b22a873413db758672d71a315d8d855df2d40299cc2f4bed54fb1f882107a66"
+  },
+  {
+    "index": 42,
+    "frame": "back-hurt-01",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-hurt.png",
+    "crop": [
+      0,
+      0,
+      840,
+      480
+    ],
+    "scale": 0.14,
+    "rootInCrop": [
+      582.5,
+      549.0
+    ],
+    "offset": [
+      -34,
+      7
+    ],
+    "nativeBounds": [
+      30,
+      21,
+      66,
+      66
+    ],
+    "pixelsSha256": "19d3115f9429f56933801ee3702369b2463a0f8d9257b1e8e153f2f8a3d37acc"
+  },
+  {
+    "index": 43,
+    "frame": "back-hurt-02",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-hurt.png",
+    "crop": [
+      840,
+      0,
+      1679,
+      480
+    ],
+    "scale": 0.14,
+    "rootInCrop": [
+      255.5,
+      533.8571428571429
+    ],
+    "offset": [
+      12,
+      9
+    ],
+    "nativeBounds": [
+      18,
+      22,
+      78,
+      72
+    ],
+    "pixelsSha256": "e885b4713b83407708fa2707282292d2095722e861e466d91aca9d615851816e"
+  },
+  {
+    "index": 44,
+    "frame": "back-hurt-03",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-hurt.png",
+    "crop": [
+      0,
+      480,
+      840,
+      937
+    ],
+    "scale": 0.14,
+    "rootInCrop": [
+      604.5,
+      461.71428571428567
+    ],
+    "offset": [
+      -37,
+      19
+    ],
+    "nativeBounds": [
+      27,
+      23,
+      69,
+      73
+    ],
+    "pixelsSha256": "82311bc956bae80fb5cd19c66b2122fbee2d692f8013cbbeec404ff2196ebc4c"
+  },
+  {
+    "index": 45,
+    "frame": "back-hurt-04",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-hurt.png",
+    "crop": [
+      840,
+      480,
+      1679,
+      937
+    ],
+    "scale": 0.14,
+    "rootInCrop": [
+      291.0,
+      467.71428571428567
+    ],
+    "offset": [
+      7,
+      19
+    ],
+    "nativeBounds": [
+      28,
+      23,
+      67,
+      75
+    ],
+    "pixelsSha256": "ea2e60f6a447fe532394476806ed6bdfefec562e2735e9c344ed436f1936e0b2"
+  },
+  {
+    "index": 46,
+    "frame": "back-death-01",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-death.png",
+    "crop": [
+      0,
+      0,
+      512,
+      600
+    ],
+    "scale": 0.125,
+    "rootInCrop": [
+      273,
+      612
+    ],
+    "offset": [
+      14,
+      8
+    ],
+    "nativeBounds": [
+      31,
+      20,
+      65,
+      77
+    ],
+    "pixelsSha256": "8853eba9cee05c5200f5b44e0b6d2eba19871a1a80d6628c83b40eb1cf567288"
+  },
+  {
+    "index": 47,
+    "frame": "back-death-02",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-death.png",
+    "crop": [
+      512,
+      0,
+      1024,
+      600
+    ],
+    "scale": 0.125,
+    "rootInCrop": [
+      256,
+      612
+    ],
+    "offset": [
+      16,
+      8
+    ],
+    "nativeBounds": [
+      31,
+      20,
+      64,
+      76
+    ],
+    "pixelsSha256": "f1d5f80af8c633fd5fb2d002640dfdcecb51299c9769976e0a840199f2469a63"
+  },
+  {
+    "index": 48,
+    "frame": "back-death-03",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-death.png",
+    "crop": [
+      1024,
+      0,
+      1536,
+      600
+    ],
+    "scale": 0.125,
+    "rootInCrop": [
+      256,
+      612
+    ],
+    "offset": [
+      16,
+      8
+    ],
+    "nativeBounds": [
+      30,
+      20,
+      63,
+      77
+    ],
+    "pixelsSha256": "46fec355c4362437787ddd4907dc69859c67adbb8487059d5d0d0fbece46d11d"
+  },
+  {
+    "index": 49,
+    "frame": "back-death-04",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-death.png",
+    "crop": [
+      0,
+      600,
+      512,
+      1024
+    ],
+    "scale": 0.125,
+    "rootInCrop": [
+      269,
+      555
+    ],
+    "offset": [
+      14,
+      15
+    ],
+    "nativeBounds": [
+      36,
+      22,
+      59,
+      51
+    ],
+    "pixelsSha256": "c83f6e8044cb78dee1f4f083ae8540a68cfa848934ac4f8f0d8a9a35a84a88a2"
+  },
+  {
+    "index": 50,
+    "frame": "back-death-05",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-death.png",
+    "crop": [
+      512,
+      600,
+      1024,
+      1024
+    ],
+    "scale": 0.125,
+    "rootInCrop": [
+      252,
+      555
+    ],
+    "offset": [
+      16,
+      15
+    ],
+    "nativeBounds": [
+      42,
+      32,
+      54,
+      42
+    ],
+    "pixelsSha256": "fd02e13a24994af69330dba46064c31da73802a42ab7701151fc1f5c8fc44858"
+  },
+  {
+    "index": 51,
+    "frame": "back-death-06",
+    "source": "assets/game/pixel-v3/wraith/source/originals/back-death.png",
+    "crop": [
+      1024,
+      600,
+      1536,
+      1024
+    ],
+    "scale": 0.125,
+    "rootInCrop": [
+      271,
+      571
+    ],
+    "offset": [
+      14,
+      13
+    ],
+    "nativeBounds": [
+      46,
+      33,
+      49,
+      36
+    ],
+    "pixelsSha256": "864c7a59c876bad089df5ba4ef284c7c68fba2a6c25dba5bfe65a962137e4f9f"
+  }
+]

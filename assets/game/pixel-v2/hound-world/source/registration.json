@@ -1,0 +1,1550 @@
+[
+  {
+    "atlas": "hound",
+    "frame": "front-idle-01",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-idle.png",
+    "crop": [
+      0,
+      0,
+      688,
+      390
+    ],
+    "root": [
+      384.25,
+      360
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-idle-02",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-idle.png",
+    "crop": [
+      688,
+      0,
+      1376,
+      390
+    ],
+    "root": [
+      270.4,
+      362
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-idle-03",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-idle.png",
+    "crop": [
+      0,
+      390,
+      688,
+      768
+    ],
+    "root": [
+      387.75,
+      284
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-idle-04",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-idle.png",
+    "crop": [
+      688,
+      390,
+      1376,
+      768
+    ],
+    "root": [
+      276.5,
+      288
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-run-01",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-run.png",
+    "crop": [
+      0,
+      0,
+      450,
+      385
+    ],
+    "root": [
+      234.15,
+      316
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-run-02",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-run.png",
+    "crop": [
+      450,
+      0,
+      910,
+      385
+    ],
+    "root": [
+      254.05,
+      306
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 5
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-run-03",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-run.png",
+    "crop": [
+      910,
+      0,
+      1376,
+      385
+    ],
+    "root": [
+      241.05,
+      331
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-run-04",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-run.png",
+    "crop": [
+      0,
+      385,
+      450,
+      768
+    ],
+    "root": [
+      252.10000000000002,
+      267
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-run-05",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-run.png",
+    "crop": [
+      450,
+      385,
+      910,
+      768
+    ],
+    "root": [
+      227.3,
+      250
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 5
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-run-06",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-run.png",
+    "crop": [
+      910,
+      385,
+      1376,
+      768
+    ],
+    "root": [
+      216.3,
+      271
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-attack-01",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-attack.png",
+    "crop": [
+      0,
+      0,
+      450,
+      385
+    ],
+    "root": [
+      227.5,
+      320
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-attack-02",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-attack.png",
+    "crop": [
+      450,
+      0,
+      910,
+      385
+    ],
+    "root": [
+      198.75,
+      318
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-attack-03",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-attack.png",
+    "crop": [
+      910,
+      0,
+      1376,
+      385
+    ],
+    "root": [
+      208.70000000000002,
+      296
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 7
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-attack-04",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-attack.png",
+    "crop": [
+      0,
+      385,
+      450,
+      768
+    ],
+    "root": [
+      263.6,
+      226
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 11
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-attack-05",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-attack.png",
+    "crop": [
+      450,
+      385,
+      910,
+      768
+    ],
+    "root": [
+      238.05,
+      292
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-attack-06",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-attack.png",
+    "crop": [
+      910,
+      385,
+      1376,
+      768
+    ],
+    "root": [
+      221.75000000000003,
+      296
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-hurt-01",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-hurt.png",
+    "crop": [
+      0,
+      0,
+      688,
+      390
+    ],
+    "root": [
+      392.6,
+      357
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-hurt-02",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-hurt.png",
+    "crop": [
+      688,
+      0,
+      1376,
+      390
+    ],
+    "root": [
+      301.6,
+      367
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-hurt-03",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-hurt.png",
+    "crop": [
+      0,
+      390,
+      688,
+      768
+    ],
+    "root": [
+      366.15,
+      290
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-hurt-04",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-hurt.png",
+    "crop": [
+      688,
+      390,
+      1376,
+      768
+    ],
+    "root": [
+      286.95000000000005,
+      297
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-death-01",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-death.png",
+    "crop": [
+      0,
+      0,
+      450,
+      385
+    ],
+    "root": [
+      248.70000000000002,
+      330
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-death-02",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-death.png",
+    "crop": [
+      450,
+      0,
+      910,
+      385
+    ],
+    "root": [
+      222.75,
+      329
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-death-03",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-death.png",
+    "crop": [
+      910,
+      0,
+      1376,
+      385
+    ],
+    "root": [
+      225.4,
+      322
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-death-04",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-death.png",
+    "crop": [
+      0,
+      385,
+      450,
+      768
+    ],
+    "root": [
+      241.70000000000002,
+      271
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-death-05",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-death.png",
+    "crop": [
+      450,
+      385,
+      910,
+      768
+    ],
+    "root": [
+      223.3,
+      277
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "front-death-06",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/hound-death.png",
+    "crop": [
+      910,
+      385,
+      1376,
+      768
+    ],
+    "root": [
+      212.75000000000003,
+      274
+    ],
+    "scale": 0.185,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-idle-01",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-idle.png",
+    "crop": [
+      0,
+      0,
+      840,
+      550
+    ],
+    "root": [
+      468.6,
+      521
+    ],
+    "scale": 0.133,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-idle-02",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-idle.png",
+    "crop": [
+      840,
+      0,
+      1679,
+      550
+    ],
+    "root": [
+      434.8,
+      524
+    ],
+    "scale": 0.133,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-idle-03",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-idle-keys-03-04.png",
+    "crop": [
+      0,
+      0,
+      1085,
+      725
+    ],
+    "root": [
+      651.5,
+      688
+    ],
+    "scale": 0.133,
+    "sourceCalibration": 0.744,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-idle-04",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-idle-keys-03-04.png",
+    "crop": [
+      1085,
+      0,
+      2170,
+      725
+    ],
+    "root": [
+      533.6500000000001,
+      678
+    ],
+    "scale": 0.133,
+    "sourceCalibration": 0.744,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-run-01",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-run.png",
+    "crop": [
+      0,
+      0,
+      565,
+      497
+    ],
+    "root": [
+      307.0,
+      481
+    ],
+    "scale": 0.14,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-run-02",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-run.png",
+    "crop": [
+      565,
+      0,
+      1173,
+      497
+    ],
+    "root": [
+      338.45000000000005,
+      427
+    ],
+    "scale": 0.14,
+    "sourceCalibration": 1,
+    "lift": 7
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-run-03",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-run.png",
+    "crop": [
+      1173,
+      0,
+      1678,
+      497
+    ],
+    "root": [
+      255.05,
+      451
+    ],
+    "scale": 0.14,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-run-04",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-run.png",
+    "crop": [
+      0,
+      497,
+      565,
+      937
+    ],
+    "root": [
+      335.85,
+      365
+    ],
+    "scale": 0.14,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-run-05",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-run.png",
+    "crop": [
+      565,
+      497,
+      1173,
+      937
+    ],
+    "root": [
+      364.55,
+      305
+    ],
+    "scale": 0.14,
+    "sourceCalibration": 1,
+    "lift": 7
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-run-06",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-run.png",
+    "crop": [
+      1173,
+      497,
+      1678,
+      937
+    ],
+    "root": [
+      239.25000000000003,
+      379
+    ],
+    "scale": 0.14,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-attack-01",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-attack.png",
+    "crop": [
+      0,
+      0,
+      540,
+      512
+    ],
+    "root": [
+      307.35,
+      499
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-attack-02",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-attack.png",
+    "crop": [
+      540,
+      0,
+      1040,
+      512
+    ],
+    "root": [
+      278.55,
+      495
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-attack-03",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-attack.png",
+    "crop": [
+      1040,
+      0,
+      1536,
+      512
+    ],
+    "root": [
+      284.05,
+      481
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 8
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-attack-04",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-attack.png",
+    "crop": [
+      0,
+      512,
+      540,
+      1024
+    ],
+    "root": [
+      315.70000000000005,
+      394
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 12
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-attack-05",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-attack.png",
+    "crop": [
+      540,
+      512,
+      1040,
+      1024
+    ],
+    "root": [
+      279.90000000000003,
+      444
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-attack-06",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-attack.png",
+    "crop": [
+      1040,
+      512,
+      1536,
+      1024
+    ],
+    "root": [
+      261.0,
+      457
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-hurt-01",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-hurt.png",
+    "crop": [
+      0,
+      0,
+      850,
+      510
+    ],
+    "root": [
+      537.35,
+      506
+    ],
+    "scale": 0.14,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-hurt-02",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-hurt.png",
+    "crop": [
+      850,
+      0,
+      1679,
+      510
+    ],
+    "root": [
+      384.20000000000005,
+      499
+    ],
+    "scale": 0.14,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-hurt-03",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-hurt.png",
+    "crop": [
+      0,
+      510,
+      850,
+      937
+    ],
+    "root": [
+      531.7,
+      367
+    ],
+    "scale": 0.14,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-hurt-04",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-hurt.png",
+    "crop": [
+      850,
+      510,
+      1679,
+      937
+    ],
+    "root": [
+      419.35,
+      381
+    ],
+    "scale": 0.14,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-death-01",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-death-v2.png",
+    "crop": [
+      0,
+      0,
+      520,
+      600
+    ],
+    "root": [
+      297.35,
+      530
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-death-02",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-death-v2.png",
+    "crop": [
+      520,
+      0,
+      1030,
+      600
+    ],
+    "root": [
+      281.35,
+      512
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-death-03",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-death-v2.png",
+    "crop": [
+      1030,
+      0,
+      1536,
+      600
+    ],
+    "root": [
+      282.05,
+      512
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-death-04",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-death-v2.png",
+    "crop": [
+      0,
+      600,
+      520,
+      1024
+    ],
+    "root": [
+      275.55,
+      342
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-death-05",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-death-v2.png",
+    "crop": [
+      520,
+      600,
+      1030,
+      1024
+    ],
+    "root": [
+      258.55,
+      342
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "hound",
+    "frame": "back-death-06",
+    "source": "assets/game/pixel-v2/hound-world/source/hound-back-death-v2.png",
+    "crop": [
+      1030,
+      600,
+      1536,
+      1024
+    ],
+    "root": [
+      265.8,
+      338
+    ],
+    "scale": 0.15,
+    "sourceCalibration": 1,
+    "lift": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-cyan-01",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 131,
+    "ground": 254,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-cyan-02",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 356,
+    "ground": 254,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-cyan-03",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 581,
+    "ground": 254,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-cyan-04",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 802,
+    "ground": 254,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-cyan-05",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 1028,
+    "ground": 254,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-cyan-06",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 1249,
+    "ground": 254,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-magenta-01",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 131,
+    "ground": 493,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-magenta-02",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 356,
+    "ground": 493,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-magenta-03",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 581,
+    "ground": 493,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-magenta-04",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 802,
+    "ground": 493,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-magenta-05",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 1028,
+    "ground": 493,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-brazier-magenta-06",
+    "source": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "center": 1249,
+    "ground": 493,
+    "scale": 0.45,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-shrine-01",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 136,
+    "ground": 475,
+    "scale": 0.55,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-shrine-02",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 358,
+    "ground": 475,
+    "scale": 0.55,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-shrine-03",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 578,
+    "ground": 475,
+    "scale": 0.55,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-shrine-04",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 799,
+    "ground": 475,
+    "scale": 0.55,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-shrine-05",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 1028,
+    "ground": 475,
+    "scale": 0.55,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-shrine-06",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 1248,
+    "ground": 475,
+    "scale": 0.55,
+    "staticBaseKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-gate-01",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 136,
+    "ground": 245,
+    "scale": 0.65,
+    "staticArchKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-gate-02",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 358,
+    "ground": 245,
+    "scale": 0.65,
+    "staticArchKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-gate-03",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 578,
+    "ground": 245,
+    "scale": 0.65,
+    "staticArchKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-gate-04",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 799,
+    "ground": 245,
+    "scale": 0.65,
+    "staticArchKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-gate-05",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 1028,
+    "ground": 245,
+    "scale": 0.65,
+    "staticArchKey": 0
+  },
+  {
+    "atlas": "world",
+    "frame": "front-gate-06",
+    "source": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "center": 1248,
+    "ground": 245,
+    "scale": 0.65,
+    "staticArchKey": 0
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-impact-01",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      12,
+      70,
+      264,
+      325
+    ],
+    "root": [
+      91.71428571428572,
+      137.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-impact-02",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      262,
+      70,
+      514,
+      325
+    ],
+    "root": [
+      91.71428571428572,
+      137.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-impact-03",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      516,
+      70,
+      768,
+      325
+    ],
+    "root": [
+      91.71428571428572,
+      137.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-impact-04",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      769,
+      70,
+      1021,
+      325
+    ],
+    "root": [
+      91.71428571428572,
+      137.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-impact-05",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      1032,
+      70,
+      1284,
+      325
+    ],
+    "root": [
+      91.71428571428572,
+      137.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-impact-06",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      1281,
+      70,
+      1533,
+      325
+    ],
+    "root": [
+      91.71428571428572,
+      137.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-warning-01",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      12,
+      395,
+      264,
+      602
+    ],
+    "root": [
+      126.0,
+      104.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-warning-02",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      262,
+      395,
+      514,
+      602
+    ],
+    "root": [
+      126.0,
+      104.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-warning-03",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      516,
+      395,
+      768,
+      602
+    ],
+    "root": [
+      126.0,
+      104.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-warning-04",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      769,
+      395,
+      1021,
+      602
+    ],
+    "root": [
+      126.0,
+      104.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-warning-05",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      1032,
+      395,
+      1284,
+      602
+    ],
+    "root": [
+      126.0,
+      104.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-warning-06",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      1281,
+      395,
+      1533,
+      602
+    ],
+    "root": [
+      126.0,
+      104.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-healing-01",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      12,
+      635,
+      264,
+      935
+    ],
+    "root": [
+      126.0,
+      197.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-healing-02",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      262,
+      635,
+      514,
+      935
+    ],
+    "root": [
+      126.0,
+      197.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-healing-03",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      516,
+      635,
+      768,
+      935
+    ],
+    "root": [
+      126.0,
+      197.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-healing-04",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      769,
+      635,
+      1021,
+      935
+    ],
+    "root": [
+      126.0,
+      197.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-healing-05",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      1032,
+      635,
+      1284,
+      935
+    ],
+    "root": [
+      126.0,
+      197.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  },
+  {
+    "atlas": "effects",
+    "frame": "front-healing-06",
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "crop": [
+      1281,
+      635,
+      1533,
+      935
+    ],
+    "root": [
+      126.0,
+      197.0
+    ],
+    "scale": 0.7,
+    "centerAperture": [
+      92,
+      92,
+      101,
+      101
+    ]
+  }
+]

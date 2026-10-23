@@ -1,0 +1,274 @@
+{
+  "static": [
+    {
+      "id": "tent-left",
+      "sourceAlphaBox": [
+        135,
+        159,
+        1315,
+        981
+      ],
+      "nativeSize": [
+        208,
+        145
+      ],
+      "offset": [
+        24,
+        87
+      ],
+      "removedIsolatedPixels": 0,
+      "anchor": [
+        128,
+        232
+      ]
+    },
+    {
+      "id": "tent-right",
+      "sourceAlphaBox": [
+        104,
+        143,
+        1363,
+        989
+      ],
+      "nativeSize": [
+        208,
+        140
+      ],
+      "offset": [
+        24,
+        92
+      ],
+      "removedIsolatedPixels": 0,
+      "anchor": [
+        128,
+        232
+      ]
+    },
+    {
+      "id": "road-marker",
+      "sourceAlphaBox": [
+        246,
+        450,
+        788,
+        1247
+      ],
+      "nativeSize": [
+        56,
+        82
+      ],
+      "offset": [
+        100,
+        150
+      ],
+      "removedIsolatedPixels": 0,
+      "anchor": [
+        128,
+        232
+      ]
+    },
+    {
+      "id": "campfire-base",
+      "sourceAlphaBox": [
+        433,
+        272,
+        1295,
+        758
+      ],
+      "nativeSize": [
+        92,
+        52
+      ],
+      "offset": [
+        82,
+        180
+      ],
+      "removedIsolatedPixels": 0,
+      "anchor": [
+        128,
+        232
+      ]
+    },
+    {
+      "id": "supply-cache",
+      "sourceAlphaBox": [
+        228,
+        186,
+        1293,
+        942
+      ],
+      "nativeSize": [
+        121,
+        86
+      ],
+      "offset": [
+        68,
+        146
+      ],
+      "removedIsolatedPixels": 0,
+      "anchor": [
+        128,
+        232
+      ]
+    },
+    {
+      "id": "fallen-log",
+      "sourceAlphaBox": [
+        459,
+        164,
+        1548,
+        787
+      ],
+      "nativeSize": [
+        105,
+        60
+      ],
+      "offset": [
+        76,
+        172
+      ],
+      "removedIsolatedPixels": 0,
+      "anchor": [
+        128,
+        232
+      ]
+    }
+  ],
+  "flame": [
+    {
+      "id": "flame-0",
+      "sourceCrop": [
+        0,
+        0,
+        520,
+        757
+      ],
+      "sourceAlphaBoxInCrop": [
+        72,
+        90,
+        508,
+        657
+      ],
+      "sharedScale": 0.12385321100917432,
+      "offset": [
+        38,
+        30
+      ],
+      "nativeSize": [
+        54,
+        70
+      ],
+      "removedSourceResidue": 0,
+      "removedNativeResidue": 0,
+      "anchor": [
+        64,
+        112
+      ],
+      "flameRoot": [
+        64,
+        99
+      ]
+    },
+    {
+      "id": "flame-1",
+      "sourceCrop": [
+        520,
+        0,
+        1039,
+        757
+      ],
+      "sourceAlphaBoxInCrop": [
+        61,
+        123,
+        481,
+        657
+      ],
+      "sharedScale": 0.12385321100917432,
+      "offset": [
+        39,
+        34
+      ],
+      "nativeSize": [
+        52,
+        66
+      ],
+      "removedSourceResidue": 0,
+      "removedNativeResidue": 0,
+      "anchor": [
+        64,
+        112
+      ],
+      "flameRoot": [
+        64,
+        99
+      ]
+    },
+    {
+      "id": "flame-2",
+      "sourceCrop": [
+        1039,
+        0,
+        1559,
+        757
+      ],
+      "sourceAlphaBoxInCrop": [
+        41,
+        123,
+        466,
+        657
+      ],
+      "sharedScale": 0.12385321100917432,
+      "offset": [
+        37,
+        34
+      ],
+      "nativeSize": [
+        53,
+        66
+      ],
+      "removedSourceResidue": 0,
+      "removedNativeResidue": 0,
+      "anchor": [
+        64,
+        112
+      ],
+      "flameRoot": [
+        64,
+        99
+      ]
+    },
+    {
+      "id": "flame-3",
+      "sourceCrop": [
+        1559,
+        0,
+        2078,
+        757
+      ],
+      "sourceAlphaBoxInCrop": [
+        38,
+        176,
+        454,
+        657
+      ],
+      "sharedScale": 0.12385321100917432,
+      "offset": [
+        38,
+        40
+      ],
+      "nativeSize": [
+        52,
+        60
+      ],
+      "removedSourceResidue": 0,
+      "removedNativeResidue": 0,
+      "anchor": [
+        64,
+        112
+      ],
+      "flameRoot": [
+        64,
+        99
+      ]
+    }
+  ]
+}

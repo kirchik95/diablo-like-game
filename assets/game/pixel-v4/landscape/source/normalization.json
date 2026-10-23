@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "nativePixelsPerUnit": 32,
+  "cell": 160,
+  "columns": 4,
+  "rows": 2,
+  "anchor": [
+    80,
+    144
+  ],
+  "alphaThreshold": 128,
+  "resize": "nearest",
+  "silhouetteCleanup": "retain largest 8-connected component after downsampling",
+  "propPalette": {
+    "colors": 48,
+    "method": "joint opaque-pixel median cut",
+    "dither": false
+  },
+  "props": [
+    {
+      "id": "cypress",
+      "fit": [
+        62,
+        128
+      ],
+      "role": "tall background/boundary vegetation"
+    },
+    {
+      "id": "dead-tree",
+      "fit": [
+        94,
+        112
+      ],
+      "role": "sparse background/boundary tree"
+    },
+    {
+      "id": "rock-large",
+      "fit": [
+        64,
+        44
+      ],
+      "role": "large rocky terrain accent"
+    },
+    {
+      "id": "rock-small",
+      "fit": [
+        28,
+        20
+      ],
+      "role": "low ground accent"
+    },
+    {
+      "id": "shrub",
+      "fit": [
+        46,
+        30
+      ],
+      "role": "low boundary scrub"
+    },
+    {
+      "id": "grass",
+      "fit": [
+        26,
+        18
+      ],
+      "role": "small non-blocking grass tuft"
+    },
+    {
+      "id": "ruin-pile",
+      "fit": [
+        86,
+        50
+      ],
+      "role": "low outdoor monastery rubble"
+    },
+    {
+      "id": "supplies",
+      "fit": [
+        64,
+        50
+      ],
+      "role": "camp crate-and-sack cluster"
+    }
+  ],
+  "surfaces": [
+    {
+      "id": "earth",
+      "size": [
+        32,
+        32
+      ],
+      "meanRgb": [
+        119,
+        109,
+        96
+      ],
+      "contrast": 0.6
+    },
+    {
+      "id": "moss",
+      "size": [
+        32,
+        32
+      ],
+      "meanRgb": [
+        100,
+        116,
+        99
+      ],
+      "contrast": 0.6
+    },
+    {
+      "id": "cliff",
+      "size": [
+        32,
+        32
+      ],
+      "meanRgb": [
+        103,
+        107,
+        112
+      ],
+      "contrast": 0.6
+    }
+  ],
+  "surfacePalette": {
+    "colors": 24,
+    "method": "median cut per material",
+    "dither": false
+  },
+  "seams": {
+    "method": "symmetric opposite-edge crossfade on both axes before quantization",
+    "width": 4,
+    "outermostPixelsEqual": true
+  },
+  "lighting": "outdoor diffuse upper-left; neutral grey stone, grey-green vegetation, natural earth; no subterranean darkness",
+  "preview": {
+    "monk": "source/references/monk-idle.png",
+    "monkAnchor": [
+      48,
+      84
+    ],
+    "world": "source/references/world-brazier.png",
+    "worldAnchor": [
+      80,
+      144
+    ]
+  },
+  "runtimeCollision": "none; renderer chooses placement and occlusion; prop art does not create movement blockers"
+}

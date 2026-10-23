@@ -1,0 +1,161 @@
+{
+  "status": "passed",
+  "static": [
+    {
+      "id": "tent-left",
+      "bounds": [
+        24,
+        87,
+        232,
+        232
+      ],
+      "opaquePixels": 14091,
+      "opaqueColors": 64
+    },
+    {
+      "id": "tent-right",
+      "bounds": [
+        24,
+        92,
+        232,
+        232
+      ],
+      "opaquePixels": 13882,
+      "opaqueColors": 64
+    },
+    {
+      "id": "road-marker",
+      "bounds": [
+        100,
+        150,
+        156,
+        232
+      ],
+      "opaquePixels": 2760,
+      "opaqueColors": 58
+    },
+    {
+      "id": "campfire-base",
+      "bounds": [
+        82,
+        180,
+        174,
+        232
+      ],
+      "opaquePixels": 3318,
+      "opaqueColors": 52
+    },
+    {
+      "id": "supply-cache",
+      "bounds": [
+        68,
+        146,
+        189,
+        232
+      ],
+      "opaquePixels": 6552,
+      "opaqueColors": 56
+    },
+    {
+      "id": "fallen-log",
+      "bounds": [
+        76,
+        172,
+        181,
+        232
+      ],
+      "opaquePixels": 3005,
+      "opaqueColors": 30
+    }
+  ],
+  "flame": [
+    {
+      "id": "flame-0",
+      "bounds": [
+        38,
+        30,
+        92,
+        100
+      ],
+      "opaquePixels": 1982,
+      "opaqueColors": 24
+    },
+    {
+      "id": "flame-1",
+      "bounds": [
+        39,
+        34,
+        91,
+        100
+      ],
+      "opaquePixels": 2027,
+      "opaqueColors": 24
+    },
+    {
+      "id": "flame-2",
+      "bounds": [
+        37,
+        34,
+        90,
+        100
+      ],
+      "opaquePixels": 1951,
+      "opaqueColors": 24
+    },
+    {
+      "id": "flame-3",
+      "bounds": [
+        38,
+        40,
+        90,
+        100
+      ],
+      "opaquePixels": 1793,
+      "opaqueColors": 24
+    }
+  ],
+  "palettes": {
+    "camp.png": 64,
+    "camp-flame.png": 24
+  },
+  "flameTransitions": [
+    {
+      "from": "flame-0",
+      "to": "flame-1",
+      "changedAlphaPixels": 823,
+      "unionPixels": 2416,
+      "silhouetteDeltaRatio": 0.340646
+    },
+    {
+      "from": "flame-1",
+      "to": "flame-2",
+      "changedAlphaPixels": 668,
+      "unionPixels": 2323,
+      "silhouetteDeltaRatio": 0.287559
+    },
+    {
+      "from": "flame-2",
+      "to": "flame-3",
+      "changedAlphaPixels": 686,
+      "unionPixels": 2215,
+      "silhouetteDeltaRatio": 0.309707
+    },
+    {
+      "from": "flame-3",
+      "to": "flame-0",
+      "changedAlphaPixels": 717,
+      "unionPixels": 2246,
+      "silhouetteDeltaRatio": 0.319234
+    }
+  ],
+  "masksMatchAllPixels": true,
+  "stableFlameRootRows": [
+    94,
+    100
+  ],
+  "flameRootOffsetFromGroundAnchor": [
+    0,
+    -13
+  ],
+  "visualAcceptance": "Coordinator owns final family and runtime review."
+}

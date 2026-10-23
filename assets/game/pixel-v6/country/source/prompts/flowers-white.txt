@@ -1,0 +1,7 @@
+Use case: style-transfer.
+Asset type: one transparent low ground-decoration sprite for a fixed-isometric pixel-art RPG.
+Input image role: the coordinator-approved low grass source is the family reference to transform; retain its coarse deliberate pixel-art treatment, restrained outdoor shading and ground-facing view.
+Primary request: Replace the tuft with one SMALL and sparse cluster of exactly three tiny off-white meadow flowers among 4–5 short sage-green leaves/stems. Each pale cream flower is only 2–3 logical pixels across. Uneven heights and irregular positions, no row, no bouquet, no large bright white mass. Native visible silhouette about 26 by 21 logical pixels. Predominantly green with just three tiny cream accents.
+Preserve: fixed isometric three-quarter view, ground viewed from above about 30 degrees, upper-left diffuse light, crisp square pixels, small clustered color shapes, muted natural medieval countryside palette. This decor is subordinate to the monk and must read at ankle height. Render the tiny logical pixel silhouette enlarged clearly.
+Composition: exactly one isolated decorative group centered with generous transparent margins on all sides. Real fully transparent background. Entire shape visible. No painted floor, no ground island or circular drop shadow.
+Avoid: scene, tall bush/tree, potted plant, giant shapes, saturated bright accents, regular pattern, duplicated groups, text, numbers, labels, watermark, border, glossy gradient, blur, antialiased halo.

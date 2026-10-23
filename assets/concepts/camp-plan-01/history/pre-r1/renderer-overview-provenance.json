@@ -1,0 +1,60 @@
+{
+  "kind": "coordinator-supplied-production-renderer-capture",
+  "pathBase": "repository-root",
+  "original": "artifacts/camp-transfer-overview-final.png",
+  "savedCopy": "assets/concepts/camp-plan-01/source/renderer-overview.png",
+  "sha256": "3ef08ea2d76e43e4a9463588b000fd396d1713c2456aaf4b86c006740f65b979",
+  "dimensions": [
+    1280,
+    720
+  ],
+  "layoutSha256": "149d2152cf3e97a10d5b46c3bbfd2e26dbaf232b17a34ed52e0e75122d7c1e34",
+  "camera": {
+    "kind": "separate whole-location overview, not gameplay camera",
+    "projection": "orthographic",
+    "alpha": "pi/4",
+    "beta": "pi/3",
+    "radius": 120,
+    "maxZ": 240,
+    "framingSource": "artifacts/camp-transfer-preview.js:applyCamera",
+    "groundCoordinateConvention": "u=(y-x)/sqrt(2), v=(x+y)/(2*sqrt(2))"
+  },
+  "changesToSourceImage": "none; byte-for-byte copy",
+  "paperDisplay": {
+    "width": 1512,
+    "height": 850.5,
+    "fit": "contain; full frame, no cropping",
+    "imageRendering": "pixelated"
+  },
+  "references": [
+    {
+      "path": "artifacts/camp-transfer-overview-final.png",
+      "sha256": "3ef08ea2d76e43e4a9463588b000fd396d1713c2456aaf4b86c006740f65b979"
+    },
+    {
+      "path": "artifacts/camp-transfer-preview.js",
+      "sha256": "9c9632e730d5dc66a235620f3899e3d316bf76d353f87a2334e58c81d4ca713e"
+    },
+    {
+      "path": "src/camp-layout.js",
+      "sha256": "99266e28871ff8f78ff43b5405d4c390b77a4aa8c33364ac3458c426d6575249"
+    },
+    {
+      "path": "src/render.js",
+      "sha256": "c95f0c0125afd990faf7a562339f8f8a9c37be8d7a43183a59dcc578f14eea20"
+    },
+    {
+      "path": "assets/game/pixel-v5/camp/manifest.json",
+      "sha256": "b434d9d13549659073dcc419e105c83fccfd094819ef3946cb01faff6f92574e"
+    },
+    {
+      "path": "assets/game/pixel-v5/camp/camp.png",
+      "sha256": "786d9f620359216a382a1ff2d06699c404caeb01ea4d9eb4a73c2205e4af47f6"
+    },
+    {
+      "path": "assets/game/pixel-v5/camp/camp-flame.png",
+      "sha256": "cd83e7ab9e899a382a52930d41c9ae8655efd0654a941ca1457250fe52679ecd"
+    }
+  ],
+  "rootQaStatus": "pending-terrain-review; current capture is valid for assembly, not final stage approval"
+}

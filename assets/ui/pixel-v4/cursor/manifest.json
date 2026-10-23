@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "cssPixelsPerArtPixel": 2,
+  "cursors": {
+    "reticle": {
+      "size": [
+        30,
+        30
+      ],
+      "hotspot": [
+        15,
+        15
+      ]
+    },
+    "arrow": {
+      "size": [
+        24,
+        32
+      ],
+      "hotspot": [
+        0,
+        0
+      ]
+    },
+    "arrow-active": {
+      "size": [
+        24,
+        32
+      ],
+      "hotspot": [
+        0,
+        0
+      ]
+    }
+  },
+  "files": {
+    "arrow-active.png": "e7eee385210069eac43cee312a8346471081343c67f50b3e8dd25fd6146a90bd",
+    "arrow-active@2x.png": "b39381c2c4b602db64958a51c26eccd44960b705cefff345d92d42eca49824fd",
+    "arrow.png": "bd21c2a774a3f512d8f201df570297a7cc256fedd9a4873b6a1ba5431c74da3d",
+    "arrow@2x.png": "713172e6a3e5aab2ccd86e0a03a3c2676ffde1e766e724d279bef17f802b598a",
+    "reticle.png": "ca9993dcf430c4f378b3fcb58460350421def7acc20d6dcf1af000fc0a21827e",
+    "reticle@2x.png": "1db6c13cb8fdefd064b121919074c486725ccf9c354013c0692cc649625aa789"
+  }
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "id": "tent-left",
+    "tool": "image_gen.imagegen",
+    "generationId": "exec-73066864-c4c8-46a0-b8e5-c5dfd1feae19",
+    "date": "2026-10-23",
+    "model": "not exposed by built-in tool",
+    "transparentBackground": true,
+    "original": "source/tent-left-original.png",
+    "prompt": "source/prompts/tent-left.txt",
+    "referencePaths": [
+      "assets/concepts/camp-location-01/camp-scene.png",
+      "assets/game/pixel-v4/landscape/landscape.png"
+    ]
+  },
+  {
+    "id": "tent-right",
+    "tool": "image_gen.imagegen",
+    "generationId": "exec-203dc9d5-f1d4-4b94-baea-eea5df07b026",
+    "date": "2026-10-23",
+    "model": "not exposed by built-in tool",
+    "transparentBackground": true,
+    "original": "source/tent-right-original.png",
+    "prompt": "source/prompts/tent-right.txt",
+    "referencePaths": [
+      "assets/game/pixel-v5/camp/source/tent-left-original.png",
+      "assets/concepts/camp-location-01/camp-scene.png",
+      "assets/game/pixel-v4/landscape/landscape.png"
+    ]
+  },
+  {
+    "id": "road-marker",
+    "tool": "image_gen.imagegen",
+    "generationId": "exec-6584cf00-fb45-4be5-9187-461786194a2d",
+    "date": "2026-10-23",
+    "model": "not exposed by built-in tool",
+    "transparentBackground": true,
+    "original": "source/road-marker-original.png",
+    "prompt": "source/prompts/road-marker.txt",
+    "referencePaths": [
+      "assets/game/pixel-v5/camp/source/tent-left-original.png",
+      "assets/concepts/camp-location-01/camp-scene.png",
+      "assets/game/pixel-v4/landscape/landscape.png"
+    ]
+  },
+  {
+    "id": "campfire-base",
+    "tool": "image_gen.imagegen",
+    "generationId": "exec-262afd7f-0d07-4e2d-9bd6-6c75a7a8389e",
+    "date": "2026-10-23",
+    "model": "not exposed by built-in tool",
+    "transparentBackground": true,
+    "original": "source/campfire-base-original.png",
+    "prompt": "source/prompts/campfire-base.txt",
+    "referencePaths": [
+      "assets/game/pixel-v5/camp/source/tent-left-original.png",
+      "assets/concepts/camp-location-01/camp-scene.png",
+      "assets/game/pixel-v4/landscape/landscape.png"
+    ]
+  },
+  {
+    "id": "supply-cache",
+    "tool": "image_gen.imagegen",
+    "generationId": "exec-57bc9bd1-ce5b-42f6-a5a6-ade9278b9570",
+    "date": "2026-10-23",
+    "model": "not exposed by built-in tool",
+    "transparentBackground": true,
+    "original": "source/supply-cache-original.png",
+    "prompt": "source/prompts/supply-cache.txt",
+    "referencePaths": [
+      "assets/game/pixel-v5/camp/source/tent-left-original.png",
+      "assets/concepts/camp-location-01/camp-scene.png",
+      "assets/game/pixel-v4/landscape/landscape.png"
+    ]
+  },
+  {
+    "id": "fallen-log",
+    "tool": "image_gen.imagegen",
+    "generationId": "exec-0bde051d-360b-46dd-9be2-aa72932e9e03",
+    "date": "2026-10-23",
+    "model": "not exposed by built-in tool",
+    "transparentBackground": true,
+    "original": "source/fallen-log-original.png",
+    "prompt": "source/prompts/fallen-log.txt",
+    "referencePaths": [
+      "assets/game/pixel-v5/camp/source/tent-left-original.png",
+      "assets/concepts/camp-location-01/camp-scene.png",
+      "assets/game/pixel-v4/landscape/landscape.png"
+    ]
+  },
+  {
+    "id": "camp-flame",
+    "tool": "image_gen.imagegen",
+    "generationId": "exec-3c209da9-ffe5-4d83-b3a0-038b0d13b330",
+    "date": "2026-10-23",
+    "model": "not exposed by built-in tool",
+    "transparentBackground": true,
+    "original": "source/camp-flame-original.png",
+    "prompt": "source/prompts/camp-flame.txt",
+    "referencePaths": [
+      "assets/game/pixel-v5/camp/source/campfire-base-original.png",
+      "assets/game/pixel-v5/camp/source/tent-left-original.png",
+      "assets/concepts/camp-location-01/camp-scene.png"
+    ]
+  }
+]

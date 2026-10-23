@@ -1,0 +1,90 @@
+{
+  "scale": 10,
+  "frame": {
+    "x0": -26,
+    "x1": 28,
+    "y0": -101,
+    "y1": 28,
+    "width": 540,
+    "height": 1290
+  },
+  "svgBytes": {
+    "ground": 1502,
+    "paving": 429,
+    "renderer": 8587,
+    "colliders": 8687,
+    "routes": 504,
+    "packs": 4697
+  },
+  "packKeys": {
+    "road-approach": {
+      "letter": "A",
+      "labelX": 300,
+      "labelY": 590
+    },
+    "road-crossing": {
+      "letter": "B",
+      "labelX": 310,
+      "labelY": 480
+    },
+    "road-gate": {
+      "letter": "C",
+      "labelX": 300,
+      "labelY": 365
+    },
+    "road-thicket": {
+      "letter": "D",
+      "labelX": 150,
+      "labelY": 530
+    },
+    "court-entrance": {
+      "letter": "E",
+      "labelX": 310,
+      "labelY": 185
+    },
+    "court-source": {
+      "letter": "F",
+      "labelX": 310,
+      "labelY": 105
+    }
+  },
+  "points": {
+    "spawn": {
+      "x": 260,
+      "y": 1040
+    },
+    "exit": {
+      "x": 260,
+      "y": 70
+    },
+    "shrine": {
+      "x": 100,
+      "y": 560
+    },
+    "secret": {
+      "x": 100,
+      "y": 510
+    },
+    "ritual": {
+      "x": 260,
+      "y": 100
+    },
+    "reward": {
+      "x": 300,
+      "y": 1060
+    }
+  },
+  "seams": {
+    "-29.5": 715.0,
+    "-70.5": 305.0
+  },
+  "safeArea": {
+    "top": 715.0,
+    "bottom": 1250
+  },
+  "zoneLabels": {
+    "camp": 980.0,
+    "road": 510.0,
+    "courtyard": 175.0
+  }
+}

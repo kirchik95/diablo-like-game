@@ -1,0 +1,150 @@
+{
+  "status": "passed",
+  "details": {
+    "frames": 8,
+    "colors": 32,
+    "binaryAlpha": true,
+    "transparentRgbZero": true,
+    "maskMatches": true,
+    "cells": [
+      {
+        "id": "grass-low",
+        "alphaBox": [
+          19,
+          43,
+          45,
+          56
+        ],
+        "height": 13,
+        "opaquePixels": 164
+      },
+      {
+        "id": "grass-wide",
+        "alphaBox": [
+          12,
+          45,
+          52,
+          56
+        ],
+        "height": 11,
+        "opaquePixels": 198
+      },
+      {
+        "id": "fern-low",
+        "alphaBox": [
+          15,
+          39,
+          49,
+          56
+        ],
+        "height": 17,
+        "opaquePixels": 276
+      },
+      {
+        "id": "flowers-white",
+        "alphaBox": [
+          18,
+          37,
+          46,
+          56
+        ],
+        "height": 19,
+        "opaquePixels": 220
+      },
+      {
+        "id": "flowers-ochre",
+        "alphaBox": [
+          19,
+          38,
+          46,
+          56
+        ],
+        "height": 18,
+        "opaquePixels": 200
+      },
+      {
+        "id": "leaves",
+        "alphaBox": [
+          14,
+          44,
+          50,
+          56
+        ],
+        "height": 12,
+        "opaquePixels": 195
+      },
+      {
+        "id": "twigs",
+        "alphaBox": [
+          13,
+          43,
+          51,
+          56
+        ],
+        "height": 13,
+        "opaquePixels": 144
+      },
+      {
+        "id": "pebbles-flat",
+        "alphaBox": [
+          14,
+          41,
+          50,
+          56
+        ],
+        "height": 15,
+        "opaquePixels": 292
+      }
+    ]
+  },
+  "surfaces": [
+    {
+      "id": "grass",
+      "size": [
+        128,
+        128
+      ],
+      "colors": 20,
+      "luminanceRange": 24.278,
+      "meanRgb": [
+        111.82,
+        125.974,
+        94.968
+      ],
+      "horizontalSeamEqual": true,
+      "verticalSeamEqual": true
+    },
+    {
+      "id": "soil",
+      "size": [
+        128,
+        128
+      ],
+      "colors": 20,
+      "luminanceRange": 19.277,
+      "meanRgb": [
+        127.952,
+        109.967,
+        91.02
+      ],
+      "horizontalSeamEqual": true,
+      "verticalSeamEqual": true
+    },
+    {
+      "id": "stone",
+      "size": [
+        128,
+        128
+      ],
+      "colors": 20,
+      "luminanceRange": 27.281,
+      "meanRgb": [
+        118.954,
+        120.872,
+        117.935
+      ],
+      "horizontalSeamEqual": true,
+      "verticalSeamEqual": true
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "status": "delivered-awaiting-root-qa",
+  "paper": {
+    "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+    "pageId": "p-B-0",
+    "url": "https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-B-0",
+    "planArtboard": "17Z-0",
+    "isometricArtboard": "180-0"
+  },
+  "layoutSha256": "149d2152cf3e97a10d5b46c3bbfd2e26dbaf232b17a34ed52e0e75122d7c1e34",
+  "footprintSourceSha256": "4209d0d8efffd7931cfef953b66282d1d0cc553a69da24451aadf2e2bc96d2a8",
+  "commands": [
+    "node assets/concepts/camp-plan-01/source/export-layout.mjs",
+    "python3 assets/concepts/camp-plan-01/source/compose-plan.py"
+  ],
+  "files": {
+    "exports/01-camp-plan.png": {
+      "sha256": "992b899d40f6ef049f2971369dd7003c39dbe99de47e8d2fbebc02de758b7fcc",
+      "bytes": 530055
+    },
+    "exports/02-camp-isometric.png": {
+      "sha256": "4d4c3c37be96e0649d715f9f4e1df0d63bbcf67b0d58a41da2341080877f8e6f",
+      "bytes": 2269242
+    },
+    "source/compose-plan.py": {
+      "sha256": "387c5c06a20feff01b9ba3506cfc47499f9df34a6cf84b6db3c073580e2ed8e7",
+      "bytes": 4647
+    },
+    "source/export-layout.mjs": {
+      "sha256": "c82dcb6606b1737f30cd1e491c9b6f5fcf1fec241ede9e9f91130148ce55b0fe",
+      "bytes": 6420
+    },
+    "source/final-paper-styles.json": {
+      "sha256": "837c451bab5ee87002b69d27a4f13366e69b14c39c6791f248a64c6fd3d31216",
+      "bytes": 1758
+    },
+    "source/footprints.json": {
+      "sha256": "4209d0d8efffd7931cfef953b66282d1d0cc553a69da24451aadf2e2bc96d2a8",
+      "bytes": 4800
+    },
+    "source/isometric-image.html": {
+      "sha256": "1be2f5984bb28f431b9144748430a5d46ae33381281a11735c1c2f435a2a1dfd",
+      "bytes": 296
+    },
+    "source/isometric-paper.jsx": {
+      "sha256": "75db64dc8624c7a9993d04317a02a27a99f7303788024b6a31c0d4bc0d756f0b",
+      "bytes": 5804
+    },
+    "source/layout.json": {
+      "sha256": "149d2152cf3e97a10d5b46c3bbfd2e26dbaf232b17a34ed52e0e75122d7c1e34",
+      "bytes": 60687
+    },
+    "source/metrics.json": {
+      "sha256": "7f9d0703af785880b0585e8167d4a9736cc886c6a4c72605faedee7558e0b05e",
+      "bytes": 6564
+    },
+    "source/navigation.json": {
+      "sha256": "1a9c9a3e5868e5c4fac0d62b59c862d45389f75ea1f54f3c24b977af93eda13d",
+      "bytes": 68606
+    },
+    "source/paper-final-export-receipt.json": {
+      "sha256": "d87000c9dd7ef45b9a6bab626ae1120834aeeff56bc565a8a3b3d5a342e0a1d5",
+      "bytes": 282
+    },
+    "source/paper-qa.json": {
+      "sha256": "8895b91139ef2f8948e515f484c8951f38a10b933d67990f53c3aef62a9b50c5",
+      "bytes": 1618
+    },
+    "source/plan-keys.html": {
+      "sha256": "58bfc08a7e340c236f60965116b95a937b9a1a9d8f953a18bcfb7f5710d7c68a",
+      "bytes": 3545
+    },
+    "source/plan-map.svg": {
+      "sha256": "76e9bc4f3d3c5790d44663b43e130f3e363992a85ddad8cccf82175a6023a2dc",
+      "bytes": 65208
+    },
+    "source/plan-paper-export.json": {
+      "sha256": "3ad0e24790f2fa1cb60423d1d7e7c9b2dfa27de01af33ebd229cff194a20a25d",
+      "bytes": 150
+    },
+    "source/plan-paper-styles.json": {
+      "sha256": "983225764d2d8e86c38fd59c2b9ad7ff5860bf78aebc0e0d73ca7c6c57782ccd",
+      "bytes": 1203
+    },
+    "source/plan-paper.jsx": {
+      "sha256": "a9bdcb8b490e50f9273d094ca36958067f27ace529066577305496d26721788a",
+      "bytes": 33786
+    },
+    "source/plan-projection.json": {
+      "sha256": "1ab17577849d447251cabc8ed9e8e82a0b8d4b5170b0ae56ec8dde1859ae3df3",
+      "bytes": 1812
+    },
+    "source/reference-board.jsx": {
+      "sha256": "9f54229f558a133e5cdd6ac6a69c2beac365e0268a0077c03b0d70caf83e5c82",
+      "bytes": 4756
+    },
+    "source/reference-fonts.json": {
+      "sha256": "f16d81f3e4dc22d438a3f91f1a5e13bf6737e2674c7b5a00b6109f0922833cae",
+      "bytes": 3516
+    },
+    "source/reference-styles.json": {
+      "sha256": "0ab90753f19263d43b1a918977702365bcd010f72655c8e192bc11dfaeea66d0",
+      "bytes": 335
+    },
+    "source/renderer-overview-provenance.json": {
+      "sha256": "6d890f058a2bbb324ff036ab948667f0d98561ac9bbe9e23f2af8a25b783b2b9",
+      "bytes": 2133
+    },
+    "source/renderer-overview.png": {
+      "sha256": "3ef08ea2d76e43e4a9463588b000fd396d1713c2456aaf4b86c006740f65b979",
+      "bytes": 188954
+    },
+    "source/verify-delivery.py": {
+      "sha256": "dd487dd364382f844c1fff237bc4a0b763b2bb969517b0f5247cb15c2308bce4",
+      "bytes": 1969
+    }
+  },
+  "acceptance": {
+    "status": "pending-root-terrain-qa",
+    "scope": "full camp stage not accepted",
+    "dependency": "camp-scene investigates dark bands/triangles beyond camp boundary; coordinator decides whether to supply a replacement overview",
+    "layoutAndRuntimeAssets": "frozen; not changed by Task 3"
+  },
+  "boards": [
+    {
+      "id": "17Z-0",
+      "name": "01 · Полный план лагеря",
+      "compositionStatus": "complete",
+      "export": "exports/01-camp-plan.png",
+      "pixels": [
+        1600,
+        1771
+      ],
+      "source": "source/plan-paper.jsx"
+    },
+    {
+      "id": "180-0",
+      "name": "02 · Лагерь в изометрии",
+      "compositionStatus": "complete-current-capture",
+      "acceptanceStatus": "pending-root-terrain-qa",
+      "export": "exports/02-camp-isometric.png",
+      "pixels": [
+        1600,
+        1377
+      ],
+      "source": "source/isometric-paper.jsx",
+      "image": "source/renderer-overview.png"
+    }
+  ],
+  "provenance": "source/renderer-overview-provenance.json",
+  "visualReview": "source/paper-qa.json",
+  "verificationCommand": "python3 assets/concepts/camp-plan-01/source/verify-delivery.py"
+}

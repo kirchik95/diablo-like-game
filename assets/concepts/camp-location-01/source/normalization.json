@@ -1,0 +1,77 @@
+{
+  "source": "source/scene-original-v2.png",
+  "sourceSha256": "9214ca0f6c3bfd247b27b97d1c7f1c8367f85223cd855fd99e26f0b9a203362e",
+  "sourceSize": [
+    1672,
+    941
+  ],
+  "logicalSize": [
+    756,
+    426
+  ],
+  "displaySize": [
+    1512,
+    852
+  ],
+  "displayPixelsPerLogicalPixel": 2,
+  "resampling": "nearest",
+  "quantization": "median-cut",
+  "paletteRegions": [
+    {
+      "name": "landscape",
+      "logicalBox": null,
+      "reservedColors": 88
+    },
+    {
+      "name": "campfire",
+      "logicalBox": [
+        429,
+        145,
+        495,
+        222
+      ],
+      "reservedColors": 16
+    },
+    {
+      "name": "monk",
+      "logicalBox": [
+        353,
+        180,
+        386,
+        220
+      ],
+      "reservedColors": 8
+    },
+    {
+      "name": "wine-mat",
+      "logicalBox": [
+        282,
+        246,
+        404,
+        310
+      ],
+      "reservedColors": 8
+    }
+  ],
+  "protectedWineAndFireColors": [
+    "481f34",
+    "67243e",
+    "882d50",
+    "b2465a",
+    "ffedba",
+    "ffc34e",
+    "e87e2d",
+    "ba4c20"
+  ],
+  "dithering": false,
+  "opaqueColors": 128,
+  "alphaRange": [
+    255,
+    255
+  ],
+  "crop": null,
+  "aspectRatioAdjustmentPercent": -0.12299,
+  "pillow": "12.3.0",
+  "output": "camp-scene.png",
+  "outputSha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+}

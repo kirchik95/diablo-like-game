@@ -1,0 +1,10 @@
+Use case: stylized-concept.
+ROLE / ASSET: one seamless square surface texture draft for Night Ritual pixel-art terrain, asset "moss".
+INPUT IMAGE: STYLE / PALETTE REFERENCE ONLY, the accepted monastery landscape. Create only a material texture, not that scene.
+SUBJECT / MATERIAL: Low ground-cover moss and worn dark upland turf, with sparse interlocking patches of exposed cool soil. Main colors are muted blue-green and grey sage, dark middle values, greener than the earth. Avoid recognizable grass blades, bushes or any tall geometry.
+VIEW: flat orthographic texture swatch that fills the ENTIRE square canvas edge to edge; no perspective, no isometric tile edges. This texture will be mapped onto 3D terrain.
+ART DIRECTION: quiet low-contrast pixel clusters matching the reference landscape. Surface must support bright actors without distraction. Large restrained clusters; avoid white highlights or black outlines. At most roughly 12 color roles.
+NATIVE READ: final texture is 32x32 pixels. Make this look like a deliberate 32x32 pixel texture enlarged with nearest neighbor to a square canvas; chunky pixels, no subpixel antialiasing, no photographic detail, no blur.
+TILING: periodic on left/right and top/bottom, continuous texture across opposite edges; no border, no central focal object, no vignette, no lighting gradient.
+TECHNICAL OUTPUT: fully opaque square image, material covering every pixel.
+EXCLUDE: scene, landscape composition, ground tile outline, path, objects, shadows, text, labels, grid lines, frames, watermark.

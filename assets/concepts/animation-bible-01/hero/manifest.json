@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 2,
+  "status": "complete",
+  "date": "2026-10-22",
+  "deliverableType": "Animation artbook / storyboard keyframes",
+  "engineReady": false,
+  "scope": {
+    "visualBoards": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "14"
+    ],
+    "indexBoards": [
+      "00"
+    ],
+    "visualBoardCount": 5,
+    "totalExportedBoards": 6,
+    "keyImageCount": 80,
+    "animationKeyCount": 76,
+    "directionalReferenceCount": 4,
+    "temporalSequences": 14
+  },
+  "paper": {
+    "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+    "pageId": "p-7-0",
+    "pageUrl": "https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-7-0",
+    "indexNodeId": "HW-0",
+    "indexExport": "exports/00-animation-index.png",
+    "indexDimensions": [
+      1600,
+      1644
+    ],
+    "relatedSections": [
+      {
+        "name": "Monsters",
+        "pageId": "p-9-0",
+        "url": "https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-9-0",
+        "visualBoards": 6,
+        "images": 84
+      },
+      {
+        "name": "World",
+        "pageId": "p-8-0",
+        "url": "https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-8-0",
+        "visualBoards": 3,
+        "images": 54
+      }
+    ],
+    "globalCoverage": {
+      "visualBoards": 14,
+      "indexBoards": 1,
+      "images": 218,
+      "source": "Main agent's coverage statement; other sections authored by their owners."
+    }
+  },
+  "artDirection": {
+    "mood": "monastery / ash",
+    "camera": "dimensional orthographic 2:1 isometry",
+    "medium": "simplified raster pixel-art keyframes",
+    "fonts": [
+      "Oswald",
+      "Golos Text"
+    ],
+    "palette": {
+      "coal": "#171321",
+      "stone": "#6C6179",
+      "cloth": "#EEE0CE",
+      "impact": "#FF876F",
+      "spirit": "#7EF3EC",
+      "danger": "#EF329E",
+      "healing": "#EDBE75"
+    },
+    "boardWidthPx": 1600,
+    "boardPaddingPx": 48,
+    "artboardHeight": "fit-content",
+    "character": "Adult athletic bald tan monk, ivory wrap tunic, charcoal trousers, burgundy double sash, dark beads, bronze wrist wraps, bare feet.",
+    "pivotPolicy": "Consistent conceptual ground support. Exact per-frame engine pivot registration is intentionally deferred.",
+    "collisionRole": "None: storyboard art only."
+  },
+  "timingSource": {
+    "path": "src/game.js",
+    "sha256": "d28f3c6c25792f200b5aecb10d307b6140fdc3e9810bde8938ee8553a02d52ec",
+    "access": "read-only",
+    "keyLabels": "Timestamps measured from action start, not individual frame hold durations.",
+    "events": {
+      "palmContactMs": [
+        90,
+        110,
+        160
+      ],
+      "palmEndMs": [
+        290,
+        320,
+        420
+      ],
+      "comboTimerFromAttackStartMs": 850,
+      "dashMs": 200,
+      "dashCooldownMs": 1200,
+      "waveDamageMs": 0,
+      "waveCooldownMs": 5000,
+      "hurtFlashMs": 220,
+      "invulnerabilityMs": 550,
+      "houndWindupMs": 550,
+      "houndLeapMs": 270,
+      "houndRecoveryMs": 700,
+      "healAmount": 40,
+      "healTrigger": "Immediate at shrine proximity with missing HP, once."
+    }
+  },
+  "files": {
+    "provenance": "provenance.json",
+    "qualityAssurance": "qa.md",
+    "machineQualityAssurance": "qa-report.json",
+    "exportChecksums": "export-manifest.json",
+    "normalization": "normalization.json",
+    "promptDirectory": "prompts/",
+    "originalDirectory": "originals/",
+    "exportDirectory": "exports/"
+  },
+  "productionLimitations": [
+    "Storyboard keyframes are not engine-ready sprite atlases.",
+    "Exact registration, intermediate frames, seamless playback, strict pixel-grid/palette normalization and alpha cleanup remain a future engine-asset task.",
+    "Only the direction reference row depicts all four facings; action sequences are authored in SE.",
+    "Future directional mirroring must check tunic wrap, sash and lighting; the corrected run was never mirrored.",
+    "Revive and post-defeat visual playback are proposals, not implemented gameplay states."
+  ],
+  "boards": [
+    {
+      "n": "01",
+      "slug": "monk-locomotion",
+      "title": "ВДОХ ПЕРЕД ДВИЖЕНИЕМ",
+      "sub": "Монах · стойка, полный беговой цикл и четыре направления",
+      "accent": "#7EF3EC",
+      "x": 1680,
+      "y": 0,
+      "rows": [
+        {
+          "key": "idle",
+          "title": "СТОЙКА / ДЫХАНИЕ",
+          "meta": "4 ключа · loop · 800 мс, предложение",
+          "labels": [
+            "01 · 0 мс|Равновесие",
+            "02 · 200 мс|Вдох",
+            "03 · 400 мс|Выдох",
+            "04 · 600 мс|Возврат"
+          ],
+          "note": "Стопы закреплены. Движение грудной клетки и пояса мягкое; крайние положения не меняют рост героя.",
+          "nodeId": "QG-0",
+          "imageSlotId": "QS-0",
+          "labelsId": "R2-0",
+          "noteId": "RK-0",
+          "imageId": "Y2-0",
+          "keyCount": 4,
+          "durationMs": 800,
+          "playback": "loop",
+          "timingSource": "proposed",
+          "facing": "SE",
+          "imageFile": "strips/01-monk-locomotion-v1-row-1.png"
+        },
+        {
+          "key": "run",
+          "title": "БЕГ / ДВЕ ОПОРЫ",
+          "meta": "6 ключей · loop · 480 мс, предложение",
+          "labels": [
+            "01 · 0 мс|Правая: контакт",
+            "02 · 80 мс|Сжатие справа",
+            "03 · 160 мс|Толчок справа",
+            "04 · 240 мс|Левая: контакт",
+            "05 · 320 мс|Сжатие слева",
+            "06 · 400 мс|Толчок слева"
+          ],
+          "note": "01–03: правая опора, левая рука впереди. 04–06: левая опора, правая рука впереди; ближняя нога меняет перекрытие. Направление SE сохранено, зеркалирования нет. Код: 3,5 ед/с; предлагаемый цикл 480 мс привязать к пройденному расстоянию.",
+          "nodeId": "RO-0",
+          "imageSlotId": "S1-0",
+          "labelsId": "S9-0",
+          "noteId": "SX-0",
+          "imageId": "178-0",
+          "keyCount": 6,
+          "durationMs": 480,
+          "playback": "loop",
+          "timingSource": "proposed",
+          "facing": "SE",
+          "imageFile": "strips/01-run-final.png"
+        },
+        {
+          "key": "facing",
+          "title": "НАПРАВЛЕНИЯ / МОДЕЛЬ",
+          "meta": "4 опорных вида · не временная последовательность",
+          "labels": [
+            "SE · перед вправо|Основной вид",
+            "SW · перед влево|Парный вид",
+            "NE · спина вправо|Основной вид",
+            "NW · спина влево|Парный вид"
+          ],
+          "note": "Для сборки: авторские SE и NE; SW/NW допускают отражение по X с проверкой запаха туники и пояса. Остальные ключи показаны только в SE.",
+          "nodeId": "SZ-0",
+          "imageSlotId": "T8-0",
+          "labelsId": "TL-0",
+          "noteId": "UA-0",
+          "imageId": "Y4-0",
+          "keyCount": 4,
+          "durationMs": null,
+          "playback": "reference",
+          "timingSource": "not-applicable",
+          "facing": [
+            "SE",
+            "SW",
+            "NE",
+            "NW"
+          ],
+          "imageFile": "strips/01-monk-locomotion-v1-row-3.png"
+        }
+      ],
+      "id": "I2-0",
+      "status": "complete",
+      "review": "Accepted as animation storyboard by the main agent, relayed in conversation; not a direct separate end-user approval.",
+      "export": "exports/01-monk-locomotion.png",
+      "exportDimensions": [
+        1600,
+        1870
+      ],
+      "width": 1600,
+      "keyImageCount": 14,
+      "sourceFiles": [
+        "originals/01-monk-locomotion-v1.png",
+        "originals/01-run-opposite-half-v4.png"
+      ]
+    },
+    {
+      "n": "02",
+      "slug": "monk-combo",
+      "title": "ТРИ ЛАДОНИ. ОДИН РИТМ.",
+      "sub": "Монах · три самостоятельные атаки с разным переносом веса",
+      "accent": "#FF876F",
+      "x": 3360,
+      "y": 0,
+      "rows": [
+        {
+          "key": "palm-one",
+          "title": "I / ПРЯМАЯ ПЕРЕДНЕЙ ЛАДОНЬЮ",
+          "meta": "6 ключей · one-shot · 290 мс, код",
+          "labels": [
+            "01 · 0 мс|Готовность",
+            "02 · 45 мс|Подбор локтя",
+            "03 · 90 мс|КОНТАКТ",
+            "04 · 140 мс|Продолжение",
+            "05 · 210 мс|Возврат руки",
+            "06 · 290 мс|Стойка"
+          ],
+          "note": "Контакт: 90 мс · урон 22 · дальность 1,5. Короткий прямой импульс; передняя нога удерживает ось.",
+          "nodeId": "UT-0",
+          "imageSlotId": "UY-0",
+          "labelsId": "V0-0",
+          "noteId": "VK-0",
+          "imageId": "Y6-0",
+          "keyCount": 6,
+          "durationMs": 290,
+          "playback": "one-shot",
+          "timingSource": "src/game.js",
+          "facing": "SE",
+          "imageFile": "strips/02-monk-combo-row-1.png"
+        },
+        {
+          "key": "palm-two",
+          "title": "II / ПОПЕРЕЧНАЯ ЗАДНЕЙ ЛАДОНЬЮ",
+          "meta": "6 ключей · one-shot · 320 мс, код",
+          "labels": [
+            "01 · 0 мс|Перенос веса",
+            "02 · 55 мс|Скрутка",
+            "03 · 110 мс|КОНТАКТ",
+            "04 · 170 мс|Доворот",
+            "05 · 250 мс|Раскрутка",
+            "06 · 320 мс|Стойка"
+          ],
+          "note": "Контакт: 110 мс · урон 26 · дальность 1,6. Работает противоположная рука; плечи и таз раскрываются поперёк траектории.",
+          "nodeId": "VM-0",
+          "imageSlotId": "VR-0",
+          "labelsId": "VT-0",
+          "noteId": "WH-0",
+          "imageId": "Y8-0",
+          "keyCount": 6,
+          "durationMs": 320,
+          "playback": "one-shot",
+          "timingSource": "src/game.js",
+          "facing": "SE",
+          "imageFile": "strips/02-monk-combo-row-2.png"
+        },
+        {
+          "key": "palm-three",
+          "title": "III / ТЯЖЁЛЫЙ ТОЛЧОК ДВУМЯ ЛАДОНЯМИ",
+          "meta": "6 ключей · one-shot · 420 мс, код",
+          "labels": [
+            "01 · 0 мс|Низкая стойка",
+            "02 · 80 мс|Сбор корпуса",
+            "03 · 160 мс|КОНТАКТ",
+            "04 · 240 мс|Продавливание",
+            "05 · 330 мс|Отвод рук",
+            "06 · 420 мс|Стойка"
+          ],
+          "note": "Контакт: 160 мс · урон 44 · дальность 1,9. Самый широкий силуэт и длинное восстановление; не увеличивать объём тела.",
+          "nodeId": "WJ-0",
+          "imageSlotId": "WQ-0",
+          "labelsId": "WW-0",
+          "noteId": "XG-0",
+          "imageId": "YA-0",
+          "keyCount": 6,
+          "durationMs": 420,
+          "playback": "one-shot",
+          "timingSource": "src/game.js",
+          "facing": "SE",
+          "imageFile": "strips/02-monk-combo-row-3.png"
+        }
+      ],
+      "id": "I3-0",
+      "status": "complete",
+      "review": "Accepted as animation storyboard by the main agent, relayed in conversation; not a direct separate end-user approval.",
+      "export": "exports/02-monk-combo.png",
+      "exportDimensions": [
+        1600,
+        1938
+      ],
+      "width": 1600,
+      "keyImageCount": 18,
+      "sourceFiles": [
+        "originals/02-monk-combo.png"
+      ]
+    },
+    {
+      "n": "03",
+      "slug": "monk-abilities",
+      "title": "РЫВОК, ВОЛНА И ОТВЕТ ТЕЛА",
+      "sub": "Монах · скорость, духовный импульс и короткая реакция на удар",
+      "accent": "#7EF3EC",
+      "x": 5040,
+      "y": 0,
+      "rows": [
+        {
+          "key": "dash",
+          "title": "РЫВОК / ВПЕРЁД ПО ОСИ",
+          "meta": "6 ключей · one-shot · 200 мс, код",
+          "labels": [
+            "01 · 0 мс|Старт сразу",
+            "02 · 25 мс|Разгон",
+            "03 · 65 мс|Вытяжение",
+            "04 · 110 мс|Пролёт",
+            "05 · 155 мс|Приземление",
+            "06 · 200 мс|Выход в стойку"
+          ],
+          "note": "Движение и защита начинаются сразу. Скорость 13 ед/с; cooldown 1200 мс. Dash отменяет текущий удар; художественный шлейф не является телом.",
+          "nodeId": "YV-0",
+          "imageSlotId": "Z4-0",
+          "labelsId": "ZA-0",
+          "noteId": "ZW-0",
+          "imageId": "12E-0",
+          "keyCount": 6,
+          "durationMs": 200,
+          "playback": "one-shot",
+          "timingSource": "src/game.js",
+          "facing": "SE",
+          "imageFile": "strips/03-monk-abilities-row-1.png"
+        },
+        {
+          "key": "wave",
+          "title": "ДУХОВНАЯ ВОЛНА / МГНОВЕННЫЙ ВЫПУСК",
+          "meta": "6 ключей · one-shot · VFX 500 мс, код",
+          "labels": [
+            "01 · 0 мс|УРОН / импульс",
+            "02 · 40 мс|Кольцо растёт",
+            "03 · 90 мс|Раскрытие",
+            "04 · 160 мс|Рассеивание",
+            "05 · 280 мс|Выдох",
+            "06 · 500 мс|Затухание"
+          ],
+          "note": "Урон 42 в радиусе 2,8 — сразу на 0 мс, с проверкой видимости. Cooldown 5000 мс. Отменяет удар; во время dash недоступна. Поза после импульса предложена.",
+          "nodeId": "102-0",
+          "imageSlotId": "10D-0",
+          "labelsId": "10J-0",
+          "noteId": "117-0",
+          "imageId": "12G-0",
+          "keyCount": 6,
+          "durationMs": 500,
+          "playback": "one-shot",
+          "timingSource": "src/game.js: effect lifetime; poses proposed",
+          "facing": "SE",
+          "imageFile": "strips/03-monk-abilities-row-2.png"
+        },
+        {
+          "key": "hurt",
+          "title": "ПОЛУЧЕНИЕ УРОНА / КОРОТКАЯ ОТДАЧА",
+          "meta": "4 ключа · one-shot · flash 220 мс, код",
+          "labels": [
+            "01 · 0 мс|ПОПАДАНИЕ",
+            "02 · 65 мс|Отклонение",
+            "03 · 140 мс|Сбор корпуса",
+            "04 · 220 мс|Контроль"
+          ],
+          "note": "Неуязвимость 550 мс; отталкивание 0,18. В коде нет отдельного блокирующего hurt-state: предложенная отдача не должна задерживать управление.",
+          "nodeId": "119-0",
+          "imageSlotId": "11K-0",
+          "labelsId": "11Q-0",
+          "noteId": "126-0",
+          "imageId": "12I-0",
+          "keyCount": 4,
+          "durationMs": 220,
+          "playback": "one-shot",
+          "timingSource": "src/game.js: flash; poses proposed",
+          "facing": "SE",
+          "imageFile": "strips/03-monk-abilities-row-3.png"
+        }
+      ],
+      "id": "I4-0",
+      "status": "complete",
+      "review": "Accepted as animation storyboard by the main agent, relayed in conversation; not a direct separate end-user approval.",
+      "export": "exports/03-monk-abilities.png",
+      "exportDimensions": [
+        1600,
+        1843
+      ],
+      "width": 1600,
+      "keyImageCount": 16,
+      "sourceFiles": [
+        "originals/03-monk-abilities.png"
+      ]
+    },
+    {
+      "n": "04",
+      "slug": "monk-lifecycle",
+      "title": "ПАДЕНИЕ И ВОЗВРАЩЕНИЕ",
+      "sub": "Монах · смерть, появление и отклик на святилище",
+      "accent": "#EDBE75",
+      "x": 6720,
+      "y": 0,
+      "rows": [
+        {
+          "key": "death",
+          "title": "СМЕРТЬ / ВЕС УХОДИТ В ЗЕМЛЮ",
+          "meta": "6 ключей · one-shot → hold · 900 мс, предложение",
+          "labels": [
+            "01 · 0 мс|DEFEAT",
+            "02 · 100 мс|Потеря опоры",
+            "03 · 240 мс|Колено",
+            "04 · 420 мс|Падение на бок",
+            "05 · 650 мс|Оседание",
+            "06 · 900 мс|Неподвижно"
+          ],
+          "note": "При HP = 0 код сразу включает defeat и останавливает обновление игры. Эта последовательность требует отдельного визуального проигрывания после defeat.",
+          "nodeId": "12K-0",
+          "imageId": "12P-0",
+          "labelsId": "12R-0",
+          "noteId": "13B-0",
+          "keyCount": 6,
+          "durationMs": 900,
+          "playback": "one-shot-hold",
+          "timingSource": "proposed; defeat event immediate",
+          "facing": "SE",
+          "imageFile": "strips/04-monk-lifecycle-row-1.png"
+        },
+        {
+          "key": "revive",
+          "title": "ПОЯВЛЕНИЕ / ВОЗРОЖДЕНИЕ",
+          "meta": "4 ключа · one-shot · 700 мс, предложение",
+          "labels": [
+            "01 · 0 мс|Контур света",
+            "02 · 200 мс|Колено / сбор",
+            "03 · 440 мс|Подъём",
+            "04 · 700 мс|Готовность"
+          ],
+          "note": "Состояние revive пока не реализовано. Ясный силуэт собирается снизу вверх; свет гаснет прежде, чем игрок снова вступает в бой.",
+          "nodeId": "13D-0",
+          "imageId": "14N-0",
+          "labelsId": "13K-0",
+          "noteId": "13Y-0",
+          "keyCount": 4,
+          "durationMs": 700,
+          "playback": "one-shot",
+          "timingSource": "proposed; not implemented",
+          "facing": "SE",
+          "imageFile": "strips/04-monk-lifecycle-row-2-v2.png"
+        },
+        {
+          "key": "shrine",
+          "title": "СВЯТИЛИЩЕ / ПРИНЯТИЕ ДАРА",
+          "meta": "4 ключа · one-shot · VFX 500 мс, код",
+          "labels": [
+            "01 · 0 мс|ЛЕЧЕНИЕ +40",
+            "02 · 120 мс|Ладони к груди",
+            "03 · 280 мс|Короткий поклон",
+            "04 · 500 мс|Возврат"
+          ],
+          "note": "Лечение автоматически при расстоянии < 0,85 и неполном HP, одноразово. Жест предложен; не добавляет задержку лечения. Само святилище — в разделе окружения.",
+          "nodeId": "140-0",
+          "imageId": "14P-0",
+          "labelsId": "147-0",
+          "noteId": "14L-0",
+          "keyCount": 4,
+          "durationMs": 500,
+          "playback": "one-shot",
+          "timingSource": "src/game.js: effect lifetime; poses proposed",
+          "facing": "SE",
+          "imageFile": "strips/04-monk-lifecycle-row-3-v2.png"
+        }
+      ],
+      "id": "I5-0",
+      "status": "complete",
+      "review": "Accepted as animation storyboard by the main agent, relayed in conversation; not a direct separate end-user approval.",
+      "export": "exports/04-monk-lifecycle.png",
+      "exportDimensions": [
+        1600,
+        1843
+      ],
+      "width": 1600,
+      "keyImageCount": 14,
+      "sourceFiles": [
+        "originals/04-monk-lifecycle.png"
+      ]
+    },
+    {
+      "n": "14",
+      "slug": "combat-effects",
+      "title": "ЦВЕТ СЛЕДУЕТ ЗА СОБЫТИЕМ",
+      "sub": "Боевые эффекты · контакт, предупреждение и восстановление",
+      "accent": "#FF876F",
+      "x": 8400,
+      "y": 0,
+      "rows": [
+        {
+          "key": "impact",
+          "title": "ЛАДОНЬ / КОРАЛЛОВЫЙ КОНТАКТ",
+          "meta": "6 ключей · one-shot · рисунок 300 мс, предложение",
+          "labels": [
+            "01 · 0 мс|Точка контакта",
+            "02 · 25 мс|Вспышка",
+            "03 · 55 мс|Серп",
+            "04 · 100 мс|Разрыв",
+            "05 · 180 мс|Осколки",
+            "06 · 300 мс|Последние искры"
+          ],
+          "note": "Запускать на реальном событии impact: 90 / 110 / 160 мс атаки. В коде жизнь эффекта 500 мс; хвост после 300 мс может оставаться пустым.",
+          "accent": "#FF876F",
+          "nodeId": "14R-0",
+          "imageId": "14W-0",
+          "labelsId": "14Y-0",
+          "noteId": "15I-0",
+          "keyCount": 6,
+          "durationMs": 300,
+          "playback": "one-shot",
+          "timingSource": "proposed visible phase within 500 ms effect",
+          "facing": "isometric effect",
+          "imageFile": "strips/14-combat-effects-row-1.png"
+        },
+        {
+          "key": "warning",
+          "title": "ВРАГ / НАЗЕМНОЕ ПРЕДУПРЕЖДЕНИЕ",
+          "meta": "6 ключей · one-shot · 550 мс windup, код",
+          "labels": [
+            "01 · 0 мс|Появление дуги",
+            "02 · 110 мс|Сбор сегментов",
+            "03 · 220 мс|Уплотнение",
+            "04 · 330 мс|Сужение",
+            "05 · 440 мс|Пик ожидания",
+            "06 · 550 мс|Переход в leap"
+          ],
+          "note": "Тонкая магентовая дуга показывает направление угрозы. Она не наносит урон: у гончей контакт возможен во время следующих 270 мс leap. На 550 мс предупреждение убрать; длительность брать из состояния windup.",
+          "accent": "#EF329E",
+          "nodeId": "15K-0",
+          "imageId": "15R-0",
+          "labelsId": "15T-0",
+          "noteId": "16D-0",
+          "keyCount": 6,
+          "durationMs": 550,
+          "playback": "one-shot",
+          "timingSource": "src/game.js: windup",
+          "facing": "isometric effect",
+          "imageFile": "strips/14-combat-effects-row-2.png"
+        },
+        {
+          "key": "healing",
+          "title": "ЛЕЧЕНИЕ / ЯНТАРНЫЙ ПОДЪЁМ",
+          "meta": "6 ключей · one-shot · 500 мс, код",
+          "labels": [
+            "01 · 0 мс|ЛЕЧЕНИЕ",
+            "02 · 60 мс|Искры снизу",
+            "03 · 140 мс|Подъём",
+            "04 · 240 мс|Тонкий ореол",
+            "05 · 360 мс|Рассыпание",
+            "06 · 500 мс|Затухание"
+          ],
+          "note": "Янтарь закреплён за восстановлением. Прозрачный центр сохраняет читаемость героя; не использовать форму магентового предупреждения.",
+          "accent": "#EDBE75",
+          "nodeId": "16F-0",
+          "imageId": "16K-0",
+          "labelsId": "16M-0",
+          "noteId": "176-0",
+          "keyCount": 6,
+          "durationMs": 500,
+          "playback": "one-shot",
+          "timingSource": "src/game.js: effect lifetime",
+          "facing": "isometric effect",
+          "imageFile": "strips/14-combat-effects-row-3.png"
+        }
+      ],
+      "id": "I6-0",
+      "status": "complete",
+      "review": "Accepted as animation storyboard by the main agent, relayed in conversation; not a direct separate end-user approval.",
+      "export": "exports/14-combat-effects.png",
+      "exportDimensions": [
+        1600,
+        1870
+      ],
+      "width": 1600,
+      "keyImageCount": 18,
+      "sourceFiles": [
+        "originals/14-combat-effects.png"
+      ]
+    }
+  ]
+}

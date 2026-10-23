@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171321" />
+    <meta name="description" content="Ночной ритуал — изометрическая action RPG. Монах, руины монастыря и тени, которые обрели плоть." />
+    <title>Ночной ритуал — Путь сквозь пепел</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' shape-rendering='crispEdges'%3E%3Cpath fill='%23171321' d='M0 0h24v24H0z'/%3E%3Cpath fill='%236C6179' d='M10 2h4v2h2v2h2v2h2v8h-2v2h-2v2H8v-2H6v-2H4V8h2V6h2V4h2z'/%3E%3Cpath fill='%23171321' d='M10 6h4v2h2v2h2v4h-2v2h-2v2h-4v-2H8v-2H6v-4h2V8h2z'/%3E%3Cpath fill='%236DD6CB' d='M11 9h2v2h2v2h-2v2h-2v-2H9v-2h2z'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <canvas id="game" tabindex="0" aria-label="Изометрическая игра Ночной ритуал. WASD или стрелки — движение, левая кнопка мыши — удар, пробел — рывок, правая кнопка или Q — волна, E — взаимодействие, Escape — пауза."></canvas>
+    <canvas id="effects" aria-hidden="true"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <aside class="quest" aria-label="Текущая цель">
+      <span class="sr-only">Путь странника</span>
+      <h2 id="quest-title">К монастырю</h2>
+      <p id="quest-copy">Выйди на разбитую дорогу.</p>
+      <div class="quest-progress"><span id="encounter-label">Безопасная стоянка</span><b id="kill-count"></b></div>
+      <div class="kill-dots" id="kill-dots" aria-hidden="true"></div>
+      <p class="quest-total">Побеждено за путь <b id="total-kills">0</b></p>
+    </aside>
+
+    <header class="world-info" aria-label="Местность и карта">
+      <div class="map-head">
+        <strong id="location-title">Лагерь странников</strong>
+        <nav class="tools" aria-label="Настройки игры">
+          <button id="sound" class="icon-button" type="button" aria-label="Выключить звук" aria-pressed="false" aria-keyshortcuts="m" title="Выключить звук (M)">
+            <svg viewBox="0 0 9 7" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+              <path d="M0 2h2V1h1V0h1v7H3V6H2V5H0z" />
+              <path class="sound-waves" d="M5 3h1v1H5zM6 1h1v1H6zM7 2h1v3H7zM6 5h1v1H6z" />
+              <path class="mute-mark" d="M6 2h1v1H6zM8 2h1v1H8zM7 3h1v1H7zM6 4h1v1H6zM8 4h1v1H8z" />
+            </svg>
+          </button>
+          <button id="pause" class="icon-button" type="button" aria-label="Пауза" aria-keyshortcuts="Escape" title="Пауза (Esc)">
+            <svg viewBox="0 0 9 7" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><path d="M2 0h2v7H2zM5 0h2v7H5z" /></svg>
+          </button>
+        </nav>
+      </div>
+      <div class="map-frame">
+        <!-- main.js keeps the backing store at 2× the CSS size; render.js margins are cropped by CSS. -->
+        <canvas id="minimap" width="384" height="224" aria-label="Карта локации"></canvas>
+        <span class="map-north" aria-hidden="true">N</span>
+      </div>
+      <ol class="map-zones" aria-label="Области пути">
+        <li id="zone-camp">Лагерь</li>
+        <li id="zone-road">Дорога</li>
+        <li id="zone-courtyard">Монастырь</li>
+      </ol>
+    </header>
+
+    <div id="notice" class="notice" role="status" aria-live="polite"></div>
+    <div id="interaction-prompt" class="interaction-prompt" role="status" aria-live="polite" hidden><kbd>E</kbd><span id="interaction-copy"></span></div>
+
+    <footer class="hud">
+      <section class="vitals" aria-label="Состояние персонажа">
+        <div class="portrait" aria-hidden="true"><img id="hero-portrait" width="96" height="96" alt="" draggable="false" /></div>
+        <div class="vital-bars">
+          <svg class="vital-icon" viewBox="0 0 5 5" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+            <path fill="#ef8e83" d="M1 0h1v1h1V0h1v1h1v2H4v1H3v1H2V4H1V3H0V1h1z" />
+            <path fill="#f8c4ab" d="M1 1h1v1H1z" />
+          </svg>
+          <div class="health-track" role="progressbar" aria-label="Здоровье" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="health-bar"><div id="health-fill"></div></div>
+          <span class="vital-value"><span class="sr-only">Здоровье </span><span id="health-text">100 <i>/ 100</i></span></span>
+          <svg class="vital-icon" viewBox="0 0 5 5" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+            <path fill="#6dd6cb" d="M2 0h1v1h1v1h1v1H4v1H3v1H2V4H1V3H0V2h1V1h1z" />
+            <path fill="#c2f0dd" d="M2 1h1v1H2z" />
+          </svg>
+          <div class="spirit-track" role="progressbar" aria-label="Дух" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" id="spirit-bar"><div id="spirit-fill"></div></div>
+          <span class="vital-value spirit-value"><span class="sr-only">Дух </span><span id="spirit-text">60 / 100</span></span>
+          <span class="vital-meta"><span class="sr-only">Монах: </span><span id="combat-state">ДЫХАНИЕ РОВНОЕ</span></span>
+        </div>
+      </section>
+
+      <section class="skills" aria-label="Боевые умения">
+        <div class="skill" id="skill-attack">
+          <span class="keycap">ЛКМ</span>
+          <div class="skill-well">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+              <path fill="#A74D58" d="M7 3h3V1h4v2h3v3h3v11h-2v3h-3v3H8v-3H5v-3H3v-6h4z" />
+              <path fill="#EF8E83" d="M8 4h2v7h1V2h2v9h1V4h2v8h1V7h2v9h-2v3h-3v3H9v-3H6v-3H4v-4h2v2h2z" />
+              <path fill="#F8C4AB" d="M8 4h2v5H8zM11 2h2v6h-2zM14 4h2v6h-2zM17 7h2v4h-2zM4 12h2v2H4zM10 19h4v2h-4z" />
+              <path fill="#171321" d="M10 13h5v2h-5zM12 15h3v2h-3z" />
+            </svg>
+            <div class="skill-shade"></div>
+          </div>
+          <span class="skill-name">Серия ударов</span>
+          <div class="combo-pips" aria-label="Три удара в серии"><i></i><i></i><i></i></div>
+        </div>
+        <div class="skill" id="skill-dash">
+          <span class="keycap">Пробел</span>
+          <div class="skill-well">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+              <path fill="#397C85" d="M1 8h7v2H1zM3 12h5v2H3zM1 16h5v2H1zM7 18h5v2H7z" />
+              <path fill="#6DD6CB" d="M15 2h4v4h-4zM12 7h7v2h3v2h-6v3h3v3h-3v-2h-4v3H9v3H5v-3h3v-3h3v-4H8V9h4z" />
+              <path fill="#C2F0DD" d="M15 2h4v2h-4zM13 7h5v2h-5zM8 18h3v2H8z" />
+              <path fill="#397C85" d="M16 17h3v2h3v2h-5v-2h-1z" />
+            </svg>
+            <div class="skill-shade"></div>
+            <span class="cooldown"></span>
+          </div>
+          <span class="skill-name">Пробивающий шаг</span>
+        </div>
+        <div class="skill" id="skill-wave">
+          <span class="keycap">ПКМ/Q</span>
+          <div class="skill-well">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+              <path fill="#397C85" d="M6 9h12v2h4v2h2v5h-2v2h-4v2H6v-2H2v-2H0v-5h2v-2h4zm0 4v2H3v2h3v2h12v-2h3v-2h-3v-2z" fill-rule="evenodd" />
+              <path fill="#6DD6CB" d="M6 8h4v2H6v2H2v4h4v2h12v-2h4v-4h-4v-2h-4V8h4v2h4v2h2v4h-2v2h-4v2H6v-2H2v-2H0v-4h2v-2h4z" />
+              <path fill="#6DD6CB" d="M11 1h2v3h2v4h-2v3h-2V8H9V4h2z" />
+              <path fill="#C2F0DD" d="M11 3h2v4h-2zM6 18h12v2H6zM2 12h2v3H2z" />
+            </svg>
+            <div class="skill-shade"></div>
+            <span class="cooldown"></span>
+          </div>
+          <span class="skill-name">Волна духа</span>
+          <span class="skill-cost"><span id="wave-cost">40</span><span class="sr-only"> духа</span></span>
+        </div>
+      </section>
+    </footer>
+
+    <div id="overlay" class="overlay">
+      <section class="intro-panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" aria-describedby="panel-copy">
+        <p class="wordmark">
+          <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+            <path fill="#6C6179" d="M5 0h2v1h1v1h1v1h1v1h1v1h1v2h-1v1h-1v1H9v1H8v1H7v1H5v-1H4v-1H3V9H2V8H1V7H0V5h1V4h1V3h1V2h1V1h1z" />
+            <path fill="#171321" d="M5 2h2v1h1v1h1v1h1v2H9v1H8v1H7v1H5V9H4V8H3V7H2V5h1V4h1V3h1z" />
+            <path fill="#EEE0CE" d="M5 4h2v1h1v2H7v1H5V7H4V5h1z" />
+          </svg>
+          <span>Ночной ритуал</span>
+        </p>
+        <span class="eyebrow" id="panel-eyebrow">От огня — к монастырю</span>
+        <h1 id="panel-title">Путь<br/> сквозь пепел</h1>
+        <div class="title-rule" aria-hidden="true"><span></span><i></i><span></span></div>
+        <p id="panel-copy">От лагеря до монастыря — единый мир. Пробейся сквозь стаи, погаси ритуал и вернись к огню.</p>
+        <div id="appearance-picker" class="appearance-picker" aria-label="Облик странника">
+          <div class="appearance-preview"><span class="preview-crop"><img id="appearance-preview" width="96" height="96" alt="Облик странника" draggable="false" /></span><span>Твой странник</span></div>
+          <div class="appearance-fields">
+            <fieldset><legend>Кожа <span id="skin-value"></span></legend><div id="skin-options" class="appearance-options"></div></fieldset>
+            <fieldset><legend>Волосы</legend><div id="hair-options" class="appearance-options"></div></fieldset>
+            <fieldset><legend>Пояс <span id="sash-value"></span></legend><div id="sash-options" class="appearance-options"></div></fieldset>
+          </div>
+          <span id="appearance-description" class="sr-only" aria-live="polite"></span>
+          <div id="appearance-loading" class="appearance-loading">
+            <span id="appearance-status" role="status" aria-atomic="true">Загружаем облик…</span>
+            <button id="appearance-retry" class="appearance-retry" type="button" hidden>Повторить</button>
+          </div>
+        </div>
+        <div id="run-trophy" class="run-trophy" hidden>
+          <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+            <path fill="#6b4937" d="M12 2h8v4h4v4h4v14h-4v4H8v-4H4V10h4V6h4z" />
+            <path fill="#c38b48" d="M12 6h8v4h4v12h-4v4h-8v-4H8V10h4z" />
+            <path fill="#e5b66e" d="M12 6h8v4h4v8h-4v4H8V10h4z" />
+            <path fill="#ffdf9f" d="M12 8h6v4h-6zM10 12h4v6h-4z" />
+            <path fill="#6b4937" d="M16 13h4v6h-4z" />
+          </svg>
+          <span><strong>Янтарная бусина</strong><small>1 трофей этого пути</small></span>
+        </div>
+        <dl id="run-summary" class="run-summary" hidden>
+          <div><dt>Время в пути</dt><dd id="summary-time"></dd></div>
+          <div><dt>Побеждено</dt><dd id="summary-kills"></dd></div>
+          <div><dt>Тайник</dt><dd id="summary-secret"></dd></div>
+          <div><dt>Мест открыто</dt><dd id="summary-places"></dd></div>
+        </dl>
+        <button id="play" class="primary-button" type="button" disabled><span>Пробуждаем мир…</span><span aria-hidden="true"><svg viewBox="0 0 8 8" focusable="false" shape-rendering="crispEdges"><path d="M4 0h1v1h1v1h1v1h1v2H7v1H6v1H5v1H4V6h1V5H0V3h5V2H4z" /></svg></span></button>
+        <button id="restart" class="text-button" type="button" hidden>Начать заново</button>
+        <p class="entry-hint" id="entry-hint">WASD&nbsp;— идти · мышь&nbsp;— бой · E&nbsp;—&nbsp;действие</p>
+        <div id="pause-controls" hidden>
+          <p><kbd>WASD</kbd> движение · или стрелки</p>
+          <p><kbd>ЛКМ</kbd> серия ударов накапливает дух</p>
+          <p><kbd>ПРОБЕЛ</kbd> пробивающий шаг: рывок сквозь врагов с уроном</p>
+          <p><kbd>ПКМ / Q</kbd> волна духа: круговая волна · 40 духа</p>
+          <p><kbd>E</kbd> взаимодействие: тайник и награда</p>
+          <p><kbd>M</kbd> звук <kbd>Esc</kbd> пауза</p>
+          <p>Удерживай ЛКМ для серии. Целься мышью.<br/>Уходи с линии прыжка или выстрела духа.<br/>Панцирник держит удары спереди: бей в спину, рывок и волна раскалывают панцирь.</p>
+        </div>
+      </section>
+      <span class="version" hidden aria-hidden="true"></span>
+    </div>
+    <div id="screen-warning" role="note">Для игры нужны клавиатура и мышь.<br/>Открой «Ночной ритуал» на компьютере.</div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

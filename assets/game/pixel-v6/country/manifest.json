@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "nativePixelsPerUnit": 32,
+  "countryDetails": {
+    "path": "details.png",
+    "cell": 64,
+    "columns": 4,
+    "rows": 2,
+    "anchor": [
+      32,
+      56
+    ],
+    "frames": [
+      "grass-low",
+      "grass-wide",
+      "fern-low",
+      "flowers-white",
+      "flowers-ochre",
+      "leaves",
+      "twigs",
+      "pebbles-flat"
+    ],
+    "filter": "nearest",
+    "mipmaps": false
+  },
+  "surfaces": {
+    "countryGrass": {
+      "path": "grass.png",
+      "size": [
+        128,
+        128
+      ],
+      "filter": "nearest",
+      "mipmaps": false
+    },
+    "countrySoil": {
+      "path": "soil.png",
+      "size": [
+        128,
+        128
+      ],
+      "filter": "nearest",
+      "mipmaps": false
+    },
+    "countryStone": {
+      "path": "stone.png",
+      "size": [
+        128,
+        128
+      ],
+      "filter": "nearest",
+      "mipmaps": false
+    }
+  },
+  "hitMasks": "hit-masks.json",
+  "provenance": "source/provenance.json",
+  "normalization": "source/normalization.json",
+  "previews": "previews/contact-native.png"
+}

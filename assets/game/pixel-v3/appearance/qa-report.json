@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "toolchain": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "wraith": {
+    "frames": 52,
+    "size": [
+      1248,
+      384
+    ],
+    "cell": 96,
+    "anchor": [
+      48,
+      84
+    ],
+    "opaqueColors": 22,
+    "binaryAlpha": true,
+    "distinctFrames": 52,
+    "boundsUnclipped": true,
+    "deathMatterStrictlyDecreases": true
+  },
+  "appearance": {
+    "variants": 18,
+    "framesPerVariant": 100,
+    "size": [
+      960,
+      960
+    ],
+    "maxOpaqueColors": 37,
+    "alphaSha256": "a8948359c6417592e3f02ea7618810c2c8f79197ce5efb3cbf1c9493ec355b11",
+    "defaultPixelsEqualV2": true,
+    "nonTargetMaterialsPreserved": true,
+    "hairPresentAllFrames": true,
+    "previewFrame": 0
+  },
+  "artifactCount": 71,
+  "sourceCount": 35,
+  "rebuildMatches": true,
+  "sourceHashesMatch": true,
+  "mode": "build"
+}

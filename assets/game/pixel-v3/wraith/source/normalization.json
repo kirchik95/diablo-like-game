@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "alphaThreshold": 220,
+  "palette": [
+    "21122e",
+    "2f1946",
+    "402358",
+    "50316e",
+    "654282",
+    "795498",
+    "8e69ad",
+    "a17bbe",
+    "b08dcf",
+    "c3a0df",
+    "d0b5ec",
+    "e0c8f7",
+    "f2e3ff",
+    "ffffff",
+    "531052",
+    "86107f",
+    "b11ab1",
+    "e12fe1",
+    "f254f2",
+    "ff81f4",
+    "ffb9ff",
+    "ffe5ff"
+  ],
+  "registration": "Uniform scale per source action sheet; independent crop and root translation. Root is the fixed [48,84] ground point. Active poses use horizontal silhouette midpoint and explicit native top; idle height changes remain intentional. Dissolution uses explicit roots so fragments are not enlarged or bottom-aligned.",
+  "facings": {
+    "front": {
+      "idle": {
+        "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-idle.png",
+        "scale": 0.225,
+        "crops": [
+          [
+            0,
+            0,
+            688,
+            384
+          ],
+          [
+            688,
+            0,
+            1376,
+            384
+          ],
+          [
+            0,
+            384,
+            688,
+            768
+          ],
+          [
+            688,
+            384,
+            1376,
+            768
+          ]
+        ],
+        "removeDetached": true,
+        "nativeTop": [
+          29,
+          18,
+          16,
+          27
+        ]
+      },
+      "run": {
+        "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-drift.png",
+        "scale": 0.225,
+        "crops": [
+          [
+            0,
+            0,
+            450,
+            384
+          ],
+          [
+            450,
+            0,
+            900,
+            384
+          ],
+          [
+            900,
+            0,
+            1376,
+            384
+          ],
+          [
+            0,
+            384,
+            450,
+            768
+          ],
+          [
+            450,
+            384,
+            900,
+            768
+          ],
+          [
+            900,
+            384,
+            1376,
+            768
+          ]
+        ],
+        "removeDetached": true,
+        "nativeTop": [
+          24,
+          23,
+          22,
+          24,
+          23,
+          24
+        ]
+      },
+      "attack": {
+        "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-attack.png",
+        "scale": 0.225,
+        "crops": [
+          [
+            0,
+            0,
+            450,
+            384
+          ],
+          [
+            450,
+            0,
+            880,
+            384
+          ],
+          [
+            880,
+            0,
+            1376,
+            384
+          ],
+          [
+            0,
+            384,
+            520,
+            768
+          ],
+          [
+            520,
+            384,
+            920,
+            768
+          ],
+          [
+            920,
+            384,
+            1376,
+            768
+          ]
+        ],
+        "removeDetached": true,
+        "nativeTop": [
+          24,
+          24,
+          23,
+          24,
+          18,
+          18
+        ]
+      },
+      "hurt": {
+        "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-hurt.png",
+        "scale": 0.22,
+        "crops": [
+          [
+            0,
+            0,
+            688,
+            384
+          ],
+          [
+            688,
+            0,
+            1376,
+            384
+          ],
+          [
+            0,
+            384,
+            688,
+            768
+          ],
+          [
+            688,
+            384,
+            1376,
+            768
+          ]
+        ],
+        "removeDetached": true,
+        "nativeTop": [
+          21,
+          22,
+          23,
+          23
+        ]
+      },
+      "death": {
+        "source": "assets/concepts/animation-bible-01/monsters/originals/wraith-death.png",
+        "scale": 0.225,
+        "crops": [
+          [
+            0,
+            0,
+            450,
+            384
+          ],
+          [
+            450,
+            0,
+            900,
+            384
+          ],
+          [
+            900,
+            0,
+            1376,
+            384
+          ],
+          [
+            0,
+            384,
+            450,
+            768
+          ],
+          [
+            450,
+            384,
+            900,
+            768
+          ],
+          [
+            900,
+            384,
+            1376,
+            768
+          ]
+        ],
+        "removeDetached": false,
+        "nativeTop": [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "absoluteRoots": [
+          [
+            221,
+            355
+          ],
+          [
+            676,
+            355
+          ],
+          [
+            1134,
+            355
+          ],
+          [
+            232,
+            755
+          ],
+          [
+            675,
+            770
+          ],
+          [
+            1131,
+            775
+          ]
+        ]
+      }
+    },
+    "back": {
+      "idle": {
+        "source": "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+        "scale": 0.135,
+        "crops": [
+          [
+            0,
+            0,
+            887,
+            450
+          ],
+          [
+            887,
+            0,
+            1774,
+            450
+          ],
+          [
+            0,
+            450,
+            887,
+            887
+          ],
+          [
+            887,
+            450,
+            1774,
+            887
+          ]
+        ],
+        "removeDetached": true,
+        "nativeTop": [
+          29,
+          18,
+          16,
+          27
+        ]
+      },
+      "run": {
+        "source": "assets/game/pixel-v3/wraith/source/originals/back-run.png",
+        "scale": 0.155,
+        "crops": [
+          [
+            0,
+            0,
+            530,
+            512
+          ],
+          [
+            530,
+            0,
+            990,
+            512
+          ],
+          [
+            990,
+            0,
+            1536,
+            512
+          ],
+          [
+            0,
+            512,
+            560,
+            1024
+          ],
+          [
+            560,
+            512,
+            980,
+            1024
+          ],
+          [
+            980,
+            512,
+            1536,
+            1024
+          ]
+        ],
+        "removeDetached": true,
+        "nativeTop": [
+          24,
+          23,
+          22,
+          24,
+          23,
+          24
+        ]
+      },
+      "attack": {
+        "source": "assets/game/pixel-v3/wraith/source/originals/back-attack.png",
+        "scale": 0.14,
+        "crops": [
+          [
+            0,
+            0,
+            512,
+            512
+          ],
+          [
+            512,
+            0,
+            1024,
+            512
+          ],
+          [
+            1024,
+            0,
+            1536,
+            512
+          ],
+          [
+            0,
+            512,
+            550,
+            1024
+          ],
+          [
+            550,
+            512,
+            1000,
+            1024
+          ],
+          [
+            1000,
+            512,
+            1536,
+            1024
+          ]
+        ],
+        "removeDetached": true,
+        "nativeTop": [
+          24,
+          24,
+          23,
+          24,
+          18,
+          18
+        ]
+      },
+      "hurt": {
+        "source": "assets/game/pixel-v3/wraith/source/originals/back-hurt.png",
+        "scale": 0.14,
+        "crops": [
+          [
+            0,
+            0,
+            840,
+            480
+          ],
+          [
+            840,
+            0,
+            1679,
+            480
+          ],
+          [
+            0,
+            480,
+            840,
+            937
+          ],
+          [
+            840,
+            480,
+            1679,
+            937
+          ]
+        ],
+        "removeDetached": true,
+        "nativeTop": [
+          21,
+          22,
+          23,
+          23
+        ]
+      },
+      "death": {
+        "source": "assets/game/pixel-v3/wraith/source/originals/back-death.png",
+        "scale": 0.125,
+        "crops": [
+          [
+            0,
+            0,
+            512,
+            600
+          ],
+          [
+            512,
+            0,
+            1024,
+            600
+          ],
+          [
+            1024,
+            0,
+            1536,
+            600
+          ],
+          [
+            0,
+            600,
+            512,
+            1024
+          ],
+          [
+            512,
+            600,
+            1024,
+            1024
+          ],
+          [
+            1024,
+            600,
+            1536,
+            1024
+          ]
+        ],
+        "removeDetached": false,
+        "nativeTop": [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "absoluteRoots": [
+          [
+            273,
+            612
+          ],
+          [
+            768,
+            612
+          ],
+          [
+            1280,
+            612
+          ],
+          [
+            269,
+            1155
+          ],
+          [
+            764,
+            1155
+          ],
+          [
+            1295,
+            1171
+          ]
+        ]
+      }
+    }
+  }
+}

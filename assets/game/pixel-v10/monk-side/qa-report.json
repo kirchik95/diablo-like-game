@@ -1,0 +1,252 @@
+{
+  "status": "passed",
+  "toolchain": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "atlas": {
+    "size": [
+      960,
+      1056
+    ],
+    "cell": 96,
+    "columns": 10,
+    "rows": 11,
+    "anchor": [
+      48,
+      84
+    ],
+    "frames": 110,
+    "sideFrames": [
+      "idle-side-01",
+      "idle-side-02",
+      "idle-side-03",
+      "idle-side-04",
+      "run-side-01",
+      "run-side-02",
+      "run-side-03",
+      "run-side-04",
+      "run-side-05",
+      "run-side-06"
+    ],
+    "binaryAlpha": true,
+    "transparentRgbZero": true,
+    "rows0to9EqualShippedV3": true,
+    "defaultRows0to9EqualV2": true,
+    "maxOpaqueColorsPerAtlas": 37,
+    "sideRowColors": 58
+  },
+  "appearance": {
+    "variants": 18,
+    "alphaIdentical": true,
+    "nonTargetMaterialsPreserved": true,
+    "shortHairOnEverySideKey": true
+  },
+  "sideKeys": [
+    {
+      "name": "idle-side-01",
+      "bbox": [
+        20,
+        24,
+        69,
+        84
+      ],
+      "height": 60
+    },
+    {
+      "name": "idle-side-02",
+      "bbox": [
+        20,
+        23,
+        69,
+        84
+      ],
+      "height": 61
+    },
+    {
+      "name": "idle-side-03",
+      "bbox": [
+        19,
+        24,
+        69,
+        84
+      ],
+      "height": 60
+    },
+    {
+      "name": "idle-side-04",
+      "bbox": [
+        19,
+        25,
+        69,
+        84
+      ],
+      "height": 59
+    },
+    {
+      "name": "run-side-01",
+      "bbox": [
+        18,
+        27,
+        75,
+        84
+      ],
+      "height": 57
+    },
+    {
+      "name": "run-side-02",
+      "bbox": [
+        16,
+        31,
+        73,
+        84
+      ],
+      "height": 53
+    },
+    {
+      "name": "run-side-03",
+      "bbox": [
+        18,
+        26,
+        71,
+        84
+      ],
+      "height": 58
+    },
+    {
+      "name": "run-side-04",
+      "bbox": [
+        13,
+        26,
+        68,
+        84
+      ],
+      "height": 58
+    },
+    {
+      "name": "run-side-05",
+      "bbox": [
+        16,
+        30,
+        68,
+        84
+      ],
+      "height": 54
+    },
+    {
+      "name": "run-side-06",
+      "bbox": [
+        16,
+        23,
+        68,
+        84
+      ],
+      "height": 61
+    }
+  ],
+  "footLock": {
+    "trackPixelsPerKey": 18,
+    "keyDistance": 0.56,
+    "flatSoleSlidePixels": 0,
+    "toePivotWithinPixels": 1,
+    "stepPixels": 54,
+    "groundContacts": [
+      {
+        "key": 1,
+        "cell": [
+          [
+            55,
+            67
+          ]
+        ],
+        "ground": [
+          [
+            55,
+            67
+          ]
+        ]
+      },
+      {
+        "key": 2,
+        "cell": [
+          [
+            37,
+            49
+          ]
+        ],
+        "ground": [
+          [
+            55,
+            67
+          ]
+        ]
+      },
+      {
+        "key": 3,
+        "cell": [
+          [
+            31,
+            32
+          ]
+        ],
+        "ground": [
+          [
+            67,
+            68
+          ]
+        ]
+      },
+      {
+        "key": 4,
+        "cell": [
+          [
+            55,
+            67
+          ]
+        ],
+        "ground": [
+          [
+            109,
+            121
+          ]
+        ]
+      },
+      {
+        "key": 5,
+        "cell": [
+          [
+            37,
+            49
+          ]
+        ],
+        "ground": [
+          [
+            109,
+            121
+          ]
+        ]
+      },
+      {
+        "key": 6,
+        "cell": [
+          [
+            31,
+            32
+          ]
+        ],
+        "ground": [
+          [
+            121,
+            122
+          ]
+        ]
+      }
+    ]
+  },
+  "hitMaskVerified": true,
+  "artifactCount": 34,
+  "sourceCount": 26,
+  "rebuildMatches": true,
+  "sourceHashesMatch": true,
+  "mode": "build"
+}

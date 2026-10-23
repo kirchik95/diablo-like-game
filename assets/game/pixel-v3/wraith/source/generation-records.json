@@ -1,0 +1,81 @@
+[
+  {
+    "id": "back-idle",
+    "tool": "built-in image_gen",
+    "model": "not exposed by built-in tool",
+    "date": "2026-10-22",
+    "prompt": "source/prompts/back-idle.txt",
+    "references": [
+      "assets/concepts/animation-bible-01/monsters/originals/wraith-facing.png",
+      "assets/concepts/animation-bible-01/monsters/originals/wraith-idle.png"
+    ],
+    "original": "source/originals/back-idle.png",
+    "originalToolPath": "/Users/kirchik/.codex/generated_images/01a1653a-de34-7763-8a7a-8937092ba80b/exec-d320818d-54ec-47bc-be13-687cb2bcadf2.png",
+    "transparentBackgroundRequested": true,
+    "selection": "worker-selected rear idle candidate, coordinator review pending"
+  },
+  {
+    "id": "back-run",
+    "tool": "built-in image_gen",
+    "model": "not exposed by built-in tool",
+    "date": "2026-10-22",
+    "prompt": "source/prompts/back-run.txt",
+    "references": [
+      "assets/concepts/animation-bible-01/monsters/originals/wraith-facing.png",
+      "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+      "assets/concepts/animation-bible-01/monsters/originals/wraith-drift.png"
+    ],
+    "original": "source/originals/back-run.png",
+    "originalToolPath": "/Users/kirchik/.codex/generated_images/01a1653a-de34-7763-8a7a-8937092ba80b/exec-6fe3eaa9-106d-43a8-99b6-d31c268844bf.png",
+    "transparentBackgroundRequested": true,
+    "selection": "worker-selected rear action candidate; coordinator review pending"
+  },
+  {
+    "id": "back-attack",
+    "tool": "built-in image_gen",
+    "model": "not exposed by built-in tool",
+    "date": "2026-10-22",
+    "prompt": "source/prompts/back-attack.txt",
+    "references": [
+      "assets/concepts/animation-bible-01/monsters/originals/wraith-facing.png",
+      "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+      "assets/concepts/animation-bible-01/monsters/originals/wraith-attack.png"
+    ],
+    "original": "source/originals/back-attack.png",
+    "originalToolPath": "/Users/kirchik/.codex/generated_images/01a1653a-de34-7763-8a7a-8937092ba80b/exec-7a9961b6-efbc-4f21-af44-9e30984e19bb.png",
+    "transparentBackgroundRequested": true,
+    "selection": "worker-selected rear action candidate; coordinator review pending"
+  },
+  {
+    "id": "back-hurt",
+    "tool": "built-in image_gen",
+    "model": "not exposed by built-in tool",
+    "date": "2026-10-22",
+    "prompt": "source/prompts/back-hurt.txt",
+    "references": [
+      "assets/concepts/animation-bible-01/monsters/originals/wraith-facing.png",
+      "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+      "assets/concepts/animation-bible-01/monsters/originals/wraith-hurt.png"
+    ],
+    "original": "source/originals/back-hurt.png",
+    "originalToolPath": "/Users/kirchik/.codex/generated_images/01a1653a-de34-7763-8a7a-8937092ba80b/exec-751797f1-30f8-43b5-b7e1-a9cfaf80df1d.png",
+    "transparentBackgroundRequested": true,
+    "selection": "worker-selected rear action candidate; coordinator review pending"
+  },
+  {
+    "id": "back-death",
+    "tool": "built-in image_gen",
+    "model": "not exposed by built-in tool",
+    "date": "2026-10-22",
+    "prompt": "source/prompts/back-death.txt",
+    "references": [
+      "assets/concepts/animation-bible-01/monsters/originals/wraith-facing.png",
+      "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+      "assets/concepts/animation-bible-01/monsters/originals/wraith-death.png"
+    ],
+    "original": "source/originals/back-death.png",
+    "originalToolPath": "/Users/kirchik/.codex/generated_images/01a1653a-de34-7763-8a7a-8937092ba80b/exec-07b34fdb-3e99-4470-9e93-caaa8d2e6332.png",
+    "transparentBackgroundRequested": true,
+    "selection": "worker-selected rear action candidate; coordinator review pending"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"file\": {\n    \"id\": \"01M5JE4QF1S7K7921DAQTPSHYY\",\n    \"name\": \"Monk RPG — визуальный поиск\"\n  },\n  \"contentHash\": {\n    \"tokens\": \"811c9dc5\"\n  }\n}"
+    },
+    {
+      "type": "text",
+      "text": "{\n  \"fileName\": \"Monk RPG — визуальный поиск\",\n  \"pageName\": \"Локация 01 — Лагерь странников\",\n  \"pageId\": \"p-A-0\",\n  \"url\": \"https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-A-0\",\n  \"rootNodeId\": \"root_node_p-A-0\",\n  \"nodeCount\": 20,\n  \"artboardCount\": 1,\n  \"artboards\": [\n    {\n      \"id\": \"17A-0\",\n      \"name\": \"01 · Лагерь странников — открытый мир\",\n      \"childCount\": 3,\n      \"width\": 1600,\n      \"height\": null,\n      \"worldX\": 0,\n      \"worldY\": 0\n    }\n  ],\n  \"pages\": [\n    {\n      \"type\": \"page\",\n      \"id\": \"p-4-0\",\n      \"name\": \"Pixel art · Мир и персонажи\",\n      \"icon\": \"arrow\",\n      \"isActive\": false\n    },\n    {\n      \"type\": \"page\",\n      \"id\": \"p-5-0\",\n      \"name\": \"Pixel art · Движение и эффекты\",\n      \"icon\": \"presentation\",\n      \"isActive\": false\n    },\n    {\n      \"type\": \"page\",\n      \"id\": \"p-9-0\",\n      \"name\": \"Анимации · Монстры\",\n      \"icon\": \"presentation\",\n      \"isActive\": false\n    },\n    {\n      \"type\": \"page\",\n      \"id\": \"p-8-0\",\n      \"name\": \"Анимации · Мир\",\n      \"icon\": \"images\",\n      \"isActive\": true\n    },\n    {\n      \"type\": \"page\",\n      \"id\": \"p-A-0\",\n      \"name\": \"Локация 01 — Лагерь странников\",\n      \"icon\": \"images\",\n      \"isActive\": false\n    },\n    {\n      \"type\": \"page\",\n      \"id\": \"p-7-0\",\n      \"name\": \"Анимация · Монах и индекс\",\n      \"icon\": \"presentation\",\n      \"isActive\": false\n    },\n    {\n      \"type\": \"divider\",\n      \"id\": \"p-6-0\"\n    },\n    {\n      \"type\": \"page\",\n      \"id\": \"p-1-0\",\n      \"name\": \"Истоки · Рисованная изометрия\",\n      \"icon\": \"images\",\n      \"isActive\": false\n    },\n    {\n      \"type\": \"page\",\n      \"id\": \"p-2-0\",\n      \"name\": \"Референсы · Герои и бестиарий\",\n      \"icon\": \"images\",\n      \"isActive\": false\n    },\n    {\n      \"type\": \"page\",\n      \"id\": \"p-3-0\",\n      \"name\": \"Референсы · Локации и окружение\",\n      \"icon\": \"blueprint\",\n      \"isActive\": false\n    }\n  ],\n  \"fontFamilies\": [\n    \"Golos Text\",\n    \"Oswald\",\n    \"System Sans-Serif\"\n  ],\n  \"tokens\": {\n    \"items\": []\n  }\n}"
+    }
+  ]
+}
+

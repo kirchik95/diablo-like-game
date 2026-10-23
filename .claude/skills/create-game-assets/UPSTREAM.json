@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
+  "revision": "38a4c2500eeb5ff9ac084336b8f66108069d2f8d",
+  "path": "skills/disciplines/create-game-assets",
+  "license": "Apache-2.0",
+  "local_changes": [
+    "Fix the --max-colors boundary in scripts/asset_report.py.",
+    "Include upstream raster-helper tests, adapted to the installed layout, with palette-boundary regression coverage."
+  ]
+}

@@ -1,0 +1,1730 @@
+{
+  "schemaVersion": 1,
+  "alphaThreshold": 200,
+  "lumaSteps": [
+    36,
+    50,
+    76,
+    112,
+    150
+  ],
+  "padding": 140,
+  "palette": {
+    "1": {
+      "hex": "171321",
+      "role": "coal outline and plate seams"
+    },
+    "2": {
+      "hex": "241b2e",
+      "role": "deep underside / charcoal shadow"
+    },
+    "3": {
+      "hex": "3f3450",
+      "role": "chitin shadow"
+    },
+    "4": {
+      "hex": "5e5274",
+      "role": "chitin mid (stone #6C6179 family)"
+    },
+    "5": {
+      "hex": "8b7fa3",
+      "role": "chitin lit"
+    },
+    "6": {
+      "hex": "b9aecb",
+      "role": "chitin highlight (upper-left light)"
+    },
+    "7": {
+      "hex": "5a3148",
+      "role": "soft underside dark"
+    },
+    "8": {
+      "hex": "87506a",
+      "role": "soft underside mid"
+    },
+    "9": {
+      "hex": "b47a8a",
+      "role": "soft underside lit"
+    },
+    "10": {
+      "hex": "6e1257",
+      "role": "hostile magenta dark"
+    },
+    "11": {
+      "hex": "c42190",
+      "role": "hostile magenta"
+    },
+    "12": {
+      "hex": "ef329e",
+      "role": "hostile magenta bright (danger #EF329E)"
+    },
+    "13": {
+      "hex": "ffa8e2",
+      "role": "hostile magenta hot core"
+    },
+    "15": {
+      "hex": "ff876f",
+      "role": "weak spot coral (impact #FF876F)"
+    },
+    "16": {
+      "hex": "ffd2b4",
+      "role": "weak spot hot core"
+    }
+  },
+  "registration": "Per-sheet fixed scalar; a key's ground root is its lowest support row and the column centroid of its upper 55% (shell mass). Derived poses (rotation, squash, rig offsets, flips) reuse the root of their unmoved base key so planted feet and unmoved plates stay registered. 'nudge' is an explicit whole-pixel correction.",
+  "sheets": {
+    "idle": {
+      "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-idle.png",
+      "grid": [
+        2,
+        2
+      ],
+      "scale": 0.2
+    },
+    "walk": {
+      "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-walk.png",
+      "grid": [
+        3,
+        2
+      ],
+      "scale": 0.2426
+    },
+    "attack": {
+      "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+      "grid": [
+        3,
+        2
+      ],
+      "scale": 0.2478
+    },
+    "hurt": {
+      "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-hurt.png",
+      "grid": [
+        2,
+        2
+      ],
+      "scale": 0.2312
+    },
+    "death": {
+      "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-death.png",
+      "grid": [
+        3,
+        2
+      ],
+      "scale": 0.2336
+    },
+    "facing": {
+      "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+      "grid": [
+        2,
+        1
+      ],
+      "scale": 0.1679
+    }
+  },
+  "scaleNote": "Scales equalize the opaque area of each sheet's neutral stance to idle key 1 at 0.2 (mass ratio square root), so plates keep one size across sheets.",
+  "keys": {
+    "idle-1": {
+      "sheet": "idle",
+      "cell": 0
+    },
+    "idle-2": {
+      "sheet": "idle",
+      "cell": 1
+    },
+    "idle-3": {
+      "sheet": "idle",
+      "cell": 2
+    },
+    "idle-4": {
+      "sheet": "idle",
+      "cell": 3
+    },
+    "walk-1": {
+      "sheet": "walk",
+      "cell": 0
+    },
+    "walk-2": {
+      "sheet": "walk",
+      "cell": 1
+    },
+    "walk-3": {
+      "sheet": "walk",
+      "cell": 2
+    },
+    "walk-4": {
+      "sheet": "walk",
+      "cell": 3
+    },
+    "walk-5": {
+      "sheet": "walk",
+      "cell": 4
+    },
+    "walk-6": {
+      "sheet": "walk",
+      "cell": 5
+    },
+    "attack-1": {
+      "sheet": "attack",
+      "cell": 0
+    },
+    "attack-2": {
+      "sheet": "attack",
+      "cell": 1
+    },
+    "attack-3": {
+      "sheet": "attack",
+      "cell": 2
+    },
+    "attack-4": {
+      "sheet": "attack",
+      "cell": 3,
+      "drop": [
+        {
+          "family": "magenta",
+          "keep": [
+            285,
+            205,
+            322,
+            242
+          ]
+        }
+      ]
+    },
+    "attack-5": {
+      "sheet": "attack",
+      "cell": 4
+    },
+    "attack-6": {
+      "sheet": "attack",
+      "cell": 5
+    },
+    "hurt-1": {
+      "sheet": "hurt",
+      "cell": 0,
+      "drop": [
+        {
+          "family": "coral"
+        }
+      ]
+    },
+    "hurt-2": {
+      "sheet": "hurt",
+      "cell": 1
+    },
+    "hurt-3": {
+      "sheet": "hurt",
+      "cell": 2
+    },
+    "hurt-4": {
+      "sheet": "hurt",
+      "cell": 3
+    },
+    "death-1": {
+      "sheet": "death",
+      "cell": 0
+    },
+    "death-2": {
+      "sheet": "death",
+      "cell": 1
+    },
+    "death-3": {
+      "sheet": "death",
+      "cell": 2
+    },
+    "death-4": {
+      "sheet": "death",
+      "cell": 3
+    },
+    "death-5": {
+      "sheet": "death",
+      "cell": 4
+    },
+    "death-6": {
+      "sheet": "death",
+      "cell": 5
+    },
+    "back": {
+      "sheet": "facing",
+      "cell": 1
+    }
+  },
+  "rigs": {
+    "back": {
+      "key": "back",
+      "note": "Polygons are in crop pixels of beetle-facing-v2.png cell 2 (x offset 688). Leg pieces move under the shell; the belly polygon fills uncovered joints with deep underside.",
+      "belly": [
+        [
+          117,
+          392
+        ],
+        [
+          437,
+          380
+        ],
+        [
+          440,
+          445
+        ],
+        [
+          374,
+          470
+        ],
+        [
+          312,
+          452
+        ],
+        [
+          262,
+          462
+        ],
+        [
+          217,
+          468
+        ],
+        [
+          172,
+          440
+        ],
+        [
+          148,
+          420
+        ]
+      ],
+      "drawOrder": [
+        "L1",
+        "R1",
+        "L2",
+        "R2",
+        "C"
+      ],
+      "legs": {
+        "L1": {
+          "polygon": [
+            [
+              64,
+              430
+            ],
+            [
+              82,
+              408
+            ],
+            [
+              112,
+              396
+            ],
+            [
+              140,
+              398
+            ],
+            [
+              148,
+              412
+            ],
+            [
+              148,
+              445
+            ],
+            [
+              112,
+              480
+            ],
+            [
+              102,
+              512
+            ],
+            [
+              67,
+              512
+            ],
+            [
+              60,
+              480
+            ]
+          ]
+        },
+        "L2": {
+          "polygon": [
+            [
+              150,
+              428
+            ],
+            [
+              172,
+              415
+            ],
+            [
+              217,
+              418
+            ],
+            [
+              220,
+              465
+            ],
+            [
+              182,
+              500
+            ],
+            [
+              174,
+              540
+            ],
+            [
+              134,
+              540
+            ],
+            [
+              134,
+              490
+            ],
+            [
+              150,
+              465
+            ]
+          ]
+        },
+        "C": {
+          "polygon": [
+            [
+              260,
+              440
+            ],
+            [
+              277,
+              428
+            ],
+            [
+              312,
+              428
+            ],
+            [
+              327,
+              445
+            ],
+            [
+              337,
+              480
+            ],
+            [
+              337,
+              540
+            ],
+            [
+              312,
+              566
+            ],
+            [
+              292,
+              566
+            ],
+            [
+              272,
+              520
+            ],
+            [
+              260,
+              480
+            ]
+          ]
+        },
+        "R2": {
+          "polygon": [
+            [
+              372,
+              425
+            ],
+            [
+              387,
+              402
+            ],
+            [
+              422,
+              402
+            ],
+            [
+              434,
+              420
+            ],
+            [
+              434,
+              460
+            ],
+            [
+              442,
+              470
+            ],
+            [
+              442,
+              500
+            ],
+            [
+              422,
+              548
+            ],
+            [
+              392,
+              548
+            ],
+            [
+              372,
+              470
+            ]
+          ]
+        },
+        "R1": {
+          "polygon": [
+            [
+              436,
+              388
+            ],
+            [
+              462,
+              380
+            ],
+            [
+              487,
+              390
+            ],
+            [
+              512,
+              420
+            ],
+            [
+              518,
+              470
+            ],
+            [
+              514,
+              522
+            ],
+            [
+              480,
+              522
+            ],
+            [
+              452,
+              470
+            ],
+            [
+              438,
+              440
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "timing": {
+    "idle": [
+      0,
+      250,
+      500,
+      750
+    ],
+    "walk": [
+      0,
+      150,
+      300,
+      450,
+      600,
+      750
+    ],
+    "windup": [
+      0,
+      110,
+      230,
+      350,
+      470
+    ],
+    "slam": [
+      0,
+      60,
+      130
+    ],
+    "recover": [
+      0,
+      150,
+      300
+    ],
+    "hurt": [
+      0,
+      70,
+      140,
+      220
+    ],
+    "stunned": [
+      0,
+      160,
+      320,
+      480
+    ],
+    "death": [
+      0,
+      120,
+      260,
+      400,
+      560,
+      740
+    ],
+    "block": [
+      0,
+      90
+    ]
+  },
+  "gameplayNotes": {
+    "idle": "Loop while idle.",
+    "walk": "Loop; advance by travelled distance like hound/wraith run.",
+    "windup": "Spread keys 0-4 over the gameplay windup. Keys 3-4 hold the rear-high pose with magenta seams: the readable telegraph.",
+    "slam": "Key 1 is ground contact. Fire damage and impact effects from gameplay timing, not from the animation.",
+    "recover": "Seams cool from dim to none; key 2 is the normal stance.",
+    "hurt": "One-shot reaction; key 3 dims the eye.",
+    "stunned": "Loop while stunned/flipped. The coral weak spot on the soft underside appears only in this clip.",
+    "death": "One-shot then hold key 5 (corpse shell). Eyes go out on keys 4-5.",
+    "block": "Optional guard flinch (shell forward). Hold key 1; runtime spawns sparks."
+  },
+  "frames": {
+    "front": {
+      "idle": [
+        {
+          "key": "idle-1"
+        },
+        {
+          "key": "idle-2"
+        },
+        {
+          "key": "idle-3"
+        },
+        {
+          "key": "idle-4"
+        }
+      ],
+      "walk": [
+        {
+          "key": "walk-1"
+        },
+        {
+          "key": "walk-2"
+        },
+        {
+          "key": "walk-3"
+        },
+        {
+          "key": "walk-4"
+        },
+        {
+          "key": "walk-5"
+        },
+        {
+          "key": "walk-6"
+        }
+      ],
+      "windup": [
+        {
+          "key": "attack-1"
+        },
+        {
+          "key": "attack-1",
+          "rotate": 9,
+          "pivot": [
+            0.2,
+            1
+          ],
+          "seams": 1
+        },
+        {
+          "key": "attack-2",
+          "register": "self",
+          "seams": 1,
+          "eye": "bright"
+        },
+        {
+          "key": "attack-2",
+          "register": "self",
+          "seams": 2,
+          "eye": "bright"
+        },
+        {
+          "key": "attack-2",
+          "register": "self",
+          "rotate": 2,
+          "pivot": [
+            0.3,
+            1
+          ],
+          "seams": 3,
+          "eye": "bright"
+        }
+      ],
+      "slam": [
+        {
+          "key": "attack-2",
+          "register": "self",
+          "rotate": -24,
+          "pivot": [
+            0.3,
+            1
+          ],
+          "seams": 3,
+          "eye": "bright"
+        },
+        {
+          "key": "attack-4",
+          "seams": 3,
+          "eye": "bright"
+        },
+        {
+          "key": "attack-4",
+          "squash": [
+            1.03,
+            0.92
+          ],
+          "seams": 2
+        }
+      ],
+      "recover": [
+        {
+          "key": "attack-5",
+          "seams": 1
+        },
+        {
+          "key": "attack-3"
+        },
+        {
+          "key": "attack-6"
+        }
+      ],
+      "hurt": [
+        {
+          "key": "hurt-1"
+        },
+        {
+          "key": "hurt-2"
+        },
+        {
+          "key": "hurt-3"
+        },
+        {
+          "key": "hurt-4",
+          "eye": "dim"
+        }
+      ],
+      "stunned": [
+        {
+          "key": "idle-1",
+          "flipY": true,
+          "tone": {
+            "6": 5,
+            "5": 4
+          },
+          "eye": "dim",
+          "belly": {
+            "at": [
+              60,
+              78
+            ],
+            "r": [
+              15,
+              7.5
+            ],
+            "segments": 3
+          },
+          "weakSpot": {
+            "at": [
+              58,
+              79
+            ],
+            "level": 2
+          }
+        },
+        {
+          "key": "idle-1",
+          "flipY": true,
+          "tone": {
+            "6": 5,
+            "5": 4
+          },
+          "eye": "dim",
+          "belly": {
+            "at": [
+              63,
+              78
+            ],
+            "r": [
+              15,
+              7.5
+            ],
+            "segments": 3
+          },
+          "weakSpot": {
+            "at": [
+              61,
+              79
+            ],
+            "level": 1
+          },
+          "rotate": -5,
+          "pivot": [
+            0.5,
+            1
+          ]
+        },
+        {
+          "key": "idle-1",
+          "flipY": true,
+          "tone": {
+            "6": 5,
+            "5": 4
+          },
+          "eye": "dim",
+          "belly": {
+            "at": [
+              60,
+              78
+            ],
+            "r": [
+              15,
+              7.5
+            ],
+            "segments": 3
+          },
+          "weakSpot": {
+            "at": [
+              58,
+              79
+            ],
+            "level": 3
+          }
+        },
+        {
+          "key": "idle-1",
+          "flipY": true,
+          "tone": {
+            "6": 5,
+            "5": 4
+          },
+          "eye": "dim",
+          "belly": {
+            "at": [
+              57,
+              78
+            ],
+            "r": [
+              15,
+              7.5
+            ],
+            "segments": 3
+          },
+          "weakSpot": {
+            "at": [
+              55,
+              79
+            ],
+            "level": 1
+          },
+          "rotate": 5,
+          "pivot": [
+            0.5,
+            1
+          ]
+        }
+      ],
+      "death": [
+        {
+          "key": "death-1"
+        },
+        {
+          "key": "death-2"
+        },
+        {
+          "key": "death-3"
+        },
+        {
+          "key": "death-4",
+          "eye": "dim"
+        },
+        {
+          "key": "death-5",
+          "eye": "off"
+        },
+        {
+          "key": "death-6",
+          "eye": "off"
+        }
+      ],
+      "block": [
+        {
+          "key": "attack-1",
+          "rotate": -12,
+          "pivot": [
+            0.5,
+            1
+          ],
+          "squash": [
+            1.02,
+            0.9
+          ],
+          "nudge": [
+            0,
+            -4
+          ],
+          "eye": "dim"
+        },
+        {
+          "key": "attack-1",
+          "rotate": -14,
+          "pivot": [
+            0.5,
+            1
+          ],
+          "squash": [
+            1.04,
+            0.86
+          ],
+          "nudge": [
+            -2,
+            -5
+          ],
+          "eye": "dim"
+        }
+      ]
+    },
+    "back": {
+      "idle": [
+        {
+          "rig": "back"
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "body": [
+              0,
+              -1
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "body": [
+              0,
+              -1
+            ],
+            "R1": [
+              1,
+              -1
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "L1": [
+              -1,
+              0
+            ]
+          }
+        }
+      ],
+      "walk": [
+        {
+          "rig": "back",
+          "parts": {
+            "L1": [
+              -1,
+              0
+            ],
+            "C": [
+              -1,
+              0
+            ],
+            "R1": [
+              -1,
+              0
+            ],
+            "L2": [
+              1,
+              -1
+            ],
+            "R2": [
+              1,
+              -1
+            ],
+            "body": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "L1": [
+              0,
+              -2
+            ],
+            "C": [
+              0,
+              -2
+            ],
+            "R1": [
+              0,
+              -2
+            ],
+            "L2": [
+              1,
+              0
+            ],
+            "R2": [
+              1,
+              0
+            ],
+            "body": [
+              0,
+              -1
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "L1": [
+              1,
+              -3
+            ],
+            "C": [
+              1,
+              -3
+            ],
+            "R1": [
+              1,
+              -3
+            ],
+            "L2": [
+              0,
+              0
+            ],
+            "R2": [
+              0,
+              0
+            ],
+            "body": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "L1": [
+              1,
+              -1
+            ],
+            "C": [
+              1,
+              -1
+            ],
+            "R1": [
+              1,
+              -1
+            ],
+            "L2": [
+              -1,
+              0
+            ],
+            "R2": [
+              -1,
+              0
+            ],
+            "body": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "L1": [
+              1,
+              0
+            ],
+            "C": [
+              1,
+              0
+            ],
+            "R1": [
+              1,
+              0
+            ],
+            "L2": [
+              0,
+              -2
+            ],
+            "R2": [
+              0,
+              -2
+            ],
+            "body": [
+              0,
+              -1
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "L1": [
+              0,
+              0
+            ],
+            "C": [
+              0,
+              0
+            ],
+            "R1": [
+              0,
+              0
+            ],
+            "L2": [
+              1,
+              -3
+            ],
+            "R2": [
+              1,
+              -3
+            ],
+            "body": [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "windup": [
+        {
+          "rig": "back",
+          "parts": {
+            "body": [
+              0,
+              1
+            ],
+            "L1": [
+              -2,
+              0
+            ],
+            "R1": [
+              2,
+              0
+            ],
+            "L2": [
+              -1,
+              0
+            ],
+            "R2": [
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "rotate": 8,
+          "pivot": [
+            0.35,
+            1
+          ],
+          "parts": {
+            "R1": [
+              0,
+              -1
+            ]
+          },
+          "seams": 1
+        },
+        {
+          "rig": "back",
+          "rotate": 15,
+          "pivot": [
+            0.35,
+            1
+          ],
+          "parts": {
+            "R1": [
+              0,
+              -3
+            ],
+            "R2": [
+              0,
+              -2
+            ]
+          },
+          "seams": 1
+        },
+        {
+          "rig": "back",
+          "rotate": 18,
+          "pivot": [
+            0.35,
+            1
+          ],
+          "parts": {
+            "R1": [
+              1,
+              -3
+            ],
+            "R2": [
+              0,
+              -2
+            ]
+          },
+          "seams": 2
+        },
+        {
+          "rig": "back",
+          "rotate": 20,
+          "pivot": [
+            0.35,
+            1
+          ],
+          "parts": {
+            "R1": [
+              1,
+              -4
+            ],
+            "R2": [
+              0,
+              -3
+            ]
+          },
+          "seams": 3
+        }
+      ],
+      "slam": [
+        {
+          "rig": "back",
+          "rotate": -5,
+          "pivot": [
+            0.5,
+            1
+          ],
+          "parts": {
+            "body": [
+              0,
+              1
+            ]
+          },
+          "seams": 3
+        },
+        {
+          "rig": "back",
+          "squash": [
+            1.04,
+            0.9
+          ],
+          "parts": {
+            "body": [
+              0,
+              2
+            ],
+            "L1": [
+              -2,
+              0
+            ],
+            "R1": [
+              2,
+              0
+            ]
+          },
+          "seams": 3
+        },
+        {
+          "rig": "back",
+          "squash": [
+            1.02,
+            0.94
+          ],
+          "parts": {
+            "body": [
+              0,
+              1
+            ],
+            "L1": [
+              -1,
+              0
+            ],
+            "R1": [
+              1,
+              0
+            ]
+          },
+          "seams": 2
+        }
+      ],
+      "recover": [
+        {
+          "rig": "back",
+          "squash": [
+            1.01,
+            0.97
+          ],
+          "parts": {
+            "body": [
+              0,
+              1
+            ]
+          },
+          "seams": 1
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "body": [
+              0,
+              -1
+            ],
+            "C": [
+              0,
+              -1
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "L2": [
+              0,
+              -1
+            ]
+          }
+        }
+      ],
+      "hurt": [
+        {
+          "rig": "back",
+          "rotate": -5,
+          "pivot": [
+            0.5,
+            1
+          ],
+          "nudge": [
+            -2,
+            0
+          ]
+        },
+        {
+          "rig": "back",
+          "rotate": 4,
+          "pivot": [
+            0.5,
+            1
+          ],
+          "nudge": [
+            1,
+            0
+          ],
+          "parts": {
+            "R1": [
+              0,
+              -2
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "body": [
+              1,
+              0
+            ],
+            "L1": [
+              -1,
+              0
+            ],
+            "R2": [
+              1,
+              -1
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "body": [
+              0,
+              1
+            ],
+            "L1": [
+              -1,
+              0
+            ],
+            "R1": [
+              1,
+              0
+            ]
+          }
+        }
+      ],
+      "stunned": [
+        {
+          "rig": "back",
+          "flipY": true,
+          "tone": {
+            "6": 5,
+            "5": 4
+          },
+          "belly": {
+            "at": [
+              63,
+              72
+            ],
+            "r": [
+              15,
+              7
+            ],
+            "segments": 3
+          },
+          "weakSpot": {
+            "at": [
+              61,
+              73
+            ],
+            "level": 1
+          }
+        },
+        {
+          "rig": "back",
+          "flipY": true,
+          "tone": {
+            "6": 5,
+            "5": 4
+          },
+          "belly": {
+            "at": [
+              60,
+              72
+            ],
+            "r": [
+              15,
+              7
+            ],
+            "segments": 3
+          },
+          "weakSpot": {
+            "at": [
+              58,
+              73
+            ],
+            "level": 3
+          },
+          "rotate": 5,
+          "pivot": [
+            0.5,
+            1
+          ]
+        },
+        {
+          "rig": "back",
+          "flipY": true,
+          "tone": {
+            "6": 5,
+            "5": 4
+          },
+          "belly": {
+            "at": [
+              63,
+              72
+            ],
+            "r": [
+              15,
+              7
+            ],
+            "segments": 3
+          },
+          "weakSpot": {
+            "at": [
+              61,
+              73
+            ],
+            "level": 2
+          }
+        },
+        {
+          "rig": "back",
+          "flipY": true,
+          "tone": {
+            "6": 5,
+            "5": 4
+          },
+          "belly": {
+            "at": [
+              66,
+              72
+            ],
+            "r": [
+              15,
+              7
+            ],
+            "segments": 3
+          },
+          "weakSpot": {
+            "at": [
+              64,
+              73
+            ],
+            "level": 1
+          },
+          "rotate": -5,
+          "pivot": [
+            0.5,
+            1
+          ]
+        }
+      ],
+      "death": [
+        {
+          "rig": "back",
+          "parts": {
+            "body": [
+              0,
+              2
+            ],
+            "L1": [
+              -1,
+              0
+            ],
+            "R1": [
+              1,
+              0
+            ],
+            "C": [
+              0,
+              -1
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "parts": {
+            "body": [
+              0,
+              4
+            ],
+            "L1": [
+              -2,
+              -1
+            ],
+            "R1": [
+              2,
+              -1
+            ],
+            "L2": [
+              0,
+              -2
+            ],
+            "R2": [
+              0,
+              -2
+            ],
+            "C": [
+              0,
+              -2
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "rotate": -12,
+          "pivot": [
+            0.5,
+            1
+          ],
+          "parts": {
+            "body": [
+              0,
+              7
+            ],
+            "L1": [
+              -2,
+              -4
+            ],
+            "L2": [
+              0,
+              -3
+            ],
+            "R1": [
+              1,
+              -2
+            ],
+            "R2": [
+              0,
+              -3
+            ],
+            "C": [
+              0,
+              -4
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "rotate": -20,
+          "pivot": [
+            0.5,
+            1
+          ],
+          "parts": {
+            "body": [
+              0,
+              10
+            ],
+            "L1": [
+              2,
+              -6
+            ],
+            "L2": [
+              1,
+              -6
+            ],
+            "C": [
+              0,
+              -6
+            ],
+            "R2": [
+              -1,
+              -6
+            ],
+            "R1": [
+              -2,
+              -6
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "rotate": -16,
+          "pivot": [
+            0.5,
+            1
+          ],
+          "squash": [
+            1,
+            0.94
+          ],
+          "parts": {
+            "body": [
+              0,
+              12
+            ],
+            "L1": [
+              3,
+              -7
+            ],
+            "L2": [
+              1,
+              -7
+            ],
+            "C": [
+              0,
+              -7
+            ],
+            "R2": [
+              -1,
+              -7
+            ],
+            "R1": [
+              -3,
+              -7
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "rotate": -12,
+          "pivot": [
+            0.5,
+            1
+          ],
+          "squash": [
+            1.02,
+            0.9
+          ],
+          "parts": {
+            "body": [
+              0,
+              13
+            ],
+            "L1": [
+              3,
+              -8
+            ],
+            "L2": [
+              1,
+              -8
+            ],
+            "C": [
+              0,
+              -8
+            ],
+            "R2": [
+              -1,
+              -8
+            ],
+            "R1": [
+              -3,
+              -8
+            ]
+          }
+        }
+      ],
+      "block": [
+        {
+          "rig": "back",
+          "squash": [
+            1.02,
+            0.96
+          ],
+          "parts": {
+            "body": [
+              0,
+              2
+            ],
+            "L1": [
+              -1,
+              0
+            ],
+            "R1": [
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "rig": "back",
+          "squash": [
+            1.03,
+            0.93
+          ],
+          "nudge": [
+            -1,
+            0
+          ],
+          "parts": {
+            "body": [
+              0,
+              3
+            ],
+            "L1": [
+              -2,
+              0
+            ],
+            "R1": [
+              2,
+              0
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

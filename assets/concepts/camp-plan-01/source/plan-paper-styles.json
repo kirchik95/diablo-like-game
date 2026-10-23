@@ -1,0 +1,55 @@
+{
+  "styles": {
+    "17Z-0": {
+      "display": "flex",
+      "overflow": "clip",
+      "width": "1600px",
+      "height": "fit-content",
+      "left": "0px",
+      "top": "0px",
+      "flexDirection": "column",
+      "padding": "44px",
+      "gap": "32px",
+      "position": "absolute",
+      "backgroundColor": "#E3E4D8"
+    },
+    "188-0": {
+      "display": "flex",
+      "alignItems": "start",
+      "width": "1512px",
+      "flexShrink": "0",
+      "gap": "32px"
+    },
+    "189-0": {
+      "width": "1032px",
+      "height": "1224px",
+      "flexShrink": "0",
+      "overflow": "clip",
+      "position": "relative",
+      "backgroundColor": "#D7DDCB"
+    },
+    "18A-0": {
+      "display": "flex",
+      "flexDirection": "column",
+      "width": "448px",
+      "flexShrink": "0",
+      "gap": "24px"
+    },
+    "1CR-0": {
+      "display": "flex",
+      "width": "1512px",
+      "flexShrink": "0",
+      "paddingTop": "28px",
+      "gap": "36px",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "#B3BDAB"
+    },
+    "1D5-0": {
+      "display": "flex",
+      "justifyContent": "space-between",
+      "width": "1512px",
+      "paddingTop": "12px"
+    }
+  }
+}

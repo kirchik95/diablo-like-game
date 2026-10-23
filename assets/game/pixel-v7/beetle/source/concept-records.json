@@ -1,0 +1,161 @@
+{
+  "sourceManifest": "assets/concepts/animation-bible-01/monsters/manifest.json",
+  "note": "Read-only Paper artbook originals used by scripts/build-beetle-animation.py. Hashes are re-checked on every build and --verify-only run.",
+  "images": [
+    {
+      "board": 7,
+      "species": "beetle",
+      "sequence": "idle",
+      "keys": 4,
+      "nodeId": "S3-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-idle.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH19G23EYF76F9H0R2F9Q3.png",
+      "originalPath": "originals/beetle-idle.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1114606,
+      "sha256": "271ac2572d28b314fbb6e40f356dc60474ef7499ac882c5a17c88c5494adc5f4",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 7,
+      "species": "beetle",
+      "sequence": "walk",
+      "keys": 6,
+      "nodeId": "T6-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-walk.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH1GCT8R35P4VBQPFMH3EN.png",
+      "originalPath": "originals/beetle-walk.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1173812,
+      "sha256": "63cb11908517be7320303e0595b2ac78625bb8bebf6cc83355b84a17d20d4cc4",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 7,
+      "species": "beetle",
+      "sequence": "facing",
+      "keys": 2,
+      "nodeId": "12C-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-facing-v2.txt",
+      "referenceNodes": [
+        "DI-0",
+        "UJ-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH4W7F9Y68ZK1SSJKYSD9N.png",
+      "originalPath": "originals/beetle-facing-v2.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 859944,
+      "sha256": "bd374d70c66fad24ca1667dc95e28b6cf8d39c71b54eec68efe97a63b28eee83",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 8,
+      "species": "beetle",
+      "sequence": "attack",
+      "keys": 6,
+      "nodeId": "WO-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-attack-v2.txt",
+      "referenceNodes": [
+        "12C-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH8DB6NVDYWGFVN50HW4WD.png",
+      "originalPath": "originals/beetle-attack.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1258339,
+      "sha256": "52b60149e16282fac055a4a77c9a061fd2fd9f02184619345a685cb660982a48",
+      "review": "corrected_self_checked",
+      "generationModel": "openai-gpt-image-edit-2-5",
+      "version": 2,
+      "referenceLocalPath": "references/beetle-only-facing.png",
+      "generationNodeId": "15P-0",
+      "generationNodeVisibility": "hidden after copying image URL to original WO-0",
+      "anatomyReview": [
+        "1: low brace, closed tail-free rear contour, tapered insect support tips.",
+        "2: raised windup, angular segmented weight-bearing limbs with no toe-bearing feet.",
+        "3: downward phase, continuous rear shell contour, pointed support limbs.",
+        "4: contact ring retained, no tail emerging from rear shell, insect support tips.",
+        "5: low absorption with residual particles, no tail or mammalian foot shapes.",
+        "6: returns to the same species and six-limbed body plan, no added rear appendage."
+      ]
+    },
+    {
+      "board": 8,
+      "species": "beetle",
+      "sequence": "hurt",
+      "keys": 4,
+      "nodeId": "XM-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-hurt.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH2HPK251A7M0TZV83767V.png",
+      "originalPath": "originals/beetle-hurt.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1009537,
+      "sha256": "7de21d499c01342622e1d6425dfec151d6c36892442fbf7c82545e39b1bba44c",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 8,
+      "species": "beetle",
+      "sequence": "death",
+      "keys": 6,
+      "nodeId": "XW-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-death.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH2SWZPQMEGYK8QATNH0MA.png",
+      "originalPath": "originals/beetle-death.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1187472,
+      "sha256": "906711dddeccc9d2f1c15c86b190c1c88a639b2fe2642686de4a2e331a8ef2ee",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    }
+  ]
+}

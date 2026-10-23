@@ -1,0 +1,7 @@
+Use case: stylized-concept.
+Asset type: one production tileable ground material for a fixed-isometric pixel-art RPG.
+Primary request: a square top-down texture of compacted brown loam on an old countryside footpath. Quiet broad nearly flat areas of earth with a few subtle irregular worn streaks and tiny compacted clods. This is actual soil, not sand. No painted whole road, grass edging, large cracks, stones or decoration.
+Style/medium: simplified carefully clustered pixel art at logical 128 by 128 native pixels, enlarged cleanly with nearest-neighbor; restrained aged outdoor atmosphere; match quiet sage/olive grass from this conversation in detail density. Uniform diffuse light, no directional cast shadow.
+Color palette: cool brown and desaturated umber, midpoint around RGB 128,110,91; highlights around 142,124,104, shadows around 111,95,78; 12–20 close colors. Brown read, absolutely no golden yellow or beige sand.
+Composition: full-frame seamless square TOP DOWN surface, orthographic, same density throughout and opposite edges tile. Low contrast and largely open/uncluttered; texture sits behind combat characters.
+Avoid: isometric diamond, horizon, landscape, gridded tiles, vignette, dark border, tall objects, text, labels, noisy dithering, yellow sand, checkerboard, grass or plants, dominant repeated shape.

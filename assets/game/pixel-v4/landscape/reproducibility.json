@@ -1,0 +1,28 @@
+{
+  "algorithm": "SHA-256",
+  "artifacts": {
+    "cliff.png": "98062fa01790c597a1a1ff7c6e7d8b71f4fc24f0d67c34f01828d3e83e8c2e6b",
+    "earth.png": "39e10d1600d1db9bae0ba85edc45bb674ceb812a98b35f7f16ac95c8437aa956",
+    "hit-masks.json": "ab11064facaec7bae1f9db04e34e99142afc39f5d11c28527575eec1caacbf2d",
+    "landscape.png": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731",
+    "manifest.json": "a642c80b43a4bf6f185713e1d1f74114ea9d323f46c06d0e35f6a19fe9a61dc4",
+    "moss.png": "86d1cfc74e29c2437f72656e045252e64aaa1d9a273de20d9af63b3f8df24e09",
+    "previews/cliff-repeat-4x.png": "7e21d58ec250462f7f3aa29c360bb1df17814fa7a70747809f6744dff487d16d",
+    "previews/cliff-repeat-native.png": "c4f31c386ce8be25661f8bdedd133b5a6689f032a2246e3ca102c6908a453ff9",
+    "previews/contact-2x.png": "c279bbf907d676b0034a31256de485bd922a5f618eaba7dde28e27eea433340e",
+    "previews/contact-native.png": "f6c4c957c6a6c79cd95868a9703ce70defadf35b2f9e0e9ab0038d69ea609fb2",
+    "previews/earth-repeat-4x.png": "f22e1f9862dba124ede403bc0ed148d364cdf0c81c9079596e9e869ac78b5e80",
+    "previews/earth-repeat-native.png": "9c3cf0272220f6097be9e9dd8eefbf58531465ad1d370d960954b8d7b25b157b",
+    "previews/moss-repeat-4x.png": "9b27c3a0718e6b41485ed6bcc442570d572d911d452f81fe820e2ccb202a8132",
+    "previews/moss-repeat-native.png": "dd36adbc51b717feff9cb795fc6d5d1a7f9f1de9838f3cdc235853e4cd39be47",
+    "previews/native-context-2x.png": "76210c60a69827545290a8bab4a16fc08b7d58efafb3728411cfd404a585cf38",
+    "previews/native-context.png": "b06bc9d98d2dfa927ed8ba08eb7ce7fc5ee9a9b7cf1cfc29107eb211f6bc4176",
+    "previews/surfaces-repeat-4x.png": "ee65690f629d90c3b18b21c037523f33ea5558b0b8b1f7a5fa1b22e1e2e4a1f1",
+    "previews/surfaces-repeat-native.png": "5f96ed1d9b37a248ab0634cd5b72917f17cec35c754b7582a5aae50922ed592d",
+    "qa-report.json": "335233e598e03ddbb7dcd365b189b5a65688a374a82d46827b9d8307a6d17eae",
+    "source/palette.json": "b926e26b886feb24fb4cfbbdeb2093b2e41f15b2f826d0f880eeea7f88b9ad0a",
+    "source/provenance.json": "e428335f74727e8d327ac7173bfc48c5cbc1249c11740eb3247f65f96190174a",
+    "source/registration.json": "55b2d90c545e9e5740ec176ceda8b0667b8255061a7840577a91563234a7ffd8"
+  },
+  "verify": "python3 scripts/build-landscape-assets.py --verify-only"
+}

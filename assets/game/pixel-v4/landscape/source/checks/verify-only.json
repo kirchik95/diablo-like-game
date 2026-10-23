@@ -1,0 +1,187 @@
+{
+  "props": {
+    "frames": 8,
+    "size": [
+      640,
+      320
+    ],
+    "opaqueColors": 48,
+    "maskPixelChecks": 204800,
+    "cells": [
+      {
+        "id": "cypress",
+        "box": [
+          60,
+          16,
+          101,
+          144
+        ],
+        "opaquePixels": 2761,
+        "components": 1,
+        "nativeSize": [
+          41,
+          128
+        ]
+      },
+      {
+        "id": "dead-tree",
+        "box": [
+          35,
+          32,
+          125,
+          144
+        ],
+        "opaquePixels": 3054,
+        "components": 1,
+        "nativeSize": [
+          90,
+          112
+        ]
+      },
+      {
+        "id": "rock-large",
+        "box": [
+          52,
+          100,
+          109,
+          144
+        ],
+        "opaquePixels": 1685,
+        "components": 1,
+        "nativeSize": [
+          57,
+          44
+        ]
+      },
+      {
+        "id": "rock-small",
+        "box": [
+          67,
+          124,
+          94,
+          144
+        ],
+        "opaquePixels": 333,
+        "components": 1,
+        "nativeSize": [
+          27,
+          20
+        ]
+      },
+      {
+        "id": "shrub",
+        "box": [
+          64,
+          114,
+          96,
+          144
+        ],
+        "opaquePixels": 570,
+        "components": 1,
+        "nativeSize": [
+          32,
+          30
+        ]
+      },
+      {
+        "id": "grass",
+        "box": [
+          72,
+          126,
+          88,
+          144
+        ],
+        "opaquePixels": 133,
+        "components": 1,
+        "nativeSize": [
+          16,
+          18
+        ]
+      },
+      {
+        "id": "ruin-pile",
+        "box": [
+          51,
+          94,
+          110,
+          144
+        ],
+        "opaquePixels": 1701,
+        "components": 1,
+        "nativeSize": [
+          59,
+          50
+        ]
+      },
+      {
+        "id": "supplies",
+        "box": [
+          54,
+          94,
+          107,
+          144
+        ],
+        "opaquePixels": 1776,
+        "components": 1,
+        "nativeSize": [
+          53,
+          50
+        ]
+      }
+    ]
+  },
+  "surfaces": [
+    {
+      "id": "earth",
+      "size": [
+        32,
+        32
+      ],
+      "opaqueColors": 24,
+      "seamMismatchPixels": 0,
+      "luminanceRange": 20.558,
+      "meanRgb": [
+        119.05,
+        109.04,
+        95.84
+      ]
+    },
+    {
+      "id": "moss",
+      "size": [
+        32,
+        32
+      ],
+      "opaqueColors": 24,
+      "seamMismatchPixels": 0,
+      "luminanceRange": 28.487,
+      "meanRgb": [
+        99.79,
+        116.06,
+        98.88
+      ]
+    },
+    {
+      "id": "cliff",
+      "size": [
+        32,
+        32
+      ],
+      "opaqueColors": 24,
+      "seamMismatchPixels": 0,
+      "luminanceRange": 40.858,
+      "meanRgb": [
+        102.85,
+        106.83,
+        111.94
+      ]
+    }
+  ],
+  "status": "passed",
+  "runtimeBytes": 72676,
+  "textureMemoryRgbaBytes": 831488,
+  "mode": "verify-only",
+  "managedArtifacts": 23,
+  "rebuildMatches": true,
+  "sourceHashesMatch": true
+}

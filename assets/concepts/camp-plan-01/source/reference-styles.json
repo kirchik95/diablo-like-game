@@ -1,0 +1,17 @@
+{
+  "styles": {
+    "17A-0": {
+      "display": "flex",
+      "overflow": "clip",
+      "width": "1600px",
+      "height": "fit-content",
+      "flexDirection": "column",
+      "left": "0px",
+      "top": "0px",
+      "padding": "44px",
+      "gap": "24px",
+      "position": "absolute",
+      "backgroundColor": "#E3E4D8"
+    }
+  }
+}

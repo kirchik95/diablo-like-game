@@ -1,0 +1,8 @@
+Use case: stylized-concept.
+Asset type: one transparent low ground-decoration sprite for a fixed-isometric pixel-art RPG.
+Primary request: one small low tuft of countryside grass with 5–7 short broad blades spreading from a single base. A wide squat silhouette, blades bending outward in an irregular fan; no long vertical shoot. Dark sage-green and olive, simple planar shading from upper left.
+Style/medium: deliberate simplified pixel art, small visibly square pixel clusters, matching the restrained medieval outdoor camp reference's foot-level grass. Target visible silhouette at gameplay scale is about 22 pixels wide by 16 pixels high. Render enlarged clearly; do not draw a pixel grid. Sparse detail that survives extreme reduction.
+View: fixed isometric three-quarter view, ground seen from above at about 30 degrees; the plant itself is upright but VERY LOW at ankle level.
+Color palette: limited muted greens and cool green-gray shadows, lighter olive tips, no neon; darkest is deep green not black. Calm natural colors subordinate to the hero.
+Composition: exactly one isolated tuft, horizontally centered on a fully transparent background, entire silhouette visible with ample transparent padding on all sides; no soil base, ground disc, shadow, other plants or scene. Preserve real transparency.
+Avoid: text, letters, watermark, panels, border, tall grass, bush, fern, tree, flower, rock, pot, outline halo, smooth gradients, bloom, blur, anti-aliased feathering, photorealism.

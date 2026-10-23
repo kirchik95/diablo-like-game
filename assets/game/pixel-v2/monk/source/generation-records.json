@@ -1,0 +1,212 @@
+{
+  "pathConvention": "File paths relative to source/ except toolOutputPath (historical absolute tool location). All selected originals are retained locally.",
+  "completedAndRetainedGenerations": 9,
+  "unconsumedInvocationCount": 1,
+  "records": [
+    {
+      "id": "back-locomotion-v1",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by built-in tool",
+      "transparentBackgroundRequested": true,
+      "originalFile": "originals/back-locomotion-v1.png",
+      "promptFile": "prompts/back-locomotion-v1.txt",
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-5ffe5075-4ded-4825-ba89-dea3e28960e1.png",
+      "referenceFiles": [
+        "references/approved-back-ne.png",
+        "strips/01-run-final.png",
+        "originals/01-monk-locomotion-v1.png"
+      ],
+      "selectedAtlasIndices": [
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "review": "Retain four idle keys and first three run keys. Run keys 4\u20136 rejected for repeated limb phase."
+    },
+    {
+      "id": "back-combo-v1",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by built-in tool",
+      "transparentBackgroundRequested": true,
+      "originalFile": "originals/back-combo-v1.png",
+      "promptFile": "prompts/back-combo-v1.txt",
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-9973edd4-45f4-4991-ac2f-51ac37816c6e.png",
+      "referenceFiles": [
+        "references/approved-back-ne.png",
+        "originals/02-monk-combo.png"
+      ],
+      "selectedAtlasIndices": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        74,
+        75,
+        77
+      ],
+      "review": "Retain sixteen keys. Heavy anticipation/recovery replaced because hands incorrectly occluded the back."
+    },
+    {
+      "id": "back-abilities-v1",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by built-in tool",
+      "transparentBackgroundRequested": true,
+      "originalFile": "originals/back-abilities-v1.png",
+      "promptFile": "prompts/back-abilities-v1.txt",
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-f459936a-c17c-475f-aa22-025a76e659c7.png",
+      "referenceFiles": [
+        "references/approved-back-ne.png",
+        "originals/03-monk-abilities.png"
+      ],
+      "selectedAtlasIndices": [
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93
+      ],
+      "review": "Retain all sixteen dash, wave and hurt keys."
+    },
+    {
+      "id": "back-death-v1",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by built-in tool",
+      "transparentBackgroundRequested": true,
+      "originalFile": "originals/back-death-v1.png",
+      "promptFile": "prompts/back-death-v1.txt",
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-8e18873c-5ef3-43fc-8997-6c3610439fc0.png",
+      "referenceFiles": [
+        "references/approved-back-ne.png",
+        "originals/04-monk-lifecycle.png"
+      ],
+      "selectedAtlasIndices": [
+        94,
+        95,
+        96,
+        97,
+        98,
+        99
+      ],
+      "review": "Retain all six death keys."
+    },
+    {
+      "id": "back-run-opposite-v2",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by built-in tool",
+      "transparentBackgroundRequested": true,
+      "originalFile": "originals/back-run-opposite-v2.png",
+      "promptFile": "prompts/back-run-opposite-v2.txt",
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-34890f16-a028-4ac8-91e3-27f36d617df9.png",
+      "referenceFiles": [
+        "originals/back-locomotion-v1.png",
+        "references/front-run-opposite-4-6.png",
+        "references/approved-back-ne.png"
+      ],
+      "selectedAtlasIndices": [],
+      "review": "Rejected: insufficient change to the repeated arm/leg phase."
+    },
+    {
+      "id": "back-heavy-occlusion-v2",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by built-in tool",
+      "transparentBackgroundRequested": true,
+      "originalFile": "originals/back-heavy-occlusion-v2.png",
+      "promptFile": "prompts/back-heavy-occlusion-v2.txt",
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-4657d527-4c33-452b-af50-f9c3264523fb.png",
+      "referenceFiles": [
+        "references/approved-back-ne.png",
+        "originals/back-combo-v1.png"
+      ],
+      "selectedAtlasIndices": [
+        73,
+        76
+      ],
+      "review": "Retain both replacements. Palms are correctly hidden in front of the torso instead of appearing on the back."
+    },
+    {
+      "id": "back-run-opposite-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by built-in tool",
+      "transparentBackgroundRequested": true,
+      "originalFile": "originals/back-run-opposite-v3.png",
+      "promptFile": "prompts/back-run-opposite-v3.txt",
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-60b51481-9cb5-480e-a9f3-2e24a02b2eb7.png",
+      "referenceFiles": [
+        "references/approved-back-ne.png"
+      ],
+      "selectedAtlasIndices": [],
+      "review": "Superseded by v4: correct distinct leg crossing but body proportions too slender at native scale."
+    },
+    {
+      "id": "back-run-proportions-v4",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by built-in tool",
+      "transparentBackgroundRequested": true,
+      "originalFile": "originals/back-run-proportions-v4.png",
+      "promptFile": "prompts/back-run-proportions-v4.txt",
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-5c5ce84e-f19e-4e98-8485-7e433f725612.png",
+      "referenceFiles": [
+        "originals/back-run-opposite-v3.png",
+        "references/approved-back-ne.png"
+      ],
+      "selectedAtlasIndices": [
+        57,
+        58,
+        59
+      ],
+      "review": "Retain all three. User accepted corrected opposite half in native contact sheets and accepted character scale in game."
+    },
+    {
+      "id": "back-cross-contact-v2",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by built-in tool",
+      "transparentBackgroundRequested": true,
+      "originalFile": "originals/back-cross-contact-v2-rejected.png",
+      "promptFile": "prompts/back-cross-contact-v2.txt",
+      "toolOutputPath": "/Users/kirchik/.codex/generated_images/01a16519-2636-73d1-a8d4-6c4979217e21/exec-1f232c06-53c0-4116-bcc0-a326bd036263.png",
+      "referenceFiles": [
+        "references/approved-back-ne.png"
+      ],
+      "selectedAtlasIndices": [],
+      "review": "Rejected exploratory contact variant; no advantage over accepted combo. No pixels shipped."
+    },
+    {
+      "id": "back-run-arm-swap-v5",
+      "tool": "image_gen.imagegen (built-in)",
+      "model": "Not exposed by built-in tool",
+      "transparentBackgroundRequested": true,
+      "promptFile": "prompts/back-run-arm-swap-v5.txt",
+      "originalFile": null,
+      "referenceFiles": [
+        "originals/back-run-proportions-v4.png",
+        "references/approved-back-ne.png"
+      ],
+      "selectedAtlasIndices": [],
+      "review": "Invocation was already pending when user accepted v4 and requested art freeze. Execution wrapper terminated; no result consumed/imported and no pixels shipped. Kept exact prompt as audit history."
+    }
+  ]
+}

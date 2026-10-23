@@ -1,0 +1,11 @@
+Use case: stylized-concept. Asset type: production game sprite animation sheet, actual transparent background.
+Create ONE square 1024x1024 sprite sheet, exactly 4 columns by 4 rows, 16 equal 256px cells, with generous empty padding between every sprite. No text, no grid lines, no ground, no ground shadows.
+Input image 1 is the approved character identity and coarse pixel-art style (use only the monk, not the monsters). Input image 2 gives action poses and costume reference. Preserve this adult lean bald tan monk, ivory sleeveless crossed tunic, charcoal loose cuffed pants, burgundy waist sash with two tails, black prayer beads, bronze wrist guards, bare feet. NOT chibi, NOT big headed. Simplified true pixel art, approximately 60 logical pixels in character height, hard square clusters, dark purple one-pixel outline, around 20 colors, no blur, no gradients, no antialiasing. Upper-left lighting.
+All cells show the same exact character at identical scale, fixed isometric 2D game viewpoint looking down mildly (~30 degrees), feet on consistent baseline 220px. Feet midpoint at cell x128; all attack/dash poses have enough padding and remain inside their cell.
+The first TWO ROWS face screen-right/down in 3/4 FRONT view (see face and chest). The last TWO ROWS face screen-right/up in 3/4 BACK view (see back of head and tunic, NOT face).
+Precise 16 cell layout:
+Row 1 front-facing: [idle open palm guard] [run left foot forward contacting ground] [run passing pose right knee forward] [run right foot forward contacting ground].
+Row 2 front-facing: [run passing pose left knee forward] [attack anticipation, fist at hip, torso twisted] [fully extended open palm strike to right, low forward stance, NO EFFECTS] [dash, body low and leaning to right, one foot tucked].
+Row 3 back-facing: [idle open palm guard] [run left foot forward contacting ground] [run passing pose right knee forward] [run right foot forward contacting ground].
+Row 4 back-facing: [run passing pose left knee forward] [attack anticipation, fist at hip, torso twisted] [fully extended open palm strike to right/up, low forward stance, NO EFFECTS] [dash, body low and leaning to right/up, one foot tucked].
+Make the two opposite run contact poses clearly alternate the legs. No weapons. No VFX. No repeated unrelated poses. Transparent alpha pixels around all characters.

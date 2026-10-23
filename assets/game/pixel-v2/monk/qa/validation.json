@@ -1,0 +1,1220 @@
+{
+  "status": "passed",
+  "frames": 100,
+  "opaqueColors": 34,
+  "size": [
+    960,
+    960
+  ],
+  "binaryAlpha": true,
+  "connectedBodies": 100,
+  "noClippedEdges": true,
+  "maskPixelsVerified": 921600,
+  "uniqueFrames": 100,
+  "backIsNeverMirroredFront": true,
+  "apngsVerifiedAgainstAtlas": 18,
+  "pairedGifsVerified": 9,
+  "atlasSha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e",
+  "frameReports": [
+    {
+      "index": 0,
+      "name": "idle-front-01",
+      "bbox": [
+        20,
+        22,
+        77,
+        84
+      ],
+      "opaquePixels": 1751,
+      "components": 1
+    },
+    {
+      "index": 1,
+      "name": "idle-front-02",
+      "bbox": [
+        16,
+        22,
+        80,
+        84
+      ],
+      "opaquePixels": 1899,
+      "components": 1
+    },
+    {
+      "index": 2,
+      "name": "idle-front-03",
+      "bbox": [
+        20,
+        26,
+        76,
+        84
+      ],
+      "opaquePixels": 1706,
+      "components": 1
+    },
+    {
+      "index": 3,
+      "name": "idle-front-04",
+      "bbox": [
+        14,
+        24,
+        83,
+        84
+      ],
+      "opaquePixels": 1855,
+      "components": 1
+    },
+    {
+      "index": 4,
+      "name": "run-front-01",
+      "bbox": [
+        20,
+        26,
+        77,
+        84
+      ],
+      "opaquePixels": 1589,
+      "components": 1
+    },
+    {
+      "index": 5,
+      "name": "run-front-02",
+      "bbox": [
+        20,
+        32,
+        77,
+        84
+      ],
+      "opaquePixels": 1388,
+      "components": 1
+    },
+    {
+      "index": 6,
+      "name": "run-front-03",
+      "bbox": [
+        22,
+        22,
+        75,
+        84
+      ],
+      "opaquePixels": 1531,
+      "components": 1
+    },
+    {
+      "index": 7,
+      "name": "run-front-04",
+      "bbox": [
+        18,
+        24,
+        78,
+        84
+      ],
+      "opaquePixels": 1524,
+      "components": 1
+    },
+    {
+      "index": 8,
+      "name": "run-front-05",
+      "bbox": [
+        22,
+        26,
+        74,
+        84
+      ],
+      "opaquePixels": 1471,
+      "components": 1
+    },
+    {
+      "index": 9,
+      "name": "run-front-06",
+      "bbox": [
+        22,
+        21,
+        74,
+        84
+      ],
+      "opaquePixels": 1532,
+      "components": 1
+    },
+    {
+      "index": 10,
+      "name": "attack1-front-01",
+      "bbox": [
+        18,
+        22,
+        78,
+        84
+      ],
+      "opaquePixels": 1882,
+      "components": 1
+    },
+    {
+      "index": 11,
+      "name": "attack1-front-02",
+      "bbox": [
+        17,
+        23,
+        79,
+        84
+      ],
+      "opaquePixels": 1868,
+      "components": 1
+    },
+    {
+      "index": 12,
+      "name": "attack1-front-03",
+      "bbox": [
+        15,
+        25,
+        82,
+        84
+      ],
+      "opaquePixels": 1887,
+      "components": 1
+    },
+    {
+      "index": 13,
+      "name": "attack1-front-04",
+      "bbox": [
+        14,
+        23,
+        82,
+        84
+      ],
+      "opaquePixels": 1967,
+      "components": 1
+    },
+    {
+      "index": 14,
+      "name": "attack1-front-05",
+      "bbox": [
+        24,
+        20,
+        73,
+        84
+      ],
+      "opaquePixels": 1647,
+      "components": 1
+    },
+    {
+      "index": 15,
+      "name": "attack1-front-06",
+      "bbox": [
+        18,
+        22,
+        79,
+        84
+      ],
+      "opaquePixels": 1900,
+      "components": 1
+    },
+    {
+      "index": 16,
+      "name": "attack2-front-01",
+      "bbox": [
+        19,
+        21,
+        78,
+        84
+      ],
+      "opaquePixels": 1860,
+      "components": 1
+    },
+    {
+      "index": 17,
+      "name": "attack2-front-02",
+      "bbox": [
+        19,
+        22,
+        77,
+        84
+      ],
+      "opaquePixels": 1702,
+      "components": 1
+    },
+    {
+      "index": 18,
+      "name": "attack2-front-03",
+      "bbox": [
+        17,
+        23,
+        79,
+        84
+      ],
+      "opaquePixels": 1676,
+      "components": 1
+    },
+    {
+      "index": 19,
+      "name": "attack2-front-04",
+      "bbox": [
+        15,
+        24,
+        81,
+        84
+      ],
+      "opaquePixels": 1828,
+      "components": 1
+    },
+    {
+      "index": 20,
+      "name": "attack2-front-05",
+      "bbox": [
+        23,
+        23,
+        74,
+        84
+      ],
+      "opaquePixels": 1637,
+      "components": 1
+    },
+    {
+      "index": 21,
+      "name": "attack2-front-06",
+      "bbox": [
+        19,
+        23,
+        78,
+        84
+      ],
+      "opaquePixels": 1861,
+      "components": 1
+    },
+    {
+      "index": 22,
+      "name": "attack3-front-01",
+      "bbox": [
+        18,
+        29,
+        79,
+        84
+      ],
+      "opaquePixels": 1732,
+      "components": 1
+    },
+    {
+      "index": 23,
+      "name": "attack3-front-02",
+      "bbox": [
+        21,
+        30,
+        75,
+        84
+      ],
+      "opaquePixels": 1646,
+      "components": 1
+    },
+    {
+      "index": 24,
+      "name": "attack3-front-03",
+      "bbox": [
+        14,
+        30,
+        82,
+        84
+      ],
+      "opaquePixels": 1784,
+      "components": 1
+    },
+    {
+      "index": 25,
+      "name": "attack3-front-04",
+      "bbox": [
+        14,
+        28,
+        83,
+        84
+      ],
+      "opaquePixels": 1799,
+      "components": 1
+    },
+    {
+      "index": 26,
+      "name": "attack3-front-05",
+      "bbox": [
+        19,
+        27,
+        78,
+        84
+      ],
+      "opaquePixels": 1681,
+      "components": 1
+    },
+    {
+      "index": 27,
+      "name": "attack3-front-06",
+      "bbox": [
+        21,
+        22,
+        76,
+        84
+      ],
+      "opaquePixels": 1803,
+      "components": 1
+    },
+    {
+      "index": 28,
+      "name": "dash-front-01",
+      "bbox": [
+        11,
+        33,
+        86,
+        84
+      ],
+      "opaquePixels": 2077,
+      "components": 1
+    },
+    {
+      "index": 29,
+      "name": "dash-front-02",
+      "bbox": [
+        11,
+        29,
+        85,
+        84
+      ],
+      "opaquePixels": 2016,
+      "components": 1
+    },
+    {
+      "index": 30,
+      "name": "dash-front-03",
+      "bbox": [
+        5,
+        19,
+        91,
+        74
+      ],
+      "opaquePixels": 2180,
+      "components": 1
+    },
+    {
+      "index": 31,
+      "name": "dash-front-04",
+      "bbox": [
+        21,
+        14,
+        76,
+        66
+      ],
+      "opaquePixels": 1519,
+      "components": 1
+    },
+    {
+      "index": 32,
+      "name": "dash-front-05",
+      "bbox": [
+        8,
+        33,
+        89,
+        84
+      ],
+      "opaquePixels": 2170,
+      "components": 1
+    },
+    {
+      "index": 33,
+      "name": "dash-front-06",
+      "bbox": [
+        16,
+        22,
+        81,
+        84
+      ],
+      "opaquePixels": 2176,
+      "components": 1
+    },
+    {
+      "index": 34,
+      "name": "wave-front-01",
+      "bbox": [
+        22,
+        27,
+        74,
+        84
+      ],
+      "opaquePixels": 1359,
+      "components": 1
+    },
+    {
+      "index": 35,
+      "name": "wave-front-02",
+      "bbox": [
+        16,
+        25,
+        81,
+        84
+      ],
+      "opaquePixels": 1756,
+      "components": 1
+    },
+    {
+      "index": 36,
+      "name": "wave-front-03",
+      "bbox": [
+        12,
+        22,
+        85,
+        84
+      ],
+      "opaquePixels": 1807,
+      "components": 1
+    },
+    {
+      "index": 37,
+      "name": "wave-front-04",
+      "bbox": [
+        17,
+        25,
+        79,
+        84
+      ],
+      "opaquePixels": 1676,
+      "components": 1
+    },
+    {
+      "index": 38,
+      "name": "wave-front-05",
+      "bbox": [
+        23,
+        22,
+        74,
+        84
+      ],
+      "opaquePixels": 1644,
+      "components": 1
+    },
+    {
+      "index": 39,
+      "name": "wave-front-06",
+      "bbox": [
+        22,
+        22,
+        75,
+        84
+      ],
+      "opaquePixels": 1618,
+      "components": 1
+    },
+    {
+      "index": 40,
+      "name": "hurt-front-01",
+      "bbox": [
+        14,
+        19,
+        82,
+        84
+      ],
+      "opaquePixels": 2014,
+      "components": 1
+    },
+    {
+      "index": 41,
+      "name": "hurt-front-02",
+      "bbox": [
+        16,
+        18,
+        80,
+        84
+      ],
+      "opaquePixels": 2163,
+      "components": 1
+    },
+    {
+      "index": 42,
+      "name": "hurt-front-03",
+      "bbox": [
+        14,
+        27,
+        83,
+        84
+      ],
+      "opaquePixels": 1938,
+      "components": 1
+    },
+    {
+      "index": 43,
+      "name": "hurt-front-04",
+      "bbox": [
+        15,
+        22,
+        81,
+        84
+      ],
+      "opaquePixels": 1906,
+      "components": 1
+    },
+    {
+      "index": 44,
+      "name": "death-front-01",
+      "bbox": [
+        15,
+        25,
+        82,
+        84
+      ],
+      "opaquePixels": 1771,
+      "components": 1
+    },
+    {
+      "index": 45,
+      "name": "death-front-02",
+      "bbox": [
+        17,
+        35,
+        80,
+        84
+      ],
+      "opaquePixels": 1627,
+      "components": 1
+    },
+    {
+      "index": 46,
+      "name": "death-front-03",
+      "bbox": [
+        22,
+        47,
+        74,
+        84
+      ],
+      "opaquePixels": 1226,
+      "components": 1
+    },
+    {
+      "index": 47,
+      "name": "death-front-04",
+      "bbox": [
+        14,
+        55,
+        83,
+        84
+      ],
+      "opaquePixels": 1310,
+      "components": 1
+    },
+    {
+      "index": 48,
+      "name": "death-front-05",
+      "bbox": [
+        18,
+        60,
+        79,
+        84
+      ],
+      "opaquePixels": 1101,
+      "components": 1
+    },
+    {
+      "index": 49,
+      "name": "death-front-06",
+      "bbox": [
+        15,
+        60,
+        82,
+        84
+      ],
+      "opaquePixels": 1140,
+      "components": 1
+    },
+    {
+      "index": 50,
+      "name": "idle-back-01",
+      "bbox": [
+        19,
+        22,
+        77,
+        84
+      ],
+      "opaquePixels": 1889,
+      "components": 1
+    },
+    {
+      "index": 51,
+      "name": "idle-back-02",
+      "bbox": [
+        19,
+        22,
+        77,
+        84
+      ],
+      "opaquePixels": 1868,
+      "components": 1
+    },
+    {
+      "index": 52,
+      "name": "idle-back-03",
+      "bbox": [
+        19,
+        25,
+        78,
+        84
+      ],
+      "opaquePixels": 1845,
+      "components": 1
+    },
+    {
+      "index": 53,
+      "name": "idle-back-04",
+      "bbox": [
+        19,
+        22,
+        77,
+        84
+      ],
+      "opaquePixels": 1885,
+      "components": 1
+    },
+    {
+      "index": 54,
+      "name": "run-back-01",
+      "bbox": [
+        18,
+        22,
+        79,
+        84
+      ],
+      "opaquePixels": 1933,
+      "components": 1
+    },
+    {
+      "index": 55,
+      "name": "run-back-02",
+      "bbox": [
+        18,
+        26,
+        78,
+        84
+      ],
+      "opaquePixels": 1624,
+      "components": 1
+    },
+    {
+      "index": 56,
+      "name": "run-back-03",
+      "bbox": [
+        22,
+        18,
+        75,
+        84
+      ],
+      "opaquePixels": 1689,
+      "components": 1
+    },
+    {
+      "index": 57,
+      "name": "run-back-04",
+      "bbox": [
+        19,
+        21,
+        78,
+        84
+      ],
+      "opaquePixels": 1821,
+      "components": 1
+    },
+    {
+      "index": 58,
+      "name": "run-back-05",
+      "bbox": [
+        23,
+        25,
+        73,
+        84
+      ],
+      "opaquePixels": 1495,
+      "components": 1
+    },
+    {
+      "index": 59,
+      "name": "run-back-06",
+      "bbox": [
+        24,
+        16,
+        73,
+        84
+      ],
+      "opaquePixels": 1716,
+      "components": 1
+    },
+    {
+      "index": 60,
+      "name": "attack1-back-01",
+      "bbox": [
+        18,
+        21,
+        78,
+        84
+      ],
+      "opaquePixels": 1981,
+      "components": 1
+    },
+    {
+      "index": 61,
+      "name": "attack1-back-02",
+      "bbox": [
+        18,
+        22,
+        78,
+        84
+      ],
+      "opaquePixels": 1877,
+      "components": 1
+    },
+    {
+      "index": 62,
+      "name": "attack1-back-03",
+      "bbox": [
+        14,
+        23,
+        82,
+        84
+      ],
+      "opaquePixels": 1914,
+      "components": 1
+    },
+    {
+      "index": 63,
+      "name": "attack1-back-04",
+      "bbox": [
+        15,
+        23,
+        81,
+        84
+      ],
+      "opaquePixels": 1897,
+      "components": 1
+    },
+    {
+      "index": 64,
+      "name": "attack1-back-05",
+      "bbox": [
+        23,
+        22,
+        73,
+        84
+      ],
+      "opaquePixels": 1583,
+      "components": 1
+    },
+    {
+      "index": 65,
+      "name": "attack1-back-06",
+      "bbox": [
+        19,
+        23,
+        77,
+        84
+      ],
+      "opaquePixels": 1832,
+      "components": 1
+    },
+    {
+      "index": 66,
+      "name": "attack2-back-01",
+      "bbox": [
+        18,
+        22,
+        79,
+        84
+      ],
+      "opaquePixels": 1978,
+      "components": 1
+    },
+    {
+      "index": 67,
+      "name": "attack2-back-02",
+      "bbox": [
+        18,
+        22,
+        79,
+        84
+      ],
+      "opaquePixels": 1802,
+      "components": 1
+    },
+    {
+      "index": 68,
+      "name": "attack2-back-03",
+      "bbox": [
+        15,
+        22,
+        82,
+        84
+      ],
+      "opaquePixels": 1839,
+      "components": 1
+    },
+    {
+      "index": 69,
+      "name": "attack2-back-04",
+      "bbox": [
+        16,
+        23,
+        81,
+        84
+      ],
+      "opaquePixels": 1920,
+      "components": 1
+    },
+    {
+      "index": 70,
+      "name": "attack2-back-05",
+      "bbox": [
+        20,
+        22,
+        76,
+        84
+      ],
+      "opaquePixels": 1879,
+      "components": 1
+    },
+    {
+      "index": 71,
+      "name": "attack2-back-06",
+      "bbox": [
+        18,
+        22,
+        79,
+        84
+      ],
+      "opaquePixels": 1929,
+      "components": 1
+    },
+    {
+      "index": 72,
+      "name": "attack3-back-01",
+      "bbox": [
+        17,
+        25,
+        80,
+        84
+      ],
+      "opaquePixels": 1900,
+      "components": 1
+    },
+    {
+      "index": 73,
+      "name": "attack3-back-02",
+      "bbox": [
+        17,
+        28,
+        80,
+        84
+      ],
+      "opaquePixels": 1696,
+      "components": 1
+    },
+    {
+      "index": 74,
+      "name": "attack3-back-03",
+      "bbox": [
+        15,
+        25,
+        81,
+        84
+      ],
+      "opaquePixels": 1940,
+      "components": 1
+    },
+    {
+      "index": 75,
+      "name": "attack3-back-04",
+      "bbox": [
+        15,
+        25,
+        81,
+        84
+      ],
+      "opaquePixels": 1976,
+      "components": 1
+    },
+    {
+      "index": 76,
+      "name": "attack3-back-05",
+      "bbox": [
+        17,
+        22,
+        79,
+        84
+      ],
+      "opaquePixels": 1770,
+      "components": 1
+    },
+    {
+      "index": 77,
+      "name": "attack3-back-06",
+      "bbox": [
+        18,
+        22,
+        78,
+        84
+      ],
+      "opaquePixels": 1991,
+      "components": 1
+    },
+    {
+      "index": 78,
+      "name": "dash-back-01",
+      "bbox": [
+        15,
+        36,
+        82,
+        84
+      ],
+      "opaquePixels": 1925,
+      "components": 1
+    },
+    {
+      "index": 79,
+      "name": "dash-back-02",
+      "bbox": [
+        15,
+        27,
+        82,
+        84
+      ],
+      "opaquePixels": 1908,
+      "components": 1
+    },
+    {
+      "index": 80,
+      "name": "dash-back-03",
+      "bbox": [
+        7,
+        16,
+        89,
+        76
+      ],
+      "opaquePixels": 2158,
+      "components": 1
+    },
+    {
+      "index": 81,
+      "name": "dash-back-04",
+      "bbox": [
+        21,
+        13,
+        75,
+        72
+      ],
+      "opaquePixels": 1763,
+      "components": 1
+    },
+    {
+      "index": 82,
+      "name": "dash-back-05",
+      "bbox": [
+        12,
+        34,
+        85,
+        84
+      ],
+      "opaquePixels": 2042,
+      "components": 1
+    },
+    {
+      "index": 83,
+      "name": "dash-back-06",
+      "bbox": [
+        17,
+        22,
+        80,
+        84
+      ],
+      "opaquePixels": 2106,
+      "components": 1
+    },
+    {
+      "index": 84,
+      "name": "wave-back-01",
+      "bbox": [
+        18,
+        24,
+        79,
+        84
+      ],
+      "opaquePixels": 1757,
+      "components": 1
+    },
+    {
+      "index": 85,
+      "name": "wave-back-02",
+      "bbox": [
+        14,
+        23,
+        82,
+        84
+      ],
+      "opaquePixels": 1977,
+      "components": 1
+    },
+    {
+      "index": 86,
+      "name": "wave-back-03",
+      "bbox": [
+        11,
+        24,
+        86,
+        84
+      ],
+      "opaquePixels": 1991,
+      "components": 1
+    },
+    {
+      "index": 87,
+      "name": "wave-back-04",
+      "bbox": [
+        14,
+        24,
+        82,
+        84
+      ],
+      "opaquePixels": 1907,
+      "components": 1
+    },
+    {
+      "index": 88,
+      "name": "wave-back-05",
+      "bbox": [
+        20,
+        26,
+        76,
+        84
+      ],
+      "opaquePixels": 1712,
+      "components": 1
+    },
+    {
+      "index": 89,
+      "name": "wave-back-06",
+      "bbox": [
+        18,
+        22,
+        79,
+        84
+      ],
+      "opaquePixels": 1948,
+      "components": 1
+    },
+    {
+      "index": 90,
+      "name": "hurt-back-01",
+      "bbox": [
+        15,
+        20,
+        81,
+        84
+      ],
+      "opaquePixels": 2192,
+      "components": 1
+    },
+    {
+      "index": 91,
+      "name": "hurt-back-02",
+      "bbox": [
+        16,
+        12,
+        81,
+        84
+      ],
+      "opaquePixels": 2329,
+      "components": 1
+    },
+    {
+      "index": 92,
+      "name": "hurt-back-03",
+      "bbox": [
+        19,
+        26,
+        78,
+        84
+      ],
+      "opaquePixels": 1867,
+      "components": 1
+    },
+    {
+      "index": 93,
+      "name": "hurt-back-04",
+      "bbox": [
+        16,
+        22,
+        80,
+        84
+      ],
+      "opaquePixels": 2070,
+      "components": 1
+    },
+    {
+      "index": 94,
+      "name": "death-back-01",
+      "bbox": [
+        22,
+        24,
+        75,
+        84
+      ],
+      "opaquePixels": 1674,
+      "components": 1
+    },
+    {
+      "index": 95,
+      "name": "death-back-02",
+      "bbox": [
+        21,
+        30,
+        75,
+        84
+      ],
+      "opaquePixels": 1523,
+      "components": 1
+    },
+    {
+      "index": 96,
+      "name": "death-back-03",
+      "bbox": [
+        21,
+        39,
+        76,
+        84
+      ],
+      "opaquePixels": 1337,
+      "components": 1
+    },
+    {
+      "index": 97,
+      "name": "death-back-04",
+      "bbox": [
+        17,
+        51,
+        80,
+        84
+      ],
+      "opaquePixels": 1214,
+      "components": 1
+    },
+    {
+      "index": 98,
+      "name": "death-back-05",
+      "bbox": [
+        16,
+        60,
+        81,
+        84
+      ],
+      "opaquePixels": 983,
+      "components": 1
+    },
+    {
+      "index": 99,
+      "name": "death-back-06",
+      "bbox": [
+        19,
+        63,
+        77,
+        84
+      ],
+      "opaquePixels": 824,
+      "components": 1
+    }
+  ]
+}

@@ -1,0 +1,1200 @@
+{
+  "schemaVersion": 1,
+  "method": "Explicit ramps, hand-tuned against reproducible median-cut samples (10 colours, no dither) of the named regions.",
+  "props": {
+    "OUT": {
+      "hex": "#0e121d",
+      "nearestSample": {
+        "region": "concept cypress group",
+        "sample": "#0c121f",
+        "distance": 2.83
+      }
+    },
+    "DEEP": {
+      "hex": "#1f2737",
+      "nearestSample": {
+        "region": "concept bushes",
+        "sample": "#1b2c39",
+        "distance": 6.71
+      }
+    },
+    "DEEP2": {
+      "hex": "#2d2f40",
+      "nearestSample": {
+        "region": "concept meadow",
+        "sample": "#2f333d",
+        "distance": 5.39
+      }
+    },
+    "Q_HI": {
+      "hex": "#c9b79b",
+      "nearestSample": {
+        "region": "concept ruined pillar",
+        "sample": "#c8b08f",
+        "distance": 13.93
+      }
+    },
+    "Q_W1": {
+      "hex": "#b09c82",
+      "nearestSample": {
+        "region": "camp road marker",
+        "sample": "#b1967d",
+        "distance": 7.87
+      }
+    },
+    "Q_T1": {
+      "hex": "#9f9280",
+      "nearestSample": {
+        "region": "concept bushes",
+        "sample": "#a1947c",
+        "distance": 4.9
+      }
+    },
+    "Q_T2": {
+      "hex": "#877d72",
+      "nearestSample": {
+        "region": "concept west outcrop",
+        "sample": "#8a806b",
+        "distance": 8.19
+      }
+    },
+    "Q_T3": {
+      "hex": "#6c6564",
+      "nearestSample": {
+        "region": "concept stone cliff",
+        "sample": "#68665a",
+        "distance": 10.82
+      }
+    },
+    "Q_L1": {
+      "hex": "#706968",
+      "nearestSample": {
+        "region": "concept stone cliff",
+        "sample": "#68665a",
+        "distance": 16.4
+      }
+    },
+    "Q_L2": {
+      "hex": "#5c5258",
+      "nearestSample": {
+        "region": "concept stone cliff",
+        "sample": "#5d5257",
+        "distance": 1.41
+      }
+    },
+    "Q_M": {
+      "hex": "#4a4753",
+      "nearestSample": {
+        "region": "concept ruined pillar",
+        "sample": "#4d4e4b",
+        "distance": 11.05
+      }
+    },
+    "Q_S1": {
+      "hex": "#3d3e4c",
+      "nearestSample": {
+        "region": "concept west outcrop",
+        "sample": "#3d3f4b",
+        "distance": 1.41
+      }
+    },
+    "Q_S2": {
+      "hex": "#30344a",
+      "nearestSample": {
+        "region": "concept stone cliff",
+        "sample": "#293346",
+        "distance": 8.12
+      }
+    },
+    "Q_AMB": {
+      "hex": "#3c4b52",
+      "nearestSample": {
+        "region": "concept cypress group",
+        "sample": "#3f494b",
+        "distance": 7.87
+      }
+    },
+    "M_HI": {
+      "hex": "#9a9358",
+      "nearestSample": {
+        "region": "concept grass tufts",
+        "sample": "#9b8b55",
+        "distance": 8.6
+      }
+    },
+    "M1": {
+      "hex": "#7d7b4f",
+      "nearestSample": {
+        "region": "concept bushes",
+        "sample": "#7e7750",
+        "distance": 4.24
+      }
+    },
+    "M2": {
+      "hex": "#626445",
+      "nearestSample": {
+        "region": "concept bushes",
+        "sample": "#636750",
+        "distance": 11.45
+      }
+    },
+    "M3": {
+      "hex": "#4a523f",
+      "nearestSample": {
+        "region": "concept ruined pillar",
+        "sample": "#4d4e4b",
+        "distance": 13.0
+      }
+    },
+    "F_HI": {
+      "hex": "#6a8278",
+      "nearestSample": {
+        "region": "landscape cypress",
+        "sample": "#6e7b78",
+        "distance": 8.06
+      }
+    },
+    "F1": {
+      "hex": "#43686a",
+      "nearestSample": {
+        "region": "landscape cypress",
+        "sample": "#3b5d63",
+        "distance": 15.3
+      }
+    },
+    "F2": {
+      "hex": "#2b5257",
+      "nearestSample": {
+        "region": "landscape cypress",
+        "sample": "#2a4251",
+        "distance": 17.12
+      }
+    },
+    "F3": {
+      "hex": "#1b3e4c",
+      "nearestSample": {
+        "region": "concept cypress group",
+        "sample": "#1b434c",
+        "distance": 5.0
+      }
+    },
+    "F4": {
+      "hex": "#0f2b3c",
+      "nearestSample": {
+        "region": "concept cypress group",
+        "sample": "#09263e",
+        "distance": 8.06
+      }
+    },
+    "F5": {
+      "hex": "#081a2b",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#0a1c2d",
+        "distance": 3.46
+      }
+    },
+    "B_HI": {
+      "hex": "#6f8467",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#7b7a61",
+        "distance": 16.73
+      }
+    },
+    "B1": {
+      "hex": "#4f6759",
+      "nearestSample": {
+        "region": "concept cypress group",
+        "sample": "#5a665c",
+        "distance": 11.45
+      }
+    },
+    "B2": {
+      "hex": "#37504b",
+      "nearestSample": {
+        "region": "concept cypress group",
+        "sample": "#3f494b",
+        "distance": 10.63
+      }
+    },
+    "B3": {
+      "hex": "#263c3e",
+      "nearestSample": {
+        "region": "landscape cypress",
+        "sample": "#203445",
+        "distance": 12.21
+      }
+    },
+    "T1": {
+      "hex": "#6e4f45",
+      "nearestSample": {
+        "region": "concept meadow",
+        "sample": "#6a4b45",
+        "distance": 5.66
+      }
+    },
+    "T2": {
+      "hex": "#4a3438",
+      "nearestSample": {
+        "region": "camp supply cache",
+        "sample": "#4a343a",
+        "distance": 2.0
+      }
+    },
+    "T3": {
+      "hex": "#2f2230",
+      "nearestSample": {
+        "region": "concept carpet",
+        "sample": "#2c2730",
+        "distance": 5.83
+      }
+    },
+    "W_HI": {
+      "hex": "#b4754b",
+      "nearestSample": {
+        "region": "camp supply cache",
+        "sample": "#aa8368",
+        "distance": 33.72
+      }
+    },
+    "W1": {
+      "hex": "#8d5c48",
+      "nearestSample": {
+        "region": "camp supply cache",
+        "sample": "#896252",
+        "distance": 12.33
+      }
+    },
+    "W2": {
+      "hex": "#6b453e",
+      "nearestSample": {
+        "region": "camp supply cache",
+        "sample": "#684641",
+        "distance": 4.36
+      }
+    },
+    "W3": {
+      "hex": "#573a3a",
+      "nearestSample": {
+        "region": "concept crates and sacks",
+        "sample": "#554443",
+        "distance": 13.6
+      }
+    },
+    "W4": {
+      "hex": "#352430",
+      "nearestSample": {
+        "region": "camp supply cache",
+        "sample": "#382430",
+        "distance": 3.0
+      }
+    },
+    "K_HI": {
+      "hex": "#efdcb4",
+      "nearestSample": {
+        "region": "concept road",
+        "sample": "#edcfa2",
+        "distance": 22.29
+      }
+    },
+    "K1": {
+      "hex": "#d7bd94",
+      "nearestSample": {
+        "region": "camp road marker",
+        "sample": "#e2c397",
+        "distance": 12.88
+      }
+    },
+    "K2": {
+      "hex": "#b49a78",
+      "nearestSample": {
+        "region": "camp road marker",
+        "sample": "#b1967d",
+        "distance": 7.07
+      }
+    },
+    "K3": {
+      "hex": "#8c7660",
+      "nearestSample": {
+        "region": "camp road marker",
+        "sample": "#8b7266",
+        "distance": 7.28
+      }
+    },
+    "K4": {
+      "hex": "#63524a",
+      "nearestSample": {
+        "region": "concept packed earth",
+        "sample": "#635249",
+        "distance": 1.0
+      }
+    },
+    "R1": {
+      "hex": "#74404a",
+      "nearestSample": {
+        "region": "concept carpet",
+        "sample": "#75474b",
+        "distance": 7.14
+      }
+    },
+    "R2": {
+      "hex": "#5c303c",
+      "nearestSample": {
+        "region": "camp supply cache",
+        "sample": "#4a343a",
+        "distance": 18.55
+      }
+    },
+    "R3": {
+      "hex": "#45202e",
+      "nearestSample": {
+        "region": "camp supply cache",
+        "sample": "#382430",
+        "distance": 13.75
+      }
+    },
+    "R_EDGE": {
+      "hex": "#2a1520",
+      "nearestSample": {
+        "region": "camp supply cache",
+        "sample": "#1f1528",
+        "distance": 13.6
+      }
+    },
+    "Y1": {
+      "hex": "#b8935c",
+      "nearestSample": {
+        "region": "concept packed earth",
+        "sample": "#ac8c63",
+        "distance": 15.56
+      }
+    },
+    "Y2": {
+      "hex": "#8c6c46",
+      "nearestSample": {
+        "region": "concept carpet",
+        "sample": "#8c7553",
+        "distance": 15.81
+      }
+    },
+    "Y3": {
+      "hex": "#d3bb8f",
+      "nearestSample": {
+        "region": "concept road",
+        "sample": "#dab48b",
+        "distance": 10.68
+      }
+    },
+    "I_HI": {
+      "hex": "#8a8c98",
+      "nearestSample": {
+        "region": "landscape rock",
+        "sample": "#948995",
+        "distance": 10.86
+      }
+    },
+    "I1": {
+      "hex": "#5c5e6b",
+      "nearestSample": {
+        "region": "landscape rock",
+        "sample": "#575d6e",
+        "distance": 5.92
+      }
+    },
+    "I2": {
+      "hex": "#3b3c4a",
+      "nearestSample": {
+        "region": "concept stone cliff",
+        "sample": "#3d3f4a",
+        "distance": 3.61
+      }
+    },
+    "G_HI": {
+      "hex": "#6f8a64",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#7b7a61",
+        "distance": 20.22
+      }
+    },
+    "G1": {
+      "hex": "#4c6a55",
+      "nearestSample": {
+        "region": "concept cypress group",
+        "sample": "#5a665c",
+        "distance": 16.16
+      }
+    },
+    "G2": {
+      "hex": "#33504a",
+      "nearestSample": {
+        "region": "concept grass tufts",
+        "sample": "#354648",
+        "distance": 10.39
+      }
+    },
+    "G3": {
+      "hex": "#203842",
+      "nearestSample": {
+        "region": "landscape cypress",
+        "sample": "#203445",
+        "distance": 5.0
+      }
+    }
+  },
+  "backdrop": {
+    "SKY0": {
+      "hex": "#5d6d88",
+      "nearestSample": {
+        "region": "concept mountains left",
+        "sample": "#566d7d",
+        "distance": 13.04
+      }
+    },
+    "SKY1": {
+      "hex": "#66778f",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#66768d",
+        "distance": 2.24
+      }
+    },
+    "SKY2": {
+      "hex": "#6f8097",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#66768d",
+        "distance": 16.76
+      }
+    },
+    "SKY3": {
+      "hex": "#7a8a9f",
+      "nearestSample": {
+        "region": "landscape rock",
+        "sample": "#948995",
+        "distance": 27.87
+      }
+    },
+    "CL_HI": {
+      "hex": "#e0d3b6",
+      "nearestSample": {
+        "region": "concept road",
+        "sample": "#edcfa2",
+        "distance": 24.19
+      }
+    },
+    "CL1": {
+      "hex": "#c4bba5",
+      "nearestSample": {
+        "region": "landscape rock",
+        "sample": "#b8a89d",
+        "distance": 23.85
+      }
+    },
+    "CL2": {
+      "hex": "#9ea2a3",
+      "nearestSample": {
+        "region": "landscape rock",
+        "sample": "#b8a89d",
+        "distance": 27.35
+      }
+    },
+    "FA_HI": {
+      "hex": "#cbb594",
+      "nearestSample": {
+        "region": "concept ruined pillar",
+        "sample": "#c8b08f",
+        "distance": 7.68
+      }
+    },
+    "FA_LIT": {
+      "hex": "#9c9d9c",
+      "nearestSample": {
+        "region": "landscape rock",
+        "sample": "#948995",
+        "distance": 22.65
+      }
+    },
+    "FA_MID": {
+      "hex": "#74829a",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#66768d",
+        "distance": 22.56
+      }
+    },
+    "FA_SH": {
+      "hex": "#637391",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#66768d",
+        "distance": 5.83
+      }
+    },
+    "FA_DK": {
+      "hex": "#576786",
+      "nearestSample": {
+        "region": "concept mountains left",
+        "sample": "#566d7d",
+        "distance": 10.86
+      }
+    },
+    "FA_HZ": {
+      "hex": "#7d8ca2",
+      "nearestSample": {
+        "region": "landscape rock",
+        "sample": "#948995",
+        "distance": 26.59
+      }
+    },
+    "MI_HI": {
+      "hex": "#8a958f",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#939485",
+        "distance": 13.49
+      }
+    },
+    "MI_LIT": {
+      "hex": "#687c90",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#66768d",
+        "distance": 7.0
+      }
+    },
+    "MI_MID": {
+      "hex": "#546882",
+      "nearestSample": {
+        "region": "concept mountains left",
+        "sample": "#566d7d",
+        "distance": 7.35
+      }
+    },
+    "MI_SH": {
+      "hex": "#485b77",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#455a70",
+        "distance": 7.68
+      }
+    },
+    "MI_DK": {
+      "hex": "#3e506b",
+      "nearestSample": {
+        "region": "concept mountains left",
+        "sample": "#3d586e",
+        "distance": 8.6
+      }
+    },
+    "MI_HZ": {
+      "hex": "#65788e",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#66768d",
+        "distance": 2.45
+      }
+    },
+    "NE_HI": {
+      "hex": "#66796f",
+      "nearestSample": {
+        "region": "landscape cypress",
+        "sample": "#6e7b78",
+        "distance": 12.21
+      }
+    },
+    "NE_LIT": {
+      "hex": "#50665f",
+      "nearestSample": {
+        "region": "concept mountains right",
+        "sample": "#546467",
+        "distance": 9.17
+      }
+    },
+    "NE_MID": {
+      "hex": "#43585a",
+      "nearestSample": {
+        "region": "concept stone cliff",
+        "sample": "#47585c",
+        "distance": 4.47
+      }
+    },
+    "NE_SH": {
+      "hex": "#374b53",
+      "nearestSample": {
+        "region": "concept cypress group",
+        "sample": "#3f494b",
+        "distance": 11.49
+      }
+    },
+    "NE_DK": {
+      "hex": "#2d404b",
+      "nearestSample": {
+        "region": "concept ruined pillar",
+        "sample": "#313c4e",
+        "distance": 6.4
+      }
+    },
+    "NE_HZ": {
+      "hex": "#4c5f6b",
+      "nearestSample": {
+        "region": "concept mountains left",
+        "sample": "#4b5b6f",
+        "distance": 5.74
+      }
+    },
+    "TR1": {
+      "hex": "#1f3a44",
+      "nearestSample": {
+        "region": "landscape cypress",
+        "sample": "#203445",
+        "distance": 6.16
+      }
+    },
+    "TR2": {
+      "hex": "#152b37",
+      "nearestSample": {
+        "region": "concept cypress group",
+        "sample": "#172a39",
+        "distance": 3.0
+      }
+    },
+    "BASE": {
+      "hex": "#2a3a45",
+      "nearestSample": {
+        "region": "concept stone cliff",
+        "sample": "#293346",
+        "distance": 7.14
+      }
+    }
+  },
+  "surfaces": {
+    "campEarth": {
+      "E_HI": {
+        "hex": "#ddbd95",
+        "nearestSample": {
+          "region": "concept road",
+          "sample": "#e4bf97",
+          "distance": 7.55
+        }
+      },
+      "E1": {
+        "hex": "#cfac84",
+        "nearestSample": {
+          "region": "concept crates and sacks",
+          "sample": "#d6ad82",
+          "distance": 7.35
+        }
+      },
+      "E2": {
+        "hex": "#c39f76",
+        "nearestSample": {
+          "region": "concept packed earth",
+          "sample": "#c39a74",
+          "distance": 5.39
+        }
+      },
+      "E3": {
+        "hex": "#b5916b",
+        "nearestSample": {
+          "region": "concept meadow",
+          "sample": "#af9671",
+          "distance": 9.85
+        }
+      },
+      "E4": {
+        "hex": "#a5835f",
+        "nearestSample": {
+          "region": "camp supply cache",
+          "sample": "#aa8368",
+          "distance": 10.3
+        }
+      },
+      "E5": {
+        "hex": "#82664c",
+        "nearestSample": {
+          "region": "camp supply cache",
+          "sample": "#896252",
+          "distance": 10.05
+        }
+      },
+      "E6": {
+        "hex": "#6c5440",
+        "nearestSample": {
+          "region": "concept meadow",
+          "sample": "#6a4b45",
+          "distance": 10.49
+        }
+      },
+      "P_HI": {
+        "hex": "#ddd2bf",
+        "nearestSample": {
+          "region": "concept road",
+          "sample": "#edcfa2",
+          "distance": 33.26
+        }
+      },
+      "P1": {
+        "hex": "#b4a795",
+        "nearestSample": {
+          "region": "landscape rock",
+          "sample": "#b8a89d",
+          "distance": 9.0
+        }
+      },
+      "P2": {
+        "hex": "#8c8072",
+        "nearestSample": {
+          "region": "concept west outcrop",
+          "sample": "#8a806b",
+          "distance": 7.28
+        }
+      },
+      "P_SH": {
+        "hex": "#635850",
+        "nearestSample": {
+          "region": "concept west outcrop",
+          "sample": "#625c56",
+          "distance": 7.28
+        }
+      }
+    },
+    "campGrass": {
+      "G_D2": {
+        "hex": "#58553c",
+        "nearestSample": {
+          "region": "concept packed earth",
+          "sample": "#635249",
+          "distance": 17.29
+        }
+      },
+      "G_D1": {
+        "hex": "#666243",
+        "nearestSample": {
+          "region": "concept carpet",
+          "sample": "#6e644c",
+          "distance": 12.21
+        }
+      },
+      "G_B": {
+        "hex": "#74704a",
+        "nearestSample": {
+          "region": "concept meadow",
+          "sample": "#78744d",
+          "distance": 6.4
+        }
+      },
+      "G_G": {
+        "hex": "#70764a",
+        "nearestSample": {
+          "region": "concept meadow",
+          "sample": "#78744d",
+          "distance": 8.77
+        }
+      },
+      "G_L": {
+        "hex": "#827c50",
+        "nearestSample": {
+          "region": "concept grass tufts",
+          "sample": "#847e4e",
+          "distance": 3.46
+        }
+      },
+      "G_H1": {
+        "hex": "#948c55",
+        "nearestSample": {
+          "region": "concept grass tufts",
+          "sample": "#928856",
+          "distance": 4.58
+        }
+      },
+      "G_H2": {
+        "hex": "#a89f5d",
+        "nearestSample": {
+          "region": "concept grass tufts",
+          "sample": "#a99565",
+          "distance": 12.85
+        }
+      },
+      "G_SH": {
+        "hex": "#454a34",
+        "nearestSample": {
+          "region": "concept bushes",
+          "sample": "#3a453f",
+          "distance": 16.34
+        }
+      }
+    }
+  },
+  "surfaceTargets": {
+    "campEarth": [
+      190,
+      155,
+      115
+    ],
+    "campGrass": [
+      115,
+      111,
+      75
+    ]
+  },
+  "samples": {
+    "concept stone cliff": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        1090,
+        590,
+        1400,
+        780
+      ],
+      "colors": [
+        "#7d735d",
+        "#3d3f4a",
+        "#68665a",
+        "#293346",
+        "#192334",
+        "#a99680",
+        "#47585c",
+        "#080d18",
+        "#5d5257",
+        "#7e887a"
+      ]
+    },
+    "concept west outcrop": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        90,
+        300,
+        300,
+        500
+      ],
+      "colors": [
+        "#625c56",
+        "#192434",
+        "#a1987e",
+        "#273448",
+        "#3f5259",
+        "#090d18",
+        "#3d3f4b",
+        "#8a806b",
+        "#c1a98b",
+        "#33353e"
+      ]
+    },
+    "concept cypress group": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        1000,
+        560,
+        1120,
+        820
+      ],
+      "colors": [
+        "#1b434c",
+        "#01030c",
+        "#09263e",
+        "#3f494b",
+        "#5a665c",
+        "#0c121f",
+        "#877d57",
+        "#061a32",
+        "#a4947a",
+        "#172a39"
+      ]
+    },
+    "concept bushes": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        700,
+        130,
+        900,
+        220
+      ],
+      "colors": [
+        "#1b2c39",
+        "#131f2b",
+        "#4c544c",
+        "#7e7750",
+        "#3a453f",
+        "#6b664f",
+        "#a1947c",
+        "#070d1a",
+        "#3d3b40",
+        "#636750"
+      ]
+    },
+    "concept carpet": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        560,
+        500,
+        800,
+        620
+      ],
+      "colors": [
+        "#928656",
+        "#5f4146",
+        "#140d15",
+        "#75474b",
+        "#ab8e66",
+        "#8c7553",
+        "#48333b",
+        "#2c2730",
+        "#cea77d",
+        "#6e644c"
+      ]
+    },
+    "concept crates and sacks": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        550,
+        475,
+        740,
+        600
+      ],
+      "colors": [
+        "#c29a74",
+        "#72634e",
+        "#110f18",
+        "#927753",
+        "#554443",
+        "#332029",
+        "#3e2f38",
+        "#aa8d64",
+        "#694549",
+        "#d6ad82"
+      ]
+    },
+    "concept ruined pillar": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        560,
+        90,
+        640,
+        220
+      ],
+      "colors": [
+        "#292c3c",
+        "#9c8c7a",
+        "#5d615b",
+        "#7d6f5d",
+        "#110f18",
+        "#4d4e4b",
+        "#3a3c53",
+        "#c8b08f",
+        "#313c4e",
+        "#87835a"
+      ]
+    },
+    "concept grass tufts": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        400,
+        600,
+        600,
+        700
+      ],
+      "colors": [
+        "#847e4e",
+        "#9b8b55",
+        "#7c754e",
+        "#928856",
+        "#354648",
+        "#8d8653",
+        "#111e2c",
+        "#5f6350",
+        "#a99565",
+        "#8b8057"
+      ]
+    },
+    "concept packed earth": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        760,
+        380,
+        890,
+        510
+      ],
+      "colors": [
+        "#cda17b",
+        "#f9b768",
+        "#e6a870",
+        "#d6a479",
+        "#c39a74",
+        "#d79e6d",
+        "#ac8c63",
+        "#dea976",
+        "#635249",
+        "#b99a6c"
+      ]
+    },
+    "concept road": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        440,
+        200,
+        570,
+        330
+      ],
+      "colors": [
+        "#e4bf97",
+        "#dab48b",
+        "#edcfa2",
+        "#9c8a56",
+        "#68654f",
+        "#292e35",
+        "#8e8355",
+        "#bf9e71",
+        "#aa8f63",
+        "#ffecb5"
+      ]
+    },
+    "concept meadow": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        560,
+        560,
+        690,
+        690
+      ],
+      "colors": [
+        "#8c8558",
+        "#2f333d",
+        "#78744d",
+        "#897d53",
+        "#191420",
+        "#af9671",
+        "#6a4b45",
+        "#42524e",
+        "#6c644f",
+        "#807655"
+      ]
+    },
+    "concept mountains right": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        1150,
+        0,
+        1512,
+        180
+      ],
+      "colors": [
+        "#66768d",
+        "#4c617f",
+        "#0a1c2d",
+        "#455a70",
+        "#596c7b",
+        "#25444c",
+        "#939485",
+        "#546467",
+        "#7b7a61"
+      ]
+    },
+    "concept mountains left": {
+      "source": "assets/concepts/camp-location-01/camp-scene.png",
+      "box": [
+        640,
+        0,
+        1000,
+        90
+      ],
+      "colors": [
+        "#4c617f",
+        "#566d7d",
+        "#3d586e",
+        "#6e7783",
+        "#343e50",
+        "#908e80",
+        "#5f6770",
+        "#1b2131",
+        "#4b5b6f",
+        "#395063"
+      ]
+    },
+    "landscape cypress": {
+      "source": "assets/game/pixel-v4/landscape/landscape.png",
+      "box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "colors": [
+        "#000000",
+        "#2a4251",
+        "#0a072b",
+        "#090326",
+        "#0b1f37",
+        "#07283b",
+        "#203445",
+        "#3b5d63",
+        "#6e7b78",
+        "#73595c"
+      ]
+    },
+    "landscape rock": {
+      "source": "assets/game/pixel-v4/landscape/landscape.png",
+      "box": [
+        320,
+        0,
+        480,
+        160
+      ],
+      "colors": [
+        "#000000",
+        "#948995",
+        "#3e3957",
+        "#b8a89d",
+        "#2e2746",
+        "#686176",
+        "#0b0628",
+        "#544a63",
+        "#575d6e",
+        "#756d7c"
+      ]
+    },
+    "camp supply cache": {
+      "source": "assets/game/pixel-v5/camp/camp.png",
+      "box": [
+        256,
+        256,
+        512,
+        512
+      ],
+      "colors": [
+        "#000000",
+        "#deb888",
+        "#aa8368",
+        "#4a343a",
+        "#382430",
+        "#060319",
+        "#896252",
+        "#684641",
+        "#7a5246",
+        "#1f1528"
+      ]
+    },
+    "camp road marker": {
+      "source": "assets/game/pixel-v5/camp/camp.png",
+      "box": [
+        512,
+        0,
+        768,
+        256
+      ],
+      "colors": [
+        "#000000",
+        "#3e3a4a",
+        "#8b7266",
+        "#9e8a7c",
+        "#5b4b50",
+        "#bca38d",
+        "#261d2f",
+        "#e2c397",
+        "#b1967d",
+        "#160e23"
+      ]
+    }
+  }
+}

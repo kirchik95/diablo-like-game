@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "atlasSha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e",
+  "status": "accepted",
+  "authority": "main Codex coordinator acting under user-authorized delegation",
+  "evidence": "The main Codex coordinator acting under user-authorized delegation inspected contact-front-native.png and contact-back-native.png: all nine clips read; corrected back run opposite half accepted for integration; character and scale also appeared correct in game. The end user was absent and did not personally perform this inspection.",
+  "lockedSelection": "Back run 1\u20133 from back-locomotion-v1; 4\u20136 from back-run-proportions-v4. No subsequent artwork incorporated.",
+  "authorInspection": "Every key inspected on native contact sheets by this asset owner. Whole game/Chrome inspection was reported by the main Codex coordinator acting under user-authorized delegation, not by the end user or this asset owner."
+}

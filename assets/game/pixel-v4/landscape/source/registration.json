@@ -1,0 +1,196 @@
+{
+  "frames": [
+    {
+      "id": "cypress",
+      "sourceAlphaBox": [
+        434,
+        17,
+        830,
+        1243
+      ],
+      "nativeSize": [
+        41,
+        128
+      ],
+      "offset": [
+        60,
+        16
+      ],
+      "removedIsolatedPixels": 0,
+      "role": "tall background/boundary vegetation",
+      "collision": "none",
+      "anchor": [
+        80,
+        144
+      ]
+    },
+    {
+      "id": "dead-tree",
+      "sourceAlphaBox": [
+        258,
+        63,
+        1182,
+        1217
+      ],
+      "nativeSize": [
+        90,
+        112
+      ],
+      "offset": [
+        35,
+        32
+      ],
+      "removedIsolatedPixels": 0,
+      "role": "sparse background/boundary tree",
+      "collision": "none",
+      "anchor": [
+        80,
+        144
+      ]
+    },
+    {
+      "id": "rock-large",
+      "sourceAlphaBox": [
+        165,
+        288,
+        1090,
+        1000
+      ],
+      "nativeSize": [
+        57,
+        44
+      ],
+      "offset": [
+        52,
+        100
+      ],
+      "removedIsolatedPixels": 0,
+      "role": "large rocky terrain accent",
+      "collision": "none",
+      "anchor": [
+        80,
+        144
+      ]
+    },
+    {
+      "id": "rock-small",
+      "sourceAlphaBox": [
+        289,
+        466,
+        972,
+        971
+      ],
+      "nativeSize": [
+        27,
+        20
+      ],
+      "offset": [
+        67,
+        124
+      ],
+      "removedIsolatedPixels": 0,
+      "role": "low ground accent",
+      "collision": "none",
+      "anchor": [
+        80,
+        144
+      ]
+    },
+    {
+      "id": "shrub",
+      "sourceAlphaBox": [
+        262,
+        297,
+        1014,
+        1010
+      ],
+      "nativeSize": [
+        32,
+        30
+      ],
+      "offset": [
+        64,
+        114
+      ],
+      "removedIsolatedPixels": 0,
+      "role": "low boundary scrub",
+      "collision": "none",
+      "anchor": [
+        80,
+        144
+      ]
+    },
+    {
+      "id": "grass",
+      "sourceAlphaBox": [
+        386,
+        399,
+        873,
+        961
+      ],
+      "nativeSize": [
+        16,
+        18
+      ],
+      "offset": [
+        72,
+        126
+      ],
+      "removedIsolatedPixels": 0,
+      "role": "small non-blocking grass tuft",
+      "collision": "none",
+      "anchor": [
+        80,
+        144
+      ]
+    },
+    {
+      "id": "ruin-pile",
+      "sourceAlphaBox": [
+        256,
+        364,
+        1029,
+        1017
+      ],
+      "nativeSize": [
+        59,
+        50
+      ],
+      "offset": [
+        51,
+        94
+      ],
+      "removedIsolatedPixels": 0,
+      "role": "low outdoor monastery rubble",
+      "collision": "none",
+      "anchor": [
+        80,
+        144
+      ]
+    },
+    {
+      "id": "supplies",
+      "sourceAlphaBox": [
+        279,
+        323,
+        1059,
+        1065
+      ],
+      "nativeSize": [
+        53,
+        50
+      ],
+      "offset": [
+        54,
+        94
+      ],
+      "removedIsolatedPixels": 0,
+      "role": "camp crate-and-sack cluster",
+      "collision": "none",
+      "anchor": [
+        80,
+        144
+      ]
+    }
+  ]
+}

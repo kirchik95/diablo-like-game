@@ -1,0 +1,1199 @@
+{
+  "front-idle": [
+    {
+      "bbox": [
+        119,
+        53,
+        358,
+        311
+      ],
+      "file": "strips/01-monk-locomotion-v1-row-1.png",
+      "pixels": 30580,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        445,
+        49,
+        710,
+        309
+      ],
+      "file": "strips/01-monk-locomotion-v1-row-1.png",
+      "pixels": 32899,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        819,
+        72,
+        1052,
+        312
+      ],
+      "file": "strips/01-monk-locomotion-v1-row-1.png",
+      "pixels": 29126,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        1143,
+        58,
+        1432,
+        309
+      ],
+      "file": "strips/01-monk-locomotion-v1-row-1.png",
+      "pixels": 32400,
+      "sourceKey": 3
+    }
+  ],
+  "front-run": [
+    {
+      "bbox": [
+        27,
+        67,
+        256,
+        297
+      ],
+      "file": "strips/01-run-final.png",
+      "pixels": 25144,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        276,
+        87,
+        505,
+        297
+      ],
+      "file": "strips/01-run-final.png",
+      "pixels": 22356,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        543,
+        54,
+        754,
+        301
+      ],
+      "file": "strips/01-run-final.png",
+      "pixels": 24484,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        775,
+        57,
+        1016,
+        299
+      ],
+      "file": "strips/01-run-final.png",
+      "pixels": 24647,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1047,
+        65,
+        1257,
+        299
+      ],
+      "file": "strips/01-run-final.png",
+      "pixels": 23953,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1303,
+        50,
+        1513,
+        301
+      ],
+      "file": "strips/01-run-final.png",
+      "pixels": 24546,
+      "sourceKey": 5
+    }
+  ],
+  "front-attack1": [
+    {
+      "bbox": [
+        32,
+        78,
+        252,
+        305
+      ],
+      "file": "strips/02-monk-combo-row-1.png",
+      "pixels": 25160,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        282,
+        78,
+        509,
+        300
+      ],
+      "file": "strips/02-monk-combo-row-1.png",
+      "pixels": 25013,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        520,
+        92,
+        765,
+        308
+      ],
+      "file": "strips/02-monk-combo-row-1.png",
+      "pixels": 25243,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        793,
+        86,
+        1043,
+        308
+      ],
+      "file": "strips/02-monk-combo-row-1.png",
+      "pixels": 26407,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1068,
+        74,
+        1249,
+        308
+      ],
+      "file": "strips/02-monk-combo-row-1.png",
+      "pixels": 22309,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1273,
+        78,
+        1498,
+        305
+      ],
+      "file": "strips/02-monk-combo-row-1.png",
+      "pixels": 25559,
+      "sourceKey": 5
+    }
+  ],
+  "front-attack2": [
+    {
+      "bbox": [
+        22,
+        51,
+        244,
+        287
+      ],
+      "file": "strips/02-monk-combo-row-2.png",
+      "pixels": 26118,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        274,
+        56,
+        493,
+        291
+      ],
+      "file": "strips/02-monk-combo-row-2.png",
+      "pixels": 24332,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        510,
+        61,
+        743,
+        291
+      ],
+      "file": "strips/02-monk-combo-row-2.png",
+      "pixels": 23637,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        795,
+        65,
+        1044,
+        293
+      ],
+      "file": "strips/02-monk-combo-row-2.png",
+      "pixels": 26252,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1043,
+        59,
+        1236,
+        290
+      ],
+      "file": "strips/02-monk-combo-row-2.png",
+      "pixels": 23377,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1274,
+        59,
+        1497,
+        290
+      ],
+      "file": "strips/02-monk-combo-row-2.png",
+      "pixels": 26537,
+      "sourceKey": 5
+    }
+  ],
+  "front-attack3": [
+    {
+      "bbox": [
+        22,
+        49,
+        254,
+        259
+      ],
+      "file": "strips/02-monk-combo-row-3.png",
+      "pixels": 25159,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        271,
+        54,
+        479,
+        260
+      ],
+      "file": "strips/02-monk-combo-row-3.png",
+      "pixels": 24077,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        503,
+        49,
+        762,
+        257
+      ],
+      "file": "strips/02-monk-combo-row-3.png",
+      "pixels": 26401,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        778,
+        49,
+        1041,
+        264
+      ],
+      "file": "strips/02-monk-combo-row-3.png",
+      "pixels": 26140,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1056,
+        49,
+        1281,
+        265
+      ],
+      "file": "strips/02-monk-combo-row-3.png",
+      "pixels": 24427,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1289,
+        22,
+        1498,
+        259
+      ],
+      "file": "strips/02-monk-combo-row-3.png",
+      "pixels": 26089,
+      "sourceKey": 5
+    }
+  ],
+  "front-dash": [
+    {
+      "bbox": [
+        31,
+        133,
+        260,
+        290
+      ],
+      "file": "strips/03-monk-abilities-row-1.png",
+      "pixels": 19378,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        300,
+        119,
+        527,
+        286
+      ],
+      "file": "strips/03-monk-abilities-row-1.png",
+      "pixels": 18865,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        575,
+        99,
+        837,
+        266
+      ],
+      "file": "strips/03-monk-abilities-row-1.png",
+      "pixels": 20087,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        833,
+        84,
+        1002,
+        243
+      ],
+      "file": "strips/03-monk-abilities-row-1.png",
+      "pixels": 14248,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1044,
+        146,
+        1292,
+        302
+      ],
+      "file": "strips/03-monk-abilities-row-1.png",
+      "pixels": 20295,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1303,
+        107,
+        1501,
+        296
+      ],
+      "file": "strips/03-monk-abilities-row-1.png",
+      "pixels": 20127,
+      "sourceKey": 5
+    }
+  ],
+  "front-wave": [
+    {
+      "bbox": [
+        37,
+        81,
+        200,
+        259
+      ],
+      "file": "strips/03-monk-abilities-row-2.png",
+      "pixels": 13236,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        267,
+        76,
+        472,
+        262
+      ],
+      "file": "strips/03-monk-abilities-row-2.png",
+      "pixels": 17420,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        541,
+        67,
+        772,
+        262
+      ],
+      "file": "strips/03-monk-abilities-row-2.png",
+      "pixels": 18172,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        833,
+        78,
+        1029,
+        263
+      ],
+      "file": "strips/03-monk-abilities-row-2.png",
+      "pixels": 16586,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1104,
+        81,
+        1264,
+        276
+      ],
+      "file": "strips/03-monk-abilities-row-2.png",
+      "pixels": 16127,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1332,
+        76,
+        1499,
+        271
+      ],
+      "file": "strips/03-monk-abilities-row-2.png",
+      "pixels": 16060,
+      "sourceKey": 5
+    }
+  ],
+  "front-hurt": [
+    {
+      "bbox": [
+        107,
+        19,
+        358,
+        261
+      ],
+      "file": "strips/03-monk-abilities-row-3.png",
+      "pixels": 27707,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        453,
+        19,
+        691,
+        263
+      ],
+      "file": "strips/03-monk-abilities-row-3.png",
+      "pixels": 29683,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        810,
+        49,
+        1064,
+        261
+      ],
+      "file": "strips/03-monk-abilities-row-3.png",
+      "pixels": 26505,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        1188,
+        31,
+        1432,
+        261
+      ],
+      "file": "strips/03-monk-abilities-row-3.png",
+      "pixels": 26259,
+      "sourceKey": 3
+    }
+  ],
+  "front-death": [
+    {
+      "bbox": [
+        38,
+        70,
+        282,
+        287
+      ],
+      "file": "strips/04-monk-lifecycle-row-1.png",
+      "pixels": 23810,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        307,
+        108,
+        536,
+        287
+      ],
+      "file": "strips/04-monk-lifecycle-row-1.png",
+      "pixels": 21591,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        552,
+        153,
+        743,
+        290
+      ],
+      "file": "strips/04-monk-lifecycle-row-1.png",
+      "pixels": 16733,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        753,
+        177,
+        1006,
+        285
+      ],
+      "file": "strips/04-monk-lifecycle-row-1.png",
+      "pixels": 17822,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1023,
+        198,
+        1246,
+        287
+      ],
+      "file": "strips/04-monk-lifecycle-row-1.png",
+      "pixels": 14907,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1265,
+        206,
+        1511,
+        293
+      ],
+      "file": "strips/04-monk-lifecycle-row-1.png",
+      "pixels": 15136,
+      "sourceKey": 5
+    }
+  ],
+  "back-idle": [
+    {
+      "bbox": [
+        22,
+        143,
+        294,
+        432
+      ],
+      "file": "originals/back-locomotion-v1.png",
+      "pixels": 41304,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        320,
+        140,
+        590,
+        432
+      ],
+      "file": "originals/back-locomotion-v1.png",
+      "pixels": 41150,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        608,
+        156,
+        885,
+        432
+      ],
+      "file": "originals/back-locomotion-v1.png",
+      "pixels": 40528,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        909,
+        143,
+        1181,
+        432
+      ],
+      "file": "originals/back-locomotion-v1.png",
+      "pixels": 41195,
+      "sourceKey": 3
+    }
+  ],
+  "back-run-first": [
+    {
+      "bbox": [
+        19,
+        537,
+        303,
+        826
+      ],
+      "file": "originals/back-locomotion-v1.png",
+      "pixels": 42131,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        322,
+        554,
+        603,
+        826
+      ],
+      "file": "originals/back-locomotion-v1.png",
+      "pixels": 35610,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        626,
+        524,
+        872,
+        832
+      ],
+      "file": "originals/back-locomotion-v1.png",
+      "pixels": 36467,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        895,
+        543,
+        1188,
+        826
+      ],
+      "file": "originals/back-locomotion-v1.png",
+      "pixels": 41988,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1213,
+        552,
+        1475,
+        826
+      ],
+      "file": "originals/back-locomotion-v1.png",
+      "pixels": 35721,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1514,
+        522,
+        1756,
+        832
+      ],
+      "file": "originals/back-locomotion-v1.png",
+      "pixels": 35882,
+      "sourceKey": 5
+    }
+  ],
+  "back-run-last": [
+    {
+      "bbox": [
+        64,
+        109,
+        683,
+        771
+      ],
+      "file": "originals/back-run-proportions-v4.png",
+      "pixels": 201740,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        715,
+        125,
+        1241,
+        742
+      ],
+      "file": "originals/back-run-proportions-v4.png",
+      "pixels": 164846,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        1369,
+        54,
+        1880,
+        766
+      ],
+      "file": "originals/back-run-proportions-v4.png",
+      "pixels": 187340,
+      "sourceKey": 2
+    }
+  ],
+  "back-attack1": [
+    {
+      "bbox": [
+        15,
+        72,
+        257,
+        326
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 31928,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        261,
+        77,
+        502,
+        326
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 30200,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        515,
+        79,
+        790,
+        326
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 31338,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        782,
+        79,
+        1049,
+        326
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 31161,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1048,
+        73,
+        1251,
+        326
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 26167,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1275,
+        78,
+        1511,
+        326
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 30249,
+      "sourceKey": 5
+    }
+  ],
+  "back-attack2": [
+    {
+      "bbox": [
+        15,
+        396,
+        262,
+        647
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 32474,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        271,
+        400,
+        518,
+        652
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 29532,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        520,
+        400,
+        793,
+        651
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 30312,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        777,
+        401,
+        1040,
+        649
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 31334,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1025,
+        398,
+        1250,
+        648
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 30201,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1260,
+        396,
+        1506,
+        647
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 31477,
+      "sourceKey": 5
+    }
+  ],
+  "back-attack3": [
+    {
+      "bbox": [
+        15,
+        726,
+        270,
+        963
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 30776,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        272,
+        720,
+        483,
+        964
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 29645,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        499,
+        724,
+        765,
+        961
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 31272,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        771,
+        723,
+        1040,
+        962
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 32473,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1039,
+        723,
+        1287,
+        968
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 30642,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1277,
+        713,
+        1519,
+        964
+      ],
+      "file": "originals/back-combo-v1.png",
+      "pixels": 32326,
+      "sourceKey": 5
+    }
+  ],
+  "back-heavy-fix": [
+    {
+      "bbox": [
+        153,
+        159,
+        876,
+        802
+      ],
+      "file": "originals/back-heavy-occlusion-v2.png",
+      "pixels": 222958,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        960,
+        89,
+        1668,
+        802
+      ],
+      "file": "originals/back-heavy-occlusion-v2.png",
+      "pixels": 232820,
+      "sourceKey": 1
+    }
+  ],
+  "back-dash": [
+    {
+      "bbox": [
+        31,
+        163,
+        256,
+        324
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 21578,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        298,
+        134,
+        524,
+        326
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 21657,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        560,
+        98,
+        836,
+        302
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 24760,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        830,
+        92,
+        1014,
+        291
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 20267,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1042,
+        163,
+        1287,
+        333
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 23387,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1295,
+        120,
+        1508,
+        329
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 23961,
+      "sourceKey": 5
+    }
+  ],
+  "back-wave": [
+    {
+      "bbox": [
+        20,
+        433,
+        228,
+        638
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 20540,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        271,
+        424,
+        505,
+        632
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 23168,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        529,
+        424,
+        786,
+        631
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 23597,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        810,
+        429,
+        1045,
+        634
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 22538,
+      "sourceKey": 3
+    },
+    {
+      "bbox": [
+        1072,
+        438,
+        1264,
+        638
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 20280,
+      "sourceKey": 4
+    },
+    {
+      "bbox": [
+        1296,
+        424,
+        1507,
+        637
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 23226,
+      "sourceKey": 5
+    }
+  ],
+  "back-hurt": [
+    {
+      "bbox": [
+        26,
+        725,
+        260,
+        950
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 27436,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        297,
+        699,
+        526,
+        955
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 29223,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        580,
+        747,
+        790,
+        951
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 23420,
+      "sourceKey": 2
+    },
+    {
+      "bbox": [
+        810,
+        732,
+        1035,
+        951
+      ],
+      "file": "originals/back-abilities-v1.png",
+      "pixels": 25601,
+      "sourceKey": 3
+    }
+  ],
+  "back-death-first": [
+    {
+      "bbox": [
+        75,
+        109,
+        465,
+        550
+      ],
+      "file": "originals/back-death-v1.png",
+      "pixels": 90128,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        588,
+        174,
+        980,
+        568
+      ],
+      "file": "originals/back-death-v1.png",
+      "pixels": 81238,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        1088,
+        236,
+        1492,
+        568
+      ],
+      "file": "originals/back-death-v1.png",
+      "pixels": 72124,
+      "sourceKey": 2
+    }
+  ],
+  "back-death-last": [
+    {
+      "bbox": [
+        31,
+        656,
+        492,
+        899
+      ],
+      "file": "originals/back-death-v1.png",
+      "pixels": 65473,
+      "sourceKey": 0
+    },
+    {
+      "bbox": [
+        546,
+        725,
+        1022,
+        901
+      ],
+      "file": "originals/back-death-v1.png",
+      "pixels": 53129,
+      "sourceKey": 1
+    },
+    {
+      "bbox": [
+        1080,
+        736,
+        1507,
+        890
+      ],
+      "file": "originals/back-death-v1.png",
+      "pixels": 44534,
+      "sourceKey": 2
+    }
+  ]
+}

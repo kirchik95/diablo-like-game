@@ -1,0 +1,180 @@
+{
+  "frames": [
+    {
+      "id": "grass-low",
+      "sourceAlphaBox": [
+        309,
+        341,
+        1207,
+        796
+      ],
+      "nativeSize": [
+        26,
+        13
+      ],
+      "offset": [
+        19,
+        43
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "collision": "none"
+    },
+    {
+      "id": "grass-wide",
+      "sourceAlphaBox": [
+        379,
+        275,
+        1604,
+        627
+      ],
+      "nativeSize": [
+        40,
+        11
+      ],
+      "offset": [
+        12,
+        45
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "collision": "none"
+    },
+    {
+      "id": "fern-low",
+      "sourceAlphaBox": [
+        224,
+        236,
+        1364,
+        804
+      ],
+      "nativeSize": [
+        34,
+        17
+      ],
+      "offset": [
+        15,
+        39
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "collision": "none"
+    },
+    {
+      "id": "flowers-white",
+      "sourceAlphaBox": [
+        336,
+        328,
+        1095,
+        854
+      ],
+      "nativeSize": [
+        28,
+        19
+      ],
+      "offset": [
+        18,
+        37
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "collision": "none"
+    },
+    {
+      "id": "flowers-ochre",
+      "sourceAlphaBox": [
+        328,
+        333,
+        1124,
+        867
+      ],
+      "nativeSize": [
+        27,
+        18
+      ],
+      "offset": [
+        19,
+        38
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "collision": "none"
+    },
+    {
+      "id": "leaves",
+      "sourceAlphaBox": [
+        406,
+        183,
+        1685,
+        623
+      ],
+      "nativeSize": [
+        36,
+        12
+      ],
+      "offset": [
+        14,
+        44
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "collision": "none"
+    },
+    {
+      "id": "twigs",
+      "sourceAlphaBox": [
+        450,
+        172,
+        1737,
+        597
+      ],
+      "nativeSize": [
+        38,
+        13
+      ],
+      "offset": [
+        13,
+        43
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "collision": "none"
+    },
+    {
+      "id": "pebbles-flat",
+      "sourceAlphaBox": [
+        577,
+        313,
+        1350,
+        633
+      ],
+      "nativeSize": [
+        36,
+        15
+      ],
+      "offset": [
+        14,
+        41
+      ],
+      "anchor": [
+        32,
+        56
+      ],
+      "collision": "none"
+    }
+  ]
+}

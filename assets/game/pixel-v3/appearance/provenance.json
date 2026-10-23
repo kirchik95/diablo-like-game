@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "generationMode": "Built-in image_gen only; exact requests and unchanged originals retained. Model not exposed by tool.",
+  "rightsNote": "Project references and generated derivatives. Inherited source provenance retained; this record is not a new license grant.",
+  "acceptance": {
+    "status": "worker-inspected-awaiting-coordinator",
+    "authority": "Coordinator accepts under user delegation. No personal user approval is claimed.",
+    "boundary": "Asset owner inspects native contact sheets and exported pixels; live game/browser acceptance belongs to the coordinator."
+  },
+  "normalization": "Original 100-frame v2 monk geometry/alpha; explicit seven-step skin and five-step sash maps. Short hair uses generated two-view master as art reference and per-frame registered scalp regions. All non-target materials unchanged.",
+  "builder": "scripts/build-adventure-assets.py",
+  "toolchain": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "generationRecords": "source/generation-records.json",
+  "inputs": [
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/manifest.json",
+      "sha256": "ece1a4bded8935cb7c37441b2043972c35ae64bc2d5f729461818c87ae1abe75"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-attack.png",
+      "sha256": "e92624cf0b685e1c41e3ae2571e7390bd61fc9c0059ea1632fe338d4cbcdac62"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-death.png",
+      "sha256": "12d6d3fec30ccbe767c97f34fa6119d413febee4c5d925f58b2e87136d718c14"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-drift.png",
+      "sha256": "d52d32dbbb5d6f55bee5b71a1154809c3631330ac3e7a9511c7c2e5d6dd59565"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-facing.png",
+      "sha256": "eb3050dbe8af9416f4930138cbc6b3808348c6a471f2492c5e4e6b31f96415e4"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-hurt.png",
+      "sha256": "8dfd52bd34e025c98f48ebb673b997310288ef21daa3919437d32f6f488e0062"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-idle.png",
+      "sha256": "5c1c284acd1c7574bc67eec2d2e8cad8e70edb5c747afeaa2a1d8afd70c9f4e2"
+    },
+    {
+      "path": "assets/game/pixel-v1/floor.png",
+      "sha256": "6f4894b7f4a538504def073685ff793e6c9e5cac34b6b2f492d8f4b5e78066e9"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/hound-v2.png",
+      "sha256": "20c98c7e78e05c41e2b8926bf53ef9cf465ae0b0a9a93236e2b31e7a77ae1ea7"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/manifest.json",
+      "sha256": "e24c0265a726dbdda06c9889cc7c9ceed4c4ab95612a9e6a3edc842c7b662e3e"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/manifest.json",
+      "sha256": "9b31e2aeb75335a9975b348c63b71d1f1251e47b2038da78c3ac0111e1e98696"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/monk-v2.png",
+      "sha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/palette.json",
+      "sha256": "818b8bf6509d47520241dfac289910308e403ce5e4891142d103d23fc3eea02b"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/generation-records.json",
+      "sha256": "35953461887c88cc907d8006426f986239e3817e06bfd7b88b4d649ceec959de"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/head-regions.json",
+      "sha256": "077cbec85b273739f9b6dc2d014e26acc7def38d20780591a4580249b0c89811"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/manifest-contract.json",
+      "sha256": "736ed7a9b5914dc5593a63bfb555666fca59f0b8f856645d49f72914343f1fb8"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/monk-hair-reference.png",
+      "sha256": "3c8784fad8a630b3894364fdd25317562910708f4cffb3c75c775ae6b0aec8a0"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/originals/short-hair.png",
+      "sha256": "ffa80817b8855abddbbc8c16ca7e97ab1a4239b11ff64401218c2a0e6c7a9a5a"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/palette-ramps.json",
+      "sha256": "05a80679520f950163028f44df764d7f8a9bc7b8b83b4a400701f17e7d136434"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/prompts/short-hair.txt",
+      "sha256": "2eb8c4f41da3da246c77a54bd299ab6139ada7b90a9f5fcfc4b6fc94e85b0cac"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/concept-records.json",
+      "sha256": "9a02c67ba1d0469ecf2a1de14cf1397fc80d2001e0b67f127e195655552f97da"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/generation-records.json",
+      "sha256": "39368007b4c20c2391bfd99933470fe4d805b2e2862d5cdbbd93960b1fd3d1c5"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/manifest-contract.json",
+      "sha256": "777d30564b37ef6823a3e3fa8b0e4118c5847ebb218b5f6a5f80ea9fd9c0595e"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/normalization.json",
+      "sha256": "87f3eec9d2ea81663622662dde0173f6a2feb8faac097c1a666267cfbbb90a32"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/originals/back-attack.png",
+      "sha256": "4da3260592a3c5c8706d4f9450f3b944e11b611ec556232e586c16b166ccc95c"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/originals/back-death.png",
+      "sha256": "9841811bd1fa14a0b58b41ba2364ed82b0055227e7266c9079d920bddb448685"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/originals/back-hurt.png",
+      "sha256": "d58849f89c2ee16f9a1d654eda0552a99017c3c0a2cf8573833a93b44ef637aa"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+      "sha256": "d33e30805c5303efd2241580d42e7761019c097462efcd8bbd95b2c5b8f5d0ab"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/originals/back-run.png",
+      "sha256": "07b833fbbbb6b95c6abd0019f7e8bf1030ab9140ca1acb5182d884251290a429"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/prompts/back-attack.txt",
+      "sha256": "c2e1d23c6de825193a93baa3e222a75b4a23de901a97c0496291792432e3a194"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/prompts/back-death.txt",
+      "sha256": "8aee2153c8833b0227999ad5b7e2d2c8ed2e0a085eac5c1b43b86539c37b873c"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/prompts/back-hurt.txt",
+      "sha256": "0c8d753ae322b7579194213d047aec678a77b0413315aa7b4b10244d65d2d91d"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/prompts/back-idle.txt",
+      "sha256": "69afaae6e835ba82fbd7e2b8baf5ec55cfc074e3aac24ff156f0667d442a3030"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/prompts/back-run.txt",
+      "sha256": "77f97ea50a8597824173749bf2915a7fd2a60e0c8e3e52459b50b4119549681f"
+    },
+    {
+      "path": "scripts/build-adventure-assets.py",
+      "sha256": "64eed365a82f90a1cf2113acfe1fe4576e1437530cf7c076ed622246d74706b9"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-shaved-ochre-preview.png",
+      "sha256": "c57902f01e2b7146617e66b3da345ccd9ca7425c337eea69af53549189e58943",
+      "bytes": 2826
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-shaved-ochre.png",
+      "sha256": "e4f7cceb06d679f248e588146b97c0d45dd988c521d08b0b76d781c41c8e181a",
+      "bytes": 203292
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-shaved-teal-preview.png",
+      "sha256": "7070f14fd3b5d8a90d9a40bd09a5567daab2490d0ecc2b7d3492d1b1b72e435e",
+      "bytes": 2824
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-shaved-teal.png",
+      "sha256": "e1979cdac14af51e4d2a85542febfd1f29a7d412dd450aac2696157bb4b73d59",
+      "bytes": 202494
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-shaved-wine-preview.png",
+      "sha256": "c1f6c7f441bba7a1e4db769f2450fd8ced82d4a1670ce6908c60d03b8461edc4",
+      "bytes": 2811
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-shaved-wine.png",
+      "sha256": "4a3d6dd7907f2ad9d87347b12d2b104f448147173e52b2b89db06cf45944b50a",
+      "bytes": 202610
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-short-ochre-preview.png",
+      "sha256": "2f62fdec0ed2cc4371b2d187f8b98cbfc59a5b4e7699cc91c44c2db681c2fd84",
+      "bytes": 2842
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-short-ochre.png",
+      "sha256": "3fdddbb9f394c3e25786710a2bc65a1539eff8da85a692049968a0f340a170d2",
+      "bytes": 201799
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-short-teal-preview.png",
+      "sha256": "73b2c3d7ee30cc556afa9eedf43647237a2de6694fc2b8754c710de3be87610f",
+      "bytes": 2844
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-short-teal.png",
+      "sha256": "7fcbdb323422dfe115d9c8c63937e1be9b20fc99c794b8262e478b9dd5b1cc53",
+      "bytes": 201031
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-short-wine-preview.png",
+      "sha256": "acde08302e5f6b36d372c7b2111b12e4565d537ac52a4aa2cb2e4e77c428121c",
+      "bytes": 2830
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/deep-short-wine.png",
+      "sha256": "705f2c9396133925f04c6b5d95a4921eaf4e3c9f42c8aa661d07a77d5425745b",
+      "bytes": 201165
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/manifest.json",
+      "sha256": "736ed7a9b5914dc5593a63bfb555666fca59f0b8f856645d49f72914343f1fb8",
+      "bytes": 4339
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/metadata.json",
+      "sha256": "b7595c31293cb679cc7ffe9fe835507e9d5210ac7312496cf5eee4dc1029170c",
+      "bytes": 6388
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-shaved-ochre-preview.png",
+      "sha256": "ef0bb9f1fd206794b72f5a3707b05091861555fd16d34557215cb35ab02ec5ef",
+      "bytes": 2841
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-shaved-ochre.png",
+      "sha256": "77eb6bdc20ec370b0eb0a112de74784a5903ef2a0021580cafb1a729c879d8a6",
+      "bytes": 200331
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-shaved-teal-preview.png",
+      "sha256": "00e41d46090ef04d8b9e3d0abd2fde7eef1090e1a8d618026a93f94b53885184",
+      "bytes": 2846
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-shaved-teal.png",
+      "sha256": "f40541e627d004144c4a1d236cd212020c689663067b3d18e4a27fc96e97c8ef",
+      "bytes": 199947
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-shaved-wine-preview.png",
+      "sha256": "109dbf81d246f5594327cadac8cd090d58417350d885bc2762da139f40afa5ae",
+      "bytes": 2827
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-shaved-wine.png",
+      "sha256": "a14c9c3e919909c1d0745fbfde4c65e1d1982ccdc15e96ce660b02b36d9ce44d",
+      "bytes": 199702
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-short-ochre-preview.png",
+      "sha256": "18287e7b1749d3aa435908a841f0513a72b16f973c4f2ad66fef933fbfe557e8",
+      "bytes": 2861
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-short-ochre.png",
+      "sha256": "0a98eb21ce5542c62ef14e84537d56fe182619e1b75bcd247003f9e5d89a98da",
+      "bytes": 199280
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-short-teal-preview.png",
+      "sha256": "0a5f532f8439066b9af089569ac3dcae9c17e7cc8bb795c8314b151c930acb82",
+      "bytes": 2867
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-short-teal.png",
+      "sha256": "f73261301534249435aa5cb31ffd8a3261c21808b1be88019ee620304a5e7889",
+      "bytes": 199190
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-short-wine-preview.png",
+      "sha256": "1527d76b3eac84656dc90f581b4859a9064a18b20fcded2a543dc259e7aa20b4",
+      "bytes": 2854
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/pale-short-wine.png",
+      "sha256": "9806ac675eee85054d50472bccce3e9dfeba2a8fc888dfdd70487803181978b9",
+      "bytes": 198988
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/all-looks-2x.png",
+      "sha256": "97557be0eec011ae4a0c86e0a2fd9239ac97e6a859d75e162b289f708c4234c6",
+      "bytes": 47162
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/all-looks-native.png",
+      "sha256": "fe9a976a6225353ca453d8c7e068056bfb79fc40db52edb488797208f566bedb",
+      "bytes": 33852
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-attack1.gif",
+      "sha256": "1fae2a3294b37aea8fc5742fe9ea861cd961c58ff3d943a00dd9be0a4224dfb9",
+      "bytes": 24187
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-attack2.gif",
+      "sha256": "f362ee9ea189ba270eac1c25b661fab237d7b5e786fc310b2d81c459ae0b7848",
+      "bytes": 23841
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-attack3.gif",
+      "sha256": "2ba0702aa35269dbc3491b8eac8da489fdf5fb48c00f05f873d423961504dbb9",
+      "bytes": 23490
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-back-2x.png",
+      "sha256": "d4c9946efa4636c883e3fb60ad27ea387de951195ddd12f2386d445be0562a3a",
+      "bytes": 136075
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-back-native.png",
+      "sha256": "dbe0810b620118b57703e88f3ef118ae067a38fecca14b3f2e081c02c208f9c9",
+      "bytes": 108261
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-dash.gif",
+      "sha256": "d48354f99265763a160f5208940952fd84097183c2a79f210f86f3be2e22c358",
+      "bytes": 24525
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-death.gif",
+      "sha256": "a3f24d8fef5da7890d07a8f4c0105d5a1de73dcb4592762333aad55af2d811af",
+      "bytes": 21275
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-front-2x.png",
+      "sha256": "4705589acfc9bdc0bc66e7e21bb6e0cf9ee58ccac0f95b636b0f1b48e9e241b3",
+      "bytes": 147727
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-front-native.png",
+      "sha256": "fcc361536f297e2045be9c05e476b8b432e3ddb56c399d6a7c27440da85340ea",
+      "bytes": 118403
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-hurt.gif",
+      "sha256": "35cd12916a6157aa6b43d65bd55f4b0a436a24d213e5aae3dea84f2c6941bd2d",
+      "bytes": 16645
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-idle.gif",
+      "sha256": "e85081c0ffe89148a15fcb0e142e8893c1a953747d780985b16f292e168586b9",
+      "bytes": 16216
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-run.gif",
+      "sha256": "78332e9dd86c0e4bd656966cc8452bd82529988f4f9a0e33344f667009a42c55",
+      "bytes": 23052
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/deep-short-teal-wave.gif",
+      "sha256": "61aae19a32aa762a5dac78b386cb25ff4b8bea40c8e95f7ac6e9b1d148bec9f0",
+      "bytes": 24032
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/previews/index.html",
+      "sha256": "53bd1e8be620b0cb026b217eac4ed9c2664c787c8b4a8da98eeab0f413106f85",
+      "bytes": 9937
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/hair-mask.png",
+      "sha256": "8549c4bbd8c2aa94b73150aa48fee67ff0680d2a02f624f3d15ed2512f304d96",
+      "bytes": 7507
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-shaved-ochre-preview.png",
+      "sha256": "aae0d2a372eb79a98207fd2cb21b7e561e90fe9cedf6144be5ef462a06bfad33",
+      "bytes": 2835
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-shaved-ochre.png",
+      "sha256": "8e404999601392041e90a3de589ac3bf9e06a598cf57aedc0a4ecf8d073b5269",
+      "bytes": 202712
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-shaved-teal-preview.png",
+      "sha256": "dbf6cd504a3ccbb85655bcdcff684d0c42a21ff81de94ce189731de1db0d5c6e",
+      "bytes": 2839
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-shaved-teal.png",
+      "sha256": "e5dc577a3d644c413bbc053ee5e77ba2dfb241b88fd4eed297eb93defb2821eb",
+      "bytes": 202397
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-shaved-wine-preview.png",
+      "sha256": "375183ac297d82ecc6f978892b1bf778d696ca9d5596b80dc8d81df4ca4897fc",
+      "bytes": 2822
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-shaved-wine.png",
+      "sha256": "02eb610f3d690ab55bc18ca8ab1b46881d1c39238d6258bdb369a4c57097909f",
+      "bytes": 202299
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-short-ochre-preview.png",
+      "sha256": "a285e52e1e8bf19778da4324b60125f90862f70a9548f3e327fe5461975c5887",
+      "bytes": 2860
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-short-ochre.png",
+      "sha256": "2f31e6532af375d626fef05c016dd5a6440230f1648ff3ddb069eada3480cc0c",
+      "bytes": 201725
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-short-teal-preview.png",
+      "sha256": "cefbc21443e7c837c251d80675491036ffe819579705e25ef184a0375e40db55",
+      "bytes": 2858
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-short-teal.png",
+      "sha256": "3c7e7bf6a3baee593d6775fe37429bc0c5290457bf09ddfd7f20fbc3651e1f89",
+      "bytes": 201400
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-short-wine-preview.png",
+      "sha256": "92f8caba3f8aae49c144fa01493ba80b9aa7fb466bf77fc906328ac61c877069",
+      "bytes": 2846
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/warm-short-wine.png",
+      "sha256": "6076e99c6f8a45610618c60ff305635b94730cfc842f3a55420ff855441686d2",
+      "bytes": 201241
+    }
+  ]
+}

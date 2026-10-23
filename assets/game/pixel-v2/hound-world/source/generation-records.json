@@ -1,0 +1,89 @@
+[
+  {
+    "clip": "idle",
+    "tool": "built-in image_gen",
+    "promptPath": "source/prompts/hound-back-idle.txt",
+    "requestedTransparent": true,
+    "referencePaths": [
+      "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+      "assets/concepts/animation-bible-01/monsters/originals/hound-idle.png"
+    ],
+    "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-ae1a2f44-fc2a-41f5-b31e-8ed94334a30e.png",
+    "localPath": "source/hound-back-idle.png"
+  },
+  {
+    "clip": "run",
+    "tool": "built-in image_gen",
+    "promptPath": "source/prompts/hound-back-run.txt",
+    "requestedTransparent": true,
+    "referencePaths": [
+      "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+      "assets/concepts/animation-bible-01/monsters/originals/hound-run.png"
+    ],
+    "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-e37fa625-c51f-40a7-85f2-b3f5200634da.png",
+    "localPath": "source/hound-back-run.png"
+  },
+  {
+    "clip": "attack",
+    "tool": "built-in image_gen",
+    "promptPath": "source/prompts/hound-back-attack.txt",
+    "requestedTransparent": true,
+    "referencePaths": [
+      "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+      "assets/concepts/animation-bible-01/monsters/originals/hound-attack.png"
+    ],
+    "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-ab11f6b8-195f-4652-8b9b-f3decee89aba.png",
+    "localPath": "source/hound-back-attack.png"
+  },
+  {
+    "clip": "hurt",
+    "tool": "built-in image_gen",
+    "promptPath": "source/prompts/hound-back-hurt.txt",
+    "requestedTransparent": true,
+    "referencePaths": [
+      "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+      "assets/concepts/animation-bible-01/monsters/originals/hound-hurt.png"
+    ],
+    "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-f2740471-40fa-4ee1-ac7c-dcc936241ca1.png",
+    "localPath": "source/hound-back-hurt.png"
+  },
+  {
+    "clip": "death",
+    "tool": "built-in image_gen",
+    "promptPath": "source/prompts/hound-back-death.txt",
+    "requestedTransparent": true,
+    "referencePaths": [
+      "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+      "assets/concepts/animation-bible-01/monsters/originals/hound-death.png"
+    ],
+    "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-bbcc4131-0b15-4997-8712-ec31d4ff77cb.png",
+    "localPath": "source/hound-back-death.png",
+    "selection": "rejected: collapsed keys became side/front-facing"
+  },
+  {
+    "clip": "death-v2",
+    "tool": "built-in image_gen",
+    "promptPath": "source/prompts/hound-back-death-v2.txt",
+    "requestedTransparent": true,
+    "referencePaths": [
+      "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+      "assets/game/pixel-v2/hound-world/source/hound-back-run.png",
+      "assets/game/pixel-v2/hound-world/source/hound-back-death.png"
+    ],
+    "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-81c3db36-d8d2-4460-a602-9d58e6f74698.png",
+    "localPath": "source/hound-back-death-v2.png",
+    "selection": "accepted: rear skull, visible back and rump retained in all six keys"
+  },
+  {
+    "clip": "idle-keys-03-04",
+    "tool": "built-in image_gen",
+    "promptPath": "source/prompts/hound-back-idle-keys-03-04.txt",
+    "requestedTransparent": true,
+    "referencePaths": [
+      "assets/game/pixel-v2/hound-world/source/hound-back-idle-top-reference.png"
+    ],
+    "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-c165e813-dabb-4cde-b683-8c2987da8173.png",
+    "localPath": "source/hound-back-idle-keys-03-04.png",
+    "selection": "accepted: targeted keys 28/29 preserve rear view; original 26/27 unchanged"
+  }
+]

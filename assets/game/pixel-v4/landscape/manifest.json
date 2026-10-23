@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "nativePixelsPerUnit": 32,
+  "landscape": {
+    "path": "landscape.png",
+    "cell": 160,
+    "columns": 4,
+    "rows": 2,
+    "anchor": [
+      80,
+      144
+    ],
+    "frames": [
+      "cypress",
+      "dead-tree",
+      "rock-large",
+      "rock-small",
+      "shrub",
+      "grass",
+      "ruin-pile",
+      "supplies"
+    ],
+    "filter": "nearest",
+    "mipmaps": false
+  },
+  "surfaces": {
+    "earth": {
+      "path": "earth.png",
+      "size": [
+        32,
+        32
+      ],
+      "filter": "nearest",
+      "mipmaps": false
+    },
+    "moss": {
+      "path": "moss.png",
+      "size": [
+        32,
+        32
+      ],
+      "filter": "nearest",
+      "mipmaps": false
+    },
+    "cliff": {
+      "path": "cliff.png",
+      "size": [
+        32,
+        32
+      ],
+      "filter": "nearest",
+      "mipmaps": false
+    }
+  },
+  "hitMasks": "hit-masks.json",
+  "provenance": "source/provenance.json",
+  "normalization": "source/normalization.json",
+  "previews": "previews/contact-native.png"
+}

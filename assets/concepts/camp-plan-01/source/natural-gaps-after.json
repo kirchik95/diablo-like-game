@@ -1,0 +1,117 @@
+[
+  {
+    "id": "rock-1",
+    "collider": {
+      "x": 15,
+      "y": -10,
+      "radius": 1.2
+    },
+    "scale": 2,
+    "stoppedBody": {
+      "x": 16.011162697096932,
+      "y": -8.988837302903331,
+      "radius": 0.23
+    },
+    "centerDistance": 0.40753115295018427,
+    "footScreen": [
+      -245.68546295166607,
+      259.4485478322321
+    ],
+    "spriteBottomScreen": 263.73715186722467,
+    "footGapBelowAllSpritePixels": -4.288604034992545,
+    "nearestOpaquePixel": 0.5773196405812541,
+    "actorGroundRadiusInScreenY": 3.68
+  },
+  {
+    "id": "rock-2",
+    "collider": {
+      "x": -15,
+      "y": 8,
+      "radius": 1.2
+    },
+    "scale": 2,
+    "stoppedBody": {
+      "x": -13.995908370715213,
+      "y": 9.01823376490852,
+      "radius": 0.23
+    },
+    "centerDistance": 0.4041894860398021,
+    "footScreen": [
+      840.7506259370248,
+      123.68403672383035
+    ],
+    "spriteBottomScreen": 127.97265154842016,
+    "footGapBelowAllSpritePixels": -4.288614824589814,
+    "nearestOpaquePixel": 0.869294315148575,
+    "actorGroundRadiusInScreenY": 3.68
+  },
+  {
+    "id": "shrub-1",
+    "collider": {
+      "x": -14,
+      "y": 4,
+      "radius": 0.9
+    },
+    "scale": 2,
+    "stoppedBody": {
+      "x": -13.208040405071198,
+      "y": 4.8061017305527,
+      "radius": 0.23
+    },
+    "centerDistance": 0.20570002430722067,
+    "footScreen": [
+      727.6135333466965,
+      84.9429086242709
+    ],
+    "spriteBottomScreen": 80.03152391334542,
+    "footGapBelowAllSpritePixels": 4.911384710925475,
+    "nearestOpaquePixel": 4.958236734047328,
+    "actorGroundRadiusInScreenY": 3.68
+  },
+  {
+    "id": "cypress-1",
+    "collider": {
+      "x": -14,
+      "y": -12,
+      "radius": 0.5
+    },
+    "scale": 2,
+    "stoppedBody": {
+      "x": -13.490883117545845,
+      "y": -11.476740981922113,
+      "radius": 0.23
+    },
+    "centerDistance": 0.2711232422716332,
+    "footScreen": [
+      365.57483705763025,
+      -102.47643995021116
+    ],
+    "spriteBottomScreen": -108.48782743051356,
+    "footGapBelowAllSpritePixels": 6.011387480302403,
+    "nearestOpaquePixel": 7.618343721994813,
+    "actorGroundRadiusInScreenY": 3.68
+  },
+  {
+    "id": "dead-tree-1",
+    "collider": {
+      "x": -13,
+      "y": 12,
+      "radius": 0.45
+    },
+    "scale": 2,
+    "stoppedBody": {
+      "x": -12.526238456605176,
+      "y": 12.487903679018556,
+      "radius": 0.23
+    },
+    "centerDistance": 0.6261239893183658,
+    "footScreen": [
+      886.0054629731576,
+      179.56629147187527
+    ],
+    "spriteBottomScreen": 175.85490576414148,
+    "footGapBelowAllSpritePixels": 3.711385707733797,
+    "nearestOpaquePixel": 3.7731663585085546,
+    "actorGroundRadiusInScreenY": 3.68
+  }
+]

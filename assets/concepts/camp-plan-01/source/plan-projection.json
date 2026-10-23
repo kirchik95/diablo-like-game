@@ -1,0 +1,135 @@
+{
+  "kind": "top-down",
+  "width": 1032,
+  "height": 1224,
+  "pixelsPerWorldUnit": 20,
+  "worldOriginPixel": [
+    516.0,
+    640
+  ],
+  "orientation": "world -Y up; world +X right",
+  "sourceLayoutSha256": "893ed12f8497fb63993aa5e0b7abc8fadde2187d15719f983ec3d6defa705e89",
+  "keys": [
+    {
+      "label": "01",
+      "target": [
+        5,
+        -5
+      ],
+      "labelWorld": [
+        8.5,
+        -7.5
+      ]
+    },
+    {
+      "label": "02",
+      "target": [
+        -6,
+        4
+      ],
+      "labelWorld": [
+        -10,
+        5
+      ]
+    },
+    {
+      "label": "03",
+      "target": [
+        -3,
+        -2
+      ],
+      "labelWorld": [
+        -6,
+        -4
+      ]
+    },
+    {
+      "label": "04",
+      "target": [
+        6,
+        5
+      ],
+      "labelWorld": [
+        9,
+        6.5
+      ]
+    },
+    {
+      "label": "05",
+      "target": [
+        0,
+        3
+      ],
+      "labelWorld": [
+        1.5,
+        0.5
+      ]
+    },
+    {
+      "label": "06",
+      "target": [
+        4,
+        5
+      ],
+      "labelWorld": [
+        4.5,
+        8.5
+      ]
+    },
+    {
+      "label": "07",
+      "target": [
+        0,
+        -22
+      ],
+      "labelWorld": [
+        3,
+        -19.5
+      ]
+    },
+    {
+      "label": "08",
+      "target": [
+        0,
+        -27
+      ],
+      "labelWorld": [
+        3,
+        -28.5
+      ]
+    },
+    {
+      "label": "09",
+      "target": [
+        -3,
+        2
+      ],
+      "labelWorld": [
+        -6.5,
+        0
+      ]
+    },
+    {
+      "label": "10",
+      "target": [
+        -3.5,
+        -22
+      ],
+      "labelWorld": [
+        -7,
+        -23.5
+      ]
+    },
+    {
+      "label": "10",
+      "target": [
+        3.5,
+        -22
+      ],
+      "labelWorld": [
+        7,
+        -23.5
+      ]
+    }
+  ]
+}

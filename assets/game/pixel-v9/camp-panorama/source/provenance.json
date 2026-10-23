@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "method": "programmatic drawing: exact orthographic 2:1 ray casting of boxes/ellipsoids/rods for props, screen-space foliage tufts, heightfield rock splatting, and three screen-space ridges with depth-smoothed facets and dithered valley haze for the backdrop",
+  "generator": "scripts/build-camp-panorama-assets.py",
+  "imageGeneration": null,
+  "tools": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "inputs": {
+    "contract": {
+      "path": "assets/game/pixel-v9/camp-panorama/source/footprints.json",
+      "sha256": "76c584e7d93f7cfd92f1e5c6a64e6c7e22d0646d91eb6118656eb1cc1954106f"
+    },
+    "concept": {
+      "path": "assets/concepts/camp-location-01/camp-scene.png",
+      "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+    },
+    "landscapeAtlas": {
+      "path": "assets/game/pixel-v4/landscape/landscape.png",
+      "sha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731"
+    },
+    "campAtlas": {
+      "path": "assets/game/pixel-v5/camp/camp.png",
+      "sha256": "786d9f620359216a382a1ff2d06699c404caeb01ea4d9eb4a73c2205e4af47f6"
+    },
+    "monkAtlas": {
+      "path": "assets/game/pixel-v2/monk/monk-v2.png",
+      "sha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e"
+    },
+    "monkManifest": {
+      "path": "assets/game/pixel-v2/monk/manifest.json",
+      "sha256": "9b31e2aeb75335a9975b348c63b71d1f1251e47b2038da78c3ac0111e1e98696"
+    },
+    "countryGrass": {
+      "path": "assets/game/pixel-v6/country/grass.png",
+      "sha256": "c26d61c2bd8bc7fef9d54eb4876a33141c0a2371fb356fc912e9746d6d6703ec"
+    },
+    "countrySoil": {
+      "path": "assets/game/pixel-v6/country/soil.png",
+      "sha256": "bde9ab4ac37e767502640921425b9288950d2d541669e2e4ff4f85d2ae73b80f"
+    }
+  },
+  "inputRoles": {
+    "contract": "geometry contract (footprints, backdrop frame and planned horizon)",
+    "concept": "artboard export; palette samples and arrangement reference only, no pixels copied",
+    "landscapeAtlas": "palette samples of the existing cypress and rock",
+    "campAtlas": "palette samples of supplies and road marker; tent and fire in the context preview",
+    "monkAtlas": "unchanged hero in the context preview",
+    "monkManifest": "idle frame index",
+    "countryGrass": "preview ground",
+    "countrySoil": "recorded for the ground palette match"
+  },
+  "seeds": "fixed integer salts in the script; random.Random only",
+  "license": "project art; no external assets"
+}

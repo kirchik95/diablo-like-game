@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "atlas": {
+    "size": [
+      1024,
+      1536
+    ],
+    "opaqueColors": 55,
+    "binaryAlpha": true
+  },
+  "backdrop": {
+    "size": [
+      2048,
+      1280
+    ],
+    "colors": 28,
+    "wrapColumnDifference": 61
+  },
+  "frames": [
+    {
+      "frame": "tripod-kettle",
+      "bbox": [
+        110,
+        167,
+        147,
+        232
+      ],
+      "size": [
+        37,
+        65
+      ],
+      "opaquePixels": 1007,
+      "colors": 7,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 226,
+      "contactCenter": [
+        128,
+        223.0
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "woven-carpet",
+      "bbox": [
+        13,
+        114,
+        243,
+        230
+      ],
+      "size": [
+        230,
+        116
+      ],
+      "opaquePixels": 13236,
+      "colors": 8,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 13236,
+      "contactCenter": [
+        128,
+        172.0
+      ],
+      "role": "flat"
+    },
+    {
+      "frame": "outcrop-block",
+      "bbox": [
+        103,
+        190,
+        153,
+        230
+      ],
+      "size": [
+        50,
+        40
+      ],
+      "opaquePixels": 1410,
+      "colors": 20,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 624,
+      "contactCenter": [
+        128,
+        218.5
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "outcrop-pair",
+      "bbox": [
+        87,
+        170,
+        169,
+        230
+      ],
+      "size": [
+        82,
+        60
+      ],
+      "opaquePixels": 3221,
+      "colors": 19,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 1592,
+      "contactCenter": [
+        128,
+        210.5
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "outcrop-cluster",
+      "bbox": [
+        69,
+        140,
+        187,
+        230
+      ],
+      "size": [
+        118,
+        90
+      ],
+      "opaquePixels": 6489,
+      "colors": 21,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 3454,
+      "contactCenter": [
+        128,
+        201.5
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "outcrop-cliff",
+      "bbox": [
+        60,
+        91,
+        195,
+        230
+      ],
+      "size": [
+        135,
+        139
+      ],
+      "opaquePixels": 12260,
+      "colors": 20,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 4528,
+      "contactCenter": [
+        128,
+        197.0
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "outcrop-wall-x",
+      "bbox": [
+        65,
+        140,
+        191,
+        230
+      ],
+      "size": [
+        126,
+        90
+      ],
+      "opaquePixels": 7081,
+      "colors": 20,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 3294,
+      "contactCenter": [
+        128,
+        199.25
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "outcrop-wall-y",
+      "bbox": [
+        64,
+        140,
+        191,
+        230
+      ],
+      "size": [
+        127,
+        90
+      ],
+      "opaquePixels": 7095,
+      "colors": 20,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 3295,
+      "contactCenter": [
+        128,
+        199.25
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "outcrop-slab",
+      "bbox": [
+        73,
+        169,
+        182,
+        230
+      ],
+      "size": [
+        109,
+        61
+      ],
+      "opaquePixels": 3739,
+      "colors": 20,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 2881,
+      "contactCenter": [
+        128,
+        203.75
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "ruin-pillar",
+      "bbox": [
+        91,
+        116,
+        165,
+        232
+      ],
+      "size": [
+        74,
+        116
+      ],
+      "opaquePixels": 4725,
+      "colors": 15,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 1332,
+      "contactCenter": [
+        128,
+        212.75
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "cypress-tall",
+      "bbox": [
+        103,
+        11,
+        154,
+        232
+      ],
+      "size": [
+        51,
+        221
+      ],
+      "opaquePixels": 7511,
+      "colors": 10,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 392,
+      "contactCenter": [
+        128,
+        223.0
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "cypress-medium",
+      "bbox": [
+        107,
+        62,
+        148,
+        232
+      ],
+      "size": [
+        41,
+        170
+      ],
+      "opaquePixels": 4517,
+      "colors": 10,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 274,
+      "contactCenter": [
+        128,
+        224.25
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "cypress-pair",
+      "bbox": [
+        85,
+        23,
+        165,
+        231
+      ],
+      "size": [
+        80,
+        208
+      ],
+      "opaquePixels": 10733,
+      "colors": 10,
+      "maxOpaqueRow": 230,
+      "opaqueOnFootprint": 996,
+      "contactCenter": [
+        128,
+        218.0
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "bush-round",
+      "bbox": [
+        97,
+        187,
+        158,
+        232
+      ],
+      "size": [
+        61,
+        45
+      ],
+      "opaquePixels": 2326,
+      "colors": 7,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 768,
+      "contactCenter": [
+        128,
+        219.75
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "bush-large",
+      "bbox": [
+        85,
+        168,
+        172,
+        232
+      ],
+      "size": [
+        87,
+        64
+      ],
+      "opaquePixels": 4204,
+      "colors": 7,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 1884,
+      "contactCenter": [
+        128,
+        213.25
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "crate",
+      "bbox": [
+        107,
+        188,
+        149,
+        232
+      ],
+      "size": [
+        42,
+        44
+      ],
+      "opaquePixels": 1426,
+      "colors": 6,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 420,
+      "contactCenter": [
+        128,
+        220.75
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "sack-pair",
+      "bbox": [
+        108,
+        203,
+        146,
+        232
+      ],
+      "size": [
+        38,
+        29
+      ],
+      "opaquePixels": 699,
+      "colors": 6,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 317,
+      "contactCenter": [
+        128,
+        223.75
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "grass-tuft",
+      "bbox": [
+        106,
+        200,
+        148,
+        230
+      ],
+      "size": [
+        42,
+        30
+      ],
+      "opaquePixels": 482,
+      "colors": 4,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 108,
+      "contactCenter": [
+        128,
+        225.25
+      ],
+      "role": "flat"
+    },
+    {
+      "frame": "fern-tuft",
+      "bbox": [
+        109,
+        211,
+        146,
+        227
+      ],
+      "size": [
+        37,
+        16
+      ],
+      "opaquePixels": 358,
+      "colors": 4,
+      "maxOpaqueRow": 226,
+      "opaqueOnFootprint": 138,
+      "contactCenter": [
+        128,
+        224.5
+      ],
+      "role": "flat"
+    },
+    {
+      "frame": "boulder-round",
+      "bbox": [
+        108,
+        195,
+        148,
+        232
+      ],
+      "size": [
+        40,
+        37
+      ],
+      "opaquePixels": 1094,
+      "colors": 17,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 568,
+      "contactCenter": [
+        128,
+        221.25
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "outcrop-crag",
+      "bbox": [
+        78,
+        138,
+        178,
+        230
+      ],
+      "size": [
+        100,
+        92
+      ],
+      "opaquePixels": 5803,
+      "colors": 20,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 2426,
+      "contactCenter": [
+        128,
+        206.0
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "outcrop-ledge-x",
+      "bbox": [
+        53,
+        140,
+        203,
+        230
+      ],
+      "size": [
+        150,
+        90
+      ],
+      "opaquePixels": 7144,
+      "colors": 20,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 4465,
+      "contactCenter": [
+        128,
+        193.5
+      ],
+      "role": "solid"
+    }
+  ],
+  "surfaces": {
+    "campEarth": {
+      "size": [
+        128,
+        128
+      ],
+      "colors": 11,
+      "mean": [
+        193.1,
+        157.5,
+        117.5
+      ],
+      "interiorStep": 9.11,
+      "seamStepX": 6.96,
+      "seamStepY": 6.78
+    },
+    "campGrass": {
+      "size": [
+        128,
+        128
+      ],
+      "colors": 8,
+      "mean": [
+        114.9,
+        112.1,
+        73.3
+      ],
+      "interiorStep": 19.74,
+      "seamStepX": 17.05,
+      "seamStepY": 13.73
+    }
+  }
+}

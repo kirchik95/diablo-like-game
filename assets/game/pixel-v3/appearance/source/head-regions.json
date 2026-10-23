@@ -1,0 +1,1105 @@
+{
+  "note": "Scalp boxes registered against exact v2 monk frames; front hairline and rear nape coverage guided by the retained ImageGen short-hair master. Prone/dash/hurt exceptions manually inspected. Coordinates exclusive x1/y1.",
+  "heads": [
+    {
+      "index": 0,
+      "frame": "idle-front-01",
+      "box": [
+        47,
+        23,
+        58,
+        37
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 1,
+      "frame": "idle-front-02",
+      "box": [
+        54,
+        23,
+        64,
+        37
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 2,
+      "frame": "idle-front-03",
+      "box": [
+        52,
+        27,
+        63,
+        41
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 3,
+      "frame": "idle-front-04",
+      "box": [
+        54,
+        25,
+        65,
+        39
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 4,
+      "frame": "run-front-01",
+      "box": [
+        51,
+        27,
+        61,
+        41
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 5,
+      "frame": "run-front-02",
+      "box": [
+        60,
+        33,
+        70,
+        46
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 6,
+      "frame": "run-front-03",
+      "box": [
+        54,
+        23,
+        65,
+        37
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 7,
+      "frame": "run-front-04",
+      "box": [
+        58,
+        25,
+        68,
+        39
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 8,
+      "frame": "run-front-05",
+      "box": [
+        59,
+        27,
+        70,
+        40
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 9,
+      "frame": "run-front-06",
+      "box": [
+        58,
+        22,
+        68,
+        35
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 10,
+      "frame": "attack1-front-01",
+      "box": [
+        49,
+        23,
+        61,
+        38
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 11,
+      "frame": "attack1-front-02",
+      "box": [
+        46,
+        24,
+        57,
+        39
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 12,
+      "frame": "attack1-front-03",
+      "box": [
+        51,
+        26,
+        62,
+        40
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 13,
+      "frame": "attack1-front-04",
+      "box": [
+        53,
+        24,
+        65,
+        39
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 14,
+      "frame": "attack1-front-05",
+      "box": [
+        47,
+        21,
+        58,
+        37
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 15,
+      "frame": "attack1-front-06",
+      "box": [
+        49,
+        23,
+        60,
+        38
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 16,
+      "frame": "attack2-front-01",
+      "box": [
+        47,
+        22,
+        58,
+        37
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 17,
+      "frame": "attack2-front-02",
+      "box": [
+        48,
+        23,
+        60,
+        37
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 18,
+      "frame": "attack2-front-03",
+      "box": [
+        47,
+        24,
+        58,
+        35
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 19,
+      "frame": "attack2-front-04",
+      "box": [
+        42,
+        25,
+        55,
+        36
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 20,
+      "frame": "attack2-front-05",
+      "box": [
+        53,
+        24,
+        64,
+        38
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 21,
+      "frame": "attack2-front-06",
+      "box": [
+        49,
+        24,
+        60,
+        38
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 22,
+      "frame": "attack3-front-01",
+      "box": [
+        44,
+        30,
+        55,
+        44
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 23,
+      "frame": "attack3-front-02",
+      "box": [
+        49,
+        31,
+        60,
+        45
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 24,
+      "frame": "attack3-front-03",
+      "box": [
+        50,
+        31,
+        61,
+        42
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 25,
+      "frame": "attack3-front-04",
+      "box": [
+        49,
+        29,
+        61,
+        41
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 26,
+      "frame": "attack3-front-05",
+      "box": [
+        47,
+        28,
+        58,
+        42
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 27,
+      "frame": "attack3-front-06",
+      "box": [
+        47,
+        23,
+        58,
+        37
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 28,
+      "frame": "dash-front-01",
+      "box": [
+        68,
+        38,
+        81,
+        53
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 29,
+      "frame": "dash-front-02",
+      "box": [
+        70,
+        31,
+        84,
+        45
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 30,
+      "frame": "dash-front-03",
+      "box": [
+        62,
+        21,
+        74,
+        34
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 31,
+      "frame": "dash-front-04",
+      "box": [
+        55,
+        15,
+        67,
+        29
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 32,
+      "frame": "dash-front-05",
+      "box": [
+        65,
+        38,
+        77,
+        51
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 33,
+      "frame": "dash-front-06",
+      "box": [
+        52,
+        23,
+        64,
+        38
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 34,
+      "frame": "wave-front-01",
+      "box": [
+        48,
+        28,
+        58,
+        43
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 35,
+      "frame": "wave-front-02",
+      "box": [
+        47,
+        26,
+        58,
+        40
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 36,
+      "frame": "wave-front-03",
+      "box": [
+        47,
+        24,
+        57,
+        37
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 37,
+      "frame": "wave-front-04",
+      "box": [
+        43,
+        26,
+        53,
+        38
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 38,
+      "frame": "wave-front-05",
+      "box": [
+        47,
+        23,
+        57,
+        38
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 39,
+      "frame": "wave-front-06",
+      "box": [
+        50,
+        23,
+        60,
+        37
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 40,
+      "frame": "hurt-front-01",
+      "box": [
+        41,
+        20,
+        52,
+        30
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 41,
+      "frame": "hurt-front-02",
+      "box": [
+        29,
+        19,
+        40,
+        28
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 42,
+      "frame": "hurt-front-03",
+      "box": [
+        54,
+        28,
+        65,
+        41
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 43,
+      "frame": "hurt-front-04",
+      "box": [
+        49,
+        23,
+        59,
+        37
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 44,
+      "frame": "death-front-01",
+      "box": [
+        57,
+        26,
+        69,
+        39
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 45,
+      "frame": "death-front-02",
+      "box": [
+        54,
+        36,
+        65,
+        48
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 46,
+      "frame": "death-front-03",
+      "box": [
+        54,
+        49,
+        66,
+        60
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 47,
+      "frame": "death-front-04",
+      "box": [
+        63,
+        56,
+        75,
+        68
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 48,
+      "frame": "death-front-05",
+      "box": [
+        66,
+        68,
+        77,
+        77
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 49,
+      "frame": "death-front-06",
+      "box": [
+        69,
+        67,
+        79,
+        75
+      ],
+      "coverage": 0.42
+    },
+    {
+      "index": 50,
+      "frame": "idle-back-01",
+      "box": [
+        51,
+        23,
+        62,
+        33
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 51,
+      "frame": "idle-back-02",
+      "box": [
+        51,
+        23,
+        62,
+        33
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 52,
+      "frame": "idle-back-03",
+      "box": [
+        52,
+        26,
+        63,
+        36
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 53,
+      "frame": "idle-back-04",
+      "box": [
+        51,
+        23,
+        62,
+        33
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 54,
+      "frame": "run-back-01",
+      "box": [
+        54,
+        23,
+        65,
+        33
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 55,
+      "frame": "run-back-02",
+      "box": [
+        58,
+        27,
+        68,
+        38
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 56,
+      "frame": "run-back-03",
+      "box": [
+        56,
+        19,
+        66,
+        30
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 57,
+      "frame": "run-back-04",
+      "box": [
+        54,
+        22,
+        66,
+        32
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 58,
+      "frame": "run-back-05",
+      "box": [
+        55,
+        26,
+        66,
+        36
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 59,
+      "frame": "run-back-06",
+      "box": [
+        51,
+        17,
+        63,
+        27
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 60,
+      "frame": "attack1-back-01",
+      "box": [
+        48,
+        22,
+        61,
+        33
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 61,
+      "frame": "attack1-back-02",
+      "box": [
+        47,
+        23,
+        58,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 62,
+      "frame": "attack1-back-03",
+      "box": [
+        42,
+        24,
+        53,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 63,
+      "frame": "attack1-back-04",
+      "box": [
+        48,
+        24,
+        59,
+        35
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 64,
+      "frame": "attack1-back-05",
+      "box": [
+        45,
+        23,
+        56,
+        33
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 65,
+      "frame": "attack1-back-06",
+      "box": [
+        49,
+        24,
+        60,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 66,
+      "frame": "attack2-back-01",
+      "box": [
+        51,
+        23,
+        63,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 67,
+      "frame": "attack2-back-02",
+      "box": [
+        47,
+        23,
+        59,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 68,
+      "frame": "attack2-back-03",
+      "box": [
+        49,
+        23,
+        61,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 69,
+      "frame": "attack2-back-04",
+      "box": [
+        46,
+        24,
+        57,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 70,
+      "frame": "attack2-back-05",
+      "box": [
+        49,
+        23,
+        60,
+        33
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 71,
+      "frame": "attack2-back-06",
+      "box": [
+        48,
+        23,
+        59,
+        33
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 72,
+      "frame": "attack3-back-01",
+      "box": [
+        43,
+        26,
+        55,
+        37
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 73,
+      "frame": "attack3-back-02",
+      "box": [
+        49,
+        29,
+        60,
+        37
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 74,
+      "frame": "attack3-back-03",
+      "box": [
+        47,
+        26,
+        58,
+        36
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 75,
+      "frame": "attack3-back-04",
+      "box": [
+        48,
+        26,
+        59,
+        36
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 76,
+      "frame": "attack3-back-05",
+      "box": [
+        47,
+        23,
+        58,
+        33
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 77,
+      "frame": "attack3-back-06",
+      "box": [
+        46,
+        23,
+        58,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 78,
+      "frame": "dash-back-01",
+      "box": [
+        63,
+        37,
+        75,
+        50
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 79,
+      "frame": "dash-back-02",
+      "box": [
+        63,
+        28,
+        75,
+        39
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 80,
+      "frame": "dash-back-03",
+      "box": [
+        57,
+        17,
+        69,
+        28
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 81,
+      "frame": "dash-back-04",
+      "box": [
+        54,
+        14,
+        66,
+        25
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 82,
+      "frame": "dash-back-05",
+      "box": [
+        61,
+        35,
+        73,
+        46
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 83,
+      "frame": "dash-back-06",
+      "box": [
+        49,
+        23,
+        61,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 84,
+      "frame": "wave-back-01",
+      "box": [
+        46,
+        25,
+        58,
+        35
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 85,
+      "frame": "wave-back-02",
+      "box": [
+        45,
+        24,
+        57,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 86,
+      "frame": "wave-back-03",
+      "box": [
+        44,
+        25,
+        56,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 87,
+      "frame": "wave-back-04",
+      "box": [
+        42,
+        25,
+        53,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 88,
+      "frame": "wave-back-05",
+      "box": [
+        46,
+        27,
+        58,
+        37
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 89,
+      "frame": "wave-back-06",
+      "box": [
+        50,
+        23,
+        62,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 90,
+      "frame": "hurt-back-01",
+      "box": [
+        46,
+        21,
+        58,
+        31
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 91,
+      "frame": "hurt-back-02",
+      "box": [
+        28,
+        18,
+        39,
+        28
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 92,
+      "frame": "hurt-back-03",
+      "box": [
+        54,
+        27,
+        65,
+        36
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 93,
+      "frame": "hurt-back-04",
+      "box": [
+        50,
+        23,
+        62,
+        34
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 94,
+      "frame": "death-back-01",
+      "box": [
+        51,
+        25,
+        64,
+        33
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 95,
+      "frame": "death-back-02",
+      "box": [
+        54,
+        31,
+        65,
+        39
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 96,
+      "frame": "death-back-03",
+      "box": [
+        53,
+        40,
+        63,
+        50
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 97,
+      "frame": "death-back-04",
+      "box": [
+        66,
+        52,
+        75,
+        61
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 98,
+      "frame": "death-back-05",
+      "box": [
+        68,
+        61,
+        77,
+        70
+      ],
+      "coverage": 0.78
+    },
+    {
+      "index": 99,
+      "frame": "death-back-06",
+      "box": [
+        68,
+        68,
+        75,
+        74
+      ],
+      "coverage": 0.78
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "status": "passed",
+  "toolchain": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "beetle": {
+    "frames": 74,
+    "size": [
+      1280,
+      1024
+    ],
+    "cell": 128,
+    "anchor": [
+      64,
+      112
+    ],
+    "columns": 10,
+    "rows": 8,
+    "opaqueColors": 15,
+    "binaryAlpha": true,
+    "transparentRGBZero": true,
+    "distinctFrames": 74,
+    "boundsUnclipped": true,
+    "groundedLocomotion": true,
+    "weakSpotOnlyInStunned": true,
+    "frontIdleMassPx": [
+      2534,
+      2622,
+      2689,
+      2478
+    ],
+    "houndIdleMassPx": 1458,
+    "locomotionWidthsPx": {
+      "front-idle": [
+        85,
+        83,
+        94,
+        83
+      ],
+      "front-walk": [
+        81,
+        78,
+        85,
+        85,
+        88,
+        85
+      ],
+      "back-idle": [
+        75,
+        75,
+        76,
+        76
+      ],
+      "back-walk": [
+        75,
+        75,
+        75,
+        75,
+        75,
+        75
+      ]
+    },
+    "clips": {
+      "idle": {
+        "front": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "back": [
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      "walk": {
+        "front": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "back": [
+          41,
+          42,
+          43,
+          44,
+          45,
+          46
+        ]
+      },
+      "windup": {
+        "front": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "back": [
+          47,
+          48,
+          49,
+          50,
+          51
+        ]
+      },
+      "slam": {
+        "front": [
+          15,
+          16,
+          17
+        ],
+        "back": [
+          52,
+          53,
+          54
+        ]
+      },
+      "recover": {
+        "front": [
+          18,
+          19,
+          20
+        ],
+        "back": [
+          55,
+          56,
+          57
+        ]
+      },
+      "hurt": {
+        "front": [
+          21,
+          22,
+          23,
+          24
+        ],
+        "back": [
+          58,
+          59,
+          60,
+          61
+        ]
+      },
+      "stunned": {
+        "front": [
+          25,
+          26,
+          27,
+          28
+        ],
+        "back": [
+          62,
+          63,
+          64,
+          65
+        ]
+      },
+      "death": {
+        "front": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        "back": [
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ]
+      },
+      "block": {
+        "front": [
+          35,
+          36
+        ],
+        "back": [
+          72,
+          73
+        ]
+      }
+    }
+  },
+  "artifactCount": 29,
+  "sourceCount": 16,
+  "referenceCount": 7,
+  "rebuildMatches": true,
+  "sourceHashesMatch": true,
+  "mode": "build",
+  "contextPreview": {
+    "status": "matches"
+  }
+}

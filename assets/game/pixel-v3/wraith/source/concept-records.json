@@ -1,0 +1,196 @@
+{
+  "sourceManifest": "assets/concepts/animation-bible-01/monsters/manifest.json",
+  "images": [
+    {
+      "board": 9,
+      "species": "wraith",
+      "sequence": "idle",
+      "keys": 4,
+      "nodeId": "YJ-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-idle.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH3SR3JHX0GK4JA834KSRM.png",
+      "originalPath": "originals/wraith-idle.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 945794,
+      "sha256": "5c1c284acd1c7574bc67eec2d2e8cad8e70edb5c747afeaa2a1d8afd70c9f4e2",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 9,
+      "species": "wraith",
+      "sequence": "drift",
+      "keys": 6,
+      "nodeId": "YT-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-drift.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH3Z6S1WDSTEZCJWC2MBCA.png",
+      "originalPath": "originals/wraith-drift.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1139662,
+      "sha256": "d52d32dbbb5d6f55bee5b71a1154809c3631330ac3e7a9511c7c2e5d6dd59565",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 9,
+      "species": "wraith",
+      "sequence": "facing",
+      "keys": 2,
+      "nodeId": "ZU-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-facing.txt",
+      "referenceNodes": [
+        "DI-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH45TZ85WK15ZW9EM8FK72.png",
+      "originalPath": "originals/wraith-facing.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 899074,
+      "sha256": "eb3050dbe8af9416f4930138cbc6b3808348c6a471f2492c5e4e6b31f96415e4",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 10,
+      "species": "wraith",
+      "sequence": "attack",
+      "keys": 6,
+      "nodeId": "10B-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-attack.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH4BBQ5M6K8XAE844SEAW9.png",
+      "originalPath": "originals/wraith-attack.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1120702,
+      "sha256": "e92624cf0b685e1c41e3ae2571e7390bd61fc9c0059ea1632fe338d4cbcdac62",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 10,
+      "species": "wraith",
+      "sequence": "hurt",
+      "keys": 4,
+      "nodeId": "11E-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-hurt.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH4HT1SXNSVT7VSTN56G49.png",
+      "originalPath": "originals/wraith-hurt.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 980953,
+      "sha256": "8dfd52bd34e025c98f48ebb673b997310288ef21daa3919437d32f6f488e0062",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 10,
+      "species": "wraith",
+      "sequence": "death",
+      "keys": 6,
+      "nodeId": "124-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-death.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH4RARR6H58NM06RJ39GV6.png",
+      "originalPath": "originals/wraith-death.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 988698,
+      "sha256": "12d6d3fec30ccbe767c97f34fa6119d413febee4c5d925f58b2e87136d718c14",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    }
+  ],
+  "boards": [
+    {
+      "number": 9,
+      "nodeId": "OH-0",
+      "title": "Дух — движение и направления",
+      "width": 1599.984375,
+      "height": 3579.890625,
+      "x": 0,
+      "y": 7999.994,
+      "review": "peer_accepted_storyboard_caption_corrected",
+      "reviewNotes": "Consistent spacing/typography, luminous core contrasts against blue-gray field. Four hover heights, six trailing-tendril drift shapes, two authored open-core/back-membrane facings verified. No clipped tendrils. Mirroring rule explicit; timings proposed. P3-02 corrected in Z2-0: readable trail with possible tendril overlaps; no raster regeneration.",
+      "export": {
+        "path": "exports/09-wraith-movement.png",
+        "format": "png",
+        "scale": "1x",
+        "dimensions": {
+          "width": 1600,
+          "height": 3580
+        },
+        "bytes": 1804922,
+        "sha256": "b50b05f3005f0494f49d946c8797d481f831aa1832f595bcf2ee61526bd4b0cd"
+      },
+      "keyStates": 12
+    },
+    {
+      "number": 10,
+      "nodeId": "OP-0",
+      "title": "Дух — атака, реакция и растворение",
+      "width": 1599.984375,
+      "height": 3579.890625,
+      "x": 1679.996,
+      "y": 7999.994,
+      "review": "peer_accepted_storyboard_caption_corrected",
+      "reviewNotes": "Six cast keys include magenta charge, one projectile release and recoil; four disrupted shapes recover; six dissolve states decrease to one final mote. Captions, spacing, contrast, shared lanes and fit checked; no clipping. Timings/events explicitly proposed. P3-03 corrected in 129-0: key 6 is last spark; deletion after key 6 unchanged; no raster regeneration.",
+      "export": {
+        "path": "exports/10-wraith-combat.png",
+        "format": "png",
+        "scale": "1x",
+        "dimensions": {
+          "width": 1600,
+          "height": 3580
+        },
+        "bytes": 1784417,
+        "sha256": "afe82c0fc77cbcbaf627c4971c7ac9529be30205f1d449f34818ce998dcc725f"
+      },
+      "keyStates": 16
+    }
+  ]
+}

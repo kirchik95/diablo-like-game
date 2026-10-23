@@ -1,0 +1,112 @@
+{
+  "status": "complete-plan-board",
+  "paper": {
+    "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+    "pageId": "p-C-0",
+    "pageName": "Регион 01 · Открытый мир",
+    "url": "https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-C-0",
+    "planArtboard": "01 · План региона"
+  },
+  "sourceSha256": {
+    "src/overworld.js": "21ae0f0edd4586b22324ddbfc8e713442be4c0069dccb0b6428612b6307e45a9",
+    "src/campaign.js": "8d4ab62330385fdf64e74d0b32b58881cd2a7548020624cbfd06b3ebb34b7035",
+    "src/camp-layout.js": "0733de9520ad2dea7852566318e35aabb938b0f7d5e066f4e34f4caec4c18774",
+    "src/landscape.js": "c227907f318ade49fb49f1ec14d75d4b46e781f116b78edbee41891c8cd68e4a",
+    "src/country-border.js": "5784b5d1212157cdddf7ce2907a40ddd2dbd57a41f1d6bde8cc7624dbe7d7331"
+  },
+  "groundHeight": {
+    "min": 0,
+    "max": 0
+  },
+  "layers": {
+    "exact (OVERWORLD)": [
+      "01-ground.svg",
+      "02-paving.svg",
+      "04-colliders.svg",
+      "06-packs.svg (members)",
+      "key points (inline SVG in Paper)"
+    ],
+    "renderer snapshot (frozen country-border.js, visual only, no colliders)": [
+      "03-renderer-snapshot-v3.svg"
+    ],
+    "diagram (interpretation)": [
+      "05-routes.svg",
+      "pack hull outlines",
+      "labels"
+    ]
+  },
+  "history": {
+    "source/history/": "renderer layer and snapshot before the country-border.js freeze; 59 of 108 border rocks/ruins moved outward after it"
+  },
+  "commands": [
+    "node assets/concepts/open-world-01/source/export-overworld.mjs",
+    "node assets/concepts/open-world-01/source/route-metrics.mjs",
+    "python3 assets/concepts/open-world-01/source/compose-plan.py"
+  ],
+  "files": {
+    "README.md": {
+      "sha256": "34b13e05fcc57ff4ec9ca768090c1c6596f94fc0a685f70366a3c348d735b606",
+      "bytes": 1588
+    },
+    "exports/01-region-plan.png": {
+      "sha256": "3d9f497d6488accf31ffe6503c0674382830f1136f24c97e8b0893d237f94773",
+      "bytes": 587804
+    },
+    "source/compose-plan.py": {
+      "sha256": "0f11110f629c3f0a5b9e3ea0ef6100787b9f94fda437ce980ea87136de90810a",
+      "bytes": 7684
+    },
+    "source/export-overworld.mjs": {
+      "sha256": "c84b8baab0259497c3b170a613b3ea7b84b2755088d9a4c9b0de70c5fa243f69",
+      "bytes": 5023
+    },
+    "source/history/03-renderer-snapshot-v2-pre-freeze.svg": {
+      "sha256": "74d3580b02bd94d3acad7df9bca31180412522dc7a454aa7936c837e95f683bd",
+      "bytes": 8573
+    },
+    "source/history/overworld-snapshot-pre-freeze.json": {
+      "sha256": "82b0a2016e2e170b0ba846355b8a903ad85257617d68c87311e4b282aeb85805",
+      "bytes": 202182
+    },
+    "source/overworld-snapshot.json": {
+      "sha256": "e1fe603a3561ba4dd9df473603be9f35597dfa481a7e688f5f4e5081dd3ce534",
+      "bytes": 202267
+    },
+    "source/paper-input/01-ground.svg": {
+      "sha256": "d386cdf1a98e117bd869d231eabd0b4abfc99a5a169dbb9984a3003656aff7fa",
+      "bytes": 1502
+    },
+    "source/paper-input/02-paving.svg": {
+      "sha256": "10d9f31464eb2b6e3e0ebedafc0ef735222acdbb2e3a63f3a7c9eb03f38b28fc",
+      "bytes": 429
+    },
+    "source/paper-input/03-renderer-snapshot-v3.svg": {
+      "sha256": "039a3f68c1054edb364a460a5e3ed6788aa2378cfe4c06ac512d2073036476f3",
+      "bytes": 8587
+    },
+    "source/paper-input/04-colliders.svg": {
+      "sha256": "43b3cc77fadc784a11b60523a53ddd43633a1b6bb1f403ea07dbb11f10f6bb06",
+      "bytes": 8687
+    },
+    "source/paper-input/05-routes.svg": {
+      "sha256": "31acb9926cf3b702fcd439f1c450a018849e6b9e5a9042cddbd1947c538b7daa",
+      "bytes": 504
+    },
+    "source/paper-input/06-packs.svg": {
+      "sha256": "173cf76c5c0ff89ba164d7d5b2dd63835767fd17ef1ad8f5e8599b41186a93bb",
+      "bytes": 4697
+    },
+    "source/plan-projection.json": {
+      "sha256": "fbd4c931c735f102f7cd94a2d90818f85f2207394f00221fad7898313b6afca5",
+      "bytes": 1380
+    },
+    "source/route-metrics.json": {
+      "sha256": "9e9c6232976cebff4c20508a0a74a9b08434206a7297fe9bc5b985e67bf57da1",
+      "bytes": 1918
+    },
+    "source/route-metrics.mjs": {
+      "sha256": "5d5b6e2bb87950eb10f3a2c93959d3876a688d0e5a2d9afb07e639ef305a298d",
+      "bytes": 2022
+    }
+  }
+}

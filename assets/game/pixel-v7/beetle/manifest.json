@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 2,
+  "status": "ready-for-coordinator-review",
+  "nativePixelsPerUnit": 32,
+  "beetle": {
+    "path": "beetle.png",
+    "cell": 128,
+    "columns": 10,
+    "rows": 8,
+    "anchor": [
+      64,
+      112
+    ],
+    "frames": [
+      "front-idle-01",
+      "front-idle-02",
+      "front-idle-03",
+      "front-idle-04",
+      "front-walk-01",
+      "front-walk-02",
+      "front-walk-03",
+      "front-walk-04",
+      "front-walk-05",
+      "front-walk-06",
+      "front-windup-01",
+      "front-windup-02",
+      "front-windup-03",
+      "front-windup-04",
+      "front-windup-05",
+      "front-slam-01",
+      "front-slam-02",
+      "front-slam-03",
+      "front-recover-01",
+      "front-recover-02",
+      "front-recover-03",
+      "front-hurt-01",
+      "front-hurt-02",
+      "front-hurt-03",
+      "front-hurt-04",
+      "front-stunned-01",
+      "front-stunned-02",
+      "front-stunned-03",
+      "front-stunned-04",
+      "front-death-01",
+      "front-death-02",
+      "front-death-03",
+      "front-death-04",
+      "front-death-05",
+      "front-death-06",
+      "front-block-01",
+      "front-block-02",
+      "back-idle-01",
+      "back-idle-02",
+      "back-idle-03",
+      "back-idle-04",
+      "back-walk-01",
+      "back-walk-02",
+      "back-walk-03",
+      "back-walk-04",
+      "back-walk-05",
+      "back-walk-06",
+      "back-windup-01",
+      "back-windup-02",
+      "back-windup-03",
+      "back-windup-04",
+      "back-windup-05",
+      "back-slam-01",
+      "back-slam-02",
+      "back-slam-03",
+      "back-recover-01",
+      "back-recover-02",
+      "back-recover-03",
+      "back-hurt-01",
+      "back-hurt-02",
+      "back-hurt-03",
+      "back-hurt-04",
+      "back-stunned-01",
+      "back-stunned-02",
+      "back-stunned-03",
+      "back-stunned-04",
+      "back-death-01",
+      "back-death-02",
+      "back-death-03",
+      "back-death-04",
+      "back-death-05",
+      "back-death-06",
+      "back-block-01",
+      "back-block-02"
+    ],
+    "clips": {
+      "idle": {
+        "front": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "back": [
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      "walk": {
+        "front": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "back": [
+          41,
+          42,
+          43,
+          44,
+          45,
+          46
+        ]
+      },
+      "windup": {
+        "front": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "back": [
+          47,
+          48,
+          49,
+          50,
+          51
+        ]
+      },
+      "slam": {
+        "front": [
+          15,
+          16,
+          17
+        ],
+        "back": [
+          52,
+          53,
+          54
+        ]
+      },
+      "recover": {
+        "front": [
+          18,
+          19,
+          20
+        ],
+        "back": [
+          55,
+          56,
+          57
+        ]
+      },
+      "hurt": {
+        "front": [
+          21,
+          22,
+          23,
+          24
+        ],
+        "back": [
+          58,
+          59,
+          60,
+          61
+        ]
+      },
+      "stunned": {
+        "front": [
+          25,
+          26,
+          27,
+          28
+        ],
+        "back": [
+          62,
+          63,
+          64,
+          65
+        ]
+      },
+      "death": {
+        "front": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        "back": [
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ]
+      },
+      "block": {
+        "front": [
+          35,
+          36
+        ],
+        "back": [
+          72,
+          73
+        ]
+      }
+    },
+    "filter": "nearest",
+    "mipmaps": false,
+    "timing": {
+      "idle": {
+        "keyTimesMs": [
+          0,
+          250,
+          500,
+          750
+        ],
+        "playback": "loop"
+      },
+      "walk": {
+        "keyTimesMs": [
+          0,
+          150,
+          300,
+          450,
+          600,
+          750
+        ],
+        "playback": "loop"
+      },
+      "windup": {
+        "keyTimesMs": [
+          0,
+          110,
+          230,
+          350,
+          470
+        ],
+        "playback": "one-shot-hold"
+      },
+      "slam": {
+        "keyTimesMs": [
+          0,
+          60,
+          130
+        ],
+        "playback": "one-shot-hold"
+      },
+      "recover": {
+        "keyTimesMs": [
+          0,
+          150,
+          300
+        ],
+        "playback": "one-shot-hold"
+      },
+      "hurt": {
+        "keyTimesMs": [
+          0,
+          70,
+          140,
+          220
+        ],
+        "playback": "one-shot-hold"
+      },
+      "stunned": {
+        "keyTimesMs": [
+          0,
+          160,
+          320,
+          480
+        ],
+        "playback": "loop"
+      },
+      "death": {
+        "keyTimesMs": [
+          0,
+          120,
+          260,
+          400,
+          560,
+          740
+        ],
+        "playback": "one-shot-hold"
+      },
+      "block": {
+        "keyTimesMs": [
+          0,
+          90
+        ],
+        "playback": "one-shot-hold"
+      }
+    }
+  },
+  "hitMasks": "hit-masks.json",
+  "authoredFacings": {
+    "front": "SE",
+    "back": "NE"
+  },
+  "logicalFacings": {
+    "SE": {
+      "authored": "front",
+      "flipX": false
+    },
+    "SW": {
+      "authored": "front",
+      "flipX": true
+    },
+    "NE": {
+      "authored": "back",
+      "flipX": false
+    },
+    "NW": {
+      "authored": "back",
+      "flipX": true
+    }
+  },
+  "gameplayNotes": {
+    "idle": "Loop while idle.",
+    "walk": "Loop; advance by travelled distance like hound/wraith run.",
+    "windup": "Spread keys 0-4 over the gameplay windup. Keys 3-4 hold the rear-high pose with magenta seams: the readable telegraph.",
+    "slam": "Key 1 is ground contact. Fire damage and impact effects from gameplay timing, not from the animation.",
+    "recover": "Seams cool from dim to none; key 2 is the normal stance.",
+    "hurt": "One-shot reaction; key 3 dims the eye.",
+    "stunned": "Loop while stunned/flipped. The coral weak spot on the soft underside appears only in this clip.",
+    "death": "One-shot then hold key 5 (corpse shell). Eyes go out on keys 4-5.",
+    "block": "Optional guard flinch (shell forward). Hold key 1; runtime spawns sparks."
+  },
+  "provenance": "provenance.json",
+  "normalization": "source/normalization.json",
+  "registration": "source/registration.json",
+  "previews": "previews/index.html"
+}

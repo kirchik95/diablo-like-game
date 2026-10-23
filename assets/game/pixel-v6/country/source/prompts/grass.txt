@@ -1,0 +1,7 @@
+Use case: stylized-concept.
+Asset type: production tileable ground texture for a fixed-isometric pixel-art RPG.
+Primary request: one square TOP-DOWN swatch of quiet sage and olive countryside grass. This is the representative material target, not a landscape scene. Broad very subtle irregular patches of short matted grass, small restrained clusters of 2–5 pixels, with substantial visually calm areas between them. Almost all variation is low amplitude; no visible individual tall blades.
+Style/medium: deliberate simplified pixel art at a logical native size of 128 by 128 pixels, enlarged with crisp nearest-neighbor pixels. Restrained natural old stone countryside mood; grounded, not cartoon neon. Whole output is this flat material from directly above; orthographic, uniform diffuse ambient lighting.
+Color palette: muted gray sage/olive green centered around RGB 112,126,95; 12–20 tightly related colors, darkest about 93,106,78, lightest about 133,144,114. Green must read stronger than yellow. Low contrast.
+Composition/framing: seamless repeatable square texture, filled edge to edge with uniform visual density, features continuing across opposite edges, no border or dark corners.
+Avoid: isometric diamond, ground platform, perspective, horizon, grass clumps protruding upward, trees, objects, paths, flowers, rocks, black lines, sand, yellow dominant color, text, labels, watermark, gradient, noisy dithering, large hero motif.

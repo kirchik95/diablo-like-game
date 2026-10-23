@@ -1,0 +1,78 @@
+{
+  "kind": "coordinator-supplied-production-renderer-capture",
+  "pathBase": "repository-root",
+  "original": "artifacts/camp-transfer-overview-v2.png",
+  "savedCopy": "assets/concepts/camp-plan-01/source/renderer-overview.png",
+  "sha256": "79aac6c4a7bd40ee2cffd1478936746d0bf95de13aa87c49a272c61a67c7c72f",
+  "dimensions": [
+    1280,
+    720
+  ],
+  "layoutSha256": "893ed12f8497fb63993aa5e0b7abc8fadde2187d15719f983ec3d6defa705e89",
+  "camera": {
+    "kind": "separate whole-location overview, not gameplay camera",
+    "projection": "orthographic",
+    "alpha": "pi/4",
+    "beta": "pi/3",
+    "radius": 120,
+    "maxZ": 240,
+    "framingSource": "artifacts/camp-transfer-preview.js:applyCamera",
+    "groundCoordinateConvention": "u=(y-x)/sqrt(2), v=(x+y)/(2*sqrt(2))"
+  },
+  "changesToSourceImage": "none; byte-for-byte copy",
+  "paperDisplay": {
+    "width": 1512,
+    "height": 850.5,
+    "fit": "contain; full frame, no cropping",
+    "imageRendering": "pixelated"
+  },
+  "references": [
+    {
+      "path": "artifacts/camp-transfer-overview-v2.png",
+      "sha256": "79aac6c4a7bd40ee2cffd1478936746d0bf95de13aa87c49a272c61a67c7c72f"
+    },
+    {
+      "path": "artifacts/camp-transfer-preview.js",
+      "sha256": "08befd9c877426eaa756c79b3255fb11ccdf5d422f1c9447768c23a427ef1d06"
+    },
+    {
+      "path": "src/camp-layout.js",
+      "sha256": "0733de9520ad2dea7852566318e35aabb938b0f7d5e066f4e34f4caec4c18774"
+    },
+    {
+      "path": "src/render.js",
+      "sha256": "c95f0c0125afd990faf7a562339f8f8a9c37be8d7a43183a59dcc578f14eea20"
+    },
+    {
+      "path": "src/pixel-scene.js",
+      "sha256": "23feea6f441f7c3d4ec13085d494971de9ca35337cadc04b4d1658dfc6673a06"
+    },
+    {
+      "path": "src/landscape.js",
+      "sha256": "82e418cc44a30f00406df80d2d03cc4281f2e26e8d22d9867425f73882a20888"
+    },
+    {
+      "path": "assets/game/pixel-v5/camp/manifest.json",
+      "sha256": "b434d9d13549659073dcc419e105c83fccfd094819ef3946cb01faff6f92574e"
+    },
+    {
+      "path": "assets/game/pixel-v5/camp/camp.png",
+      "sha256": "786d9f620359216a382a1ff2d06699c404caeb01ea4d9eb4a73c2205e4af47f6"
+    },
+    {
+      "path": "assets/game/pixel-v5/camp/camp-flame.png",
+      "sha256": "cd83e7ab9e899a382a52930d41c9ae8655efd0654a941ca1457250fe52679ecd"
+    },
+    {
+      "path": "assets/game/pixel-v4/landscape/manifest.json",
+      "sha256": "a642c80b43a4bf6f185713e1d1f74114ea9d323f46c06d0e35f6a19fe9a61dc4"
+    },
+    {
+      "path": "assets/game/pixel-v4/landscape/landscape.png",
+      "sha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731"
+    }
+  ],
+  "rootQaStatus": "coordinator inspected clean v2 capture; full stage acceptance is a separate coordinator decision",
+  "revision": "post-R1 natural registration + post-R2 terrain apron",
+  "history": "assets/concepts/camp-plan-01/history/pre-r1/renderer-overview.png"
+}

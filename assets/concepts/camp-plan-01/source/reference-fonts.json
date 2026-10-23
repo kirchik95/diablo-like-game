@@ -1,0 +1,188 @@
+{
+  "fontsPerFamily": {
+    "Oswald": [
+      {
+        "style": "ExtraLight",
+        "weight": 200,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 200,
+            "max": 700
+          }
+        },
+        "coordinates": {
+          "wght": 200
+        }
+      },
+      {
+        "style": "Light",
+        "weight": 300,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 200,
+            "max": 700
+          }
+        },
+        "coordinates": {
+          "wght": 300
+        }
+      },
+      {
+        "style": "Regular",
+        "weight": 400,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 200,
+            "max": 700
+          }
+        },
+        "coordinates": {
+          "wght": 400
+        }
+      },
+      {
+        "style": "Medium",
+        "weight": 500,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 200,
+            "max": 700
+          }
+        },
+        "coordinates": {
+          "wght": 500
+        }
+      },
+      {
+        "style": "SemiBold",
+        "weight": 600,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 200,
+            "max": 700
+          }
+        },
+        "coordinates": {
+          "wght": 600
+        }
+      },
+      {
+        "style": "Bold",
+        "weight": 700,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 200,
+            "max": 700
+          }
+        },
+        "coordinates": {
+          "wght": 700
+        }
+      }
+    ],
+    "Golos Text": [
+      {
+        "style": "Regular",
+        "weight": 400,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 400,
+            "max": 900
+          }
+        },
+        "coordinates": {
+          "wght": 400
+        }
+      },
+      {
+        "style": "Medium",
+        "weight": 500,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 400,
+            "max": 900
+          }
+        },
+        "coordinates": {
+          "wght": 500
+        }
+      },
+      {
+        "style": "SemiBold",
+        "weight": 600,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 400,
+            "max": 900
+          }
+        },
+        "coordinates": {
+          "wght": 600
+        }
+      },
+      {
+        "style": "Bold",
+        "weight": 700,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 400,
+            "max": 900
+          }
+        },
+        "coordinates": {
+          "wght": 700
+        }
+      },
+      {
+        "style": "ExtraBold",
+        "weight": 800,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 400,
+            "max": 900
+          }
+        },
+        "coordinates": {
+          "wght": 800
+        }
+      },
+      {
+        "style": "Black",
+        "weight": 900,
+        "isItalic": false,
+        "axes": {
+          "wght": {
+            "tag": "wght",
+            "min": 400,
+            "max": 900
+          }
+        },
+        "coordinates": {
+          "wght": 900
+        }
+      }
+    ]
+  }
+}

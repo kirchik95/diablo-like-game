@@ -1,0 +1,7 @@
+Use case: style-transfer.
+Asset type: one transparent low ground-decoration sprite for a fixed-isometric pixel-art RPG.
+Input image role: the coordinator-approved low grass source is the family reference to transform; retain its coarse deliberate pixel-art treatment, restrained outdoor shading and ground-facing view.
+Primary request: Replace the tuft with one low spreading woodland fern, 5 softly arched fronds with clearly separated small paired leaflets. Squat irregular shape about 34 by 22 logical pixels. Gray sage green, dark green undersides, restrained olive tips. No bush or tall upright central stalk.
+Preserve: fixed isometric three-quarter view, ground viewed from above about 30 degrees, upper-left diffuse light, crisp square pixels, small clustered color shapes, muted natural medieval countryside palette. This decor is subordinate to the monk and must read at ankle height. Render the tiny logical pixel silhouette enlarged clearly.
+Composition: exactly one isolated decorative group centered with generous transparent margins on all sides. Real fully transparent background. Entire shape visible. No painted floor, no ground island or circular drop shadow.
+Avoid: scene, tall bush/tree, potted plant, giant shapes, saturated bright accents, regular pattern, duplicated groups, text, numbers, labels, watermark, border, glossy gradient, blur, antialiased halo.

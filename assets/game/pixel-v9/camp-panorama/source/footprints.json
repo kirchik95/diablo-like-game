@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "owner": "src/camp-layout.js (geometry contract for the art script)",
+  "coordinateSpace": "cell-local pixels, origin top-left, x right, y down; world units at scale 1",
+  "cell": 256,
+  "anchor": [
+    128,
+    232
+  ],
+  "worldAxes": {
+    "xPixelsPerUnit": [
+      -22.627417,
+      11.313708
+    ],
+    "yPixelsPerUnit": [
+      22.627417,
+      11.313708
+    ],
+    "inverse": "x=(2*dv-du)/(32*sqrt2), y=(2*dv+du)/(32*sqrt2) for a pixel offset (du,dv) from contactCenter"
+  },
+  "rule": "contactCenter y = 231 - front ground extent (box: (halfWidth+halfDepth)*8*sqrt2, circle/rect likewise), rounded down to .25 px; x = 128. Drawn ground contact must match the footprint; height is drawing guidance in world units (vertical px = height*32*sin60).",
+  "frames": {
+    "tripod-kettle": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        223.0
+      ],
+      "height": 1.7,
+      "radius": 0.5
+    },
+    "woven-carpet": {
+      "shape": "rect",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        172.0
+      ],
+      "height": 0,
+      "halfWidth": 2.2,
+      "halfDepth": 3.0,
+      "polygon": [
+        [
+          109.9,
+          113.17
+        ],
+        [
+          10.34,
+          162.95
+        ],
+        [
+          146.1,
+          230.83
+        ],
+        [
+          245.66,
+          181.05
+        ]
+      ]
+    },
+    "outcrop-block": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        218.5
+      ],
+      "height": 0.75,
+      "halfWidth": 0.55,
+      "halfDepth": 0.55,
+      "polygon": [
+        [
+          128.0,
+          206.05
+        ],
+        [
+          103.11,
+          218.5
+        ],
+        [
+          128.0,
+          230.95
+        ],
+        [
+          152.89,
+          218.5
+        ]
+      ]
+    },
+    "outcrop-pair": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        210.5
+      ],
+      "height": 0.9,
+      "halfWidth": 0.7,
+      "halfDepth": 1.1,
+      "polygon": [
+        [
+          118.95,
+          190.14
+        ],
+        [
+          87.27,
+          205.97
+        ],
+        [
+          137.05,
+          230.86
+        ],
+        [
+          168.73,
+          215.03
+        ]
+      ]
+    },
+    "outcrop-cluster": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        201.5
+      ],
+      "height": 1.5,
+      "halfWidth": 1.3,
+      "halfDepth": 1.3,
+      "polygon": [
+        [
+          128.0,
+          172.08
+        ],
+        [
+          69.17,
+          201.5
+        ],
+        [
+          128.0,
+          230.92
+        ],
+        [
+          186.83,
+          201.5
+        ]
+      ]
+    },
+    "outcrop-cliff": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        197.0
+      ],
+      "height": 2.8,
+      "halfWidth": 1.6,
+      "halfDepth": 1.4,
+      "polygon": [
+        [
+          132.53,
+          163.06
+        ],
+        [
+          60.12,
+          199.26
+        ],
+        [
+          123.47,
+          230.94
+        ],
+        [
+          195.88,
+          194.74
+        ]
+      ]
+    },
+    "outcrop-wall-x": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        199.25
+      ],
+      "height": 1.9,
+      "halfWidth": 2.0,
+      "halfDepth": 0.8,
+      "polygon": [
+        [
+          155.15,
+          167.57
+        ],
+        [
+          64.64,
+          212.83
+        ],
+        [
+          100.85,
+          230.93
+        ],
+        [
+          191.36,
+          185.67
+        ]
+      ]
+    },
+    "outcrop-wall-y": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        199.25
+      ],
+      "height": 1.9,
+      "halfWidth": 0.8,
+      "halfDepth": 2.0,
+      "polygon": [
+        [
+          100.85,
+          167.57
+        ],
+        [
+          64.64,
+          185.67
+        ],
+        [
+          155.15,
+          230.93
+        ],
+        [
+          191.36,
+          212.83
+        ]
+      ]
+    },
+    "outcrop-slab": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        203.75
+      ],
+      "height": 0.45,
+      "halfWidth": 1.4,
+      "halfDepth": 1.0,
+      "polygon": [
+        [
+          137.05,
+          176.6
+        ],
+        [
+          73.69,
+          208.28
+        ],
+        [
+          118.95,
+          230.9
+        ],
+        [
+          182.31,
+          199.22
+        ]
+      ]
+    },
+    "ruin-pillar": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        212.75
+      ],
+      "height": 3.2,
+      "halfWidth": 0.8,
+      "halfDepth": 0.8,
+      "polygon": [
+        [
+          128.0,
+          194.65
+        ],
+        [
+          91.8,
+          212.75
+        ],
+        [
+          128.0,
+          230.85
+        ],
+        [
+          164.2,
+          212.75
+        ]
+      ]
+    },
+    "cypress-tall": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        223.0
+      ],
+      "height": 7.6,
+      "radius": 0.5
+    },
+    "cypress-medium": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        224.25
+      ],
+      "height": 5.6,
+      "radius": 0.42
+    },
+    "cypress-pair": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        218.0
+      ],
+      "height": 7.0,
+      "radius": 0.8
+    },
+    "bush-round": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        219.75
+      ],
+      "height": 1.1,
+      "radius": 0.7
+    },
+    "bush-large": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        213.25
+      ],
+      "height": 1.6,
+      "radius": 1.1
+    },
+    "crate": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        220.75
+      ],
+      "height": 0.8,
+      "halfWidth": 0.45,
+      "halfDepth": 0.45,
+      "polygon": [
+        [
+          128.0,
+          210.57
+        ],
+        [
+          107.64,
+          220.75
+        ],
+        [
+          128.0,
+          230.93
+        ],
+        [
+          148.36,
+          220.75
+        ]
+      ]
+    },
+    "sack-pair": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        223.75
+      ],
+      "height": 0.7,
+      "radius": 0.45
+    },
+    "grass-tuft": {
+      "shape": "circle",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        225.25
+      ],
+      "height": 0.45,
+      "radius": 0.35
+    },
+    "fern-tuft": {
+      "shape": "circle",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        224.5
+      ],
+      "height": 0.4,
+      "radius": 0.4
+    },
+    "boulder-round": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        221.25
+      ],
+      "height": 0.75,
+      "radius": 0.6
+    },
+    "outcrop-crag": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        206.0
+      ],
+      "height": 1.8,
+      "halfWidth": 1.2,
+      "halfDepth": 1.0,
+      "polygon": [
+        [
+          132.53,
+          181.11
+        ],
+        [
+          78.22,
+          208.26
+        ],
+        [
+          123.47,
+          230.89
+        ],
+        [
+          177.78,
+          203.74
+        ]
+      ]
+    },
+    "outcrop-ledge-x": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        193.5
+      ],
+      "height": 1.1,
+      "halfWidth": 2.4,
+      "halfDepth": 0.9,
+      "polygon": [
+        [
+          161.94,
+          156.16
+        ],
+        [
+          53.33,
+          210.47
+        ],
+        [
+          94.06,
+          230.84
+        ],
+        [
+          202.67,
+          176.53
+        ]
+      ]
+    }
+  },
+  "backdrop": {
+    "path": "mountains.png",
+    "size": [
+      2048,
+      1280
+    ],
+    "pixelsPerUnit": 32,
+    "screenFrame": {
+      "u0": -20,
+      "v0": -40,
+      "width": 64,
+      "height": 40
+    },
+    "screenCoordinates": "u=(y-x)/sqrt2 (screen right), v=(x+y)/(2*sqrt2) (screen down), world units; image column=(u-u0)*32, row=(v-v0)*32",
+    "wrapU": true,
+    "plannedHorizon": {
+      "note": "Ground ends where v < H(u); piecewise linear, world-fixed. Paint content for these cut heights.",
+      "points": [
+        [
+          -12,
+          -27.7
+        ],
+        [
+          -7.07,
+          -12.73
+        ],
+        [
+          -2.62,
+          -11.0
+        ],
+        [
+          3.18,
+          -10.0
+        ],
+        [
+          11.67,
+          -8.45
+        ],
+        [
+          15.34,
+          -6.19
+        ],
+        [
+          17.68,
+          -5.87
+        ],
+        [
+          26,
+          -4.6
+        ],
+        [
+          33,
+          -4.0
+        ],
+        [
+          37,
+          -16
+        ]
+      ]
+    },
+    "parallax": {
+      "factor": 0.25,
+      "reference": "camera target at spawn (u,v)=(-4.74,-0.95); sample = P - factor*(C - reference)"
+    },
+    "artboardWindow": "artboard image pixel (ix,iy) -> u=(ix-915)/35.2+0.707, v=(iy-400)/35.2-1.768; artboard top edge = v -13.1"
+  }
+}

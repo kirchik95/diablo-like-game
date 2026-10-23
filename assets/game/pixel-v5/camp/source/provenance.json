@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "tent-left",
+      "tool": "image_gen.imagegen",
+      "generationId": "exec-73066864-c4c8-46a0-b8e5-c5dfd1feae19",
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool",
+      "transparentBackground": true,
+      "original": "source/tent-left-original.png",
+      "prompt": "source/prompts/tent-left.txt",
+      "originalSha256": "19b44c0a70a6db45470833ecef63f02154cad0c0c90ff8db7a8cd575d11e2f6d",
+      "promptSha256": "f662d97fc6cfe608fc5dd012c17697a1769359a93fd04d95eebbc32cef662d3a",
+      "references": [
+        {
+          "path": "assets/concepts/camp-location-01/camp-scene.png",
+          "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/landscape.png",
+          "sha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731"
+        }
+      ]
+    },
+    {
+      "id": "tent-right",
+      "tool": "image_gen.imagegen",
+      "generationId": "exec-203dc9d5-f1d4-4b94-baea-eea5df07b026",
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool",
+      "transparentBackground": true,
+      "original": "source/tent-right-original.png",
+      "prompt": "source/prompts/tent-right.txt",
+      "originalSha256": "d159431d5d508e579c0dc6fa75644de032f1e3678cfde056cafae5f881ca038a",
+      "promptSha256": "ae380b082b8c39cc20d20942d41ea6b459ead4df450e1ece3094d6b45c3fd441",
+      "references": [
+        {
+          "path": "assets/game/pixel-v5/camp/source/tent-left-original.png",
+          "sha256": "19b44c0a70a6db45470833ecef63f02154cad0c0c90ff8db7a8cd575d11e2f6d"
+        },
+        {
+          "path": "assets/concepts/camp-location-01/camp-scene.png",
+          "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/landscape.png",
+          "sha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731"
+        }
+      ]
+    },
+    {
+      "id": "road-marker",
+      "tool": "image_gen.imagegen",
+      "generationId": "exec-6584cf00-fb45-4be5-9187-461786194a2d",
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool",
+      "transparentBackground": true,
+      "original": "source/road-marker-original.png",
+      "prompt": "source/prompts/road-marker.txt",
+      "originalSha256": "157ead1a7b3af6e265c6193425314c226c38d66a457c09adf190e00de90048a9",
+      "promptSha256": "e49f0bbcc6ce1c1d6fb93992268ad392052fcc5371e972c884e7a1bac1233970",
+      "references": [
+        {
+          "path": "assets/game/pixel-v5/camp/source/tent-left-original.png",
+          "sha256": "19b44c0a70a6db45470833ecef63f02154cad0c0c90ff8db7a8cd575d11e2f6d"
+        },
+        {
+          "path": "assets/concepts/camp-location-01/camp-scene.png",
+          "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/landscape.png",
+          "sha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731"
+        }
+      ]
+    },
+    {
+      "id": "campfire-base",
+      "tool": "image_gen.imagegen",
+      "generationId": "exec-262afd7f-0d07-4e2d-9bd6-6c75a7a8389e",
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool",
+      "transparentBackground": true,
+      "original": "source/campfire-base-original.png",
+      "prompt": "source/prompts/campfire-base.txt",
+      "originalSha256": "f0d9dce6723a53f613f9d11b3e1885d80671d0f27d96687d8f719355b0b80ab0",
+      "promptSha256": "acf2079cc2a56933743c6568372dde41a2705ff73252ff4285425f214d1e261a",
+      "references": [
+        {
+          "path": "assets/game/pixel-v5/camp/source/tent-left-original.png",
+          "sha256": "19b44c0a70a6db45470833ecef63f02154cad0c0c90ff8db7a8cd575d11e2f6d"
+        },
+        {
+          "path": "assets/concepts/camp-location-01/camp-scene.png",
+          "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/landscape.png",
+          "sha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731"
+        }
+      ]
+    },
+    {
+      "id": "supply-cache",
+      "tool": "image_gen.imagegen",
+      "generationId": "exec-57bc9bd1-ce5b-42f6-a5a6-ade9278b9570",
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool",
+      "transparentBackground": true,
+      "original": "source/supply-cache-original.png",
+      "prompt": "source/prompts/supply-cache.txt",
+      "originalSha256": "36b06db6d35163c2da7726a4bb1447836a7119698407cb54b90b438f6759560b",
+      "promptSha256": "f8acd6430a3b69309188c1860ac02723168bbd1b6e16bdbfebff91e0713987fb",
+      "references": [
+        {
+          "path": "assets/game/pixel-v5/camp/source/tent-left-original.png",
+          "sha256": "19b44c0a70a6db45470833ecef63f02154cad0c0c90ff8db7a8cd575d11e2f6d"
+        },
+        {
+          "path": "assets/concepts/camp-location-01/camp-scene.png",
+          "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/landscape.png",
+          "sha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731"
+        }
+      ]
+    },
+    {
+      "id": "fallen-log",
+      "tool": "image_gen.imagegen",
+      "generationId": "exec-0bde051d-360b-46dd-9be2-aa72932e9e03",
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool",
+      "transparentBackground": true,
+      "original": "source/fallen-log-original.png",
+      "prompt": "source/prompts/fallen-log.txt",
+      "originalSha256": "2c5465ef4354ba0451740e1d141d237022dcbbd4377ceac70818b6031013609a",
+      "promptSha256": "986d2e46dc23cac4d0f8101af6c61254e20cccb1841fbb308e3c08597abced50",
+      "references": [
+        {
+          "path": "assets/game/pixel-v5/camp/source/tent-left-original.png",
+          "sha256": "19b44c0a70a6db45470833ecef63f02154cad0c0c90ff8db7a8cd575d11e2f6d"
+        },
+        {
+          "path": "assets/concepts/camp-location-01/camp-scene.png",
+          "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/landscape.png",
+          "sha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731"
+        }
+      ]
+    },
+    {
+      "id": "camp-flame",
+      "tool": "image_gen.imagegen",
+      "generationId": "exec-3c209da9-ffe5-4d83-b3a0-038b0d13b330",
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool",
+      "transparentBackground": true,
+      "original": "source/camp-flame-original.png",
+      "prompt": "source/prompts/camp-flame.txt",
+      "originalSha256": "f173538d79be42e71db817bfe35ac4c406aef54c849cce0d2f41b26da92d6129",
+      "promptSha256": "adf73110e81e02904a98b1ec8d1062920f78b4c854db942ecd58d14f694c5370",
+      "references": [
+        {
+          "path": "assets/game/pixel-v5/camp/source/campfire-base-original.png",
+          "sha256": "f0d9dce6723a53f613f9d11b3e1885d80671d0f27d96687d8f719355b0b80ab0"
+        },
+        {
+          "path": "assets/game/pixel-v5/camp/source/tent-left-original.png",
+          "sha256": "19b44c0a70a6db45470833ecef63f02154cad0c0c90ff8db7a8cd575d11e2f6d"
+        },
+        {
+          "path": "assets/concepts/camp-location-01/camp-scene.png",
+          "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+        }
+      ]
+    }
+  ],
+  "rightsNote": "Generated with built-in ImageGen for this user-directed project using existing workspace art as reference. No external stock downloads. No separate third-party asset license asserted; review service terms for distribution.",
+  "approval": {
+    "authority": "coordinator under user delegation",
+    "date": "2026-10-23",
+    "scope": "tent-left source direction and normalized seed",
+    "family": "awaiting final coordinator review"
+  },
+  "edits": "See source/normalization.json and source/registration.json. Originals are preserved byte-for-byte, including any embedded provenance."
+}

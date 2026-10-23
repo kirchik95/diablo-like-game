@@ -1,0 +1,14 @@
+[
+  {
+    "tool": "built-in image_gen",
+    "model": "not exposed by built-in tool",
+    "date": "2026-10-22",
+    "prompt": "source/prompts/short-hair.txt",
+    "reference": "source/monk-hair-reference.png",
+    "original": "source/originals/short-hair.png",
+    "originalToolPath": "/Users/kirchik/.codex/generated_images/01a1653a-de34-7763-8a7a-8937092ba80b/exec-534448cc-06d6-4fcb-9615-27fe538a81f2.png",
+    "transparentBackgroundRequested": true,
+    "use": "Scalp coverage and three-tone hair reference only. Original v2 body pixels retained; no generated body/face changes are imported.",
+    "selection": "Worker selected; coordinator acceptance pending."
+  }
+]

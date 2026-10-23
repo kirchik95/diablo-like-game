@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 2,
+  "status": "ready",
+  "nativePixelsPerUnit": 32,
+  "monk": {
+    "path": "monk-v2.png",
+    "cell": 96,
+    "columns": 10,
+    "rows": 10,
+    "anchor": [
+      48,
+      84
+    ],
+    "frames": [
+      "idle-front-01",
+      "idle-front-02",
+      "idle-front-03",
+      "idle-front-04",
+      "run-front-01",
+      "run-front-02",
+      "run-front-03",
+      "run-front-04",
+      "run-front-05",
+      "run-front-06",
+      "attack1-front-01",
+      "attack1-front-02",
+      "attack1-front-03",
+      "attack1-front-04",
+      "attack1-front-05",
+      "attack1-front-06",
+      "attack2-front-01",
+      "attack2-front-02",
+      "attack2-front-03",
+      "attack2-front-04",
+      "attack2-front-05",
+      "attack2-front-06",
+      "attack3-front-01",
+      "attack3-front-02",
+      "attack3-front-03",
+      "attack3-front-04",
+      "attack3-front-05",
+      "attack3-front-06",
+      "dash-front-01",
+      "dash-front-02",
+      "dash-front-03",
+      "dash-front-04",
+      "dash-front-05",
+      "dash-front-06",
+      "wave-front-01",
+      "wave-front-02",
+      "wave-front-03",
+      "wave-front-04",
+      "wave-front-05",
+      "wave-front-06",
+      "hurt-front-01",
+      "hurt-front-02",
+      "hurt-front-03",
+      "hurt-front-04",
+      "death-front-01",
+      "death-front-02",
+      "death-front-03",
+      "death-front-04",
+      "death-front-05",
+      "death-front-06",
+      "idle-back-01",
+      "idle-back-02",
+      "idle-back-03",
+      "idle-back-04",
+      "run-back-01",
+      "run-back-02",
+      "run-back-03",
+      "run-back-04",
+      "run-back-05",
+      "run-back-06",
+      "attack1-back-01",
+      "attack1-back-02",
+      "attack1-back-03",
+      "attack1-back-04",
+      "attack1-back-05",
+      "attack1-back-06",
+      "attack2-back-01",
+      "attack2-back-02",
+      "attack2-back-03",
+      "attack2-back-04",
+      "attack2-back-05",
+      "attack2-back-06",
+      "attack3-back-01",
+      "attack3-back-02",
+      "attack3-back-03",
+      "attack3-back-04",
+      "attack3-back-05",
+      "attack3-back-06",
+      "dash-back-01",
+      "dash-back-02",
+      "dash-back-03",
+      "dash-back-04",
+      "dash-back-05",
+      "dash-back-06",
+      "wave-back-01",
+      "wave-back-02",
+      "wave-back-03",
+      "wave-back-04",
+      "wave-back-05",
+      "wave-back-06",
+      "hurt-back-01",
+      "hurt-back-02",
+      "hurt-back-03",
+      "hurt-back-04",
+      "death-back-01",
+      "death-back-02",
+      "death-back-03",
+      "death-back-04",
+      "death-back-05",
+      "death-back-06"
+    ],
+    "clips": {
+      "idle": {
+        "front": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "back": [
+          50,
+          51,
+          52,
+          53
+        ]
+      },
+      "run": {
+        "front": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "back": [
+          54,
+          55,
+          56,
+          57,
+          58,
+          59
+        ]
+      },
+      "attack1": {
+        "front": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "back": [
+          60,
+          61,
+          62,
+          63,
+          64,
+          65
+        ]
+      },
+      "attack2": {
+        "front": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "back": [
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ]
+      },
+      "attack3": {
+        "front": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        "back": [
+          72,
+          73,
+          74,
+          75,
+          76,
+          77
+        ]
+      },
+      "dash": {
+        "front": [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "back": [
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ]
+      },
+      "wave": {
+        "front": [
+          34,
+          35,
+          36,
+          37,
+          38,
+          39
+        ],
+        "back": [
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ]
+      },
+      "hurt": {
+        "front": [
+          40,
+          41,
+          42,
+          43
+        ],
+        "back": [
+          90,
+          91,
+          92,
+          93
+        ]
+      },
+      "death": {
+        "front": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "back": [
+          94,
+          95,
+          96,
+          97,
+          98,
+          99
+        ]
+      }
+    },
+    "filter": "nearest",
+    "mipmaps": false,
+    "timing": {
+      "idle": {
+        "keyTimesMs": [
+          0,
+          200,
+          400,
+          600
+        ],
+        "playback": "loop"
+      },
+      "run": {
+        "keyTimesMs": [
+          0,
+          80,
+          160,
+          240,
+          320,
+          400
+        ],
+        "playback": "loop"
+      },
+      "attack1": {
+        "keyTimesMs": [
+          0,
+          45,
+          90,
+          140,
+          210,
+          290
+        ],
+        "playback": "one-shot-hold"
+      },
+      "attack2": {
+        "keyTimesMs": [
+          0,
+          55,
+          110,
+          170,
+          250,
+          320
+        ],
+        "playback": "one-shot-hold"
+      },
+      "attack3": {
+        "keyTimesMs": [
+          0,
+          80,
+          160,
+          240,
+          330,
+          420
+        ],
+        "playback": "one-shot-hold"
+      },
+      "dash": {
+        "keyTimesMs": [
+          0,
+          25,
+          65,
+          110,
+          155,
+          200
+        ],
+        "playback": "one-shot-hold"
+      },
+      "wave": {
+        "keyTimesMs": [
+          0,
+          40,
+          90,
+          160,
+          280,
+          500
+        ],
+        "playback": "one-shot-hold"
+      },
+      "hurt": {
+        "keyTimesMs": [
+          0,
+          65,
+          140,
+          220
+        ],
+        "playback": "one-shot-hold"
+      },
+      "death": {
+        "keyTimesMs": [
+          0,
+          100,
+          240,
+          420,
+          650,
+          900
+        ],
+        "playback": "one-shot-hold"
+      }
+    }
+  },
+  "hitMasks": "hit-masks.json",
+  "authoredFacings": {
+    "front": "SE",
+    "back": "NE"
+  },
+  "logicalFacings": {
+    "SE": {
+      "authored": "front",
+      "flipX": false
+    },
+    "SW": {
+      "authored": "front",
+      "flipX": true
+    },
+    "NE": {
+      "authored": "back",
+      "flipX": false
+    },
+    "NW": {
+      "authored": "back",
+      "flipX": true
+    }
+  },
+  "provenance": "provenance.json",
+  "normalization": "source/normalization.json",
+  "previews": "previews/index.html"
+}

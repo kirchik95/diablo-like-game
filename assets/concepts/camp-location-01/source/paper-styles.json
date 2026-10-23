@@ -1,0 +1,13 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"file\": {\n    \"id\": \"01M5JE4QF1S7K7921DAQTPSHYY\",\n    \"name\": \"Monk RPG — визуальный поиск\"\n  },\n  \"contentHash\": {\n    \"tokens\": \"811c9dc5\"\n  }\n}"
+    },
+    {
+      "type": "text",
+      "text": "{\n  \"styles\": {\n    \"17A-0\": {\n      \"display\": \"flex\",\n      \"overflow\": \"clip\",\n      \"width\": \"1600px\",\n      \"height\": \"fit-content\",\n      \"flexDirection\": \"column\",\n      \"left\": \"0px\",\n      \"top\": \"0px\",\n      \"padding\": \"44px\",\n      \"gap\": \"24px\",\n      \"position\": \"absolute\",\n      \"backgroundColor\": \"#E3E4D8\"\n    },\n    \"17B-0\": {\n      \"display\": \"flex\",\n      \"flexDirection\": \"column\",\n      \"width\": \"1512px\",\n      \"flexShrink\": \"0\",\n      \"gap\": \"10px\"\n    },\n    \"17F-0\": {\n      \"fontSize\": \"64px\",\n      \"lineHeight\": \"76px\",\n      \"letterSpacing\": \"-0.02em\",\n      \"whiteSpace\": \"pre-wrap\",\n      \"fontFamily\": \"\\\"Oswald\\\", system-ui, sans-serif\",\n      \"fontWeight\": 600,\n      \"color\": \"#242F2B\"\n    },\n    \"17I-0\": {\n      \"display\": \"flex\",\n      \"width\": \"1512px\",\n      \"height\": \"852px\",\n      \"flexShrink\": \"0\",\n      \"overflow\": \"clip\"\n    },\n    \"17J-0\": {\n      \"width\": \"1512px\",\n      \"height\": \"852px\",\n      \"imageRendering\": \"pixelated\",\n      \"flexShrink\": \"0\",\n      \"backgroundImage\": \"url(https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/3MNWD4V253VV8MS1SJRP0DPDQ9.png)\",\n      \"backgroundSize\": \"contain\",\n      \"backgroundPosition\": \"50%\",\n      \"backgroundRepeat\": \"no-repeat\"\n    },\n    \"17L-0\": {\n      \"display\": \"flex\",\n      \"width\": \"1512px\",\n      \"alignItems\": \"start\",\n      \"flexShrink\": \"0\",\n      \"gap\": \"36px\"\n    },\n    \"17N-0\": {\n      \"display\": \"flex\",\n      \"flexDirection\": \"column\",\n      \"width\": \"480px\",\n      \"flexShrink\": \"0\",\n      \"gap\": \"8px\"\n    },\n    \"17P-0\": {\n      \"fontSize\": \"18px\",\n      \"lineHeight\": \"27px\",\n      \"whiteSpace\": \"pre-wrap\",\n      \"fontFamily\": \"\\\"Golos Text\\\", system-ui, sans-serif\",\n      \"fontWeight\": 400,\n      \"color\": \"#4B584E\"\n    },\n    \"17R-0\": {\n      \"display\": \"flex\",\n      \"flexDirection\": \"column\",\n      \"width\": \"480px\",\n      \"flexShrink\": \"0\",\n      \"gap\": \"8px\"\n    },\n    \"17V-0\": {\n      \"display\": \"flex\",\n      \"flexDirection\": \"column\",\n      \"width\": \"480px\",\n      \"flexShrink\": \"0\",\n      \"gap\": \"8px\"\n    }\n  }\n}"
+    }
+  ]
+}
+

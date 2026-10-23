@@ -1,0 +1,10 @@
+Use case: stylized-concept.
+ROLE / ASSET: one production raster sprite draft for the Night Ritual pixel-art game, asset "dead-tree".
+INPUT IMAGES: first image is STYLE REFERENCE ONLY, the accepted environment kit; second image is STYLE REFERENCE ONLY, the approved cypress family seed. Match their quiet palette, directional light and simplified pixel material handling, not their subject.
+SUBJECT: One leafless ancient tree with a crooked tapering trunk, five thick angular branches and a few forked tips, broad roots attached to trunk. The branches must be substantial and visibly joined, no thin twig noise, no separate debris. Bark is muted desaturated brown-violet with grey warm highlights. Asymmetric silhouette, not a horror face.
+VIEW: strict orthographic 2:1 isometric game view, looking down about 30 degrees. Upright objects stay vertical; ground-parallel diagonals follow two across / one down.
+ART DIRECTION: clean restrained hand-clustered pixel art, dark blue-violet one-logical-pixel outline, readable flat planes with 4-5 tones per material. Cool diffuse light from upper left. Muted landscape colors, lower contrast than a bright hero. No glow.
+NATIVE READ: this prop will be about 90 pixels wide and 112 pixels tall, beside a 60-pixel-tall monk. Design strong shapes that survive this size. Render a logical pixel sprite enlarged with nearest neighbor on a 1024x1024 canvas. Hard square pixels, no antialiasing, no dithering or fine noise.
+COMPOSITION: exactly one complete centered prop, ample transparent margin, fully visible connected base at bottom center; no cropped edges.
+TECHNICAL OUTPUT: genuine transparent RGBA background.
+EXCLUDE: extra objects beyond the stated subject, ground tile, soil oval, cast shadow, scenic background, detached flecks, text, caption, frame, collage, watermark.

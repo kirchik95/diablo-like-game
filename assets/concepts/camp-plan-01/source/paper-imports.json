@@ -1,0 +1,23 @@
+{
+  "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+  "pageId": "p-B-0",
+  "imports": [
+    {
+      "nodeId": "1DZ-0",
+      "canonicalFile": "source/plan-map.svg",
+      "importFile": "source/paper-input/plan-map-be031c282ba8.svg",
+      "sha256": "be031c282ba84e40810b5a7c592f7a263a4b11655b1cc0444ed5c42c5b500d24",
+      "jsx": "source/plan-paper.jsx",
+      "paperAssetUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/434H2HW5YRD4S5PZ1XYR7Q1GFA.svg"
+    },
+    {
+      "nodeId": "1E1-0",
+      "canonicalFile": "source/renderer-overview.png",
+      "importFile": "source/paper-input/renderer-overview-79aac6c4a7bd.png",
+      "sha256": "79aac6c4a7bd40ee2cffd1478936746d0bf95de13aa87c49a272c61a67c7c72f",
+      "jsx": "source/isometric-paper.jsx",
+      "paperAssetUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/0W07Z67A2XN9QM8AD6XCREAMMQ.png"
+    }
+  ],
+  "note": "Paper reused old file assets when the same local filename was overwritten. Final imports use content hashes in filenames; screenshots and real exports confirmed the new diagram and clean v2 terrain."
+}

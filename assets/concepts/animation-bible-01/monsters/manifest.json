@@ -1,0 +1,738 @@
+{
+  "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+  "pageId": "p-9-0",
+  "pageUrl": "https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-9-0",
+  "status": "complete",
+  "model": "openai-gpt-image-edit-2-5",
+  "referenceNodes": [
+    "DI-0",
+    "GW-0"
+  ],
+  "notes": "Paper-native generated storyboard keys; not engine-ready atlases. Each facing sheet contains two authored views, remaining two by mirroring.",
+  "boards": [
+    {
+      "number": 5,
+      "nodeId": "IS-0",
+      "title": "Гончая — движение и направления",
+      "width": 1599.984375,
+      "height": 3483.921875,
+      "x": 0,
+      "y": 0,
+      "review": "passed",
+      "reviewNotes": "Spacing: generous image fields, consistent 24 px section gaps. Typography: Oswald/Golos hierarchy readable. Contrast: charcoal outline visible on blue-gray field. Alignment: shared left lane and paired facing poses. Fit: no clipped body/text. Repetition: 4 alert-idle, 6 gallop, 2 separately authored facings; high/low idle relabeled alert waiting after review.",
+      "export": {
+        "path": "exports/05-hound-movement.png",
+        "format": "png",
+        "scale": "1x",
+        "dimensions": {
+          "width": 1600,
+          "height": 3484
+        },
+        "bytes": 2358628,
+        "sha256": "36fa60037ce37131ded2f85023960dedba8c1dcaea56bc2e2d67ad30dabbd863"
+      },
+      "keyStates": 12
+    },
+    {
+      "number": 6,
+      "nodeId": "NU-0",
+      "title": "Гончая — атака, реакция и гибель",
+      "width": 1599.984375,
+      "height": 3483.921875,
+      "x": 1679.996,
+      "y": 0,
+      "review": "passed",
+      "reviewNotes": "Spacing and typography readable; shared 1504 px image lane. High-contrast telegraph, airborne bite and landing differ. Six attack, four hurt and six death keys verified. Bodies/effects not clipped. Game timing checked in src/game.js; proposed death timing explicitly marked.",
+      "export": {
+        "path": "exports/06-hound-combat.png",
+        "format": "png",
+        "scale": "1x",
+        "dimensions": {
+          "width": 1600,
+          "height": 3484
+        },
+        "bytes": 2556829,
+        "sha256": "25c6aef67731be6491adb41a2847566900a8e2617c5503028427f399fee5de0c"
+      },
+      "keyStates": 16
+    },
+    {
+      "number": 7,
+      "nodeId": "O0-0",
+      "title": "Панцирник — движение и направления",
+      "width": 1599.984375,
+      "height": 3483.921875,
+      "x": 0,
+      "y": 3999.993,
+      "review": "passed",
+      "reviewNotes": "Spacing, typography, contrast and alignment match the set. Six-leg gait changes support; intact shell stays recognizable. Eight-pose facing mistake replaced by two authored front/back views. Original hidden in Paper and preserved locally. No clipping.",
+      "export": {
+        "path": "exports/07-beetle-movement.png",
+        "format": "png",
+        "scale": "1x",
+        "dimensions": {
+          "width": 1600,
+          "height": 3484
+        },
+        "bytes": 2599159,
+        "sha256": "bfde9373a9d3b63115f6b7e2a3c1dbfa7396a673360f9e1f9f102301b6cbce01"
+      },
+      "keyStates": 12
+    },
+    {
+      "number": 8,
+      "nodeId": "OB-0",
+      "title": "Панцирник — атака, реакция и гибель",
+      "width": 1599.984375,
+      "height": 3579.890625,
+      "x": 1679.996,
+      "y": 3999.994,
+      "review": "corrected_self_checked",
+      "reviewNotes": "P2-01 corrected only in WO-0 using an isolated beetle reference. All six phases checked for a tail-free rear contour and segmented tapered insect supports. Windup and key-4 contact retained. Screenshot confirms existing layout, labels, reaction and death are intact with no clipping. Independent recheck pending.",
+      "export": {
+        "path": "exports/08-beetle-combat.png",
+        "format": "png",
+        "scale": "1x",
+        "dimensions": {
+          "width": 1600,
+          "height": 3580
+        },
+        "bytes": 2876969,
+        "sha256": "6fc5e72c2ed6a26421953fa2379692c6caeaa8da2fbb3264e18cfdf50988864d"
+      },
+      "keyStates": 16
+    },
+    {
+      "number": 9,
+      "nodeId": "OH-0",
+      "title": "Дух — движение и направления",
+      "width": 1599.984375,
+      "height": 3579.890625,
+      "x": 0,
+      "y": 7999.994,
+      "review": "peer_accepted_storyboard_caption_corrected",
+      "reviewNotes": "Consistent spacing/typography, luminous core contrasts against blue-gray field. Four hover heights, six trailing-tendril drift shapes, two authored open-core/back-membrane facings verified. No clipped tendrils. Mirroring rule explicit; timings proposed. P3-02 corrected in Z2-0: readable trail with possible tendril overlaps; no raster regeneration.",
+      "export": {
+        "path": "exports/09-wraith-movement.png",
+        "format": "png",
+        "scale": "1x",
+        "dimensions": {
+          "width": 1600,
+          "height": 3580
+        },
+        "bytes": 1804922,
+        "sha256": "b50b05f3005f0494f49d946c8797d481f831aa1832f595bcf2ee61526bd4b0cd"
+      },
+      "keyStates": 12
+    },
+    {
+      "number": 10,
+      "nodeId": "OP-0",
+      "title": "Дух — атака, реакция и растворение",
+      "width": 1599.984375,
+      "height": 3579.890625,
+      "x": 1679.996,
+      "y": 7999.994,
+      "review": "peer_accepted_storyboard_caption_corrected",
+      "reviewNotes": "Six cast keys include magenta charge, one projectile release and recoil; four disrupted shapes recover; six dissolve states decrease to one final mote. Captions, spacing, contrast, shared lanes and fit checked; no clipping. Timings/events explicitly proposed. P3-03 corrected in 129-0: key 6 is last spark; deletion after key 6 unchanged; no raster regeneration.",
+      "export": {
+        "path": "exports/10-wraith-combat.png",
+        "format": "png",
+        "scale": "1x",
+        "dimensions": {
+          "width": 1600,
+          "height": 3580
+        },
+        "bytes": 1784417,
+        "sha256": "afe82c0fc77cbcbaf627c4971c7ac9529be30205f1d449f34818ce998dcc725f"
+      },
+      "keyStates": 16
+    }
+  ],
+  "images": [
+    {
+      "board": 5,
+      "species": "hound",
+      "sequence": "idle",
+      "keys": 4,
+      "nodeId": "MP-0",
+      "status": "ready",
+      "prompt": "prompts/hound-idle.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JGZB6GVRBA7AZAHFZ9FGYA.png",
+      "originalPath": "originals/hound-idle.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1039247,
+      "sha256": "4148f8666b01c0534eb3ed141effefe326e4596b7439ed7220d79a91e813c20d",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 5,
+      "species": "hound",
+      "sequence": "run",
+      "keys": 6,
+      "nodeId": "MZ-0",
+      "status": "ready",
+      "prompt": "prompts/hound-run.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JGZPNRAAMGG3KMSFDSENFD.png",
+      "originalPath": "originals/hound-run.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1177446,
+      "sha256": "3ec3a4b53e37960716f19164b39fbf81deb589db9fe3eaab32df78c3949afbcb",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 5,
+      "species": "hound",
+      "sequence": "facing",
+      "keys": 2,
+      "nodeId": "NM-0",
+      "status": "ready",
+      "prompt": "prompts/hound-facing.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JGZWAX9XS0YSK02G1ZDVE8.png",
+      "originalPath": "originals/hound-facing.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 916528,
+      "sha256": "6a2bafd155b5ae19744ebbcf5711df001fe9d9b1680f423b2029a3031341048f",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 6,
+      "species": "hound",
+      "sequence": "attack",
+      "keys": 6,
+      "nodeId": "PO-0",
+      "status": "ready",
+      "prompt": "prompts/hound-attack.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH0QEJP39W22XBT3ZJMFW3.png",
+      "originalPath": "originals/hound-attack.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1173587,
+      "sha256": "0a662855d7e14da50d0ae57492bf52aaf67bdfe4278b15c74aa5c86ac7c4722e",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 6,
+      "species": "hound",
+      "sequence": "hurt",
+      "keys": 4,
+      "nodeId": "Q7-0",
+      "status": "ready",
+      "prompt": "prompts/hound-hurt.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH0WZ74BEHCT7J09T34RA4.png",
+      "originalPath": "originals/hound-hurt.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1052524,
+      "sha256": "8048530e179c8e901c938bb51913fff6b45db5f3fe1efc33a34ef4a8866f8cba",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 6,
+      "species": "hound",
+      "sequence": "death",
+      "keys": 6,
+      "nodeId": "RM-0",
+      "status": "ready",
+      "prompt": "prompts/hound-death.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH13TM6SRHHTG3SCBGBN0P.png",
+      "originalPath": "originals/hound-death.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1111411,
+      "sha256": "8e29f7f248ed16a0f2bc03801f85bd4498b981152ffe231c39c425e0de8d7d10",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 7,
+      "species": "beetle",
+      "sequence": "idle",
+      "keys": 4,
+      "nodeId": "S3-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-idle.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH19G23EYF76F9H0R2F9Q3.png",
+      "originalPath": "originals/beetle-idle.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1114606,
+      "sha256": "271ac2572d28b314fbb6e40f356dc60474ef7499ac882c5a17c88c5494adc5f4",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 7,
+      "species": "beetle",
+      "sequence": "walk",
+      "keys": 6,
+      "nodeId": "T6-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-walk.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH1GCT8R35P4VBQPFMH3EN.png",
+      "originalPath": "originals/beetle-walk.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1173812,
+      "sha256": "63cb11908517be7320303e0595b2ac78625bb8bebf6cc83355b84a17d20d4cc4",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 7,
+      "species": "beetle",
+      "sequence": "facing",
+      "keys": 2,
+      "nodeId": "12C-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-facing-v2.txt",
+      "referenceNodes": [
+        "DI-0",
+        "UJ-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH4W7F9Y68ZK1SSJKYSD9N.png",
+      "originalPath": "originals/beetle-facing-v2.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 859944,
+      "sha256": "bd374d70c66fad24ca1667dc95e28b6cf8d39c71b54eec68efe97a63b28eee83",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 8,
+      "species": "beetle",
+      "sequence": "attack",
+      "keys": 6,
+      "nodeId": "WO-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-attack-v2.txt",
+      "referenceNodes": [
+        "12C-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH8DB6NVDYWGFVN50HW4WD.png",
+      "originalPath": "originals/beetle-attack.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1258339,
+      "sha256": "52b60149e16282fac055a4a77c9a061fd2fd9f02184619345a685cb660982a48",
+      "review": "corrected_self_checked",
+      "generationModel": "openai-gpt-image-edit-2-5",
+      "version": 2,
+      "referenceLocalPath": "references/beetle-only-facing.png",
+      "generationNodeId": "15P-0",
+      "generationNodeVisibility": "hidden after copying image URL to original WO-0",
+      "anatomyReview": [
+        "1: low brace, closed tail-free rear contour, tapered insect support tips.",
+        "2: raised windup, angular segmented weight-bearing limbs with no toe-bearing feet.",
+        "3: downward phase, continuous rear shell contour, pointed support limbs.",
+        "4: contact ring retained, no tail emerging from rear shell, insect support tips.",
+        "5: low absorption with residual particles, no tail or mammalian foot shapes.",
+        "6: returns to the same species and six-limbed body plan, no added rear appendage."
+      ]
+    },
+    {
+      "board": 8,
+      "species": "beetle",
+      "sequence": "hurt",
+      "keys": 4,
+      "nodeId": "XM-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-hurt.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH2HPK251A7M0TZV83767V.png",
+      "originalPath": "originals/beetle-hurt.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1009537,
+      "sha256": "7de21d499c01342622e1d6425dfec151d6c36892442fbf7c82545e39b1bba44c",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 8,
+      "species": "beetle",
+      "sequence": "death",
+      "keys": 6,
+      "nodeId": "XW-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-death.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH2SWZPQMEGYK8QATNH0MA.png",
+      "originalPath": "originals/beetle-death.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1187472,
+      "sha256": "906711dddeccc9d2f1c15c86b190c1c88a639b2fe2642686de4a2e331a8ef2ee",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 9,
+      "species": "wraith",
+      "sequence": "idle",
+      "keys": 4,
+      "nodeId": "YJ-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-idle.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH3SR3JHX0GK4JA834KSRM.png",
+      "originalPath": "originals/wraith-idle.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 945794,
+      "sha256": "5c1c284acd1c7574bc67eec2d2e8cad8e70edb5c747afeaa2a1d8afd70c9f4e2",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 9,
+      "species": "wraith",
+      "sequence": "drift",
+      "keys": 6,
+      "nodeId": "YT-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-drift.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH3Z6S1WDSTEZCJWC2MBCA.png",
+      "originalPath": "originals/wraith-drift.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1139662,
+      "sha256": "d52d32dbbb5d6f55bee5b71a1154809c3631330ac3e7a9511c7c2e5d6dd59565",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 9,
+      "species": "wraith",
+      "sequence": "facing",
+      "keys": 2,
+      "nodeId": "ZU-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-facing.txt",
+      "referenceNodes": [
+        "DI-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH45TZ85WK15ZW9EM8FK72.png",
+      "originalPath": "originals/wraith-facing.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 899074,
+      "sha256": "eb3050dbe8af9416f4930138cbc6b3808348c6a471f2492c5e4e6b31f96415e4",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 10,
+      "species": "wraith",
+      "sequence": "attack",
+      "keys": 6,
+      "nodeId": "10B-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-attack.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH4BBQ5M6K8XAE844SEAW9.png",
+      "originalPath": "originals/wraith-attack.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1120702,
+      "sha256": "e92624cf0b685e1c41e3ae2571e7390bd61fc9c0059ea1632fe338d4cbcdac62",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 10,
+      "species": "wraith",
+      "sequence": "hurt",
+      "keys": 4,
+      "nodeId": "11E-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-hurt.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH4HT1SXNSVT7VSTN56G49.png",
+      "originalPath": "originals/wraith-hurt.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 980953,
+      "sha256": "8dfd52bd34e025c98f48ebb673b997310288ef21daa3919437d32f6f488e0062",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    },
+    {
+      "board": 10,
+      "species": "wraith",
+      "sequence": "death",
+      "keys": 6,
+      "nodeId": "124-0",
+      "status": "ready",
+      "prompt": "prompts/wraith-death.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH4RARR6H58NM06RJ39GV6.png",
+      "originalPath": "originals/wraith-death.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 988698,
+      "sha256": "12d6d3fec30ccbe767c97f34fa6119d413febee4c5d925f58b2e87136d718c14",
+      "review": "passed",
+      "generationModel": "openai-gpt-image-edit-2-5"
+    }
+  ],
+  "rejected": [
+    {
+      "n": 7,
+      "c": "beetle",
+      "s": "facing",
+      "count": 2,
+      "title": "03 / НАПРАВЛЕНИЯ",
+      "timing": "2 авторских ракурса → 4 направления через зеркало",
+      "keys": "Слева: SE, голова и клешни. Справа: NE, задняя арка панциря.",
+      "notes": "SE → SW и NE → NW: горизонтальное зеркало. Это два нарисованных ракурса, а не четыре полных набора.",
+      "spec": "Exactly TWO large separately authored facing references side by side. Left front-right SE shows horn, magenta eyes, mandibles and front claws. Right rear-right NE clearly shows the back segmented shell, rear legs and tail-end plate looking away to upper right; head is occluded behind the shell except distant horn tip. Not a flipped front view. Six legs, same scale and plate design.",
+      "prompt": "prompts/beetle-facing.txt",
+      "nodeId": "UJ-0",
+      "status": "ready",
+      "captionId": "UP-0",
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH1NCCB5GKN0Y5HE3BCASZ.png",
+      "originalPath": "originals/beetle-facing.png",
+      "imageSize": {
+        "width": 1376,
+        "height": 768
+      },
+      "reason": "Generated eight poses instead of two facing references. Replaced only this sequence.",
+      "sha256": "ab57abfe072ef6c0022a25bd99408b5e69d0bf769e8381aa5a31ede132961954",
+      "bytes": 1194312,
+      "paperVisibility": "hidden"
+    },
+    {
+      "board": 8,
+      "species": "beetle",
+      "sequence": "attack",
+      "keys": 6,
+      "nodeId": "WO-0",
+      "status": "ready",
+      "prompt": "prompts/beetle-attack.txt",
+      "referenceNodes": [
+        "DI-0",
+        "GW-0"
+      ],
+      "originalUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JH290B8FX2SBQ0H8PG5KS9.png",
+      "originalPath": "originals/rejected/beetle-attack-v1.png",
+      "dimensions": {
+        "width": 1376,
+        "height": 768,
+        "mode": "RGBA"
+      },
+      "bytes": 1224319,
+      "sha256": "097c5759eb22725cff401b58fbeeacd665ae501761a83bab1a61072140dde8b7",
+      "review": "rejected",
+      "generationModel": "openai-gpt-image-edit-2-5",
+      "reason": "P2-01: curled canine tail in key 4 and mammalian toes on hind supports in keys 1/2/4/5/6.",
+      "paperVisibility": "replaced in WO-0",
+      "historicalNodeId": "WO-0"
+    }
+  ],
+  "completedAt": "2026-10-22T19:25:51.050076+00:00",
+  "generationWorkflow": "Paper-native paper-gen image-to-image; no CLI/API generation fallback",
+  "sourceReferences": [
+    {
+      "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+      "pageId": "p-4-0",
+      "nodeId": "DI-0",
+      "local": "assets/concepts/pixel-art-01/raw/p2-pixel-characters.png"
+    },
+    {
+      "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+      "pageId": "p-5-0",
+      "nodeId": "GW-0",
+      "local": "assets/concepts/pixel-art-01/raw/p9-pixel-monster-attacks.png"
+    }
+  ],
+  "coverage": {
+    "boards": 6,
+    "finalSequences": 18,
+    "keyStates": 84,
+    "animatedKeyStates": 78,
+    "authoredFacingPoses": 6,
+    "logicalFacingsWithMirroring": 12,
+    "rejectedGenerations": 2
+  },
+  "limitations": [
+    "Storyboard key poses, not engine-ready sprite atlases; no frame slicing or runtime integration performed.",
+    "Two authored facings per monster; SW and NW require horizontal mirroring. Animation sequences are illustrated in the front-facing direction only.",
+    "Hound idle is an alert-waiting cycle with visible height changes, not quiet low-amplitude breathing.",
+    "Beetle and wraith timing and event proposals are not implemented gameplay behavior."
+  ],
+  "houndTimingSource": {
+    "file": "src/game.js",
+    "windupSeconds": 0.55,
+    "leapSeconds": 0.27,
+    "recoverySeconds": 0.7,
+    "hurtStunSeconds": 0.38,
+    "hitFlashSeconds": 0.16,
+    "chaseUnitsPerSecond": 1.75,
+    "leapHitDistance": 0.68,
+    "damageEvent": "Once during leap when distance threshold is reached; animation key 4 is an illustrative bite, not a fixed damage timestamp."
+  },
+  "palette": {
+    "coal": "#171321",
+    "stone": "#6C6179",
+    "cloth": "#EEE0CE",
+    "impact": "#FF876F",
+    "spirit": "#7EF3EC",
+    "danger": "#EF329E",
+    "amber": "#EDBE75",
+    "poseField": "#98ACB8"
+  },
+  "typography": {
+    "display": "Oswald 600 / 68 px",
+    "section": "Oswald / 32 px",
+    "body": "Golos Text / 19–22 px",
+    "timing": "Golos Text / 18 px"
+  },
+  "revision": {
+    "issue": "P2-01",
+    "scope": "beetle attack only; visible node WO-0 preserved",
+    "timestamp": "2026-10-22T19:27:26.416369+00:00",
+    "status": "fixed_self_checked",
+    "referenceNode": "12C-0",
+    "referenceSha256": "bd374d70c66fad24ca1667dc95e28b6cf8d39c71b54eec68efe97a63b28eee83",
+    "unchangedOriginalCount": 17,
+    "unchangedOtherExports": 5,
+    "previousExport": "exports/rejected/08-beetle-combat-v1.png",
+    "previousExportSha256": "45a0c79935619ec1d2b26f4d517f133740039e76efa9052421ce86ffcaedb2f5",
+    "checks": "Pillow verify, six-pose anatomy inspection, full-board screenshot, SHA-256 unchanged-scope check",
+    "followupCaptionFixes": [
+      {
+        "issue": "P3-02",
+        "nodeId": "Z2-0",
+        "text": "Ленты образуют читаемый шлейф; возможны перекрытия. Наклон сообщает скорость, тень сохраняет привязку к корню.",
+        "rasterRegenerated": false
+      },
+      {
+        "issue": "P3-03",
+        "nodeId": "129-0",
+        "text": "1 срыв ядра → 2 ленты рвутся → 3 купол осыпается → 4 ядро тускнеет → 5 искры → 6 последняя искра",
+        "deletionAfterKey6Unchanged": true,
+        "rasterRegenerated": false
+      }
+    ],
+    "allRequestedFixes": "complete; available for independent recheck"
+  },
+  "updatedAt": "2026-10-22T19:28:01.493742+00:00"
+}

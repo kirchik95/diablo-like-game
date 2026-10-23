@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "scope": "Task 1 monk asset package only",
+  "pythonTested": "3.14.4",
+  "pillowTested": "12.3.0",
+  "acceptedAtlasSha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e",
+  "commands": [
+    {
+      "command": "python3 scripts/build-monk-animation.py",
+      "exitCode": 0,
+      "result": "Ready manifest; 100 unique connected frames; 34 colors; binary alpha; no clipped edges; 921600 alpha-mask matches; 18 exact APNGs; 9 paired GIFs."
+    },
+    {
+      "command": "python3 scripts/build-monk-animation.py --verify-rebuild",
+      "exitCode": 0,
+      "result": "Two independent in-memory builds match accepted PNG bytes and mask bits."
+    },
+    {
+      "command": "getdata-only LegacyImage wrapper around flat_pixels(); verify_rebuild()",
+      "exitCode": 0,
+      "result": "Two additional in-memory builds through legacy Pillow pixel-reader API match accepted PNG bytes and masks. No Pillow 10 installation was used."
+    },
+    {
+      "command": "node --check --input-type=commonjs < extracted preview script (via stdin)",
+      "exitCode": 0,
+      "result": "Preview JavaScript syntax valid."
+    },
+    {
+      "command": "Python source/provenance/manifest audit",
+      "exitCode": 0,
+      "result": "25 upstream copies byte-identical; scalar cell/top-level monk; unchanged indices and anchor; 100 unique source crops; exactly 50 generated back keys."
+    }
+  ],
+  "visualAcceptance": "User accepted both native contact sheets, all nine clips, corrected back run opposite half and character scale in game. See source/visual-acceptance.json.",
+  "limitations": [
+    "Actual runtime/Chrome automation and src/tests are outside this owner scope.",
+    "Legacy pixel-reader branch tested under installed Pillow 12.3.0; cross-version binary determinism not claimed.",
+    "GIF timing uses 10ms ticks; APNG and manifest retain exact millisecond key timing."
+  ]
+}

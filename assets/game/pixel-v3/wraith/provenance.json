@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "generationMode": "Built-in image_gen only; exact requests and unchanged originals retained. Model not exposed by tool.",
+  "rightsNote": "Project references and generated derivatives. Inherited source provenance retained; this record is not a new license grant.",
+  "acceptance": {
+    "status": "worker-inspected-awaiting-coordinator",
+    "authority": "Coordinator accepts under user delegation. No personal user approval is claimed.",
+    "boundary": "Asset owner inspects native contact sheets and exported pixels; live game/browser acceptance belongs to the coordinator."
+  },
+  "normalization": "Original authored front keys + 26 separately generated rear keys, fixed per-sheet scalar, root translation, alpha>=220, no dithering, explicit 22-color family palette. Detached storyboard shots and particles removed; death debris preserved.",
+  "builder": "scripts/build-adventure-assets.py",
+  "toolchain": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "generationRecords": "source/generation-records.json",
+  "inputs": [
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/manifest.json",
+      "sha256": "ece1a4bded8935cb7c37441b2043972c35ae64bc2d5f729461818c87ae1abe75"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-attack.png",
+      "sha256": "e92624cf0b685e1c41e3ae2571e7390bd61fc9c0059ea1632fe338d4cbcdac62"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-death.png",
+      "sha256": "12d6d3fec30ccbe767c97f34fa6119d413febee4c5d925f58b2e87136d718c14"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-drift.png",
+      "sha256": "d52d32dbbb5d6f55bee5b71a1154809c3631330ac3e7a9511c7c2e5d6dd59565"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-facing.png",
+      "sha256": "eb3050dbe8af9416f4930138cbc6b3808348c6a471f2492c5e4e6b31f96415e4"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-hurt.png",
+      "sha256": "8dfd52bd34e025c98f48ebb673b997310288ef21daa3919437d32f6f488e0062"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/wraith-idle.png",
+      "sha256": "5c1c284acd1c7574bc67eec2d2e8cad8e70edb5c747afeaa2a1d8afd70c9f4e2"
+    },
+    {
+      "path": "assets/game/pixel-v1/floor.png",
+      "sha256": "6f4894b7f4a538504def073685ff793e6c9e5cac34b6b2f492d8f4b5e78066e9"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/hound-v2.png",
+      "sha256": "20c98c7e78e05c41e2b8926bf53ef9cf465ae0b0a9a93236e2b31e7a77ae1ea7"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/manifest.json",
+      "sha256": "e24c0265a726dbdda06c9889cc7c9ceed4c4ab95612a9e6a3edc842c7b662e3e"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/manifest.json",
+      "sha256": "9b31e2aeb75335a9975b348c63b71d1f1251e47b2038da78c3ac0111e1e98696"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/monk-v2.png",
+      "sha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/palette.json",
+      "sha256": "818b8bf6509d47520241dfac289910308e403ce5e4891142d103d23fc3eea02b"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/generation-records.json",
+      "sha256": "35953461887c88cc907d8006426f986239e3817e06bfd7b88b4d649ceec959de"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/head-regions.json",
+      "sha256": "077cbec85b273739f9b6dc2d014e26acc7def38d20780591a4580249b0c89811"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/manifest-contract.json",
+      "sha256": "736ed7a9b5914dc5593a63bfb555666fca59f0b8f856645d49f72914343f1fb8"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/monk-hair-reference.png",
+      "sha256": "3c8784fad8a630b3894364fdd25317562910708f4cffb3c75c775ae6b0aec8a0"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/originals/short-hair.png",
+      "sha256": "ffa80817b8855abddbbc8c16ca7e97ab1a4239b11ff64401218c2a0e6c7a9a5a"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/palette-ramps.json",
+      "sha256": "05a80679520f950163028f44df764d7f8a9bc7b8b83b4a400701f17e7d136434"
+    },
+    {
+      "path": "assets/game/pixel-v3/appearance/source/prompts/short-hair.txt",
+      "sha256": "2eb8c4f41da3da246c77a54bd299ab6139ada7b90a9f5fcfc4b6fc94e85b0cac"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/concept-records.json",
+      "sha256": "9a02c67ba1d0469ecf2a1de14cf1397fc80d2001e0b67f127e195655552f97da"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/generation-records.json",
+      "sha256": "39368007b4c20c2391bfd99933470fe4d805b2e2862d5cdbbd93960b1fd3d1c5"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/manifest-contract.json",
+      "sha256": "777d30564b37ef6823a3e3fa8b0e4118c5847ebb218b5f6a5f80ea9fd9c0595e"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/normalization.json",
+      "sha256": "87f3eec9d2ea81663622662dde0173f6a2feb8faac097c1a666267cfbbb90a32"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/originals/back-attack.png",
+      "sha256": "4da3260592a3c5c8706d4f9450f3b944e11b611ec556232e586c16b166ccc95c"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/originals/back-death.png",
+      "sha256": "9841811bd1fa14a0b58b41ba2364ed82b0055227e7266c9079d920bddb448685"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/originals/back-hurt.png",
+      "sha256": "d58849f89c2ee16f9a1d654eda0552a99017c3c0a2cf8573833a93b44ef637aa"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/originals/back-idle.png",
+      "sha256": "d33e30805c5303efd2241580d42e7761019c097462efcd8bbd95b2c5b8f5d0ab"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/originals/back-run.png",
+      "sha256": "07b833fbbbb6b95c6abd0019f7e8bf1030ab9140ca1acb5182d884251290a429"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/prompts/back-attack.txt",
+      "sha256": "c2e1d23c6de825193a93baa3e222a75b4a23de901a97c0496291792432e3a194"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/prompts/back-death.txt",
+      "sha256": "8aee2153c8833b0227999ad5b7e2d2c8ed2e0a085eac5c1b43b86539c37b873c"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/prompts/back-hurt.txt",
+      "sha256": "0c8d753ae322b7579194213d047aec678a77b0413315aa7b4b10244d65d2d91d"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/prompts/back-idle.txt",
+      "sha256": "69afaae6e835ba82fbd7e2b8baf5ec55cfc074e3aac24ff156f0667d442a3030"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/prompts/back-run.txt",
+      "sha256": "77f97ea50a8597824173749bf2915a7fd2a60e0c8e3e52459b50b4119549681f"
+    },
+    {
+      "path": "scripts/build-adventure-assets.py",
+      "sha256": "64eed365a82f90a1cf2113acfe1fe4576e1437530cf7c076ed622246d74706b9"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "assets/game/pixel-v3/wraith/hit-masks.json",
+      "sha256": "d411e8e6688c8fa462d31cf0f100ba102e20b5c92e80bc287186db909a5df883",
+      "bytes": 79951
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/manifest.json",
+      "sha256": "777d30564b37ef6823a3e3fa8b0e4118c5847ebb218b5f6a5f80ea9fd9c0595e",
+      "bytes": 4010
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/attack-four-views.gif",
+      "sha256": "af24f128b823ce1812b0a26aea3147909b068a07963a0f4707bdfc093e359757",
+      "bytes": 32955
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/contact-back-2x.png",
+      "sha256": "db12b7390e8aca7ebf35dbfb94787877d469744d65bd43c51e361edd300b181c",
+      "bytes": 59056
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/contact-back-native.png",
+      "sha256": "7da82394b7cc73493955fba958b569596e16c8cee706bcea31474da41b7d0a12",
+      "bytes": 46389
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/contact-front-2x.png",
+      "sha256": "3ba8f1adc17b71f128f28eadd7b946f9245e170d0a2038d8cfb4a0e94971a590",
+      "bytes": 63866
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/contact-front-native.png",
+      "sha256": "67d49da4fb486136d0bb828f950ff56b928b22cd7fe81458e194bf3d20249eb5",
+      "bytes": 50779
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/death-four-views.gif",
+      "sha256": "ce655ed7c54f146f115c1cb37aedd105f2e81fb909ff411e69645554762a97a4",
+      "bytes": 25572
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/floor-context-2x.png",
+      "sha256": "d282473958a6f5018a235d96381c6d9127b2f0a23ca5d4d50e879a0f864d8f2e",
+      "bytes": 38890
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/floor-context-native.png",
+      "sha256": "fc96e29c6c2ca2baa09abebf1c8210a2901ee0620968d107ea4077a888dfa441",
+      "bytes": 31828
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/hurt-four-views.gif",
+      "sha256": "b1c8e4ab85b0aa09433ac401b217058c5cabb8316118333fb5c7897faefc4e43",
+      "bytes": 22034
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/idle-four-views.gif",
+      "sha256": "38fbc718bb333dd1d30b7d4c59f77bf6f640dda828e1b3410331ddfd6d5304b4",
+      "bytes": 21398
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/index.html",
+      "sha256": "670a706b5e1a6c984f8c03cc6cd3d26b76f108346e3354f6210b043cea1be81a",
+      "bytes": 5469
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/previews/run-four-views.gif",
+      "sha256": "eebb6f6d76bc8feb4c42ed62930dc2003fe58bb022fab075b70b22a1068d506d",
+      "bytes": 34568
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/source/registration.json",
+      "sha256": "9b77d47fc75477a9982a732617faba7f4f08a2ce028add9fcbf8f40bb55c75a7",
+      "bytes": 24808
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/wraith.png",
+      "sha256": "2b4eff54ee9922d9402c089314e877f2ef291c18a59edc87e3dda92d179f059d",
+      "bytes": 83269
+    }
+  ]
+}

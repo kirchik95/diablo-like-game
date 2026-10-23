@@ -1,0 +1,95 @@
+{
+  "checkedAtUtc": "2026-10-22T20:57:56.449664+00:00",
+  "status": "pass",
+  "scene": {
+    "size": [
+      1512,
+      852
+    ],
+    "mode": "RGBA",
+    "colors": 128,
+    "alphaRange": [
+      255,
+      255
+    ],
+    "logicalSize": [
+      756,
+      426
+    ],
+    "pixelScale": 2,
+    "sha256": "f6be4200810e9a24fb11d0746ab327f57b62c164b9855dbb7ce533b13ee3d510"
+  },
+  "paperExport": {
+    "size": [
+      1600,
+      1232
+    ],
+    "mode": "RGBA",
+    "sha256": "bb276e60d27fa705f3f8f9e0cb9df3f33733d1db284cdb2348397673e0fd4c68",
+    "iccProfile": "Display P3 Gamut with sRGB Transfer",
+    "sceneBoxFromCss": [
+      44,
+      214,
+      1556,
+      1066
+    ],
+    "innerSceneSrgbMaximumChannelDifference": [
+      1,
+      1,
+      1
+    ],
+    "innerSceneSrgbMeanAbsoluteChannelDifference": [
+      0.132747985586307,
+      0.0712927280916871,
+      0.10823094439717731
+    ],
+    "innerSceneExact2PixelGrid": true,
+    "interiorAlphaRange": [
+      255,
+      255
+    ],
+    "outerOnePixelAlphaCounts": {
+      "204": 1600,
+      "205": 1231,
+      "221": 1231,
+      "234": 1598
+    }
+  },
+  "referenceCopiesMatch": true,
+  "runtimeAudit": {
+    "baselineFileCount": 54,
+    "unchangedBaselineFileCount": 51,
+    "changedSinceBaseline": [
+      {
+        "path": "assets/game/pixel-v4/landscape/reproducibility.json",
+        "beforeSha256": "920d9e223223869a70c3a49573ed0d4ffd14fa600116f63fcbb2afe5d807395d",
+        "afterSha256": "ef97ee425d128e6edaf904356eeea5a6e390b0133fbe70b417cd01eeb9c9361e"
+      },
+      {
+        "path": "assets/game/pixel-v4/landscape/source/generation-records.json",
+        "beforeSha256": "2e77a7460de38183c5a6fe6aeedc8cc3d06797a7f06a36942963de9c391c5a39",
+        "afterSha256": "191364ac75d5ab486efc9f8ed6bb13d5cdde6cc7f1fa60c44f028a186f9227d1"
+      },
+      {
+        "path": "assets/game/pixel-v4/landscape/source/provenance.json",
+        "beforeSha256": "04b4667a9544bd73bb688f80b3d109cba0e48fe35dffeea8878f5d687175af3f",
+        "afterSha256": "e428335f74727e8d327ac7173bfc48c5cbc1249c11740eb3247f65f96190174a"
+      }
+    ],
+    "addedSinceBaseline": [],
+    "pngManifestAndMaskDrift": [],
+    "note": "This task did not write runtime files. Metadata drift is recorded, not reverted or attributed to an author."
+  },
+  "deterministicNormalizationRebuild": {
+    "verified": true,
+    "byteIdenticalFiles": [
+      "camp-scene.png",
+      "source/normalization.json"
+    ]
+  },
+  "toolOutputCopiesByteIdentical": [
+    "source/scene-original-v1.png",
+    "source/scene-original-v2.png",
+    "camp-paper-final.png"
+  ]
+}

@@ -1,0 +1,10 @@
+Use case: stylized-concept.
+ROLE / ASSET: one production raster sprite draft for the Night Ritual pixel-art game, asset "cypress".
+INPUT IMAGES: first image is a STYLE REFERENCE ONLY (accepted monastery landscape); second image is a STYLE REFERENCE ONLY (accepted environment kit). Do not reproduce either scene.
+SUBJECT: exactly one tall, narrow, mature Mediterranean cypress, with a subtly crooked dark brown trunk visible at its base and dense blue-green foliage in irregular tiered clumps tapering to a single pointed crown. A believable connected tree, an asymmetric living silhouette, no disconnected pieces.
+VIEW: orthographic 2:1 isometric game view, camera looks down about 30 degrees; visible upper-left surfaces, vertical trunk.
+ART DIRECTION: clean restrained hand-clustered pixel art matching the references, dark blue-violet one-pixel outline at logical resolution, large readable flat material clusters with only 4-5 shades per material, upper-left cool diffuse light, deep desaturated teal foliage with restrained sage highlights. No glow.
+NATIVE READ: tree will be about 62 pixels wide and 128 pixels tall beside a 60-pixel-tall monk. Design for that exact small-scale legibility. Render as a roughly 128-pixel logical sprite enlarged using nearest neighbor onto a 1024x1024 canvas; hard consistent square pixels, no antialiasing, no dithering or fine noise.
+COMPOSITION: one complete centered tree, ample transparent margin, feet/root point near lower center, include all crown and roots, no cropping.
+TECHNICAL OUTPUT: genuine transparent RGBA background.
+EXCLUDE: ground tile, soil patch, grass around base, cast shadow, extra objects, text, captions, border, chart, scene, mockup, watermark.

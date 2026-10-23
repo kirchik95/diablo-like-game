@@ -1,0 +1,13 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"file\": {\n    \"id\": \"01M5JE4QF1S7K7921DAQTPSHYY\",\n    \"name\": \"Monk RPG — визуальный поиск\"\n  },\n  \"contentHash\": {\n    \"tokens\": \"811c9dc5\"\n  }\n}"
+    },
+    {
+      "type": "text",
+      "text": "{\n  \"exports\": [\n    {\n      \"nodeId\": \"17A-0\",\n      \"filePath\": \"/Users/kirchik/Downloads/01 · Лагерь странников — открытый мир.png\"\n    }\n  ]\n}"
+    }
+  ]
+}
+

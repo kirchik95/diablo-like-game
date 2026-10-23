@@ -1,0 +1,621 @@
+{
+  "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+  "pages": [
+    {
+      "id": "p-2-0",
+      "name": "Референсы · Герои и бестиарий"
+    },
+    {
+      "id": "p-3-0",
+      "name": "Референсы · Локации и окружение"
+    },
+    {
+      "id": "p-4-0",
+      "name": "Pixel art · Мир и персонажи"
+    },
+    {
+      "id": "p-5-0",
+      "name": "Pixel art · Движение и эффекты"
+    }
+  ],
+  "boards": [
+    {
+      "number": 1,
+      "id": "7G-0",
+      "pageId": "p-2-0",
+      "slug": "01-monk-model-sheet",
+      "title": "Монах. Сила в движении",
+      "outputDirectory": "assets/concepts/art-bible-01",
+      "file": "assets/concepts/art-bible-01/01-monk-model-sheet.png"
+    },
+    {
+      "number": 2,
+      "id": "7Z-0",
+      "pageId": "p-2-0",
+      "slug": "02-monk-customization",
+      "title": "ТРИ ОБЛИКА. ОДИН ПУТЬ",
+      "outputDirectory": "assets/concepts/art-bible-01",
+      "file": "assets/concepts/art-bible-01/02-monk-customization.png"
+    },
+    {
+      "number": 3,
+      "id": "8I-0",
+      "pageId": "p-2-0",
+      "slug": "03-camp-characters",
+      "title": "ТЕ, КТО ЖДЁТ У ОГНЯ",
+      "outputDirectory": "assets/concepts/art-bible-01",
+      "file": "assets/concepts/art-bible-01/03-camp-characters.png"
+    },
+    {
+      "number": 4,
+      "id": "91-0",
+      "pageId": "p-2-0",
+      "slug": "04-horned-hound",
+      "title": "ГОНЧАЯ РАЗЛОМА",
+      "outputDirectory": "assets/concepts/art-bible-01",
+      "file": "assets/concepts/art-bible-01/04-horned-hound.png"
+    },
+    {
+      "number": 5,
+      "id": "9K-0",
+      "pageId": "p-2-0",
+      "slug": "05-stone-carapace",
+      "title": "КАМЕННЫЙ ПАНЦИРНИК",
+      "outputDirectory": "assets/concepts/art-bible-01",
+      "file": "assets/concepts/art-bible-01/05-stone-carapace.png"
+    },
+    {
+      "number": 6,
+      "id": "A3-0",
+      "pageId": "p-2-0",
+      "slug": "06-bell-wraith",
+      "title": "ДУХ ЗВОННИЦЫ",
+      "outputDirectory": "assets/concepts/art-bible-01",
+      "file": "assets/concepts/art-bible-01/06-bell-wraith.png"
+    },
+    {
+      "number": 7,
+      "id": "AM-0",
+      "pageId": "p-3-0",
+      "slug": "07-monastery-outskirts-keyart",
+      "title": "ЗА СТЕНАМИ МОНАСТЫРЯ",
+      "outputDirectory": "assets/concepts/art-bible-01",
+      "file": "assets/concepts/art-bible-01/07-monastery-outskirts-keyart.png"
+    },
+    {
+      "number": 8,
+      "id": "B5-0",
+      "pageId": "p-3-0",
+      "slug": "08-flooded-crypt-keyart",
+      "title": "КРИПТА ТИХОГО КОЛОКОЛА",
+      "outputDirectory": "assets/concepts/art-bible-01",
+      "file": "assets/concepts/art-bible-01/08-flooded-crypt-keyart.png"
+    },
+    {
+      "number": 9,
+      "id": "BO-0",
+      "pageId": "p-3-0",
+      "slug": "09-environment-kit",
+      "title": "ИЗ ЧЕГО СОБРАН МИР",
+      "outputDirectory": "assets/concepts/art-bible-01",
+      "file": "assets/concepts/art-bible-01/09-environment-kit.png"
+    },
+    {
+      "number": 10,
+      "id": "C7-0",
+      "pageId": "p-4-0",
+      "slug": "p1-pixel-combat",
+      "title": "ТОТ ЖЕ МИР. В ПИКСЕЛЯХ",
+      "outputDirectory": "assets/concepts/pixel-art-01",
+      "file": "assets/concepts/pixel-art-01/p1-pixel-combat.png"
+    },
+    {
+      "number": 11,
+      "id": "CQ-0",
+      "pageId": "p-4-0",
+      "slug": "p2-pixel-characters",
+      "title": "СИЛУЭТЫ В МАЛОМ МАСШТАБЕ",
+      "outputDirectory": "assets/concepts/pixel-art-01",
+      "file": "assets/concepts/pixel-art-01/p2-pixel-characters.png"
+    },
+    {
+      "number": 12,
+      "id": "DK-0",
+      "pageId": "p-5-0",
+      "slug": "p3-pixel-action-keyframes",
+      "title": "УДАР И РЫВОК. КЛЮЧЕВЫЕ ПОЗЫ",
+      "outputDirectory": "assets/concepts/pixel-art-01",
+      "file": "assets/concepts/pixel-art-01/p3-pixel-action-keyframes.png"
+    },
+    {
+      "number": 3,
+      "id": "E3-0",
+      "pageId": "p-4-0",
+      "slug": "p4-pixel-monastery",
+      "title": "ПЕРВАЯ ДОРОГА",
+      "outputDirectory": "assets/concepts/pixel-art-01",
+      "file": "assets/concepts/pixel-art-01/p4-pixel-monastery.png"
+    },
+    {
+      "number": 4,
+      "id": "EM-0",
+      "pageId": "p-4-0",
+      "slug": "p5-pixel-crypt",
+      "title": "ПОД КАМНЕМ И ВОДОЙ",
+      "outputDirectory": "assets/concepts/pixel-art-01",
+      "file": "assets/concepts/pixel-art-01/p5-pixel-crypt.png"
+    },
+    {
+      "number": 5,
+      "id": "F5-0",
+      "pageId": "p-4-0",
+      "slug": "p6-pixel-looks-and-camp",
+      "title": "СВОЙ ОБЛИК. ЗНАКОМЫЕ ЛИЦА",
+      "outputDirectory": "assets/concepts/pixel-art-01",
+      "file": "assets/concepts/pixel-art-01/p6-pixel-looks-and-camp.png"
+    },
+    {
+      "number": 6,
+      "id": "FO-0",
+      "pageId": "p-4-0",
+      "slug": "p7-pixel-environment-kit",
+      "title": "МОДУЛИ И МАЛЫЕ ПРЕДМЕТЫ",
+      "outputDirectory": "assets/concepts/pixel-art-01",
+      "file": "assets/concepts/pixel-art-01/p7-pixel-environment-kit.png"
+    },
+    {
+      "number": 2,
+      "id": "G7-0",
+      "pageId": "p-5-0",
+      "slug": "p8-pixel-run-and-hit",
+      "title": "ДВИЖЕНИЕ И ВЕС ТЕЛА",
+      "outputDirectory": "assets/concepts/pixel-art-01",
+      "file": "assets/concepts/pixel-art-01/p8-pixel-run-and-hit.png"
+    },
+    {
+      "number": 3,
+      "id": "GQ-0",
+      "pageId": "p-5-0",
+      "slug": "p9-pixel-monster-attacks",
+      "title": "УГРОЗА ДОЛЖНА ЧИТАТЬСЯ",
+      "outputDirectory": "assets/concepts/pixel-art-01",
+      "file": "assets/concepts/pixel-art-01/p9-pixel-monster-attacks.png"
+    },
+    {
+      "number": 4,
+      "id": "H9-0",
+      "pageId": "p-5-0",
+      "slug": "p10-pixel-effects",
+      "title": "ЦВЕТ, ФОРМА, ИМПУЛЬС",
+      "outputDirectory": "assets/concepts/pixel-art-01",
+      "file": "assets/concepts/pixel-art-01/p10-pixel-effects.png"
+    }
+  ],
+  "images": [
+    {
+      "boardId": "7G-0",
+      "prompt": "Create a polished art-bible character model sheet for the ORIGINAL adult monk in reference image 2. Reference image 1 sets the exact inked cel-shaded drawing style of this game, not its combat composition. Wide horizontal 16:9 sheet on a flat pale slate-gray background. Three large full-body views evenly spaced across the left 78 percent: front relaxed martial-arts stance, clean left side view, rear three-quarter view. Same adult male, shaved head, athletic lean muscular anatomy with normal adult proportions seven heads tall, warm medium tan skin, strong brows. EXACT consistent costume from image 2: sleeveless ivory overlapping wrap tunic, one dark large-bead necklace, wrapped bronze forearm guards, burgundy cloth waist sash with two long ends, very dark charcoal loose trousers cuffed above ankles, bare feet. No additional armor, no weapon, no jacket. On the right 22 percent show three carefully drawn small close-up studies vertically: open palm and bronze wrist wrapping, folded ivory fabric with burgundy sash knot, prayer beads against collar. All three views must have matching clothing, colors, face, and body proportions; show complete feet and heads. Beautiful economical black brush contours, two to three flat shadow values, subtle hand-painted texture, cool soft cast shadows. Very restrained magenta rimlight from upper left and cyan from right, silhouette stays clear. Production concept art, deliberately drawn and dimensional, no photorealism, no 3D render, no low-poly shapes, no chibi, no UI, no letters, no labels, no logos, no frames. Generous clean space between figures.",
+      "references": [
+        "4G-0",
+        "4Z-0"
+      ],
+      "role": "monk-model-sheet",
+      "id": "7M-0",
+      "status": "ready",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "id": "85-0",
+      "boardId": "7Z-0",
+      "prompt": "Create a wide horizontal character-customization concept sheet in the exact crisp black-ink cel-shaded hand-drawn art style of image 1. Use the costume and adult proportions of the monk in image 2. Flat pale slate gray background, no setting. Three different adult playable monk appearances standing at identical full-body scale and same calm three-quarter open-palm pose, clearly separated. LEFT: original lean muscular medium tan adult man, shaved head, ivory sleeveless wrap tunic, dark prayer beads, bronze forearm wraps, dark charcoal loose ankle-cuffed trousers, burgundy long sash, barefoot. CENTER: athletic adult woman with short straight black hair tucked behind ears, warm brown skin, same practical ivory sleeveless wrap tunic, prayer beads, bronze forearm wraps, dark loose trousers, muted oxidized-teal long sash, barefoot; mature proportions, not sexualized. RIGHT: slender athletic adult with dark brown skin, dark short tied topknot, same ivory tunic, beads, bronze wraps, dark trousers, muted antique-gold long sash, barefoot. Same equipment and comparable silhouette, only appearance variations, no extra armor or weapons. Under each figure place a small head portrait of that SAME face at equal scale, no border. Clear large readable adult figures, all limbs and heads fully in frame. Ink contours, angular cloth folds, two or three shadow values, subtle painted texture, minimal magenta and cyan edge lighting. No text, no numbers, no color swatches, no UI, no logos, no photorealism, no 3D render, no chibi.",
+      "references": [
+        "4G-0",
+        "4Z-0"
+      ],
+      "role": "02-monk-customization",
+      "status": "ready",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "id": "8O-0",
+      "boardId": "8I-0",
+      "prompt": "A professional original fantasy RPG character concept sheet, wide horizontal format. Follow image 1's exact hand-drawn clean black contour and cel-shadow style; image 2's monk belongs to their same grounded fantasy world but DO NOT repeat him. Two friendly adult human camp residents, not enemies. Pale neutral slate-gray studio background. LEFT HALF: a mature female healer about fifty, sturdy practical body, calm strong face, silver-streaked dark hair tied low, layered cream and muted gray-green cloth robe, short burgundy stole, bronze clasp, simple cloth satchel with rolled bandages and tiny glass remedies, sandals, holding a small copper medicine bowl in one hand. Full body front three-quarter view; behind and beside her a smaller rear view, and a small focused portrait. RIGHT HALF: a broad adult male blacksmith in his forties, dark brown skin, shaved head with short charcoal beard, soot-colored rolled-sleeve shirt, heavy worn chestnut leather apron, ivory belt cloth, heavy work boots, bronze wrist band, holding a modest forging hammer head down at his side. Full body three-quarter view, smaller rear view and a close-up of his callused hammer hand. Both hospitable and resilient, no fighting pose, no weapons or combat armor, no royal glamour. Restrained earthy materials, subtle amber warmth from campfire, faint magenta/cyan reflected light only. Seven-head adult proportions, beautifully drawn angular planar anatomy, broad legible shapes, two or three cel-shadow tones. Complete heads and feet, spacious composition. No text, no labels, no UI, no borders, no photorealism or 3D render.",
+      "references": [
+        "4G-0",
+        "4Z-0"
+      ],
+      "role": "03-camp-characters",
+      "status": "ready",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "id": "97-0",
+      "boardId": "91-0",
+      "prompt": "A wide professional creature design model sheet for the SAME dark horned quadrupedal hounds visible in reference image 1. The monk in reference 2 is for world style and optional tiny scale only. Hand-drawn black ink contours and restrained two/three-tone cel shadows exactly matching the references. Plain pale slate gray background. Main large three-quarter creature standing on all FOUR legs at upper left, a clean side profile at upper right, small frontal head study at lower left and a clear pouncing action pose at lower center-right. Same consistent creature in every view: lean sinewy wolf-hound anatomy, long narrow pointed muzzle, two small backswept horns at skull, jagged violet-black bony dorsal spikes from shoulders to lower back, elongated ears, thin long whip tail with pointed tip, long digitigrade rear legs, large clawed front paws. Four legs, no wings, no humanoid parts. Mostly near-black charcoal-violet hide, muted purple edges on spines, two small vivid magenta eyes, pale teeth. No armor, no accessories. Hunting pose is animalistic, not demonic muscular humanoid. Hunched shoulders at the monk's thigh height, smaller than a person. In pounce pose front paws extended with hind legs gathered and thin tail trailing, lots of clean space around extremities. Include a small solid dark silhouette of adult monk for scale in bottom-right corner, hound's shoulder about 45 percent his height. Paint anatomical features legibly without gore. No words, no letters, no panels, no text, no UI, no watermarks, no 3D render.",
+      "references": [
+        "4G-0",
+        "7M-0"
+      ],
+      "role": "04-horned-hound",
+      "status": "ready",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "id": "9Q-0",
+      "boardId": "9K-0",
+      "prompt": "Wide horizontal professional creature concept model sheet in the exact dimensional hand-drawn black-outline cel-shaded style of reference 1. Design the SAME big stone-carapace beetle-crab monster visible at the upper right of image 1, not a new species. Plain pale slate-gray background. Large main front three-quarter view across left half, smaller clear side profile across upper-right, smaller rear three-quarter at lower right, and one shell material close-up. Same creature anatomy in all views: low broad heavy six-legged quadruped-looking insect-crab, FOUR short rear/middle walking legs supporting an enormous cracked domed stone shell plus TWO heavy clawed front limbs, two blunt forward curling horns at its lowered stony head. Wide gray-olive carapace made of a few large interlocking cracked plates, charcoal flexible underbody, small pink glowing eyes recessed under heavy brow, chalk gray worn edges, isolated magenta glow only deep in a few cracks. Its stance is twice as wide as adult monk shoulders and about waist high, absolutely no upright human posture. One side study raises both heavy FRONT limbs to reveal the dark belly in preparation for a slam, rear four walking legs stay planted. Two to three bold flat shadow values, economical purposeful inking, slight handpainted texture. Enough white space to see every leg and shell edge. Tiny solid adult monk silhouette near bottom center for scale, creature shell top near monk's chest. No text, no numbers, no grid, no UI, no gore, no 3D render, no photorealism.",
+      "references": [
+        "4G-0",
+        "7M-0"
+      ],
+      "role": "05-stone-carapace",
+      "status": "ready",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "id": "A9-0",
+      "boardId": "A3-0",
+      "prompt": "Wide horizontal professional creature model sheet based on the SAME hovering spectral jellyfish wraiths in reference image 1. Exact clear black-ink contours, graphic cel shading and slight painterly texture of that image. Pale neutral gray-slate background. A large full-body three-quarter floating wraith at left, smaller side and rear views at center, two isolated clear studies of the bell charging and bell contracting at right. It is a ghostly floating JELLYFISH monster, no humanoid skeleton or face: translucent pale lavender scalloped bell, milky irregular luminous white nucleus at bell center, exactly six slender long tapering softly curved tentacles hanging beneath each complete view. Thin charcoal-purple outlines keep the translucent form crisp. Lavender shadows, a restrained cyan rim on ambient side, tiny magenta core concentrated only in charging study. Bell never becomes an eye or skull. Main hovering form is about torso-height in total length with bell at adult monk head level and tentacle tips well above ground, a soft small cast shadow below. The charge pose curls tentacles inward toward magenta nucleus; contracting release pose has tentacles streaming backwards and one small magenta projectile just leaving nucleus. Sparse restrained glow, no fog obscuring silhouette. Optional tiny solid dark adult monk silhouette at bottom far right for scale. Lots of clean space, no text, no numbers, no grid, no UI, no 3D render, no gore.",
+      "references": [
+        "4G-0",
+        "7M-0"
+      ],
+      "role": "06-bell-wraith",
+      "status": "ready",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "id": "AS-0",
+      "boardId": "AM-0",
+      "prompt": "Create a FINAL richly authored game environment key art for this original browser action RPG. Closely follow the exact hand-drawn inked dimensional isometric visual style and world topology of reference 1 and the stronger combat stone details of reference 2; the hero is the monk from reference 3. Wide 16:9 full-bleed image, fixed orthographic isometric camera, no horizon, no sky. This is a LARGE connected explorable monastery outskirts zone extending past image edges, not a tiny isolated diorama and not a square arena. Broad winding worn limestone paths and broken court paving lie on layered dark slate terraces, with visible deep vertical cliff faces and arch bridges. Lower left safe camp partly at edge: three modest cream cloth tents, warm amber campfire, stacked crates and a small repair anvil. Central winding road splits around a ruined cloister and reconnects, leaving generous clear traversal space. Upper left optional dead-tree shrine grove, one intense magenta ritual flame, secret chest in ruined alcove. Upper right wide stone arch bridge leads up to monumental half-ruined monastery gate, door opening visible and path continues beyond. Lower right long descending stone stair to cyan-lit crypt doorway cut into rock, clear optional branch. Strong handcrafted architecture: massive cracked masonry, restrained thin stone joints, fallen column drums, sparse gray grasses in cracks, hanging burgundy cloth only at camp, old bronze bell near gate. Original adult ivory-tunic burgundy-sash monk small at central road, about 7 percent of image height, with two lean charcoal spiked quadrupedal hounds surrounding him, one compact coral open-palm strike arc; a stone-carapace beetle farther by shrine; two small lavender jellyfish ghosts near crypt, separated encounters. Crisp black brush contours, controlled 2-3 cel shadow values, slightly textured paint, real strong dimensional height and cast shadows, deep desaturated slate-violet unlit areas, clear pale walkable surfaces. Pink fire pools on left, cyan crypt light on right, warm amber safe camp, no rainbow or excessive bloom. Keep route readable, preserve coherent scale of hero and walls. Beautiful polished drawn GAME ART, absolutely not a 3D render, not low-poly, not photorealistic, no UI, no labels, no title, no lettering, no numbered markers, no logos.",
+      "references": [
+        "3P-0",
+        "4G-0",
+        "7M-0"
+      ],
+      "role": "07-monastery-outskirts-keyart",
+      "status": "ready",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "id": "BB-0",
+      "boardId": "B5-0",
+      "prompt": "Create a final polished 16:9 full-bleed drawn game environment key art for a second connected region in the EXACT same original game visual style as reference image 1: crisp expressive black brush contours, slightly hand-painted stone, disciplined two/three-tone cel shading, massive dimensional isometric architecture, no realistic 3D look. Fixed orthographic isometric top-down camera, no horizon. A vast underground flooded monastery crypt with roofs cut away so traversal is visible. Broad dry gray limestone walkways wind around a deep dark cyan reflecting pool and a submerged ancient bronze bell in the center. Lower left a clearly accessible descending entry staircase from surface with a thin warm amber glow at its top. Main dry path crosses a stone bridge to central broken circular memorial dais, then forks around both sides of the pool and reconnects at an upper-right tall sealed arch leading deeper. One optional dark side chamber with a chest is visible at upper left through broken columns; another side path has a stone-carapace beetle monster and isolated magenta ritual brazier. Strong vertical cutaway walls, ruined pointed arch recesses, thick pillar bases, heavy cracked stone and wet highlights, hanging roots only at edge. Keep all major walkways wide and readable at game scale with blank areas for fighting. Original adult ivory wrap-tunic black-trouser burgundy-sash monk from reference 3 small near bridge, three lavender translucent jellyfish spirits with bright white cores hovering across central dais, no human enemies, no skeleton soldiers. Cyan light rises from water, one focused magenta glow by sealed gate, deep charcoal-violet shadows, ivory walkable stone and restrained tarnished bronze. Scene extends beyond frame along branching corridors, not isolated floating square diorama. Evocative stillness and monumental sacred ruins, one clear focal arch, readable spatial depth. No UI, no maps, no text, no names, no numbers, no logos, no photorealism, no 3D render.",
+      "references": [
+        "4G-0",
+        "3P-0",
+        "7M-0"
+      ],
+      "role": "08-flooded-crypt-keyart",
+      "status": "ready",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "id": "BU-0",
+      "boardId": "BO-0",
+      "prompt": "Create an original game ENVIRONMENT PROP KIT concept sheet for the exact game in both references. Wide 16:9 plain neutral pale gray-slate background, beautifully organized with generous gaps, every separate object in the SAME fixed orthographic isometric angle, about 30-degree elevation, crisp black outlines and restrained painted two/three-step cel shadows, dimensional hand-drawn not 3D render. Precisely THREE loose horizontal rows with FOUR separate object groups each, no overlapping groups and no labels. Top row architecture: (1) a 2 by 2 broad worn limestone floor-tile module with bevelled thick edge, (2) low broken stone wall corner with sparse cracks, (3) intact thick arch doorway plus matching fallen column drum beside it, (4) stone stairs of five broad treads with side support. Middle row landmarks: (1) dark bronze brazier with sharp magenta stylized flame, (2) matching dark bronze bowl with cyan stylized flame, (3) small carved stone healing shrine with bowl and cyan core, (4) squat ancient bronze bell and its wooden yoke. Bottom row camp and loot: (1) a modest cream canvas tent with burgundy tie, (2) open wooden repair crate next to iron anvil and tiny hammer, (3) closed worn wooden reward chest with bronze bands and small matching open chest beside it, (4) three tiny drop items grouped together: red healing vial, dark prayer-bead bracelet, and faceted pale cyan spirit shard. Materials consistent: desaturated gray-purple stone, worn muted bronze, ivory linen, dark wood, focused pink and cyan fire only. Clear cast shadows anchor all props. Practical artist reference sheet, not a game UI. No words, no text, no labels, no symbols resembling lettering, no borders, no photorealism, no low-poly rendering.",
+      "references": [
+        "4G-0",
+        "3P-0"
+      ],
+      "role": "09-environment-kit",
+      "status": "ready",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "id": "CD-0",
+      "boardId": "C7-0",
+      "prompt": "Reinterpret the provided original game scene as EXQUISITE AUTHENTIC HAND-PIXELLED ISOMETRIC ACTION RPG GAME ART. Preserve the exact composition, architecture, creature types, hero clothing, camera, and relative sizes from the reference so the two visual directions can be compared. This is a full scene redrawn deliberately pixel by pixel, not a pixelation filter applied to the existing illustration. Widescreen 16:9. Imagine native game art at 640x360 displayed with clean integer nearest-neighbor enlargement: visibly crisp uniform SQUARE pixel clusters, strongly stepped stair-case diagonals, no antialiasing, absolutely no blur, no smooth gradients, no vector or painterly outlines, no 3D rendering, no isometric voxel blocks. A rich but disciplined 48-color palette with 3-step ramps per material, selective sparse dithering, beautifully crafted 1-pixel highlight edges and 1-pixel dark selective outlines. High-quality detailed 32-bit-era inspired pixel craft but original designs. Massive gray-purple cracked temple masonry, thick raised floor platform with steps descending lower-left and a broken arch at upper-right, pink braziers on left and cyan braziers on right, a bronze bell upper left. Centre hero is an ADULT lean bald monk with ivory wrap tunic, dark trousers, bronze wrist wraps and burgundy trailing sash, around 45 native pixels tall, moving toward right with a clean compact coral crescent palm strike and two cyan afterimages. Three dark lean four-legged spiked hounds, one large low stone-shelled beetle with clawed limbs at upper-right, two lavender floating jellyfish spirits upper-left. Clear silhouette separation and empty walkable space around hero. Crisp clustered light pools on floor, restrained high-contrast magenta/cyan accents, warm ivory hero readability. No HUD, no text, no logos, no border, no scanlines, no CRT effect, no faux raster overlay. DO NOT retain any smooth anti-aliased hand-drawn curves from the reference. Every element including glow must be manually stylized into coherent sharp square pixel clusters.",
+      "references": [
+        "4G-0"
+      ],
+      "role": "p1-pixel-combat",
+      "status": "discarded",
+      "note": "Smooth initial study superseded by stronger pixel treatment; Paper node removed after references resolved.",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "id": "CW-0",
+      "boardId": "CQ-0",
+      "prompt": "Create an AUTHENTIC pixel-art sprite design exploration sheet for the ORIGINAL monk and three monster species in the reference images. Six separate sprites on ONE flat desaturated pale gray-slate background, neatly arranged in exactly TWO ROWS OF THREE equally sized large cells, no visible grid or borders. ALL are in matching isometric game camera, seen three-quarter from above. TOP ROW left to right: 1 the adult bald monk in front-right three-quarter open-palm idle pose; 2 exactly the same monk seen from rear-right three-quarter, same height; 3 exactly same monk making a low forward open-palm martial arts strike toward right, no effect. BOTTOM ROW left to right: 4 the dark charcoal-purple horned spined wolf-hound on all four legs, long thin tail; 5 the broad gray-olive stone-carapace beetle monster with two forward clawed limbs, small pink eyes and short rear legs; 6 the lavender floating jellyfish spirit with a scalloped pale bell, white core and six thin trailing tentacles. Preserve the approved ORIGINAL silhouettes and colors from references, but completely redraw them as refined genuine sharp SQUARE pixel clusters. Monk adult athletic 7-head proportions, not chibi, ivory sleeveless wrap tunic, dark loose ankle-cuffed trousers, dark prayer beads, bronze forearm wraps, burgundy sash with two long ends, bare feet. Imagine monk sprites drawn natively around 64 pixels tall and enlarged 5x with nearest neighbor: crisp uniform blocky pixels, intentional stair-step diagonals, 1 native pixel outlines, broad 2-3 color shadow ramps, sparse beautiful clustered highlights, no antialiasing, no smooth edges, no subpixel detail. Same pixel size for every sprite. Feet sit at equal ground line in each row, floating spirit casts a small hard-edged soft-color oval pixel shadow. Wide 16:9 canvas. No words, no labels, no numerals, no color swatches, no HUD, no borders, no gradients, no soft blur, no realistic rendering, no voxel cubes, no painterly or smooth line art. This should look like beautifully handmade 32-bit pixel sprite art, not illustrations with a filter.",
+      "references": [
+        "4G-0",
+        "7M-0",
+        "97-0",
+        "9Q-0",
+        "A9-0"
+      ],
+      "role": "p2-pixel-characters",
+      "status": "discarded",
+      "note": "Smooth initial study superseded by stronger pixel treatment; Paper node removed after references resolved.",
+      "model": "google-nano-banana-2-1"
+    },
+    {
+      "boardId": "C7-0",
+      "prompt": "Fully REPAINT this entire scene into clearly recognizable, expertly handcrafted low-resolution PIXEL ART. The reference is only a layout and color guide. Its smooth drawn outlines MUST disappear completely. Match the same scene composition: isometric ruined stone temple floor, three spiky dark wolf-hounds, one broad stone beetle, two lavender jellyfish ghosts, adult bald ivory-tunic burgundy-sash monk palm-striking in center, pink braziers left and cyan braziers right. Now imagine drawing the ENTIRE finished image on a tiny 480 by 270 pixel canvas and scaling it up exactly 4 times with NEAREST NEIGHBOR. Every original pixel becomes an obvious sharp 4x4 square block of a SINGLE flat color, consistently across the whole image. Build intentional coherent pixel clusters and crisp staircase silhouettes, square stepped highlights, carefully handplaced sparse dither patterns. Strong 16-bit/32-bit isometric RPG pixel art aesthetic. Maximum 40-48 colors total with limited ramps, absolutely NO anti-aliased edges, no smooth curves, no blended painted shading, no soft gradient glow. Show dark violet-gray stone tile pixel textures, chunky pixel cracks, crunchy small monster sprites and an anatomically adult monk sprite around 36 native pixels tall. Lighting itself uses discrete pixel color ramps. Preserve empty combat space and visible thick stone platform side faces. This is not a smooth illustration, not 3D, not voxel art, not line art, not just adding a pixel filter. It must visibly read as an actual pixel-art game screenshot at a glance. No UI, no text, no labels, no scanlines, no blur.",
+      "references": [
+        "4G-0"
+      ],
+      "role": "p1-pixel-combat-refined",
+      "model": "openai-gpt-image-edit-2-5",
+      "id": "DG-0",
+      "status": "ready",
+      "rawFile": "assets/concepts/pixel-art-01/raw/p1-pixel-combat.png"
+    },
+    {
+      "boardId": "CQ-0",
+      "prompt": "Convert this ENTIRE six-figure sheet into genuine low-resolution PIXEL ART. Keep exactly this layout: three monk sprites in upper row, then hound, stone beetle, and jellyfish ghost in lower row. ALL SIX drawings must be redrawn on the SAME coarse pixel grid. This includes the hound and beetle; absolutely NO smooth illustration edges may remain. Imagine the WHOLE SHEET is drawn at only 384x216 native pixels, then enlarged 4 times NEAREST NEIGHBOR so every source pixel is a crisp uniform square 4x4 block. The standing monk is only 64 native pixels high. Precisely six separate pixel sprites, equal cells, two rows three columns on a flat pale desaturated slate background. Upper left adult tan bald martial artist idle open palm, upper middle same back three-quarter, upper right same low palm strike. Ivory sleeveless tunic, dark prayer beads, bronze wrist wraps, burgundy sash, dark loose trousers, bare feet. Lower left charcoal-violet spined four-legged hound, lower middle broad olive-gray stone-shelled beetle with magenta tiny eyes, lower right lavender spectral jellyfish with white core. Keep dark 1px stepped outline, four or fewer colors per material, strong intentional pixel clusters, selective handplaced pixels, crisp stair-step diagonals. A master pixel artist's original 16-bit game sprite concepts, readable at native low resolution. Use limited palette, no tiny subpixel detail, no smooth antialias, no gradients, no blur, no painted strokes, no pseudo-retro scanlines, no voxel 3D, no text or UI. Low pixel resolution and consistent obvious square pixels take priority over preserving illustration detail.",
+      "references": [
+        "CW-0"
+      ],
+      "role": "p2-pixel-characters-refined",
+      "model": "openai-gpt-image-edit-2-5",
+      "id": "DI-0",
+      "status": "ready",
+      "rawFile": "assets/concepts/pixel-art-01/raw/p2-pixel-characters.png"
+    },
+    {
+      "id": "DQ-0",
+      "boardId": "DK-0",
+      "prompt": "Create a precise EIGHT-POSE PIXEL ART ANIMATION STORYBOARD of ONLY the adult monk from the upper row of the reference. Do not include any monsters. Exactly TWO ROWS, exactly FOUR complete full-body monk sprites per row, regular generous spacing, no overlaps. All EIGHT are the SAME adult tan bald male character, same consistent 64-native-pixel height when standing, same fixed slightly elevated isometric camera, all facing to the RIGHT, no camera rotation. Same ivory sleeveless wrap tunic, dark beads necklace, bronze wrist wraps, loose black trousers, long burgundy double sash, bare feet. Render genuinely crisp low-resolution square pixels, as if the entire sheet is 512x288 pixels enlarged with NEAREST NEIGHBOR. Use coarse clearly visible square pixel clusters, stepped diagonal outlines and limited palette with 3 colors per material, absolutely no smooth line art or antialiasing. Neutral desaturated slate-gray flat background. TOP ROW is a palm-strike cycle in FOUR DISTINCT chronological poses: 1 standing open-palm fighting guard with weight centered; 2 anticipation with low bent knees, torso coiled backwards, right palm drawn back; 3 explosive long low forward step with rear leg extended, right palm thrust straight to right, small sharply pixelled CORAL crescent at palm contact; 4 weight settles as palm retracts to open guard, cloth sash still swinging forward. BOTTOM ROW is a forward dash in FOUR DISTINCT chronological poses: 1 low compressed crouch leaning forward; 2 forceful toe push-off leaning right with rear foot lifting and sash trailing left; 3 low airborne forward glide, both feet lifted, torso angled forward, two small CYAN pixel afterimages behind but only ONE solid monk, sash horizontal; 4 braking landing on forward foot, bent knee and body rising, trailing sash catches up. The ground shadow stays the same baseline inside each cell, the physical character is fully drawn including both feet and head in each pose. Separate equal sized cells, no drawn grid, no text or numbers, no UI, no labels, no blurred speed lines. Everything must be finely designed true pixel art like a skilled animator's key-pose sheet for a 16-bit action RPG. Adult anatomy, not chibi.",
+      "references": [
+        "CW-0"
+      ],
+      "role": "p3-pixel-action-keyframes",
+      "model": "openai-gpt-image-edit-2-5",
+      "status": "ready",
+      "rawFile": "assets/concepts/pixel-art-01/raw/p3-pixel-action-keyframes.png"
+    },
+    {
+      "id": "E9-0",
+      "boardId": "E3-0",
+      "prompt": "Create a polished ORIGINAL PIXEL ART game location. Image 1 is the SELECTED pixel-art medium and limited palette to follow. Image 2 is the LOCATION LAYOUT AND CONTENT to redraw. Rebuild the monastery outskirts from image 2 using the chunky clear hand-pixelled technique of image 1. Wide 16:9, fixed orthographic isometric view, full scene. Native visual resolution around 480x270 enlarged nearest-neighbor, obvious sharp uniform square pixels, purposeful 2:1 stepped diagonals, compact clustered texture, 3 or 4 colors per material, no anti-aliased illustration curves, no smooth rendering, no blur or bloom. Preserve image 2 layout: warm amber camp with cream tents at lower left, a wide pale slate-stone road splitting into two paths around ruined walls in center, a magenta shrine with dead trees upper left, bridge crossing cliff to massive monastery arch gate upper right, stairs descending to cyan-lit crypt door lower right. Paths visibly continue outside the image. Deep slate-violet layered cliff faces give height, small sparse grasses and cracked stone are drawn in economical coherent pixel clusters. Tiny but readable bald monk with ivory shirt dark trousers burgundy sash near central path and two spiked charcoal wolf-hounds, one stone shell beetle by shrine, two small lavender floating jellyfish ghosts by crypt. Keep the walkable ground relatively quiet and spacious. All figures and architecture are pixel art at the SAME native pixel scale. Pink light left, cyan light right, amber camp; restrained saturation everywhere else. This is a location overview so hero is small, not a portrait. Strong playability and clear routes, beautiful 16-bit isometric action RPG scene. Absolutely no HUD, no text, no logos, no photorealistic or smooth painted areas.",
+      "references": [
+        "DG-0",
+        "AS-0"
+      ],
+      "role": "p4-pixel-monastery",
+      "model": "openai-gpt-image-edit-2-5",
+      "status": "ready",
+      "rawFile": "assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png"
+    },
+    {
+      "id": "ES-0",
+      "boardId": "EM-0",
+      "prompt": "Create an exquisitely crafted LOW-RESOLUTION PIXEL ART isometric RPG location. Use image 1 for the SELECTED authentic pixel art style and image 2 for exact environment composition and architecture. Completely redraw the flooded monastery crypt in image 2 as chunky crisp handplaced pixel clusters, native visual resolution 480x270 shown with integer nearest-neighbor enlargement. Every source pixel is a sharp square of one flat color. Thick stepped selective outlines, 3-tone stone ramps, restrained clustered dither, no smooth strokes, no anti-aliasing, no gradient bloom. Wide 16:9 full scene. Fixed orthographic isometric camera. Broad pale gray worn stone walkways form two looping routes around a dark cyan pool with an old submerged bronze bell. Entry staircase lower left with a little amber light, short stone bridge to round central island, upper right massive arch gate with magenta-lit seal, optional treasure niche upper left and darker side passage. High cutaway walls with pointed arch recesses, low broken pillars and visible massive stone edges create depth. One tiny ivory-tunic burgundy-sash monk by bridge, three small lavender pixel jellyfish spirits with white cores at center, a broad olive-gray stone beetle off to left. Pixel ripples and turquoise reflections stay simple enough to read paths. Clear dry walkable routes, empty fighting spaces, charcoal-violet shadows, focused cyan water and magenta gate, no neon everywhere. Preserve the reference's solemn monastery atmosphere and overall layout. No UI, no text, no numbers, no logos, no realistic 3D, no voxel blocks, no smooth illustration.",
+      "references": [
+        "DG-0",
+        "BB-0"
+      ],
+      "role": "p5-pixel-crypt",
+      "model": "openai-gpt-image-edit-2-5",
+      "status": "ready",
+      "rawFile": "assets/concepts/pixel-art-01/raw/p5-pixel-crypt.png"
+    },
+    {
+      "id": "FB-0",
+      "boardId": "F5-0",
+      "prompt": "Create one coherent LOW-RESOLUTION PIXEL ART character concept sheet. Reference 1 defines selected coarse square pixel technique and adult monk design. Reference 2 provides the three cosmetic monk variations, reference 3 provides the friendly healer and smith. Exactly TWO ROWS and THREE equally spaced columns on flat pale slate-gray. TOP ROW: three full-body adult playable monk variants at same height, same calm open-palm pose facing right in three-quarter slightly elevated game camera. Left original tan bald male with burgundy sash; center brown-skinned athletic woman with short black hair and muted teal sash; right dark brown skinned adult with short topknot and antique gold sash. All wear same ivory sleeveless wrap tunic, dark beads, bronze wrist wraps, loose charcoal trousers, barefoot. Only cosmetic changes, comparable adult proportions. BOTTOM ROW: left full-body mature female healer from reference 3, ivory and gray-green robe, burgundy shawl, silver-gray tied hair, bandage satchel, copper bowl; center full-body broad friendly dark-skinned smith from reference 3, leather apron, dark shirt, work boots, small forging hammer held down; right a compact arrangement of THREE small pixel head studies showing bald head, short hair and topknot. NPCs not enemies and not fighting. Five full-body characters total plus three head details. ALL elements in ONE consistent genuinely coarse pixel grid, native sheet imagined around 448x252 pixels enlarged nearest-neighbor; standing figures about 64 native pixels tall. Crisp uniform square pixels, 1 native pixel stepped outlines, only three shades per material, simplified shapes, legible silhouettes. No smooth curves, no anti-alias, no realistic painterly detail, no 3D render, no blur, no text, no labels, no UI or boxes.",
+      "references": [
+        "DI-0",
+        "85-0",
+        "8O-0"
+      ],
+      "role": "p6-pixel-looks-and-camp",
+      "model": "openai-gpt-image-edit-2-5",
+      "status": "ready",
+      "rawFile": "assets/concepts/pixel-art-01/raw/p6-pixel-looks-and-camp.png"
+    },
+    {
+      "id": "FU-0",
+      "boardId": "FO-0",
+      "prompt": "Redraw the environment asset kit from reference 2 in the AUTHENTIC COARSE PIXEL ART technique of reference 1. Maintain the reference 2 arrangement: THREE ROWS of FOUR separate groups on flat pale desaturated slate-gray background. Exactly these twelve groups, same isometric camera and pixel scale throughout. Row1: square thick 2x2 stone floor-tile platform; ruined wall corner; stone arch with fallen column drum beside it; five-step stone staircase. Row2: bronze brazier with magenta flame; bronze brazier with cyan flame; compact stone healing shrine with small cyan core; aged bronze bell hung from timber yoke. Row3: cream canvas tent with burgundy tie; anvil next to open tool crate and small hammer; closed wooden bronze-banded chest and small open chest; three small loot items together, red healing vial, dark prayer-bead bracelet, cyan spirit shard. Imagine the whole sheet drawn at 448x252 native pixels and enlarged nearest-neighbor. Crisp clearly visible uniform square pixels, 2:1 stair-step isometric edges, dark 1px selective outlines, 3 shades per material, simple chunky clusters. No tiny clutter, sparse stone cracks, clear cast-shadow pixel blobs, flames made of crisp pixel shapes without smooth glow. Slate-gray stone and dark wood, tarnished bronze, ivory linen, limited pink and cyan highlights. Keep generous separation and fully visible object bounds. Beautiful small original game assets, not a UI. No text, no labels, no grid, no smooth linework, no anti-alias, no blur, no photorealism or 3D rendering.",
+      "references": [
+        "DG-0",
+        "BU-0"
+      ],
+      "role": "p7-pixel-environment-kit",
+      "model": "openai-gpt-image-edit-2-5",
+      "status": "ready",
+      "rawFile": "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png"
+    },
+    {
+      "id": "GD-0",
+      "boardId": "G7-0",
+      "prompt": "Create exactly EIGHT low-resolution PIXEL ART key poses of the SAME adult monk in the references. TWO horizontal rows of FOUR separate full-body sprites, equal cell spacing, flat pale slate-gray background. Same consistent native pixel scale and body proportions in every cell. All face RIGHT in the same three-quarter slightly elevated isometric game camera. Tan bald adult martial artist, ivory sleeveless wrap tunic, black prayer beads, bronze wrist guards, loose charcoal ankle-cuffed trousers, burgundy sash with two long ends, barefoot. TOP ROW four chronological key poses of a RUN CYCLE: (1) right foot reaching forward for ground contact, left leg trailing, opposite arm forward; (2) weight moving over right foot, left knee swinging forward, arms crossing; (3) left foot reaching forward for contact, right leg trailing, opposite arm now forward; (4) weight passing over left foot, right knee swinging forward. Alternate the legs clearly; body tilt stays forward, sash follows the motion. BOTTOM ROW four key poses of RECEIVING A HIT AND FALLING, non-graphic: (1) neutral open-palm guard, (2) torso recoils backward from invisible front hit with a tiny coral contact sparkle at shoulder, (3) drops to one knee with palm touching ground and bowed head, (4) lies motionless curled on side on ground with arms and legs anatomically clear, no injury or blood. Keep both arms, both legs and the head recognizable in every pose; no duplicated limbs. This is an animation planning sheet, not eight different characters. True chunky pixel art, imagine whole canvas natively 512x288 and magnified nearest-neighbor: uniform square pixels, deliberate stepped 1px contours, limited 3-shade ramps, not smoothly drawn outlines, not blur, not gradients. Dark small hard-pixel cast shadows on a consistent baseline. NO text, numerals, labels, borders, panel lines, HUD, blur, 3D render, chibi proportions.",
+      "references": [
+        "DI-0",
+        "DQ-0"
+      ],
+      "role": "p8-pixel-run-and-hit",
+      "model": "openai-gpt-image-edit-2-5",
+      "status": "discarded",
+      "note": "Replaced after review: distinct run phases and four columns of FX. Original node removed."
+    },
+    {
+      "id": "GW-0",
+      "boardId": "GQ-0",
+      "prompt": "Create a PIXEL ART attack animation storyboard for the two monster species from references. Exactly TWO ROWS, FOUR cells per row, EIGHT fully separated complete creature sprites total, plain pale slate-gray background, no visible panel borders. Same fixed slightly elevated isometric camera, all facing RIGHT, same scale within a row. TOP ROW the SAME charcoal-violet four-legged spined wolf-hound with long narrow muzzle, two small swept horns, pointed dorsal spikes and long thin tail: (1) alert low prowling stance, head points at prey to right; (2) strong anticipation crouch with compressed hind legs and shoulders lowered, magenta eyes brighten, small thin broken magenta ground warning arc directly ahead; (3) dynamic leap to right, both front paws extended, rear legs trailing, four limbs clearly readable, thin tail trails left; (4) lands on front paws in a low extended stance, lowered head and bent hind legs visibly recovering, warning arc gone. BOTTOM ROW the SAME lavender spectral jellyfish with scalloped translucent bell, white nucleus and six dangling tentacles: (1) idle hover bell open and tentacles relaxed; (2) gathers tentacles and contracts bell, nucleus becomes concentrated bright magenta, charging; (3) releases ONE small pointed magenta projectile to the right with a short stepped trail, tentacles streaming left; (4) bell reopens, pale core returns, tentacles droop in recovery. Tiny soft-color but hard-pixel cast shadows below creatures keep their height visible. No humans, no additional creatures. Match the refined simple chunky pixel craft of reference 1, use references 2/3 only for creature anatomy. Native visual sheet around 512x288 displayed nearest-neighbor: clear uniform square pixel clusters and step contours, restrained limited ramps, absolutely no smooth illustration, no anti-aliasing, no gradients, no 3D or voxel. No text, no labels, no numbers or UI.",
+      "references": [
+        "DI-0",
+        "97-0",
+        "A9-0"
+      ],
+      "role": "p9-pixel-monster-attacks",
+      "model": "openai-gpt-image-edit-2-5",
+      "status": "ready",
+      "rawFile": "assets/concepts/pixel-art-01/raw/p9-pixel-monster-attacks.png"
+    },
+    {
+      "id": "HF-0",
+      "boardId": "H9-0",
+      "prompt": "A polished original low-resolution PIXEL ART combat visual effects study sheet matching the style and palette of the provided game references. Exactly FOUR HORIZONTAL ROWS of FOUR small isolated effect phases each, sixteen effect clusters total, on a uniform dark charcoal-violet background. NO characters, no scenery, no words, no labels, no borders. Constant uniform pixel size. Each row is a chronological four-stage animation left to right. ROW 1: CORAL open-palm impact, tiny concentrated coral spark, compact curved crescent swipe oriented right, broad thin crescent at peak with short angular hit spokes, then three fading small coral fragments. ROW 2: CYAN spirit shockwave shown as isometric ground ellipses, small bright core inside tiny ellipse, expanding thin segmented ring, larger faint ring with empty transparent-looking center, ring dissolves into four tiny cyan motes. ROW 3: MAGENTA hostile spell, concentrated nucleus with sharp diamond silhouette, rightward small pointed projectile with short stepped tail, compact jagged four-point impact star, then sparse magenta fragments. ROW 4: WARM AMBER healing pickup, tiny gold glint low at ground, three rising blocky gold motes and short subtle vertical streaks, brief compact golden halo ellipse with rising sparks, sparse fading dots. Clear pixel clusters instead of blurry glow. Small effects, tightly shaped so they would not hide enemies in play. Imagine drawing sheet natively at 384x216 then scaling nearest-neighbor: obvious sharp uniform square pixels, no anti-aliasing, no smooth gradations, no soft blur, no photorealistic VFX, no smooth brushstrokes. Only about 4 colors per effect family with darkest edge, saturated middle, pale bright center. Carefully spaced regular rows, each effect fully inside its own area.",
+      "references": [
+        "DG-0",
+        "DQ-0"
+      ],
+      "role": "p10-pixel-effects",
+      "model": "openai-gpt-image-edit-2-5",
+      "status": "discarded",
+      "note": "Replaced after review: distinct run phases and four columns of FX. Original node removed."
+    },
+    {
+      "id": "HS-0",
+      "boardId": "G7-0",
+      "prompt": "Edit this pixel-art storyboard. KEEP the LOWER ROW of four damage/fall poses intact in design and positions. REPLACE ONLY the TOP ROW with four CLEARLY DIFFERENT chronological stages of ONE RUNNING STEP to the RIGHT. Same monk clothing, same scale, same pixel art technique, same fixed three-quarter side/isometric camera and gray background. The top row must not repeat any pose. Top1 CONTACT: leading right foot reaches down and forward to touch ground heel-first, rear knee bent behind, body level medium. Top2 COMPRESSION: leading right knee bends deeply underneath the torso, weight low, trailing left knee advances in front, body visibly lower than top1. Top3 PUSH OFF: supporting right leg extended diagonally backwards with toe just leaving ground, left thigh lifts forward, torso rises higher, arms counter-swing. Top4 FLIGHT: BOTH feet clearly off ground, front left lower leg reaching forward for next contact, rear right knee folded up behind, visible clear gap between feet and small ground shadow. All four still facing right and same height when straight, same adult tan bald monk, ivory sleeveless tunic, beads, bronze wrists, burgundy double sash, dark loose trousers, bare feet. Use coherent coarse square pixel clusters, crisp stair-step contours, no anti-alias, no smooth painted shading, not chibi. Keep an equal horizontal gap and one four-cell row above unchanged lower four-cell row. Exactly eight total figures. No additional images, no letters, no labels, no grid lines.",
+      "references": [
+        "GD-0"
+      ],
+      "role": "p8-pixel-run-and-hit-refined",
+      "model": "openai-gpt-image-edit-2-5",
+      "status": "ready",
+      "rawFile": "assets/concepts/pixel-art-01/raw/p8-pixel-run-and-hit.png"
+    },
+    {
+      "id": "HU-0",
+      "boardId": "H9-0",
+      "prompt": "Make a precise editing pass on this PIXEL ART effects sheet. Final sheet must contain EXACTLY FOUR ROWS AND EXACTLY FOUR COLUMNS, sixteen effect groups total. Every row must align to the SAME four column centers. Uniform dark charcoal background, clean coarse square pixels, same colors, style and scale as source. ROW1 CORAL: delete the extra large round explosion currently at far left. The final four are tiny compact spark, small crescent, larger thin crescent with short spokes, sparse fading fragments. ROW2 CYAN: remove the extra duplicate tiny ring with core so four remain: one small ring with bright core, medium expanding hollow ring, large faint hollow ring, four fading tiny motes grouped in the fourth cell. ROW3 MAGENTA keep four stages: diamond core, right-pointing projectile, jagged impact star, sparse fading fragments. ROW4 AMBER keep four stages: small glint, three rising sparks, compact golden halo and rising streaks, sparse fading dots. Recenter each row evenly into exactly four equal cells. No fifth column, no bonus reference samples on left or right. NO characters, no text, no numbered labels, no grid or panel lines. Pixel art, not smooth glows. Rows with growing effects should keep their centers on each row baseline. This is a restrained coherent four-stage storyboard per effect family.",
+      "references": [
+        "HF-0"
+      ],
+      "role": "p10-pixel-effects-refined",
+      "model": "openai-gpt-image-edit-2-5",
+      "status": "ready",
+      "rawFile": "assets/concepts/pixel-art-01/raw/p10-pixel-effects.png"
+    }
+  ],
+  "exports": [
+    {
+      "nodeId": "7G-0",
+      "filePath": "/Users/kirchik/Downloads/01 · Монах — основной облик.png"
+    },
+    {
+      "nodeId": "7Z-0",
+      "filePath": "/Users/kirchik/Downloads/02 · Герой — варианты внешности.png"
+    },
+    {
+      "nodeId": "8I-0",
+      "filePath": "/Users/kirchik/Downloads/03 · Персонажи — жители лагеря.png"
+    },
+    {
+      "nodeId": "91-0",
+      "filePath": "/Users/kirchik/Downloads/04 · Бестиарий — рогатая гончая.png"
+    },
+    {
+      "nodeId": "9K-0",
+      "filePath": "/Users/kirchik/Downloads/05 · Бестиарий — панцирник.png"
+    },
+    {
+      "nodeId": "A3-0",
+      "filePath": "/Users/kirchik/Downloads/06 · Бестиарий — дух звонницы.png"
+    },
+    {
+      "nodeId": "AM-0",
+      "filePath": "/Users/kirchik/Downloads/07 · Локация — окрестности монастыря.png"
+    },
+    {
+      "nodeId": "B5-0",
+      "filePath": "/Users/kirchik/Downloads/08 · Локация — затопленная крипта.png"
+    },
+    {
+      "nodeId": "BO-0",
+      "filePath": "/Users/kirchik/Downloads/09 · Окружение — модули и предметы.png"
+    },
+    {
+      "nodeId": "C7-0",
+      "filePath": "/Users/kirchik/Downloads/01 · Pixel art — основной стиль.png"
+    },
+    {
+      "nodeId": "CQ-0",
+      "filePath": "/Users/kirchik/Downloads/02 · Pixel art — монах и монстры.png"
+    },
+    {
+      "nodeId": "E3-0",
+      "filePath": "/Users/kirchik/Downloads/03 · Pixel art — окрестности монастыря.png"
+    },
+    {
+      "nodeId": "EM-0",
+      "filePath": "/Users/kirchik/Downloads/04 · Pixel art — затопленная крипта.png"
+    },
+    {
+      "nodeId": "F5-0",
+      "filePath": "/Users/kirchik/Downloads/05 · Pixel art — внешность и жители лагеря.png"
+    },
+    {
+      "nodeId": "FO-0",
+      "filePath": "/Users/kirchik/Downloads/06 · Pixel art — окружение и предметы.png"
+    },
+    {
+      "nodeId": "DK-0",
+      "filePath": "/Users/kirchik/Downloads/A1 · Анимация — удар и рывок.png"
+    },
+    {
+      "nodeId": "G7-0",
+      "filePath": "/Users/kirchik/Downloads/A2 · Анимация — бег и получение урона.png"
+    },
+    {
+      "nodeId": "GQ-0",
+      "filePath": "/Users/kirchik/Downloads/A3 · Анимация — атаки монстров.png"
+    },
+    {
+      "nodeId": "H9-0",
+      "filePath": "/Users/kirchik/Downloads/A4 · Эффекты — язык боя и восстановления.png"
+    }
+  ],
+  "selectedDirection": "Simplified 2D pixel art, fixed dimensional isometric camera. Explicitly chosen by user 2026-10-22.",
+  "reviewNotes": [
+    "All nine drawn reference sheets inspected at 1x; black inherited headings corrected to ivory; consistent Golos Text body and Oswald headings.",
+    "Pixel environment and character sheets inspected at 1x; two smooth initial pixel attempts replaced after visual review.",
+    "Two location sheets retain routes, dimensional stone and monster-only combat.",
+    "Run reworked into four distinct phases of one step; damage row retained. FX corrected to four rows of four phases. Both inspected after generation.",
+    "All delivered images are concept art and key poses, not normalized production sprite atlases."
+  ],
+  "rawExports": [
+    {
+      "nodeId": "DG-0",
+      "filePath": "/Users/kirchik/Downloads/Пиксельный бой — уточнение техники.png"
+    },
+    {
+      "nodeId": "DI-0",
+      "filePath": "/Users/kirchik/Downloads/Пиксельные силуэты — единая сетка.png"
+    },
+    {
+      "nodeId": "E9-0",
+      "filePath": "/Users/kirchik/Downloads/p4-pixel-monastery.png"
+    },
+    {
+      "nodeId": "ES-0",
+      "filePath": "/Users/kirchik/Downloads/p5-pixel-crypt.png"
+    },
+    {
+      "nodeId": "FB-0",
+      "filePath": "/Users/kirchik/Downloads/p6-pixel-looks-and-camp.png"
+    },
+    {
+      "nodeId": "FU-0",
+      "filePath": "/Users/kirchik/Downloads/p7-pixel-environment-kit.png"
+    },
+    {
+      "nodeId": "DQ-0",
+      "filePath": "/Users/kirchik/Downloads/p3-pixel-action-keyframes.png"
+    },
+    {
+      "nodeId": "GW-0",
+      "filePath": "/Users/kirchik/Downloads/p9-pixel-monster-attacks.png"
+    },
+    {
+      "nodeId": "HS-0",
+      "filePath": "/Users/kirchik/Downloads/Бег — различимые фазы шага.png"
+    },
+    {
+      "nodeId": "HU-0",
+      "filePath": "/Users/kirchik/Downloads/Эффекты — четыре равные фазы.png"
+    }
+  ],
+  "createdDate": "2026-10-22",
+  "generationTool": "Paper native paper-gen image generation",
+  "sourcePages": [
+    "p-1-0"
+  ],
+  "defaultModel": "google-nano-banana-2-1"
+}

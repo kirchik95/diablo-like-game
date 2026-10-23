@@ -1,0 +1,14 @@
+✔ landscape publishes the exact renderer contract at 32 native pixels per unit (0.681292ms)
+✔ eight real prop cells have binary alpha, one shared palette, connected silhouettes and native scale (20.486459ms)
+✔ packed little-bit-first hit mask matches every actual PNG alpha pixel (9.156833ms)
+✔ three surfaces are opaque, low-contrast, palette-bounded and seamless on both axes (9.103625ms)
+✔ source drafts, exact prompts and native/2x visual proof are delivered with recorded hashes (243.048292ms)
+✔ verify-only reconstructs the package and validates sources without writing any files (780.116083ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1122.31375

@@ -1,0 +1,776 @@
+{
+  "schemaVersion": 1,
+  "pathBase": "repository-root",
+  "atlas": "assets/game/pixel-v4/landscape/landscape.png",
+  "atlasSha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731",
+  "cell": 160,
+  "columns": 4,
+  "anchor": [
+    80,
+    144
+  ],
+  "coordinateSpace": "cell-local pixel centers, x right/y down",
+  "method": "Least-squares ground-circle fit in (pixelX, 2*pixelY) to the selected lower opaque arc; contact center rounded to quarter-pixel. Rear arc is inferred. Radius is diagnostic, not collision authority.",
+  "collisionPolicy": "Preserve existing world centers/radii. Broad stone/crown silhouettes can overhang the existing solid core; do not enlarge invisible blockers. Flip native x around 80 and apply actual scale before inverse projection.",
+  "frames": {
+    "cypress": {
+      "frame": 0,
+      "selectedColumns": [
+        72,
+        89
+      ],
+      "selectedRows": [
+        128,
+        143
+      ],
+      "selectionReason": "Trunk root collar; excludes hanging canopy.",
+      "frontEdgePixelCenters": [
+        [
+          72.5,
+          139.5
+        ],
+        [
+          73.5,
+          139.5
+        ],
+        [
+          74.5,
+          140.5
+        ],
+        [
+          75.5,
+          139.5
+        ],
+        [
+          76.5,
+          143.5
+        ],
+        [
+          77.5,
+          143.5
+        ],
+        [
+          78.5,
+          142.5
+        ],
+        [
+          79.5,
+          142.5
+        ],
+        [
+          80.5,
+          141.5
+        ],
+        [
+          81.5,
+          141.5
+        ],
+        [
+          82.5,
+          142.5
+        ],
+        [
+          83.5,
+          143.5
+        ],
+        [
+          84.5,
+          143.5
+        ],
+        [
+          85.5,
+          140.5
+        ],
+        [
+          86.5,
+          140.5
+        ],
+        [
+          87.5,
+          141.5
+        ],
+        [
+          88.5,
+          141.5
+        ],
+        [
+          89.5,
+          141.5
+        ]
+      ],
+      "fittedCenter": [
+        80.94996617861361,
+        140.27455595809292
+      ],
+      "contactCenter": [
+        81.0,
+        140.25
+      ],
+      "screenRadiusX": 6.4475469442021875,
+      "screenRadiusY": 3.2237734721010938,
+      "fitRmsPixels": 1.8595963245759064,
+      "approximate": true,
+      "rearEdge": "inferred; lower front arc only"
+    },
+    "dead-tree": {
+      "frame": 1,
+      "selectedColumns": [
+        59,
+        80
+      ],
+      "selectedRows": [
+        128,
+        143
+      ],
+      "selectionReason": "Dense trunk/root collar; thin spreading roots are overhang, not new blockers.",
+      "frontEdgePixelCenters": [
+        [
+          59.5,
+          139.5
+        ],
+        [
+          60.5,
+          138.5
+        ],
+        [
+          61.5,
+          138.5
+        ],
+        [
+          62.5,
+          138.5
+        ],
+        [
+          63.5,
+          139.5
+        ],
+        [
+          64.5,
+          139.5
+        ],
+        [
+          65.5,
+          141.5
+        ],
+        [
+          66.5,
+          142.5
+        ],
+        [
+          67.5,
+          142.5
+        ],
+        [
+          68.5,
+          142.5
+        ],
+        [
+          69.5,
+          143.5
+        ],
+        [
+          70.5,
+          143.5
+        ],
+        [
+          71.5,
+          143.5
+        ],
+        [
+          72.5,
+          137.5
+        ],
+        [
+          73.5,
+          137.5
+        ],
+        [
+          74.5,
+          138.5
+        ],
+        [
+          75.5,
+          139.5
+        ],
+        [
+          76.5,
+          141.5
+        ],
+        [
+          77.5,
+          141.5
+        ],
+        [
+          78.5,
+          141.5
+        ],
+        [
+          79.5,
+          138.5
+        ],
+        [
+          80.5,
+          139.5
+        ]
+      ],
+      "fittedCenter": [
+        70.08779228336229,
+        139.55605175114164
+      ],
+      "contactCenter": [
+        70.0,
+        139.5
+      ],
+      "screenRadiusX": 7.666271355107418,
+      "screenRadiusY": 3.833135677553709,
+      "fitRmsPixels": 1.7676461323073478,
+      "approximate": true,
+      "rearEdge": "inferred; lower front arc only"
+    },
+    "rock-large": {
+      "frame": 2,
+      "selectedColumns": [
+        52,
+        108
+      ],
+      "selectedRows": [
+        128,
+        143
+      ],
+      "selectionReason": "Ground-facing lower stone arc, full base width.",
+      "frontEdgePixelCenters": [
+        [
+          52.5,
+          131.5
+        ],
+        [
+          53.5,
+          132.5
+        ],
+        [
+          54.5,
+          132.5
+        ],
+        [
+          55.5,
+          133.5
+        ],
+        [
+          56.5,
+          134.5
+        ],
+        [
+          57.5,
+          134.5
+        ],
+        [
+          58.5,
+          134.5
+        ],
+        [
+          59.5,
+          135.5
+        ],
+        [
+          60.5,
+          136.5
+        ],
+        [
+          61.5,
+          136.5
+        ],
+        [
+          62.5,
+          136.5
+        ],
+        [
+          63.5,
+          137.5
+        ],
+        [
+          64.5,
+          138.5
+        ],
+        [
+          65.5,
+          138.5
+        ],
+        [
+          66.5,
+          139.5
+        ],
+        [
+          67.5,
+          139.5
+        ],
+        [
+          68.5,
+          139.5
+        ],
+        [
+          69.5,
+          139.5
+        ],
+        [
+          70.5,
+          141.5
+        ],
+        [
+          71.5,
+          141.5
+        ],
+        [
+          72.5,
+          141.5
+        ],
+        [
+          73.5,
+          141.5
+        ],
+        [
+          74.5,
+          142.5
+        ],
+        [
+          75.5,
+          142.5
+        ],
+        [
+          76.5,
+          143.5
+        ],
+        [
+          77.5,
+          143.5
+        ],
+        [
+          78.5,
+          143.5
+        ],
+        [
+          79.5,
+          143.5
+        ],
+        [
+          80.5,
+          142.5
+        ],
+        [
+          81.5,
+          142.5
+        ],
+        [
+          82.5,
+          141.5
+        ],
+        [
+          83.5,
+          141.5
+        ],
+        [
+          84.5,
+          142.5
+        ],
+        [
+          85.5,
+          142.5
+        ],
+        [
+          86.5,
+          143.5
+        ],
+        [
+          87.5,
+          143.5
+        ],
+        [
+          88.5,
+          143.5
+        ],
+        [
+          89.5,
+          142.5
+        ],
+        [
+          90.5,
+          142.5
+        ],
+        [
+          91.5,
+          142.5
+        ],
+        [
+          92.5,
+          141.5
+        ],
+        [
+          93.5,
+          141.5
+        ],
+        [
+          94.5,
+          141.5
+        ],
+        [
+          95.5,
+          141.5
+        ],
+        [
+          96.5,
+          140.5
+        ],
+        [
+          97.5,
+          140.5
+        ],
+        [
+          98.5,
+          139.5
+        ],
+        [
+          99.5,
+          139.5
+        ],
+        [
+          100.5,
+          138.5
+        ],
+        [
+          101.5,
+          138.5
+        ],
+        [
+          102.5,
+          138.5
+        ],
+        [
+          103.5,
+          137.5
+        ],
+        [
+          104.5,
+          136.5
+        ],
+        [
+          105.5,
+          135.5
+        ],
+        [
+          106.5,
+          134.5
+        ],
+        [
+          107.5,
+          133.5
+        ],
+        [
+          108.5,
+          131.5
+        ]
+      ],
+      "fittedCenter": [
+        82.22785589924281,
+        129.50261160414874
+      ],
+      "contactCenter": [
+        82.25,
+        129.5
+      ],
+      "screenRadiusX": 26.531199059770184,
+      "screenRadiusY": 13.265599529885092,
+      "fitRmsPixels": 1.374604127119739,
+      "approximate": true,
+      "rearEdge": "inferred; lower front arc only"
+    },
+    "rock-small": {
+      "frame": 3,
+      "selectedColumns": [
+        67,
+        93
+      ],
+      "selectedRows": [
+        128,
+        143
+      ],
+      "selectionReason": "Ground-facing lower stone arc, full base width.",
+      "frontEdgePixelCenters": [
+        [
+          67.5,
+          139.5
+        ],
+        [
+          68.5,
+          140.5
+        ],
+        [
+          69.5,
+          141.5
+        ],
+        [
+          70.5,
+          141.5
+        ],
+        [
+          71.5,
+          141.5
+        ],
+        [
+          72.5,
+          142.5
+        ],
+        [
+          73.5,
+          142.5
+        ],
+        [
+          74.5,
+          143.5
+        ],
+        [
+          75.5,
+          143.5
+        ],
+        [
+          76.5,
+          142.5
+        ],
+        [
+          77.5,
+          142.5
+        ],
+        [
+          78.5,
+          142.5
+        ],
+        [
+          79.5,
+          142.5
+        ],
+        [
+          80.5,
+          141.5
+        ],
+        [
+          81.5,
+          141.5
+        ],
+        [
+          82.5,
+          141.5
+        ],
+        [
+          83.5,
+          141.5
+        ],
+        [
+          84.5,
+          141.5
+        ],
+        [
+          85.5,
+          140.5
+        ],
+        [
+          86.5,
+          140.5
+        ],
+        [
+          87.5,
+          140.5
+        ],
+        [
+          88.5,
+          139.5
+        ],
+        [
+          89.5,
+          139.5
+        ],
+        [
+          90.5,
+          138.5
+        ],
+        [
+          91.5,
+          138.5
+        ],
+        [
+          92.5,
+          137.5
+        ],
+        [
+          93.5,
+          135.5
+        ]
+      ],
+      "fittedCenter": [
+        77.78812940131313,
+        135.45395595934053
+      ],
+      "contactCenter": [
+        77.75,
+        135.5
+      ],
+      "screenRadiusX": 14.15597366796125,
+      "screenRadiusY": 7.077986833980625,
+      "fitRmsPixels": 1.014432001486468,
+      "approximate": true,
+      "rearEdge": "inferred; lower front arc only"
+    },
+    "shrub": {
+      "frame": 4,
+      "selectedColumns": [
+        64,
+        95
+      ],
+      "selectedRows": [
+        128,
+        143
+      ],
+      "selectionReason": "Lower crown/root support arc; excludes raised foliage.",
+      "frontEdgePixelCenters": [
+        [
+          64.5,
+          136.5
+        ],
+        [
+          65.5,
+          138.5
+        ],
+        [
+          66.5,
+          138.5
+        ],
+        [
+          67.5,
+          139.5
+        ],
+        [
+          68.5,
+          138.5
+        ],
+        [
+          69.5,
+          139.5
+        ],
+        [
+          70.5,
+          140.5
+        ],
+        [
+          71.5,
+          140.5
+        ],
+        [
+          72.5,
+          139.5
+        ],
+        [
+          73.5,
+          140.5
+        ],
+        [
+          74.5,
+          140.5
+        ],
+        [
+          75.5,
+          139.5
+        ],
+        [
+          76.5,
+          140.5
+        ],
+        [
+          77.5,
+          143.5
+        ],
+        [
+          78.5,
+          143.5
+        ],
+        [
+          79.5,
+          142.5
+        ],
+        [
+          80.5,
+          143.5
+        ],
+        [
+          81.5,
+          143.5
+        ],
+        [
+          82.5,
+          143.5
+        ],
+        [
+          83.5,
+          143.5
+        ],
+        [
+          84.5,
+          140.5
+        ],
+        [
+          85.5,
+          140.5
+        ],
+        [
+          86.5,
+          141.5
+        ],
+        [
+          87.5,
+          141.5
+        ],
+        [
+          88.5,
+          140.5
+        ],
+        [
+          89.5,
+          142.5
+        ],
+        [
+          90.5,
+          142.5
+        ],
+        [
+          91.5,
+          141.5
+        ],
+        [
+          92.5,
+          141.5
+        ],
+        [
+          93.5,
+          138.5
+        ],
+        [
+          94.5,
+          137.5
+        ],
+        [
+          95.5,
+          136.5
+        ]
+      ],
+      "fittedCenter": [
+        80.88462540775711,
+        136.48819224081126
+      ],
+      "contactCenter": [
+        81.0,
+        136.5
+      ],
+      "screenRadiusX": 13.107277665396545,
+      "screenRadiusY": 6.553638832698272,
+      "fitRmsPixels": 2.195217296682195,
+      "approximate": true,
+      "rearEdge": "inferred; lower front arc only"
+    }
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "date": "2026-10-22",
+  "license": "Project-generated assets; no external stock assets.",
+  "toolchain": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "generation": "Only built-in image_gen. Exact requests and all generated originals retained; no CLI/API fallback.",
+  "sourceArt": "Existing approved Paper artbook originals are read-only inputs; their original provenance stays beside them.",
+  "selection": "Back death v2 accepted for persistent rear view; v1 retained as rejected. Back-idle 28/29 corrected by a separate two-key source; 26/27 and the other 48 hound keys are byte-identical. All original generations retained.",
+  "normalization": "Nearest sampling at one fixed scalar per action sheet; root translation only per pose. Alpha >=220, blue false shadows removed. World structures held from one key, flames/glows/door interiors isolated. Explicit family palettes, no dithering. No pose bbox stretching.",
+  "inputs": [
+    {
+      "path": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+      "sha256": "7bcd6a777ddbb2084c4f1825f276301a0764215dccf1af8210b7aeb5501424df"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/hound-attack.png",
+      "sha256": "0a662855d7e14da50d0ae57492bf52aaf67bdfe4278b15c74aa5c86ac7c4722e"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/hound-death.png",
+      "sha256": "8e29f7f248ed16a0f2bc03801f85bd4498b981152ffe231c39c425e0de8d7d10"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+      "sha256": "6a2bafd155b5ae19744ebbcf5711df001fe9d9b1680f423b2029a3031341048f"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/hound-hurt.png",
+      "sha256": "8048530e179c8e901c938bb51913fff6b45db5f3fe1efc33a34ef4a8866f8cba"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/hound-idle.png",
+      "sha256": "4148f8666b01c0534eb3ed141effefe326e4596b7439ed7220d79a91e813c20d"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/hound-run.png",
+      "sha256": "3ec3a4b53e37960716f19164b39fbf81deb589db9fe3eaab32df78c3949afbcb"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+      "sha256": "096e8a15d20ae4307aeb39b5aaf449b89290ed8c093844d5ddf069eab816ac6d"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+      "sha256": "850d0f60d60e0ae2aacc3ad1d238ba64c55934fd0b67e1584c2213d0d76cab70"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/back-idle-before-frame-hashes.json",
+      "sha256": "c250f2d49f33b4eff25ada049a043da66137d466876eb0311f5b3a22b859e477"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/generation-records.json",
+      "sha256": "6ce09b0aa57c8e5785604768ecda59d9e7f4b3f2582b67ccb303086d823fb260"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/hound-back-attack.png",
+      "sha256": "5c8fd837e412ce0b075a018c895de0222cb7007e59e20e551a575dcafd20e746"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/hound-back-death-v2.png",
+      "sha256": "e40e51de2ae27e623d5ab5f5361b4585bb76f7fb244e11892e36afdfaa099cd0"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/hound-back-death.png",
+      "sha256": "4b9fcf87fb1ed0259c5cdb0286dc43b007e4ccd5186d5d54c0629e1e9b09819f"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/hound-back-hurt.png",
+      "sha256": "9560fa11618eb2af433ba4686e4aad25e08c75905917ca02992e7213cf5495d4"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/hound-back-idle-keys-03-04.png",
+      "sha256": "1fcb2d628f30ac19f203bf587890f14776a70db3ecd0234164b90e7b90e440eb"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/hound-back-idle-top-reference.png",
+      "sha256": "8f3d52a20f981613e85f7125154282cefdc0259463e33ed57c744c15bc81efe9"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/hound-back-idle.png",
+      "sha256": "18494386e1e0ac21bf9326ca461588be9153551479f4e4591c40eff05ffc416a"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/hound-back-run.png",
+      "sha256": "b85853015615379f4126948c065236cb5f9509621070db75c857e9e7772d2923"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/normalization.json",
+      "sha256": "8330c80ab461c0a3d038b13a9f56993144183bd4f0c65a578bc55a27d47ddfb1"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/planned-manifest.json",
+      "sha256": "7c6745b23eb73d694a8a6718e89a5a46270d92a1d208814786ebec7897f82875"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/preview-template.html",
+      "sha256": "e1ac133a541d3d1f52692ec18e85f3ce9db9e68ea1501c88da5eed15ff36242d"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/hound-back-attack.txt",
+      "sha256": "aefde3cb13bf8eafd919026241ef00ca35efcf06b2463d62dfed9e93d253836c"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/hound-back-death-v2.txt",
+      "sha256": "d73e0f5f190333554cf23aa85227f8dbe9c043e15eacff4b6ab56d4aecff0a2c"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/hound-back-death.txt",
+      "sha256": "d758b42053abd7757846ae2260f4179f8f6986cf22c4b8ff128a57f49ca8ee13"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/hound-back-hurt.txt",
+      "sha256": "dd6c24054232d4baa5b44f3fb6302a074ec72f3374ab112029107e89ee055972"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/hound-back-idle-keys-03-04.txt",
+      "sha256": "b55f82a303a91e0269054b4e84389cbbbbfaa929d15d584f32ad7a8b86f6661c"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/hound-back-idle.txt",
+      "sha256": "0ebce4df0e0f85d5551dc908a0de3f54a5e005f98e4e900412a92c0fa831e0f0"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/hound-back-run.txt",
+      "sha256": "1c6faae06d85d09a7843f43939bfb3f6dda22b04e3632208436689335e829982"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/original-11-world-fire.txt",
+      "sha256": "bc755560fba3bf1335fb89e7f660310a9ad69339ab7c417255b88c6c26d395d7"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/original-12-world-interactions.txt",
+      "sha256": "5d5f80be648cf6c5cb17996fc500ff56bf315f752560d29048ed0b2127e0d5fd"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/original-14-combat-effects.txt",
+      "sha256": "60795e1bdfd99f307a442e0282e2a22a24483b51c7b5bbe56e6bfe8d4137c2a9"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/original-hound-attack.txt",
+      "sha256": "dc1814d1e1fafe7d50f4461ddaf730ee145cbc8d2460e8e41ddb616eaf86e17c"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/original-hound-death.txt",
+      "sha256": "40959958ff14683b56b4b93292e297561f1540de46e2b869c381819c2f26696e"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/original-hound-facing.txt",
+      "sha256": "918eb148c1e5d532f15e55c0397546bb55dab9a5d81001b15881a54647cc8395"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/original-hound-hurt.txt",
+      "sha256": "d127773bbe686ad65236c8fd49d34178cf066e8dd09fff6565406ce109ce6a76"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/original-hound-idle.txt",
+      "sha256": "2b0140f4f7485cafa2fdc8821a34aa10fab38a04884ccb71bb9992b69c906f26"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/source/prompts/original-hound-run.txt",
+      "sha256": "ab6c8559e453ba3cb93af59b7acd674103bcdf7318d9b5699dfa5003374cae18"
+    },
+    {
+      "path": "scripts/build-hound-world-animation.py",
+      "sha256": "23b8ee1912bc8115ab8dc02cfd5666fa1584f523f3178f24e6bfa710144ee9d4"
+    }
+  ],
+  "generationRecords": [
+    {
+      "clip": "idle",
+      "tool": "built-in image_gen",
+      "promptPath": "source/prompts/hound-back-idle.txt",
+      "requestedTransparent": true,
+      "referencePaths": [
+        "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+        "assets/concepts/animation-bible-01/monsters/originals/hound-idle.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-ae1a2f44-fc2a-41f5-b31e-8ed94334a30e.png",
+      "localPath": "source/hound-back-idle.png"
+    },
+    {
+      "clip": "run",
+      "tool": "built-in image_gen",
+      "promptPath": "source/prompts/hound-back-run.txt",
+      "requestedTransparent": true,
+      "referencePaths": [
+        "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+        "assets/concepts/animation-bible-01/monsters/originals/hound-run.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-e37fa625-c51f-40a7-85f2-b3f5200634da.png",
+      "localPath": "source/hound-back-run.png"
+    },
+    {
+      "clip": "attack",
+      "tool": "built-in image_gen",
+      "promptPath": "source/prompts/hound-back-attack.txt",
+      "requestedTransparent": true,
+      "referencePaths": [
+        "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+        "assets/concepts/animation-bible-01/monsters/originals/hound-attack.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-ab11f6b8-195f-4652-8b9b-f3decee89aba.png",
+      "localPath": "source/hound-back-attack.png"
+    },
+    {
+      "clip": "hurt",
+      "tool": "built-in image_gen",
+      "promptPath": "source/prompts/hound-back-hurt.txt",
+      "requestedTransparent": true,
+      "referencePaths": [
+        "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+        "assets/concepts/animation-bible-01/monsters/originals/hound-hurt.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-f2740471-40fa-4ee1-ac7c-dcc936241ca1.png",
+      "localPath": "source/hound-back-hurt.png"
+    },
+    {
+      "clip": "death",
+      "tool": "built-in image_gen",
+      "promptPath": "source/prompts/hound-back-death.txt",
+      "requestedTransparent": true,
+      "referencePaths": [
+        "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+        "assets/concepts/animation-bible-01/monsters/originals/hound-death.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-bbcc4131-0b15-4997-8712-ec31d4ff77cb.png",
+      "localPath": "source/hound-back-death.png",
+      "selection": "rejected: collapsed keys became side/front-facing"
+    },
+    {
+      "clip": "death-v2",
+      "tool": "built-in image_gen",
+      "promptPath": "source/prompts/hound-back-death-v2.txt",
+      "requestedTransparent": true,
+      "referencePaths": [
+        "assets/concepts/animation-bible-01/monsters/originals/hound-facing.png",
+        "assets/game/pixel-v2/hound-world/source/hound-back-run.png",
+        "assets/game/pixel-v2/hound-world/source/hound-back-death.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-81c3db36-d8d2-4460-a602-9d58e6f74698.png",
+      "localPath": "source/hound-back-death-v2.png",
+      "selection": "accepted: rear skull, visible back and rump retained in all six keys"
+    },
+    {
+      "clip": "idle-keys-03-04",
+      "tool": "built-in image_gen",
+      "promptPath": "source/prompts/hound-back-idle-keys-03-04.txt",
+      "requestedTransparent": true,
+      "referencePaths": [
+        "assets/game/pixel-v2/hound-world/source/hound-back-idle-top-reference.png"
+      ],
+      "generatedPath": "/Users/kirchik/.codex/generated_images/01a16519-3078-7301-ac7c-53ec4fc55dbb/exec-c165e813-dabb-4cde-b683-8c2987da8173.png",
+      "localPath": "source/hound-back-idle-keys-03-04.png",
+      "selection": "accepted: targeted keys 28/29 preserve rear view; original 26/27 unchanged"
+    }
+  ],
+  "qaBoundary": "Native sheets and exact-atlas GIF/HTML previews provided. Live Chrome/gameplay acceptance belongs to the runtime/main owner; no browser was operated by this task."
+}

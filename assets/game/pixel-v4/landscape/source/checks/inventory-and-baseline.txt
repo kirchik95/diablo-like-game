@@ -1,0 +1,123 @@
+{
+  "python": "3.14.4",
+  "pillow": "12.3.0",
+  "packageFiles": 51,
+  "packageBytes": 8409185,
+  "runtimeFiles": {
+    "manifest.json": {
+      "bytes": 1056,
+      "sha256": "a642c80b43a4bf6f185713e1d1f74114ea9d323f46c06d0e35f6a19fe9a61dc4"
+    },
+    "landscape.png": {
+      "bytes": 30958,
+      "sha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731"
+    },
+    "earth.png": {
+      "bytes": 1988,
+      "sha256": "39e10d1600d1db9bae0ba85edc45bb674ceb812a98b35f7f16ac95c8437aa956"
+    },
+    "moss.png": {
+      "bytes": 2383,
+      "sha256": "86d1cfc74e29c2437f72656e045252e64aaa1d9a273de20d9af63b3f8df24e09"
+    },
+    "cliff.png": {
+      "bytes": 2074,
+      "sha256": "98062fa01790c597a1a1ff7c6e7d8b71f4fc24f0d67c34f01828d3e83e8c2e6b"
+    },
+    "hit-masks.json": {
+      "bytes": 34217,
+      "sha256": "ab11064facaec7bae1f9db04e34e99142afc39f5d11c28527575eec1caacbf2d"
+    }
+  },
+  "originals": [
+    {
+      "name": "cliff.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "6a38b2b9964760500fc4336d81fa641595c6e7ce82c5bb2014ea94cacb9899c8"
+    },
+    {
+      "name": "cypress.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "e390076865a17c7f38760a879002ed6f45f5813df575125704836304c710a64b"
+    },
+    {
+      "name": "dead-tree.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "d85668b00459b771e7dfddc1d27a4550e0439be657a0f7b79afdf32df2765a0f"
+    },
+    {
+      "name": "earth.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "c45a99c36edc147c37a8693e4ff862b0966e5f7a24e69bde03a3617467fb0e7c"
+    },
+    {
+      "name": "grass.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "c3e8bfdc1d7db81abecabec0b21442eb2550e342af3b12c5804215dde41c3ce6"
+    },
+    {
+      "name": "moss.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "d4d9a8dbbfe79edd0fc8d46ed7e7ed8ac6e77babf67434a9e7d015c32a7382bf"
+    },
+    {
+      "name": "rock-large.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "0f0ab877436320e2fdd05e8d54da9eb49f3ce888cdc9f7992a1daac448bb4536"
+    },
+    {
+      "name": "rock-small.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "18e5ce62512169b657c3960006ac91b08be9df34e32a2d3255b59ae61d66e334"
+    },
+    {
+      "name": "ruin-pile.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "f7a7944edc31f2c028c27462d0bf8298ebaedbccf47bea3f2afb654df144c863"
+    },
+    {
+      "name": "shrub.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "9575b3eb25d711052e47c2612015199e049f530cf3fd74d25c0d316c5aaa65c3"
+    },
+    {
+      "name": "supplies.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "9263cc510d75dcf4dc79620c29f61a2c2c094473f6ae11f1e801f27584c7d092"
+    }
+  ]
+}
+{"oldAssetFilesCompared": 402, "notInBaseline": [], "changedFromBaseline": []}

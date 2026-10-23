@@ -1,0 +1,2733 @@
+[
+  {
+    "index": 0,
+    "frame": "front-idle-01",
+    "base": "idle-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-idle.png",
+    "recipe": {
+      "key": "idle-1"
+    },
+    "root": [
+      106,
+      96
+    ],
+    "offset": [
+      -42,
+      16
+    ],
+    "scale": 0.2,
+    "nativeBounds": [
+      21,
+      62,
+      106,
+      112
+    ],
+    "pixelsSha256": "4f2ef0412bbb468a03c5ab53efdb6125ddc9fa8be7630c3e1574dc79ec08f37e"
+  },
+  {
+    "index": 1,
+    "frame": "front-idle-02",
+    "base": "idle-2",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-idle.png",
+    "recipe": {
+      "key": "idle-2"
+    },
+    "root": [
+      85,
+      96
+    ],
+    "offset": [
+      -21,
+      16
+    ],
+    "scale": 0.2,
+    "nativeBounds": [
+      23,
+      59,
+      106,
+      112
+    ],
+    "pixelsSha256": "960ea8c8417f7f4b912dcdefe55635170825f97fb40892603e2e5eaa9734038d"
+  },
+  {
+    "index": 2,
+    "frame": "front-idle-03",
+    "base": "idle-3",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-idle.png",
+    "recipe": {
+      "key": "idle-3"
+    },
+    "root": [
+      109,
+      87
+    ],
+    "offset": [
+      -45,
+      25
+    ],
+    "scale": 0.2,
+    "nativeBounds": [
+      19,
+      60,
+      113,
+      112
+    ],
+    "pixelsSha256": "cc6693ce75bc7fc23d85009fef76efddd198eb4442805532bd62d280aec4dae8"
+  },
+  {
+    "index": 3,
+    "frame": "front-idle-04",
+    "base": "idle-4",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-idle.png",
+    "recipe": {
+      "key": "idle-4"
+    },
+    "root": [
+      86,
+      92
+    ],
+    "offset": [
+      -22,
+      20
+    ],
+    "scale": 0.2,
+    "nativeBounds": [
+      22,
+      62,
+      105,
+      112
+    ],
+    "pixelsSha256": "e63716dd8926280055345590119efbe66ef6f70ea9254301dcc52048ec9040e8"
+  },
+  {
+    "index": 4,
+    "frame": "front-walk-01",
+    "base": "walk-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-walk.png",
+    "recipe": {
+      "key": "walk-1"
+    },
+    "root": [
+      94,
+      111
+    ],
+    "offset": [
+      -30,
+      1
+    ],
+    "scale": 0.2426,
+    "nativeBounds": [
+      22,
+      58,
+      103,
+      112
+    ],
+    "pixelsSha256": "70d742880522b9c060da74a5d40eaf28a923f60724e460d158cd51efa778d3f1"
+  },
+  {
+    "index": 5,
+    "frame": "front-walk-02",
+    "base": "walk-2",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-walk.png",
+    "recipe": {
+      "key": "walk-2"
+    },
+    "root": [
+      89,
+      112
+    ],
+    "offset": [
+      -25,
+      0
+    ],
+    "scale": 0.2426,
+    "nativeBounds": [
+      26,
+      56,
+      104,
+      112
+    ],
+    "pixelsSha256": "f576704502fbb2233299a2263d72cb4d8c42a5fd24f15278fe13a8482382bf92"
+  },
+  {
+    "index": 6,
+    "frame": "front-walk-03",
+    "base": "walk-3",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-walk.png",
+    "recipe": {
+      "key": "walk-3"
+    },
+    "root": [
+      87,
+      112
+    ],
+    "offset": [
+      -23,
+      0
+    ],
+    "scale": 0.2426,
+    "nativeBounds": [
+      19,
+      58,
+      104,
+      112
+    ],
+    "pixelsSha256": "10ecf5c0957114f4370074764cea87c4bca351d9e4c6eb6b918292b093565200"
+  },
+  {
+    "index": 7,
+    "frame": "front-walk-04",
+    "base": "walk-4",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-walk.png",
+    "recipe": {
+      "key": "walk-4"
+    },
+    "root": [
+      94,
+      100
+    ],
+    "offset": [
+      -30,
+      12
+    ],
+    "scale": 0.2426,
+    "nativeBounds": [
+      20,
+      56,
+      105,
+      112
+    ],
+    "pixelsSha256": "8841b8a787e146b42e339402519228696c01dfb1c24240b346dea2ac12d05f9e"
+  },
+  {
+    "index": 8,
+    "frame": "front-walk-05",
+    "base": "walk-5",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-walk.png",
+    "recipe": {
+      "key": "walk-5"
+    },
+    "root": [
+      89,
+      99
+    ],
+    "offset": [
+      -25,
+      13
+    ],
+    "scale": 0.2426,
+    "nativeBounds": [
+      19,
+      58,
+      107,
+      112
+    ],
+    "pixelsSha256": "98a228d5b6d270764bb6bdb84909334e3d20421ed81798c36d1707e2182f7fd2"
+  },
+  {
+    "index": 9,
+    "frame": "front-walk-06",
+    "base": "walk-6",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-walk.png",
+    "recipe": {
+      "key": "walk-6"
+    },
+    "root": [
+      86,
+      102
+    ],
+    "offset": [
+      -22,
+      10
+    ],
+    "scale": 0.2426,
+    "nativeBounds": [
+      20,
+      55,
+      105,
+      112
+    ],
+    "pixelsSha256": "283fda31f4b75c7242fb854eef2576fd15f02aaa8266e65ee47ecf3ceee1903e"
+  },
+  {
+    "index": 10,
+    "frame": "front-windup-01",
+    "base": "attack-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-1"
+    },
+    "root": [
+      89,
+      125
+    ],
+    "offset": [
+      -25,
+      -13
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      23,
+      59,
+      107,
+      112
+    ],
+    "pixelsSha256": "97347e9b30989ef26e1ac90841f8da538453fd4e070ef4d28a74102bae8f5bc1"
+  },
+  {
+    "index": 11,
+    "frame": "front-windup-02",
+    "base": "attack-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-1",
+      "rotate": 9,
+      "pivot": [
+        0.2,
+        1
+      ],
+      "seams": 1
+    },
+    "root": [
+      89,
+      125
+    ],
+    "offset": [
+      -25,
+      -13
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      21,
+      55,
+      104,
+      109
+    ],
+    "pixelsSha256": "5a5021e81d5a41d1b91ba8464758aa0068b061bbec65f5e5b8747a46e1ef4cd5"
+  },
+  {
+    "index": 12,
+    "frame": "front-windup-03",
+    "base": "attack-2",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-2",
+      "register": "self",
+      "seams": 1,
+      "eye": "bright"
+    },
+    "root": [
+      89,
+      123
+    ],
+    "offset": [
+      -25,
+      -11
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      22,
+      34,
+      106,
+      112
+    ],
+    "pixelsSha256": "f243e49708e889c511ec1dfa7138df9eea07fe365145df63d1b59581294290ed"
+  },
+  {
+    "index": 13,
+    "frame": "front-windup-04",
+    "base": "attack-2",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-2",
+      "register": "self",
+      "seams": 2,
+      "eye": "bright"
+    },
+    "root": [
+      89,
+      123
+    ],
+    "offset": [
+      -25,
+      -11
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      22,
+      34,
+      106,
+      112
+    ],
+    "pixelsSha256": "80f69cd518ef647b8997056827d0a1afb58e3fc1a013087f4aff581529ccefd1"
+  },
+  {
+    "index": 14,
+    "frame": "front-windup-05",
+    "base": "attack-2",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-2",
+      "register": "self",
+      "rotate": 2,
+      "pivot": [
+        0.3,
+        1
+      ],
+      "seams": 3,
+      "eye": "bright"
+    },
+    "root": [
+      87,
+      123
+    ],
+    "offset": [
+      -23,
+      -11
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      23,
+      33,
+      106,
+      112
+    ],
+    "pixelsSha256": "7952e1390fc38183163dbbe7f7650ac87d44f65909a04d5e9512e7ba7a45eaf0"
+  },
+  {
+    "index": 15,
+    "frame": "front-slam-01",
+    "base": "attack-2",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-2",
+      "register": "self",
+      "rotate": -24,
+      "pivot": [
+        0.3,
+        1
+      ],
+      "seams": 3,
+      "eye": "bright"
+    },
+    "root": [
+      105,
+      118
+    ],
+    "offset": [
+      -41,
+      -6
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      12,
+      55,
+      105,
+      112
+    ],
+    "pixelsSha256": "8b87ed39416edf87102c9ffd0bdebfcbcb35a041964046cfc25a1f157577faaf"
+  },
+  {
+    "index": 16,
+    "frame": "front-slam-02",
+    "base": "attack-4",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-4",
+      "seams": 3,
+      "eye": "bright"
+    },
+    "root": [
+      89,
+      112
+    ],
+    "offset": [
+      -25,
+      0
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      25,
+      56,
+      105,
+      112
+    ],
+    "pixelsSha256": "73e3a8c120d8468ac63a2148f95b2b514c26756c617a5a5749eb012f757827bd"
+  },
+  {
+    "index": 17,
+    "frame": "front-slam-03",
+    "base": "attack-4",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-4",
+      "squash": [
+        1.03,
+        0.92
+      ],
+      "seams": 2
+    },
+    "root": [
+      89,
+      112
+    ],
+    "offset": [
+      -25,
+      0
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      24,
+      60,
+      107,
+      112
+    ],
+    "pixelsSha256": "e0b195c936581717d1c931c4d9513e5e1456f5436c5d4a2499f17f3cb88f6193"
+  },
+  {
+    "index": 18,
+    "frame": "front-recover-01",
+    "base": "attack-5",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-5",
+      "seams": 1
+    },
+    "root": [
+      86,
+      113
+    ],
+    "offset": [
+      -22,
+      -1
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      26,
+      56,
+      107,
+      112
+    ],
+    "pixelsSha256": "b11136928c807c8367eb143907730671ff6ef5ba19fff1cbe19b21e5ec233380"
+  },
+  {
+    "index": 19,
+    "frame": "front-recover-02",
+    "base": "attack-3",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-3"
+    },
+    "root": [
+      86,
+      128
+    ],
+    "offset": [
+      -22,
+      -16
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      25,
+      50,
+      112,
+      112
+    ],
+    "pixelsSha256": "094cd2a7c694da7b31fce794fe486fc88949e278a9565d66c0f302fe007975ab"
+  },
+  {
+    "index": 20,
+    "frame": "front-recover-03",
+    "base": "attack-6",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-6"
+    },
+    "root": [
+      92,
+      114
+    ],
+    "offset": [
+      -28,
+      -2
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      25,
+      57,
+      105,
+      112
+    ],
+    "pixelsSha256": "558dd7c6a78b644e9d620c57b300b0bf84b251344101e7f592b94b20444a7aee"
+  },
+  {
+    "index": 21,
+    "frame": "front-hurt-01",
+    "base": "hurt-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-hurt.png",
+    "recipe": {
+      "key": "hurt-1"
+    },
+    "root": [
+      126,
+      108
+    ],
+    "offset": [
+      -62,
+      4
+    ],
+    "scale": 0.2312,
+    "nativeBounds": [
+      23,
+      60,
+      102,
+      112
+    ],
+    "pixelsSha256": "5d4899eacde2cabfc46eeccec4822340b1cca95cc9b6dd61122d5dbf9fbf53ac"
+  },
+  {
+    "index": 22,
+    "frame": "front-hurt-02",
+    "base": "hurt-2",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-hurt.png",
+    "recipe": {
+      "key": "hurt-2"
+    },
+    "root": [
+      95,
+      107
+    ],
+    "offset": [
+      -31,
+      5
+    ],
+    "scale": 0.2312,
+    "nativeBounds": [
+      22,
+      57,
+      106,
+      112
+    ],
+    "pixelsSha256": "d70810c521e27342c3e34eb931b803be07a1d6e97791f9bd1a267c65f6cea4ed"
+  },
+  {
+    "index": 23,
+    "frame": "front-hurt-03",
+    "base": "hurt-3",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-hurt.png",
+    "recipe": {
+      "key": "hurt-3"
+    },
+    "root": [
+      126,
+      96
+    ],
+    "offset": [
+      -62,
+      16
+    ],
+    "scale": 0.2312,
+    "nativeBounds": [
+      22,
+      57,
+      108,
+      112
+    ],
+    "pixelsSha256": "9bb49ded41d7f70afce0bb56803a15992e22d687ccdbc8bf3c239da6dac79c1a"
+  },
+  {
+    "index": 24,
+    "frame": "front-hurt-04",
+    "base": "hurt-4",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-hurt.png",
+    "recipe": {
+      "key": "hurt-4",
+      "eye": "dim"
+    },
+    "root": [
+      91,
+      100
+    ],
+    "offset": [
+      -27,
+      12
+    ],
+    "scale": 0.2312,
+    "nativeBounds": [
+      21,
+      60,
+      107,
+      112
+    ],
+    "pixelsSha256": "b18989b34c4019d3c435462ec105264bf2927914f9513e9b47090f9fd4e35609"
+  },
+  {
+    "index": 25,
+    "frame": "front-stunned-01",
+    "base": "idle-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-idle.png",
+    "recipe": {
+      "key": "idle-1",
+      "flipY": true,
+      "tone": {
+        "6": 5,
+        "5": 4
+      },
+      "eye": "dim",
+      "belly": {
+        "at": [
+          60,
+          78
+        ],
+        "r": [
+          15,
+          7.5
+        ],
+        "segments": 3
+      },
+      "weakSpot": {
+        "at": [
+          58,
+          79
+        ],
+        "level": 2
+      }
+    },
+    "root": [
+      106,
+      96
+    ],
+    "offset": [
+      -42,
+      16
+    ],
+    "scale": 0.2,
+    "nativeBounds": [
+      21,
+      62,
+      106,
+      112
+    ],
+    "pixelsSha256": "f643b271c258f398c6606d3f77cda3d286be3ec7c5e4b93d3ffe65df83dcc4f3"
+  },
+  {
+    "index": 26,
+    "frame": "front-stunned-02",
+    "base": "idle-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-idle.png",
+    "recipe": {
+      "key": "idle-1",
+      "flipY": true,
+      "tone": {
+        "6": 5,
+        "5": 4
+      },
+      "eye": "dim",
+      "belly": {
+        "at": [
+          63,
+          78
+        ],
+        "r": [
+          15,
+          7.5
+        ],
+        "segments": 3
+      },
+      "weakSpot": {
+        "at": [
+          61,
+          79
+        ],
+        "level": 1
+      },
+      "rotate": -5,
+      "pivot": [
+        0.5,
+        1
+      ]
+    },
+    "root": [
+      106,
+      96
+    ],
+    "offset": [
+      -42,
+      16
+    ],
+    "scale": 0.2,
+    "nativeBounds": [
+      25,
+      62,
+      110,
+      113
+    ],
+    "pixelsSha256": "0700e84e7e3662c7e377d80a9dd88a9783b914abd7357d065a2d160066e86ecd"
+  },
+  {
+    "index": 27,
+    "frame": "front-stunned-03",
+    "base": "idle-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-idle.png",
+    "recipe": {
+      "key": "idle-1",
+      "flipY": true,
+      "tone": {
+        "6": 5,
+        "5": 4
+      },
+      "eye": "dim",
+      "belly": {
+        "at": [
+          60,
+          78
+        ],
+        "r": [
+          15,
+          7.5
+        ],
+        "segments": 3
+      },
+      "weakSpot": {
+        "at": [
+          58,
+          79
+        ],
+        "level": 3
+      }
+    },
+    "root": [
+      106,
+      96
+    ],
+    "offset": [
+      -42,
+      16
+    ],
+    "scale": 0.2,
+    "nativeBounds": [
+      21,
+      62,
+      106,
+      112
+    ],
+    "pixelsSha256": "7a8757166afc55da1c117c0dd871a1095c0ccc65e3844caefd224d9dd2204d48"
+  },
+  {
+    "index": 28,
+    "frame": "front-stunned-04",
+    "base": "idle-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-idle.png",
+    "recipe": {
+      "key": "idle-1",
+      "flipY": true,
+      "tone": {
+        "6": 5,
+        "5": 4
+      },
+      "eye": "dim",
+      "belly": {
+        "at": [
+          57,
+          78
+        ],
+        "r": [
+          15,
+          7.5
+        ],
+        "segments": 3
+      },
+      "weakSpot": {
+        "at": [
+          55,
+          79
+        ],
+        "level": 1
+      },
+      "rotate": 5,
+      "pivot": [
+        0.5,
+        1
+      ]
+    },
+    "root": [
+      106,
+      96
+    ],
+    "offset": [
+      -42,
+      16
+    ],
+    "scale": 0.2,
+    "nativeBounds": [
+      18,
+      61,
+      102,
+      113
+    ],
+    "pixelsSha256": "8e72cbada1060dd434f240d631e2d7dbda9812dec3f0fc6103e31c1eadc16036"
+  },
+  {
+    "index": 29,
+    "frame": "front-death-01",
+    "base": "death-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-death.png",
+    "recipe": {
+      "key": "death-1"
+    },
+    "root": [
+      86,
+      111
+    ],
+    "offset": [
+      -22,
+      1
+    ],
+    "scale": 0.2336,
+    "nativeBounds": [
+      23,
+      59,
+      106,
+      112
+    ],
+    "pixelsSha256": "178deaf2911018a388a0e1b4f1a5e9e68eb10f1b26fad05274d7539956e6e89b"
+  },
+  {
+    "index": 30,
+    "frame": "front-death-02",
+    "base": "death-2",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-death.png",
+    "recipe": {
+      "key": "death-2"
+    },
+    "root": [
+      81,
+      111
+    ],
+    "offset": [
+      -17,
+      1
+    ],
+    "scale": 0.2336,
+    "nativeBounds": [
+      27,
+      61,
+      103,
+      112
+    ],
+    "pixelsSha256": "68f1fabd9c5ae152ee37818bc44738874539b9e4b05872b680936b8ded15a09f"
+  },
+  {
+    "index": 31,
+    "frame": "front-death-03",
+    "base": "death-3",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-death.png",
+    "recipe": {
+      "key": "death-3"
+    },
+    "root": [
+      82,
+      114
+    ],
+    "offset": [
+      -18,
+      -2
+    ],
+    "scale": 0.2336,
+    "nativeBounds": [
+      29,
+      49,
+      102,
+      112
+    ],
+    "pixelsSha256": "845b70e4d469d8c7eedc69bc432d9322004976f901b30b4dcac3b8816f4be632"
+  },
+  {
+    "index": 32,
+    "frame": "front-death-04",
+    "base": "death-4",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-death.png",
+    "recipe": {
+      "key": "death-4",
+      "eye": "dim"
+    },
+    "root": [
+      84,
+      95
+    ],
+    "offset": [
+      -20,
+      17
+    ],
+    "scale": 0.2336,
+    "nativeBounds": [
+      28,
+      61,
+      106,
+      112
+    ],
+    "pixelsSha256": "e86443f8ba316f2f25a4c988d38c8b8bea6ff7676b18a317c7ad8d79a6142ad8"
+  },
+  {
+    "index": 33,
+    "frame": "front-death-05",
+    "base": "death-5",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-death.png",
+    "recipe": {
+      "key": "death-5",
+      "eye": "off"
+    },
+    "root": [
+      83,
+      98
+    ],
+    "offset": [
+      -19,
+      14
+    ],
+    "scale": 0.2336,
+    "nativeBounds": [
+      23,
+      64,
+      105,
+      112
+    ],
+    "pixelsSha256": "e0e39dd9742aa4585172a28b548523dd3b5094ab6520f40acf71a1e3dddce6f5"
+  },
+  {
+    "index": 34,
+    "frame": "front-death-06",
+    "base": "death-6",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-death.png",
+    "recipe": {
+      "key": "death-6",
+      "eye": "off"
+    },
+    "root": [
+      83,
+      101
+    ],
+    "offset": [
+      -19,
+      11
+    ],
+    "scale": 0.2336,
+    "nativeBounds": [
+      21,
+      65,
+      105,
+      112
+    ],
+    "pixelsSha256": "4030274dc6e81fca93009ce0fbe70d697299e2cea0ba18d8138dbe30eea0a79b"
+  },
+  {
+    "index": 35,
+    "frame": "front-block-01",
+    "base": "attack-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-1",
+      "rotate": -12,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "squash": [
+        1.02,
+        0.9
+      ],
+      "nudge": [
+        0,
+        -4
+      ],
+      "eye": "dim"
+    },
+    "root": [
+      89,
+      125
+    ],
+    "offset": [
+      -25,
+      -17
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      26,
+      61,
+      110,
+      112
+    ],
+    "pixelsSha256": "01a542301869c7e3ae791d02aafe341077abb4538b3561d9451e7b53cda2fcb4"
+  },
+  {
+    "index": 36,
+    "frame": "front-block-02",
+    "base": "attack-1",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+    "recipe": {
+      "key": "attack-1",
+      "rotate": -14,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "squash": [
+        1.04,
+        0.86
+      ],
+      "nudge": [
+        -2,
+        -5
+      ],
+      "eye": "dim"
+    },
+    "root": [
+      89,
+      125
+    ],
+    "offset": [
+      -27,
+      -18
+    ],
+    "scale": 0.2478,
+    "nativeBounds": [
+      24,
+      62,
+      109,
+      112
+    ],
+    "pixelsSha256": "673dc4bbf40b68a3e25132e34a39d7e3079d8bd51df66c55ff6be25f58273c52"
+  },
+  {
+    "index": 37,
+    "frame": "back-idle-01",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back"
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      25,
+      54,
+      100,
+      112
+    ],
+    "pixelsSha256": "1190402cf4ced5508b884282a8e1153431a2722244bd7524c7f8e7af31ad0e04"
+  },
+  {
+    "index": 38,
+    "frame": "back-idle-02",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "body": [
+          0,
+          -1
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      25,
+      53,
+      100,
+      112
+    ],
+    "pixelsSha256": "d84e13c3e27af6b7006e9d43b51c6ea8d58d7806252cba9206205c7a4b1eec8c"
+  },
+  {
+    "index": 39,
+    "frame": "back-idle-03",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "body": [
+          0,
+          -1
+        ],
+        "R1": [
+          1,
+          -1
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      25,
+      53,
+      101,
+      112
+    ],
+    "pixelsSha256": "74ebf9002c718c91c71ff8b4e2ed8ffae53d60cd3c058bad972d9fe02692a416"
+  },
+  {
+    "index": 40,
+    "frame": "back-idle-04",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "L1": [
+          -1,
+          0
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      24,
+      54,
+      100,
+      112
+    ],
+    "pixelsSha256": "9674ec508c4e872468c5aa8e330681e5f645d5d6e0f27f1abe214122ead5f05e"
+  },
+  {
+    "index": 41,
+    "frame": "back-walk-01",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "L1": [
+          -1,
+          0
+        ],
+        "C": [
+          -1,
+          0
+        ],
+        "R1": [
+          -1,
+          0
+        ],
+        "L2": [
+          1,
+          -1
+        ],
+        "R2": [
+          1,
+          -1
+        ],
+        "body": [
+          0,
+          0
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      24,
+      54,
+      99,
+      112
+    ],
+    "pixelsSha256": "b4089309e0e8f0da8c40d905438c04fba8e36f72e8778edb7f2ae5e1a95e88fb"
+  },
+  {
+    "index": 42,
+    "frame": "back-walk-02",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "L1": [
+          0,
+          -2
+        ],
+        "C": [
+          0,
+          -2
+        ],
+        "R1": [
+          0,
+          -2
+        ],
+        "L2": [
+          1,
+          0
+        ],
+        "R2": [
+          1,
+          0
+        ],
+        "body": [
+          0,
+          -1
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      25,
+      53,
+      100,
+      110
+    ],
+    "pixelsSha256": "5aad1ee366aff0bbfda2b52ac4c74dfa1243d989e1d5130d5554b7629248001f"
+  },
+  {
+    "index": 43,
+    "frame": "back-walk-03",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "L1": [
+          1,
+          -3
+        ],
+        "C": [
+          1,
+          -3
+        ],
+        "R1": [
+          1,
+          -3
+        ],
+        "L2": [
+          0,
+          0
+        ],
+        "R2": [
+          0,
+          0
+        ],
+        "body": [
+          0,
+          0
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      26,
+      54,
+      101,
+      109
+    ],
+    "pixelsSha256": "b77aab754f9ce5ea84de41c9bb41c5bd53cd7e29c43930d2758247fa2efad0f0"
+  },
+  {
+    "index": 44,
+    "frame": "back-walk-04",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "L1": [
+          1,
+          -1
+        ],
+        "C": [
+          1,
+          -1
+        ],
+        "R1": [
+          1,
+          -1
+        ],
+        "L2": [
+          -1,
+          0
+        ],
+        "R2": [
+          -1,
+          0
+        ],
+        "body": [
+          0,
+          0
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      26,
+      54,
+      101,
+      111
+    ],
+    "pixelsSha256": "125cbb0cf0b97d718709472fbe9b1de05e0d297411afd8eb11f132cf3048733c"
+  },
+  {
+    "index": 45,
+    "frame": "back-walk-05",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "L1": [
+          1,
+          0
+        ],
+        "C": [
+          1,
+          0
+        ],
+        "R1": [
+          1,
+          0
+        ],
+        "L2": [
+          0,
+          -2
+        ],
+        "R2": [
+          0,
+          -2
+        ],
+        "body": [
+          0,
+          -1
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      26,
+      53,
+      101,
+      112
+    ],
+    "pixelsSha256": "1d2010b7d70908b527136c9cce7db91a139c2fe18eaccb6ac55f133763390239"
+  },
+  {
+    "index": 46,
+    "frame": "back-walk-06",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "L1": [
+          0,
+          0
+        ],
+        "C": [
+          0,
+          0
+        ],
+        "R1": [
+          0,
+          0
+        ],
+        "L2": [
+          1,
+          -3
+        ],
+        "R2": [
+          1,
+          -3
+        ],
+        "body": [
+          0,
+          0
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      25,
+      54,
+      100,
+      112
+    ],
+    "pixelsSha256": "661e07a160e949d23b1bdcbd869ae0fe449241ec1694930a14875cbb3b1088d8"
+  },
+  {
+    "index": 47,
+    "frame": "back-windup-01",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "body": [
+          0,
+          1
+        ],
+        "L1": [
+          -2,
+          0
+        ],
+        "R1": [
+          2,
+          0
+        ],
+        "L2": [
+          -1,
+          0
+        ],
+        "R2": [
+          1,
+          0
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      23,
+      55,
+      102,
+      112
+    ],
+    "pixelsSha256": "8deb2a5df782637be300bd3d58123902ffab1d88e3e8092230090a36efbafa20"
+  },
+  {
+    "index": 48,
+    "frame": "back-windup-02",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": 8,
+      "pivot": [
+        0.35,
+        1
+      ],
+      "parts": {
+        "R1": [
+          0,
+          -1
+        ]
+      },
+      "seams": 1
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      23,
+      50,
+      97,
+      110
+    ],
+    "pixelsSha256": "f667089280a378105472976cfbc50829f0e0f1162b5a1b0c3bf0ad73b65caf18"
+  },
+  {
+    "index": 49,
+    "frame": "back-windup-03",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": 15,
+      "pivot": [
+        0.35,
+        1
+      ],
+      "parts": {
+        "R1": [
+          0,
+          -3
+        ],
+        "R2": [
+          0,
+          -2
+        ]
+      },
+      "seams": 1
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      21,
+      47,
+      94,
+      111
+    ],
+    "pixelsSha256": "1b79fbf9d75825b07c41619e14c310d63a3078490312a41b308e002fb078ef7f"
+  },
+  {
+    "index": 50,
+    "frame": "back-windup-04",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": 18,
+      "pivot": [
+        0.35,
+        1
+      ],
+      "parts": {
+        "R1": [
+          1,
+          -3
+        ],
+        "R2": [
+          0,
+          -2
+        ]
+      },
+      "seams": 2
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      21,
+      46,
+      93,
+      111
+    ],
+    "pixelsSha256": "a0f200e3cb8fdd358a31cfc43169de6d9c3d43ed3fde313ffe193bc30f342728"
+  },
+  {
+    "index": 51,
+    "frame": "back-windup-05",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": 20,
+      "pivot": [
+        0.35,
+        1
+      ],
+      "parts": {
+        "R1": [
+          1,
+          -4
+        ],
+        "R2": [
+          0,
+          -3
+        ]
+      },
+      "seams": 3
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      20,
+      45,
+      92,
+      112
+    ],
+    "pixelsSha256": "6a28194c7a95993526255c4c2254b90a6ae32724b578bcfa99a7ad70a7d979be"
+  },
+  {
+    "index": 52,
+    "frame": "back-slam-01",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": -5,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "parts": {
+        "body": [
+          0,
+          1
+        ]
+      },
+      "seams": 3
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      26,
+      57,
+      101,
+      112
+    ],
+    "pixelsSha256": "c3b8a7cd482895d7a46325b29b7857cedb1177a5afc05d3387fc863ffd1adf9b"
+  },
+  {
+    "index": 53,
+    "frame": "back-slam-02",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "squash": [
+        1.04,
+        0.9
+      ],
+      "parts": {
+        "body": [
+          0,
+          2
+        ],
+        "L1": [
+          -2,
+          0
+        ],
+        "R1": [
+          2,
+          0
+        ]
+      },
+      "seams": 3
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      21,
+      62,
+      103,
+      112
+    ],
+    "pixelsSha256": "5ccaa6aa8750b79803bbbef0a8a90a0c24497aabad7fa0948a19d11ffcf3e3c7"
+  },
+  {
+    "index": 54,
+    "frame": "back-slam-03",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "squash": [
+        1.02,
+        0.94
+      ],
+      "parts": {
+        "body": [
+          0,
+          1
+        ],
+        "L1": [
+          -1,
+          0
+        ],
+        "R1": [
+          1,
+          0
+        ]
+      },
+      "seams": 2
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      23,
+      58,
+      101,
+      112
+    ],
+    "pixelsSha256": "95113b6e7d2059ffd2e670e649aef247566939fe67deb858ef5184fdc094f199"
+  },
+  {
+    "index": 55,
+    "frame": "back-recover-01",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "squash": [
+        1.01,
+        0.97
+      ],
+      "parts": {
+        "body": [
+          0,
+          1
+        ]
+      },
+      "seams": 1
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      24,
+      57,
+      100,
+      112
+    ],
+    "pixelsSha256": "e9311e6739c5a8d531e4b0e2865ecf00c0c29e9da4c823a11f1a4d4978a0c311"
+  },
+  {
+    "index": 56,
+    "frame": "back-recover-02",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "body": [
+          0,
+          -1
+        ],
+        "C": [
+          0,
+          -1
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      25,
+      53,
+      100,
+      111
+    ],
+    "pixelsSha256": "1e042f3a1dd74387ff3250761e8096b62bf955dda81b42c26d2bc694a2149d5b"
+  },
+  {
+    "index": 57,
+    "frame": "back-recover-03",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "L2": [
+          0,
+          -1
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      25,
+      54,
+      100,
+      112
+    ],
+    "pixelsSha256": "3f09ce211cfbdfb5cbb265328e32761b663b88b4f0e5ac6ccbdd0f97e9b765c0"
+  },
+  {
+    "index": 58,
+    "frame": "back-hurt-01",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": -5,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "nudge": [
+        -2,
+        0
+      ]
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -12,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      24,
+      56,
+      99,
+      112
+    ],
+    "pixelsSha256": "3388827175c8cb68615aee29788f8db85c96cbd296a37fc60680db6c613f7df7"
+  },
+  {
+    "index": 59,
+    "frame": "back-hurt-02",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": 4,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "nudge": [
+        1,
+        0
+      ],
+      "parts": {
+        "R1": [
+          0,
+          -2
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -9,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      25,
+      53,
+      99,
+      112
+    ],
+    "pixelsSha256": "f9ac586b0b77011705c61c79633487f7288073bed2adb1b97c769cbd65a7d8a9"
+  },
+  {
+    "index": 60,
+    "frame": "back-hurt-03",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "body": [
+          1,
+          0
+        ],
+        "L1": [
+          -1,
+          0
+        ],
+        "R2": [
+          1,
+          -1
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      24,
+      54,
+      100,
+      112
+    ],
+    "pixelsSha256": "19c6b92f841331fd22cad413428ea78a83679b1da1ee8031f6d4590656ed3d23"
+  },
+  {
+    "index": 61,
+    "frame": "back-hurt-04",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "body": [
+          0,
+          1
+        ],
+        "L1": [
+          -1,
+          0
+        ],
+        "R1": [
+          1,
+          0
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      24,
+      55,
+      101,
+      112
+    ],
+    "pixelsSha256": "7903b49b82968b00b79e44fc70972e31a9379ab30c956e1b194d7492ab01ad9e"
+  },
+  {
+    "index": 62,
+    "frame": "back-stunned-01",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "flipY": true,
+      "tone": {
+        "6": 5,
+        "5": 4
+      },
+      "belly": {
+        "at": [
+          63,
+          72
+        ],
+        "r": [
+          15,
+          7
+        ],
+        "segments": 3
+      },
+      "weakSpot": {
+        "at": [
+          61,
+          73
+        ],
+        "level": 1
+      }
+    },
+    "root": [
+      73,
+      118
+    ],
+    "offset": [
+      -9,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      26,
+      54,
+      101,
+      112
+    ],
+    "pixelsSha256": "39c38d26682a1cf079cf976c46ef83ccef2847392345850272111c41ec4c5819"
+  },
+  {
+    "index": 63,
+    "frame": "back-stunned-02",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "flipY": true,
+      "tone": {
+        "6": 5,
+        "5": 4
+      },
+      "belly": {
+        "at": [
+          60,
+          72
+        ],
+        "r": [
+          15,
+          7
+        ],
+        "segments": 3
+      },
+      "weakSpot": {
+        "at": [
+          58,
+          73
+        ],
+        "level": 3
+      },
+      "rotate": 5,
+      "pivot": [
+        0.5,
+        1
+      ]
+    },
+    "root": [
+      73,
+      118
+    ],
+    "offset": [
+      -9,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      22,
+      54,
+      97,
+      110
+    ],
+    "pixelsSha256": "1f1d5b8be626000eabf21e3b8ba02efa8e75181d1ec091ff4fa48555adc03397"
+  },
+  {
+    "index": 64,
+    "frame": "back-stunned-03",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "flipY": true,
+      "tone": {
+        "6": 5,
+        "5": 4
+      },
+      "belly": {
+        "at": [
+          63,
+          72
+        ],
+        "r": [
+          15,
+          7
+        ],
+        "segments": 3
+      },
+      "weakSpot": {
+        "at": [
+          61,
+          73
+        ],
+        "level": 2
+      }
+    },
+    "root": [
+      73,
+      118
+    ],
+    "offset": [
+      -9,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      26,
+      54,
+      101,
+      112
+    ],
+    "pixelsSha256": "b29f6fc77fd6e969f90f0ef0bf112087cfc448d6e39fa602df45ba83cfb45563"
+  },
+  {
+    "index": 65,
+    "frame": "back-stunned-04",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "flipY": true,
+      "tone": {
+        "6": 5,
+        "5": 4
+      },
+      "belly": {
+        "at": [
+          66,
+          72
+        ],
+        "r": [
+          15,
+          7
+        ],
+        "segments": 3
+      },
+      "weakSpot": {
+        "at": [
+          64,
+          73
+        ],
+        "level": 1
+      },
+      "rotate": -5,
+      "pivot": [
+        0.5,
+        1
+      ]
+    },
+    "root": [
+      73,
+      118
+    ],
+    "offset": [
+      -9,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      29,
+      54,
+      104,
+      114
+    ],
+    "pixelsSha256": "847e06fb063dc5097fd34e487f988636ce260b42e70edd4ca5a790555a42c8cd"
+  },
+  {
+    "index": 66,
+    "frame": "back-death-01",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "body": [
+          0,
+          2
+        ],
+        "L1": [
+          -1,
+          0
+        ],
+        "R1": [
+          1,
+          0
+        ],
+        "C": [
+          0,
+          -1
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      24,
+      56,
+      101,
+      111
+    ],
+    "pixelsSha256": "88a17f06404648e50cda5327818b8adf7e162669aa8c7eb62b7ee75e6190efea"
+  },
+  {
+    "index": 67,
+    "frame": "back-death-02",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "parts": {
+        "body": [
+          0,
+          4
+        ],
+        "L1": [
+          -2,
+          -1
+        ],
+        "R1": [
+          2,
+          -1
+        ],
+        "L2": [
+          0,
+          -2
+        ],
+        "R2": [
+          0,
+          -2
+        ],
+        "C": [
+          0,
+          -2
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      23,
+      58,
+      102,
+      110
+    ],
+    "pixelsSha256": "2070ab0abb886eea97860ea211315a7b2e3dd7019933d018a5459a7e3406010e"
+  },
+  {
+    "index": 68,
+    "frame": "back-death-03",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": -12,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "parts": {
+        "body": [
+          0,
+          7
+        ],
+        "L1": [
+          -2,
+          -4
+        ],
+        "L2": [
+          0,
+          -3
+        ],
+        "R1": [
+          1,
+          -2
+        ],
+        "R2": [
+          0,
+          -3
+        ],
+        "C": [
+          0,
+          -4
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      27,
+      64,
+      104,
+      110
+    ],
+    "pixelsSha256": "4693fdc8ab351def8cd5b7a9b2dce44847f88c4693f9374ad3e7500a422b3eee"
+  },
+  {
+    "index": 69,
+    "frame": "back-death-04",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": -20,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "parts": {
+        "body": [
+          0,
+          10
+        ],
+        "L1": [
+          2,
+          -6
+        ],
+        "L2": [
+          1,
+          -6
+        ],
+        "C": [
+          0,
+          -6
+        ],
+        "R2": [
+          -1,
+          -6
+        ],
+        "R1": [
+          -2,
+          -6
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      37,
+      69,
+      107,
+      112
+    ],
+    "pixelsSha256": "1e76117ab5b0ae0b8db8bbac244495568ba4e750e175da2e11216c70be74b9f7"
+  },
+  {
+    "index": 70,
+    "frame": "back-death-05",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": -16,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "squash": [
+        1,
+        0.94
+      ],
+      "parts": {
+        "body": [
+          0,
+          12
+        ],
+        "L1": [
+          3,
+          -7
+        ],
+        "L2": [
+          1,
+          -7
+        ],
+        "C": [
+          0,
+          -7
+        ],
+        "R2": [
+          -1,
+          -7
+        ],
+        "R1": [
+          -3,
+          -7
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      36,
+      73,
+      105,
+      113
+    ],
+    "pixelsSha256": "3f4538cfad63eca83fcc8677f58675b2f47f24c2383d12e4defbe91c50ceaada"
+  },
+  {
+    "index": 71,
+    "frame": "back-death-06",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "rotate": -12,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "squash": [
+        1.02,
+        0.9
+      ],
+      "parts": {
+        "body": [
+          0,
+          13
+        ],
+        "L1": [
+          3,
+          -8
+        ],
+        "L2": [
+          1,
+          -8
+        ],
+        "C": [
+          0,
+          -8
+        ],
+        "R2": [
+          -1,
+          -8
+        ],
+        "R1": [
+          -3,
+          -8
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      34,
+      75,
+      103,
+      114
+    ],
+    "pixelsSha256": "ad47913f21592d88163258a1797142c22e42352091342626a1c1dbc09a284ff0"
+  },
+  {
+    "index": 72,
+    "frame": "back-block-01",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "squash": [
+        1.02,
+        0.96
+      ],
+      "parts": {
+        "body": [
+          0,
+          2
+        ],
+        "L1": [
+          -1,
+          0
+        ],
+        "R1": [
+          1,
+          0
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -10,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      23,
+      58,
+      101,
+      112
+    ],
+    "pixelsSha256": "731793a23de76d2653db0b9b86119db1ef37cd97fb7f3ed53ccc888b43e92ca4"
+  },
+  {
+    "index": 73,
+    "frame": "back-block-02",
+    "base": "back",
+    "source": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+    "recipe": {
+      "rig": "back",
+      "squash": [
+        1.03,
+        0.93
+      ],
+      "nudge": [
+        -1,
+        0
+      ],
+      "parts": {
+        "body": [
+          0,
+          3
+        ],
+        "L1": [
+          -2,
+          0
+        ],
+        "R1": [
+          2,
+          0
+        ]
+      }
+    },
+    "root": [
+      74,
+      118
+    ],
+    "offset": [
+      -11,
+      -6
+    ],
+    "scale": 0.1679,
+    "nativeBounds": [
+      21,
+      61,
+      102,
+      112
+    ],
+    "pixelsSha256": "df8d8f664e9fbef19422d17df59d008580f2956b74feb27aae0b485c559cceba"
+  }
+]

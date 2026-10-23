@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "nativePixelsPerUnit": 32,
+  "camp": {
+    "path": "camp.png",
+    "cell": 256,
+    "columns": 3,
+    "rows": 2,
+    "anchor": [
+      128,
+      232
+    ],
+    "frames": [
+      "tent-left",
+      "tent-right",
+      "road-marker",
+      "campfire-base",
+      "supply-cache",
+      "fallen-log"
+    ],
+    "filter": "nearest",
+    "mipmaps": false
+  },
+  "campFlame": {
+    "path": "camp-flame.png",
+    "cell": 128,
+    "columns": 4,
+    "rows": 1,
+    "anchor": [
+      64,
+      112
+    ],
+    "frames": [
+      "flame-0",
+      "flame-1",
+      "flame-2",
+      "flame-3"
+    ],
+    "filter": "nearest",
+    "mipmaps": false
+  },
+  "animations": {
+    "campfire": {
+      "atlas": "campFlame",
+      "frames": [
+        "flame-0",
+        "flame-1",
+        "flame-2",
+        "flame-3"
+      ],
+      "frameDurationMs": 120,
+      "loop": true
+    }
+  },
+  "campfireAssembly": {
+    "baseFrame": "campfire-base",
+    "flameAtlas": "campFlame",
+    "placement": "same world ground anchor",
+    "flameRootInFlameCell": [
+      64,
+      99
+    ],
+    "flameRootOffsetFromAnchor": [
+      0,
+      -13
+    ],
+    "flameRootInBaseCell": [
+      128,
+      219
+    ]
+  },
+  "hitMasks": "hit-masks.json",
+  "provenance": "source/provenance.json",
+  "normalization": "source/normalization.json",
+  "previews": "previews/contact-native.png",
+  "footprints": {
+    "coordinateSpace": "cell-local pixels, origin top-left, x right, y down",
+    "anchorMeaning": "[128,232] is the fixed render registration at the lower edge of the grounded silhouette (one pixel below its last opaque row), not the footprint center. Place the image using this anchor; offset a collider separately using the footprint center.",
+    "method": "Approximate manual ground-contact outlines, excluding guy ropes, pegs, flames and shadows. Hidden rear ground edges are inferred. Center is an authored registration estimate, not necessarily the geometric polygon centroid. Integration guidance only; the layout owner determines colliders.",
+    "tents": {
+      "tent-left": {
+        "polygon": [
+          [
+            42,
+            182
+          ],
+          [
+            113,
+            154
+          ],
+          [
+            214,
+            208
+          ],
+          [
+            136,
+            231
+          ]
+        ],
+        "center": [
+          126.25,
+          193.75
+        ],
+        "centerOffsetFromAnchor": [
+          -1.75,
+          -38.25
+        ],
+        "inferredCornerIndices": [
+          1
+        ],
+        "measuredSilhouetteSize": [
+          208,
+          145
+        ],
+        "approximate": true
+      },
+      "tent-right": {
+        "polygon": [
+          [
+            44,
+            211
+          ],
+          [
+            136,
+            158
+          ],
+          [
+            215,
+            184
+          ],
+          [
+            125,
+            231
+          ]
+        ],
+        "center": [
+          130,
+          196
+        ],
+        "centerOffsetFromAnchor": [
+          2,
+          -36
+        ],
+        "inferredCornerIndices": [
+          1
+        ],
+        "measuredSilhouetteSize": [
+          208,
+          140
+        ],
+        "approximate": true
+      }
+    },
+    "props": {
+      "road-marker": {
+        "polygon": [
+          [
+            100,
+            218
+          ],
+          [
+            127,
+            205
+          ],
+          [
+            155,
+            218
+          ],
+          [
+            129,
+            231
+          ]
+        ],
+        "center": [
+          127.75,
+          218
+        ],
+        "centerOffsetFromAnchor": [
+          -0.25,
+          -14
+        ],
+        "measuredSilhouetteSize": [
+          56,
+          82
+        ],
+        "approximate": true,
+        "inferredRearEdge": true
+      },
+      "campfire-base": {
+        "polygon": [
+          [
+            82,
+            214
+          ],
+          [
+            95,
+            201
+          ],
+          [
+            128,
+            196
+          ],
+          [
+            161,
+            201
+          ],
+          [
+            174,
+            214
+          ],
+          [
+            161,
+            227
+          ],
+          [
+            128,
+            232
+          ],
+          [
+            95,
+            227
+          ]
+        ],
+        "center": [
+          128,
+          214
+        ],
+        "centerOffsetFromAnchor": [
+          0,
+          -18
+        ],
+        "measuredSilhouetteSize": [
+          92,
+          52
+        ],
+        "approximate": true,
+        "inferredRearEdge": true,
+        "contactSize": [
+          92,
+          36
+        ],
+        "horizontalHalfExtentAt32PxPerUnit": 1.4375,
+        "scaleNote": "Visible silhouette is 92x52px; approximate ground ellipse is 92x36px. 46px/32=1.4375 is a screen-space half extent; use the actual isometric projection to map the footprint to world collision."
+      },
+      "supply-cache": {
+        "polygon": [
+          [
+            68,
+            210
+          ],
+          [
+            116,
+            185
+          ],
+          [
+            188,
+            219
+          ],
+          [
+            159,
+            231
+          ],
+          [
+            92,
+            223
+          ]
+        ],
+        "center": [
+          124.6,
+          213.6
+        ],
+        "centerOffsetFromAnchor": [
+          -3.4,
+          -18.4
+        ],
+        "measuredSilhouetteSize": [
+          121,
+          86
+        ],
+        "approximate": true,
+        "inferredRearEdge": true
+      },
+      "fallen-log": {
+        "polygon": [
+          [
+            80,
+            223
+          ],
+          [
+            164,
+            188
+          ],
+          [
+            180,
+            204
+          ],
+          [
+            98,
+            231
+          ]
+        ],
+        "center": [
+          130.5,
+          211.5
+        ],
+        "centerOffsetFromAnchor": [
+          2.5,
+          -20.5
+        ],
+        "measuredSilhouetteSize": [
+          105,
+          60
+        ],
+        "approximate": true,
+        "inferredRearEdge": true
+      }
+    },
+    "fireAssembly": {
+      "baseFrame": "campfire-base",
+      "baseGroundAnchor": [
+        128,
+        232
+      ],
+      "flameGroundAnchor": [
+        64,
+        112
+      ],
+      "flameRoot": [
+        64,
+        99
+      ],
+      "flameRootOffsetFromAnchor": [
+        0,
+        -13
+      ],
+      "flameRootInBaseCell": [
+        128,
+        219
+      ],
+      "registration": "Render base and flame at the same world anchor. The flame root is already offset inside its frame; do not apply the offset a second time."
+    }
+  }
+}

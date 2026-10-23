@@ -1,0 +1,191 @@
+{
+  "skins": [
+    {
+      "id": "warm",
+      "label": "Тёплая"
+    },
+    {
+      "id": "deep",
+      "label": "Тёмная"
+    },
+    {
+      "id": "pale",
+      "label": "Светлая"
+    }
+  ],
+  "hair": [
+    {
+      "id": "shaved",
+      "label": "Бритая голова"
+    },
+    {
+      "id": "short",
+      "label": "Короткие волосы"
+    }
+  ],
+  "sashes": [
+    {
+      "id": "wine",
+      "label": "Винный"
+    },
+    {
+      "id": "teal",
+      "label": "Бирюзовый"
+    },
+    {
+      "id": "ochre",
+      "label": "Охра"
+    }
+  ],
+  "default": {
+    "skin": "warm",
+    "hair": "shaved",
+    "sash": "wine"
+  },
+  "variants": [
+    {
+      "id": "warm-shaved-wine",
+      "skin": "warm",
+      "hair": "shaved",
+      "sash": "wine",
+      "path": "warm-shaved-wine.png",
+      "previewPath": "warm-shaved-wine-preview.png"
+    },
+    {
+      "id": "warm-shaved-teal",
+      "skin": "warm",
+      "hair": "shaved",
+      "sash": "teal",
+      "path": "warm-shaved-teal.png",
+      "previewPath": "warm-shaved-teal-preview.png"
+    },
+    {
+      "id": "warm-shaved-ochre",
+      "skin": "warm",
+      "hair": "shaved",
+      "sash": "ochre",
+      "path": "warm-shaved-ochre.png",
+      "previewPath": "warm-shaved-ochre-preview.png"
+    },
+    {
+      "id": "warm-short-wine",
+      "skin": "warm",
+      "hair": "short",
+      "sash": "wine",
+      "path": "warm-short-wine.png",
+      "previewPath": "warm-short-wine-preview.png"
+    },
+    {
+      "id": "warm-short-teal",
+      "skin": "warm",
+      "hair": "short",
+      "sash": "teal",
+      "path": "warm-short-teal.png",
+      "previewPath": "warm-short-teal-preview.png"
+    },
+    {
+      "id": "warm-short-ochre",
+      "skin": "warm",
+      "hair": "short",
+      "sash": "ochre",
+      "path": "warm-short-ochre.png",
+      "previewPath": "warm-short-ochre-preview.png"
+    },
+    {
+      "id": "deep-shaved-wine",
+      "skin": "deep",
+      "hair": "shaved",
+      "sash": "wine",
+      "path": "deep-shaved-wine.png",
+      "previewPath": "deep-shaved-wine-preview.png"
+    },
+    {
+      "id": "deep-shaved-teal",
+      "skin": "deep",
+      "hair": "shaved",
+      "sash": "teal",
+      "path": "deep-shaved-teal.png",
+      "previewPath": "deep-shaved-teal-preview.png"
+    },
+    {
+      "id": "deep-shaved-ochre",
+      "skin": "deep",
+      "hair": "shaved",
+      "sash": "ochre",
+      "path": "deep-shaved-ochre.png",
+      "previewPath": "deep-shaved-ochre-preview.png"
+    },
+    {
+      "id": "deep-short-wine",
+      "skin": "deep",
+      "hair": "short",
+      "sash": "wine",
+      "path": "deep-short-wine.png",
+      "previewPath": "deep-short-wine-preview.png"
+    },
+    {
+      "id": "deep-short-teal",
+      "skin": "deep",
+      "hair": "short",
+      "sash": "teal",
+      "path": "deep-short-teal.png",
+      "previewPath": "deep-short-teal-preview.png"
+    },
+    {
+      "id": "deep-short-ochre",
+      "skin": "deep",
+      "hair": "short",
+      "sash": "ochre",
+      "path": "deep-short-ochre.png",
+      "previewPath": "deep-short-ochre-preview.png"
+    },
+    {
+      "id": "pale-shaved-wine",
+      "skin": "pale",
+      "hair": "shaved",
+      "sash": "wine",
+      "path": "pale-shaved-wine.png",
+      "previewPath": "pale-shaved-wine-preview.png"
+    },
+    {
+      "id": "pale-shaved-teal",
+      "skin": "pale",
+      "hair": "shaved",
+      "sash": "teal",
+      "path": "pale-shaved-teal.png",
+      "previewPath": "pale-shaved-teal-preview.png"
+    },
+    {
+      "id": "pale-shaved-ochre",
+      "skin": "pale",
+      "hair": "shaved",
+      "sash": "ochre",
+      "path": "pale-shaved-ochre.png",
+      "previewPath": "pale-shaved-ochre-preview.png"
+    },
+    {
+      "id": "pale-short-wine",
+      "skin": "pale",
+      "hair": "short",
+      "sash": "wine",
+      "path": "pale-short-wine.png",
+      "previewPath": "pale-short-wine-preview.png"
+    },
+    {
+      "id": "pale-short-teal",
+      "skin": "pale",
+      "hair": "short",
+      "sash": "teal",
+      "path": "pale-short-teal.png",
+      "previewPath": "pale-short-teal-preview.png"
+    },
+    {
+      "id": "pale-short-ochre",
+      "skin": "pale",
+      "hair": "short",
+      "sash": "ochre",
+      "path": "pale-short-ochre.png",
+      "previewPath": "pale-short-ochre-preview.png"
+    }
+  ]
+}

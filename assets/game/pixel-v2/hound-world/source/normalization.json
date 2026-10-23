@@ -1,0 +1,306 @@
+{
+  "alphaThreshold": 220,
+  "hound": {
+    "front": {
+      "idle": {
+        "source": "assets/concepts/animation-bible-01/monsters/originals/hound-idle.png",
+        "xs": [
+          0,
+          688,
+          1376
+        ],
+        "ys": [
+          0,
+          390,
+          768
+        ],
+        "scale": 0.185,
+        "lift": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "run": {
+        "source": "assets/concepts/animation-bible-01/monsters/originals/hound-run.png",
+        "xs": [
+          0,
+          450,
+          910,
+          1376
+        ],
+        "ys": [
+          0,
+          385,
+          768
+        ],
+        "scale": 0.185,
+        "lift": [
+          0,
+          5,
+          0,
+          0,
+          5,
+          0
+        ]
+      },
+      "attack": {
+        "source": "assets/concepts/animation-bible-01/monsters/originals/hound-attack.png",
+        "xs": [
+          0,
+          450,
+          910,
+          1376
+        ],
+        "ys": [
+          0,
+          385,
+          768
+        ],
+        "scale": 0.185,
+        "lift": [
+          0,
+          0,
+          7,
+          11,
+          0,
+          0
+        ],
+        "largestComponent": true
+      },
+      "hurt": {
+        "source": "assets/concepts/animation-bible-01/monsters/originals/hound-hurt.png",
+        "xs": [
+          0,
+          688,
+          1376
+        ],
+        "ys": [
+          0,
+          390,
+          768
+        ],
+        "scale": 0.185,
+        "lift": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "largestComponent": true
+      },
+      "death": {
+        "source": "assets/concepts/animation-bible-01/monsters/originals/hound-death.png",
+        "xs": [
+          0,
+          450,
+          910,
+          1376
+        ],
+        "ys": [
+          0,
+          385,
+          768
+        ],
+        "scale": 0.185,
+        "lift": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "back": {
+      "idle": {
+        "source": "assets/game/pixel-v2/hound-world/source/hound-back-idle.png",
+        "xs": [
+          0,
+          840,
+          1679
+        ],
+        "ys": [
+          0,
+          550,
+          937
+        ],
+        "scale": 0.133,
+        "lift": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "overrides": {
+          "2": {
+            "source": "assets/game/pixel-v2/hound-world/source/hound-back-idle-keys-03-04.png",
+            "bounds": [
+              0,
+              0,
+              1085,
+              725
+            ],
+            "sourceCalibration": 0.744
+          },
+          "3": {
+            "source": "assets/game/pixel-v2/hound-world/source/hound-back-idle-keys-03-04.png",
+            "bounds": [
+              1085,
+              0,
+              2170,
+              725
+            ],
+            "sourceCalibration": 0.744
+          }
+        },
+        "calibrationNote": "Both replacement drawings share one source-density calibration: 0.744 (sqrt of accepted vs new two-key opaque area ratio, 195668/353518). The clip scale stays 0.133; no per-pose fitting or stretching."
+      },
+      "run": {
+        "source": "assets/game/pixel-v2/hound-world/source/hound-back-run.png",
+        "xs": [
+          0,
+          565,
+          1173,
+          1678
+        ],
+        "ys": [
+          0,
+          497,
+          937
+        ],
+        "scale": 0.14,
+        "lift": [
+          0,
+          7,
+          0,
+          0,
+          7,
+          0
+        ]
+      },
+      "attack": {
+        "source": "assets/game/pixel-v2/hound-world/source/hound-back-attack.png",
+        "xs": [
+          0,
+          540,
+          1040,
+          1536
+        ],
+        "ys": [
+          0,
+          512,
+          1024
+        ],
+        "scale": 0.15,
+        "lift": [
+          0,
+          0,
+          8,
+          12,
+          0,
+          0
+        ]
+      },
+      "hurt": {
+        "source": "assets/game/pixel-v2/hound-world/source/hound-back-hurt.png",
+        "xs": [
+          0,
+          850,
+          1679
+        ],
+        "ys": [
+          0,
+          510,
+          937
+        ],
+        "scale": 0.14,
+        "lift": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "death": {
+        "source": "assets/game/pixel-v2/hound-world/source/hound-back-death-v2.png",
+        "xs": [
+          0,
+          520,
+          1030,
+          1536
+        ],
+        "ys": [
+          0,
+          600,
+          1024
+        ],
+        "scale": 0.15,
+        "lift": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "world": {
+    "fireSource": "assets/concepts/animation-bible-01/world/raw/11-world-fire.png",
+    "interactionSource": "assets/concepts/animation-bible-01/world/raw/12-world-interactions.png",
+    "fireCenters": [
+      131,
+      356,
+      581,
+      802,
+      1028,
+      1249
+    ],
+    "interactionCenters": [
+      136,
+      358,
+      578,
+      799,
+      1028,
+      1248
+    ],
+    "brazierScale": 0.45,
+    "shrineScale": 0.55,
+    "gateScale": 0.65
+  },
+  "effects": {
+    "source": "assets/concepts/animation-bible-01/hero/originals/14-combat-effects.png",
+    "scale": 0.7,
+    "centers": [
+      138,
+      388,
+      642,
+      895,
+      1158,
+      1407
+    ],
+    "rootY": {
+      "impact": 207,
+      "warning": 499,
+      "healing": 832
+    },
+    "impactOffset": [
+      24,
+      0
+    ],
+    "healingOffset": [
+      0,
+      0
+    ],
+    "clearCenter": [
+      92,
+      92,
+      101,
+      101
+    ]
+  }
+}

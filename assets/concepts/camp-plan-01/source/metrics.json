@@ -1,0 +1,337 @@
+{
+  "layoutSha256": "893ed12f8497fb63993aa5e0b7abc8fadde2187d15719f983ec3d6defa705e89",
+  "footprintSourceSha256": "4209d0d8efffd7931cfef953b66282d1d0cc553a69da24451aadf2e2bc96d2a8",
+  "areaUnits2": 1534,
+  "viewportAreaUnits2": 450,
+  "viewportRatio": 3.408888888888889,
+  "nativePixelsPerUnit": 32,
+  "framebuffer": [
+    640,
+    360
+  ],
+  "displayModes": [
+    {
+      "css": [
+        1280,
+        720
+      ],
+      "integerScale": 2
+    },
+    {
+      "css": [
+        1920,
+        1080
+      ],
+      "integerScale": 3
+    }
+  ],
+  "camera": {
+    "alpha": 0.7853981633974483,
+    "beta": 1.0471975511965976,
+    "radius": 30,
+    "target": {
+      "x": 0,
+      "height": 0.1,
+      "y": 2.3
+    },
+    "groundViewport": [
+      {
+        "x": -1.006357896486012,
+        "y": -12.84849237219402
+      },
+      {
+        "x": -15.148492562928883,
+        "y": 1.2936422942488512
+      },
+      {
+        "x": 0.761408937010648,
+        "y": 17.203543794188384
+      },
+      {
+        "x": 14.90354360345352,
+        "y": 3.0614091277455113
+      }
+    ],
+    "measuredAreaUnits2": 449.9999390839726
+  },
+  "bounds": {
+    "minX": -19.5,
+    "maxX": 21.5,
+    "minY": -29.5,
+    "maxY": 23.5
+  },
+  "pavingCells": 100,
+  "propCount": 198,
+  "boundaryPropCount": 168,
+  "boundaryVariation": {
+    "maxOffsetUnits": 0.24913607898414838,
+    "minOffsetUnits": 0.0677467296418265,
+    "scaleFactorRange": [
+      0.92,
+      1.08
+    ],
+    "method": "Coordinate hash; outward normal plus small tangent; center stays outside walk mask; collider radius scales with image."
+  },
+  "solidPropCount": 190,
+  "usableTileCenters": [
+    {
+      "radius": 0.23,
+      "count": 1408
+    },
+    {
+      "radius": 0.29,
+      "count": 1408
+    }
+  ],
+  "approaches": {
+    "fire": {
+      "x": -1,
+      "y": -2
+    },
+    "reward": {
+      "x": 3,
+      "y": 5
+    },
+    "tentLeft": {
+      "x": 5,
+      "y": -1
+    },
+    "tentRight": {
+      "x": -2,
+      "y": 4
+    }
+  },
+  "walking": {
+    "speedUnitsPerSecond": 3.5,
+    "radius": 0.23,
+    "maxDt": 0.008333333333333333,
+    "method": "Real Input.sample WASD directions → updateGame → moveBody; no dash; initial state reset per route.",
+    "routes": [
+      {
+        "id": "spawn-exit",
+        "path": [
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": -27
+          }
+        ],
+        "distanceUnits": 30.000000000000192,
+        "seconds": 8.57142857142889
+      },
+      {
+        "id": "entry-reward-via-paving",
+        "path": [
+          {
+            "x": 0,
+            "y": -22
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          }
+        ],
+        "distanceUnits": 29.828427124746394,
+        "seconds": 8.522407749927716
+      },
+      {
+        "id": "entry-reward-shortcut",
+        "path": [
+          {
+            "x": 0,
+            "y": -22
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 5
+          }
+        ],
+        "distanceUnits": 28.65685424949262,
+        "seconds": 8.187672642712359
+      },
+      {
+        "id": "spawn-fire",
+        "path": [
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": -1,
+            "y": -2
+          }
+        ],
+        "distanceUnits": 5.414213562373106,
+        "seconds": 1.546918160678023
+      },
+      {
+        "id": "fire-reward",
+        "path": [
+          {
+            "x": -1,
+            "y": -2
+          },
+          {
+            "x": 0,
+            "y": -1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 5
+          }
+        ],
+        "distanceUnits": 9.07106781186548,
+        "seconds": 2.5917336605329777
+      },
+      {
+        "id": "spawn-tent-left",
+        "path": [
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": -1
+          },
+          {
+            "x": 5,
+            "y": -1
+          }
+        ],
+        "distanceUnits": 6.6568542494923815,
+        "seconds": 1.9019583569978116
+      },
+      {
+        "id": "spawn-tent-right",
+        "path": [
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": -1,
+            "y": 4
+          },
+          {
+            "x": -2,
+            "y": 4
+          }
+        ],
+        "distanceUnits": 2.4142135623731016,
+        "seconds": 0.6897753035351708
+      },
+      {
+        "id": "south-north",
+        "path": [
+          {
+            "x": 0,
+            "y": 22
+          },
+          {
+            "x": 0,
+            "y": -28
+          }
+        ],
+        "distanceUnits": 50.00000000000233,
+        "seconds": 14.285714285714377
+      },
+      {
+        "id": "west-east",
+        "path": [
+          {
+            "x": -18,
+            "y": 0
+          },
+          {
+            "x": 18,
+            "y": 0
+          }
+        ],
+        "distanceUnits": 36.00000000000087,
+        "seconds": 10.285714285714377
+      },
+      {
+        "id": "tent-left-circuit",
+        "path": [
+          {
+            "x": 2.75,
+            "y": -8.25
+          },
+          {
+            "x": 7.25,
+            "y": -8.25
+          },
+          {
+            "x": 7.25,
+            "y": -1.75
+          },
+          {
+            "x": 2.75,
+            "y": -1.75
+          },
+          {
+            "x": 2.75,
+            "y": -8.25
+          }
+        ],
+        "distanceUnits": 22.00000000000037,
+        "seconds": 6.285714285714363
+      },
+      {
+        "id": "tent-right-and-log-circuit",
+        "path": [
+          {
+            "x": -9.5,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 1
+          },
+          {
+            "x": -1,
+            "y": 6.5
+          },
+          {
+            "x": -9.5,
+            "y": 6.5
+          },
+          {
+            "x": -9.5,
+            "y": 1
+          }
+        ],
+        "distanceUnits": 28.000000000000625,
+        "seconds": 8.000000000000163
+      }
+    ]
+  },
+  "preservedLocationSha256": {
+    "road": "749b5aeaa342e9eb6d3c4c8644d001c770670826398720142e3c591f07b11ddd",
+    "courtyard": "4a200440f4908154d293d242042d7dc91931a65094489f87f5d11e95420d3c8c"
+  }
+}

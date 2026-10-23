@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "nativePixelsPerUnit": 32,
+  "monk": {
+    "path": "monk.png",
+    "cell": 96,
+    "columns": 4,
+    "rows": 4,
+    "anchor": [
+      48,
+      84
+    ],
+    "frames": [
+      "front-idle",
+      "front-run-contact-left",
+      "front-run-pass-right",
+      "front-run-contact-right",
+      "front-run-pass-left",
+      "front-anticipate",
+      "front-strike",
+      "front-dash",
+      "back-idle",
+      "back-run-contact-left",
+      "back-run-pass-right",
+      "back-run-contact-right",
+      "back-run-pass-left",
+      "back-anticipate",
+      "back-strike",
+      "back-dash"
+    ],
+    "filter": "nearest",
+    "mipmaps": false,
+    "colors": 32
+  },
+  "hound": {
+    "path": "hound.png",
+    "cell": 96,
+    "columns": 4,
+    "rows": 2,
+    "anchor": [
+      48,
+      84
+    ],
+    "frames": [
+      "idle",
+      "run-contact",
+      "run-pass",
+      "windup",
+      "leap",
+      "recover",
+      "hurt",
+      "dead"
+    ],
+    "filter": "nearest",
+    "mipmaps": false,
+    "colors": 32
+  },
+  "environment": {
+    "path": "environment.png",
+    "cell": 160,
+    "columns": 3,
+    "rows": 2,
+    "anchor": [
+      80,
+      144
+    ],
+    "frames": [
+      "wall-corner",
+      "arch",
+      "column",
+      "brazier-cyan",
+      "brazier-magenta",
+      "shrine"
+    ],
+    "filter": "nearest",
+    "mipmaps": false,
+    "colors": 32
+  },
+  "source": {
+    "tool": "built-in imagegen",
+    "date": "2026-10-22",
+    "references": "assets/concepts/pixel-art-01/raw/",
+    "prompts": [
+      "source/monk-prompt.txt",
+      "source/hound-prompt.txt",
+      "source/environment-prompt.txt"
+    ],
+    "license": "Generated for this project; no external stock assets."
+  },
+  "floor": {
+    "path": "floor.png",
+    "size": [
+      32,
+      32
+    ],
+    "source": "code-authored",
+    "filter": "nearest"
+  }
+}

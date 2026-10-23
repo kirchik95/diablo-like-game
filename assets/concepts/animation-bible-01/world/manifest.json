@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "scope": "animation-art-brief items 11–13",
+  "status": "complete",
+  "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+  "pageId": "p-8-0",
+  "pageName": "Анимации · Мир",
+  "url": "https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-8-0",
+  "medium": "Paper-native raster generation and editable Paper labels",
+  "model": "openai-gpt-image-edit-2-5-big",
+  "referenceNodes": [
+    "FU-0"
+  ],
+  "referencePaths": [
+    "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png"
+  ],
+  "boards": [
+    {
+      "id": "11-world-fire",
+      "item": 11,
+      "artboardId": "IH-0",
+      "imageNodeId": "JS-0",
+      "sourceUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JGYH2WDH9J8A88G1Y26242.png",
+      "generationStatus": "ready",
+      "status": "complete",
+      "model": "openai-gpt-image-edit-2-5-big",
+      "referenceNodes": [
+        "FU-0"
+      ],
+      "prompt": "prompts/11-world-fire.txt",
+      "raw": {
+        "path": "raw/11-world-fire.png",
+        "width": 1376,
+        "height": 768,
+        "bytes": 1101987,
+        "sha256": "096e8a15d20ae4307aeb39b5aaf449b89290ed8c093844d5ddf069eab816ac6d",
+        "mode": "RGB"
+      },
+      "export": {
+        "path": "exports/11-world-fire-board.png",
+        "width": 1600,
+        "height": 1437,
+        "bytes": 1920407,
+        "sha256": "173dcda1dc1895fd0c930445de7b585f99392391b771d8fae52514161d9050bc",
+        "mode": "RGBA"
+      },
+      "sequences": [
+        {
+          "row": 1,
+          "name": "Бирюзовая жаровня",
+          "keys": 6,
+          "mode": "loop",
+          "timing": "Цикл · 600 мс · 6 × 100 мс",
+          "keySequence": "Сжатие → рост → раздвоение → выброс → спад → подхват.",
+          "events": "Событие: искра на 04. Чаша и опоры неподвижны."
+        },
+        {
+          "row": 2,
+          "name": "Магентовая жаровня",
+          "keys": 6,
+          "mode": "loop",
+          "timing": "Цикл · 720 мс · 6 × 120 мс",
+          "keySequence": "Развилка → крюк → два пика → завиток → сжатие → рост.",
+          "events": "Событие: отрыв уголька на 03. Свой ритм пламени."
+        },
+        {
+          "row": 3,
+          "name": "Янтарный костёр",
+          "keys": 6,
+          "mode": "loop",
+          "timing": "Цикл · 600 мс · 6 × 100 мс",
+          "keySequence": "Низкое ядро → левый пик → два языка → искры → спад → рост.",
+          "events": "Событие: искры на 04. Камни и поленья неподвижны."
+        }
+      ],
+      "drawings": 18,
+      "review": {
+        "screenshot": true,
+        "fullArtboardVisible": true,
+        "nativeLabels": true,
+        "distinctStates": 18,
+        "verdict": "Six different flame silhouettes for each palette; fixed vessels, log and stone bases; clear typography, spacing and contrast; numbering aligned."
+      }
+    },
+    {
+      "id": "12-world-interactions",
+      "item": 12,
+      "artboardId": "JU-0",
+      "imageNodeId": "L2-0",
+      "sourceUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JGYVFM9N77WFBGMFCRMC7V.png",
+      "generationStatus": "ready",
+      "status": "complete",
+      "model": "openai-gpt-image-edit-2-5-big",
+      "referenceNodes": [
+        "FU-0"
+      ],
+      "prompt": "prompts/12-world-interactions.txt",
+      "raw": {
+        "path": "raw/12-world-interactions.png",
+        "width": 1376,
+        "height": 768,
+        "bytes": 1306662,
+        "sha256": "850d0f60d60e0ae2aacc3ad1d238ba64c55934fd0b67e1584c2213d0d76cab70",
+        "mode": "RGB"
+      },
+      "export": {
+        "path": "exports/12-world-interactions-board.png",
+        "width": 1600,
+        "height": 1461,
+        "mode": "RGBA",
+        "bytes": 2183629,
+        "sha256": "4387b84359d75ad4e859ab40b21e877dece1702b597f16d3ed2456717edda093"
+      },
+      "sequences": [
+        {
+          "row": 1,
+          "name": "Открывание ворот",
+          "keys": 6,
+          "mode": "one-shot",
+          "timing": "Один проход · 0 → 700 мс",
+          "keySequence": "Ключи: 0 / 80 / 220 / 380 / 540 / 700 мс. После 06 — удержание.",
+          "events": "02: щелчок защёлки. 06: проход открыт. Петли фиксированы."
+        },
+        {
+          "row": 2,
+          "name": "Святилище",
+          "keys": 6,
+          "mode": "one-shot",
+          "timing": "Один проход · 0 → 900 мс",
+          "keySequence": "Ключи: 0 / 100 / 240 / 400 / 620 / 900 мс. Покой → активация → угасание.",
+          "events": "04: пик свечения и кольцо. Лечение срабатывает сразу на 01; 06: использовано",
+          "gameplayHealing": {
+            "amount": 40,
+            "atMs": 0,
+            "key": 1,
+            "trigger": "immediately on shrine interaction",
+            "source": "User-specified gameplay contract; independent of the visual glow peak"
+          },
+          "visualPeak": {
+            "key": 4,
+            "proposedAtMs": 400,
+            "event": "glow peak and ring",
+            "appliesHealing": false
+          }
+        },
+        {
+          "row": 3,
+          "name": "Открывание сундука",
+          "keys": 6,
+          "mode": "one-shot",
+          "timing": "Один проход · 0 → 520 мс",
+          "keySequence": "Ключи: 0 / 80 / 180 / 300 / 420 / 520 мс. После 06 — открытый покой.",
+          "events": "02: замок. 05: показ награды. 06: крышка останавливается."
+        }
+      ],
+      "drawings": 18,
+      "review": {
+        "screenshot": true,
+        "fullArtboardVisible": true,
+        "nativeLabels": true,
+        "distinctStates": 18,
+        "verdict": "Gate leaves and chest lid articulate across six stages; shrine amber activation peaks and fades; fixed bases and full objects; readable timing and footer."
+      },
+      "captionRevision": {
+        "updatedAtUtc": "2026-10-22 19:27:34 UTC",
+        "nodeId": "QE-0",
+        "previousExportSha256": "c6104c70f7c5bda3a958777c49438a5faffc3411670d82d180bfbe095abe7e24",
+        "reason": "Separate immediate gameplay healing at key 01 from the visual glow peak at key 04.",
+        "rasterRegenerated": false
+      }
+    },
+    {
+      "id": "13-world-ambient",
+      "item": 13,
+      "artboardId": "LA-0",
+      "imageNodeId": "NO-0",
+      "sourceUrl": "https://app.paper.design/file-assets/01M5JE4QF1S7K7921DAQTPSHYY/01M5JGZWT4F62YJWMCSV7K1NJ2.png",
+      "generationStatus": "ready",
+      "status": "complete",
+      "model": "openai-gpt-image-edit-2-5-big",
+      "referenceNodes": [
+        "FU-0"
+      ],
+      "prompt": "prompts/13-world-ambient.txt",
+      "raw": {
+        "path": "raw/13-world-ambient.png",
+        "width": 1376,
+        "height": 768,
+        "bytes": 1222157,
+        "sha256": "3c97143242b1cfa36bc729dbb30aaad4205fdabf919f91c14f166ff6cbc75969",
+        "mode": "RGB"
+      },
+      "export": {
+        "path": "exports/13-world-ambient-board.png",
+        "width": 1600,
+        "height": 1465,
+        "bytes": 2023936,
+        "sha256": "67237b48e31d8a0272a39eb1ff4c22b7289d6f5f8bd63da67f37fd79a09d1466",
+        "mode": "RGBA"
+      },
+      "sequences": [
+        {
+          "row": 1,
+          "name": "Рябь воды",
+          "keys": 6,
+          "mode": "loop",
+          "timing": "Цикл · 1080 мс · 6 × 180 мс",
+          "keySequence": "Рождение кольца → расширение → разрыв блика → край → затухание → новый фронт.",
+          "events": "04: новое внутреннее кольцо. Контур воды закреплён."
+        },
+        {
+          "row": 2,
+          "name": "Полотно на ветру",
+          "keys": 6,
+          "mode": "loop",
+          "timing": "Цикл · 840 мс · 6 × 140 мс",
+          "keySequence": "Тихая складка → порыв → S-изгиб → обратная волна → расслабление → подхват.",
+          "events": "03–04: пик порыва. Крепления неподвижны, хвост запаздывает."
+        },
+        {
+          "row": 3,
+          "name": "Дрейфующий пепел",
+          "keys": 6,
+          "mode": "loop",
+          "timing": "Цикл · 1200 мс · 6 × 200 мс",
+          "keySequence": "Рождение снизу слева → подъём → разворот → рассеивание → угасание → замещение.",
+          "events": "Частицы обновляются постепенно. Плита — фиксированный ориентир."
+        }
+      ],
+      "drawings": 18,
+      "review": {
+        "screenshot": true,
+        "fullArtboardVisible": true,
+        "nativeLabels": true,
+        "distinctStates": 18,
+        "verdict": "Expanding water rings, changing cloth silhouette and redistributed ash; six stages each; fit-content applied after all labels; lower footer verified in Paper and local export."
+      }
+    }
+  ],
+  "runtimeReady": false,
+  "completedAtUtc": "2026-10-22 19:23:24 UTC",
+  "coverage": {
+    "boards": 3,
+    "sequences": 9,
+    "keysPerSequence": 6,
+    "drawnKeys": 54
+  },
+  "timingStatus": "Animation durations and visual event timing are proposed. Shrine gameplay healing is +40 immediately at 0 ms (key 01), independent of the visual glow peak at key 04.",
+  "deliveryNotes": [
+    "Three new raster contact sheets generated inside Paper, one generation per sheet.",
+    "Native Paper headers, key numbers, sequence labels, proposed timing and event notes remain editable.",
+    "All artboards use height: fit-content; final screenshots and local third-board export include the footer.",
+    "Original URLs returned by Paper get_fill_image were downloaded unchanged; no CLI/API generation fallback.",
+    "Paper export writes its default copies to Downloads; byte-identical copies are delivered in world/exports.",
+    "These are storyboard keys, not engine-ready sprite atlases."
+  ],
+  "limitations": [
+    "Key drawings require production cleanup, frame extraction, alpha preparation, exact pixel registration and in-engine timing review before runtime use.",
+    "Loop direction and proposed timing are documented; seamless playback was not claimed or tested in the engine."
+  ],
+  "verification": {
+    "pngFilesDecoded": 6,
+    "promptFilesPresent": 3,
+    "sha256Recorded": true,
+    "finishWorkingOnNodesCompleted": true,
+    "checkedAtUtc": "2026-10-22 19:23:24 UTC"
+  },
+  "updatedAtUtc": "2026-10-22 19:27:34 UTC"
+}

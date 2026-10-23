@@ -1,0 +1,188 @@
+✖ camp manifest supplies exact slicing, frame keys and sampling contract (0.3735ms)
+✖ actual atlases have binary clean alpha and family-wide palette limits (0.321916ms)
+✖ six static drawings fit distinct physical sizes and rest at their ground anchors (0.072375ms)
+✖ four flame poses change substantial silhouette area while their roots remain fixed (0.077541ms)
+✖ little-bit-first hit masks match every pixel of both actual atlases (0.068417ms)
+✖ saved originals, exact prompts and relative references have valid provenance hashes (0.123833ms)
+✖ native previews preserve final pixels and enlarge only by nearest neighbor (0.088458ms)
+✖ verify-only reconstructs every delivered artifact without changing package bytes or timestamps (14.264ms)
+✖ a relocated checkout verifies read-only and rejects missing references, altered sources and damaged outputs (0.950125ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 0
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 56.726833
+
+✖ failing tests:
+
+test at tests/camp-assets.test.js:93:1
+✖ camp manifest supplies exact slicing, frame keys and sampling contract (0.3735ms)
+  Error: ENOENT: no such file or directory, open '/Users/kirchik/Documents/project/diablo-like-game/assets/game/pixel-v5/camp/manifest.json'
+      at readFileSync (node:fs:439:20)
+      at json (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:15:33)
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:94:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/kirchik/Documents/project/diablo-like-game/assets/game/pixel-v5/camp/manifest.json'
+  }
+
+test at tests/camp-assets.test.js:105:1
+✖ actual atlases have binary clean alpha and family-wide palette limits (0.321916ms)
+  AssertionError [ERR_ASSERTION]: missing delivered image: camp.png
+      at rgba (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:22:10)
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:107:17)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/camp-assets.test.js:119:1
+✖ six static drawings fit distinct physical sizes and rest at their ground anchors (0.072375ms)
+  AssertionError [ERR_ASSERTION]: missing delivered image: camp.png
+      at rgba (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:22:10)
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:120:15)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/camp-assets.test.js:135:1
+✖ four flame poses change substantial silhouette area while their roots remain fixed (0.077541ms)
+  AssertionError [ERR_ASSERTION]: missing delivered image: camp-flame.png
+      at rgba (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:22:10)
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:136:15)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/camp-assets.test.js:161:1
+✖ little-bit-first hit masks match every pixel of both actual atlases (0.068417ms)
+  Error: ENOENT: no such file or directory, open '/Users/kirchik/Documents/project/diablo-like-game/assets/game/pixel-v5/camp/hit-masks.json'
+      at readFileSync (node:fs:439:20)
+      at json (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:15:33)
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:162:17)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/kirchik/Documents/project/diablo-like-game/assets/game/pixel-v5/camp/hit-masks.json'
+  }
+
+test at tests/camp-assets.test.js:172:1
+✖ saved originals, exact prompts and relative references have valid provenance hashes (0.123833ms)
+  Error: ENOENT: no such file or directory, open '/Users/kirchik/Documents/project/diablo-like-game/assets/game/pixel-v5/camp/source/provenance.json'
+      at readFileSync (node:fs:439:20)
+      at json (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:15:33)
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:173:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/kirchik/Documents/project/diablo-like-game/assets/game/pixel-v5/camp/source/provenance.json'
+  }
+
+test at tests/camp-assets.test.js:192:1
+✖ native previews preserve final pixels and enlarge only by nearest neighbor (0.088458ms)
+  AssertionError [ERR_ASSERTION]: missing delivered image: previews/contact-native.png
+      at rgba (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:22:10)
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:194:20)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/camp-assets.test.js:212:1
+✖ verify-only reconstructs every delivered artifact without changing package bytes or timestamps (14.264ms)
+  AssertionError [ERR_ASSERTION]: /Library/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/kirchik/Documents/project/diablo-like-game/scripts/build-camp-assets.py': [Errno 2] No such file or directory
+  
+  
+  2 !== 0
+  
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:214:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/camp-assets.test.js:222:1
+✖ a relocated checkout verifies read-only and rejects missing references, altered sources and damaged outputs (0.950125ms)
+  Error: ENOENT: no such file or directory, lstat '/Users/kirchik/Documents/project/diablo-like-game/scripts/build-camp-assets.py'
+      at cpSyncFn (node:internal/fs/cp/cp-sync:56:13)
+      at cpSync (node:fs:3159:3)
+      at copy (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:228:5)
+      at TestContext.<anonymous> (file:///Users/kirchik/Documents/project/diablo-like-game/tests/camp-assets.test.js:230:3)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'lstat',
+    path: '/Users/kirchik/Documents/project/diablo-like-game/scripts/build-camp-assets.py'
+  }

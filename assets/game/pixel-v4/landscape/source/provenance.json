@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "cypress",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/cypress.png",
+      "originalSha256": "e390076865a17c7f38760a879002ed6f45f5813df575125704836304c710a64b",
+      "prompt": "source/prompts/cypress.txt",
+      "promptSha256": "067d32aeae4f88ee47a7aa9f7153c0d6cf956f5951f5ce2abedd2233cde38708",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png",
+          "sha256": "b0a292c3f84923f0148144e6ef2f05b2968328b6fd3dc8f7999ed0c5324afed7",
+          "role": "style/palette reference"
+        },
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+          "sha256": "ce1661b0c470e0b9705fcbb555c1df841aa97c17d278c43c4fb3be280036afcd",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": true,
+      "output": "landscape.png",
+      "frame": 0,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic crop, native resize, alpha cleanup, joint palette and packing"
+    },
+    {
+      "id": "dead-tree",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/dead-tree.png",
+      "originalSha256": "d85668b00459b771e7dfddc1d27a4550e0439be657a0f7b79afdf32df2765a0f",
+      "prompt": "source/prompts/dead-tree.txt",
+      "promptSha256": "e840f8a5caeb62bee32c9868f8a29cd831054bb9b097dc4d183512498fb517c1",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+          "sha256": "ce1661b0c470e0b9705fcbb555c1df841aa97c17d278c43c4fb3be280036afcd",
+          "role": "style/palette reference"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/source/originals/cypress.png",
+          "sha256": "e390076865a17c7f38760a879002ed6f45f5813df575125704836304c710a64b",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": true,
+      "output": "landscape.png",
+      "frame": 1,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic crop, native resize, alpha cleanup, joint palette and packing"
+    },
+    {
+      "id": "rock-large",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/rock-large.png",
+      "originalSha256": "0f0ab877436320e2fdd05e8d54da9eb49f3ce888cdc9f7992a1daac448bb4536",
+      "prompt": "source/prompts/rock-large.txt",
+      "promptSha256": "8849686a213586f60eb18da5372c1afa70ea1fcc9b7009599617db722d451b3d",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+          "sha256": "ce1661b0c470e0b9705fcbb555c1df841aa97c17d278c43c4fb3be280036afcd",
+          "role": "style/palette reference"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/source/originals/cypress.png",
+          "sha256": "e390076865a17c7f38760a879002ed6f45f5813df575125704836304c710a64b",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": true,
+      "output": "landscape.png",
+      "frame": 2,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic crop, native resize, alpha cleanup, joint palette and packing"
+    },
+    {
+      "id": "rock-small",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/rock-small.png",
+      "originalSha256": "18e5ce62512169b657c3960006ac91b08be9df34e32a2d3255b59ae61d66e334",
+      "prompt": "source/prompts/rock-small.txt",
+      "promptSha256": "23e8233629dcb65339274a8704e720df53513e93f21515ac95e77a25e0043061",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+          "sha256": "ce1661b0c470e0b9705fcbb555c1df841aa97c17d278c43c4fb3be280036afcd",
+          "role": "style/palette reference"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/source/originals/cypress.png",
+          "sha256": "e390076865a17c7f38760a879002ed6f45f5813df575125704836304c710a64b",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": true,
+      "output": "landscape.png",
+      "frame": 3,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic crop, native resize, alpha cleanup, joint palette and packing"
+    },
+    {
+      "id": "shrub",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/shrub.png",
+      "originalSha256": "9575b3eb25d711052e47c2612015199e049f530cf3fd74d25c0d316c5aaa65c3",
+      "prompt": "source/prompts/shrub.txt",
+      "promptSha256": "f73246edbc5e20a437fb7218ba8a30297c4b612a331d70a9a2dfe9510cee930f",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+          "sha256": "ce1661b0c470e0b9705fcbb555c1df841aa97c17d278c43c4fb3be280036afcd",
+          "role": "style/palette reference"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/source/originals/cypress.png",
+          "sha256": "e390076865a17c7f38760a879002ed6f45f5813df575125704836304c710a64b",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": true,
+      "output": "landscape.png",
+      "frame": 4,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic crop, native resize, alpha cleanup, joint palette and packing"
+    },
+    {
+      "id": "grass",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/grass.png",
+      "originalSha256": "c3e8bfdc1d7db81abecabec0b21442eb2550e342af3b12c5804215dde41c3ce6",
+      "prompt": "source/prompts/grass.txt",
+      "promptSha256": "e58b6d980e77f7a456e2e80a6d0614168eba3a19d512351dba256ca6eace4add",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+          "sha256": "ce1661b0c470e0b9705fcbb555c1df841aa97c17d278c43c4fb3be280036afcd",
+          "role": "style/palette reference"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/source/originals/cypress.png",
+          "sha256": "e390076865a17c7f38760a879002ed6f45f5813df575125704836304c710a64b",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": true,
+      "output": "landscape.png",
+      "frame": 5,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic crop, native resize, alpha cleanup, joint palette and packing"
+    },
+    {
+      "id": "ruin-pile",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/ruin-pile.png",
+      "originalSha256": "f7a7944edc31f2c028c27462d0bf8298ebaedbccf47bea3f2afb654df144c863",
+      "prompt": "source/prompts/ruin-pile.txt",
+      "promptSha256": "0fcd8f13851daf1e786f0fced0658586eb2446170994ef68127bf94730bebd35",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+          "sha256": "ce1661b0c470e0b9705fcbb555c1df841aa97c17d278c43c4fb3be280036afcd",
+          "role": "style/palette reference"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/source/originals/cypress.png",
+          "sha256": "e390076865a17c7f38760a879002ed6f45f5813df575125704836304c710a64b",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": true,
+      "output": "landscape.png",
+      "frame": 6,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic crop, native resize, alpha cleanup, joint palette and packing"
+    },
+    {
+      "id": "supplies",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/supplies.png",
+      "originalSha256": "9263cc510d75dcf4dc79620c29f61a2c2c094473f6ae11f1e801f27584c7d092",
+      "prompt": "source/prompts/supplies.txt",
+      "promptSha256": "5bf9760500c9afd4fa696ada0670a2edb3849d7378c65b0082de47df0fdea90b",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p7-pixel-environment-kit.png",
+          "sha256": "ce1661b0c470e0b9705fcbb555c1df841aa97c17d278c43c4fb3be280036afcd",
+          "role": "style/palette reference"
+        },
+        {
+          "path": "assets/game/pixel-v4/landscape/source/originals/cypress.png",
+          "sha256": "e390076865a17c7f38760a879002ed6f45f5813df575125704836304c710a64b",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": true,
+      "output": "landscape.png",
+      "frame": 7,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic crop, native resize, alpha cleanup, joint palette and packing"
+    },
+    {
+      "id": "earth",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/earth.png",
+      "originalSha256": "c45a99c36edc147c37a8693e4ff862b0966e5f7a24e69bde03a3617467fb0e7c",
+      "prompt": "source/prompts/earth.txt",
+      "promptSha256": "8dff82664527624ac3568686be842a5e10729ebc6ef7926d80c96e903c74a473",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png",
+          "sha256": "b0a292c3f84923f0148144e6ef2f05b2968328b6fd3dc8f7999ed0c5324afed7",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": false,
+      "output": "earth.png",
+      "frame": null,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic native resize, outdoor material grade, periodic edge repair and palette reduction"
+    },
+    {
+      "id": "moss",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/moss.png",
+      "originalSha256": "d4d9a8dbbfe79edd0fc8d46ed7e7ed8ac6e77babf67434a9e7d015c32a7382bf",
+      "prompt": "source/prompts/moss.txt",
+      "promptSha256": "84fa445dd2268868920d7c9e04b94ff02ffb68615e1969d85a7ef145b63e6ae1",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png",
+          "sha256": "b0a292c3f84923f0148144e6ef2f05b2968328b6fd3dc8f7999ed0c5324afed7",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": false,
+      "output": "moss.png",
+      "frame": null,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic native resize, outdoor material grade, periodic edge repair and palette reduction"
+    },
+    {
+      "id": "cliff",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "model": "not exposed by tool",
+      "generatedOn": "2026-10-22",
+      "original": "source/originals/cliff.png",
+      "originalSha256": "6a38b2b9964760500fc4336d81fa641595c6e7ce82c5bb2014ea94cacb9899c8",
+      "prompt": "source/prompts/cliff.txt",
+      "promptSha256": "a5cdcdbd2b8829435468415be5122b1ad05235af903bfc65fd7f00198259b847",
+      "references": [
+        {
+          "path": "assets/concepts/pixel-art-01/raw/p4-pixel-monastery.png",
+          "sha256": "b0a292c3f84923f0148144e6ef2f05b2968328b6fd3dc8f7999ed0c5324afed7",
+          "role": "style/palette reference"
+        }
+      ],
+      "requestedTransparentBackground": false,
+      "output": "cliff.png",
+      "frame": null,
+      "sourceNote": "Generated for this project. No third-party asset download or new license asserted; reference rights inherited from project.",
+      "edits": "Deterministic native resize, outdoor material grade, periodic edge repair and palette reduction"
+    }
+  ],
+  "sourceHashes": {
+    "source/normalization.json": "1bc50e7c85d2fd9f0a91199f95d26187d0515fb207a8450257e0de19f6ca61dc",
+    "source/generation-records.json": "191364ac75d5ab486efc9f8ed6bb13d5cdde6cc7f1fa60c44f028a186f9227d1",
+    "source/references/monk-idle.png": "942d0e16032ac4c28d40fc0bda76b34b251e5481aef8e635dd27ab66affcae81",
+    "source/references/world-brazier.png": "377ce747ac72c0170db63e9a6aa7bc75498010504f7ba6bfc8e6e9abb37772ad",
+    "source/originals/cypress.png": "e390076865a17c7f38760a879002ed6f45f5813df575125704836304c710a64b",
+    "source/prompts/cypress.txt": "067d32aeae4f88ee47a7aa9f7153c0d6cf956f5951f5ce2abedd2233cde38708",
+    "source/originals/dead-tree.png": "d85668b00459b771e7dfddc1d27a4550e0439be657a0f7b79afdf32df2765a0f",
+    "source/prompts/dead-tree.txt": "e840f8a5caeb62bee32c9868f8a29cd831054bb9b097dc4d183512498fb517c1",
+    "source/originals/rock-large.png": "0f0ab877436320e2fdd05e8d54da9eb49f3ce888cdc9f7992a1daac448bb4536",
+    "source/prompts/rock-large.txt": "8849686a213586f60eb18da5372c1afa70ea1fcc9b7009599617db722d451b3d",
+    "source/originals/rock-small.png": "18e5ce62512169b657c3960006ac91b08be9df34e32a2d3255b59ae61d66e334",
+    "source/prompts/rock-small.txt": "23e8233629dcb65339274a8704e720df53513e93f21515ac95e77a25e0043061",
+    "source/originals/shrub.png": "9575b3eb25d711052e47c2612015199e049f530cf3fd74d25c0d316c5aaa65c3",
+    "source/prompts/shrub.txt": "f73246edbc5e20a437fb7218ba8a30297c4b612a331d70a9a2dfe9510cee930f",
+    "source/originals/grass.png": "c3e8bfdc1d7db81abecabec0b21442eb2550e342af3b12c5804215dde41c3ce6",
+    "source/prompts/grass.txt": "e58b6d980e77f7a456e2e80a6d0614168eba3a19d512351dba256ca6eace4add",
+    "source/originals/ruin-pile.png": "f7a7944edc31f2c028c27462d0bf8298ebaedbccf47bea3f2afb654df144c863",
+    "source/prompts/ruin-pile.txt": "0fcd8f13851daf1e786f0fced0658586eb2446170994ef68127bf94730bebd35",
+    "source/originals/supplies.png": "9263cc510d75dcf4dc79620c29f61a2c2c094473f6ae11f1e801f27584c7d092",
+    "source/prompts/supplies.txt": "5bf9760500c9afd4fa696ada0670a2edb3849d7378c65b0082de47df0fdea90b",
+    "source/originals/earth.png": "c45a99c36edc147c37a8693e4ff862b0966e5f7a24e69bde03a3617467fb0e7c",
+    "source/prompts/earth.txt": "8dff82664527624ac3568686be842a5e10729ebc6ef7926d80c96e903c74a473",
+    "source/originals/moss.png": "d4d9a8dbbfe79edd0fc8d46ed7e7ed8ac6e77babf67434a9e7d015c32a7382bf",
+    "source/prompts/moss.txt": "84fa445dd2268868920d7c9e04b94ff02ffb68615e1969d85a7ef145b63e6ae1",
+    "source/originals/cliff.png": "6a38b2b9964760500fc4336d81fa641595c6e7ce82c5bb2014ea94cacb9899c8",
+    "source/prompts/cliff.txt": "a5cdcdbd2b8829435468415be5122b1ad05235af903bfc65fd7f00198259b847"
+  },
+  "builder": {
+    "path": "scripts/build-landscape-assets.py",
+    "sha256": "22ff28ec16bbe192501d162f19c7650ef606ac186441aa4ce3d153841ad1b458",
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "previewReferences": [
+    {
+      "path": "source/references/monk-idle.png",
+      "source": "assets/game/pixel-v2/monk/monk-v2.png",
+      "box": [
+        0,
+        0,
+        96,
+        96
+      ]
+    },
+    {
+      "path": "source/references/world-brazier.png",
+      "source": "assets/game/pixel-v2/hound-world/world-v2.png",
+      "box": [
+        0,
+        0,
+        160,
+        160
+      ]
+    }
+  ],
+  "contentCredentials": "Original PNG bytes retained unmodified; normalized outputs use sidecar provenance and do not claim retained embedded credentials.",
+  "approval": {
+    "technical": "automated checks",
+    "nativeVisual": "see artifacts/landscape-art.md",
+    "inEngine": "coordinator-owned, not claimed"
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "status": "complete-task3-post-r1-r2",
+  "paper": {
+    "fileId": "01M5JE4QF1S7K7921DAQTPSHYY",
+    "pageId": "p-B-0",
+    "url": "https://app.paper.design/file/01M5JE4QF1S7K7921DAQTPSHYY/p-B-0",
+    "planArtboard": "17Z-0",
+    "isometricArtboard": "180-0"
+  },
+  "layoutSha256": "893ed12f8497fb63993aa5e0b7abc8fadde2187d15719f983ec3d6defa705e89",
+  "footprintSourceSha256": "4209d0d8efffd7931cfef953b66282d1d0cc553a69da24451aadf2e2bc96d2a8",
+  "commands": [
+    "node assets/concepts/camp-plan-01/source/export-layout.mjs",
+    "python3 assets/concepts/camp-plan-01/source/compose-plan.py",
+    "python3 assets/concepts/camp-plan-01/source/measure-natural-contacts.py",
+    "node assets/concepts/camp-plan-01/source/probe-natural-registration.mjs"
+  ],
+  "files": {
+    "exports/01-camp-plan.png": {
+      "sha256": "ab054dc16b6155492fa3d19d1a283b78e4c5ede44c69c68d484957794d0527e2",
+      "bytes": 525875
+    },
+    "exports/02-camp-isometric.png": {
+      "sha256": "9066b6082f8f543179e9729d4d6855b7652ca96ab6a7577b932e7699a5aad5b5",
+      "bytes": 2208760
+    },
+    "history/pre-r1/01-camp-plan.png": {
+      "sha256": "992b899d40f6ef049f2971369dd7003c39dbe99de47e8d2fbebc02de758b7fcc",
+      "bytes": 530055
+    },
+    "history/pre-r1/02-camp-isometric.png": {
+      "sha256": "4d4c3c37be96e0649d715f9f4e1df0d63bbcf67b0d58a41da2341080877f8e6f",
+      "bytes": 2269242
+    },
+    "history/pre-r1/isometric-paper.jsx": {
+      "sha256": "75db64dc8624c7a9993d04317a02a27a99f7303788024b6a31c0d4bc0d756f0b",
+      "bytes": 5804
+    },
+    "history/pre-r1/manifest.json": {
+      "sha256": "a208ea06734b42a6719b3ce51e60cf5991385e5e8ea4f80dcec22c604cb192c6",
+      "bytes": 5488
+    },
+    "history/pre-r1/paper-export-receipt.json": {
+      "sha256": "d87000c9dd7ef45b9a6bab626ae1120834aeeff56bc565a8a3b3d5a342e0a1d5",
+      "bytes": 282
+    },
+    "history/pre-r1/paper-qa.json": {
+      "sha256": "8895b91139ef2f8948e515f484c8951f38a10b933d67990f53c3aef62a9b50c5",
+      "bytes": 1618
+    },
+    "history/pre-r1/plan-paper.jsx": {
+      "sha256": "a9bdcb8b490e50f9273d094ca36958067f27ace529066577305496d26721788a",
+      "bytes": 33786
+    },
+    "history/pre-r1/renderer-overview-provenance.json": {
+      "sha256": "6d890f058a2bbb324ff036ab948667f0d98561ac9bbe9e23f2af8a25b783b2b9",
+      "bytes": 2133
+    },
+    "history/pre-r1/renderer-overview.png": {
+      "sha256": "3ef08ea2d76e43e4a9463588b000fd396d1713c2456aaf4b86c006740f65b979",
+      "bytes": 188954
+    },
+    "source/compose-plan.py": {
+      "sha256": "387c5c06a20feff01b9ba3506cfc47499f9df34a6cf84b6db3c073580e2ed8e7",
+      "bytes": 4647
+    },
+    "source/export-layout.mjs": {
+      "sha256": "e096799ae3b7da22495a1ba8fa157eb337d3ebb0b8cc43fd70a27a6e6dc40a65",
+      "bytes": 6438
+    },
+    "source/final-paper-styles.json": {
+      "sha256": "9885f2605674f7d2bc71e44391034d99c179690e80b05aaf0d4391fcd617c9f1",
+      "bytes": 2222
+    },
+    "source/footprints.json": {
+      "sha256": "4209d0d8efffd7931cfef953b66282d1d0cc553a69da24451aadf2e2bc96d2a8",
+      "bytes": 4800
+    },
+    "source/isometric-image.html": {
+      "sha256": "a6bfcb04b454d8e526fd7ed0eb5374bafcfabc95c1660046ae02a49af2d1e919",
+      "bytes": 306
+    },
+    "source/isometric-paper.jsx": {
+      "sha256": "d633cdce6ceb9c247f79767ccf8c8979f04c1614e73f5243728d94a8effc83d4",
+      "bytes": 5815
+    },
+    "source/layout.json": {
+      "sha256": "893ed12f8497fb63993aa5e0b7abc8fadde2187d15719f983ec3d6defa705e89",
+      "bytes": 61201
+    },
+    "source/measure-natural-contacts.py": {
+      "sha256": "aba16c28e3e223e43c532deee78f0df9d45e8064db233761a02edea4c4c9321f",
+      "bytes": 4344
+    },
+    "source/metrics.json": {
+      "sha256": "df520bc30ae43cb971d3c3f7159dbc1f36b005a9f62e892a8888db1e74f8f678",
+      "bytes": 6564
+    },
+    "source/natural-contacts-3x.png": {
+      "sha256": "9788d0ae7ebe7c6daa5b08154e16c3753337d6f49ea33085bffc682aabfe54e1",
+      "bytes": 38483
+    },
+    "source/natural-contacts.json": {
+      "sha256": "eeeb488ed2d7d2fb8eabff3de8b872d2ff9c4eaa3b156eeb12de394fb806f259",
+      "bytes": 12271
+    },
+    "source/natural-gaps-after.json": {
+      "sha256": "baeaac8f49d103b43f61eb17c205cb15d26be6125c3d5c30443483afe55bce8f",
+      "bytes": 2694
+    },
+    "source/natural-gaps-before.json": {
+      "sha256": "750271fad8b217544b88812d6567deb65c6fa51eeaf5ee6ffab1bbd656127c3c",
+      "bytes": 2695
+    },
+    "source/natural-geometry-baseline.json": {
+      "sha256": "45b43fd50c78fe446a355ba320253b0538379bdb4e888c15d39e49e21acbfd1b",
+      "bytes": 245
+    },
+    "source/natural-registration-check.json": {
+      "sha256": "bef3f4a34506c0d97288a3d91d1849ada5965806bc14f0f52befb77009a18ecd",
+      "bytes": 254840
+    },
+    "source/navigation.json": {
+      "sha256": "1a9c9a3e5868e5c4fac0d62b59c862d45389f75ea1f54f3c24b977af93eda13d",
+      "bytes": 68606
+    },
+    "source/paper-final-export-receipt.json": {
+      "sha256": "0433b3a3090e0a082eeb6b39d1fd804b356f14938605e6aded2e848b8b19b2b6",
+      "bytes": 286
+    },
+    "source/paper-imports.json": {
+      "sha256": "5048ddcbc64dc78b0a3ef6bcecba58d70550a68f398040a5e2179e4008dcd307",
+      "bytes": 1108
+    },
+    "source/paper-input/plan-map-be031c282ba8.svg": {
+      "sha256": "be031c282ba84e40810b5a7c592f7a263a4b11655b1cc0444ed5c42c5b500d24",
+      "bytes": 65993
+    },
+    "source/paper-input/renderer-overview-79aac6c4a7bd.png": {
+      "sha256": "79aac6c4a7bd40ee2cffd1478936746d0bf95de13aa87c49a272c61a67c7c72f",
+      "bytes": 184323
+    },
+    "source/paper-qa.json": {
+      "sha256": "45e4e6d3d65f5874d2d4a10d10f23c4d6cfb962452981ac3f8dc5db33e6f5d75",
+      "bytes": 1963
+    },
+    "source/plan-keys.html": {
+      "sha256": "58bfc08a7e340c236f60965116b95a937b9a1a9d8f953a18bcfb7f5710d7c68a",
+      "bytes": 3545
+    },
+    "source/plan-map.svg": {
+      "sha256": "be031c282ba84e40810b5a7c592f7a263a4b11655b1cc0444ed5c42c5b500d24",
+      "bytes": 65993
+    },
+    "source/plan-paper-export.json": {
+      "sha256": "3ad0e24790f2fa1cb60423d1d7e7c9b2dfa27de01af33ebd229cff194a20a25d",
+      "bytes": 150
+    },
+    "source/plan-paper-styles.json": {
+      "sha256": "983225764d2d8e86c38fd59c2b9ad7ff5860bf78aebc0e0d73ca7c6c57782ccd",
+      "bytes": 1203
+    },
+    "source/plan-paper.jsx": {
+      "sha256": "3ba4faf95c131dc25f0ef18b18a718bea21f4a2eaca1e193c4a352b637df557e",
+      "bytes": 33786
+    },
+    "source/plan-projection.json": {
+      "sha256": "2f81c788cef4bbfdb60896fc45df6e3594a33094653de6f3e42df6f510012f62",
+      "bytes": 1812
+    },
+    "source/probe-natural-registration.mjs": {
+      "sha256": "d8f5ec8512d90114af8bc25163eaa6e0fd49d9e9a034b028d975e2dc098102cb",
+      "bytes": 6475
+    },
+    "source/r1-data-freeze.json": {
+      "sha256": "0a363c5f5e4c02f9667e778d159173437f51d274928530080865b213e0c2b927",
+      "bytes": 1743
+    },
+    "source/reference-board.jsx": {
+      "sha256": "9f54229f558a133e5cdd6ac6a69c2beac365e0268a0077c03b0d70caf83e5c82",
+      "bytes": 4756
+    },
+    "source/reference-fonts.json": {
+      "sha256": "f16d81f3e4dc22d438a3f91f1a5e13bf6737e2674c7b5a00b6109f0922833cae",
+      "bytes": 3516
+    },
+    "source/reference-styles.json": {
+      "sha256": "0ab90753f19263d43b1a918977702365bcd010f72655c8e192bc11dfaeea66d0",
+      "bytes": 335
+    },
+    "source/renderer-overview-provenance.json": {
+      "sha256": "bcf7637bd52b945f3e4555bd73d1ecc430660bcc9b67684b4a50995da61889d2",
+      "bytes": 2866
+    },
+    "source/renderer-overview.png": {
+      "sha256": "79aac6c4a7bd40ee2cffd1478936746d0bf95de13aa87c49a272c61a67c7c72f",
+      "bytes": 184323
+    },
+    "source/verification/camp-natural-full-suite.log": {
+      "sha256": "3ec00669905a1e63afea9facbc06e48e3a38089aada124c3e91e6503da02c418",
+      "bytes": 27661
+    },
+    "source/verification/camp-natural-green.log": {
+      "sha256": "811eaaa2cde936b13a61a286210d96dacde4ebc6e2e4148b3efcbaffae4d3fdf",
+      "bytes": 504
+    },
+    "source/verification/camp-natural-red.log": {
+      "sha256": "5a0fa152a71259a1334185c518fd272ef4eda3c4b0989cb43404c72475dccbae",
+      "bytes": 1813
+    },
+    "source/verification/camp-natural-scoped-green.log": {
+      "sha256": "c5ab0c65a6beb7b140b45d8873dea13f2a9a6d6f0c2bfa69b2a106d8a3739c01",
+      "bytes": 5843
+    },
+    "source/verify-delivery.py": {
+      "sha256": "a9447c4993061a8a8c2ce744c326e95448c7092cc4c87ef88af1f1941d9a0be2",
+      "bytes": 3793
+    }
+  },
+  "acceptance": {
+    "status": "task3-complete-ready-for-coordinator-review",
+    "scope": "R1 implementation and two-sheet Paper delivery complete; no outstanding capture dependency",
+    "coordinatorEvidence": "Composition, clean overview-v2 and front/side rock/shrub reviewed by root; root reports 233/233, build exit 0, full quest route 68.17s / 88 HP. Final full-stage acceptance is not inferred.",
+    "layoutAndRuntimeAssets": "frozen; no source/runtime edits after final overview was supplied"
+  },
+  "boards": [
+    {
+      "id": "17Z-0",
+      "name": "01 · Полный план лагеря",
+      "compositionStatus": "complete-post-r1",
+      "export": "exports/01-camp-plan.png",
+      "pixels": [
+        1600,
+        1771
+      ],
+      "source": "source/plan-paper.jsx",
+      "diagram": "source/plan-map.svg",
+      "imageNodeId": "1DZ-0",
+      "checksShown": 57,
+      "layoutSha256": "893ed12f8497fb63993aa5e0b7abc8fadde2187d15719f983ec3d6defa705e89"
+    },
+    {
+      "id": "180-0",
+      "name": "02 · Лагерь в изометрии",
+      "compositionStatus": "complete-post-r1-r2",
+      "acceptanceStatus": "v2-source-reviewed-by-coordinator; sheet-reviewed-by-implementer",
+      "export": "exports/02-camp-isometric.png",
+      "pixels": [
+        1600,
+        1377
+      ],
+      "source": "source/isometric-paper.jsx",
+      "image": "source/renderer-overview.png",
+      "imageNodeId": "1E1-0",
+      "layoutSha256": "893ed12f8497fb63993aa5e0b7abc8fadde2187d15719f983ec3d6defa705e89"
+    }
+  ],
+  "provenance": "source/renderer-overview-provenance.json",
+  "visualReview": "source/paper-qa.json",
+  "verificationCommand": "python3 assets/concepts/camp-plan-01/source/verify-delivery.py",
+  "revision": "2026-10-23 R1+R2",
+  "history": {
+    "path": "history/pre-r1",
+    "purpose": "Preserved prior overview, exports, JSX, QA and manifest; historical external source hashes are not current working references."
+  },
+  "naturalRegistration": {
+    "contacts": "source/natural-contacts.json",
+    "measurement": "source/measure-natural-contacts.py",
+    "probe": "source/probe-natural-registration.mjs",
+    "evidence": "source/natural-registration-check.json",
+    "freeze": "source/r1-data-freeze.json",
+    "historicalProbeNote": "natural-gaps-before/after.json preserve the original probe; its centerDistance measures distance to render anchor. Canonical evidence uses explicit colliderDistance/anchorDistance."
+  },
+  "paperImports": "source/paper-imports.json"
+}

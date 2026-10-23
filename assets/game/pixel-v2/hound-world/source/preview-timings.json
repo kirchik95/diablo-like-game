@@ -1,0 +1,140 @@
+{
+  "hound": {
+    "idle": {
+      "ms": [
+        180,
+        180,
+        180,
+        180
+      ],
+      "loop": true
+    },
+    "run": {
+      "ms": [
+        85,
+        85,
+        85,
+        85,
+        85,
+        85
+      ],
+      "loop": true,
+      "note": "Preview only; runtime follows distance."
+    },
+    "attack": {
+      "ms": [
+        275,
+        275,
+        120,
+        150,
+        350,
+        350
+      ],
+      "loop": false,
+      "note": "Windup 550 / leap 270 / recovery 700 ms."
+    },
+    "hurt": {
+      "ms": [
+        65,
+        65,
+        90,
+        100
+      ],
+      "loop": false
+    },
+    "death": {
+      "ms": [
+        100,
+        110,
+        130,
+        140,
+        160,
+        260
+      ],
+      "loop": false
+    }
+  },
+  "world": {
+    "brazier-cyan": {
+      "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": true
+    },
+    "brazier-magenta": {
+      "ms": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120
+      ],
+      "loop": true
+    },
+    "shrine": {
+      "ms": [
+        100,
+        140,
+        160,
+        220,
+        280,
+        200
+      ],
+      "loop": false,
+      "note": "Keys at 0/100/240/400/620/900 ms; healing remains immediate."
+    },
+    "gate": {
+      "ms": [
+        80,
+        140,
+        160,
+        160,
+        160,
+        200
+      ],
+      "loop": false,
+      "note": "Keys at 0/80/220/380/540/700 ms; hold open."
+    }
+  },
+  "effects": {
+    "impact": {
+      "ms": [
+        65,
+        65,
+        85,
+        90,
+        100,
+        120
+      ],
+      "loop": false
+    },
+    "warning": {
+      "ms": [
+        65,
+        65,
+        85,
+        90,
+        100,
+        120
+      ],
+      "loop": false
+    },
+    "healing": {
+      "ms": [
+        65,
+        65,
+        85,
+        90,
+        100,
+        120
+      ],
+      "loop": false
+    }
+  }
+}

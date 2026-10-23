@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-22",
+  "result": "PASS",
+  "scope": "Hero/FX + shared index only",
+  "exportedPngCount": 6,
+  "visualBoards": 5,
+  "keyImages": 80,
+  "temporalKeys": 76,
+  "directionViews": 4,
+  "originals": 8,
+  "exactPrompts": 8,
+  "rowImageReferencesValid": true,
+  "allPngDecode": true,
+  "allExports1600pxWide": true,
+  "checks": {
+    "idle_unchanged": true,
+    "first_run_half_unchanged": true,
+    "facings_unchanged": true,
+    "opposite_run_half_redrawn": true,
+    "timing_source_unchanged": true
+  },
+  "visualAcceptance": "Main agent accepted all six final Paper screenshots in conversation.",
+  "limitations": [
+    "Storyboard keyframes are not engine-ready sprite atlases.",
+    "Exact registration, intermediate frames, seamless playback, strict pixel-grid/palette normalization and alpha cleanup remain a future engine-asset task.",
+    "Only the direction reference row depicts all four facings; action sequences are authored in SE.",
+    "Future directional mirroring must check tunic wrap, sash and lighting; the corrected run was never mirrored.",
+    "Revive and post-defeat visual playback are proposals, not implemented gameplay states."
+  ],
+  "exports": [
+    {
+      "nodeId": "HW-0",
+      "path": "exports/00-animation-index.png",
+      "dimensions": [
+        1600,
+        1644
+      ],
+      "bytes": 354897,
+      "sha256": "41e82934ae70e656c9b2c516fa9ce59bcc1741da6cfbe7fe5223a7d92b4e730d",
+      "format": "PNG",
+      "scale": "1x",
+      "source": "Paper native export"
+    },
+    {
+      "nodeId": "I2-0",
+      "path": "exports/01-monk-locomotion.png",
+      "dimensions": [
+        1600,
+        1870
+      ],
+      "bytes": 2426865,
+      "sha256": "022f3d88a49b93c405ab9dad361170b3c8037ff5ff63c7ce325bc2f1a2b47bef",
+      "format": "PNG",
+      "scale": "1x",
+      "source": "Paper native export"
+    },
+    {
+      "nodeId": "I3-0",
+      "path": "exports/02-monk-combo.png",
+      "dimensions": [
+        1600,
+        1938
+      ],
+      "bytes": 2616085,
+      "sha256": "e9590041083081d656ac366757ea291b2a2ca63c104205aee86c98fff63b3bc1",
+      "format": "PNG",
+      "scale": "1x",
+      "source": "Paper native export"
+    },
+    {
+      "nodeId": "I4-0",
+      "path": "exports/03-monk-abilities.png",
+      "dimensions": [
+        1600,
+        1843
+      ],
+      "bytes": 2499987,
+      "sha256": "59c46a1ce6e97703a02e99c5559dbe3a00325d940477b4fd44f36429e50e9154",
+      "format": "PNG",
+      "scale": "1x",
+      "source": "Paper native export"
+    },
+    {
+      "nodeId": "I5-0",
+      "path": "exports/04-monk-lifecycle.png",
+      "dimensions": [
+        1600,
+        1843
+      ],
+      "bytes": 2342213,
+      "sha256": "f6f978ae6d7100237847295f373514c548257c4fe2d41b26c6fe5c26d8badd1b",
+      "format": "PNG",
+      "scale": "1x",
+      "source": "Paper native export"
+    },
+    {
+      "nodeId": "I6-0",
+      "path": "exports/14-combat-effects.png",
+      "dimensions": [
+        1600,
+        1870
+      ],
+      "bytes": 1777744,
+      "sha256": "21cc736dc695df0c5433b4b37255a19d82aac44778abef467fa609716ec3cb1f",
+      "format": "PNG",
+      "scale": "1x",
+      "source": "Paper native export"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "alphaThreshold": 128,
+  "resampling": "nearest",
+  "staticPaletteColors": 64,
+  "flamePaletteColors": 24,
+  "paletteMethod": "Pillow MEDIANCUT, shared opaque samples, no dither",
+  "transparentRGB": [
+    0,
+    0,
+    0
+  ],
+  "static": [
+    {
+      "id": "tent-left",
+      "source": "source/tent-left-original.png",
+      "fit": [
+        208,
+        164
+      ]
+    },
+    {
+      "id": "tent-right",
+      "source": "source/tent-right-original.png",
+      "fit": [
+        208,
+        164
+      ]
+    },
+    {
+      "id": "road-marker",
+      "source": "source/road-marker-original.png",
+      "fit": [
+        56,
+        82
+      ]
+    },
+    {
+      "id": "campfire-base",
+      "source": "source/campfire-base-original.png",
+      "fit": [
+        92,
+        54
+      ]
+    },
+    {
+      "id": "supply-cache",
+      "source": "source/supply-cache-original.png",
+      "fit": [
+        124,
+        86
+      ]
+    },
+    {
+      "id": "fallen-log",
+      "source": "source/fallen-log-original.png",
+      "fit": [
+        106,
+        60
+      ]
+    }
+  ],
+  "flame": {
+    "source": "source/camp-flame-original.png",
+    "sourceCrops": [
+      [
+        0,
+        0,
+        520,
+        757
+      ],
+      [
+        520,
+        0,
+        1039,
+        757
+      ],
+      [
+        1039,
+        0,
+        1559,
+        757
+      ],
+      [
+        1559,
+        0,
+        2078,
+        757
+      ]
+    ],
+    "sourceRootX": [
+      281,
+      785,
+      1294,
+      1807
+    ],
+    "fit": [
+      54,
+      72
+    ],
+    "baseline": 100,
+    "stableRootRows": 6,
+    "registration": "One shared scale; align measured source root centers to x64 and bottom to y100; reuse frame0 lower six rows to lock the flame root."
+  },
+  "previewReferences": {
+    "earth": "assets/game/pixel-v4/landscape/earth.png",
+    "moss": "assets/game/pixel-v4/landscape/moss.png",
+    "landscape": "assets/game/pixel-v4/landscape/landscape.png",
+    "hero": "assets/game/pixel-v4/landscape/source/references/monk-idle.png"
+  },
+  "scope": "Normalization only: threshold alpha, crop, nearest downsample, reject/remove tiny detached residue, shared palette, anchor registration, flame root stabilization. No scene extraction or hand-painted replacement art."
+}

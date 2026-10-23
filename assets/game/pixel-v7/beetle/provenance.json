@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "generationMode": "No new image generation. All keys are deterministic Pillow derivations of the existing Paper artbook beetle originals (openai-gpt-image-edit-2-5, recorded in the concept manifest).",
+  "rightsNote": "Project references and derivatives. Inherited source provenance retained; this record is not a new license grant.",
+  "acceptance": {
+    "status": "worker-inspected-awaiting-coordinator",
+    "authority": "Coordinator accepts under user delegation. No personal user approval is claimed.",
+    "boundary": "Asset owner inspects native contact sheets and exported pixels; live game/browser acceptance belongs to the coordinator."
+  },
+  "normalization": "Per-sheet fixed scalar, majority-vote native resampling, explicit 15-color gray-violet/soft-underside/magenta/coral palette, closed coal rim, no dithering. Front keys come from the authored SE sheets; rear keys come from a cut-out rig of the single authored NE view. Detached storyboard rings, sparks and dust removed.",
+  "builder": "scripts/build-beetle-animation.py",
+  "toolchain": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "inputs": [
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/manifest.json",
+      "sha256": "ece1a4bded8935cb7c37441b2043972c35ae64bc2d5f729461818c87ae1abe75"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/beetle-attack.png",
+      "sha256": "52b60149e16282fac055a4a77c9a061fd2fd9f02184619345a685cb660982a48"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/beetle-death.png",
+      "sha256": "906711dddeccc9d2f1c15c86b190c1c88a639b2fe2642686de4a2e331a8ef2ee"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/beetle-facing-v2.png",
+      "sha256": "bd374d70c66fad24ca1667dc95e28b6cf8d39c71b54eec68efe97a63b28eee83"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/beetle-hurt.png",
+      "sha256": "7de21d499c01342622e1d6425dfec151d6c36892442fbf7c82545e39b1bba44c"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/beetle-idle.png",
+      "sha256": "271ac2572d28b314fbb6e40f356dc60474ef7499ac882c5a17c88c5494adc5f4"
+    },
+    {
+      "path": "assets/concepts/animation-bible-01/monsters/originals/beetle-walk.png",
+      "sha256": "63cb11908517be7320303e0595b2ac78625bb8bebf6cc83355b84a17d20d4cc4"
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/source/concept-records.json",
+      "sha256": "15c7cf6820a6d5a6472b8df51657dc81c528da6b20ea8507a454e1a71aaa2c49"
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/source/normalization.json",
+      "sha256": "5007a67d9c3f10c70169555c815bb09eb11d755ccbcbbca11d4538f9aea76204"
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/source/prompts/beetle-attack-v2.txt",
+      "sha256": "58b8671511aba72b51faea5be8f2614236618e5dd275dfbc61a2cc087a9b9813"
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/source/prompts/beetle-death.txt",
+      "sha256": "3124bbfcd2399635b6ac788418f936c54c3542f81030f6f85bcffd5faa60a798"
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/source/prompts/beetle-facing-v2.txt",
+      "sha256": "45c90e969ebf1af316f967cbd3899d1fe66ce83640fdca39b5ecace1ae04062e"
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/source/prompts/beetle-hurt.txt",
+      "sha256": "47626265123096cee37b2c9d589b72305a720e654b54e403f58eeb13cac7823d"
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/source/prompts/beetle-idle.txt",
+      "sha256": "59fbfc27c9f10c603b093b7c3b0b7ddd48b749bd31529dc027c6245240fd9e16"
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/source/prompts/beetle-walk.txt",
+      "sha256": "f2456f67a478a54d31a1765c9b85a7524fd0e222f2e446191d1471b390752790"
+    },
+    {
+      "path": "scripts/build-beetle-animation.py",
+      "sha256": "8f58533f41eb72ccca252e14d26048068955a00ed147fa4536d904c38c132e2c"
+    }
+  ],
+  "referenceInputs": [
+    {
+      "path": "assets/game/pixel-v1/floor.png",
+      "sha256": "6f4894b7f4a538504def073685ff793e6c9e5cac34b6b2f492d8f4b5e78066e9"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/hound-v2.png",
+      "sha256": "20c98c7e78e05c41e2b8926bf53ef9cf465ae0b0a9a93236e2b31e7a77ae1ea7"
+    },
+    {
+      "path": "assets/game/pixel-v2/hound-world/manifest.json",
+      "sha256": "e24c0265a726dbdda06c9889cc7c9ceed4c4ab95612a9e6a3edc842c7b662e3e"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/manifest.json",
+      "sha256": "9b31e2aeb75335a9975b348c63b71d1f1251e47b2038da78c3ac0111e1e98696"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/monk-v2.png",
+      "sha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/manifest.json",
+      "sha256": "777d30564b37ef6823a3e3fa8b0e4118c5847ebb218b5f6a5f80ea9fd9c0595e"
+    },
+    {
+      "path": "assets/game/pixel-v3/wraith/wraith.png",
+      "sha256": "2b4eff54ee9922d9402c089314e877f2ef291c18a59edc87e3dda92d179f059d"
+    }
+  ],
+  "referenceNote": "Reference inputs feed only the floor-context previews. If a sibling package changes them, --verify-only reports the context previews as stale instead of failing the beetle package.",
+  "outputs": [
+    {
+      "path": "assets/game/pixel-v7/beetle/beetle.png",
+      "sha256": "2392a22a924833b2d4a2b7d9d94ea991498ef15e7e1b9a071cef2a8f3692abd1",
+      "bytes": 104909
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/hit-masks.json",
+      "sha256": "a241428eed652fd03d39626c07058d9ca58933655b9e78e4306b3ac9e5e53e51",
+      "bytes": 218536
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/manifest.json",
+      "sha256": "7605276d6e62d5ce8062728090974dd237abc04be2241adc97058becba2e0a7f",
+      "bytes": 6580
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/block-four-views.gif",
+      "sha256": "48b2fcfaf5bac517166cecb2cc5fb45e751c491b238bf6ed36d93392fd597538",
+      "bytes": 14295
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/contact-back-2x.png",
+      "sha256": "fa786ca871b536a9e935faffc42a6d37bf036ba664a0d0ed3c802bf249a91972",
+      "bytes": 102065
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/contact-back-native.png",
+      "sha256": "d44359eb29797792e38b5170fd93b023f9eaebc4c7c3758327ee60c154eee6d9",
+      "bytes": 75357
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/contact-front-2x.png",
+      "sha256": "8fba94731f13e35fab972b32478dd887b50683ad264650150b78f42605fe25ee",
+      "bytes": 116818
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/contact-front-native.png",
+      "sha256": "0e4e355834a78433fd8230a689aa5b295e5d477ad2a826a861a15959f55e2e40",
+      "bytes": 86726
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/death-four-views.gif",
+      "sha256": "dc0e7aa73ab65c658246fdc1520f7b35331ba080670a98d30d593da75525122e",
+      "bytes": 42788
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/floor-context-2x.png",
+      "sha256": "b7320832a09f2dae0845e1ded82947ab77994d6aca9db8c5ec163d008457faa7",
+      "bytes": 96159
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/floor-context-native.png",
+      "sha256": "e0b9018814a51c6aaf46faed2086d3931b504bc922f6720059eca8c05b5a1255",
+      "bytes": 75923
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/hurt-four-views.gif",
+      "sha256": "bbc445831db5aeeba6981d25a4844dc46b1f4a0c4d8afd2969ccf64d1e56f921",
+      "bytes": 28554
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/idle-four-views.gif",
+      "sha256": "b20625b031b196d21d01294e11a5e7d05da1dc68086ff3804b39d5bc0d1787dd",
+      "bytes": 28778
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/index.html",
+      "sha256": "751fb207551206772b95cc6eda63866363e846d9b933047e62ee711ba1092c0d",
+      "bytes": 6171
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/recover-four-views.gif",
+      "sha256": "4ab5e216a785c3a2c9975dca4758e9a6182ac89ebeb7cae4c85dd46a520b2e2b",
+      "bytes": 22951
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/slam-four-views.gif",
+      "sha256": "527f70000c3e20ead92b3edc8fc410cf0c3ae5f93ce39879b8e026650ad84a59",
+      "bytes": 22202
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/strip-block-2x.png",
+      "sha256": "af70420b63d3bd92f84cbf149a7bd7f6364b39161c3b2fbd9422a5fd9eb72220",
+      "bytes": 10994
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/strip-death-2x.png",
+      "sha256": "8034230ccf2be6ade68e4736913930161b48fabf357a36f3b59a6a254a056e8f",
+      "bytes": 28639
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/strip-hurt-2x.png",
+      "sha256": "3cba2bbe0cd258f795bc53b25f0ee722a18aa98ab9c24c321a15a429e43c78b9",
+      "bytes": 19580
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/strip-idle-2x.png",
+      "sha256": "9fd132abba4bfb1232f38e08cc41d2a33deec0ac61abf96312683de05c1b725e",
+      "bytes": 17072
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/strip-recover-2x.png",
+      "sha256": "0ce22e6467f041237865eb4b0a099b764ddb889bdf58d3fec5f5c61548f411a3",
+      "bytes": 16330
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/strip-slam-2x.png",
+      "sha256": "dcce566ac265a09204c2933c82b5b161c3010cea1d6b0cd3794ccfcba5e54bad",
+      "bytes": 18089
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/strip-stunned-2x.png",
+      "sha256": "0d3233230425c866ffc65bd5fe2fb469147d75c00730ad50063e374ea6369168",
+      "bytes": 16005
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/strip-walk-2x.png",
+      "sha256": "7a614b9b40f018217a8b376fea1c72a6cbaaeffe9e45e93be0ff1a321371b294",
+      "bytes": 24604
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/strip-windup-2x.png",
+      "sha256": "040d0d8ca35a74b0d9417472066bbdf94517d6a253c84acfe255635e0e9c1b2b",
+      "bytes": 27487
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/stunned-four-views.gif",
+      "sha256": "868dde39b8c26725bb6ea5bb95a6f3a521f52c1d86dcdaf9530e2a2cf6878d88",
+      "bytes": 29297
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/walk-four-views.gif",
+      "sha256": "cc3c285dd876fff2e793ff7c836168efcdab0a967749b302ae95191621551137",
+      "bytes": 43947
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/previews/windup-four-views.gif",
+      "sha256": "5930bbb88708abcedf3183edd55d11ae26839160f151c3ffb38dc2e6dffc6707",
+      "bytes": 39450
+    },
+    {
+      "path": "assets/game/pixel-v7/beetle/source/registration.json",
+      "sha256": "ea410fcde2eb4a74e754dc1c344ed507a4ef8527e1e1359baf1fda1bd692c579",
+      "bytes": 47206
+    }
+  ]
+}

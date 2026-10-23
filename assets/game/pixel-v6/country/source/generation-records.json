@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "id": "grass",
+      "tool": "image_gen.imagegen",
+      "mode": "generate",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-90ee88cf-edb7-437e-af26-730892248d9c.png",
+      "inputReferences": [],
+      "transparentBackground": false,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    },
+    {
+      "id": "soil",
+      "tool": "image_gen.imagegen",
+      "mode": "generate",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-de5b53e8-00a1-4fb1-9c29-2e76cc0459f2.png",
+      "inputReferences": [],
+      "transparentBackground": false,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    },
+    {
+      "id": "grass-low",
+      "tool": "image_gen.imagegen",
+      "mode": "generate",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-d96e1304-256c-437e-8ee7-37fa0e89c091.png",
+      "inputReferences": [],
+      "transparentBackground": true,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    },
+    {
+      "id": "stone",
+      "tool": "image_gen.imagegen",
+      "mode": "edit",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-e661989b-ddf5-490c-8423-580fa16a9a6f.png",
+      "inputReferences": [
+        "source/originals/soil.png"
+      ],
+      "transparentBackground": false,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    },
+    {
+      "id": "grass-wide",
+      "tool": "image_gen.imagegen",
+      "mode": "edit",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-14af5dfc-ecc7-4b13-93ee-56f386e17fb1.png",
+      "inputReferences": [
+        "source/originals/grass-low.png"
+      ],
+      "transparentBackground": true,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    },
+    {
+      "id": "fern-low",
+      "tool": "image_gen.imagegen",
+      "mode": "edit",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-25e68751-8e42-4e05-995b-a6b1afc165ea.png",
+      "inputReferences": [
+        "source/originals/grass-low.png"
+      ],
+      "transparentBackground": true,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    },
+    {
+      "id": "flowers-white",
+      "tool": "image_gen.imagegen",
+      "mode": "edit",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-844da60b-317b-459a-871d-933b6bfb4deb.png",
+      "inputReferences": [
+        "source/originals/grass-low.png"
+      ],
+      "transparentBackground": true,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    },
+    {
+      "id": "flowers-ochre",
+      "tool": "image_gen.imagegen",
+      "mode": "edit",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-464af5cf-3ca7-4957-9fa5-ee29826ea9e2.png",
+      "inputReferences": [
+        "source/originals/grass-low.png"
+      ],
+      "transparentBackground": true,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    },
+    {
+      "id": "leaves",
+      "tool": "image_gen.imagegen",
+      "mode": "edit",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-c79cb228-9b1f-4d9e-8531-5076c244936f.png",
+      "inputReferences": [
+        "source/originals/grass-low.png"
+      ],
+      "transparentBackground": true,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    },
+    {
+      "id": "twigs",
+      "tool": "image_gen.imagegen",
+      "mode": "edit",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-c253e564-c7e3-4439-ad15-3978457340b8.png",
+      "inputReferences": [
+        "source/originals/grass-low.png"
+      ],
+      "transparentBackground": true,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    },
+    {
+      "id": "pebbles-flat",
+      "tool": "image_gen.imagegen",
+      "mode": "edit",
+      "sourceToolOutput": "/Users/kirchik/.codex/generated_images/01a1676a-aecf-7770-88e9-ab56668ac0cf/exec-22f07993-9b03-46b6-93e2-81f9df9b4d16.png",
+      "inputReferences": [
+        "source/originals/grass-low.png"
+      ],
+      "transparentBackground": true,
+      "date": "2026-10-23",
+      "model": "not exposed by built-in tool"
+    }
+  ]
+}
