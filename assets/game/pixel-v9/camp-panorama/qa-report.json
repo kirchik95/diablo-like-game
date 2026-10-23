@@ -500,6 +500,50 @@
         193.5
       ],
       "role": "solid"
+    },
+    {
+      "frame": "ruin-stump",
+      "bbox": [
+        86,
+        160,
+        170,
+        232
+      ],
+      "size": [
+        84,
+        72
+      ],
+      "opaquePixels": 3194,
+      "colors": 18,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 1682,
+      "contactCenter": [
+        128,
+        210.5
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "ruin-fallen",
+      "bbox": [
+        79,
+        164,
+        176,
+        231
+      ],
+      "size": [
+        97,
+        67
+      ],
+      "opaquePixels": 2999,
+      "colors": 21,
+      "maxOpaqueRow": 230,
+      "opaqueOnFootprint": 1696,
+      "contactCenter": [
+        128,
+        206.5
+      ],
+      "role": "solid"
     }
   ],
   "surfaces": {

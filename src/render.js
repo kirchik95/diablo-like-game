@@ -139,6 +139,9 @@ export function warningShape(enemy, world) {
   ];
 }
 
+// The ritual source's clip: pixel-v11 'ritual-source', or the v2 shrine keys.
+const ritualClip = atlas => atlas.clips['ritual-source'] ?? atlas.clips.shrine;
+
 export function adventureMapLayout(game, width = 360, height = 280) {
   const world = game.world || legacyWorld;
   let centerU, centerV, scale;
@@ -212,9 +215,10 @@ export class Renderer {
 
   createEnemy(enemy) {
     const kind = enemy.kind || 'hound';
-    const atlas = kind === 'ritual' ? this.assets.world : this.assets[kind];
+    // The ritual source uses the restyled pixel-v11 world frames when loaded.
+    const atlas = kind === 'ritual' ? this.assets.monasteryWorld ?? this.assets.world : this.assets[kind];
     const sprite = createSprite(this.scene, `${kind}-${enemy.id}`, atlas,
-      kind === 'ritual' ? atlas.clips.shrine.front[0] : 0);
+      kind === 'ritual' ? ritualClip(atlas).front[0] : 0);
     const style = SHADOWS[kind] ?? SHADOWS.hound;
     const shadow = createShadow(this.scene, `${kind}-shadow-${enemy.id}`, style.radius, style);
     const warning = kind === 'ritual' ? null : createSprite(this.scene, `${kind}-warning-${enemy.id}`, this.assets.effects);
@@ -427,10 +431,13 @@ export class Renderer {
     for (let i = 0; i < this.hounds.length; i++) {
       const e = game.enemies[i], { sprite, shadow } = this.hounds[i];
       if (e.kind === 'ritual') {
-        const frames = this.assets.world.clips.shrine.front;
+        const frames = ritualClip(sprite.atlas).front, restyled = !!sprite.atlas.clips['ritual-source'];
         setSpriteFrame(sprite, { frame: frames[e.hp <= 0 ? 5 : e.sealed ? 0 : 2 + Math.floor(t * 4) % 3], flip: false });
-        sprite.mesh.visibility = e.hp <= 0 ? .38 : 1;
-        sprite.material.emissiveColor.set(e.sealed ? .85 : .55, e.sealed ? .55 : 1, 1);
+        // The v11 keys carry their own magenta/turquoise and a dark broken
+        // ruin; only the legacy v2 shrine is tinted and faded.
+        sprite.mesh.visibility = e.hp <= 0 && !restyled ? .38 : 1;
+        if (restyled) sprite.material.emissiveColor.set(1, 1, 1);
+        else sprite.material.emissiveColor.set(e.sealed ? .85 : .55, e.sealed ? .55 : 1, 1);
       } else setSpriteFrame(sprite, (e.kind === 'wraith' ? wraithPose : e.kind === 'beetle' ? beetlePose : houndPose)(e, sprite.atlas, this.presentation.hounds[i]));
       // The leap height also lands on whole screen pixels.
       const jump = e.state === 'leap' ? Math.round(Math.sin((1 - e.timer / .27) * Math.PI) * .25 * lift) / lift : 0;
@@ -439,7 +446,9 @@ export class Renderer {
       const contactOffset = e.kind === 'ritual'
         ? Math.SQRT2 * ((sprite.atlas.anchor[1] - 124) / PIXELS_PER_UNIT + .025 * Math.sin(Math.PI / 3)) : 0;
       const body = drawnAt(this, e), at = e.kind === 'ritual' ? body : this.groundAnchor(body.x, body.y);
-      sprite.mesh.position.set(at.x + contactOffset, .025 + jump, at.y + contactOffset);
+      // A raised dais under the source (footprint `standOn`) lifts its sprite.
+      const stand = e.kind === 'ritual' ? this.world.ritual?.standOn ?? 0 : 0;
+      sprite.mesh.position.set(at.x + contactOffset, .025 + jump + stand, at.y + contactOffset);
       const flash = this.presentation.hounds[i].flash > 0;
       if (e.kind !== 'ritual' || flash) sprite.material.emissiveColor.set(1, flash ? .55 : 1, flash ? .7 : 1);
       this.placeShadow(shadow, at, SHADOWS[e.kind] ?? SHADOWS.hound, sprite.flip, .024);
@@ -453,13 +462,13 @@ export class Renderer {
         const { frames, frameDurationMs } = fire.sprite.atlas.animation;
         const key = frames[Math.floor(t * 1000 / frameDurationMs) % frames.length];
         setSpriteFrame(fire.sprite, { frame: fire.sprite.atlas.frames.indexOf(key), flip: fire.sprite.flip });
-      } else if (fire.sprite) setSpriteFrame(fire.sprite, worldPose(fire.clip, this.assets.world, this.presentation, i * .13));
+      } else if (fire.sprite) setSpriteFrame(fire.sprite, worldPose(fire.clip, fire.sprite.atlas, this.presentation, i * .13));
       for (const [j, flame] of (fire.flames || []).entries()) {
         flame.scaling.y = 1 + Math.sin(t * 7 + j * 2) * .12;
         flame.rotation.y = Math.floor(t * 6 + j) * .35;
       }
     }
-    if (this.world.shrine) setSpriteFrame(this.world.shrine, worldPose('shrine', this.assets.world, this.presentation));
+    if (this.world.shrine) setSpriteFrame(this.world.shrine, worldPose('shrine', this.world.shrine.atlas, this.presentation));
     if (this.world.gate?.atlas.clips?.gate) setSpriteFrame(this.world.gate, worldPose('gate', this.world.gate.atlas, this.presentation));
     this.updateLocationState(game, t);
     this.updateEffects(game);
@@ -695,20 +704,21 @@ export class Renderer {
           c.strokeStyle = '#ff477d'; c.lineWidth = 1.5; c.stroke();
         } else this.drawRing(body.x, body.y, .6, .035, ranged ? '#a4f8e9' : '#ff477d', 1.5, 0, progress * TAU);
       }
+      const stand = e.kind === 'ritual' ? this.world.ritual?.standOn ?? 0 : 0;
       if (e.kind === 'ritual') {
-        const s = this.project(e.x, e.y, 2.8);
+        const s = this.project(e.x, e.y, 2.8 + stand);
         c.textAlign = 'center'; c.font = '8px monospace'; c.fillStyle = e.sealed ? '#d599b9' : '#b7f3e1';
         c.fillText(e.sealed ? 'ПЕЧАТЬ СТРАЖЕЙ' : 'ИСТОЧНИК ОТКРЫТ', s.x, s.y);
       }
       // Bars and flashes follow the drawn (blended, snapped) sprite, not its continuous body.
       const at = e.kind === 'ritual' ? body : this.groundAnchor(body.x, body.y);
       if (e.hp < e.maxHp || e.state === 'windup' || (e.kind === 'ritual' && !e.sealed)) {
-        const s = this.project(at.x, at.y, e.kind === 'ritual' ? 2.6 : e.kind === 'wraith' ? 2 : e.kind === 'beetle' ? 1.75 : 1.55);
+        const s = this.project(at.x, at.y, e.kind === 'ritual' ? 2.6 + stand : e.kind === 'wraith' ? 2 : e.kind === 'beetle' ? 1.75 : 1.55);
         c.fillStyle = '#17101ddb'; c.fillRect(s.x - 17, s.y, 34, 3);
         c.fillStyle = e.kind === 'hound' || !e.kind ? '#d86c9b' : e.kind === 'beetle' ? '#b9a3d6' : '#86cfc7'; c.fillRect(s.x - 17, s.y, 34 * e.hp / e.maxHp, 3);
       }
       if (this.presentation.hounds[i].flash > 0) {
-        const s = this.project(at.x, at.y, .55);
+        const s = this.project(at.x, at.y, .55 + stand);
         const grad = c.createRadialGradient(s.x, s.y, 0, s.x, s.y, unit * .5);
         grad.addColorStop(0, `rgba(255,227,171,${this.presentation.hounds[i].flash * 3})`); grad.addColorStop(1, 'transparent');
         c.fillStyle = grad; c.fillRect(s.x - unit, s.y - unit, unit * 2, unit * 2);

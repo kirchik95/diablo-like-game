@@ -1,4 +1,5 @@
 import contacts from '../assets/concepts/camp-plan-01/source/natural-contacts.json' with { type: 'json' };
+import panorama from '../assets/game/pixel-v9/camp-panorama/manifest.json' with { type: 'json' };
 import { countryZoneLookup } from './country-zones.js';
 import { campBackdrop } from './country-terrain.js';
 import { inBackdrop } from './camp-layout.js';
@@ -18,6 +19,15 @@ const bounds = {
   'ruin-pile': [51, 94, 110, 144], supplies: [54, 94, 107, 144],
 };
 const project = (x, y) => [(y - x) * 32 / Math.SQRT2, (x + y) * 16 / Math.SQRT2];
+// Opaque cell box, cell size and registration anchor of a v4 or v9 frame.
+// Ruin frames of pixel-v11 share the v9 cell; without published bounds they
+// reserve their whole cell above the anchor.
+const art = frame => bounds[frame] ? { box: bounds[frame], cell: 160, anchor: [80, 144] }
+  : { box: panorama.opaqueBounds[frame] ?? [0, 0, panorama.campPanorama.cell, panorama.campPanorama.anchor[1]],
+    cell: panorama.campPanorama.cell, anchor: panorama.campPanorama.anchor };
+// The camp, the road (road-country.js) and any authored area own their props;
+// only the remaining country gets this procedural v4 border.
+export const proceduralZone = zone => zone.id !== 'camp' && zone.id !== 'road' && !zone.setDressing;
 
 // Extrema of (2 * pixelY - pixelX, 2 * pixelY + pixelX) over the
 // opaque pixel corners of the unchanged atlas. These bound the entire stone
@@ -72,16 +82,16 @@ export function createCountryBorder(world, boundary, walk) {
       if (along > -3 && along < 10 && Math.abs(across) < 1.6 + radius) return false;
       // A distant tree may stand outside the ground corridor but project over
       // the portal. Reserve the actual opaque rectangle in the fixed view too.
-      const box = bounds[p.frame], [u, v] = project(p.x, p.y), [pu, pv] = project(q.x, q.y);
-      const left = u + ((p.flip ? 160 - box[2] : box[0]) - 80) * scale;
-      const right = u + ((p.flip ? 160 - box[0] : box[2]) - 80) * scale;
-      const top = v + (box[1] - 144) * scale, bottom = v + (box[3] - 144) * scale;
+      const { box, cell, anchor } = art(p.frame), [u, v] = project(p.x, p.y), [pu, pv] = project(q.x, q.y);
+      const left = u + ((p.flip ? cell - box[2] : box[0]) - anchor[0]) * scale;
+      const right = u + ((p.flip ? cell - box[0] : box[2]) - anchor[0]) * scale;
+      const top = v + (box[1] - anchor[1]) * scale, bottom = v + (box[3] - anchor[1]) * scale;
       if (left < pu + 22 && right > pu - 22 && top < pv + 18 && bottom > pv - 18) return false;
     }
     return true;
   };
   const placements = [];
-  if (!world.zones && world.id !== 'road' && world.id !== 'courtyard') return { placements, register, allowScenery };
+  if (!world.zones && !(world.id === 'courtyard' && proceduralZone(world))) return { placements, register, allowScenery };
 
   const outer = new Map();
   for (const edge of boundary) {
@@ -91,7 +101,7 @@ export function createCountryBorder(world, boundary, walk) {
   }
   const candidates = [...outer.values()].sort((a, b) => noise(a.x, a.y, 81) - noise(b.x, b.y, 81) || a.y - b.y || a.x - b.x);
   const add = (frame, x, y, scale, seed, group) => {
-    if (world.zones && zoneAt(x, y).id === 'camp') return null;
+    if (!proceduralZone(zoneAt(x, y))) return null;
     const p = register(frame, x, y, scale, noise(seed.x, seed.y, 85) > .5);
     if (!allowScenery(p)) return null;
     p.border = true; p.cluster = group;
@@ -99,8 +109,8 @@ export function createCountryBorder(world, boundary, walk) {
   };
   const primary = [];
   for (const q of candidates) {
+    if (!proceduralZone(zoneAt(q.x, q.y))) continue;
     const zone = zoneAt(q.x, q.y).id;
-    if (zone === 'camp') continue;
     const length = Math.hypot(q.nx, q.ny) || 1, nx = q.nx / length, ny = q.ny / length;
     const outward = noise(q.x, q.y, 82) * .4, tangent = (noise(q.x, q.y, 83) - .5) * .65;
     const x = q.x + nx * outward - ny * tangent, y = q.y + ny * outward + nx * tangent;
@@ -113,7 +123,7 @@ export function createCountryBorder(world, boundary, walk) {
     if (!p) continue;
     primary.push(p);
     // Trees grow in pockets behind the low boundary, never as a picket line.
-    if (noise(q.x, q.y, 88) < (zone === 'road' ? .48 : .16)) {
+    if (noise(q.x, q.y, 88) < .16) {
       add(noise(q.x, q.y, 89) < .6 ? 'cypress' : 'dead-tree', x + nx * 2.4, y + ny * 2.4,
         1.1 + noise(q.x, q.y, 90) * .45, q, group);
     }
@@ -121,7 +131,7 @@ export function createCountryBorder(world, boundary, walk) {
   // Close only unreadable gaps with low, varied accents. Their spacing and
   // outward/tangent offsets remain independent of a uniform tile outline.
   for (const q of boundary) {
-    if (zoneAt(q.x, q.y).id === 'camp') continue;
+    if (!proceduralZone(zoneAt(q.x, q.y))) continue;
     const x = q.x + q.dx * .5, y = q.y + q.dy * .5;
     if (placements.some(p => Math.hypot(p.contact.x - x, p.contact.y - y) < 1.65)) continue;
     const tangent = (noise(q.x, q.y, 91) - .5) * .5;
@@ -145,7 +155,7 @@ export function createCountryBorder(world, boundary, walk) {
     for (let step = 1; step <= 48 && !placed; step++) for (const d of directions) {
       const dx = d.dx * step / 8, dy = d.dy * step / 8;
       const candidate = { ...p, x: p.x + dx, y: p.y + dy, contact: { x: p.contact.x + dx, y: p.contact.y + dy } };
-      if ((world.zones && zoneAt(candidate.contact.x, candidate.contact.y).id === 'camp') ||
+      if (!proceduralZone(zoneAt(candidate.contact.x, candidate.contact.y)) ||
         !allowScenery(candidate) || stoneOverlapsGround(candidate, walk)) continue;
       Object.assign(p, candidate); placed = true; break;
     }

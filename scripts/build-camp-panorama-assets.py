@@ -37,7 +37,8 @@ INPUTS = {
 FRAMES = ["tripod-kettle", "woven-carpet", "outcrop-block", "outcrop-pair", "outcrop-cluster",
           "outcrop-cliff", "outcrop-wall-x", "outcrop-wall-y", "outcrop-slab", "ruin-pillar",
           "cypress-tall", "cypress-medium", "cypress-pair", "bush-round", "bush-large",
-          "crate", "sack-pair", "grass-tuft", "fern-tuft", "boulder-round", "outcrop-crag", "outcrop-ledge-x"]
+          "crate", "sack-pair", "grass-tuft", "fern-tuft", "boulder-round", "outcrop-crag", "outcrop-ledge-x",
+          "ruin-stump", "ruin-fallen"]
 CELL, COLUMNS, ROWS, ANCHOR = 256, 4, 6, (128, 232)
 LAST_ROW = 231
 BACKDROP_SIZE = (2048, 1280)
@@ -752,6 +753,31 @@ def draw_ruin_pillar(cv):
         stone_box(cv, (x - s, x + s, y - s, y + s, 0.0, 0.18 + s * 0.6), 200 + k, "cool", 0.3, columns=False)
 
 
+def draw_ruin_stump(cv):
+    """A road marker: the pillar broken above its first drum, rubble on the plinth."""
+    stone_box(cv, (-0.9, 0.9, -0.9, 0.9, 0, 0.16), 341, "warm", 0.62, columns=False)
+    stone_box(cv, (-0.66, 0.66, -0.66, 0.66, 0.16, 0.38), 342, "cool", 0.5, columns=False)
+    stone_box(cv, (-0.45, 0.43, -0.46, 0.42, 0.38, 1.02), 343, "warm", 0.3)
+    # The break: a high and a low shard of the second drum.
+    stone_box(cv, (-0.47, 0.4, -0.42, 0.0, 1.02, 1.42), 344, "cool", 0.55, columns=False)
+    stone_box(cv, (-0.47, -0.05, 0.0, 0.43, 1.02, 1.2), 345, "warm", 0.65, columns=False)
+    for k, (x, y, s) in enumerate([(0.68, 0.32, 0.17), (0.3, 0.7, 0.13), (0.72, -0.5, 0.12), (-0.55, 0.7, 0.11)]):
+        stone_box(cv, (x - s, x + s, y - s, y + s, 0.16, 0.3 + s * 0.6), 346 + k, "cool", 0.3, columns=False)
+    base_grass(cv, [(0.9, 0.3), (0.4, 0.9), (0.9, -0.6)], 351)
+
+
+def draw_ruin_fallen(cv):
+    """A toppled column along world x: capital, two drums and the sunk broken base."""
+    draw_rocks(cv, [
+        Rock(-1.6, -0.98, -0.55, 0.55, 0.66, 361, moss=0.55, corner=0.12, bevel=0.1, chips=2, cracks=1, warm=True),
+        Rock(-0.94, -0.12, -0.42, 0.4, 0.58, 362, moss=0.45, corner=0.3, bevel=0.2, chips=2, cracks=1, tilt=(0.0, 0.04)),
+        Rock(-0.08, 0.86, -0.38, 0.44, 0.55, 363, moss=0.5, corner=0.3, bevel=0.2, chips=3, cracks=1, warm=True,
+             tilt=(0.05, 0.0)),
+        Rock(0.92, 1.6, -0.55, 0.55, 0.42, 364, moss=0.65, corner=0.14, bevel=0.12, chips=2, cracks=0),
+    ])
+    base_grass(cv, [(1.55, 0.3), (0.5, 0.5), (-0.6, 0.5), (1.55, -0.4)], 365)
+
+
 def draw_crate(cv):
     """Weathered planked box in the supply-cache browns: battens, joints and grain."""
     a, h = 0.45, 0.8
@@ -1135,6 +1161,7 @@ DRAW = {
     "crate": draw_crate, "sack-pair": draw_sack_pair,
     "grass-tuft": lambda cv: draw_tuft(cv, 271), "fern-tuft": lambda cv: draw_tuft(cv, 281, fern=True),
     "boulder-round": draw_boulder_round, "outcrop-crag": draw_outcrop_crag, "outcrop-ledge-x": draw_outcrop_ledge_x,
+    "ruin-stump": draw_ruin_stump, "ruin-fallen": draw_ruin_fallen,
 }
 
 
@@ -1583,6 +1610,7 @@ def native_context(cells, images):
         ("outcrop-block", 12.0, 6.0), ("outcrop-slab", 9.0, 11.0), ("outcrop-pair", -3.0, 11.0),
         ("tripod-kettle", 0.2, 0.7), ("crate", 4.4, 1.0), ("sack-pair", 5.3, 2.5),
         ("outcrop-crag", 13.0, -2.0), ("outcrop-ledge-x", -8.0, 8.5), ("boulder-round", 6.0, 12.0),
+        ("ruin-stump", -6.5, -4.0), ("ruin-fallen", 1.5, 12.5),
     ]
     sprites = [(by_name[name], contract[name]["contactCenter"], x, y) for name, x, y in items]
     sprites.append((tent, (130, 196), -3.0, -3.0))
@@ -1615,7 +1643,8 @@ def mountains_preview(mountains, contract):
 
 README = """# Camp panorama package
 
-Programmatic pixel art for the rebuilt first location (Paper artboard "Панорама лагеря").
+Programmatic pixel art for the rebuilt first location (Paper artboard "Панорама лагеря"). The road area
+reuses the same stones, trees, bushes and tufts; `ruin-stump` and `ruin-fallen` are its road markers.
 Every pixel is drawn by `scripts/build-camp-panorama-assets.py` from fixed geometry, fixed seeds and
 explicit palettes. No image generation, network access or new dependency is involved.
 
@@ -1623,14 +1652,14 @@ explicit palettes. No image generation, network access or new dependency is invo
 
 | File | Contents |
 | --- | --- |
-| `camp-panorama.png` | Atlas, cell 256 px, 4 columns × 6 rows (two spare cells), registration anchor `[128,232]`, binary alpha, {prop_colors} opaque colours. |
+| `camp-panorama.png` | Atlas, cell 256 px, 4 columns × 6 rows (all cells used), registration anchor `[128,232]`, binary alpha, {prop_colors} opaque colours. |
 | `mountains.png` | Far backdrop, 2048 × 1280, opaque, {back_colors} colours, wraps horizontally. |
 | `camp-earth.png`, `camp-grass.png` | Opaque 128 × 128 ground surfaces (4u, 32 px/u), seamless on both axes: packed earth/road and olive meadow. |
 | `hit-masks.json` | Little-bit-first mask of the atlas alpha, keyed by `camp-panorama.png`. |
-| `manifest.json` | Runtime contract: atlas slicing, frame keys, backdrop screen frame, footprints. |
+| `manifest.json` | Runtime contract: atlas slicing, frame keys, backdrop screen frame, footprints, opaque cell bounds. |
 | `frames/*.png` | One 256 px cell per frame. |
 | `previews/` | Contact sheet (native and nearest 2×), props next to the unchanged monk, backdrop with the planned horizon, 3×3 surface repeats (native and 2×). |
-| `source/footprints.json` | Geometry contract owned by `src/camp-layout.js`; an input of this script, never written by it. |
+| `source/footprints.json` | Geometry contract owned by `src/camp-layout.js` (camp) and `src/road-country.js` (road); an input of this script, never written by it. |
 | `source/palette.json`, `source/provenance.json`, `qa-report.json` | Palettes with reproducible concept samples, input hashes, per-frame checks. |
 
 Frames, in atlas order: {frame_list}.
@@ -1643,6 +1672,7 @@ world x = screen down-left, `halfDepth` along world y = screen down-right; `circ
 footprint point sits on row 231, so the anchor also sorts like the object's front. Pixel offset `(du,dv)` from
 `contactCenter` maps to world `x=(2dv-du)/(32√2)`, `y=(2dv+du)/(32√2)`; mirrored placements swap the roles of x
 and y. `role` is `solid` (needs a collider) or `flat` (carpet, tufts: walkable, draw in the ground layer).
+`opaqueBounds.<frame>` is the opaque `[x0,y0,x1,y1]` box of the cell (exclusive end), for screen-space reservations.
 Circles of trees and bushes are trunk/stem cores; canopies overhang them.
 
 ## Backdrop
@@ -1772,6 +1802,7 @@ def build_outputs():
         "surfaces": {key: {"path": f"{files[key]}.png", "size": [SURFACE, SURFACE], "filter": "nearest", "mipmaps": False}
                      for key in ("campGrass", "campEarth")},
         "footprints": contract["frames"],
+        "opaqueBounds": {report["frame"]: report["bbox"] for report in reports},
         "backdropPlan": {key: contract["backdrop"][key] for key in ("plannedHorizon", "parallax", "screenCoordinates")},
         "hitMasks": "hit-masks.json", "provenance": "source/provenance.json", "palette": "source/palette.json",
         "previews": "previews/contact-native.png",

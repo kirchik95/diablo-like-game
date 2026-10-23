@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { LOCATIONS } from '../src/campaign.js';
 import { CAMP_LAYOUT } from '../src/camp-layout.js';
+import { COURTYARD_LAYOUT } from '../src/courtyard-layout.js';
 import { hasTile, isWalkable, moveBody, findPath, clearLine } from '../src/world.js';
 
 function walkRoute(world, from, target, radius) {
@@ -90,10 +91,16 @@ test('landscape world: added earth shoulders are usable and connected to the ori
   // Camp shoulders: the clearing beside the fire and the grass at both tent doors.
   const campProp = id => LOCATIONS.camp.setDressing.find(p => p.id === id).collider;
   const [left, right] = [campProp('tent-left'), campProp('tent-right')];
+  // Courtyard shoulders: the front parapet's foot, the strip behind the arch
+  // (the cloister's north row) and the road mouth's verge, from the layout.
+  const courtTiles = LOCATIONS.courtyard.tiles, arch = COURTYARD_LAYOUT.setDressing.find(p => p.id === 'arch');
+  const north = Math.min(...courtTiles.map(p => p.y));
+  assert.ok(arch.colliders.every(c => c.y - c.halfDepth > north + .5), 'the strip behind the arch stays open');
   const shoulders = {
     camp: [[-7, 0], [left.x, left.y + left.halfDepth + 1], [right.x + right.halfWidth + 1, right.y]],
     road: [[6, 9], [-6, -7], [3, 17], [-19, 4], [-9, 10], [-9, -4]],
-    courtyard: [[8, 0], [0, -11], [3, 12]],
+    courtyard: [[Math.max(...courtTiles.filter(p => p.y === 0).map(p => p.x)), 0], [0, north],
+      [Math.max(...courtTiles.filter(p => p.y === 12).map(p => p.x)), 12]],
   };
   for (const [id, points] of Object.entries(shoulders)) {
     const world = LOCATIONS[id];

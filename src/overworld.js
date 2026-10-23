@@ -1,6 +1,7 @@
 // Local layouts remain useful authoring references; gameplay uses their union.
 import { LOCATIONS } from './campaign.js';
 import { createEncounterLayout, normalizeWorldSeed, DEFAULT_WORLD_SEED } from './encounter-layout.js';
+import { isWalkable } from './world.js';
 export { DEFAULT_WORLD_SEED } from './encounter-layout.js';
 
 function freeze(value) {
@@ -14,8 +15,10 @@ function freeze(value) {
 const uniqueTiles = points => [...new Map(points.map(p => [`${p.x},${p.y}`, p])).values()];
 
 function translateZone(source, offset) {
+  // Authored props move with their ground centres and every collider.
   const point = p => p && ({ ...p, x: p.x + offset.x, y: p.y + offset.y,
-    ...(p.collider ? { collider: point(p.collider) } : {}) });
+    ...(p.collider ? { collider: point(p.collider) } : {}), ...(p.contact ? { contact: point(p.contact) } : {}),
+    ...(p.colliders ? { colliders: p.colliders.map(point) } : {}) });
   const zone = { ...source, offset,
     regions: source.regions.map(([x0, x1, y0, y1]) => [x0 + offset.x, x1 + offset.x, y0 + offset.y, y1 + offset.y]),
     entries: Object.fromEntries(Object.entries(source.entries).map(([id, p]) => [id, point(p)])),
@@ -25,6 +28,8 @@ function translateZone(source, offset) {
     if (source[key]) zone[key] = source[key].map(point);
   }
   for (const key of ['spawn', 'exit', 'shrine', 'secret', 'ritual', 'reward']) zone[key] = point(source[key]);
+  // COURTYARD_LAYOUT's flagstone floor outline, for the ground surface.
+  if (source.flagstones) zone.flagstones = source.flagstones.map(([x, y]) => [x + offset.x, y + offset.y]);
   // CAMP_LAYOUT keeps its authored path data for its art plan.
   if (source.pavingRoutes) zone.pavingRoutes = source.pavingRoutes.map(route => ({ ...route,
     points: route.points.map(([x, y]) => [x + offset.x, y + offset.y]) }));
@@ -34,6 +39,22 @@ function translateZone(source, offset) {
 const zones = [translateZone(LOCATIONS.camp, { x: 0, y: 0 }),
   translateZone(LOCATIONS.road, { x: 0, y: -51 }),
   translateZone(LOCATIONS.courtyard, { x: 0, y: -85 })];
+
+// Like the camp road, the worn earth of the road bends gently inside the
+// unchanged walk mask; it stays straight at both seams. Paving is appearance
+// only (ground mask, ground cover and footstep sounds), never collision.
+const ROAD_EARTH = [
+  { width: 3.1, points: [[0, -29], [0, -33], [.5, -36.5], [.9, -40], [.5, -44], [-.5, -48], [-.8, -51],
+    [-.3, -55], [.6, -58.5], [.7, -62], [0, -66], [0, -71]] },
+  { width: 1.5, points: [[.5, -42], [-2.6, -42.9], [-6, -43.2], [-10, -42.8], [-13.4, -43.3], [-15.5, -45],
+    [-16.1, -48], [-15.6, -51], [-13.6, -52.8], [-10, -53.3], [-6, -52.8], [-2.6, -53.2], [-.4, -53]] },
+];
+const segmentDistance = (p, [ax, ay], [bx, by]) => {
+  const dx = bx - ax, dy = by - ay, t = Math.max(0, Math.min(1, ((p.x - ax) * dx + (p.y - ay) * dy) / (dx * dx + dy * dy)));
+  return Math.hypot(p.x - ax - dx * t, p.y - ay - dy * t);
+};
+zones[1].paving = zones[1].tiles.filter(p => ROAD_EARTH.some(route => route.points.slice(1).some((to, i) =>
+  segmentDistance(p, route.points[i], to) <= route.width / 2)) && isWalkable(p.x, p.y, Math.SQRT1_2, zones[1]));
 
 const joins = [];
 for (const [start, end] of [[-32, -27], [-74, -67]]) {

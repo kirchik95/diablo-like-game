@@ -417,3 +417,24 @@ body.menu-open .world-info { z-index: 9; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Pixel cursors follow --u: 3 CSS px from 1920×1080, 4 CSS px from 2560×1440.
+   --u of 5px and above keeps the 4px cursor. These follow the base cursor rules so they win. */
+@media (min-width: 1920px) and (min-height: 1080px) {
+  html { cursor: default; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-u3.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-u3@2x.png") 2x) 0 0, default; }
+  #game { cursor: crosshair; cursor: image-set(url("../assets/ui/pixel-v4/cursor/reticle-u3.png") 1x, url("../assets/ui/pixel-v4/cursor/reticle-u3@2x.png") 2x) 22.5 22.5, crosshair; }
+  .icon-button,
+  .appearance-choice,
+  .appearance-retry,
+  .primary-button,
+  .text-button { cursor: pointer; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-active-u3.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-active-u3@2x.png") 2x) 0 0, pointer; }
+}
+@media (min-width: 2560px) and (min-height: 1440px) {
+  html { cursor: default; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-u4.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-u4@2x.png") 2x) 0 0, default; }
+  #game { cursor: crosshair; cursor: image-set(url("../assets/ui/pixel-v4/cursor/reticle-u4.png") 1x, url("../assets/ui/pixel-v4/cursor/reticle-u4@2x.png") 2x) 30 30, crosshair; }
+  .icon-button,
+  .appearance-choice,
+  .appearance-retry,
+  .primary-button,
+  .text-button { cursor: pointer; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-active-u4.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-active-u4@2x.png") 2x) 0 0, pointer; }
+}

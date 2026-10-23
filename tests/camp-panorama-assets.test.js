@@ -12,7 +12,8 @@ const manifest = JSON.parse(readFileSync(new URL('manifest.json', pkg)));
 const contract = JSON.parse(readFileSync(new URL('source/footprints.json', pkg)));
 const FRAMES = ['tripod-kettle', 'woven-carpet', 'outcrop-block', 'outcrop-pair', 'outcrop-cluster', 'outcrop-cliff',
   'outcrop-wall-x', 'outcrop-wall-y', 'outcrop-slab', 'ruin-pillar', 'cypress-tall', 'cypress-medium', 'cypress-pair',
-  'bush-round', 'bush-large', 'crate', 'sack-pair', 'grass-tuft', 'fern-tuft', 'boulder-round', 'outcrop-crag', 'outcrop-ledge-x'];
+  'bush-round', 'bush-large', 'crate', 'sack-pair', 'grass-tuft', 'fern-tuft', 'boulder-round', 'outcrop-crag', 'outcrop-ledge-x',
+  'ruin-stump', 'ruin-fallen'];
 
 // Independent RGB(A) decoder for the two delivered 8-bit truecolour PNGs.
 function decode(url) {
@@ -106,14 +107,24 @@ test('every frame is drawn above its registration row and on its own footprint',
     assert.ok(onFootprint > 0, `${name} does not stand on its footprint`);
     if (record.role === 'solid' && record.shape === 'box') assert.ok(frontTouch <= 3, `${name}: front corner ${frontTouch.toFixed(1)} px away`);
   }
-  for (const ox of [512, 768]) {
-    for (let y = 0; y < 256; y++) for (let x = 0; x < 256; x++) assert.equal(atlas.pixel(ox + x, 1280 + y)[3], 0, 'unused cells must stay empty');
+  assert.equal(FRAMES.length, manifest.campPanorama.columns * manifest.campPanorama.rows, 'every atlas cell holds a frame');
+});
+
+test('opaque bounds publish the exclusive alpha box of every cell', () => {
+  assert.deepEqual(Object.keys(manifest.opaqueBounds), FRAMES);
+  for (const [index, name] of FRAMES.entries()) {
+    const ox = (index % 4) * 256, oy = Math.floor(index / 4) * 256, box = [256, 256, 0, 0];
+    for (let y = 0; y < 256; y++) for (let x = 0; x < 256; x++) {
+      if (!atlas.pixel(ox + x, oy + y)[3]) continue;
+      box[0] = Math.min(box[0], x); box[1] = Math.min(box[1], y); box[2] = Math.max(box[2], x + 1); box[3] = Math.max(box[3], y + 1);
+    }
+    assert.deepEqual(manifest.opaqueBounds[name], box, name);
   }
 });
 
-test('rock drawings reach their footprint ground corners within 1.6 native px', () => {
+test('rock and ruin drawings reach their footprint ground corners within 1.6 native px', () => {
   for (const [index, name] of FRAMES.entries()) {
-    if (!/^(outcrop-|boulder-)/.test(name)) continue;
+    if (!/^(outcrop-|boulder-|ruin-)/.test(name)) continue;
     const record = contract.frames[name], ox = (index % 4) * 256, oy = Math.floor(index / 4) * 256, [cx, cy] = record.contactCenter;
     const opaque = [];
     for (let y = 0; y < 256; y++) for (let x = 0; x < 256; x++) if (atlas.pixel(ox + x, oy + y)[3]) opaque.push([x + .5, y + .5]);

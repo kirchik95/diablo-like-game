@@ -51,12 +51,12 @@ test('union has one flat landscape, one surface mask and all translated scenery 
     const positions = mesh.getVerticesData(VertexBuffer.PositionKind);
     for (let i = 1; i < positions.length; i += 3) assert.equal(positions[i], 0);
   }
-  // Camp stone sprites may be named outcrop-cliff; terrain itself has no such geometry.
-  assert.ok(!scene.meshes.some(m => !m.name.startsWith('camp-') && /cliff|perimeter|portal|threshold|cut-stone-edge/.test(m.name)));
+  // Camp and road stone sprites may be named outcrop-cliff; terrain itself has no such geometry.
+  assert.ok(!scene.meshes.some(m => !/^(camp|court|landscape)-/.test(m.name) && /cliff|perimeter|portal|threshold|cut-stone-edge/.test(m.name)));
   assert.deepEqual(world.portals, []);
-  const camp = OVERWORLD.zones.find(z => z.id === 'camp');
+  // The camp and the courtyard draw every authored prop; braziers keep their v2 art.
   const authored = world.props.filter(p => p.placement);
-  assert.equal(authored.length, camp.setDressing.length);
+  assert.equal(authored.length, OVERWORLD.zones.flatMap(z => z.setDressing ?? []).filter(p => p.kind !== 'brazier').length);
   for (const sprite of authored) {
     const p = sprite.placement;
     assert.deepEqual([sprite.mesh.position.x, sprite.mesh.position.y, sprite.mesh.position.z], [p.x, p.layer === 'ground' ? .012 : .03, p.y]);
@@ -88,11 +88,11 @@ test('union borders only its exterior and keeps both continuous route seams clea
   for (const edge of layout.boundary) assert.ok(!walk.has(key(edge.x + edge.dx, edge.y + edge.dy)));
   for (const p of [...layout.border, ...layout.scenery]) {
     assert.equal(p.height, 0);
-    assert.ok(!walk.has(key(Math.round(p.contact.x), Math.round(p.contact.y))));
-    assert.ok(getOverworldZone(p.contact.x, p.contact.y).id !== 'camp' || !p.border, 'camp retains its authored belt');
+    // Only flat tufts lie on the walk mask; everything standing stays off it.
+    assert.equal(walk.has(key(Math.round(p.contact.x), Math.round(p.contact.y))), p.layer === 'ground', p.frame);
+    assert.ok(!['camp', 'courtyard'].includes(getOverworldZone(p.contact.x, p.contact.y).id), 'camp and courtyard retain their authored country');
   }
-  assert.ok(layout.border.some(p => p.frame === 'ruin-pile' && p.contact.y < -70.5));
-  assert.ok(layout.border.some(p => p.frame === 'cypress' && p.contact.y > -70.5));
+  assert.ok(layout.border.some(p => p.frame.startsWith('cypress-') && p.contact.y > -70.5 && p.contact.y < -29.5));
   const weights = (x, y) => {
     const map = layout.surfaceMap, offset = (Math.floor((y - map.origin.y) * 8) * map.width + Math.floor((x - map.origin.x) * 8)) * 4;
     return [...map.data.subarray(offset, offset + 3)];

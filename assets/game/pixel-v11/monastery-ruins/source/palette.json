@@ -1,0 +1,874 @@
+{
+  "schemaVersion": 1,
+  "method": "Camp panorama ramps reused by name and hex; additions hand-tuned against reproducible median-cut samples (10 colours, no dither) of the named regions.",
+  "props": {
+    "OUT": {
+      "hex": "#0e121d",
+      "nearestSample": {
+        "region": "camp bush-round",
+        "sample": "#0e121d",
+        "distance": 0.0
+      }
+    },
+    "DEEP": {
+      "hex": "#1f2737",
+      "nearestSample": {
+        "region": "camp outcrop-cliff",
+        "sample": "#232637",
+        "distance": 4.12
+      }
+    },
+    "DEEP2": {
+      "hex": "#2d2f40",
+      "nearestSample": {
+        "region": "concept low walls",
+        "sample": "#2c2f48",
+        "distance": 8.06
+      }
+    },
+    "Q_HI": {
+      "hex": "#c9b79b",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#ddbd95",
+        "distance": 21.73
+      }
+    },
+    "Q_W1": {
+      "hex": "#b09c82",
+      "nearestSample": {
+        "region": "camp outcrop-cliff",
+        "sample": "#aa9982",
+        "distance": 6.71
+      }
+    },
+    "Q_T1": {
+      "hex": "#9f9280",
+      "nearestSample": {
+        "region": "camp outcrop-wall-x",
+        "sample": "#a5977f",
+        "distance": 7.87
+      }
+    },
+    "Q_T2": {
+      "hex": "#877d72",
+      "nearestSample": {
+        "region": "camp outcrop-wall-x",
+        "sample": "#857e71",
+        "distance": 2.45
+      }
+    },
+    "Q_T3": {
+      "hex": "#6c6564",
+      "nearestSample": {
+        "region": "camp outcrop-cliff",
+        "sample": "#706968",
+        "distance": 6.93
+      }
+    },
+    "Q_L0": {
+      "hex": "#7b7270",
+      "nearestSample": {
+        "region": "concept low walls",
+        "sample": "#72757a",
+        "distance": 13.78
+      }
+    },
+    "Q_L1": {
+      "hex": "#706968",
+      "nearestSample": {
+        "region": "camp outcrop-cliff",
+        "sample": "#706968",
+        "distance": 0.0
+      }
+    },
+    "Q_L2": {
+      "hex": "#5c5258",
+      "nearestSample": {
+        "region": "camp outcrop-cliff",
+        "sample": "#585253",
+        "distance": 6.4
+      }
+    },
+    "Q_M": {
+      "hex": "#4a4753",
+      "nearestSample": {
+        "region": "camp outcrop-cliff",
+        "sample": "#454952",
+        "distance": 5.48
+      }
+    },
+    "Q_S1": {
+      "hex": "#3d3e4c",
+      "nearestSample": {
+        "region": "camp outcrop-cliff",
+        "sample": "#3d3e4c",
+        "distance": 0.0
+      }
+    },
+    "Q_S2": {
+      "hex": "#30344a",
+      "nearestSample": {
+        "region": "concept courtyard ruins",
+        "sample": "#34344d",
+        "distance": 5.0
+      }
+    },
+    "Q_AMB": {
+      "hex": "#3c4b52",
+      "nearestSample": {
+        "region": "camp outcrop-wall-x",
+        "sample": "#414a52",
+        "distance": 5.1
+      }
+    },
+    "M_HI": {
+      "hex": "#9a9358",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#a5835f",
+        "distance": 20.64
+      }
+    },
+    "M1": {
+      "hex": "#7d7b4f",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#82664c",
+        "distance": 21.79
+      }
+    },
+    "M2": {
+      "hex": "#626445",
+      "nearestSample": {
+        "region": "camp outcrop-wall-x",
+        "sample": "#636447",
+        "distance": 2.24
+      }
+    },
+    "M3": {
+      "hex": "#4a523f",
+      "nearestSample": {
+        "region": "camp outcrop-wall-x",
+        "sample": "#54524d",
+        "distance": 17.2
+      }
+    },
+    "B_HI": {
+      "hex": "#6f8467",
+      "nearestSample": {
+        "region": "camp bush-round",
+        "sample": "#6f8467",
+        "distance": 0.0
+      }
+    },
+    "B1": {
+      "hex": "#4f6759",
+      "nearestSample": {
+        "region": "camp bush-round",
+        "sample": "#4f6759",
+        "distance": 0.0
+      }
+    },
+    "B2": {
+      "hex": "#37504b",
+      "nearestSample": {
+        "region": "camp bush-round",
+        "sample": "#37504b",
+        "distance": 0.0
+      }
+    },
+    "B3": {
+      "hex": "#263c3e",
+      "nearestSample": {
+        "region": "camp bush-round",
+        "sample": "#263c3e",
+        "distance": 0.0
+      }
+    },
+    "F4": {
+      "hex": "#0f2b3c",
+      "nearestSample": {
+        "region": "camp cypress-tall",
+        "sample": "#0f2b3c",
+        "distance": 0.0
+      }
+    },
+    "G_HI": {
+      "hex": "#6f8a64",
+      "nearestSample": {
+        "region": "camp bush-round",
+        "sample": "#6f8467",
+        "distance": 6.71
+      }
+    },
+    "G1": {
+      "hex": "#4c6a55",
+      "nearestSample": {
+        "region": "camp outcrop-cliff",
+        "sample": "#4c6a55",
+        "distance": 0.0
+      }
+    },
+    "G2": {
+      "hex": "#33504a",
+      "nearestSample": {
+        "region": "camp bush-round",
+        "sample": "#37504b",
+        "distance": 4.12
+      }
+    },
+    "G3": {
+      "hex": "#203842",
+      "nearestSample": {
+        "region": "camp bush-round",
+        "sample": "#263c3e",
+        "distance": 8.25
+      }
+    },
+    "T1": {
+      "hex": "#6e4f45",
+      "nearestSample": {
+        "region": "camp cypress-tall",
+        "sample": "#6e4f45",
+        "distance": 0.0
+      }
+    },
+    "T2": {
+      "hex": "#4a3438",
+      "nearestSample": {
+        "region": "camp cypress-tall",
+        "sample": "#4a3438",
+        "distance": 0.0
+      }
+    },
+    "T3": {
+      "hex": "#2f2230",
+      "nearestSample": {
+        "region": "concept dead grove",
+        "sample": "#281f33",
+        "distance": 8.19
+      }
+    },
+    "SOIL1": {
+      "hex": "#82664c",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#82664c",
+        "distance": 0.0
+      }
+    },
+    "SOIL2": {
+      "hex": "#6c5440",
+      "nearestSample": {
+        "region": "camp cypress-tall",
+        "sample": "#6e4f45",
+        "distance": 7.35
+      }
+    },
+    "SOIL3": {
+      "hex": "#4b3a33",
+      "nearestSample": {
+        "region": "camp cypress-tall",
+        "sample": "#4a3438",
+        "distance": 7.87
+      }
+    },
+    "S_HI": {
+      "hex": "#bcae98",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#b4a795",
+        "distance": 11.05
+      }
+    },
+    "S1": {
+      "hex": "#a39785",
+      "nearestSample": {
+        "region": "camp outcrop-wall-x",
+        "sample": "#a5977f",
+        "distance": 6.32
+      }
+    },
+    "S2": {
+      "hex": "#958a7d",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#8c8072",
+        "distance": 17.38
+      }
+    },
+    "S3": {
+      "hex": "#89817e",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#8c8072",
+        "distance": 12.41
+      }
+    },
+    "S4": {
+      "hex": "#7a7174",
+      "nearestSample": {
+        "region": "concept low walls",
+        "sample": "#72757a",
+        "distance": 10.77
+      }
+    },
+    "S_SH": {
+      "hex": "#5f5860",
+      "nearestSample": {
+        "region": "kit flagstones",
+        "sample": "#56556c",
+        "distance": 15.3
+      }
+    },
+    "RUNE_HI": {
+      "hex": "#ffa8de",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#ddd2bf",
+        "distance": 62.3
+      }
+    },
+    "RUNE1": {
+      "hex": "#ff4bb7",
+      "nearestSample": {
+        "region": "world magenta brazier",
+        "sample": "#e0a797",
+        "distance": 102.22
+      }
+    },
+    "RUNE2": {
+      "hex": "#cf1b87",
+      "nearestSample": {
+        "region": "world magenta brazier",
+        "sample": "#b01873",
+        "distance": 37.01
+      }
+    },
+    "RUNE3": {
+      "hex": "#7c3767",
+      "nearestSample": {
+        "region": "concept dead grove",
+        "sample": "#734761",
+        "distance": 19.31
+      }
+    },
+    "Y1": {
+      "hex": "#b8935c",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#b5916b",
+        "distance": 15.43
+      }
+    },
+    "Y2": {
+      "hex": "#8c6c46",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#82664c",
+        "distance": 13.11
+      }
+    },
+    "Y3": {
+      "hex": "#d3bb8f",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#ddbd95",
+        "distance": 11.83
+      }
+    },
+    "C0": {
+      "hex": "#e6fffb",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#ddd2bf",
+        "distance": 75.54
+      }
+    },
+    "C1": {
+      "hex": "#92faf1",
+      "nearestSample": {
+        "region": "kit arch and drum",
+        "sample": "#adb5bd",
+        "distance": 90.52
+      }
+    },
+    "C2": {
+      "hex": "#24ced5",
+      "nearestSample": {
+        "region": "keyart courtyard",
+        "sample": "#777b92",
+        "distance": 135.16
+      }
+    },
+    "C3": {
+      "hex": "#1cabb8",
+      "nearestSample": {
+        "region": "camp cypress-tall",
+        "sample": "#6a8278",
+        "distance": 108.91
+      }
+    },
+    "C4": {
+      "hex": "#14707e",
+      "nearestSample": {
+        "region": "camp cypress-tall",
+        "sample": "#43686a",
+        "distance": 51.7
+      }
+    },
+    "A0": {
+      "hex": "#fff0c2",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#ddd2bf",
+        "distance": 45.44
+      }
+    },
+    "A1": {
+      "hex": "#ffc75c",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#ddbd95",
+        "distance": 67.12
+      }
+    },
+    "A2": {
+      "hex": "#ed9e43",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#c39f76",
+        "distance": 66.08
+      }
+    },
+    "A3": {
+      "hex": "#b88051",
+      "nearestSample": {
+        "region": "camp earth",
+        "sample": "#a5835f",
+        "distance": 23.79
+      }
+    }
+  },
+  "surfaces": {
+    "courtyardFlagstone": {
+      "S_HI": {
+        "hex": "#bcae98",
+        "nearestSample": {
+          "region": "camp earth",
+          "sample": "#b4a795",
+          "distance": 11.05
+        }
+      },
+      "S1": {
+        "hex": "#a39785",
+        "nearestSample": {
+          "region": "camp outcrop-wall-x",
+          "sample": "#a5977f",
+          "distance": 6.32
+        }
+      },
+      "S2": {
+        "hex": "#958a7d",
+        "nearestSample": {
+          "region": "camp earth",
+          "sample": "#8c8072",
+          "distance": 17.38
+        }
+      },
+      "S3": {
+        "hex": "#89817e",
+        "nearestSample": {
+          "region": "camp earth",
+          "sample": "#8c8072",
+          "distance": 12.41
+        }
+      },
+      "S4": {
+        "hex": "#7a7174",
+        "nearestSample": {
+          "region": "concept low walls",
+          "sample": "#72757a",
+          "distance": 10.77
+        }
+      },
+      "S_SH": {
+        "hex": "#5f5860",
+        "nearestSample": {
+          "region": "kit flagstones",
+          "sample": "#56556c",
+          "distance": 15.3
+        }
+      },
+      "J1": {
+        "hex": "#4e4752",
+        "nearestSample": {
+          "region": "camp outcrop-cliff",
+          "sample": "#454952",
+          "distance": 9.22
+        }
+      },
+      "J2": {
+        "hex": "#3b3846",
+        "nearestSample": {
+          "region": "camp outcrop-cliff",
+          "sample": "#3d3e4c",
+          "distance": 8.72
+        }
+      },
+      "MJ1": {
+        "hex": "#626445",
+        "nearestSample": {
+          "region": "camp outcrop-wall-x",
+          "sample": "#636447",
+          "distance": 2.24
+        }
+      },
+      "MJ2": {
+        "hex": "#4a523f",
+        "nearestSample": {
+          "region": "camp outcrop-wall-x",
+          "sample": "#54524d",
+          "distance": 17.2
+        }
+      },
+      "MS": {
+        "hex": "#7d7b4f",
+        "nearestSample": {
+          "region": "camp earth",
+          "sample": "#82664c",
+          "distance": 21.79
+        }
+      }
+    }
+  },
+  "sharedWithCampPanorama": [
+    "B1",
+    "B2",
+    "B3",
+    "B_HI",
+    "DEEP",
+    "DEEP2",
+    "F4",
+    "G1",
+    "G2",
+    "G3",
+    "G_HI",
+    "M1",
+    "M2",
+    "M3",
+    "M_HI",
+    "OUT",
+    "Q_AMB",
+    "Q_HI",
+    "Q_L1",
+    "Q_L2",
+    "Q_M",
+    "Q_S1",
+    "Q_S2",
+    "Q_T1",
+    "Q_T2",
+    "Q_T3",
+    "Q_W1",
+    "T1",
+    "T2",
+    "T3",
+    "Y1",
+    "Y2",
+    "Y3"
+  ],
+  "samples": {
+    "camp outcrop-cliff": {
+      "source": "assets/game/pixel-v9/camp-panorama/camp-panorama.png",
+      "box": [
+        256,
+        256,
+        512,
+        512
+      ],
+      "colors": [
+        "#000000",
+        "#3d3e4c",
+        "#706968",
+        "#aa9982",
+        "#585253",
+        "#454952",
+        "#827d65",
+        "#636448",
+        "#232637",
+        "#4c6a55"
+      ]
+    },
+    "camp outcrop-wall-x": {
+      "source": "assets/game/pixel-v9/camp-panorama/camp-panorama.png",
+      "box": [
+        512,
+        256,
+        768,
+        512
+      ],
+      "colors": [
+        "#000000",
+        "#3d3e4c",
+        "#736c63",
+        "#a5977f",
+        "#636447",
+        "#54524d",
+        "#414a52",
+        "#857e71",
+        "#242738",
+        "#4c6a55"
+      ]
+    },
+    "camp cypress-tall": {
+      "source": "assets/game/pixel-v9/camp-panorama/camp-panorama.png",
+      "box": [
+        512,
+        512,
+        768,
+        768
+      ],
+      "colors": [
+        "#000000",
+        "#0f2b3c",
+        "#1b3e4c",
+        "#2b5257",
+        "#43686a",
+        "#6a8278",
+        "#081a2b",
+        "#0f131e",
+        "#4a3438",
+        "#6e4f45"
+      ]
+    },
+    "camp bush-round": {
+      "source": "assets/game/pixel-v9/camp-panorama/camp-panorama.png",
+      "box": [
+        256,
+        768,
+        512,
+        1024
+      ],
+      "colors": [
+        "#000000",
+        "#37504b",
+        "#263c3e",
+        "#4f6759",
+        "#0f2b3c",
+        "#0e121d",
+        "#6f8467",
+        "#081a2b"
+      ]
+    },
+    "concept courtyard ruins": {
+      "source": "assets/concepts/pixel-art-01/p4-pixel-monastery.png",
+      "box": [
+        1060,
+        230,
+        1550,
+        520
+      ],
+      "colors": [
+        "#686377",
+        "#252644",
+        "#797582",
+        "#0e0d1d",
+        "#1d1e37",
+        "#4c4c61",
+        "#2a2b48",
+        "#34344d",
+        "#958d98",
+        "#a79da2"
+      ]
+    },
+    "concept low walls": {
+      "source": "assets/concepts/pixel-art-01/p4-pixel-monastery.png",
+      "box": [
+        870,
+        640,
+        1180,
+        770
+      ],
+      "colors": [
+        "#6c6f76",
+        "#72757a",
+        "#2c2f48",
+        "#46485a",
+        "#5f616d",
+        "#1f1f3c",
+        "#121325",
+        "#24253f",
+        "#787a7e",
+        "#9e979e"
+      ]
+    },
+    "concept dead grove": {
+      "source": "assets/concepts/pixel-art-01/p4-pixel-monastery.png",
+      "box": [
+        430,
+        240,
+        800,
+        500
+      ],
+      "colors": [
+        "#292847",
+        "#937484",
+        "#141429",
+        "#4c2e43",
+        "#734761",
+        "#0f0b17",
+        "#3d1f34",
+        "#281f33",
+        "#17172e",
+        "#201d36"
+      ]
+    },
+    "concept ritual shrine": {
+      "source": "assets/concepts/pixel-art-01/p4-pixel-monastery.png",
+      "box": [
+        540,
+        330,
+        700,
+        490
+      ],
+      "colors": [
+        "#3c223a",
+        "#5a3a56",
+        "#a56e88",
+        "#9e4171",
+        "#23182b",
+        "#5b2648",
+        "#160d1b",
+        "#9a5c7c",
+        "#28233d",
+        "#b490a6"
+      ]
+    },
+    "kit flagstones": {
+      "source": "assets/concepts/pixel-art-01/p7-pixel-environment-kit.png",
+      "box": [
+        130,
+        280,
+        460,
+        480
+      ],
+      "colors": [
+        "#988d96",
+        "#aab3bb",
+        "#a9b2bb",
+        "#25253f",
+        "#56556c",
+        "#9d9299",
+        "#7d7885",
+        "#a8b3bb",
+        "#b5b7bc",
+        "#aaa6ab"
+      ]
+    },
+    "kit wall corner": {
+      "source": "assets/concepts/pixel-art-01/p7-pixel-environment-kit.png",
+      "box": [
+        505,
+        255,
+        800,
+        465
+      ],
+      "colors": [
+        "#676779",
+        "#353551",
+        "#a9b3bc",
+        "#14142c",
+        "#a8b3bb",
+        "#abb3bc",
+        "#4b4a62",
+        "#8f8992",
+        "#aab0b8",
+        "#b0b6bd"
+      ]
+    },
+    "kit arch and drum": {
+      "source": "assets/concepts/pixel-art-01/p7-pixel-environment-kit.png",
+      "box": [
+        855,
+        255,
+        1115,
+        520
+      ],
+      "colors": [
+        "#6f6c7f",
+        "#a9b3bc",
+        "#a9b2bb",
+        "#aab3bc",
+        "#44445d",
+        "#16162d",
+        "#a9b3bb",
+        "#9a959e",
+        "#adb5bd",
+        "#a8b3bb"
+      ]
+    },
+    "keyart courtyard": {
+      "source": "assets/concepts/art-bible-01/07-monastery-outskirts-keyart.png",
+      "box": [
+        1000,
+        230,
+        1550,
+        520
+      ],
+      "colors": [
+        "#777b92",
+        "#20233d",
+        "#5f6377",
+        "#0f1122",
+        "#262b48",
+        "#4d4d67",
+        "#53556d",
+        "#36354f",
+        "#2c304b",
+        "#414560"
+      ]
+    },
+    "world magenta brazier": {
+      "source": "assets/game/pixel-v2/hound-world/world-v2.png",
+      "box": [
+        0,
+        160,
+        160,
+        320
+      ],
+      "colors": [
+        "#000000",
+        "#100d1d",
+        "#a85b5c",
+        "#b01873",
+        "#e0a797",
+        "#553632",
+        "#3f2a2e",
+        "#3f1135",
+        "#261e2d"
+      ]
+    },
+    "camp earth": {
+      "source": "assets/game/pixel-v9/camp-panorama/camp-earth.png",
+      "box": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "colors": [
+        "#c39f76",
+        "#b5916b",
+        "#cfac84",
+        "#a5835f",
+        "#ddbd95",
+        "#82664c",
+        "#b4a795",
+        "#8c8072",
+        "#ddd2bf",
+        "#64574e"
+      ]
+    }
+  }
+}

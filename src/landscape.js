@@ -2,8 +2,9 @@ import { Mesh } from '@babylonjs/core/Meshes/mesh.js';
 import { VertexData } from '@babylonjs/core/Meshes/mesh.vertexData.js';
 import { countrySurfaceMap, countryGroundCover, countryGroundMaterial, campBackdrop } from './country-terrain.js';
 import { inBackdrop } from './camp-layout.js';
-import { createCountryBorder } from './country-border.js';
+import { createCountryBorder, proceduralZone } from './country-border.js';
 import { countryZoneLookup } from './country-zones.js';
+import { layoutRoadCountry, panoramaFootprint } from './road-country.js';
 
 const key = (x, y) => `${x},${y}`;
 const noise = (x, y, salt = 0) => {
@@ -50,8 +51,9 @@ export function layoutLandscape(world) {
   const backdrop = campBackdrop(world);
   const allowed = (x, y) => {
     // CAMP_LAYOUT owns every camp-area prop, including its rim and outer
-    // groves. Nothing stands on the far backdrop beyond the horizon.
-    if (zoneAt(x, y).id === 'camp' || inBackdrop(backdrop, x, y, .3)) return false;
+    // groves; road-country.js owns the road's. Nothing stands on the far
+    // backdrop beyond the horizon.
+    if (!proceduralZone(zoneAt(x, y)) || inBackdrop(backdrop, x, y, .3)) return false;
     if ((distance.get(key(Math.round(x), Math.round(y))) ?? 0) < 3) return false;
     return !reserved.some(p => Math.hypot(p.x - x, p.y - y) < 3.5);
   };
@@ -68,15 +70,21 @@ export function layoutLandscape(world) {
       if (noise(x, y, 1) < .3) continue;
       const px = x + Math.round((noise(x, y, 2) - .5) * 3), py = y + Math.round((noise(x, y, 4) - .5) * 3);
       if ((distance.get(key(px, py)) ?? 100) > 30) continue;
-      const zone = zoneAt(px, py).id;
-      const family = zone === 'camp' ? ['cypress', 'shrub', 'rock-large']
-        : zone === 'road' ? ['cypress', 'dead-tree', 'rock-large'] : ['dead-tree', 'ruin-pile', 'cypress'];
+      const family = ['dead-tree', 'ruin-pile', 'cypress'];
       place(family[Math.floor(noise(x, y, 5) * family.length)], px, py);
       place(noise(x, y, 6) > .5 ? 'rock-small' : 'grass', px + 1, py - 1);
       if (noise(x, y, 7) > .6) place('shrub', px - 1, py - 1);
     }
   }
-  return { bounds, extent, cells, boundary, border: border.placements, scenery, groundCover, surfaceMap };
+  // The road in the camp's style. Neighbouring authored props and the v4
+  // border only space it; they keep their own placements.
+  const authored = (world.zones ?? [world]).filter(zone => zone.id !== 'road').flatMap(zone => zone.setDressing ?? [])
+    .map(p => p.collider?.radius !== undefined || p.collider?.halfWidth !== undefined ? p.collider
+      : p.contact && panoramaFootprint(p.kind, p.contact.x, p.contact.y, p.scale, p.flip)).filter(Boolean);
+  const road = layoutRoadCountry({ world, walk, distance, extent, zoneAt, backdrop, keep: border.allowScenery,
+    others: [...authored, ...border.placements.map(p => ({ x: p.contact.x, y: p.contact.y, radius: .5 * p.scale }))] });
+  scenery.push(...road.scenery);
+  return { bounds, extent, cells, boundary, border: [...border.placements, ...road.border], scenery, groundCover, surfaceMap };
 }
 
 function batch() { return { positions: [], indices: [], normals: [], uvs: [] }; }

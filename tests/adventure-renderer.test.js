@@ -399,15 +399,19 @@ test('ritual lock, vulnerability and destruction remain distinct on returning to
   game.enemies = [{ ...game.enemies[0], id: 'ritual', kind: 'ritual', hp: 132, maxHp: 132,
     x: 0, y: -6, sealed: true, state: 'sealed' }];
   r.render(game, 0);
-  const ritual = r.world.ritual;
+  const ritual = r.world.ritual, source = r.hounds[0].sprite;
+  // The restyled pixel-v11 source carries its own colours: no tint, no fade.
+  assert.equal(source.atlas, r.assets.monasteryWorld);
+  const untinted = () => assert.deepEqual(source.material.emissiveColor.asArray(), [1, 1, 1]);
   assert.ok(ritual.shards.every(mesh => mesh.isVisible));
-  assert.equal(r.hounds[0].sprite.frame, 12);
+  assert.equal(r.hounds[0].sprite.frame, 12); untinted();
   game.enemies[0].sealed = false; game.enemies[0].state = 'idle'; r.render(game, .1);
   assert.ok(ritual.shards.every(mesh => !mesh.isVisible));
-  assert.ok(r.hounds[0].sprite.frame >= 14);
+  assert.ok(r.hounds[0].sprite.frame >= 14); untinted();
   game.enemies[0].hp = 0; game.enemies[0].state = 'dead'; r.render(game, .1);
   assert.ok(ritual.rings.every(mesh => !mesh.isVisible));
-  assert.equal(r.hounds[0].sprite.frame, 17);
+  assert.equal(r.hounds[0].sprite.frame, 17); untinted();
+  assert.equal(source.mesh.visibility, 1, 'the dark broken key reads as dead without fading out');
   game.locationRevision++; r.render(game, 0);
   assert.ok(r.world.ritual.rings.every(mesh => !mesh.isVisible));
 });
@@ -415,8 +419,10 @@ test('ritual lock, vulnerability and destruction remain distinct on returning to
 test('the outdoor courtyard uses a permanently open ruin arch without adding a transition', t => {
   const { renderer: r, game, assets } = harness(t, LOCATIONS.courtyard);
   const portals = JSON.stringify(game.world.portals);
-  assert.ok(r.world.gate.atlas === assets.environment, 'a dungeon door must not replace the outdoor arch');
-  const arch = assets.environment.frames.indexOf('arch');
+  // The courtyard layout's freestanding ruin arch, never the legacy dungeon door.
+  assert.ok(r.world.gate.atlas === assets.monasteryRuins && r.world.gate.placement.id === 'arch',
+    'a dungeon door must not replace the outdoor arch');
+  const arch = assets.monasteryRuins.frames.indexOf('arch-gate');
   assert.equal(r.world.gate.frame, arch);
   r.render(game, .2);
   game.adventure.quest = 'return';
@@ -552,7 +558,8 @@ test('ritual pedestal contact center sits on its target and ground seal', t => {
   // Measured v2 shrine base diamond: center (80,124), foot anchor (80,144).
   const contact = Vector3.TransformCoordinates(new Vector3(0, 20 / 32, 0), sprite.mesh.computeWorldMatrix(true));
   const project = point => Vector3.Project(point, Matrix.Identity(), r.scene.getTransformMatrix(), r.camera.viewport.toGlobal(720, 450));
-  const actual = project(contact), expected = project(new Vector3(0, 0, -6));
+  // On a raised dais (footprint `standOn`) the pedestal stands on its top.
+  const actual = project(contact), expected = project(new Vector3(0, r.world.ritual.standOn ?? 0, -6));
   assert.ok(Math.hypot(actual.x - expected.x, actual.y - expected.y) < .51, 'ritual seal and its pedestal have different ground centers');
 });
 

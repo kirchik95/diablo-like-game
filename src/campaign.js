@@ -1,6 +1,7 @@
 // Immutable geometry and spawn definitions. Per-run combat state lives in game.js.
 import { isWalkable } from './world.js';
 import { CAMP_LAYOUT } from './camp-layout.js';
+import { COURTYARD_LAYOUT } from './courtyard-layout.js';
 
 const freeze = value => {
   if (value && typeof value === 'object') {
@@ -27,7 +28,8 @@ const location = ({ pavingRoutes, ...record }) => {
     shrine: null, secret: null, ritual: null, reward: null,
     ...record,
     tiles: tiles(record.regions),
-    obstacles: record.setDressing ? record.setDressing.filter(p => p.collider).map(p => p.collider) : [
+    // An L-shaped wall corner or an arch carries one collider per arm or pier.
+    obstacles: record.setDressing ? record.setDressing.flatMap(p => p.colliders ?? (p.collider ? [p.collider] : [])) : [
       ...record.pillars.map(p => ({ x: p.x, y: p.y, halfSize: Math.SQRT1_2 })),
       ...record.braziers.map(p => ({ x: p.x, y: p.y, radius: .22 })),
     ],
@@ -91,14 +93,7 @@ export const LOCATIONS = freeze({
   }),
   courtyard: location({
     id: 'courtyard', title: 'Двор монастыря', subtitle: 'Стражи пепельного источника',
-    regions: [[-8, 8, -9, 6], [-7, 7, -11, 8], [-3, 3, 9, 14]],
-    pavingRoutes: [{ width: 2.4, points: [[0, 12.5], [0, -6]] }],
-    spawn: { x: 0, y: 10 }, entries: { road: { x: 0, y: 10 } },
-    exit: { x: 0, y: -9 }, ritual: { x: 0, y: -6 },
-    pillars: [{ x: -5, y: -3, height: 2.8 }, { x: 5, y: -3, height: 2.8 },
-      { x: -5, y: 4, height: 1.5 }, { x: 5, y: 4, height: 1.5 }],
-    braziers: [{ x: -2.5, y: -8, color: 'pink' }, { x: 2.5, y: -8, color: 'pink' },
-      { x: -6, y: 1, color: 'cyan' }, { x: 6, y: 1, color: 'cyan' }],
+    ...COURTYARD_LAYOUT,
     portals: [{ id: 'courtyard-road', x: 0, y: 12.5, target: 'road', label: 'Разбитая дорога' }],
     encounters: [
       { id: 'court-hound-1', kind: 'hound', x: -1, y: 0 },

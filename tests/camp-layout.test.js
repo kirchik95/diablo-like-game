@@ -428,10 +428,10 @@ test('the rebuilt camp keeps seamless round trips, an accessible reward and rest
   assert.notEqual(fresh.player, player); assert.notEqual(fresh.enemies, enemies);
 });
 
-test('the camp rebuild preserves complete road and courtyard definitions', () => {
-  // Immutable non-camp contract, including geometry and encounters.
-  const expected = { road: '749b5aeaa342e9eb6d3c4c8644d001c770670826398720142e3c591f07b11ddd',
-    courtyard: '4a200440f4908154d293d242042d7dc91931a65094489f87f5d11e95420d3c8c' };
+test('the camp rebuild preserves the complete road definition', () => {
+  // Immutable non-camp contract, including geometry and encounters. The
+  // courtyard now comes from COURTYARD_LAYOUT (tests/courtyard-layout.test.js).
+  const expected = { road: '749b5aeaa342e9eb6d3c4c8644d001c770670826398720142e3c591f07b11ddd' };
   for (const [id, hash] of Object.entries(expected)) {
     assert.equal(createHash('sha256').update(JSON.stringify(LOCATIONS[id])).digest('hex'), hash);
   }

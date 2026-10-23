@@ -81,9 +81,76 @@ test('pixel cursors exist with matching hashes and the stylesheet uses them', as
   for (const [file, sha] of Object.entries(manifest.files)) {
     assert.equal(createHash('sha256').update(bytes(`../assets/ui/pixel-v4/cursor/${file}`)).digest('hex'), sha, file);
   }
-  const [hx, hy] = manifest.cursors.reticle.hotspot;
+  const escapeReg = value => String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const imageSet = (file, hx, hy, keyword) =>
+    `cursor: ${keyword}; cursor: image-set\\(url\\("\\.\\./assets/ui/pixel-v4/cursor/${escapeReg(file)}\\.png"\\) 1x, url\\("\\.\\./assets/ui/pixel-v4/cursor/${escapeReg(file)}@2x\\.png"\\) 2x\\) ${escapeReg(hx)} ${escapeReg(hy)}, ${keyword}`;
+  const reticle = manifest.cursors.reticle;
+  const [hx, hy] = reticle.hotspot;
   // The aim point is the reticle centre, and every cursor keeps a system fallback.
-  assert.match(css, new RegExp(`#game \\{ cursor: crosshair; cursor: image-set\\(url\\("\\.\\./assets/ui/pixel-v4/cursor/reticle\\.png"\\) 1x, url\\("\\.\\./assets/ui/pixel-v4/cursor/reticle@2x\\.png"\\) 2x\\) ${hx} ${hy}, crosshair;`));
-  assert.match(css, /html \{ cursor: default; cursor: image-set\(url\("\.\.\/assets\/ui\/pixel-v4\/cursor\/arrow\.png"\) 1x, url\("\.\.\/assets\/ui\/pixel-v4\/cursor\/arrow@2x\.png"\) 2x\) 0 0, default; \}/);
+  assert.deepEqual(reticle.scales['2'].hotspot, [hx, hy]);
+  assert.match(css, new RegExp(`#game \\{ ${imageSet('reticle', hx, hy, 'crosshair')};`));
+  assert.match(css, new RegExp(`html \\{ ${imageSet('arrow', 0, 0, 'default')}; \\}`));
+  assert.deepEqual(manifest.cursors.arrow.hotspot, [0, 0]);
+  assert.deepEqual(manifest.cursors['arrow-active'].hotspot, [0, 0]);
   assert.doesNotMatch(css, /cursor: pointer;(?! cursor: image-set)/, 'interactive controls use the amber pixel arrow');
+
+  const expectedFiles = [];
+  for (const name of ['arrow', 'arrow-active', 'reticle']) {
+    for (const suffix of ['', '-u3', '-u4']) expectedFiles.push(`${name}${suffix}.png`, `${name}${suffix}@2x.png`);
+  }
+  assert.deepEqual(Object.keys(manifest.files).sort(), expectedFiles.sort());
+  for (const cursor of Object.values(manifest.cursors)) {
+    assert.deepEqual(Object.keys(cursor.scales), ['2', '3', '4']);
+    const art = cursor.scales['2'].size.map(px => px / 2);
+    for (const scale of Object.values(cursor.scales)) {
+      assert.deepEqual(scale.size, art.map(px => px * scale.cssPixelsPerArtPixel));
+    }
+  }
+  for (const scale of Object.values(reticle.scales)) {
+    assert.deepEqual(scale.hotspot, [scale.size[0] / 2, scale.size[1] / 2]);
+  }
+  for (const name of ['arrow', 'arrow-active']) {
+    for (const scale of Object.values(manifest.cursors[name].scales)) assert.deepEqual(scale.hotspot, [0, 0]);
+  }
+
+  function cursorMediaBlocks(source) {
+    const blocks = [];
+    for (const match of source.matchAll(/@media \(min-width: (\d+)px\) and \(min-height: (\d+)px\) \{/g)) {
+      const open = match.index + match[0].length - 1;
+      let depth = 0;
+      let end = open;
+      for (let i = open; i < source.length; i += 1) {
+        if (source[i] === '{') depth += 1;
+        else if (source[i] === '}') {
+          depth -= 1;
+          if (depth === 0) { end = i; break; }
+        }
+      }
+      const body = source.slice(open + 1, end);
+      if (body.includes('cursor:')) blocks.push({ minWidth: Number(match[1]), minHeight: Number(match[2]), body });
+    }
+    return blocks;
+  }
+
+  const bands = [
+    { minWidth: 1920, minHeight: 1080, scale: '3', suffix: '-u3' },
+    { minWidth: 2560, minHeight: 1440, scale: '4', suffix: '-u4' },
+  ];
+  const blocks = cursorMediaBlocks(css);
+  assert.deepEqual(blocks.map(block => [block.minWidth, block.minHeight]), bands.map(band => [band.minWidth, band.minHeight]));
+  const pointers = ['.icon-button', '.appearance-choice', '.appearance-retry', '.primary-button', '.text-button'];
+  for (const [band, block] of bands.map((band, index) => [band, blocks[index]])) {
+    const [pointX, pointY] = manifest.cursors.reticle.scales[band.scale].hotspot;
+    assert.match(block.body, new RegExp(`html \\{ ${imageSet(`arrow${band.suffix}`, 0, 0, 'default')}; \\}`), band.suffix);
+    assert.match(block.body, new RegExp(`#game \\{ ${imageSet(`reticle${band.suffix}`, pointX, pointY, 'crosshair')};`), band.suffix);
+    for (const selector of pointers) {
+      assert.match(block.body, new RegExp(`${escapeReg(selector)}[^{]*\\{ ${imageSet(`arrow-active${band.suffix}`, 0, 0, 'pointer')};`), `${band.suffix} ${selector}`);
+    }
+  }
+  // --u of 5px and above still matches the 2560×1440 query, so those screens keep the u4 cursor.
+  const unitSteps = [...css.matchAll(/@media \(min-width: (\d+)px\) and \(min-height: (\d+)px\) \{ :root \{ --u: (\d+)px; \} \}/g)]
+    .map(match => match.slice(1).map(Number));
+  for (const [minWidth, minHeight, unit] of unitSteps) {
+    if (unit >= 5) assert.ok(minWidth >= 2560 && minHeight >= 1440, `--u ${unit}px keeps the u4 cursor`);
+  }
 });

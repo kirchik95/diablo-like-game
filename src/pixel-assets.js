@@ -7,6 +7,7 @@ import landscapePackage from '../assets/game/pixel-v4/landscape/manifest.json' w
 import campPackage from '../assets/game/pixel-v5/camp/manifest.json' with { type: 'json' };
 import countryPackage from '../assets/game/pixel-v6/country/manifest.json' with { type: 'json' };
 import panoramaPackage from '../assets/game/pixel-v9/camp-panorama/manifest.json' with { type: 'json' };
+import ruinsPackage from '../assets/game/pixel-v11/monastery-ruins/manifest.json' with { type: 'json' };
 
 // Shared by the renderer and the 2D developer preview; no GPU initialization.
 export const PIXELS_PER_UNIT = environmentPackage.nativePixelsPerUnit;
@@ -24,6 +25,10 @@ export const pixelAtlases = {
   campPanorama: panoramaPackage.campPanorama,
   campBackdrop: panoramaPackage.campBackdrop,
   ...panoramaPackage.surfaces,
+  monasteryRuins: ruinsPackage.monasteryRuins,
+  // The v2 world layout redrawn in the camp palette: braziers, ritual source, shrine.
+  monasteryWorld: ruinsPackage.monasteryWorld,
+  ...ruinsPackage.surfaces,
 };
 export const pixelAssetUrls = {
   monk: new URL('../assets/game/pixel-v10/monk-side/monk-side.png', import.meta.url).href,
@@ -48,4 +53,7 @@ export const pixelAssetUrls = {
   campBackdrop: new URL('../assets/game/pixel-v9/camp-panorama/mountains.png', import.meta.url).href,
   campGrass: new URL('../assets/game/pixel-v9/camp-panorama/camp-grass.png', import.meta.url).href,
   campEarth: new URL('../assets/game/pixel-v9/camp-panorama/camp-earth.png', import.meta.url).href,
+  monasteryRuins: new URL('../assets/game/pixel-v11/monastery-ruins/monastery-ruins.png', import.meta.url).href,
+  monasteryWorld: new URL('../assets/game/pixel-v11/monastery-ruins/monastery-world.png', import.meta.url).href,
+  courtyardFlagstone: new URL('../assets/game/pixel-v11/monastery-ruins/courtyard-flagstone.png', import.meta.url).href,
 };

@@ -1,6 +1,7 @@
 # Camp panorama package
 
-Programmatic pixel art for the rebuilt first location (Paper artboard "Панорама лагеря").
+Programmatic pixel art for the rebuilt first location (Paper artboard "Панорама лагеря"). The road area
+reuses the same stones, trees, bushes and tufts; `ruin-stump` and `ruin-fallen` are its road markers.
 Every pixel is drawn by `scripts/build-camp-panorama-assets.py` from fixed geometry, fixed seeds and
 explicit palettes. No image generation, network access or new dependency is involved.
 
@@ -8,17 +9,17 @@ explicit palettes. No image generation, network access or new dependency is invo
 
 | File | Contents |
 | --- | --- |
-| `camp-panorama.png` | Atlas, cell 256 px, 4 columns × 6 rows (two spare cells), registration anchor `[128,232]`, binary alpha, 55 opaque colours. |
+| `camp-panorama.png` | Atlas, cell 256 px, 4 columns × 6 rows (all cells used), registration anchor `[128,232]`, binary alpha, 55 opaque colours. |
 | `mountains.png` | Far backdrop, 2048 × 1280, opaque, 28 colours, wraps horizontally. |
 | `camp-earth.png`, `camp-grass.png` | Opaque 128 × 128 ground surfaces (4u, 32 px/u), seamless on both axes: packed earth/road and olive meadow. |
 | `hit-masks.json` | Little-bit-first mask of the atlas alpha, keyed by `camp-panorama.png`. |
-| `manifest.json` | Runtime contract: atlas slicing, frame keys, backdrop screen frame, footprints. |
+| `manifest.json` | Runtime contract: atlas slicing, frame keys, backdrop screen frame, footprints, opaque cell bounds. |
 | `frames/*.png` | One 256 px cell per frame. |
 | `previews/` | Contact sheet (native and nearest 2×), props next to the unchanged monk, backdrop with the planned horizon, 3×3 surface repeats (native and 2×). |
-| `source/footprints.json` | Geometry contract owned by `src/camp-layout.js`; an input of this script, never written by it. |
+| `source/footprints.json` | Geometry contract owned by `src/camp-layout.js` (camp) and `src/road-country.js` (road); an input of this script, never written by it. |
 | `source/palette.json`, `source/provenance.json`, `qa-report.json` | Palettes with reproducible concept samples, input hashes, per-frame checks. |
 
-Frames, in atlas order: `tripod-kettle`, `woven-carpet`, `outcrop-block`, `outcrop-pair`, `outcrop-cluster`, `outcrop-cliff`, `outcrop-wall-x`, `outcrop-wall-y`, `outcrop-slab`, `ruin-pillar`, `cypress-tall`, `cypress-medium`, `cypress-pair`, `bush-round`, `bush-large`, `crate`, `sack-pair`, `grass-tuft`, `fern-tuft`, `boulder-round`, `outcrop-crag`, `outcrop-ledge-x`.
+Frames, in atlas order: `tripod-kettle`, `woven-carpet`, `outcrop-block`, `outcrop-pair`, `outcrop-cluster`, `outcrop-cliff`, `outcrop-wall-x`, `outcrop-wall-y`, `outcrop-slab`, `ruin-pillar`, `cypress-tall`, `cypress-medium`, `cypress-pair`, `bush-round`, `bush-large`, `crate`, `sack-pair`, `grass-tuft`, `fern-tuft`, `boulder-round`, `outcrop-crag`, `outcrop-ledge-x`, `ruin-stump`, `ruin-fallen`.
 
 ## Registration
 
@@ -28,6 +29,7 @@ world x = screen down-left, `halfDepth` along world y = screen down-right; `circ
 footprint point sits on row 231, so the anchor also sorts like the object's front. Pixel offset `(du,dv)` from
 `contactCenter` maps to world `x=(2dv-du)/(32√2)`, `y=(2dv+du)/(32√2)`; mirrored placements swap the roles of x
 and y. `role` is `solid` (needs a collider) or `flat` (carpet, tufts: walkable, draw in the ground layer).
+`opaqueBounds.<frame>` is the opaque `[x0,y0,x1,y1]` box of the cell (exclusive end), for screen-space reservations.
 Circles of trees and bushes are trunk/stem cores; canopies overhang them.
 
 ## Backdrop

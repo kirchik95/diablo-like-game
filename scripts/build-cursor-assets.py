@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Build the in-game pixel cursors from the ASCII maps below.
 
-One art pixel is 2 CSS px (the HUD unit at the base scale). Each cursor is written
-at 1x (2 px per art pixel) and 2x (4 px per art pixel) for high-DPI screens.
+The base cursor uses 2 CSS px per art pixel (the HUD unit at the default scale).
+Larger HUD units get their own files: 3 CSS px (`-u3`) and 4 CSS px (`-u4`).
+Each scale also has an `@2x` file for high-DPI screens (twice the bitmap pixels).
+Screens where `--u` is 5px or more reuse the `-u4` cursor.
 
     python3 scripts/build-cursor-assets.py            # write the PNGs
     python3 scripts/build-cursor-assets.py --verify-only
@@ -74,6 +76,9 @@ CURSORS = {
     'arrow-active': (ACTIVE, (0, 0)),
 }
 
+# CSS px per art pixel. 2 is the unsuffixed base; 3 and 4 are `-u3` and `-u4`.
+SCALES = (2, 3, 4)
+
 
 def render(art, scale):
     width, height = len(art[0]), len(art)
@@ -91,16 +96,36 @@ def render(art, scale):
     return buffer.getvalue()
 
 
+def hotspot_axis(index, css_px):
+    """Centre of the hotspot art pixel, in CSS px. The arrow tip stays at 0."""
+    if index == 0:
+        return 0
+    center = index * css_px + css_px / 2
+    return int(center) if center == int(center) else center
+
+
+def scale_suffix(css_px):
+    return '' if css_px == 2 else f'-u{css_px}'
+
+
 def build():
     files, meta = {}, {}
     for name, (art, (hx, hy)) in CURSORS.items():
-        for suffix, scale in (('', 2), ('@2x', 4)):
-            files[f'{name}{suffix}.png'] = render(art, scale)
-        # CSS hotspot in 1x pixels: the centre of the hotspot art pixel, clamped to the tip for arrows.
-        meta[name] = {'size': [len(art[0]) * 2, len(art) * 2],
-                      'hotspot': [hx * 2 + (1 if hx else 0), hy * 2 + (1 if hy else 0)]}
+        width, height = len(art[0]), len(art)
+        scales = {}
+        for css_px in SCALES:
+            suffix = scale_suffix(css_px)
+            files[f'{name}{suffix}.png'] = render(art, css_px)
+            files[f'{name}{suffix}@2x.png'] = render(art, css_px * 2)
+            scales[str(css_px)] = {
+                'cssPixelsPerArtPixel': css_px,
+                'size': [width * css_px, height * css_px],
+                'hotspot': [hotspot_axis(hx, css_px), hotspot_axis(hy, css_px)],
+            }
+        base = scales['2']
+        meta[name] = {'size': base['size'], 'hotspot': base['hotspot'], 'scales': scales}
     manifest = {'schemaVersion': 1, 'cssPixelsPerArtPixel': 2, 'cursors': meta,
-                'files': {name: hashlib.sha256(data).hexdigest() for name, data in sorted(files.items())}}
+                'files': {filename: hashlib.sha256(data).hexdigest() for filename, data in sorted(files.items())}}
     files['manifest.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
     return files
 

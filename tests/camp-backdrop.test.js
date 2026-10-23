@@ -52,7 +52,8 @@ test('the camp keeps its own meadow and packed earth and blends into the road ac
   const layout = layoutLandscape(OVERWORLD), map = layout.surfaceMap;
   const alpha = (x, y) => map.data[(Math.floor((y - map.origin.y) * 8) * map.width + Math.floor((x - map.origin.x) * 8)) * 4 + 3];
   for (const p of LOCATIONS.camp.tiles.filter(p => p.y > -23)) assert.equal(alpha(p.x, p.y), 255, `${p.x},${p.y}`);
-  for (const p of OVERWORLD.tiles.filter(p => p.y < -36)) assert.equal(alpha(p.x, p.y), 0);
+  // The road keeps the old alpha; the courtyard beyond its seam band takes the camp meadow too.
+  for (const p of OVERWORLD.tiles.filter(p => p.y < -36 && p.y >= -67.5)) assert.equal(alpha(p.x, p.y), 0);
   const seam = [];
   for (let y = -36; y <= -23; y += .25) seam.push(alpha(0, y));
   assert.ok(seam.some(a => a > 0 && a < 255), 'the seam fades over several units, not one row');

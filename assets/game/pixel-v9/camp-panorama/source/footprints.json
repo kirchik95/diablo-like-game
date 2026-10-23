@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "owner": "src/camp-layout.js (geometry contract for the art script)",
+  "owner": "src/camp-layout.js and src/road-country.js (geometry contract for the art script)",
   "coordinateSpace": "cell-local pixels, origin top-left, x right, y down; world units at scale 1",
   "cell": 256,
   "anchor": [
@@ -465,6 +465,64 @@
         [
           202.67,
           176.53
+        ]
+      ]
+    },
+    "ruin-stump": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        210.5
+      ],
+      "height": 1.45,
+      "halfWidth": 0.9,
+      "halfDepth": 0.9,
+      "polygon": [
+        [
+          128.0,
+          190.14
+        ],
+        [
+          87.27,
+          210.5
+        ],
+        [
+          128.0,
+          230.86
+        ],
+        [
+          168.73,
+          210.5
+        ]
+      ]
+    },
+    "ruin-fallen": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        206.5
+      ],
+      "height": 0.7,
+      "halfWidth": 1.6,
+      "halfDepth": 0.55,
+      "polygon": [
+        [
+          151.76,
+          182.18
+        ],
+        [
+          79.35,
+          218.38
+        ],
+        [
+          104.24,
+          230.82
+        ],
+        [
+          176.65,
+          194.62
         ]
       ]
     }

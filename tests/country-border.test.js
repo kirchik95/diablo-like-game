@@ -54,10 +54,18 @@ const pixels = Object.fromEntries(stoneFrames.map(frame => {
   return [frame, points];
 }));
 
+// Plan gap between a v9 footprint and a point.
+const footprintGap = (fp, x, y) => fp.radius !== undefined ? Math.max(0, Math.hypot(x - fp.x, y - fp.y) - fp.radius)
+  : Math.hypot(Math.max(0, Math.abs(x - fp.x) - fp.halfWidth), Math.max(0, Math.abs(y - fp.y) - fp.halfDepth));
+
 for (const world of [LOCATIONS.road, LOCATIONS.courtyard, OVERWORLD]) {
   test(`${world.id}: projected opaque border stone pixels stay outside the walkable footprint on all sides`, t => {
     const { stones, built } = harness(t, world), walk = new Set(world.tiles.map(p => `${p.x},${p.y}`));
-    const visibleBorder = built.landscape.border.filter(p => !stoneFrames.includes(p.frame)).map(p => p.contact);
+    // v4 stones stay behind actors, so their whole drawing must keep off the
+    // walk mask. v9 road props share the actors' depth like the camp's; their
+    // ground footprint (the drawn base, 1.6 px contract) is what stays off it.
+    const visibleBorder = built.landscape.border.filter(p => !stoneFrames.includes(p.frame) && !p.footprint).map(p => p.contact);
+    const footprints = built.landscape.border.filter(p => p.footprint).map(p => p.footprint);
     for (const sprite of stones) {
       const { frame } = sprite.borderPlacement;
       assert.ok(built.landscape.boundary.some(edge => Math.hypot(
@@ -75,9 +83,22 @@ for (const world of [LOCATIONS.road, LOCATIONS.courtyard, OVERWORLD]) {
           `${frame} projects onto accessible ground ${gx.toFixed(2)},${gy.toFixed(2)}`);
       }
     }
-    if (world.zones) for (const edge of built.landscape.boundary) {
-      if (getOverworldZone(edge.x, edge.y).id === 'camp') continue;
-      assert.ok(visibleBorder.some(p => Math.hypot(p.x - edge.x - edge.dx * .5, p.y - edge.y - edge.dy * .5) < 2),
+    for (const fp of footprints) {
+      const reach = (fp.radius ?? Math.max(fp.halfWidth, fp.halfDepth)) + 1;
+      for (let y = Math.ceil(fp.y - reach); y <= Math.floor(fp.y + reach); y++) for (let x = Math.ceil(fp.x - reach); x <= Math.floor(fp.x + reach); x++) {
+        if (!walk.has(`${x},${y}`)) continue;
+        const gap = fp.radius !== undefined ? footprintGap({ ...fp, radius: fp.radius }, Math.max(x - .5, Math.min(x + .5, fp.x)), Math.max(y - .5, Math.min(y + .5, fp.y)))
+          : Math.hypot(Math.max(0, Math.abs(fp.x - x) - .5 - fp.halfWidth), Math.max(0, Math.abs(fp.y - y) - .5 - fp.halfDepth));
+        assert.ok(gap >= .04, `a road footprint at ${fp.x.toFixed(2)},${fp.y.toFixed(2)} reaches walkable cell ${x},${y}`);
+      }
+    }
+    if (world.zones || world.id === 'road') for (const edge of built.landscape.boundary) {
+      // The camp and the courtyard own their authored belts (their layout tests).
+      if (world.zones && ['camp', 'courtyard'].includes(getOverworldZone(edge.x, edge.y).id)) continue;
+      const x = edge.x + edge.dx * .5, y = edge.y + edge.dy * .5;
+      if ((world.portals ?? []).some(p => Math.hypot(p.x - x, p.y - y) < 4.5)) continue;
+      // Open stretches of the road belt leave at most a short tufted gap.
+      assert.ok(visibleBorder.some(p => Math.hypot(p.x - x, p.y - y) < 2) || footprints.some(fp => footprintGap(fp, x, y) < 2.2),
         `the actual region needs a visible obstacle near ${edge.x},${edge.y}`);
     }
   });

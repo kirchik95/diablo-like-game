@@ -9,6 +9,8 @@ import { isWalkable } from '../src/world.js';
 import { decodeHitMask, opaqueSpritePixel } from '../src/pixel-picking.js';
 import campPackage from '../assets/game/pixel-v5/camp/manifest.json' with { type: 'json' };
 import naturalContacts from '../assets/concepts/camp-plan-01/source/natural-contacts.json' with { type: 'json' };
+import panorama from '../assets/game/pixel-v9/camp-panorama/manifest.json' with { type: 'json' };
+import ruins from '../assets/game/pixel-v11/monastery-ruins/manifest.json' with { type: 'json' };
 import { readPng } from './helpers/png.js';
 
 function harness(t) {
@@ -176,7 +178,8 @@ test('camp uses its own meadow and earth over the country surfaces, and owns all
 test('road and courtyard boundaries are readable varied natural groups outside the unchanged walk mask', t => {
   const { scene, assets } = harness(t);
   const png = readPng(new URL('../assets/game/pixel-v4/landscape/landscape.png', import.meta.url));
-  for (const location of [LOCATIONS.road, LOCATIONS.courtyard]) {
+  // The courtyard owns its authored belt (tests/courtyard-layout.test.js).
+  for (const location of [LOCATIONS.road]) {
     const before = JSON.stringify(location), built = buildPixelWorld(scene, assets, location), border = built.landscape.border;
     assert.ok(border?.length > 20, 'an empty grass rim would hide the unchanged movement boundary');
     assert.equal(built.props.filter(p => p.borderPlacement).length, border.length, 'the actual scene must submit the border');
@@ -184,12 +187,22 @@ test('road and courtyard boundaries are readable varied natural groups outside t
     for (const p of border) assert.ok(!cells.has(`${Math.round(p.contact.x)},${Math.round(p.contact.y)}`), 'border support must stay outside the walk mask');
     assert.ok(new Set(border.map(p => p.frame)).size >= 4, 'avoid a repeated uniform fence of one sprite');
     if (location.id === 'road') {
-      assert.ok(border.filter(p => p.frame === 'rock-large').length >= 5);
-      assert.ok(border.filter(p => p.frame === 'cypress' || p.frame === 'dead-tree').length >= 3);
-    } else assert.ok(border.filter(p => p.frame === 'ruin-pile').length >= 5, 'separate remnants should define the courtyard');
+      // The camp's stone masses, ruins and cypresses, never the old v4 art.
+      // The road's ruined gate comes from the monastery ruins package.
+      assert.ok(border.every(p => panorama.campPanorama.frames.includes(p.frame) || ruins.monasteryRuins.frames.includes(p.frame)));
+      assert.ok(border.filter(p => /^(outcrop-|boulder-|ruin-)/.test(p.frame)).length >= 5);
+      assert.ok(border.filter(p => p.frame.startsWith('cypress-')).length >= 3);
+    }
     // A registered support may sit farther out than the visible top/base of a
     // wide stone. Check the actual painted contour when judging boundary gaps.
     const visibleBorder = built.props.filter(s => s.borderPlacement).flatMap(sprite => {
+      const { footprint } = sprite.borderPlacement;
+      // A v9 footprint is its drawn base (1.6 px contract): sample its outline.
+      if (footprint) {
+        const rx = footprint.radius ?? footprint.halfWidth, ry = footprint.radius ?? footprint.halfDepth;
+        return [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]]
+          .map(([dx, dy]) => ({ x: footprint.x + dx * rx, y: footprint.y + dy * ry }));
+      }
       if (!['ruin-pile', 'rock-large', 'rock-small'].includes(sprite.borderPlacement.frame)) return [sprite.borderPlacement.contact];
       const points = [], { frame, flip, mesh } = sprite;
       for (let y = 0; y < 160; y += 3) for (let x = 0; x < 160; x += 3) {
@@ -222,6 +235,8 @@ test('road and courtyard boundaries are readable varied natural groups outside t
 test('procedural border and forest silhouettes leave every portal visible at all camera sizes', t => {
   const { scene, assets } = harness(t);
   assets.landscape.mask = decodeHitMask(JSON.parse(readFileSync(new URL('../assets/game/pixel-v4/landscape/hit-masks.json', import.meta.url)))['landscape.png']);
+  assets.campPanorama.mask = decodeHitMask(JSON.parse(readFileSync(new URL('../assets/game/pixel-v9/camp-panorama/hit-masks.json', import.meta.url)))['camp-panorama.png']);
+  assets.monasteryRuins.mask = decodeHitMask(JSON.parse(readFileSync(new URL('../assets/game/pixel-v11/monastery-ruins/hit-masks.json', import.meta.url)))['monastery-ruins.png']);
   const camera = new ArcRotateCamera('border-portals', Math.PI / 4, Math.PI / 3, 30, Vector3.Zero(), scene);
   camera.mode = Camera.ORTHOGRAPHIC_CAMERA;
   for (const location of Object.values(LOCATIONS)) {
@@ -231,14 +246,17 @@ test('procedural border and forest silhouettes leave every portal visible at all
       camera.target.set(portal.x, 0, portal.y);
       scene.render();
       const project = p => Vector3.Project(p, Matrix.Identity(), scene.getTransformMatrix(), camera.viewport.toGlobal(width, height));
-      for (const sprite of built.props.filter(p => p.atlas === assets.landscape && !p.placement)) {
+      for (const sprite of built.props.filter(p => p.mesh.name.startsWith('landscape-'))) {
         const origin = project(sprite.mesh.position);
         for (const [dx, dy] of [[0, 0], [.6, 0], [-.6, 0], [0, .6], [0, -.6]]) {
           const point = project(new Vector3(portal.x + dx, .04, portal.y + dy));
           assert.equal(opaqueSpritePixel(sprite, origin, point.x, point.y), false,
             `${location.id} ${sprite.mesh.name} hides portal ${portal.id}`);
         }
-        assert.equal(sprite.mesh.renderingGroupId, 0, 'border must stay behind hero and combat tells');
+        // v4 country stays behind hero and combat tells; the road's v9 props
+        // share the actors' depth like the camp's, and its tufts lie flat.
+        const v4 = sprite.atlas === assets.landscape;
+        assert.equal(sprite.mesh.renderingGroupId, v4 || sprite.mesh.billboardMode === 0 ? 0 : 1, sprite.mesh.name);
       }
     }
     built.dispose();
@@ -254,9 +272,10 @@ test('new natural border sprites keep their measured supports on the zero-height
     const built = buildPixelWorld(scene, assets, location);
     scene.render();
     for (const sprite of built.props.filter(p => p.borderPlacement)) {
-      const p = sprite.borderPlacement;
-      const contact = naturalContacts.frames[p.frame]?.contactCenter ?? [84.75, 127.75];
-      const local = new Vector3(((p.flip ? 160 - contact[0] : contact[0]) - 80) / 32, (144 - contact[1]) / 32, 0);
+      const p = sprite.borderPlacement, { cell, anchor } = sprite.atlas;
+      const contact = (panorama.footprints[p.frame] ?? ruins.footprints[p.frame])?.contactCenter
+        ?? naturalContacts.frames[p.frame]?.contactCenter ?? [84.75, 127.75];
+      const local = new Vector3(((p.flip ? cell - contact[0] : contact[0]) - anchor[0]) / 32, (anchor[1] - contact[1]) / 32, 0);
       const world = Vector3.TransformCoordinates(local, sprite.mesh.computeWorldMatrix(true));
       const actual = Vector3.Project(world, Matrix.Identity(), scene.getTransformMatrix(), camera.viewport.toGlobal(640, 360));
       const expected = Vector3.Project(new Vector3(p.contact.x, 0, p.contact.y), Matrix.Identity(), scene.getTransformMatrix(), camera.viewport.toGlobal(640, 360));
@@ -350,15 +369,20 @@ test('landscape composition is deterministic under tile reordering and keeps tal
   const { scene, assets } = harness(t);
   const a = buildPixelWorld(scene, assets, LOCATIONS.road);
   assert.ok(a.landscape?.scenery.length > 25, 'the space around the road needs grouped scenery');
-  assert.ok(a.props.filter(p => p.atlas === assets.landscape).length > 25, 'the landscape layout must submit the authored prop family');
-  for (const p of a.props.filter(p => p.atlas === assets.landscape)) {
+  const country = a.props.filter(p => p.mesh.name.startsWith('landscape-'));
+  assert.ok(country.length > 25 && country.every(p => [assets.campPanorama, assets.monasteryRuins].includes(p.atlas)),
+    'the road country uses the camp art and the monastery ruins');
+  for (const p of country) {
     assert.equal(p.mesh.isPickable, false);
-    assert.equal(p.mesh.renderingGroupId, 0, 'lower scenery must respect terrain depth and stay behind actors/telegraphs');
+    // Standing props share the actors' depth (they fade in front of them); tufts lie on the ground.
+    assert.equal(p.mesh.renderingGroupId, p.mesh.billboardMode === 0 ? 0 : 1);
   }
   const scenery = structuredClone(a.landscape.scenery);
   for (const p of scenery) {
     assert.equal(p.height, 0, 'all scenery must sit on the same ground');
-    assert.ok(!isWalkable(p.x, p.y, 0, LOCATIONS.road), 'outer scenery must stay outside the walk mask');
+    const c = p.contact;
+    if (p.layer === 'ground') assert.ok(isWalkable(c.x, c.y, 0, LOCATIONS.road), 'tufts grow on the walkable meadow');
+    else assert.ok(!isWalkable(c.x, c.y, 0, LOCATIONS.road), 'outer scenery must stay outside the walk mask');
   }
   a.dispose();
   const b = buildPixelWorld(scene, assets, { ...LOCATIONS.road, tiles: [...LOCATIONS.road.tiles].reverse() });

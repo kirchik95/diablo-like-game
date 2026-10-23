@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "method": "programmatic drawing: heightfield masonry (rounded, chipped blocks; coursed, voussoir and drum face patterns) splatted into a z-buffer with grounded and floating passes, ray-cast ellipsoids for bark and foliage tufts, screen-space flat decals, and a running-bond slab surface",
+  "generator": "scripts/build-monastery-ruins-assets.py",
+  "rendererOrigin": "Canvas, ellipsoid, rod, tuft, base_grass and the rock tone rules are adapted copies of scripts/build-camp-panorama-assets.py (copied, not imported, so camp edits never change these bytes)",
+  "imageGeneration": null,
+  "tools": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "inputs": {
+    "campAtlas": {
+      "path": "assets/game/pixel-v9/camp-panorama/camp-panorama.png",
+      "sha256": "5fe74e29d7dd112c7413ee41fb1edfbdc629cd7db362ff8f9a54c792f66b3209"
+    },
+    "campManifest": {
+      "path": "assets/game/pixel-v9/camp-panorama/manifest.json",
+      "sha256": "deaab9707b3cc41dbf433a8c94ec68d685477ed925c5c8272672eef4860c284b"
+    },
+    "campGrass": {
+      "path": "assets/game/pixel-v9/camp-panorama/camp-grass.png",
+      "sha256": "a1492ca4969181f5b34d77b7fa757d8fa736635a63d9cdd0bdcbc78f951d0402"
+    },
+    "campEarth": {
+      "path": "assets/game/pixel-v9/camp-panorama/camp-earth.png",
+      "sha256": "5c9784a83f99220051d6158b7dd9692b22473f62254f4a390ed26a6bff75058c"
+    },
+    "worldAtlas": {
+      "path": "assets/game/pixel-v2/hound-world/world-v2.png",
+      "sha256": "c47a38ad6179a89e703e4ea4ecc3eb4e15585772f5c2d7c62ad059e63db2a537"
+    },
+    "worldManifest": {
+      "path": "assets/game/pixel-v2/hound-world/manifest.json",
+      "sha256": "e24c0265a726dbdda06c9889cc7c9ceed4c4ab95612a9e6a3edc842c7b662e3e"
+    },
+    "houndAtlas": {
+      "path": "assets/game/pixel-v2/hound-world/hound-v2.png",
+      "sha256": "20c98c7e78e05c41e2b8926bf53ef9cf465ae0b0a9a93236e2b31e7a77ae1ea7"
+    },
+    "monkAtlas": {
+      "path": "assets/game/pixel-v2/monk/monk-v2.png",
+      "sha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e"
+    },
+    "monkManifest": {
+      "path": "assets/game/pixel-v2/monk/manifest.json",
+      "sha256": "9b31e2aeb75335a9975b348c63b71d1f1251e47b2038da78c3ac0111e1e98696"
+    },
+    "conceptRoad": {
+      "path": "assets/concepts/pixel-art-01/p4-pixel-monastery.png",
+      "sha256": "fbc3b1ef2ae04ced5c65e6b3ec0b88ebc4a389227fbe9b4c3c4416012a46d194"
+    },
+    "conceptKit": {
+      "path": "assets/concepts/pixel-art-01/p7-pixel-environment-kit.png",
+      "sha256": "5886c595c4aa2020453452a45db804f0c814b4d2003c50b346fe2f9861f73597"
+    },
+    "keyart": {
+      "path": "assets/concepts/art-bible-01/07-monastery-outskirts-keyart.png",
+      "sha256": "131cc52651fa647fcbdaf5537548fa3cb85b2d2a5dda38ec813a97641adead09"
+    },
+    "courtyardV1": {
+      "path": "assets/game/pixel-v1/environment.png",
+      "sha256": "0df94d8e940591649ab883c2986ae22badf21510b347faa68e0dc1267ae0db68"
+    }
+  },
+  "inputRoles": {
+    "campAtlas": "palette samples; camp props in the mock courtyard and style match",
+    "campManifest": "camp frame order and footprints",
+    "campGrass": "preview meadow",
+    "campEarth": "soil palette sample",
+    "worldAtlas": "registration and timing reference for monastery-world.png (no pixels copied); v2 frames in the comparison preview; magenta sample",
+    "worldManifest": "brazier, shrine and hound clips (layout the world atlas reproduces)",
+    "houndAtlas": "hound for scale",
+    "monkAtlas": "unchanged hero for scale",
+    "monkManifest": "idle frame index",
+    "conceptRoad": "palette samples and courtyard arrangement reference (Paper p-4-0 artboard 03), no pixels copied",
+    "conceptKit": "flagstone, wall corner, arch and drum reference (Paper p-4-0 artboard 06), no pixels copied",
+    "keyart": "courtyard stone reference (art bible 07), no pixels copied",
+    "courtyardV1": "the current courtyard wall, arch and column art, recorded as the replaced reference"
+  },
+  "seeds": "fixed integer salts in the script; random.Random only",
+  "license": "project art; no external assets"
+}

@@ -33,7 +33,9 @@
       "fern-tuft",
       "boulder-round",
       "outcrop-crag",
-      "outcrop-ledge-x"
+      "outcrop-ledge-x",
+      "ruin-stump",
+      "ruin-fallen"
     ],
     "filter": "nearest",
     "mipmaps": false
@@ -522,7 +524,211 @@
           176.53
         ]
       ]
+    },
+    "ruin-stump": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        210.5
+      ],
+      "height": 1.45,
+      "halfWidth": 0.9,
+      "halfDepth": 0.9,
+      "polygon": [
+        [
+          128.0,
+          190.14
+        ],
+        [
+          87.27,
+          210.5
+        ],
+        [
+          128.0,
+          230.86
+        ],
+        [
+          168.73,
+          210.5
+        ]
+      ]
+    },
+    "ruin-fallen": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        206.5
+      ],
+      "height": 0.7,
+      "halfWidth": 1.6,
+      "halfDepth": 0.55,
+      "polygon": [
+        [
+          151.76,
+          182.18
+        ],
+        [
+          79.35,
+          218.38
+        ],
+        [
+          104.24,
+          230.82
+        ],
+        [
+          176.65,
+          194.62
+        ]
+      ]
     }
+  },
+  "opaqueBounds": {
+    "tripod-kettle": [
+      110,
+      167,
+      147,
+      232
+    ],
+    "woven-carpet": [
+      13,
+      114,
+      243,
+      230
+    ],
+    "outcrop-block": [
+      103,
+      190,
+      153,
+      230
+    ],
+    "outcrop-pair": [
+      87,
+      170,
+      169,
+      230
+    ],
+    "outcrop-cluster": [
+      69,
+      140,
+      187,
+      230
+    ],
+    "outcrop-cliff": [
+      60,
+      91,
+      195,
+      230
+    ],
+    "outcrop-wall-x": [
+      65,
+      140,
+      191,
+      230
+    ],
+    "outcrop-wall-y": [
+      64,
+      140,
+      191,
+      230
+    ],
+    "outcrop-slab": [
+      73,
+      169,
+      182,
+      230
+    ],
+    "ruin-pillar": [
+      91,
+      116,
+      165,
+      232
+    ],
+    "cypress-tall": [
+      103,
+      11,
+      154,
+      232
+    ],
+    "cypress-medium": [
+      107,
+      62,
+      148,
+      232
+    ],
+    "cypress-pair": [
+      85,
+      23,
+      165,
+      231
+    ],
+    "bush-round": [
+      97,
+      187,
+      158,
+      232
+    ],
+    "bush-large": [
+      85,
+      168,
+      172,
+      232
+    ],
+    "crate": [
+      107,
+      188,
+      149,
+      232
+    ],
+    "sack-pair": [
+      108,
+      203,
+      146,
+      232
+    ],
+    "grass-tuft": [
+      106,
+      200,
+      148,
+      230
+    ],
+    "fern-tuft": [
+      109,
+      211,
+      146,
+      227
+    ],
+    "boulder-round": [
+      108,
+      195,
+      148,
+      232
+    ],
+    "outcrop-crag": [
+      78,
+      138,
+      178,
+      230
+    ],
+    "outcrop-ledge-x": [
+      53,
+      140,
+      203,
+      230
+    ],
+    "ruin-stump": [
+      86,
+      160,
+      170,
+      232
+    ],
+    "ruin-fallen": [
+      79,
+      164,
+      176,
+      231
+    ]
   },
   "backdropPlan": {
     "plannedHorizon": {

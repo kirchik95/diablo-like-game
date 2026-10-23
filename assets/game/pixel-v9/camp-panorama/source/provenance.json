@@ -10,7 +10,7 @@
   "inputs": {
     "contract": {
       "path": "assets/game/pixel-v9/camp-panorama/source/footprints.json",
-      "sha256": "76c584e7d93f7cfd92f1e5c6a64e6c7e22d0646d91eb6118656eb1cc1954106f"
+      "sha256": "3f29b12ce245e534ad431c9ff1962a5002489568b1e300359b7e3c48f3d6d37f"
     },
     "concept": {
       "path": "assets/concepts/camp-location-01/camp-scene.png",

@@ -11,6 +11,7 @@ import { TILES, PILLARS, BRAZIERS, SHRINE, EXIT } from './world.js';
 import { decodeHitMask } from './pixel-picking.js';
 import { PIXELS_PER_UNIT, pixelAtlases, pixelAssetUrls } from './pixel-assets.js';
 import { buildLandscape } from './landscape.js';
+import { roadPillar } from './road-country.js';
 import { buildCountryDetails } from './country-details.js';
 
 export { PIXELS_PER_UNIT, pixelAtlases, pixelAssetUrls };
@@ -24,6 +25,7 @@ const maskPackages = [
   { url: new URL('../assets/game/pixel-v5/camp/hit-masks.json', import.meta.url).href, names: ['camp', 'campFlame'] },
   { url: new URL('../assets/game/pixel-v6/country/hit-masks.json', import.meta.url).href, names: ['countryDetails'] },
   { url: new URL('../assets/game/pixel-v9/camp-panorama/hit-masks.json', import.meta.url).href, names: ['campPanorama'] },
+  { url: new URL('../assets/game/pixel-v11/monastery-ruins/hit-masks.json', import.meta.url).href, names: ['monasteryRuins', 'monasteryWorld'] },
 ];
 
 function flatMaterial(scene, name, hex) {
@@ -343,18 +345,28 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
   };
   if (landscape && includeLandscape) {
     for (const [i, p] of [...landscape.scenery, ...landscape.border].entries()) {
-      const sprite = placeLandscape(`landscape-${p.frame}-${i}`, assets.landscape.frames.indexOf(p.frame), p.x, p.y, p.height);
+      // The road country uses the camp's v9 art: standing props share the
+      // actors' depth like the camp's, flat tufts lie on the ground.
+      const v4 = assets.landscape.frames.includes(p.frame);
+      const atlas = [assets.landscape, assets.campPanorama, assets.monasteryRuins].find(a => a?.frames.includes(p.frame));
+      const name = `landscape-${p.frame}-${i}`, frame = atlas.frames.indexOf(p.frame);
+      const sprite = v4 ? placeLandscape(name, frame, p.x, p.y, p.height) : place(name, frame, p.x, p.y, atlas);
       setSpriteFrame(sprite, { frame: sprite.frame, flip: p.flip });
       sprite.mesh.scaling.setAll(p.scale ?? 1);
+      if (p.layer === 'ground') layOnGround(sprite);
       if (p.border) sprite.borderPlacement = p;
     }
     landscape.details = buildCountryDetails(scene, assets.countryDetails, landscape.groundCover);
   }
-  const campProps = camp ? data.setDressing.map(p => {
-    const atlas = [assets.camp, assets.campPanorama, assets.landscape].find(a => a?.frames.includes(p.kind));
-    if (!atlas) throw new Error(`Unknown camp prop: ${p.kind}`);
+  // Authored areas (the camp and the ruined courtyard) own all of their props.
+  // Braziers are drawn below from `braziers`; their entries only carry colliders.
+  const authored = !!data.setDressing;
+  const prefix = camp ? 'camp' : 'court';
+  const campProps = authored ? data.setDressing.filter(p => p.kind !== 'brazier').map(p => {
+    const atlas = [assets.camp, assets.campPanorama, assets.monasteryRuins, assets.landscape].find(a => a?.frames.includes(p.kind));
+    if (!atlas) throw new Error(`Unknown ${data.id} prop: ${p.kind}`);
     const frame = atlas.frames.indexOf(p.kind);
-    const sprite = place(`camp-${p.id}`, frame, p.x, p.y, atlas);
+    const sprite = place(`${prefix}-${p.id}`, frame, p.x, p.y, atlas);
     sprite.placement = p;
     sprite.mesh.scaling.setAll(p.scale);
     setSpriteFrame(sprite, { frame, flip: p.flip });
@@ -367,26 +379,39 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
   // Measured contact diamond at (80,132), stable across all location columns.
   const columnOffset = Math.SQRT2 * ((assets.environment.anchor[1] - 132) / PIXELS_PER_UNIT + propHeight * Math.sin(Math.PI / 3));
   const columns = camp ? campProps.filter(sprite => ['road-marker', 'ruin-pillar'].includes(sprite.placement.kind))
-    : data.pillars.map((p, i) => place(`column-${i}`, 2, p.x + columnOffset, p.y + columnOffset));
+    : authored ? campProps.filter(sprite => /^column-\d+$/.test(sprite.placement.id))
+      // Road pillars: the camp's ruined pillar, its plinth on the unchanged collider.
+      : road ? data.pillars.map((p, i) => {
+        const art = roadPillar(p), atlas = assets.campPanorama;
+        const sprite = place(`column-${i}`, atlas.frames.indexOf(art.frame), art.x, art.y, atlas);
+        sprite.mesh.scaling.setAll(art.scale);
+        setSpriteFrame(sprite, { frame: sprite.frame, flip: art.flip });
+        return sprite;
+      })
+        : data.pillars.map((p, i) => place(`column-${i}`, 2, p.x + columnOffset, p.y + columnOffset));
   const minX = Math.min(...data.tiles.map(p => p.x)), maxX = Math.max(...data.tiles.map(p => p.x));
   const minY = Math.min(...data.tiles.map(p => p.y)), maxY = Math.max(...data.tiles.map(p => p.y));
   if (data.id === 'legacy') place('rear-ruin', 0, -5.25, -5.25);
-  else if (!camp) {
+  else if (!authored) {
     // Isolated old ruins retain their anchors on the continuous outdoor ground.
     const ruin = (name, frame, x, y) => placeLandscape(name, frame, x, y,
       landscape.cells.get(`${Math.round(x)},${Math.round(y)}`).height, assets.environment);
-    if (road) ruin('road-fallen-arch', 1, minX - 3, data.shrine?.y ?? (minY + maxY) / 2);
-    else {
+    // The road's ruined gate is part of its country (road-country.js).
+    if (!road) {
       ruin('monastery-west-ruin', 0, minX - 3, minY - 2);
       ruin('monastery-east-ruin', 1, maxX + 3, minY - 2);
     }
   }
   const gateAtlas = data.id === 'legacy' ? assets.world : assets.environment;
-  const gate = !road && !camp && data.exit
+  const authoredGate = campProps.find(sprite => sprite.placement.id === 'arch');
+  const gate = authoredGate ?? (!road && !camp && data.exit
     ? place('monastery-gate', data.id === 'legacy' ? gateAtlas.clips.gate.front[0] : gateAtlas.frames.indexOf('arch'),
-      data.exit.x, data.exit.y - .5, gateAtlas) : null;
+      data.exit.x, data.exit.y - .5, gateAtlas) : null);
+  // Braziers and the healing shrine use the restyled pixel-v11 world frames
+  // (same clips, cells and contacts as v2); the legacy slice keeps v2.
+  const worldArt = data.id === 'legacy' ? assets.world : assets.monasteryWorld ?? assets.world;
   const shrine = data.shrine
-    ? place('healing-shrine', assets.world.clips.shrine.front[0], data.shrine.x - .5, data.shrine.y - .5, assets.world) : null;
+    ? place('healing-shrine', worldArt.clips.shrine.front[0], data.shrine.x - .5, data.shrine.y - .5, worldArt) : null;
 
   const material = (name, color) => flatMaterial(scene, name, color);
   const box = (name, x, y, h, width, depth, height, ink) => {
@@ -417,7 +442,7 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
   }) : data.braziers.map((b, i) => {
     if (b.color !== 'amber') {
       const clip = b.color === 'cyan' ? 'brazier-cyan' : 'brazier-magenta';
-      return { ...b, clip, sprite: place(`brazier-${i}`, assets.world.clips[clip].front[0], b.x, b.y, assets.world) };
+      return { ...b, clip, sprite: place(`brazier-${i}`, worldArt.clips[clip].front[0], b.x, b.y, worldArt) };
     }
     const stone = material('camp-fire-stone', '#6a5754');
     box('camp-brazier-foot', b.x, b.y, .09, .48, .48, .18, stone);
@@ -459,17 +484,22 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
   }
 
   let ritual = null;
+  // The authored courtyard sets its source in the socket of a low ruined dais.
+  const dais = campProps.find(sprite => sprite.placement.id === 'ritual-plinth');
   if (data.ritual || data.id === 'legacy') {
     const p = data.ritual || { x: 0, y: 0 };
     // Native pixel seal: shared stone vocabulary, quiet behind moving actors.
+    // A dais carries its own carving, so its seal ink stays empty.
     const seal = new DynamicTexture('ritual-seal', 128, scene, false, Texture.NEAREST_SAMPLINGMODE);
     const c = seal.getContext();
     c.clearRect(0, 0, 128, 128); c.strokeStyle = '#a09789'; c.lineWidth = 1;
-    for (const radius of [44, 49]) { c.beginPath(); c.arc(64, 64, radius, 0, Math.PI * 2); c.stroke(); }
-    c.beginPath(); c.moveTo(64, 34); c.lineTo(94, 64); c.lineTo(64, 94); c.lineTo(34, 64); c.closePath(); c.stroke();
-    for (let i = 0; i < 8; i++) {
-      const a = i * Math.PI / 4;
-      c.fillStyle = '#a09789'; c.fillRect(Math.round(63 + Math.cos(a) * 39), Math.round(63 + Math.sin(a) * 39), 2, 2);
+    if (!dais) {
+      for (const radius of [44, 49]) { c.beginPath(); c.arc(64, 64, radius, 0, Math.PI * 2); c.stroke(); }
+      c.beginPath(); c.moveTo(64, 34); c.lineTo(94, 64); c.lineTo(64, 94); c.lineTo(34, 64); c.closePath(); c.stroke();
+      for (let i = 0; i < 8; i++) {
+        const a = i * Math.PI / 4;
+        c.fillStyle = '#a09789'; c.fillRect(Math.round(63 + Math.cos(a) * 39), Math.round(63 + Math.sin(a) * 39), 2, 2);
+      }
     }
     seal.hasAlpha = true; seal.update();
     const ink = material('seal-ink', '#ffffff');
@@ -478,14 +508,29 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
     sealMesh.material = ink; sealMesh.position.set(p.x, .012, p.y); sealMesh.isPickable = false;
     if (data.ritual) {
       const glow = material('ritual-binding', '#ba719c');
-      const rings = [1.1, 1.3].map((radius, i) => ring(`ritual-binding-${i}`, p.x, p.y, radius, glow));
+      // On a dais the bindings lie on its rim and the posts stand on its
+      // corners, around the socket that holds the source.
+      const rim = dais?.placement.rim, lift = rim?.height ?? 0;
+      const radii = rim ? [.3, .6].map(t => rim.inner + (rim.outer - rim.inner) * t) : [1.1, 1.3];
+      const rings = radii.map((radius, i) => ring(`ritual-binding-${i}`, p.x, p.y, radius, glow, lift + .045));
       const shards = Array.from({ length: 4 }, (_, i) => {
-        const a = i * Math.PI / 2 + Math.PI / 4;
-        const shard = box('ritual-seal-post', p.x + Math.cos(a) * 1.2, p.y + Math.sin(a) * 1.2, .27, .13, .13, .54, glow);
+        // Posts stand on the rim just beyond the socket's corners.
+        const a = i * Math.PI / 2 + Math.PI / 4, reach = rim ? rim.inner * Math.SQRT2 + .25 : 1.2;
+        const shard = box('ritual-seal-post', p.x + Math.cos(a) * reach, p.y + Math.sin(a) * reach, lift + .27, .13, .13, .54, glow);
         shard.rotation.z = .12; return shard;
       });
       ritual = { seal: sealMesh, ink: glow, rings, shards };
+      // A raised dais (footprint `standOn`) would lift the source sprite.
+      ritual.standOn = dais?.placement.standOn ?? 0;
     }
+  }
+  if (dais && ritual) {
+    // The rune frame glows while the guards hold the seal, i.e. while the
+    // renderer shows the seal posts; once it opens the dais is plain stone.
+    const lit = dais.atlas.frames.indexOf('ritual-plinth-runes'), plain = dais.atlas.frames.indexOf(dais.placement.kind);
+    const observer = scene.onBeforeRenderObservable.add(() => setSpriteFrame(dais,
+      { frame: ritual.shards[0].isVisible ? lit : plain, flip: dais.flip }));
+    dais.mesh.onDisposeObservable.addOnce(() => scene.onBeforeRenderObservable.remove(observer));
   }
 
   return { data, columns, gate, shrine, fires, props, portals, secret, reward, ritual, landscape, floor: merged[0],

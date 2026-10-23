@@ -38,8 +38,8 @@ for (const location of Object.values(LOCATIONS)) {
     assert.ok(map.pixelsPerUnit >= 8 && map.pixelsPerUnit <= 16);
     for (let i = 0; i < map.data.length; i += 4) {
       assert.equal(map.data[i] + map.data[i + 1] + map.data[i + 2], 255, 'every rendered mask pixel needs normalized coverage');
-      // Alpha selects the camp meadow/earth; other areas keep the shared country art.
-      assert.equal(map.data[i + 3], location.id === 'camp' ? 255 : 0);
+      // Alpha selects the camp meadow/earth: the camp and the flagstone courtyard's surroundings.
+      assert.equal(map.data[i + 3], location.id === 'camp' || (location.id === 'courtyard' && location.flagstones) ? 255 : 0);
     }
     const sums = [0, 0, 0];
     let changedTiles = 0, changes = 0, alignedChanges = 0;
@@ -72,6 +72,8 @@ for (const location of Object.values(LOCATIONS)) {
     if (location.id === 'courtyard') {
       assert.ok(averages[2] > .25, 'the courtyard needs weathered stone remnants');
       assert.ok(averages[1] > .03, 'the courtyard needs soil between stone remnants and moss');
+      // A flagstone floor covers most of the cloister; earth shows in its cracks.
+      if (location.flagstones) assert.ok(averages[2] > .5, 'the cloister keeps its flagstone floor');
     }
     assert.equal(JSON.stringify(location), before);
   });
