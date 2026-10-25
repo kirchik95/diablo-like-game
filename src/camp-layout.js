@@ -23,15 +23,15 @@ const hash = (x, y, salt) => {
 
 // Paper artboard "Панорама лагеря" (file 01M5JE4QF1S7K7921DAQTPSHYY, node 17I-0):
 // a 1512×852 image drawn at 35.2 px per screen unit, 1.1× the 32 px/u game art,
-// with the monk at game size. Its fire ring centre (915,400) is the world fire.
+// with the monk at game size. Wave 2 spreads traced contacts by 1.4; sprites and footprints stay native.
 // Ground points below are traced from that image; the game keeps its own scale.
-export const ARTBOARD = freeze({ size: [1512, 852], pixelsPerUnit: 35.2, origin: [915, 400], world: [-3, -2] });
+export const ARTBOARD = freeze({ size: [1512, 852], pixelsPerUnit: 35.2, origin: [915, 400], world: [-4.2, -2.8] });
 export function fromArtboard(ix, iy) {
-  const u = (ix - ARTBOARD.origin[0]) / ARTBOARD.pixelsPerUnit, v = (iy - ARTBOARD.origin[1]) / ARTBOARD.pixelsPerUnit;
+  const u = (ix - ARTBOARD.origin[0]) / ARTBOARD.pixelsPerUnit * 1.4, v = (iy - ARTBOARD.origin[1]) / ARTBOARD.pixelsPerUnit * 1.4;
   return { x: ARTBOARD.world[0] + Math.SQRT2 * v - u * Math.SQRT1_2, y: ARTBOARD.world[1] + Math.SQRT2 * v + u * Math.SQRT1_2 };
 }
 export function toArtboard(x, y) {
-  const dx = x - ARTBOARD.world[0], dy = y - ARTBOARD.world[1];
+  const dx = (x - ARTBOARD.world[0]) / 1.4, dy = (y - ARTBOARD.world[1]) / 1.4;
   return { x: ARTBOARD.origin[0] + (dy - dx) * Math.SQRT1_2 * ARTBOARD.pixelsPerUnit,
     y: ARTBOARD.origin[1] + (dx + dy) / (2 * Math.SQRT2) * ARTBOARD.pixelsPerUnit };
 }
@@ -45,7 +45,7 @@ const walkOutline = [
   [330, 680], [230, 660], [170, 600], [170, 530], [250, 480], [330, 450], [420, 420], [430, 360],
   [360, 330], [280, 300], [230, 250], [160, 170], [100, 120], [60, 60],
 ].map(([x, y]) => fromArtboard(x, y));
-const SEAM_ROW = -29;
+const SEAM_ROW = -41;
 const inside = (polygon, x, y) => {
   let result = false;
   for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
@@ -55,14 +55,14 @@ const inside = (polygon, x, y) => {
   return result;
 };
 const tiles = new Map();
-for (let y = SEAM_ROW; y <= 12; y++) for (let x = -20; x <= 26; x++) {
+for (let y = SEAM_ROW; y <= 17; y++) for (let x = -28; x <= 37; x++) {
   // The road mouth keeps the accepted 5-cell join to the road area.
-  if (inside(walkOutline, x, y) || (y <= -24 && Math.abs(x) <= 2)) tiles.set(key(x, y), { x, y });
+  if (inside(walkOutline, x, y) || (y <= -34 && Math.abs(x) <= 3)) tiles.set(key(x, y), { x, y });
 }
 const walkable = (x, y) => tiles.has(key(Math.round(x), Math.round(y)));
 // Keep the road mouth readable toward the shared seam; beyond it the road
 // area owns its own border.
-const corridor = (x, y) => y < -22 && Math.abs(x) < 5.5;
+const corridor = (x, y) => y < -31 && Math.abs(x) < 7.7;
 
 // Contact registration. Every kind is placed by its ground centre: measured
 // cloth/stone outlines for pixel-v5, fitted support arcs for pixel-v4 and the
@@ -111,28 +111,28 @@ function put(kind, cx, cy, { scale = 1, flip = false, id, radius } = {}) {
 const art = (kind, ix, iy, scale = 1, flip = false) => {
   const { x, y } = fromArtboard(ix, iy);
   // The artboard's road bends further west; its verge props would block ours.
-  if (y < SEAM_ROW - .4 || (corridor(x, y) && Math.abs(x) < 3.6)) return null;
+  if (y < SEAM_ROW - .4 || (corridor(x, y) && Math.abs(x) < 5)) return null;
   return put(kind, x, y, { scale, flip });
 };
 
 // Core camp. The fire keeps its accepted ring and approach; everything else
 // follows the artboard: tent doors face the fire and the carpet, the kettle
 // stands at the ring's east side, the log lies along x before it.
-put('campfire-base', -3, -2, { id: 'fire' });
+put('campfire-base', -4.2, -2.8, { id: 'fire' });
 // The splayed legs stand on a smaller circle than the footprint contract.
-put('tripod-kettle', -4.6, -.65, { id: 'tripod', radius: .32 });
-put('fallen-log', -2.8, 1.4, { id: 'log' });
-put('tent-right', -11.5, -1.5, { id: 'tent-right' });
-put('tent-left', 16, -8, { id: 'tent-left' });
-put('woven-carpet', 8.2, -.6, { id: 'carpet' });
-put('supply-cache', 8.85, -1.95, { id: 'supplies' });
-put('crate', 8.45, .95, { id: 'carpet-crate' });
-put('crate', -10.5, 1.1, { id: 'tent-right-crate', flip: true });
-put('sack-pair', -11.85, 2.45, { id: 'tent-right-sacks' });
-put('crate', 19.1, -6.8, { id: 'tent-left-crate' });
-put('sack-pair', 18.9, -5.2, { id: 'tent-left-sacks', flip: true });
-put('ruin-pillar', -4.2, -16.1, { id: 'pillar-east' });
-put('ruin-pillar', 3.2, -18.5, { id: 'pillar-west', flip: true });
+put('tripod-kettle', -6.44, -0.91, { id: 'tripod', radius: .32 });
+put('fallen-log', -4, .6, { id: 'log' });
+put('tent-right', -16.1, -2.1, { id: 'tent-right' });
+put('tent-left', 22.4, -11.2, { id: 'tent-left' });
+put('woven-carpet', 11.48, -0.84, { id: 'carpet' });
+put('supply-cache', 12.13, -2.19, { id: 'supplies' });
+put('crate', 11.73, .71, { id: 'carpet-crate' });
+put('crate', -14.7, 1.54, { id: 'tent-right-crate', flip: true });
+put('sack-pair', -16.59, 3.43, { id: 'tent-right-sacks' });
+put('crate', 26.74, -9.52, { id: 'tent-left-crate' });
+put('sack-pair', 26.46, -7.28, { id: 'tent-left-sacks', flip: true });
+put('ruin-pillar', -5.88, -22.54, { id: 'pillar-east' });
+put('ruin-pillar', 4.48, -25.9, { id: 'pillar-west', flip: true });
 
 // Outcrops, groves and bushes traced from the artboard (ground contacts).
 // Stone gathers in a few large masses and wall runs; lone stones are rare,
@@ -170,6 +170,9 @@ for (const [kind, ix, iy, scale = 1, flip = false] of [
   ['bush-large', 122, 802], ['cypress-pair', 32, 762], ['bush-round', 340, 842],
 ]) art(kind, ix, iy, scale, flip);
 
+// A native ledge joins the western road outcrop across the enlarged country.
+put('outcrop-pair', -11.4, -38, { id: 'western-road-mass' });
+
 // A visible blocker must stand near every edge of the walk mask. Fill only
 // uncovered edges, outside the mask, with low stones and shrubs.
 const extent = p => {
@@ -192,7 +195,7 @@ for (const e of edges) {
   if (setDressing.some(p => gap(p, x, y) < 1.15)) continue;
   const n = hash(e.x * 2 + e.dx, e.y * 2 + e.dy, 11), tangent = (hash(e.x, e.y, 12) - .5) * .5;
   // Shrubs carry the edge; a rounded stone or a stone pair only now and then.
-  const kind = n < .45 || (n >= .58 && n < .75) ? 'bush-round' : n < .58 ? 'boulder-round' : n >= .8 && n < .9 ? 'outcrop-pair' : 'bush-large';
+  const kind = n < .45 || (n >= .58 && n < .75) ? 'bush-round' : n < .48 ? 'boulder-round' : n >= .8 && n < .9 ? 'outcrop-pair' : 'bush-large';
   const scale = (kind === 'bush-large' ? .75 : .85) + hash(e.x, e.y, 13) * .25;
   const reach = { 'bush-round': .7, 'boulder-round': .62, 'outcrop-pair': 1.3, 'bush-large': 1.1 }[kind] * scale;
   put(kind, x + e.dx * (reach + .05) - e.dy * tangent, y + e.dy * (reach + .05) + e.dx * tangent,
@@ -201,10 +204,10 @@ for (const e of edges) {
 
 // Inner grass: ankle-height tufts, never on the worn clearing or the road.
 const clearing = [[600, 410], [900, 305], [1255, 395], [1000, 545]].map(([x, y]) => fromArtboard(x, y));
-for (let y = SEAM_ROW; y <= 12; y += 2) for (let x = -20; x <= 26; x += 2) {
-  if (hash(x, y, 21) < .35) continue;
+for (let y = SEAM_ROW; y <= 17; y += 2) for (let x = -28; x <= 37; x += 2) {
+  if (hash(x, y, 21) < .5) continue;
   const px = x + (hash(x, y, 22) - .5) * 1.6, py = y + (hash(x, y, 23) - .5) * 1.6;
-  if (!walkable(px, py) || inside(clearing, px, py) || Math.abs(px) < 3 && py < -6) continue;
+  if (!walkable(px, py) || inside(clearing, px, py) || Math.abs(px) < 4.2 && py < -8.4) continue;
   if (setDressing.some(p => gap(p, px, py) < .5)) continue;
   put(hash(x, y, 24) < .7 ? 'grass-tuft' : 'fern-tuft', px, py, { scale: .8 + hash(x, y, 25) * .4, flip: hash(x, y, 26) > .5 });
 }
@@ -215,7 +218,7 @@ for (let y = SEAM_ROW; y <= 12; y += 2) for (let x = -20; x <= 26; x += 2) {
 // It begins at the artboard's dead tree: further left, the widest road-loop
 // view (1919×1080) would look past the rim's end.
 const horizon = [[3, -20], [3.3, -9.98], [11.67, -8.45],
-  [15.34, -6.19], [17.68, -5.87], [26, -4.6], [33, -4], [37, -16]];
+  [15.34, -6.19], [17.68, -5.87], [26, -4.6], [33, -4], [37, -16]].map(([u, v]) => [u * 1.4, v * 1.4]);
 // Beyond the authored points the rim climbs steeply out of every view.
 const HORIZON_CLIMB = 30;
 export function horizonAt(points, u) {
@@ -231,7 +234,7 @@ export function horizonAt(points, u) {
 export function inBackdrop(backdrop, x, y, margin = 0) {
   return !!backdrop && (x + y) / (2 * Math.SQRT2) < horizonAt(backdrop.horizon, (y - x) * Math.SQRT1_2) + margin;
 }
-const backdrop = { horizon, parallax: .25, reference: [-4.74, -.95] };
+const backdrop = { horizon, parallax: .25, reference: [-6.636, -1.33] };
 
 // Distance from the walk mask over the surrounding grid, for the outer groves.
 const reachGrid = new Map([...tiles.values()].map(p => [key(p.x, p.y), 0]));
@@ -281,12 +284,12 @@ const groundBehind = (x, y) => {
 const belowHorizon = (x, y) => (x + y) / (2 * Math.SQRT2) - horizonAt(horizon, (y - x) * Math.SQRT1_2);
 
 // A stacked grove hides the rim's steep west end from every camp view.
-for (const [i, kind, u, v] of [[1, 'cypress-tall', 3.1, -10.9], [2, 'cypress-tall', 2.95, -12.6], [3, 'cypress-medium', 2.62, -15.15]]) {
+for (const [i, kind, u, v] of [[1, 'cypress-tall', 4.34, -15.26], [2, 'cypress-tall', 4.13, -17.64], [3, 'cypress-medium', 3.668, -21.21]]) {
   put(kind, Math.SQRT2 * v - u * Math.SQRT1_2, Math.SQRT2 * v + u * Math.SQRT1_2, { id: `rim-end-${i}`, flip: i === 2 });
 }
 // Rim: shrubs, stone shelves and a few trees on the ground side of the
 // horizon, their crowns against the mountains. Sampled by screen arc length.
-for (let s = 0, u = 3.6; u < 34.5; s++) {
+for (let s = 0, u = 5.04; u < 48.3; s++) {
   const v = horizonAt(horizon, u), next = u + .02;
   const slope = (horizonAt(horizon, next) - v) / .02;
   if (hash(s, 7, 31) < .5) {
@@ -334,7 +337,7 @@ function stoneRun(first, ix, iy) {
 
 // Outer groves fill the rest of the visible country of the camp area. Rows
 // are staggered and jittered by most of a cell, so no grid lines show.
-for (let row = 0, gy = -29; gy <= 34; row++, gy += 2.4) for (let gx = -40 + (row % 2) * 1.2; gx <= 46; gx += 2.4) {
+for (let row = 0, gy = -41; gy <= 46; row++, gy += 2.4) for (let gx = -52 + (row % 2) * 1.2; gx <= 62; gx += 2.4) {
   const ix = Math.round(gx * 10), iy = Math.round(gy * 10);
   const x = gx + (hash(ix, iy, 41) - .5) * 2.2, y = gy + (hash(ix, iy, 42) - .5) * 2.2;
   if (y < SEAM_ROW) continue;
@@ -372,7 +375,7 @@ for (const p of setDressing) {
 
 // Drop cells that the props have sealed off, so the walk mask has no
 // unreachable pockets behind tents or stone masses.
-const spawn = { x: 2, y: -4 };
+const spawn = { x: 3, y: -6 };
 for (const radius of [.23, .29]) {
   const probe = { tiles: [...tiles.values()], obstacles: setDressing.filter(p => p.collider).map(p => p.collider) };
   const usable = new Map(probe.tiles.filter(p => isWalkable(p.x, p.y, radius, probe)).map(p => [key(p.x, p.y), p]));
@@ -395,14 +398,23 @@ const prop = id => setDressing.find(p => p.id === id);
 export const CAMP_LAYOUT = freeze({
   regions,
   pavingRoutes: [
-    { width: 2.6, points: [[0, -28], [-1, -24], [-1.3, -19], [-.8, -14], [.3, -10], [1.4, -6.5], [2, -4]] },
-    { width: 1.5, points: [[2, -4], [4.6, -1.4], [6.9, .6]] },
+    { width: 2.6, points: [[0, -40], [-.8, -34], [-1, -27], [-1.1, -20], [.4, -14], [2, -9], [3, -6]] },
+    { width: 1.5, points: [[3, -6], [6.4, -2], [9.66, .84]] },
   ],
-  spawn, entries: { road: { x: 0, y: -22 } },
-  exit: { x: 0, y: -27 }, reward: { x: 6.9, y: .6 },
+  spawn, entries: { road: { x: 0, y: -31 } },
+  exit: { x: 0, y: -39 }, reward: { x: 9.66, y: .84 },
   pillars: ['pillar-east', 'pillar-west'].map(id => ({ x: prop(id).x, y: prop(id).y, height: 3.2 })),
   braziers: [{ x: prop('fire').x, y: prop('fire').y, color: 'amber' }],
   clearing: clearing.map(p => [p.x, p.y]),
   backdrop,
   setDressing,
 });
+
+// Render-only inhabitants. These data are deliberately outside CAMP_LAYOUT:
+// campaign/replay state never receives NPCs or new collision shapes. Each full
+// reserved core fits inside the named existing blocker.
+export const CAMP_NPC_SPOTS = freeze([
+  { id: 'fire-pilgrim', kind: 'pilgrim', x: -2.6, y: 1.05, radius: .3, blocker: 'log', flip: true, phase: .31 },
+  { id: 'tent-wanderer', kind: 'wanderer', x: -14.1, y: -.85, radius: .35, blocker: 'tent-right', flip: true, phase: 1.07 },
+  { id: 'road-sentry', kind: 'sentry', x: -5.0155833896640285, y: -17.95860162168661, radius: .34, blocker: 'boulder-round-1', flip: false, phase: 1.71 },
+]);

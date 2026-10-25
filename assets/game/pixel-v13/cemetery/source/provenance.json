@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "method": "programmatic drawing: heightfield stone masses (rounded, chipped blocks; slabs with profiled tops, a rolled slab, tapered shafts, earth mounds) splatted into a z-buffer with grounded and floating passes, screen-space carving on the true face planes, ray-cast ellipsoids for urns, bark and foliage tufts, hand-pixelled bell and litter, screen-space flat decals, and a wrapped-noise meadow surface",
+  "generator": "scripts/build-cemetery-assets.py",
+  "rendererOrigin": "Canvas, ellipsoid, rod, Block, mass_field, draw_mass, mass_tone, tuft, base_grass and the surface noise are adapted copies of scripts/build-monastery-ruins-assets.py and scripts/build-camp-panorama-assets.py (copied, not imported, so edits there never change these bytes)",
+  "imageGeneration": null,
+  "tools": {
+    "python": "3.14.4",
+    "pillow": "12.3.0"
+  },
+  "inputs": {
+    "campAtlas": {
+      "path": "assets/game/pixel-v9/camp-panorama/camp-panorama.png",
+      "sha256": "5fe74e29d7dd112c7413ee41fb1edfbdc629cd7db362ff8f9a54c792f66b3209"
+    },
+    "campManifest": {
+      "path": "assets/game/pixel-v9/camp-panorama/manifest.json",
+      "sha256": "deaab9707b3cc41dbf433a8c94ec68d685477ed925c5c8272672eef4860c284b"
+    },
+    "campPalette": {
+      "path": "assets/game/pixel-v9/camp-panorama/source/palette.json",
+      "sha256": "7d063b1ff7d5150068c972ab0f1815bed7121d0a01d17878e29a15a8d0acce9b"
+    },
+    "campGrass": {
+      "path": "assets/game/pixel-v9/camp-panorama/camp-grass.png",
+      "sha256": "a1492ca4969181f5b34d77b7fa757d8fa736635a63d9cdd0bdcbc78f951d0402"
+    },
+    "ruinsAtlas": {
+      "path": "assets/game/pixel-v11/monastery-ruins/monastery-ruins.png",
+      "sha256": "09e718d5ae53612a278c8c6e26f214816e20301ed0946b94faac4b35f24773e0"
+    },
+    "ruinsManifest": {
+      "path": "assets/game/pixel-v11/monastery-ruins/manifest.json",
+      "sha256": "6ba7df9efc44eddc2e703a6140cdad65d5af7d2f0a8fe675b920a403b51c0445"
+    },
+    "ruinsPalette": {
+      "path": "assets/game/pixel-v11/monastery-ruins/source/palette.json",
+      "sha256": "e5726a711c0c04e26a91783bf1653d27addcd724b834f610ef1b6128b9aec098"
+    },
+    "monkAtlas": {
+      "path": "assets/game/pixel-v2/monk/monk-v2.png",
+      "sha256": "5ff49605cb684d859d7ddc62ab8402a5f76fe2ed471f6cd41574e0d3aea2d16e"
+    },
+    "monkManifest": {
+      "path": "assets/game/pixel-v2/monk/manifest.json",
+      "sha256": "9b31e2aeb75335a9975b348c63b71d1f1251e47b2038da78c3ac0111e1e98696"
+    }
+  },
+  "inputRoles": {
+    "campAtlas": "camp props in the mock and the style match",
+    "campManifest": "camp frame order and footprints",
+    "campPalette": "shared colour check (names and hex)",
+    "campGrass": "preview meadow; surface hues",
+    "ruinsAtlas": "ruins wall, parapet and column in the mock and the style match",
+    "ruinsManifest": "ruins frame order and footprints",
+    "ruinsPalette": "shared colour check (names and hex)",
+    "monkAtlas": "unchanged hero for scale",
+    "monkManifest": "idle frame index"
+  },
+  "seeds": "fixed integer salts in the script; random.Random only",
+  "license": "project art; no external assets"
+}

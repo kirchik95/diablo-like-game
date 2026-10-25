@@ -1,0 +1,994 @@
+{
+  "schemaVersion": 1,
+  "owner": "scripts/build-cemetery-assets.py (SPECS); the cemetery layout reads manifest.footprints",
+  "coordinateSpace": "cell-local pixels, origin top-left, x right, y down; world units at scale 1",
+  "cell": 256,
+  "anchor": [
+    128,
+    232
+  ],
+  "worldAxes": {
+    "xPixelsPerUnit": [
+      -22.627417,
+      11.313708
+    ],
+    "yPixelsPerUnit": [
+      22.627417,
+      11.313708
+    ],
+    "inverse": "x=(2*dv-du)/(32*sqrt2), y=(2*dv+du)/(32*sqrt2) for a pixel offset (du,dv) from contactCenter"
+  },
+  "rule": "contactCenter y = 231 - front ground extent (box/rect: (halfWidth+halfDepth)*8*sqrt2, circle: 16*radius), rounded down to .25 px; x = 128. colliders/passage are boxes in world units relative to the footprint centre; a mirrored placement swaps x<->y and halfWidth<->halfDepth (frames with -x/-y twins should use the twin instead). role: solid (collider, may hide the hero), low (collider, too low to hide the hero, fine on front edges), flat (ground layer, walkable, no collider). Circles of trees are trunk colliders; `canopy` is the crown radius in world units. contact: corners (drawn ground corners within 1.6 px of every collider corner), loose (organic edge on the footprint), none.",
+  "frames": {
+    "stele-tall-x": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        225.0
+      ],
+      "height": 1.52,
+      "halfWidth": 0.36,
+      "halfDepth": 0.17,
+      "polygon": [
+        [
+          132.3,
+          219.0
+        ],
+        [
+          116.01,
+          227.15
+        ],
+        [
+          123.7,
+          231.0
+        ],
+        [
+          139.99,
+          222.85
+        ]
+      ],
+      "axis": "x",
+      "contact": "corners"
+    },
+    "stele-tall-y": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        225.0
+      ],
+      "height": 1.52,
+      "halfWidth": 0.17,
+      "halfDepth": 0.36,
+      "polygon": [
+        [
+          123.7,
+          219.0
+        ],
+        [
+          116.01,
+          222.85
+        ],
+        [
+          132.3,
+          231.0
+        ],
+        [
+          139.99,
+          227.15
+        ]
+      ],
+      "axis": "y",
+      "contact": "corners"
+    },
+    "stele-low-x": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        222.75
+      ],
+      "height": 0.8,
+      "halfWidth": 0.55,
+      "halfDepth": 0.17,
+      "polygon": [
+        [
+          136.6,
+          214.6
+        ],
+        [
+          111.71,
+          227.05
+        ],
+        [
+          119.4,
+          230.9
+        ],
+        [
+          144.29,
+          218.45
+        ]
+      ],
+      "axis": "x",
+      "contact": "corners"
+    },
+    "stele-low-y": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        222.75
+      ],
+      "height": 0.8,
+      "halfWidth": 0.17,
+      "halfDepth": 0.55,
+      "polygon": [
+        [
+          119.4,
+          214.6
+        ],
+        [
+          111.71,
+          218.45
+        ],
+        [
+          136.6,
+          230.9
+        ],
+        [
+          144.29,
+          227.05
+        ]
+      ],
+      "axis": "y",
+      "contact": "corners"
+    },
+    "stele-leaning-x": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        226.0
+      ],
+      "height": 1.2,
+      "halfWidth": 0.32,
+      "halfDepth": 0.12,
+      "polygon": [
+        [
+          132.53,
+          221.02
+        ],
+        [
+          118.04,
+          228.26
+        ],
+        [
+          123.47,
+          230.98
+        ],
+        [
+          137.96,
+          223.74
+        ]
+      ],
+      "axis": "x",
+      "contact": "loose"
+    },
+    "stele-leaning-y": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        226.0
+      ],
+      "height": 1.2,
+      "halfWidth": 0.12,
+      "halfDepth": 0.32,
+      "polygon": [
+        [
+          123.47,
+          221.02
+        ],
+        [
+          118.04,
+          223.74
+        ],
+        [
+          132.53,
+          230.98
+        ],
+        [
+          137.96,
+          228.26
+        ]
+      ],
+      "axis": "y",
+      "contact": "loose"
+    },
+    "stele-fallen-x": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        219.5
+      ],
+      "height": 0.2,
+      "halfWidth": 0.7,
+      "halfDepth": 0.3,
+      "polygon": [
+        [
+          137.05,
+          208.19
+        ],
+        [
+          105.37,
+          224.03
+        ],
+        [
+          118.95,
+          230.81
+        ],
+        [
+          150.63,
+          214.97
+        ]
+      ],
+      "axis": "x",
+      "contact": "loose"
+    },
+    "stele-fallen-y": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        219.5
+      ],
+      "height": 0.2,
+      "halfWidth": 0.3,
+      "halfDepth": 0.7,
+      "polygon": [
+        [
+          118.95,
+          208.19
+        ],
+        [
+          105.37,
+          214.97
+        ],
+        [
+          137.05,
+          230.81
+        ],
+        [
+          150.63,
+          224.03
+        ]
+      ],
+      "axis": "y",
+      "contact": "loose"
+    },
+    "cairn-small": {
+      "shape": "circle",
+      "role": "low",
+      "contactCenter": [
+        128,
+        226.0
+      ],
+      "height": 0.45,
+      "radius": 0.3,
+      "contact": "loose"
+    },
+    "cairn-large": {
+      "shape": "circle",
+      "role": "low",
+      "contactCenter": [
+        128,
+        223.0
+      ],
+      "height": 0.75,
+      "radius": 0.5,
+      "contact": "loose"
+    },
+    "grave-mound-x": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        214.0
+      ],
+      "height": 0.3,
+      "halfWidth": 1.0,
+      "halfDepth": 0.5,
+      "polygon": [
+        [
+          139.31,
+          197.03
+        ],
+        [
+          94.06,
+          219.66
+        ],
+        [
+          116.69,
+          230.97
+        ],
+        [
+          161.94,
+          208.34
+        ]
+      ],
+      "axis": "x",
+      "contact": "loose"
+    },
+    "grave-mound-y": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        214.0
+      ],
+      "height": 0.3,
+      "halfWidth": 0.5,
+      "halfDepth": 1.0,
+      "polygon": [
+        [
+          116.69,
+          197.03
+        ],
+        [
+          94.06,
+          208.34
+        ],
+        [
+          139.31,
+          230.97
+        ],
+        [
+          161.94,
+          219.66
+        ]
+      ],
+      "axis": "y",
+      "contact": "loose"
+    },
+    "grave-plot-x": {
+      "shape": "rect",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        214.0
+      ],
+      "height": 0.07,
+      "halfWidth": 1.0,
+      "halfDepth": 0.5,
+      "polygon": [
+        [
+          139.31,
+          197.03
+        ],
+        [
+          94.06,
+          219.66
+        ],
+        [
+          116.69,
+          230.97
+        ],
+        [
+          161.94,
+          208.34
+        ]
+      ],
+      "contact": "none",
+      "axis": "x"
+    },
+    "grave-plot-y": {
+      "shape": "rect",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        214.0
+      ],
+      "height": 0.07,
+      "halfWidth": 0.5,
+      "halfDepth": 1.0,
+      "polygon": [
+        [
+          116.69,
+          197.03
+        ],
+        [
+          94.06,
+          208.34
+        ],
+        [
+          139.31,
+          230.97
+        ],
+        [
+          161.94,
+          219.66
+        ]
+      ],
+      "contact": "none",
+      "axis": "y"
+    },
+    "obelisk": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        219.5
+      ],
+      "height": 2.62,
+      "halfWidth": 0.5,
+      "halfDepth": 0.5,
+      "polygon": [
+        [
+          128.0,
+          208.19
+        ],
+        [
+          105.37,
+          219.5
+        ],
+        [
+          128.0,
+          230.81
+        ],
+        [
+          150.63,
+          219.5
+        ]
+      ],
+      "contact": "corners",
+      "landmark": true
+    },
+    "obelisk-broken": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        214.5
+      ],
+      "height": 1.5,
+      "halfWidth": 0.95,
+      "halfDepth": 0.5,
+      "polygon": [
+        [
+          138.18,
+          198.1
+        ],
+        [
+          95.19,
+          219.59
+        ],
+        [
+          117.82,
+          230.9
+        ],
+        [
+          160.81,
+          209.41
+        ]
+      ],
+      "contact": "loose",
+      "colliders": [
+        {
+          "x": -0.45,
+          "y": 0.0,
+          "halfWidth": 0.5,
+          "halfDepth": 0.5
+        },
+        {
+          "x": 0.58,
+          "y": 0.0,
+          "halfWidth": 0.19,
+          "halfDepth": 0.5
+        }
+      ]
+    },
+    "stone-lantern": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        224.0
+      ],
+      "height": 1.3,
+      "halfWidth": 0.3,
+      "halfDepth": 0.3,
+      "polygon": [
+        [
+          128.0,
+          217.21
+        ],
+        [
+          114.42,
+          224.0
+        ],
+        [
+          128.0,
+          230.79
+        ],
+        [
+          141.58,
+          224.0
+        ]
+      ],
+      "contact": "corners",
+      "glow": "cyan"
+    },
+    "stone-lantern-toppled": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        217.25
+      ],
+      "height": 0.45,
+      "halfWidth": 0.75,
+      "halfDepth": 0.45,
+      "polygon": [
+        [
+          134.79,
+          203.67
+        ],
+        [
+          100.85,
+          220.64
+        ],
+        [
+          121.21,
+          230.83
+        ],
+        [
+          155.15,
+          213.86
+        ]
+      ],
+      "contact": "loose"
+    },
+    "fence-x": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        212.75
+      ],
+      "height": 0.72,
+      "halfWidth": 1.5,
+      "halfDepth": 0.11,
+      "polygon": [
+        [
+          159.45,
+          194.53
+        ],
+        [
+          91.57,
+          228.48
+        ],
+        [
+          96.55,
+          230.97
+        ],
+        [
+          164.43,
+          197.02
+        ]
+      ],
+      "axis": "x",
+      "contact": "corners"
+    },
+    "fence-y": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        212.75
+      ],
+      "height": 0.72,
+      "halfWidth": 0.11,
+      "halfDepth": 1.5,
+      "polygon": [
+        [
+          96.55,
+          194.53
+        ],
+        [
+          91.57,
+          197.02
+        ],
+        [
+          159.45,
+          230.97
+        ],
+        [
+          164.43,
+          228.48
+        ]
+      ],
+      "axis": "y",
+      "contact": "corners"
+    },
+    "fence-broken-x": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        210.5
+      ],
+      "height": 0.72,
+      "halfWidth": 1.5,
+      "halfDepth": 0.3,
+      "polygon": [
+        [
+          155.15,
+          190.14
+        ],
+        [
+          87.27,
+          224.08
+        ],
+        [
+          100.85,
+          230.86
+        ],
+        [
+          168.73,
+          196.92
+        ]
+      ],
+      "axis": "x",
+      "contact": "corners",
+      "colliders": [
+        {
+          "x": -0.94,
+          "y": 0.0,
+          "halfWidth": 0.56,
+          "halfDepth": 0.11
+        },
+        {
+          "x": 1.41,
+          "y": 0.0,
+          "halfWidth": 0.09,
+          "halfDepth": 0.11
+        }
+      ]
+    },
+    "fence-broken-y": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        210.5
+      ],
+      "height": 0.72,
+      "halfWidth": 0.3,
+      "halfDepth": 1.5,
+      "polygon": [
+        [
+          100.85,
+          190.14
+        ],
+        [
+          87.27,
+          196.92
+        ],
+        [
+          155.15,
+          230.86
+        ],
+        [
+          168.73,
+          224.08
+        ]
+      ],
+      "axis": "y",
+      "contact": "corners",
+      "colliders": [
+        {
+          "x": 0.0,
+          "y": -0.94,
+          "halfWidth": 0.11,
+          "halfDepth": 0.56
+        },
+        {
+          "x": 0.0,
+          "y": 1.41,
+          "halfWidth": 0.11,
+          "halfDepth": 0.09
+        }
+      ]
+    },
+    "cemetery-gate-x": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        206.5
+      ],
+      "height": 2.52,
+      "halfWidth": 1.85,
+      "halfDepth": 0.3,
+      "polygon": [
+        [
+          163.07,
+          182.18
+        ],
+        [
+          79.35,
+          224.04
+        ],
+        [
+          92.93,
+          230.82
+        ],
+        [
+          176.65,
+          188.96
+        ]
+      ],
+      "axis": "x",
+      "contact": "corners",
+      "colliders": [
+        {
+          "x": -1.55,
+          "y": 0.0,
+          "halfWidth": 0.3,
+          "halfDepth": 0.3
+        },
+        {
+          "x": 1.55,
+          "y": 0.0,
+          "halfWidth": 0.3,
+          "halfDepth": 0.3
+        }
+      ],
+      "passage": {
+        "x": 0.0,
+        "y": 0.0,
+        "halfWidth": 1.25,
+        "halfDepth": 0.3
+      }
+    },
+    "cemetery-gate-y": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        206.5
+      ],
+      "height": 2.52,
+      "halfWidth": 0.3,
+      "halfDepth": 1.85,
+      "polygon": [
+        [
+          92.93,
+          182.18
+        ],
+        [
+          79.35,
+          188.96
+        ],
+        [
+          163.07,
+          230.82
+        ],
+        [
+          176.65,
+          224.04
+        ]
+      ],
+      "axis": "y",
+      "contact": "corners",
+      "colliders": [
+        {
+          "x": 0.0,
+          "y": -1.55,
+          "halfWidth": 0.3,
+          "halfDepth": 0.3
+        },
+        {
+          "x": 0.0,
+          "y": 1.55,
+          "halfWidth": 0.3,
+          "halfDepth": 0.3
+        }
+      ],
+      "passage": {
+        "x": 0.0,
+        "y": 0.0,
+        "halfWidth": 0.3,
+        "halfDepth": 1.25
+      }
+    },
+    "urn-pair": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        222.25
+      ],
+      "height": 0.73,
+      "halfWidth": 0.3,
+      "halfDepth": 0.46,
+      "polygon": [
+        [
+          124.38,
+          213.65
+        ],
+        [
+          110.8,
+          220.44
+        ],
+        [
+          131.62,
+          230.85
+        ],
+        [
+          145.2,
+          224.06
+        ]
+      ],
+      "contact": "corners"
+    },
+    "urn-broken": {
+      "shape": "circle",
+      "role": "low",
+      "contactCenter": [
+        128,
+        225.75
+      ],
+      "height": 0.3,
+      "radius": 0.32,
+      "contact": "loose"
+    },
+    "offering-stone": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        222.5
+      ],
+      "height": 0.43,
+      "halfWidth": 0.45,
+      "halfDepth": 0.3,
+      "polygon": [
+        [
+          131.39,
+          214.01
+        ],
+        [
+          111.03,
+          224.2
+        ],
+        [
+          124.61,
+          230.99
+        ],
+        [
+          144.97,
+          220.8
+        ]
+      ],
+      "contact": "corners"
+    },
+    "yew-round": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        227.0
+      ],
+      "height": 3.0,
+      "radius": 0.25,
+      "contact": "loose",
+      "canopy": 1.0
+    },
+    "yew-small": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        228.0
+      ],
+      "height": 1.85,
+      "radius": 0.18,
+      "contact": "loose",
+      "canopy": 0.62
+    },
+    "grave-ash": {
+      "shape": "rect",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        208.25
+      ],
+      "height": 0,
+      "halfWidth": 1.1,
+      "halfDepth": 0.9,
+      "polygon": [
+        [
+          132.53,
+          185.62
+        ],
+        [
+          82.75,
+          210.51
+        ],
+        [
+          123.47,
+          230.88
+        ],
+        [
+          173.25,
+          205.99
+        ]
+      ],
+      "contact": "none"
+    },
+    "stepping-slabs": {
+      "shape": "rect",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        207.75
+      ],
+      "height": 0,
+      "halfWidth": 0.55,
+      "halfDepth": 1.5,
+      "polygon": [
+        [
+          106.5,
+          184.56
+        ],
+        [
+          81.61,
+          197.0
+        ],
+        [
+          149.5,
+          230.94
+        ],
+        [
+          174.39,
+          218.5
+        ]
+      ],
+      "contact": "none",
+      "axis": "y"
+    },
+    "moss-graves": {
+      "shape": "rect",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        210.5
+      ],
+      "height": 0,
+      "halfWidth": 1.0,
+      "halfDepth": 0.8,
+      "polygon": [
+        [
+          132.53,
+          190.14
+        ],
+        [
+          87.27,
+          212.76
+        ],
+        [
+          123.47,
+          230.86
+        ],
+        [
+          168.73,
+          208.24
+        ]
+      ],
+      "contact": "none"
+    }
+  }
+}

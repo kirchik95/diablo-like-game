@@ -123,7 +123,7 @@ test('courtyard flat traces form several small groups on open stone/soil, includ
   assert.ok(traces.length >= 16, 'the courtyard needs more than a handful of flat traces');
   const added = traces.filter(p => p.cluster.startsWith('traces:'));
   const groups = new Set(added.map(p => p.cluster));
-  assert.ok(groups.size >= 4 && groups.size <= 12, 'several restrained groups, not a carpet of debris');
+  assert.ok(groups.size >= 4 * world.tiles.length / 385 && groups.size <= 12 * world.tiles.length / 385, 'several restrained groups, not a carpet of debris');
   assert.ok(added.some(p => world.paving.some(tile => Math.hypot(tile.x - p.x, tile.y - p.y) < 1.8)),
     'flat traces may occupy broad stone/earth that used to be excluded as paving');
   for (const p of added) assert.ok(weights(layout.surfaceMap, p.x, p.y)[0] <= .5,

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { appearanceOptions, appearanceVariant } from '../src/appearance.js';
 import { pixelAtlases } from '../src/pixel-assets.js';
-import sidePackage from '../assets/game/pixel-v10/monk-side/manifest.json' with { type: 'json' };
+import sidePackage from '../assets/game/pixel-v17/monk-side/manifest.json' with { type: 'json' };
 
 const pngSize = url => {
   const data = readFileSync(new URL(url));
@@ -17,7 +17,7 @@ test('each appearance texture is a side-package atlas matching the renderer monk
   const { columns, rows, cell } = pixelAtlases.monk;
   for (const skin of appearanceOptions.skins) for (const hair of appearanceOptions.hair) for (const sash of appearanceOptions.sashes) {
     const variant = appearanceVariant({ skin: skin.id, hair: hair.id, sash: sash.id }), id = `${skin.id}-${hair.id}-${sash.id}`;
-    assert.ok(new URL(variant.url).pathname.endsWith(`/assets/game/pixel-v10/monk-side/appearance/${id}.png`), variant.url);
+    assert.ok(new URL(variant.url).pathname.endsWith(`/assets/game/pixel-v17/monk-side/appearance/${id}.png`), variant.url);
     assert.ok(new URL(variant.previewUrl).pathname.endsWith(`/assets/game/pixel-v3/appearance/${id}-preview.png`));
     assert.equal(variant.previewPath, `${id}-preview.png`, 'previewUrl names the manifest preview file');
     assert.deepEqual(pngSize(variant.url), [columns * cell, rows * cell], id);
@@ -25,12 +25,13 @@ test('each appearance texture is a side-package atlas matching the renderer monk
   }
 });
 
-test('the side package ships one 960x1056 atlas per appearance at the path the URL uses', () => {
+test('the active package ships one complete atlas per appearance at the path the URL uses', () => {
+  const { columns, rows, cell } = sidePackage.monk;
   for (const variant of sidePackage.appearance.variants) {
-    const url = new URL(`../assets/game/pixel-v10/monk-side/appearance/${variant.id}.png`, import.meta.url);
+    const url = new URL(`../assets/game/pixel-v17/monk-side/appearance/${variant.id}.png`, import.meta.url);
     assert.equal(variant.path, `appearance/${variant.id}.png`);
     assert.ok(existsSync(url), variant.id);
-    assert.deepEqual(pngSize(url), [960, 1056]);
+    assert.deepEqual(pngSize(url), [columns * cell, rows * cell]);
   }
   assert.deepEqual(sidePackage.appearance.variants.map(v => v.id), appearanceOptions.skins.flatMap(skin =>
     appearanceOptions.hair.flatMap(hair => appearanceOptions.sashes.map(sash => `${skin.id}-${hair.id}-${sash.id}`))));

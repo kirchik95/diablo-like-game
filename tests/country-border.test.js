@@ -27,14 +27,14 @@ function harness(t, world) {
   return { scene, camera, built, stones };
 }
 
-test('reported court corner (7,-96) keeps bare ground around the hero feet at every viewport', t => {
+test('reported court corner (11,-136) keeps bare ground around the hero feet at every viewport', t => {
   const { scene, camera, stones } = harness(t, OVERWORLD);
-  assert.ok(isWalkable(7, -96, .29, OVERWORLD));
+  assert.ok(isWalkable(11, -136, .29, OVERWORLD));
   for (const [width, height] of [[400, 300], [640, 360], [853, 360]]) {
     Object.assign(camera, { orthoLeft: -width / 64, orthoRight: width / 64, orthoTop: height / 64, orthoBottom: -height / 64 });
-    camera.target.set(7, .1, -96.7); scene.render();
+    camera.target.set(11, .1, -136.7); scene.render();
     const project = p => Vector3.Project(p, Matrix.Identity(), scene.getTransformMatrix(), camera.viewport.toGlobal(width, height));
-    const feet = project(new Vector3(7, .025, -96));
+    const feet = project(new Vector3(11, .025, -136));
     for (const stone of stones) {
       const origin = project(stone.mesh.position);
       for (let dy = -4; dy <= -1; dy++) for (let dx = -22; dx <= 27; dx++) {
@@ -93,8 +93,8 @@ for (const world of [LOCATIONS.road, LOCATIONS.courtyard, OVERWORLD]) {
       }
     }
     if (world.zones || world.id === 'road') for (const edge of built.landscape.boundary) {
-      // The camp and the courtyard own their authored belts (their layout tests).
-      if (world.zones && ['camp', 'courtyard'].includes(getOverworldZone(edge.x, edge.y).id)) continue;
+      // The camp, the courtyard and the side zones own their authored belts (their layout tests).
+      if (world.zones && ['camp', 'courtyard', 'cemetery', 'orchard'].includes(getOverworldZone(edge.x, edge.y).id)) continue;
       const x = edge.x + edge.dx * .5, y = edge.y + edge.dy * .5;
       if ((world.portals ?? []).some(p => Math.hypot(p.x - x, p.y - y) < 4.5)) continue;
       // Open stretches of the road belt leave at most a short tufted gap.

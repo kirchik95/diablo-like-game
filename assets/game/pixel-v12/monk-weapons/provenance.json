@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-24",
+  "generationMode": "No image generation. Deterministic pixel drawing over the shipped pixel-v10 monk atlas.",
+  "rightsNote": "Derived from project artwork; inherited provenance of pixel-v10/monk-side applies. Not a new license grant.",
+  "acceptance": {
+    "status": "worker-inspected-awaiting-coordinator",
+    "authority": "Coordinator accepts under user delegation. No personal user approval is claimed.",
+    "boundary": "Asset owner inspected 4x/10x review sheets and the native game-scale strip; renderer integration and in-game acceptance belong to the coordinator."
+  },
+  "method": {
+    "hands": "Authored rough centres (keys 0-99) snapped to hand pixels; side keys = source hands + rig upperOffset.",
+    "knuckles": "2-row band (light rings, dark bronze) on skin pixels across the distal fist; strike accents per gear board 4.",
+    "staff": "3 px shaft, ink rim, bronze caps; through both grips or along an authored angle; gripping hands and the body (when behind) cut out.",
+    "swings": "3D staff direction (azimuth, elevation) from a grip on a reused monk body drawing; ground-ellipse projection 32/16/32 px per unit; tip smears.",
+    "lookReference": "assets/concepts/systems-01/gear/04-weapon-on-monk.png and source/ mocks (not sampled)"
+  },
+  "builder": "scripts/build-monk-weapons.py",
+  "toolchain": {"python": "3.14.4", "pillow": "12.3.0"},
+  "inputs": [
+    {
+      "path": "assets/game/pixel-v1/floor.png",
+      "sha256": "6f4894b7f4a538504def073685ff793e6c9e5cac34b6b2f492d8f4b5e78066e9"
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/manifest.json",
+      "sha256": "6b0fa8b621b478cfd104edcef55465f526273aa68f6dbe9ebeac0755b86348f6"
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/monk-side.png",
+      "sha256": "8706394fcad702e337a0b7890d7b5f5a3cd44d901599be24a4b567f9ee903ef1"
+    },
+    {
+      "path": "assets/game/pixel-v10/monk-side/source/rig.json",
+      "sha256": "68b285ea65b7974995257184a5bb1fffc38924400495e377ba6d905df9f33f52"
+    },
+    {
+      "path": "assets/game/pixel-v2/monk/palette.json",
+      "sha256": "818b8bf6509d47520241dfac289910308e403ce5e4891142d103d23fc3eea02b"
+    },
+    {
+      "path": "scripts/build-monk-weapons.py",
+      "sha256": "57843f0977573aead038b24b123eb981bbc17a595cce9e37f6032848b2017b2c"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "assets/game/pixel-v12/monk-weapons/knuckles.png",
+      "sha256": "586dc10b9cb2ac16fc72eb5496eb34e34cceaae18186c0b321408f70d0ed0d53",
+      "bytes": 11201
+    },
+    {
+      "path": "assets/game/pixel-v12/monk-weapons/manifest.json",
+      "sha256": "093a8b3bd49e56bf1c31a553c1f6850ba1e0a649c982cc4777e057108450bda5",
+      "bytes": 77989
+    },
+    {
+      "path": "assets/game/pixel-v12/monk-weapons/previews/game-scale-3x.png",
+      "sha256": "893726c83978419ca77711b9fe901304eeb56d23cb0dc6428669e1a7e75e3c22",
+      "bytes": 38637
+    },
+    {
+      "path": "assets/game/pixel-v12/monk-weapons/previews/game-scale.png",
+      "sha256": "60501175939dbcf370400e966c8a7befb8aa3547e33d480922111de04e3a2609",
+      "bytes": 25445
+    },
+    {
+      "path": "assets/game/pixel-v12/monk-weapons/previews/knuckle-strikes.png",
+      "sha256": "edcbf47e32dc75a04ba09ea18a6902ea54fbe0884cd192422245b41f43bdf30f",
+      "bytes": 111406
+    },
+    {
+      "path": "assets/game/pixel-v12/monk-weapons/previews/knuckles-keys.png",
+      "sha256": "f8fa86c33277ec5b1abdc31714c3fd2957debed07ec3d32aa3e4aa78ff054990",
+      "bytes": 224269
+    },
+    {
+      "path": "assets/game/pixel-v12/monk-weapons/previews/staff-attacks.png",
+      "sha256": "5c62834232a2ad8c229dd3178e02946d93cd4c1cbff0f862fb9482754e3b87bd",
+      "bytes": 133732
+    },
+    {
+      "path": "assets/game/pixel-v12/monk-weapons/previews/staff-keys.png",
+      "sha256": "7f124260efea6c86dce6c7b123650cc2d09fb62ed8451b20c5be84f9ac57feb3",
+      "bytes": 222721
+    },
+    {
+      "path": "assets/game/pixel-v12/monk-weapons/staff-attacks.png",
+      "sha256": "a69819ac7246362add8c26214956274aa0fe68055c0258c7b42d4f7f95d669a4",
+      "bytes": 20620
+    },
+    {
+      "path": "assets/game/pixel-v12/monk-weapons/staff.png",
+      "sha256": "2f181bff6f49d802fddc2557c1b14c7938f36940a15b56ae9ebd66d9d8448af0",
+      "bytes": 20727
+    }
+  ]
+}

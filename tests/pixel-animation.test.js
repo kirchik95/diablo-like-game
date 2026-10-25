@@ -2,26 +2,36 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { monkPose, houndPose, stableFacing, FACING_HYSTERESIS, MONK_RUN_KEY_DISTANCE, PresentationState } from '../src/pixel-animation.js';
 import { createGame } from '../src/game.js';
+import { MONK_RULES } from '../src/monk-combat.js';
+import monkPackage from '../assets/game/pixel-v17/monk-side/manifest.json' with { type: 'json' };
+
+const clips = monkPackage.monk.clips;
 
 const monk = { dx: 0, dy: 1, moving: false, distance: 0, dashTime: 0, attack: null };
 
 test('monk front/back and mirror directions agree with the isometric camera', () => {
-  for (const [dx, dy, frame, flip] of [[0, 1, 0, false], [1, 0, 0, true], [-1, 0, 50, false], [0, -1, 50, true]]) {
-    assert.deepEqual(monkPose({ ...monk, dx, dy }), { frame, flip });
+  for (const [dx, dy, view, flip] of [[0, 1, 'front', false], [1, 0, 'front', true], [-1, 0, 'back', false], [0, -1, 'back', true]]) {
+    assert.deepEqual(monkPose({ ...monk, dx, dy }), { frame: clips.idle[view][0], flip });
   }
 });
 
 test('run keyframes alternate both legs with distance and stop in a neutral pose', () => {
-  assert.deepEqual([0, .56, 1.12, 1.68, 2.24, 2.8, 3.36].map(distance => monkPose({ ...monk, moving: true, distance }).frame), [4, 5, 6, 7, 8, 9, 4]);
-  assert.equal(monkPose({ ...monk, distance: 1.35 }).frame, 0);
+  const run = clips.run;
+  const phases = [...run.sourceKeys, run.sourceCount];
+  assert.deepEqual(phases.map(phase => monkPose({ ...monk, moving: true, distance: phase * .56 }).frame),
+    [...run.front, run.front[0]]);
+  assert.equal(monkPose({ ...monk, distance: 1.35 }).frame, clips.idle.front[0]);
 });
 
 test('the palm strike is visible at the actual damage instant, and dash wins over attack', () => {
-  for (const [index, hitAt, before, contact] of [[0, .09, 11, 12], [1, .11, 17, 18], [2, .16, 23, 24]]) {
-    assert.equal(monkPose({ ...monk, attack: { index, age: hitAt - .01 } }).frame, before);
-    assert.equal(monkPose({ ...monk, attack: { index, age: hitAt } }).frame, contact);
+  for (const [index, hitAt] of MONK_RULES.combo.hitTime.entries()) {
+    const clip = clips[`attack${index + 1}`];
+    assert.equal(clip.contactKey, clip.sourceKeys.indexOf(2));
+    assert.equal(monkPose({ ...monk, attack: { index, age: hitAt - 1e-6 } }).frame, clip.front[clip.contactKey - 1]);
+    assert.equal(monkPose({ ...monk, attack: { index, age: hitAt } }).frame, clip.front[clip.contactKey]);
   }
-  assert.equal(monkPose({ ...monk, dashTime: .1, attack: { index: 0, age: .09 } }).frame, 31);
+  assert.equal(monkPose({ ...monk, dashTime: .1, attack: { index: 0, age: .09 } }).frame,
+    clips.dash.front[clips.dash.sourceKeys.indexOf(3)]);
 });
 
 test('hound warning, pounce, recovery and death each have a readable distinct pose', () => {
@@ -87,12 +97,19 @@ test('presentation keeps a horizontally chasing hound on one drawing; committed 
   assert.equal(houndPose(hound, undefined, view.hounds[0]).flip, shown);
 });
 
-test('the monk shows the run cycle at .56u per key in both front and back drawings', () => {
-  // .56u locks the planted foot for screen-left/right travel at 32 px/u (~17.75 px per key).
+test('the monk keeps .56u per source run key in every authored view', () => {
   assert.equal(MONK_RUN_KEY_DISTANCE, .56);
-  for (const [dx, dy, facing] of [[0, 1, 'front'], [-1, 0, 'back']]) {
-    const keys = [0, .55, .56, 2.79, 2.8, 3.36].map(distance => monkPose({ ...monk, dx, dy, moving: true, distance }).frame);
-    const base = facing === 'front' ? 4 : 54;
-    assert.deepEqual(keys, [base, base, base + 1, base + 4, base + 5, base]);
+  assert.equal(monkPackage.monk.runCycleDistance, 3.36);
+  const clip = clips.run;
+  for (const [dx, dy, view] of [[0, 1, 'front'], [-1, 0, 'back'], [-1, 1, 'side']]) {
+    const frames = clip[view];
+    for (let key = 0; key < frames.length; key++) {
+      const start = clip.sourceKeys[key] * MONK_RUN_KEY_DISTANCE;
+      const end = (clip.sourceKeys[key + 1] ?? clip.sourceCount) * MONK_RUN_KEY_DISTANCE;
+      for (const distance of [start, (start + end) / 2, end - 1e-6]) {
+        assert.equal(monkPose({ ...monk, dx, dy, moving: true, distance }).frame, frames[key], `${view} key ${key} at ${distance}`);
+      }
+    }
+    assert.equal(monkPose({ ...monk, dx, dy, moving: true, distance: 3.36 }).frame, frames[0]);
   }
 });

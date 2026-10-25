@@ -25,7 +25,7 @@ function walkRoute(world, from, target, radius) {
 }
 
 test('adventure world: every spawn and entry reaches portals, objectives and encounters with actual actor radii', () => {
-  assert.deepEqual(Object.keys(LOCATIONS), ['camp', 'road', 'courtyard']);
+  assert.deepEqual(Object.keys(LOCATIONS), ['camp', 'road', 'courtyard', 'cemetery', 'orchard']);
   for (const world of Object.values(LOCATIONS)) {
     const targets = [...world.portals, ...world.encounters, world.shrine, world.secret, world.ritual, world.reward].filter(Boolean);
     const entries = new Map([world.spawn, ...Object.values(world.entries)].map(point => [`${point.x},${point.y}`, point]));
@@ -48,7 +48,7 @@ test('adventure world: the side loop is reachable and optional for the main road
   assert.ok(main.every(p => Math.hypot(p.x - road.secret.x, p.y - road.secret.y) > 3));
   walkRoute(road, { x: -4, y: 7 }, road.secret, .23);
   walkRoute(road, road.secret, { x: -4, y: -2 }, .23);
-  assert.equal(hasTile(-9, 2, road), false, 'the fork must wrap a real gap rather than sit in one open rectangle');
+  assert.equal(hasTile(-13, 3, road), false, 'the fork must wrap a real gap rather than sit in one open rectangle');
 });
 
 test('adventure world: location collision is isolated and shared geometry cannot be mutated by a run', () => {
@@ -98,9 +98,11 @@ test('landscape world: added earth shoulders are usable and connected to the ori
   assert.ok(arch.colliders.every(c => c.y - c.halfDepth > north + .5), 'the strip behind the arch stays open');
   const shoulders = {
     camp: [[-7, 0], [left.x, left.y + left.halfDepth + 1], [right.x + right.halfWidth + 1, right.y]],
-    road: [[6, 9], [-6, -7], [3, 17], [-19, 4], [-9, 10], [-9, -4]],
+    road: [[9, 13], [-9, -10], [4, 24], [-27, 6], [-13, 14], [-13, -6]],
     courtyard: [[Math.max(...courtTiles.filter(p => p.y === 0).map(p => p.x)), 0], [0, north],
       [Math.max(...courtTiles.filter(p => p.y === 12).map(p => p.x)), 12]],
+    // The side zones have no shoulders; they only check for detached islands.
+    cemetery: [], orchard: [],
   };
   for (const [id, points] of Object.entries(shoulders)) {
     const world = LOCATIONS[id];
@@ -150,14 +152,14 @@ test('landscape world: main paths stay about three cells wide and the side loop 
   for (const world of Object.values(LOCATIONS)) assert.ok(Array.isArray(world.paving), `${world.id}: missing paving surface`);
   // The camp road runs north to the seam; sample a row halfway along it.
   const campRow = Math.round(CAMP_LAYOUT.pavingRoutes[0].points[2][1]);
-  for (const [id, row] of [['camp', campRow], ['road', 12], ['road', -12], ['courtyard', 0]]) {
+  for (const [id, row] of [['camp', campRow], ['road', 17], ['road', -17], ['courtyard', 0]]) {
     const width = LOCATIONS[id].paving.filter(p => p.y === row).length;
     assert.ok(width >= 2 && width <= 3, `${id}: straight main path width ${width}`);
   }
   const road = LOCATIONS.road;
-  const branchWidth = road.paving.filter(p => p.x === -9 && p.y >= 4).length;
+  const branchWidth = road.paving.filter(p => p.x === -13 && p.y >= 6).length;
   assert.ok(branchWidth >= 1 && branchWidth <= 2, `optional branch width ${branchWidth}`);
-  assert.equal(hasTile(-9, 2, road), false);
-  assert.equal(road.paving.some(p => p.x === -9 && p.y === 2), false);
-  assert.equal(LOCATIONS.courtyard.paving.some(p => p.y < -7), false, 'paving must stop at the ritual instead of leading to decorative world.exit');
+  assert.equal(hasTile(-13, 3, road), false);
+  assert.equal(road.paving.some(p => p.x === -13 && p.y === 3), false);
+  assert.equal(LOCATIONS.courtyard.paving.some(p => p.y < -10), false, 'paving must stop at the ritual instead of leading to decorative world.exit');
 });

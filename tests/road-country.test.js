@@ -13,7 +13,7 @@ import panorama from '../assets/game/pixel-v9/camp-panorama/manifest.json' with 
 import ruins from '../assets/game/pixel-v11/monastery-ruins/manifest.json' with { type: 'json' };
 
 const key = (x, y) => `${x},${y}`;
-const ROAD = { top: -29.5, bottom: -70.5 };
+const ROAD = { top: -41.5, bottom: -99.5 };
 const inRoad = p => p.y < ROAD.top && p.y >= ROAD.bottom;
 const layout = layoutLandscape(OVERWORLD);
 const roadProps = [...layout.border, ...layout.scenery].filter(p => inRoad(p.contact));
@@ -52,9 +52,10 @@ test('the road country is drawn only with the camp art: stone masses, cypresses,
     /^(grass|fern)-tuft/, /^ruin-(pillar|stump|fallen)/]) {
     assert.ok([...frames].some(frame => family.test(frame)), `missing ${family}`);
   }
+  // The cemetery's box took the road's east meadow and some of its stone.
   const stone = standing.filter(p => /^(outcrop|boulder)-/.test(p.frame)).length;
   const green = standing.filter(p => /^(cypress|bush)-/.test(p.frame)).length;
-  assert.ok(stone > 30 && green > 60, `stone ${stone}, green ${green}`);
+  assert.ok(stone > 25 && green > 60, `stone ${stone}, green ${green}`);
   // Stone gathers in masses and runs like the camp's, not as lone pebbles.
   const masses = standing.filter(p => /^outcrop-/.test(p.frame));
   const grouped = masses.filter(p => masses.some(q => q !== p && Math.hypot(q.contact.x - p.contact.x, q.contact.y - p.contact.y) < 4));
@@ -73,8 +74,8 @@ test('standing road props keep their whole drawn base off the walk mask, so move
   }
   // The road zone keeps the walk mask and colliders of LOCATIONS.road.
   const road = OVERWORLD.zones.find(zone => zone.id === 'road');
-  assert.deepEqual(road.tiles, LOCATIONS.road.tiles.map(p => ({ x: p.x, y: p.y - 51 })));
-  assert.deepEqual(road.obstacles, LOCATIONS.road.obstacles.map(o => ({ ...o, y: o.y - 51 })));
+  assert.deepEqual(road.tiles, LOCATIONS.road.tiles.map(p => ({ x: p.x, y: p.y - 72 })));
+  assert.deepEqual(road.obstacles, LOCATIONS.road.obstacles.map(o => ({ ...o, y: o.y - 72 })));
   assert.equal(OVERWORLD.obstacles.length, OVERWORLD.zones.reduce((sum, zone) => sum + zone.obstacles.length, 0));
 });
 
@@ -83,7 +84,8 @@ test('every road edge has a natural blocker beside it, with only short tufted ga
   for (const p of OVERWORLD.tiles) for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
     if (walk.has(key(p.x + dx, p.y + dy))) continue;
     const x = p.x + dx * .5, y = p.y + dy * .5;
-    if (!inRoad({ x, y })) continue;
+    // The cemetery marks its own edges (cemetery-layout.test.js).
+    if (!inRoad({ x, y }) || getOverworldZone(x, y).id !== 'road') continue;
     edges++;
     assert.ok(standing.some(q => pointGap(q.footprint, x, y) < 2.2), `bare edge at ${x},${y}`);
     if (standing.some(q => pointGap(q.footprint, x, y) < 1.2)) hedged++;
@@ -100,7 +102,7 @@ test('every encounter area, landmark and seam stays reachable on the real naviga
   const from = OVERWORLD.spawn;
   const packs = [...new Set(OVERWORLD.encounters.map(e => e.packId))].map(id => OVERWORLD.encounters.find(e => e.packId === id));
   const road = OVERWORLD.zones.find(zone => zone.id === 'road');
-  for (const point of [...packs, OVERWORLD.shrine, OVERWORLD.secret, { x: 0, y: -30 }, { x: 0, y: -70 }, ...road.pillars.map(p => ({ x: p.x + 1.4, y: p.y }))]) {
+  for (const point of [...packs, OVERWORLD.shrine, OVERWORLD.secret, { x: 0, y: -42 }, { x: 0, y: -99 }, ...road.pillars.map(p => ({ x: p.x + 1.4, y: p.y }))]) {
     const path = findPath(from, point, .29, OVERWORLD);
     assert.ok(path.length > 0, `no route to ${point.x},${point.y}`);
     assert.ok(Math.hypot(path.at(-1).x - point.x, path.at(-1).y - point.y) < 1.2);
@@ -111,17 +113,17 @@ test('every encounter area, landmark and seam stays reachable on the real naviga
 test('the road earth bends inside the walk mask and runs unbroken from the camp seam to the courtyard seam', () => {
   const road = OVERWORLD.zones.find(zone => zone.id === 'road'), paving = new Set(road.paving.map(p => key(p.x, p.y)));
   for (const p of road.paving) assert.ok(walk.has(key(p.x, p.y)) && isWalkable(p.x, p.y, Math.SQRT1_2, road));
-  const seen = new Set([key(0, -30)]), queue = [{ x: 0, y: -30 }];
+  const seen = new Set([key(0, -42)]), queue = [{ x: 0, y: -42 }];
   for (let i = 0; i < queue.length; i++) for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]]) {
     const next = { x: queue[i].x + dx, y: queue[i].y + dy };
     if (paving.has(key(next.x, next.y)) && !seen.has(key(next.x, next.y))) { seen.add(key(next.x, next.y)); queue.push(next); }
   }
-  for (const target of [[0, -70], [OVERWORLD.shrine.x, OVERWORLD.shrine.y], [OVERWORLD.secret.x, OVERWORLD.secret.y]]) {
+  for (const target of [[0, -99], [OVERWORLD.shrine.x, OVERWORLD.shrine.y], [OVERWORLD.secret.x, OVERWORLD.secret.y]]) {
     assert.ok([...seen].some(id => { const [x, y] = id.split(',').map(Number); return Math.hypot(x - target[0], y - target[1]) < 1.5; }), `${target}`);
   }
   // Not one straight strip: the centre of the worn earth moves across rows.
   const centres = new Set();
-  for (let y = -66; y <= -33; y++) {
+  for (let y = -94; y <= -47; y++) {
     const xs = road.paving.filter(p => p.y === y && Math.abs(p.x) < 4).map(p => p.x);
     if (xs.length) centres.add((Math.min(...xs) + Math.max(...xs)) / 2);
   }
@@ -130,7 +132,7 @@ test('the road earth bends inside the walk mask and runs unbroken from the camp 
 
 test('the camp meadow and packed earth cover the road and fade out only at the courtyard seam', t => {
   const { scene, assets } = harness(t);
-  for (const [world, enabled, seam] of [[OVERWORLD, true, -70.5], [LOCATIONS.road, true, -1e4], [LOCATIONS.courtyard, false, -1e4]]) {
+  for (const [world, enabled, seam] of [[OVERWORLD, true, -99.5], [LOCATIONS.road, true, -1e4], [LOCATIONS.courtyard, false, -1e4]]) {
     const built = buildPixelWorld(scene, assets, world), ground = built.landscape.groundMaterial;
     assert.deepEqual(ground.metadata.wanderer, { enabled, seam, below: enabled && world.zones ? 4.9 : 1, above: enabled && world.zones ? 4.5 : 1 });
     for (const name of ['campGrass', 'campEarth']) assert.ok(ground.hasTexture(assets[name].texture));
@@ -140,7 +142,7 @@ test('the camp meadow and packed earth cover the road and fade out only at the c
   const map = layout.surfaceMap, road = OVERWORLD.zones.find(zone => zone.id === 'road');
   const soil = (x, y) => map.data[(Math.floor((y - map.origin.y) * 8) * map.width + Math.floor((x - map.origin.x) * 8)) * 4 + 1] / 255;
   const paving = road.paving.map(p => key(p.x, p.y)), landmarks = [...road.pillars, ...road.braziers, road.shrine, road.secret];
-  const meadow = road.tiles.filter(p => p.y > -65 && !paving.some(id => { const [x, y] = id.split(',').map(Number); return Math.hypot(x - p.x, y - p.y) < 2.5; })
+  const meadow = road.tiles.filter(p => p.y > -94 && !paving.some(id => { const [x, y] = id.split(',').map(Number); return Math.hypot(x - p.x, y - p.y) < 2.5; })
     && landmarks.every(q => Math.hypot(q.x - p.x, q.y - p.y) > 2.5));
   assert.ok(meadow.length > 60);
   assert.ok(meadow.filter(p => soil(p.x, p.y) > .5).length / meadow.length < .05, 'no bare soil patches in the road meadow');
@@ -203,19 +205,32 @@ test('road props share the actors’ depth and fade when they hide the hero; tuf
     // A reachable spot straight up the screen from the prop, inside its drawing:
     // k world units along (-1,-1)/√2 rise k/2 screen units.
     const height = (232 - (panorama.opaqueBounds[p.frame]?.[1] ?? 0)) * p.scale / 32;
-    const behind = Array.from({ length: Math.floor(height * 4) }, (_, i) => (i + 1) * .5 * Math.SQRT1_2)
-      .map(k => ({ x: p.contact.x - k, y: p.contact.y - k })).filter(q => (Math.SQRT2 * (p.contact.x - q.x)) < height * 1.6)
-      .find(q => isWalkable(q.x, q.y, .23, LOCATIONS.road));
+    const candidates = Array.from({ length: Math.floor(height * 4) }, (_, i) => (i + 1) * .5 * Math.SQRT1_2)
+      .flatMap(k => [0, -.35, .35, -.7, .7].map(across => ({ x: p.contact.x - k - across, y: p.contact.y - k + across })))
+      .filter(q => (Math.SQRT2 * (p.contact.x - q.x)) < height * 1.6 && isWalkable(q.x, q.y, .23, LOCATIONS.road));
+    const behind = candidates.find(q => {
+      monk.mesh.position.set(q.x, .025, q.y);
+      renderer.updateOcclusion({ enemies: [] });
+      return sprite.material.alpha === .25;
+    });
     if (!behind) continue;
-    monk.mesh.position.set(behind.x, .025, behind.y);
-    renderer.updateOcclusion({ enemies: [] });
-    if (sprite.material.alpha !== .25) continue;
     faded++;
     monk.mesh.position.set(p.contact.x + 3, .025, p.contact.y + 3);
     renderer.updateOcclusion({ enemies: [] });
     assert.equal(sprite.material.alpha, 1, `${p.frame}: restore once the hero is in front`);
   }
   assert.ok(faded >= 2, `only ${faded} road props faded over the hero`);
+});
+
+test('the side zones widen the map without moving the road groves', () => {
+  // A grove's cluster id holds its lattice point x10; the lattice keeps the phase of the spine's
+  // extent (min x -59), so a grove far from the side zones stays where it was.
+  assert.ok(layout.extent.minX < -59);
+  const lattice = [...layout.border, ...layout.scenery].map(p => /^road-grove-(-?\d+),/.exec(p.cluster ?? '')).filter(Boolean);
+  assert.ok(lattice.length > 40);
+  for (const [, ix] of lattice) assert.equal(((Number(ix) + 590) % 12 + 12) % 12, 0, ix);
+  // Nothing of the road's country stands in a side zone's box.
+  assert.ok(roadProps.every(p => !getOverworldZone(p.contact.x, p.contact.y).area));
 });
 
 test('the road layout is deterministic and stops at both seams', () => {

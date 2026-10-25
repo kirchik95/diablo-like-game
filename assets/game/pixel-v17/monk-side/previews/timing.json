@@ -1,0 +1,1589 @@
+{
+  "idle/front/bare": {
+    "sheet": "previews/idle-front-bare.png",
+    "gif": "previews/idle-front-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      100.0,
+      200.0,
+      300.0,
+      400.0,
+      500.0,
+      600.0
+    ],
+    "durationMs": 800,
+    "hitTimeMs": null
+  },
+  "idle/front/knuckles": {
+    "sheet": "previews/idle-front-knuckles.png",
+    "gif": "previews/idle-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      100.0,
+      200.0,
+      300.0,
+      400.0,
+      500.0,
+      600.0
+    ],
+    "durationMs": 800,
+    "hitTimeMs": null
+  },
+  "idle/front/staff": {
+    "sheet": "previews/idle-front-staff.png",
+    "gif": "previews/idle-front-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      100.0,
+      200.0,
+      300.0,
+      400.0,
+      500.0,
+      600.0
+    ],
+    "durationMs": 800,
+    "hitTimeMs": null
+  },
+  "idle/back/bare": {
+    "sheet": "previews/idle-back-bare.png",
+    "gif": "previews/idle-back-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      100.0,
+      200.0,
+      300.0,
+      400.0,
+      500.0,
+      600.0
+    ],
+    "durationMs": 800,
+    "hitTimeMs": null
+  },
+  "idle/back/knuckles": {
+    "sheet": "previews/idle-back-knuckles.png",
+    "gif": "previews/idle-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      100.0,
+      200.0,
+      300.0,
+      400.0,
+      500.0,
+      600.0
+    ],
+    "durationMs": 800,
+    "hitTimeMs": null
+  },
+  "idle/back/staff": {
+    "sheet": "previews/idle-back-staff.png",
+    "gif": "previews/idle-back-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      100.0,
+      200.0,
+      300.0,
+      400.0,
+      500.0,
+      600.0
+    ],
+    "durationMs": 800,
+    "hitTimeMs": null
+  },
+  "idle/side/bare": {
+    "sheet": "previews/idle-side-bare.png",
+    "gif": "previews/idle-side-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      100.0,
+      200.0,
+      300.0,
+      400.0,
+      500.0,
+      600.0
+    ],
+    "durationMs": 800,
+    "hitTimeMs": null
+  },
+  "idle/side/knuckles": {
+    "sheet": "previews/idle-side-knuckles.png",
+    "gif": "previews/idle-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      100.0,
+      200.0,
+      300.0,
+      400.0,
+      500.0,
+      600.0
+    ],
+    "durationMs": 800,
+    "hitTimeMs": null
+  },
+  "idle/side/staff": {
+    "sheet": "previews/idle-side-staff.png",
+    "gif": "previews/idle-side-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      100.0,
+      200.0,
+      300.0,
+      400.0,
+      500.0,
+      600.0
+    ],
+    "durationMs": 800,
+    "hitTimeMs": null
+  },
+  "run/front/bare": {
+    "sheet": "previews/run-front-bare.png",
+    "gif": "previews/run-front-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      51.851852,
+      103.703704,
+      207.407407,
+      259.259259,
+      311.111111,
+      414.814815,
+      518.518518
+    ],
+    "durationMs": 622.222222,
+    "hitTimeMs": null
+  },
+  "run/front/knuckles": {
+    "sheet": "previews/run-front-knuckles.png",
+    "gif": "previews/run-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      51.851852,
+      103.703704,
+      207.407407,
+      259.259259,
+      311.111111,
+      414.814815,
+      518.518518
+    ],
+    "durationMs": 622.222222,
+    "hitTimeMs": null
+  },
+  "run/front/staff": {
+    "sheet": "previews/run-front-staff.png",
+    "gif": "previews/run-front-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      51.851852,
+      103.703704,
+      207.407407,
+      259.259259,
+      311.111111,
+      414.814815,
+      518.518518
+    ],
+    "durationMs": 622.222222,
+    "hitTimeMs": null
+  },
+  "run/back/bare": {
+    "sheet": "previews/run-back-bare.png",
+    "gif": "previews/run-back-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      51.851852,
+      103.703704,
+      207.407407,
+      259.259259,
+      311.111111,
+      414.814815,
+      518.518518
+    ],
+    "durationMs": 622.222222,
+    "hitTimeMs": null
+  },
+  "run/back/knuckles": {
+    "sheet": "previews/run-back-knuckles.png",
+    "gif": "previews/run-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      51.851852,
+      103.703704,
+      207.407407,
+      259.259259,
+      311.111111,
+      414.814815,
+      518.518518
+    ],
+    "durationMs": 622.222222,
+    "hitTimeMs": null
+  },
+  "run/back/staff": {
+    "sheet": "previews/run-back-staff.png",
+    "gif": "previews/run-back-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      51.851852,
+      103.703704,
+      207.407407,
+      259.259259,
+      311.111111,
+      414.814815,
+      518.518518
+    ],
+    "durationMs": 622.222222,
+    "hitTimeMs": null
+  },
+  "run/side/bare": {
+    "sheet": "previews/run-side-bare.png",
+    "gif": "previews/run-side-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      51.851852,
+      103.703704,
+      207.407407,
+      259.259259,
+      311.111111,
+      414.814815,
+      518.518518
+    ],
+    "durationMs": 622.222222,
+    "hitTimeMs": null
+  },
+  "run/side/knuckles": {
+    "sheet": "previews/run-side-knuckles.png",
+    "gif": "previews/run-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      51.851852,
+      103.703704,
+      207.407407,
+      259.259259,
+      311.111111,
+      414.814815,
+      518.518518
+    ],
+    "durationMs": 622.222222,
+    "hitTimeMs": null
+  },
+  "run/side/staff": {
+    "sheet": "previews/run-side-staff.png",
+    "gif": "previews/run-side-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      51.851852,
+      103.703704,
+      207.407407,
+      259.259259,
+      311.111111,
+      414.814815,
+      518.518518
+    ],
+    "durationMs": 622.222222,
+    "hitTimeMs": null
+  },
+  "attack1/front/bare": {
+    "sheet": "previews/attack1-front-bare.png",
+    "gif": "previews/attack1-front-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      22.5,
+      45.0,
+      67.5,
+      90.0,
+      122.5,
+      168.0,
+      203.333333
+    ],
+    "durationMs": 220,
+    "hitTimeMs": 90
+  },
+  "attack1/front/knuckles": {
+    "sheet": "previews/attack1-front-knuckles.png",
+    "gif": "previews/attack1-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      22.5,
+      45.0,
+      67.5,
+      90.0,
+      122.5,
+      168.0,
+      203.333333
+    ],
+    "durationMs": 220,
+    "hitTimeMs": 90
+  },
+  "attack1/front/staff": {
+    "sheet": "previews/attack1-front-staff.png",
+    "gif": "previews/attack1-front-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      22.5,
+      45.0,
+      67.5,
+      90.0,
+      122.5,
+      168.0,
+      203.333333
+    ],
+    "durationMs": 220,
+    "hitTimeMs": 90
+  },
+  "attack1/back/bare": {
+    "sheet": "previews/attack1-back-bare.png",
+    "gif": "previews/attack1-back-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      22.5,
+      45.0,
+      67.5,
+      90.0,
+      122.5,
+      168.0,
+      203.333333
+    ],
+    "durationMs": 220,
+    "hitTimeMs": 90
+  },
+  "attack1/back/knuckles": {
+    "sheet": "previews/attack1-back-knuckles.png",
+    "gif": "previews/attack1-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      22.5,
+      45.0,
+      67.5,
+      90.0,
+      122.5,
+      168.0,
+      203.333333
+    ],
+    "durationMs": 220,
+    "hitTimeMs": 90
+  },
+  "attack1/back/staff": {
+    "sheet": "previews/attack1-back-staff.png",
+    "gif": "previews/attack1-back-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      22.5,
+      45.0,
+      67.5,
+      90.0,
+      122.5,
+      168.0,
+      203.333333
+    ],
+    "durationMs": 220,
+    "hitTimeMs": 90
+  },
+  "attack1/side/bare": {
+    "sheet": "previews/attack1-side-bare.png",
+    "gif": "previews/attack1-side-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      22.5,
+      45.0,
+      67.5,
+      90.0,
+      122.5,
+      168.0,
+      203.333333
+    ],
+    "durationMs": 220,
+    "hitTimeMs": 90
+  },
+  "attack1/side/knuckles": {
+    "sheet": "previews/attack1-side-knuckles.png",
+    "gif": "previews/attack1-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      22.5,
+      45.0,
+      67.5,
+      90.0,
+      122.5,
+      168.0,
+      203.333333
+    ],
+    "durationMs": 220,
+    "hitTimeMs": 90
+  },
+  "attack1/side/staff": {
+    "sheet": "previews/attack1-side-staff.png",
+    "gif": "previews/attack1-side-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      22.5,
+      45.0,
+      67.5,
+      90.0,
+      122.5,
+      168.0,
+      203.333333
+    ],
+    "durationMs": 220,
+    "hitTimeMs": 90
+  },
+  "attack2/front/bare": {
+    "sheet": "previews/attack2-front-bare.png",
+    "gif": "previews/attack2-front-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      110.0,
+      126.25,
+      142.5,
+      188.0,
+      223.333333
+    ],
+    "durationMs": 240,
+    "hitTimeMs": 110
+  },
+  "attack2/front/knuckles": {
+    "sheet": "previews/attack2-front-knuckles.png",
+    "gif": "previews/attack2-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      110.0,
+      126.25,
+      142.5,
+      188.0,
+      223.333333
+    ],
+    "durationMs": 240,
+    "hitTimeMs": 110
+  },
+  "attack2/front/staff": {
+    "sheet": "previews/attack2-front-staff.png",
+    "gif": "previews/attack2-front-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      110.0,
+      126.25,
+      142.5,
+      188.0,
+      223.333333
+    ],
+    "durationMs": 240,
+    "hitTimeMs": 110
+  },
+  "attack2/back/bare": {
+    "sheet": "previews/attack2-back-bare.png",
+    "gif": "previews/attack2-back-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      110.0,
+      126.25,
+      142.5,
+      188.0,
+      223.333333
+    ],
+    "durationMs": 240,
+    "hitTimeMs": 110
+  },
+  "attack2/back/knuckles": {
+    "sheet": "previews/attack2-back-knuckles.png",
+    "gif": "previews/attack2-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      110.0,
+      126.25,
+      142.5,
+      188.0,
+      223.333333
+    ],
+    "durationMs": 240,
+    "hitTimeMs": 110
+  },
+  "attack2/back/staff": {
+    "sheet": "previews/attack2-back-staff.png",
+    "gif": "previews/attack2-back-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      110.0,
+      126.25,
+      142.5,
+      188.0,
+      223.333333
+    ],
+    "durationMs": 240,
+    "hitTimeMs": 110
+  },
+  "attack2/side/bare": {
+    "sheet": "previews/attack2-side-bare.png",
+    "gif": "previews/attack2-side-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      110.0,
+      126.25,
+      142.5,
+      188.0,
+      223.333333
+    ],
+    "durationMs": 240,
+    "hitTimeMs": 110
+  },
+  "attack2/side/knuckles": {
+    "sheet": "previews/attack2-side-knuckles.png",
+    "gif": "previews/attack2-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      110.0,
+      126.25,
+      142.5,
+      188.0,
+      223.333333
+    ],
+    "durationMs": 240,
+    "hitTimeMs": 110
+  },
+  "attack2/side/staff": {
+    "sheet": "previews/attack2-side-staff.png",
+    "gif": "previews/attack2-side-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      110.0,
+      126.25,
+      142.5,
+      188.0,
+      223.333333
+    ],
+    "durationMs": 240,
+    "hitTimeMs": 110
+  },
+  "attack3/front/bare": {
+    "sheet": "previews/attack3-front-bare.png",
+    "gif": "previews/attack3-front-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      80.0,
+      160.0,
+      178.75,
+      197.5,
+      223.75,
+      250.0,
+      293.333333
+    ],
+    "durationMs": 310,
+    "hitTimeMs": 160
+  },
+  "attack3/front/knuckles": {
+    "sheet": "previews/attack3-front-knuckles.png",
+    "gif": "previews/attack3-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      80.0,
+      160.0,
+      178.75,
+      197.5,
+      223.75,
+      250.0,
+      293.333333
+    ],
+    "durationMs": 310,
+    "hitTimeMs": 160
+  },
+  "attack3/front/staff": {
+    "sheet": "previews/attack3-front-staff.png",
+    "gif": "previews/attack3-front-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      80.0,
+      160.0,
+      178.75,
+      197.5,
+      223.75,
+      250.0,
+      293.333333
+    ],
+    "durationMs": 310,
+    "hitTimeMs": 160
+  },
+  "attack3/back/bare": {
+    "sheet": "previews/attack3-back-bare.png",
+    "gif": "previews/attack3-back-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      80.0,
+      160.0,
+      178.75,
+      197.5,
+      223.75,
+      250.0,
+      293.333333
+    ],
+    "durationMs": 310,
+    "hitTimeMs": 160
+  },
+  "attack3/back/knuckles": {
+    "sheet": "previews/attack3-back-knuckles.png",
+    "gif": "previews/attack3-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      80.0,
+      160.0,
+      178.75,
+      197.5,
+      223.75,
+      250.0,
+      293.333333
+    ],
+    "durationMs": 310,
+    "hitTimeMs": 160
+  },
+  "attack3/back/staff": {
+    "sheet": "previews/attack3-back-staff.png",
+    "gif": "previews/attack3-back-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      80.0,
+      160.0,
+      178.75,
+      197.5,
+      223.75,
+      250.0,
+      293.333333
+    ],
+    "durationMs": 310,
+    "hitTimeMs": 160
+  },
+  "attack3/side/bare": {
+    "sheet": "previews/attack3-side-bare.png",
+    "gif": "previews/attack3-side-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      80.0,
+      160.0,
+      178.75,
+      197.5,
+      223.75,
+      250.0,
+      293.333333
+    ],
+    "durationMs": 310,
+    "hitTimeMs": 160
+  },
+  "attack3/side/knuckles": {
+    "sheet": "previews/attack3-side-knuckles.png",
+    "gif": "previews/attack3-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      80.0,
+      160.0,
+      178.75,
+      197.5,
+      223.75,
+      250.0,
+      293.333333
+    ],
+    "durationMs": 310,
+    "hitTimeMs": 160
+  },
+  "attack3/side/staff": {
+    "sheet": "previews/attack3-side-staff.png",
+    "gif": "previews/attack3-side-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      80.0,
+      160.0,
+      178.75,
+      197.5,
+      223.75,
+      250.0,
+      293.333333
+    ],
+    "durationMs": 310,
+    "hitTimeMs": 160
+  },
+  "dash/front/bare": {
+    "sheet": "previews/dash-front-bare.png",
+    "gif": "previews/dash-front-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      33.333333,
+      50.0,
+      66.666667,
+      83.333333,
+      100.0,
+      133.333333,
+      166.666667
+    ],
+    "durationMs": 200,
+    "hitTimeMs": null
+  },
+  "dash/front/knuckles": {
+    "sheet": "previews/dash-front-knuckles.png",
+    "gif": "previews/dash-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      33.333333,
+      50.0,
+      66.666667,
+      83.333333,
+      100.0,
+      133.333333,
+      166.666667
+    ],
+    "durationMs": 200,
+    "hitTimeMs": null
+  },
+  "dash/front/staff": {
+    "sheet": "previews/dash-front-staff.png",
+    "gif": "previews/dash-front-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      33.333333,
+      50.0,
+      66.666667,
+      83.333333,
+      100.0,
+      133.333333,
+      166.666667
+    ],
+    "durationMs": 200,
+    "hitTimeMs": null
+  },
+  "dash/back/bare": {
+    "sheet": "previews/dash-back-bare.png",
+    "gif": "previews/dash-back-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      33.333333,
+      50.0,
+      66.666667,
+      83.333333,
+      100.0,
+      133.333333,
+      166.666667
+    ],
+    "durationMs": 200,
+    "hitTimeMs": null
+  },
+  "dash/back/knuckles": {
+    "sheet": "previews/dash-back-knuckles.png",
+    "gif": "previews/dash-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      33.333333,
+      50.0,
+      66.666667,
+      83.333333,
+      100.0,
+      133.333333,
+      166.666667
+    ],
+    "durationMs": 200,
+    "hitTimeMs": null
+  },
+  "dash/back/staff": {
+    "sheet": "previews/dash-back-staff.png",
+    "gif": "previews/dash-back-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      33.333333,
+      50.0,
+      66.666667,
+      83.333333,
+      100.0,
+      133.333333,
+      166.666667
+    ],
+    "durationMs": 200,
+    "hitTimeMs": null
+  },
+  "dash/side/bare": {
+    "sheet": "previews/dash-side-bare.png",
+    "gif": "previews/dash-side-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      33.333333,
+      50.0,
+      66.666667,
+      83.333333,
+      100.0,
+      133.333333,
+      166.666667
+    ],
+    "durationMs": 200,
+    "hitTimeMs": null
+  },
+  "dash/side/knuckles": {
+    "sheet": "previews/dash-side-knuckles.png",
+    "gif": "previews/dash-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      33.333333,
+      50.0,
+      66.666667,
+      83.333333,
+      100.0,
+      133.333333,
+      166.666667
+    ],
+    "durationMs": 200,
+    "hitTimeMs": null
+  },
+  "dash/side/staff": {
+    "sheet": "previews/dash-side-staff.png",
+    "gif": "previews/dash-side-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      33.333333,
+      50.0,
+      66.666667,
+      83.333333,
+      100.0,
+      133.333333,
+      166.666667
+    ],
+    "durationMs": 200,
+    "hitTimeMs": null
+  },
+  "wave/front/bare": {
+    "sheet": "previews/wave-front-bare.png",
+    "gif": "previews/wave-front-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      41.666667,
+      83.333333,
+      166.666667,
+      208.333333,
+      250.0,
+      333.333333,
+      416.666667
+    ],
+    "durationMs": 500,
+    "hitTimeMs": null
+  },
+  "wave/front/knuckles": {
+    "sheet": "previews/wave-front-knuckles.png",
+    "gif": "previews/wave-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      41.666667,
+      83.333333,
+      166.666667,
+      208.333333,
+      250.0,
+      333.333333,
+      416.666667
+    ],
+    "durationMs": 500,
+    "hitTimeMs": null
+  },
+  "wave/front/staff": {
+    "sheet": "previews/wave-front-staff.png",
+    "gif": "previews/wave-front-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      41.666667,
+      83.333333,
+      166.666667,
+      208.333333,
+      250.0,
+      333.333333,
+      416.666667
+    ],
+    "durationMs": 500,
+    "hitTimeMs": null
+  },
+  "wave/back/bare": {
+    "sheet": "previews/wave-back-bare.png",
+    "gif": "previews/wave-back-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      41.666667,
+      83.333333,
+      166.666667,
+      208.333333,
+      250.0,
+      333.333333,
+      416.666667
+    ],
+    "durationMs": 500,
+    "hitTimeMs": null
+  },
+  "wave/back/knuckles": {
+    "sheet": "previews/wave-back-knuckles.png",
+    "gif": "previews/wave-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      41.666667,
+      83.333333,
+      166.666667,
+      208.333333,
+      250.0,
+      333.333333,
+      416.666667
+    ],
+    "durationMs": 500,
+    "hitTimeMs": null
+  },
+  "wave/back/staff": {
+    "sheet": "previews/wave-back-staff.png",
+    "gif": "previews/wave-back-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      41.666667,
+      83.333333,
+      166.666667,
+      208.333333,
+      250.0,
+      333.333333,
+      416.666667
+    ],
+    "durationMs": 500,
+    "hitTimeMs": null
+  },
+  "wave/side/bare": {
+    "sheet": "previews/wave-side-bare.png",
+    "gif": "previews/wave-side-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      41.666667,
+      83.333333,
+      166.666667,
+      208.333333,
+      250.0,
+      333.333333,
+      416.666667
+    ],
+    "durationMs": 500,
+    "hitTimeMs": null
+  },
+  "wave/side/knuckles": {
+    "sheet": "previews/wave-side-knuckles.png",
+    "gif": "previews/wave-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      41.666667,
+      83.333333,
+      166.666667,
+      208.333333,
+      250.0,
+      333.333333,
+      416.666667
+    ],
+    "durationMs": 500,
+    "hitTimeMs": null
+  },
+  "wave/side/staff": {
+    "sheet": "previews/wave-side-staff.png",
+    "gif": "previews/wave-side-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      41.666667,
+      83.333333,
+      166.666667,
+      208.333333,
+      250.0,
+      333.333333,
+      416.666667
+    ],
+    "durationMs": 500,
+    "hitTimeMs": null
+  },
+  "hurt/front/bare": {
+    "sheet": "previews/hurt-front-bare.png",
+    "gif": "previews/hurt-front-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      82.5,
+      110.0,
+      165.0
+    ],
+    "durationMs": 220,
+    "hitTimeMs": null
+  },
+  "hurt/front/knuckles": {
+    "sheet": "previews/hurt-front-knuckles.png",
+    "gif": "previews/hurt-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      82.5,
+      110.0,
+      165.0
+    ],
+    "durationMs": 220,
+    "hitTimeMs": null
+  },
+  "hurt/front/staff": {
+    "sheet": "previews/hurt-front-staff.png",
+    "gif": "previews/hurt-front-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      82.5,
+      110.0,
+      165.0
+    ],
+    "durationMs": 220,
+    "hitTimeMs": null
+  },
+  "hurt/back/bare": {
+    "sheet": "previews/hurt-back-bare.png",
+    "gif": "previews/hurt-back-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      82.5,
+      110.0,
+      165.0
+    ],
+    "durationMs": 220,
+    "hitTimeMs": null
+  },
+  "hurt/back/knuckles": {
+    "sheet": "previews/hurt-back-knuckles.png",
+    "gif": "previews/hurt-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      82.5,
+      110.0,
+      165.0
+    ],
+    "durationMs": 220,
+    "hitTimeMs": null
+  },
+  "hurt/back/staff": {
+    "sheet": "previews/hurt-back-staff.png",
+    "gif": "previews/hurt-back-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      82.5,
+      110.0,
+      165.0
+    ],
+    "durationMs": 220,
+    "hitTimeMs": null
+  },
+  "hurt/side/bare": {
+    "sheet": "previews/hurt-side-bare.png",
+    "gif": "previews/hurt-side-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      82.5,
+      110.0,
+      165.0
+    ],
+    "durationMs": 220,
+    "hitTimeMs": null
+  },
+  "hurt/side/knuckles": {
+    "sheet": "previews/hurt-side-knuckles.png",
+    "gif": "previews/hurt-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      82.5,
+      110.0,
+      165.0
+    ],
+    "durationMs": 220,
+    "hitTimeMs": null
+  },
+  "hurt/side/staff": {
+    "sheet": "previews/hurt-side-staff.png",
+    "gif": "previews/hurt-side-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      27.5,
+      55.0,
+      82.5,
+      110.0,
+      165.0
+    ],
+    "durationMs": 220,
+    "hitTimeMs": null
+  },
+  "death/front/bare": {
+    "sheet": "previews/death-front-bare.png",
+    "gif": "previews/death-front-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      150.0,
+      300.0,
+      450.0,
+      600.0,
+      750.0
+    ],
+    "durationMs": 900,
+    "hitTimeMs": null
+  },
+  "death/front/knuckles": {
+    "sheet": "previews/death-front-knuckles.png",
+    "gif": "previews/death-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      150.0,
+      300.0,
+      450.0,
+      600.0,
+      750.0
+    ],
+    "durationMs": 900,
+    "hitTimeMs": null
+  },
+  "death/front/staff": {
+    "sheet": "previews/death-front-staff.png",
+    "gif": "previews/death-front-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      150.0,
+      300.0,
+      450.0,
+      600.0,
+      750.0
+    ],
+    "durationMs": 900,
+    "hitTimeMs": null
+  },
+  "death/back/bare": {
+    "sheet": "previews/death-back-bare.png",
+    "gif": "previews/death-back-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      150.0,
+      300.0,
+      450.0,
+      600.0,
+      750.0
+    ],
+    "durationMs": 900,
+    "hitTimeMs": null
+  },
+  "death/back/knuckles": {
+    "sheet": "previews/death-back-knuckles.png",
+    "gif": "previews/death-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      150.0,
+      300.0,
+      450.0,
+      600.0,
+      750.0
+    ],
+    "durationMs": 900,
+    "hitTimeMs": null
+  },
+  "death/back/staff": {
+    "sheet": "previews/death-back-staff.png",
+    "gif": "previews/death-back-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      150.0,
+      300.0,
+      450.0,
+      600.0,
+      750.0
+    ],
+    "durationMs": 900,
+    "hitTimeMs": null
+  },
+  "death/side/bare": {
+    "sheet": "previews/death-side-bare.png",
+    "gif": "previews/death-side-bare.gif",
+    "frameTimesMs": [
+      0.0,
+      150.0,
+      300.0,
+      450.0,
+      600.0,
+      750.0
+    ],
+    "durationMs": 900,
+    "hitTimeMs": null
+  },
+  "death/side/knuckles": {
+    "sheet": "previews/death-side-knuckles.png",
+    "gif": "previews/death-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      150.0,
+      300.0,
+      450.0,
+      600.0,
+      750.0
+    ],
+    "durationMs": 900,
+    "hitTimeMs": null
+  },
+  "death/side/staff": {
+    "sheet": "previews/death-side-staff.png",
+    "gif": "previews/death-side-staff.gif",
+    "frameTimesMs": [
+      0.0,
+      150.0,
+      300.0,
+      450.0,
+      600.0,
+      750.0
+    ],
+    "durationMs": 900,
+    "hitTimeMs": null
+  },
+  "knuckleStrike1/front/knuckles": {
+    "sheet": "previews/knuckleStrike1-front-knuckles.png",
+    "gif": "previews/knuckleStrike1-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      15.0,
+      30.0,
+      45.0,
+      60.0,
+      82.5,
+      114.0,
+      133.333333
+    ],
+    "durationMs": 150,
+    "hitTimeMs": 60
+  },
+  "knuckleStrike1/back/knuckles": {
+    "sheet": "previews/knuckleStrike1-back-knuckles.png",
+    "gif": "previews/knuckleStrike1-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      15.0,
+      30.0,
+      45.0,
+      60.0,
+      82.5,
+      114.0,
+      133.333333
+    ],
+    "durationMs": 150,
+    "hitTimeMs": 60
+  },
+  "knuckleStrike1/side/knuckles": {
+    "sheet": "previews/knuckleStrike1-side-knuckles.png",
+    "gif": "previews/knuckleStrike1-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      15.0,
+      30.0,
+      45.0,
+      60.0,
+      82.5,
+      114.0,
+      133.333333
+    ],
+    "durationMs": 150,
+    "hitTimeMs": 60
+  },
+  "knuckleStrike2/front/knuckles": {
+    "sheet": "previews/knuckleStrike2-front-knuckles.png",
+    "gif": "previews/knuckleStrike2-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      15.0,
+      30.0,
+      60.0,
+      71.25,
+      82.5,
+      114.0,
+      133.333333
+    ],
+    "durationMs": 150,
+    "hitTimeMs": 60
+  },
+  "knuckleStrike2/back/knuckles": {
+    "sheet": "previews/knuckleStrike2-back-knuckles.png",
+    "gif": "previews/knuckleStrike2-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      15.0,
+      30.0,
+      60.0,
+      71.25,
+      82.5,
+      114.0,
+      133.333333
+    ],
+    "durationMs": 150,
+    "hitTimeMs": 60
+  },
+  "knuckleStrike2/side/knuckles": {
+    "sheet": "previews/knuckleStrike2-side-knuckles.png",
+    "gif": "previews/knuckleStrike2-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      15.0,
+      30.0,
+      60.0,
+      71.25,
+      82.5,
+      114.0,
+      133.333333
+    ],
+    "durationMs": 150,
+    "hitTimeMs": 60
+  },
+  "knuckleStrike3/front/knuckles": {
+    "sheet": "previews/knuckleStrike3-front-knuckles.png",
+    "gif": "previews/knuckleStrike3-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      40.0,
+      80.0,
+      91.25,
+      102.5,
+      118.25,
+      134.0,
+      153.333333
+    ],
+    "durationMs": 170,
+    "hitTimeMs": 80
+  },
+  "knuckleStrike3/back/knuckles": {
+    "sheet": "previews/knuckleStrike3-back-knuckles.png",
+    "gif": "previews/knuckleStrike3-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      40.0,
+      80.0,
+      91.25,
+      102.5,
+      118.25,
+      134.0,
+      153.333333
+    ],
+    "durationMs": 170,
+    "hitTimeMs": 80
+  },
+  "knuckleStrike3/side/knuckles": {
+    "sheet": "previews/knuckleStrike3-side-knuckles.png",
+    "gif": "previews/knuckleStrike3-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      40.0,
+      80.0,
+      91.25,
+      102.5,
+      118.25,
+      134.0,
+      153.333333
+    ],
+    "durationMs": 170,
+    "hitTimeMs": 80
+  },
+  "knuckleStrike4/front/knuckles": {
+    "sheet": "previews/knuckleStrike4-front-knuckles.png",
+    "gif": "previews/knuckleStrike4-front-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      32.5,
+      65.0,
+      130.0,
+      147.5,
+      165.0,
+      214.0,
+      253.333333
+    ],
+    "durationMs": 270,
+    "hitTimeMs": 130
+  },
+  "knuckleStrike4/back/knuckles": {
+    "sheet": "previews/knuckleStrike4-back-knuckles.png",
+    "gif": "previews/knuckleStrike4-back-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      32.5,
+      65.0,
+      130.0,
+      147.5,
+      165.0,
+      214.0,
+      253.333333
+    ],
+    "durationMs": 270,
+    "hitTimeMs": 130
+  },
+  "knuckleStrike4/side/knuckles": {
+    "sheet": "previews/knuckleStrike4-side-knuckles.png",
+    "gif": "previews/knuckleStrike4-side-knuckles.gif",
+    "frameTimesMs": [
+      0.0,
+      32.5,
+      65.0,
+      130.0,
+      147.5,
+      165.0,
+      214.0,
+      253.333333
+    ],
+    "durationMs": 270,
+    "hitTimeMs": 130
+  },
+  "staffAttack1/front/staffAttacks": {
+    "sheet": "previews/staffAttack1-front-staffAttacks.png",
+    "gif": "previews/staffAttack1-front-staffAttacks.gif",
+    "frameTimesMs": [
+      0.0,
+      32.5,
+      65.0,
+      130.0,
+      151.25,
+      172.5,
+      232.0,
+      283.333333
+    ],
+    "durationMs": 300,
+    "hitTimeMs": 130
+  },
+  "staffAttack1/back/staffAttacks": {
+    "sheet": "previews/staffAttack1-back-staffAttacks.png",
+    "gif": "previews/staffAttack1-back-staffAttacks.gif",
+    "frameTimesMs": [
+      0.0,
+      32.5,
+      65.0,
+      130.0,
+      151.25,
+      172.5,
+      232.0,
+      283.333333
+    ],
+    "durationMs": 300,
+    "hitTimeMs": 130
+  },
+  "staffAttack1/side/staffAttacks": {
+    "sheet": "previews/staffAttack1-side-staffAttacks.png",
+    "gif": "previews/staffAttack1-side-staffAttacks.gif",
+    "frameTimesMs": [
+      0.0,
+      32.5,
+      65.0,
+      130.0,
+      151.25,
+      172.5,
+      232.0,
+      283.333333
+    ],
+    "durationMs": 300,
+    "hitTimeMs": 130
+  },
+  "staffAttack2/front/staffAttacks": {
+    "sheet": "previews/staffAttack2-front-staffAttacks.png",
+    "gif": "previews/staffAttack2-front-staffAttacks.gif",
+    "frameTimesMs": [
+      0.0,
+      35.0,
+      70.0,
+      140.0,
+      162.5,
+      185.0,
+      248.0,
+      303.333333
+    ],
+    "durationMs": 320,
+    "hitTimeMs": 140
+  },
+  "staffAttack2/back/staffAttacks": {
+    "sheet": "previews/staffAttack2-back-staffAttacks.png",
+    "gif": "previews/staffAttack2-back-staffAttacks.gif",
+    "frameTimesMs": [
+      0.0,
+      35.0,
+      70.0,
+      140.0,
+      162.5,
+      185.0,
+      248.0,
+      303.333333
+    ],
+    "durationMs": 320,
+    "hitTimeMs": 140
+  },
+  "staffAttack2/side/staffAttacks": {
+    "sheet": "previews/staffAttack2-side-staffAttacks.png",
+    "gif": "previews/staffAttack2-side-staffAttacks.gif",
+    "frameTimesMs": [
+      0.0,
+      35.0,
+      70.0,
+      140.0,
+      162.5,
+      185.0,
+      248.0,
+      303.333333
+    ],
+    "durationMs": 320,
+    "hitTimeMs": 140
+  },
+  "staffAttack3/front/staffAttacks": {
+    "sheet": "previews/staffAttack3-front-staffAttacks.png",
+    "gif": "previews/staffAttack3-front-staffAttacks.gif",
+    "frameTimesMs": [
+      0.0,
+      55.0,
+      110.0,
+      220.0,
+      247.5,
+      275.0,
+      352.0,
+      423.333333
+    ],
+    "durationMs": 440,
+    "hitTimeMs": 220
+  },
+  "staffAttack3/back/staffAttacks": {
+    "sheet": "previews/staffAttack3-back-staffAttacks.png",
+    "gif": "previews/staffAttack3-back-staffAttacks.gif",
+    "frameTimesMs": [
+      0.0,
+      55.0,
+      110.0,
+      220.0,
+      247.5,
+      275.0,
+      352.0,
+      423.333333
+    ],
+    "durationMs": 440,
+    "hitTimeMs": 220
+  },
+  "staffAttack3/side/staffAttacks": {
+    "sheet": "previews/staffAttack3-side-staffAttacks.png",
+    "gif": "previews/staffAttack3-side-staffAttacks.gif",
+    "frameTimesMs": [
+      0.0,
+      55.0,
+      110.0,
+      220.0,
+      247.5,
+      275.0,
+      352.0,
+      423.333333
+    ],
+    "durationMs": 440,
+    "hitTimeMs": 220
+  }
+}

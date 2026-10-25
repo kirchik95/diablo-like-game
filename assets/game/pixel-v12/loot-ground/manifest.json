@@ -1,0 +1,1041 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "nativePixelsPerUnit": 32,
+  "lootGround": {
+    "path": "loot-ground.png",
+    "frameSize": [
+      48,
+      48
+    ],
+    "columns": 8,
+    "rows": 4,
+    "anchor": [
+      24,
+      34
+    ],
+    "filter": "nearest",
+    "mipmaps": false,
+    "frames": [
+      "item-novice-knuckles",
+      "item-bronze-knuckles",
+      "item-pilgrim-knuckles",
+      "item-novice-staff",
+      "item-ash-staff",
+      "item-pilgrim-staff",
+      "item-quiet-thunder",
+      "item-crane-neck",
+      "shadow-novice-knuckles",
+      "shadow-bronze-knuckles",
+      "shadow-pilgrim-knuckles",
+      "shadow-novice-staff",
+      "shadow-ash-staff",
+      "shadow-pilgrim-staff",
+      "shadow-quiet-thunder",
+      "shadow-crane-neck",
+      "ring-common-0",
+      "ring-common-1",
+      "ring-rare-0",
+      "ring-rare-1",
+      "ring-relic-0",
+      "ring-relic-1",
+      "glint-0",
+      "glint-1",
+      "beam-common-0",
+      "beam-common-1",
+      "beam-rare-0",
+      "beam-rare-1",
+      "beam-relic-0",
+      "beam-relic-1"
+    ]
+  },
+  "campSupplies": {
+    "path": "camp-supplies.png",
+    "frameSize": [
+      72,
+      52
+    ],
+    "columns": 2,
+    "rows": 1,
+    "anchor": [
+      36,
+      28
+    ],
+    "filter": "nearest",
+    "mipmaps": false,
+    "frames": [
+      "camp-supplies",
+      "camp-supplies-empty"
+    ],
+    "full": "camp-supplies",
+    "empty": "camp-supplies-empty"
+  },
+  "weapons": {
+    "novice-knuckles": "item-novice-knuckles",
+    "bronze-knuckles": "item-bronze-knuckles",
+    "pilgrim-knuckles": "item-pilgrim-knuckles",
+    "novice-staff": "item-novice-staff",
+    "ash-staff": "item-ash-staff",
+    "pilgrim-staff": "item-pilgrim-staff"
+  },
+  "relics": {
+    "quiet-thunder": "item-quiet-thunder",
+    "crane-neck": "item-crane-neck"
+  },
+  "rarity": {
+    "common": {
+      "token": "--ivory",
+      "color": "#eee0ce",
+      "ramp": [
+        "#fff7e4",
+        "#eee0ce",
+        "#b4aaba"
+      ],
+      "ring": [
+        "ring-common-0",
+        "ring-common-1"
+      ],
+      "beam": [
+        "beam-common-0",
+        "beam-common-1"
+      ],
+      "beamHeight": 14
+    },
+    "rare": {
+      "token": "--spirit",
+      "color": "#6dd6cb",
+      "ramp": [
+        "#e4fff5",
+        "#6dd6cb",
+        "#397c85"
+      ],
+      "ring": [
+        "ring-rare-0",
+        "ring-rare-1"
+      ],
+      "beam": [
+        "beam-rare-0",
+        "beam-rare-1"
+      ],
+      "beamHeight": 24
+    },
+    "relic": {
+      "token": "--amber",
+      "color": "#e5b66e",
+      "ramp": [
+        "#fff1cf",
+        "#e5b66e",
+        "#8f734f"
+      ],
+      "ring": [
+        "ring-relic-0",
+        "ring-relic-1"
+      ],
+      "beam": [
+        "beam-relic-0",
+        "beam-relic-1"
+      ],
+      "beamHeight": 28
+    }
+  },
+  "glint": [
+    "glint-0",
+    "glint-1"
+  ],
+  "stack": [
+    "ring",
+    "shadow",
+    "beam",
+    "item",
+    "glint"
+  ],
+  "shadow": {
+    "color": "#141223",
+    "drawAlpha": 0.4
+  },
+  "timing": {
+    "ringStepSeconds": 0.5,
+    "beamStepSeconds": 0.3,
+    "glintEverySeconds": 2,
+    "glintSeconds": 0.16
+  },
+  "frames": {
+    "item-novice-knuckles": {
+      "atlas": "lootGround",
+      "index": 0,
+      "file": "frames/item-novice-knuckles.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        13,
+        28,
+        35,
+        41
+      ],
+      "kind": "item",
+      "family": "knuckles",
+      "alpha": "binary",
+      "layer": "item",
+      "shadow": "shadow-novice-knuckles",
+      "glint": [
+        15,
+        29
+      ],
+      "weapon": "novice-knuckles"
+    },
+    "item-bronze-knuckles": {
+      "atlas": "lootGround",
+      "index": 1,
+      "file": "frames/item-bronze-knuckles.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        13,
+        28,
+        35,
+        41
+      ],
+      "kind": "item",
+      "family": "knuckles",
+      "alpha": "binary",
+      "layer": "item",
+      "shadow": "shadow-bronze-knuckles",
+      "glint": [
+        15,
+        29
+      ],
+      "weapon": "bronze-knuckles"
+    },
+    "item-pilgrim-knuckles": {
+      "atlas": "lootGround",
+      "index": 2,
+      "file": "frames/item-pilgrim-knuckles.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        13,
+        26,
+        35,
+        41
+      ],
+      "kind": "item",
+      "family": "knuckles",
+      "alpha": "binary",
+      "layer": "item",
+      "shadow": "shadow-pilgrim-knuckles",
+      "glint": [
+        15,
+        29
+      ],
+      "weapon": "pilgrim-knuckles"
+    },
+    "item-novice-staff": {
+      "atlas": "lootGround",
+      "index": 3,
+      "file": "frames/item-novice-staff.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        9,
+        26,
+        39,
+        43
+      ],
+      "kind": "item",
+      "family": "staff",
+      "alpha": "binary",
+      "layer": "item",
+      "shadow": "shadow-novice-staff",
+      "glint": [
+        36,
+        27
+      ],
+      "weapon": "novice-staff"
+    },
+    "item-ash-staff": {
+      "atlas": "lootGround",
+      "index": 4,
+      "file": "frames/item-ash-staff.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        9,
+        26,
+        39,
+        43
+      ],
+      "kind": "item",
+      "family": "staff",
+      "alpha": "binary",
+      "layer": "item",
+      "shadow": "shadow-ash-staff",
+      "glint": [
+        36,
+        27
+      ],
+      "weapon": "ash-staff"
+    },
+    "item-pilgrim-staff": {
+      "atlas": "lootGround",
+      "index": 5,
+      "file": "frames/item-pilgrim-staff.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        7,
+        24,
+        41,
+        44
+      ],
+      "kind": "item",
+      "family": "staff",
+      "alpha": "binary",
+      "layer": "item",
+      "shadow": "shadow-pilgrim-staff",
+      "glint": [
+        37,
+        25
+      ],
+      "weapon": "pilgrim-staff"
+    },
+    "item-quiet-thunder": {
+      "atlas": "lootGround",
+      "index": 6,
+      "file": "frames/item-quiet-thunder.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        12,
+        25,
+        36,
+        41
+      ],
+      "kind": "item",
+      "family": "knuckles",
+      "alpha": "binary",
+      "layer": "item",
+      "shadow": "shadow-quiet-thunder",
+      "glint": [
+        15,
+        29
+      ],
+      "relic": "quiet-thunder"
+    },
+    "item-crane-neck": {
+      "atlas": "lootGround",
+      "index": 7,
+      "file": "frames/item-crane-neck.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        5,
+        23,
+        43,
+        45
+      ],
+      "kind": "item",
+      "family": "staff",
+      "alpha": "binary",
+      "layer": "item",
+      "shadow": "shadow-crane-neck",
+      "glint": [
+        36,
+        25
+      ],
+      "relic": "crane-neck"
+    },
+    "shadow-novice-knuckles": {
+      "atlas": "lootGround",
+      "index": 8,
+      "file": "frames/shadow-novice-knuckles.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        13,
+        28,
+        37,
+        43
+      ],
+      "kind": "shadow",
+      "item": "item-novice-knuckles",
+      "alpha": "binary",
+      "layer": "shadow",
+      "color": "#141223",
+      "drawAlpha": 0.4
+    },
+    "shadow-bronze-knuckles": {
+      "atlas": "lootGround",
+      "index": 9,
+      "file": "frames/shadow-bronze-knuckles.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        13,
+        28,
+        37,
+        43
+      ],
+      "kind": "shadow",
+      "item": "item-bronze-knuckles",
+      "alpha": "binary",
+      "layer": "shadow",
+      "color": "#141223",
+      "drawAlpha": 0.4
+    },
+    "shadow-pilgrim-knuckles": {
+      "atlas": "lootGround",
+      "index": 10,
+      "file": "frames/shadow-pilgrim-knuckles.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        13,
+        26,
+        37,
+        43
+      ],
+      "kind": "shadow",
+      "item": "item-pilgrim-knuckles",
+      "alpha": "binary",
+      "layer": "shadow",
+      "color": "#141223",
+      "drawAlpha": 0.4
+    },
+    "shadow-novice-staff": {
+      "atlas": "lootGround",
+      "index": 11,
+      "file": "frames/shadow-novice-staff.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        9,
+        26,
+        41,
+        45
+      ],
+      "kind": "shadow",
+      "item": "item-novice-staff",
+      "alpha": "binary",
+      "layer": "shadow",
+      "color": "#141223",
+      "drawAlpha": 0.4
+    },
+    "shadow-ash-staff": {
+      "atlas": "lootGround",
+      "index": 12,
+      "file": "frames/shadow-ash-staff.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        9,
+        26,
+        41,
+        45
+      ],
+      "kind": "shadow",
+      "item": "item-ash-staff",
+      "alpha": "binary",
+      "layer": "shadow",
+      "color": "#141223",
+      "drawAlpha": 0.4
+    },
+    "shadow-pilgrim-staff": {
+      "atlas": "lootGround",
+      "index": 13,
+      "file": "frames/shadow-pilgrim-staff.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        7,
+        24,
+        43,
+        46
+      ],
+      "kind": "shadow",
+      "item": "item-pilgrim-staff",
+      "alpha": "binary",
+      "layer": "shadow",
+      "color": "#141223",
+      "drawAlpha": 0.4
+    },
+    "shadow-quiet-thunder": {
+      "atlas": "lootGround",
+      "index": 14,
+      "file": "frames/shadow-quiet-thunder.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        12,
+        25,
+        38,
+        43
+      ],
+      "kind": "shadow",
+      "item": "item-quiet-thunder",
+      "alpha": "binary",
+      "layer": "shadow",
+      "color": "#141223",
+      "drawAlpha": 0.4
+    },
+    "shadow-crane-neck": {
+      "atlas": "lootGround",
+      "index": 15,
+      "file": "frames/shadow-crane-neck.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        5,
+        23,
+        45,
+        47
+      ],
+      "kind": "shadow",
+      "item": "item-crane-neck",
+      "alpha": "binary",
+      "layer": "shadow",
+      "color": "#141223",
+      "drawAlpha": 0.4
+    },
+    "ring-common-0": {
+      "atlas": "lootGround",
+      "index": 16,
+      "file": "frames/ring-common-0.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        11,
+        28,
+        37,
+        41
+      ],
+      "kind": "ring",
+      "rarity": "common",
+      "frame": 0,
+      "alpha": "stepped",
+      "layer": "ring"
+    },
+    "ring-common-1": {
+      "atlas": "lootGround",
+      "index": 17,
+      "file": "frames/ring-common-1.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        11,
+        27,
+        37,
+        42
+      ],
+      "kind": "ring",
+      "rarity": "common",
+      "frame": 1,
+      "alpha": "stepped",
+      "layer": "ring"
+    },
+    "ring-rare-0": {
+      "atlas": "lootGround",
+      "index": 18,
+      "file": "frames/ring-rare-0.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        9,
+        26,
+        39,
+        43
+      ],
+      "kind": "ring",
+      "rarity": "rare",
+      "frame": 0,
+      "alpha": "stepped",
+      "layer": "ring"
+    },
+    "ring-rare-1": {
+      "atlas": "lootGround",
+      "index": 19,
+      "file": "frames/ring-rare-1.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        8,
+        26,
+        40,
+        43
+      ],
+      "kind": "ring",
+      "rarity": "rare",
+      "frame": 1,
+      "alpha": "stepped",
+      "layer": "ring"
+    },
+    "ring-relic-0": {
+      "atlas": "lootGround",
+      "index": 20,
+      "file": "frames/ring-relic-0.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        5,
+        23,
+        43,
+        46
+      ],
+      "kind": "ring",
+      "rarity": "relic",
+      "frame": 0,
+      "alpha": "stepped",
+      "layer": "ring"
+    },
+    "ring-relic-1": {
+      "atlas": "lootGround",
+      "index": 21,
+      "file": "frames/ring-relic-1.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        5,
+        24,
+        43,
+        45
+      ],
+      "kind": "ring",
+      "rarity": "relic",
+      "frame": 1,
+      "alpha": "stepped",
+      "layer": "ring"
+    },
+    "glint-0": {
+      "atlas": "lootGround",
+      "index": 22,
+      "file": "frames/glint-0.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        22,
+        32,
+        27,
+        37
+      ],
+      "kind": "glint",
+      "frame": 0,
+      "alpha": "stepped",
+      "layer": "glint"
+    },
+    "glint-1": {
+      "atlas": "lootGround",
+      "index": 23,
+      "file": "frames/glint-1.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        21,
+        31,
+        28,
+        38
+      ],
+      "kind": "glint",
+      "frame": 1,
+      "alpha": "stepped",
+      "layer": "glint"
+    },
+    "beam-common-0": {
+      "atlas": "lootGround",
+      "index": 24,
+      "file": "frames/beam-common-0.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        23,
+        20,
+        25,
+        34
+      ],
+      "kind": "beam",
+      "rarity": "common",
+      "frame": 0,
+      "alpha": "stepped",
+      "layer": "beam",
+      "height": 14
+    },
+    "beam-common-1": {
+      "atlas": "lootGround",
+      "index": 25,
+      "file": "frames/beam-common-1.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        23,
+        20,
+        25,
+        34
+      ],
+      "kind": "beam",
+      "rarity": "common",
+      "frame": 1,
+      "alpha": "stepped",
+      "layer": "beam",
+      "height": 14
+    },
+    "beam-rare-0": {
+      "atlas": "lootGround",
+      "index": 26,
+      "file": "frames/beam-rare-0.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        22,
+        10,
+        26,
+        34
+      ],
+      "kind": "beam",
+      "rarity": "rare",
+      "frame": 0,
+      "alpha": "stepped",
+      "layer": "beam",
+      "height": 24
+    },
+    "beam-rare-1": {
+      "atlas": "lootGround",
+      "index": 27,
+      "file": "frames/beam-rare-1.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        22,
+        10,
+        26,
+        34
+      ],
+      "kind": "beam",
+      "rarity": "rare",
+      "frame": 1,
+      "alpha": "stepped",
+      "layer": "beam",
+      "height": 24
+    },
+    "beam-relic-0": {
+      "atlas": "lootGround",
+      "index": 28,
+      "file": "frames/beam-relic-0.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        20,
+        2,
+        28,
+        34
+      ],
+      "kind": "beam",
+      "rarity": "relic",
+      "frame": 0,
+      "alpha": "stepped",
+      "layer": "beam",
+      "height": 28
+    },
+    "beam-relic-1": {
+      "atlas": "lootGround",
+      "index": 29,
+      "file": "frames/beam-relic-1.png",
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        34
+      ],
+      "opaqueBounds": [
+        21,
+        3,
+        27,
+        34
+      ],
+      "kind": "beam",
+      "rarity": "relic",
+      "frame": 1,
+      "alpha": "stepped",
+      "layer": "beam",
+      "height": 28
+    },
+    "camp-supplies": {
+      "atlas": "campSupplies",
+      "index": 0,
+      "file": "frames/camp-supplies.png",
+      "size": [
+        72,
+        52
+      ],
+      "anchor": [
+        36,
+        28
+      ],
+      "opaqueBounds": [
+        3,
+        11,
+        69,
+        46
+      ],
+      "kind": "supplies",
+      "alpha": "binary",
+      "layer": "flat",
+      "weapons": [
+        "novice-knuckles",
+        "novice-staff"
+      ],
+      "cloth": {
+        "halfX": 0.72,
+        "halfY": 0.68
+      }
+    },
+    "camp-supplies-empty": {
+      "atlas": "campSupplies",
+      "index": 1,
+      "file": "frames/camp-supplies-empty.png",
+      "size": [
+        72,
+        52
+      ],
+      "anchor": [
+        36,
+        28
+      ],
+      "opaqueBounds": [
+        3,
+        11,
+        69,
+        46
+      ],
+      "kind": "supplies",
+      "alpha": "binary",
+      "layer": "flat",
+      "weapons": [],
+      "cloth": {
+        "halfX": 0.72,
+        "halfY": 0.68
+      }
+    }
+  },
+  "provenance": {
+    "script": "scripts/build-loot-ground.py",
+    "pillow": "12.3.0",
+    "inputs": {
+      "assets/game/pixel-v9/camp-panorama/camp-grass.png": "a1492ca4969181f5b34d77b7fa757d8fa736635a63d9cdd0bdcbc78f951d0402",
+      "assets/game/pixel-v9/camp-panorama/camp-earth.png": "5c9784a83f99220051d6158b7dd9692b22473f62254f4a390ed26a6bff75058c",
+      "assets/game/pixel-v11/monastery-ruins/courtyard-flagstone.png": "84e6bffb7da3f52ded3ebe0727f7dba203f4c1876cea95a7360bcda554e56c4f",
+      "assets/game/pixel-v10/monk-side/monk-side.png": "8706394fcad702e337a0b7890d7b5f5a3cd44d901599be24a4b567f9ee903ef1"
+    }
+  },
+  "contactSheet": "contact-sheet.png",
+  "files": {
+    "camp-supplies.png": "02834fb489a3659987c8f21829e9eeaf792953c276698bf0784775183fbf4dc1",
+    "contact-sheet.png": "e8ace6cea25e66e1ebbf4b9f8581ef3b62c105512f5087d25ae7f5d53a1c2b3d",
+    "frames/beam-common-0.png": "a837a605df55cd85c781c70876b752c59c5173efc087d66adccad2282fed1d1c",
+    "frames/beam-common-1.png": "b6fff9eafe8f73bbab0015b9957f2ad91f4f4ef6c5a1060341d8178fd18e2728",
+    "frames/beam-rare-0.png": "1b830f7b612d92d75eeb4f078af2e3ccba6628f23df9c7a8564648c93ebc7cce",
+    "frames/beam-rare-1.png": "df35a8194281ac5433082aea07cb1c45399d11e463ebc6e54c593818637a5400",
+    "frames/beam-relic-0.png": "8581cffea54bffd70004bf04ed0711982d3396394455894575468888c1998cef",
+    "frames/beam-relic-1.png": "9b8bf447c9431359dc89416160d88cb9c656fd5d4365b85647439dcb7d02fc48",
+    "frames/camp-supplies-empty.png": "cbe755632531a9a544d0aaddaa20fe87e0ebd8a614306557f92e4d75ede81369",
+    "frames/camp-supplies.png": "f339b0248938d1c878c2991c1d8f5c0512279dc2eced085a606efbe531e82b1f",
+    "frames/glint-0.png": "152622682a5d4a7bff48b264c423ec148e8885874d8d1ab69c1a139a96eaeeba",
+    "frames/glint-1.png": "17a1806c549d43af82bdceaf8ab23ec7f41c4963b34f676c21a8831778bc103e",
+    "frames/item-ash-staff.png": "8e3d53cf25f4a8def93248396f236d0096ebed366fd11c9315e2c82c5fb0771f",
+    "frames/item-bronze-knuckles.png": "4b2b7105dc748d4ef20bf5a2e42acfa67b777b1a634de388630a010de93e1c15",
+    "frames/item-crane-neck.png": "ebd451036d3617c274720aecf48e510906c3b54ac472dc60f3e9267ee149b292",
+    "frames/item-novice-knuckles.png": "f4937626188f3fcb0eb97245f1804cc0615ad770613128974907bfd09565cef2",
+    "frames/item-novice-staff.png": "0f031b5d3bc31ec959225801523eda6350af9ccb3a48607918308a18857a3fbd",
+    "frames/item-pilgrim-knuckles.png": "b1bcbc3a0eb58ba44d0c0d87410cd8d82be5ec945d5923177b216030ab7f0285",
+    "frames/item-pilgrim-staff.png": "35cf0e48943e9e1883dda415e84bd4ef4289963d52c59f851774e0ee049295a0",
+    "frames/item-quiet-thunder.png": "e9444f68cdb47e65c0d6695a515642c7cd2fcb8f352e220258c41dff9b468a79",
+    "frames/ring-common-0.png": "80672ef27fb106d4e86a0f2ed1047e02b41ac4cf20110799aa77da53bec8b196",
+    "frames/ring-common-1.png": "91bb73c1264bc2ec7c3f2516d96ee09f691d66bc88f760d74cf01c19a88a5e82",
+    "frames/ring-rare-0.png": "787594f85bcb8b02c9bba16b2c79e357e9822a5c3e9c443e2ebd6accf2c63aad",
+    "frames/ring-rare-1.png": "ca6accfccb7aa50da61991c1cabdbc846c5f2f121e26a27e2a352942f93ffe33",
+    "frames/ring-relic-0.png": "f9931512bfae18d16017dbd585f88262b9ddbded455e799058b25b954f61504b",
+    "frames/ring-relic-1.png": "db8085a51b15454645611751e7c526e0e52df4098bb6ba219d90a1c083c032be",
+    "frames/shadow-ash-staff.png": "068a88d9026c88781778e4aa395291bd70ef38fa889cf7eeb01dff6a9e030f1e",
+    "frames/shadow-bronze-knuckles.png": "266eefc385f9cf0910f9512a8a2b6542dd5a9a3f5da11a54746c6c7df417e9b4",
+    "frames/shadow-crane-neck.png": "f2488579376543d7365d7e411455533e0af6fb6cd951161140717eee3dcde408",
+    "frames/shadow-novice-knuckles.png": "266eefc385f9cf0910f9512a8a2b6542dd5a9a3f5da11a54746c6c7df417e9b4",
+    "frames/shadow-novice-staff.png": "8e4b348d5cdca5b3845aa1535cbcf76be544eecf04ae4d0922274184dbde5eb4",
+    "frames/shadow-pilgrim-knuckles.png": "e4e14f1fd4edf368794532c2e0345f7dabaa6fb00d1b438116b45512d1d0e42e",
+    "frames/shadow-pilgrim-staff.png": "f741a6d61e6def8516fb4fe0e580e1683281b79f2de82ed3ce05dcfb2592c512",
+    "frames/shadow-quiet-thunder.png": "7ff30bd4bbfe15d895c3ffa2c67bb64d12c8a4e0a7aae77bb669dfb444249fbb",
+    "loot-ground.png": "8fac3febdcb84b4bbe57dbb033bfb0c99478ecec405e5d6a8155b3111ed23bea"
+  }
+}

@@ -132,9 +132,10 @@ test('safe-camp retreat waits for a committed state instead of sliding or cancel
   }
 });
 
-for (const dt of [.01, .05]) test(`all six packs return to their actual spawn homes without healing at dt=${dt}`, () => {
+for (const dt of [.01, .05]) test(`all ten packs return to their actual spawn homes without healing at dt=${dt}`, () => {
   const game = createAdventure(), members = game.enemies.filter(e => e.packId);
-  assert.equal(new Set(members.map(e => e.packId)).size, 6);
+  // Six on the road and in the courtyard, two in each side zone.
+  assert.equal(new Set(members.filter(e => !e.wander).map(e => e.packId)).size, 10);
   for (const [i, e] of members.entries()) {
     e.hp -= 7; e.active = true; e.state = 'chase';
     const start = { x: e.x, y: e.y };

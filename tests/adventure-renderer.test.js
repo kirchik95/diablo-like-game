@@ -8,6 +8,8 @@ import * as pixels from '../src/pixel-scene.js';
 import * as animation from '../src/pixel-animation.js';
 import * as picking from '../src/pixel-picking.js';
 import * as world from '../src/world.js';
+import { createHD2D } from '../src/hd2d/index.js';
+import * as staticSpriteState from '../src/static-sprite-state.js';
 import { createGame } from '../src/game.js';
 import { LOCATIONS, WRAITH_TIMINGS, WRAITH_STATS, BEETLE_TIMINGS, BEETLE_STATS } from '../src/campaign.js';
 import wraithPackage from '../assets/game/pixel-v3/wraith/manifest.json' with { type: 'json' };
@@ -77,13 +79,13 @@ function textureTransport(t, r) {
 
 // Execute the real constructor with only the browser engine and image transport
 // replaced. No loading/status logic is copied into this fixture.
-function loadingRenderer(t, maskError) {
+function loadingRenderer(t, maskError, warmup = Promise.resolve()) {
   const requests = [];
   const context = { clearRect() {}, beginPath() {}, arc() {}, stroke() {}, moveTo() {}, lineTo() {}, closePath() {}, fillRect() {} };
   class HeadlessEngine extends NullEngine {
     createCanvas(width, height) { return { width, height, getContext: () => context }; }
   }
-  const dependencies = { ...Babylon, ...pixels, ...animation, ...picking, ...world,
+  const dependencies = { ...Babylon, ...pixels, ...animation, ...picking, ...world, ...staticSpriteState, createHD2D,
     WRAITH_TIMINGS, WRAITH_STATS, BEETLE_TIMINGS, BEETLE_STATS, appearanceVariant, MONK_RULES, getOverworldZone, Engine: HeadlessEngine,
     matchMedia: () => ({ matches: false }),
     loadAppearanceTexture(scene, url) {
@@ -99,6 +101,8 @@ function loadingRenderer(t, maskError) {
     .replace(/^import[\s\S]*?;\n/gm, '').replace(/^export /gm, '');
   const LoadedRenderer = new Function(...Object.keys(dependencies), `${source}\nreturn Renderer;`)(...Object.values(dependencies));
   LoadedRenderer.prototype.resize = function() {};
+  // NullEngine cannot compile unloaded fixture textures; readiness is controlled here.
+  LoadedRenderer.prototype.warmPrograms = function() { return warmup; };
   t.mock.method(globalThis, 'fetch', async url => {
     if (maskError) throw maskError;
     return new Response(readFileSync(new URL(url)));
@@ -108,6 +112,26 @@ function loadingRenderer(t, maskError) {
   t.after(() => { renderer.scene.dispose(); renderer.engine.dispose(); });
   return { renderer, game, requests };
 }
+
+test('renderer readiness waits for shader warmup and propagates its failure', async t => {
+  let resolve;
+  const warmup = new Promise(yes => { resolve = yes; });
+  const { renderer: r } = loadingRenderer(t, null, warmup);
+  let ready = false;
+  const waiting = r.ready.then(() => { ready = true; });
+  await r.assets.ready; await Promise.resolve();
+  assert.equal(ready, false);
+  resolve(); await waiting;
+  assert.equal(ready, true);
+
+  let reject;
+  const failing = new Promise((yes, no) => { reject = no; });
+  const { renderer: failed } = loadingRenderer(t, null, failing);
+  const error = new Error('shader warmup failed');
+  const rejected = assert.rejects(failed.ready, error);
+  await failed.assets.ready; await Promise.resolve();
+  reject(error); await rejected;
+});
 
 test('initial appearance failure leaves common assets ready and the hidden hero recoverable', async t => {
   const { renderer: r, game, requests } = loadingRenderer(t);
@@ -187,7 +211,7 @@ test('current appearance failure is reported, deduplicated across frames/restart
   assert.equal(r.monk.material.diffuseTexture, accepted);
   assert.equal(r.monk.atlas, atlas);
   assert.equal(r.monk.frame, 78); assert.equal(r.monk.flip, true);
-  assert.equal(accepted.uScale, -.1);
+  assert.equal(accepted.uScale, -1 / r.monk.atlas.columns);
   assert.ok(!scene.textures.includes(previous), 'replaced texture must be disposed');
 });
 
@@ -372,7 +396,8 @@ test('selected appearance cannot be replaced by a late texture response or chang
   assert.equal(r.monk.material.diffuseTexture, accepted);
   assert.equal(r.monk.atlas, mask);
   assert.equal(r.monk.frame, 78); assert.equal(r.monk.flip, true);
-  assert.equal(accepted.uScale, -.1); assert.ok(Math.abs(accepted.vOffset - (1 - 8 / r.monk.atlas.rows)) < 1e-8);
+  assert.equal(accepted.uScale, -1 / r.monk.atlas.columns);
+  assert.ok(Math.abs(accepted.vOffset - (1 - (Math.floor(r.monk.frame / r.monk.atlas.columns) + 1) / r.monk.atlas.rows)) < 1e-8);
   assert.ok(!scene.textures.includes(stale));
 });
 
@@ -431,7 +456,7 @@ test('the outdoor courtyard uses a permanently open ruin arch without adding a t
   assert.equal(JSON.stringify(game.world.portals), portals);
 });
 
-test('map fits the entire forked road and distinguishes portals, cache, shrine and reward', () => {
+test('map fits the entire forked road inside the round disc and distinguishes portals, cache, shrine and reward', () => {
   assert.equal(typeof rendering.adventureMapLayout, 'function');
   for (const world of Object.values(LOCATIONS)) {
     const game = { world, enemies: [], shrineUsed: false, adventure: { secretFound: false, rewardCollected: false } };
@@ -439,7 +464,7 @@ test('map fits the entire forked road and distinguishes portals, cache, shrine a
     for (const tile of world.tiles) {
       for (const dx of [-.5, .5]) for (const dy of [-.5, .5]) {
         const p = layout.project(tile.x + dx, tile.y + dy);
-        assert.ok(p.x >= 11.9 && p.x <= 348.1 && p.y >= 33.9 && p.y <= 250.1, `map clips ${world.id}`);
+        assert.ok(Math.hypot(p.x - layout.center.x, p.y - layout.center.y) <= layout.radius, `map clips ${world.id}`);
       }
     }
     assert.equal(layout.markers.filter(m => m.kind === 'portal').length, world.portals.length);

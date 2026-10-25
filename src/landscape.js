@@ -5,6 +5,7 @@ import { inBackdrop } from './camp-layout.js';
 import { createCountryBorder, proceduralZone } from './country-border.js';
 import { countryZoneLookup } from './country-zones.js';
 import { layoutRoadCountry, panoramaFootprint } from './road-country.js';
+import { propShadeCasters, bakePropShade } from './prop-shade.js';
 
 const key = (x, y) => `${x},${y}`;
 const noise = (x, y, salt = 0) => {
@@ -105,7 +106,9 @@ function horizontal(group, x0, x1, y0, y1, height) {
 }
 export function buildLandscape(scene, assets, world) {
   const layout = layoutLandscape(world), groups = new Map();
-  const groundMaterial = countryGroundMaterial(scene, assets, layout.surfaceMap, world);
+  // The props' contact shade is baked once with the world; its texture belongs to the world build.
+  const shade = bakePropShade(propShadeCasters(world, layout));
+  const groundMaterial = countryGroundMaterial(scene, assets, layout.surfaceMap, world, shade);
   const group = name => {
     if (!groups.has(name)) groups.set(name, batch());
     return groups.get(name);

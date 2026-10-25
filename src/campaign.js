@@ -2,6 +2,8 @@
 import { isWalkable } from './world.js';
 import { CAMP_LAYOUT } from './camp-layout.js';
 import { COURTYARD_LAYOUT } from './courtyard-layout.js';
+import { CEMETERY_LAYOUT } from './cemetery-layout.js';
+import { ORCHARD_LAYOUT } from './orchard-layout.js';
 
 const freeze = value => {
   if (value && typeof value === 'object') {
@@ -43,8 +45,9 @@ const location = ({ pavingRoutes, ...record }) => {
 };
 
 export const WRAITH_TIMINGS = freeze({ windup: .8, recover: .6, stunned: .38 });
+// Monster health lives only in MONK_RULES.enemyHp (wraith 76); the zone's monster level scales it.
 export const WRAITH_STATS = freeze({
-  hp: 64, speed: 1.15, aggroRange: 7.5, attackRange: 5.5,
+  speed: 1.15, aggroRange: 7.5, attackRange: 5.5,
   shotSpeed: 5.5, shotRadius: .13, shotLife: 2.2, shotDamage: 12,
 });
 // The armored beetle blocks from its front arc; dash and wave expose it.
@@ -57,6 +60,12 @@ export const BEETLE_STATS = freeze({
   guardDot: .5, blockDamage: .25, blockKnockback: .1,
 });
 export const ADVENTURE_RULES = freeze({ interactionRadius: 1.15, cacheHeal: 25, ritualHp: 132 });
+// The E point of the camp supply cache: screen-down of the cache (world +x +y on the fixed camera),
+// .45u past the collider face the diagonal leaves through. The supplies cloth then lies in front of
+// the chest drawing, and the point stays walkable and out of reach of the reward point.
+const supplyCache = CAMP_LAYOUT.setDressing.find(p => p.id === 'supplies').collider;
+const supplyFront = Math.min(supplyCache.halfWidth, supplyCache.halfDepth) + .45;
+export const CAMP_SUPPLIES = freeze({ x: supplyCache.x + supplyFront, y: supplyCache.y + supplyFront });
 
 export const LOCATIONS = freeze({
   camp: location({
@@ -67,39 +76,47 @@ export const LOCATIONS = freeze({
   }),
   road: location({
     id: 'road', title: 'Разбитая дорога', subtitle: 'Главный путь и забытая боковая тропа',
-    regions: [[-3, 3, 14, 21], [-6, 6, 4, 15], [-3, 3, -1, 5], [-6, 6, -11, 0],
-      [-3, 3, -19, -10], [-14, -5, 4, 10], [-19, -11, -4, 10], [-12, -5, -4, 1]],
+    regions: [[-4, 4, 20, 30], [-9, 9, 6, 21], [-4, 4, -2, 7], [-9, 9, -16, 0],
+      [-4, 4, -27, -14], [-20, -7, 6, 14], [-27, -15, -6, 14], [-17, -7, -6, 1], [10, 14, 6, 8]],
     pavingRoutes: [
-      { width: 2.4, points: [[0, 19], [0, -17]] },
-      { width: 1.5, points: [[0, 10], [-4, 8], [-6, 8], [-14, 8], [-16, 6],
-        [-16, 1], [-14, -2], [-11, -2], [-6, -2], [0, -2]] },
+      { width: 2.8, points: [[0, 29], [0, -26]] },
+      { width: 1.7, points: [[0, 14], [-6, 11], [-20, 11], [-23, 8], [-23, 1], [-20, -3], [-9, -3], [0, -3]] },
     ],
-    spawn: { x: 0, y: 17 }, entries: { camp: { x: 0, y: 17 }, courtyard: { x: 0, y: -14 } },
-    exit: { x: 0, y: -17 }, shrine: { x: -16, y: 6 }, secret: { x: -16, y: 1 },
-    pillars: [{ x: 3, y: 10, height: 1.8 }, { x: -4, y: -6, height: 2.8 },
-      { x: 4, y: -6, height: 2.1 }, { x: -17.5, y: -1, height: 1.6 }],
-    braziers: [{ x: -4, y: 13, color: 'cyan' }, { x: 4, y: 13, color: 'cyan' },
-      { x: 3.5, y: -9, color: 'pink' }, { x: -17.5, y: 7, color: 'cyan' }],
-    portals: [{ id: 'road-camp', x: 0, y: 19, target: 'camp', label: 'Лагерь странников' },
-      { id: 'road-courtyard', x: 0, y: -17, target: 'courtyard', label: 'Двор монастыря' }],
+    spawn: { x: 0, y: 24 }, entries: { camp: { x: 0, y: 24 }, courtyard: { x: 0, y: -20 } },
+    exit: { x: 0, y: -25 }, shrine: { x: -23, y: 8 }, secret: { x: -23, y: 1 },
+    pillars: [{ x: 4.2, y: 14, height: 1.8 }, { x: -5.6, y: -8.4, height: 2.8 },
+      { x: 5.6, y: -8.4, height: 2.1 }, { x: -24.5, y: -1.4, height: 1.6 }],
+    braziers: [{ x: -5.6, y: 18.2, color: 'cyan' }, { x: 5.6, y: 18.2, color: 'cyan' },
+      { x: 4.9, y: -12.6, color: 'pink' }, { x: -24.5, y: 9.8, color: 'cyan' }],
+    portals: [{ id: 'road-camp', x: 0, y: 27, target: 'camp', label: 'Лагерь странников' },
+      { id: 'road-courtyard', x: 0, y: -25, target: 'courtyard', label: 'Двор монастыря' }],
     encounters: [
-      { id: 'road-hound-1', kind: 'hound', x: 0, y: 9 },
-      { id: 'road-hound-2', kind: 'hound', x: -2.5, y: -6 },
-      { id: 'road-hound-3', kind: 'hound', x: 2.5, y: -6 },
+      { id: 'road-hound-1', kind: 'hound', x: 0, y: 12.6 },
+      { id: 'road-hound-2', kind: 'hound', x: -3.5, y: -8.4 },
+      { id: 'road-hound-3', kind: 'hound', x: 3.5, y: -8.4 },
       { id: 'road-wraith-1', kind: 'wraith', x: 0, y: 0 },
-      { id: 'road-hound-secret', kind: 'hound', x: -11, y: -2 },
-      { id: 'road-wraith-secret', kind: 'wraith', x: -14, y: 4 },
+      { id: 'road-hound-secret', kind: 'hound', x: -15.4, y: -2.8 },
+      { id: 'road-wraith-secret', kind: 'wraith', x: -19.6, y: 5.6 },
     ],
   }),
   courtyard: location({
     id: 'courtyard', title: 'Двор монастыря', subtitle: 'Стражи пепельного источника',
     ...COURTYARD_LAYOUT,
-    portals: [{ id: 'courtyard-road', x: 0, y: 12.5, target: 'road', label: 'Разбитая дорога' }],
+    portals: [{ id: 'courtyard-road', x: 0, y: 17.5, target: 'road', label: 'Разбитая дорога' }],
     encounters: [
-      { id: 'court-hound-1', kind: 'hound', x: -1, y: 0 },
-      { id: 'court-hound-2', kind: 'hound', x: 3, y: -1 },
-      { id: 'court-wraith-1', kind: 'wraith', x: -3, y: -5 },
-      { id: 'court-wraith-2', kind: 'wraith', x: 3, y: -5 },
+      { id: 'court-hound-1', kind: 'hound', x: -1.4, y: 0 },
+      { id: 'court-hound-2', kind: 'hound', x: 4.2, y: -1.4 },
+      { id: 'court-wraith-1', kind: 'wraith', x: -4.2, y: -7 },
+      { id: 'court-wraith-2', kind: 'wraith', x: 4.2, y: -7 },
     ],
+  }),
+  // Optional side zones (side-zones.js); the world's encounter layout fills them.
+  cemetery: location({
+    id: 'cemetery', title: 'Старое кладбище', subtitle: 'Монахи спят под тисами',
+    ...CEMETERY_LAYOUT, portals: [], encounters: [],
+  }),
+  orchard: location({
+    id: 'orchard', title: 'Сад обители', subtitle: 'Оливы помнят тишину',
+    ...ORCHARD_LAYOUT, portals: [], encounters: [],
   }),
 });

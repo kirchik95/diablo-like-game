@@ -94,3 +94,19 @@ test('a held blend (pause, menu or hit stop) draws the same frame every time', (
   });
   for (const frame of frames) assert.deepEqual(frame, frames[0]);
 });
+
+test('monk palms and reflected shots blend like spirit shots; a new or spent shot never smears', () => {
+  const game = { ...fixture(), monkShots: [body(1, 1)] }, motion = new MotionHistory();
+  motion.capture(game);
+  game.monkShots[0].x += .1;
+  // A palm cast this step has no previous position yet.
+  const fresh = body(5, 5); game.monkShots.push(fresh);
+  motion.blend(game, .5);
+  near(motion.at(game.monkShots[0]), { x: 1.05, y: 1 }, 'palm midpoint');
+  assert.equal(motion.at(fresh), fresh);
+  // A spent shot leaves the list and its history with the next capture.
+  const spent = game.monkShots.shift();
+  motion.capture(game);
+  assert.equal(motion.previous.has(spent), false);
+  assert.equal(motion.previous.has(fresh), true);
+});

@@ -35,7 +35,7 @@ test('every offered look resolves the matching atlas and preview without losing 
         assert.equal(result.id, id);
         assert.equal(result.path, `${id}.png`);
         assert.equal(result.previewPath, `${id}-preview.png`);
-        assert.ok(new URL(result.url).pathname.endsWith(`/assets/game/pixel-v10/monk-side/appearance/${id}.png`));
+        assert.ok(new URL(result.url).pathname.endsWith(`/assets/game/pixel-v17/monk-side/appearance/${id}.png`));
         assert.ok(new URL(result.previewUrl).pathname.endsWith(`/assets/game/pixel-v3/appearance/${id}-preview.png`));
         assert.equal(result.skin, skin);
         assert.equal(result.hair, hair);
@@ -113,7 +113,8 @@ test('E preserves movement, aiming and the existing combat actions', t => {
   key('keydown', 'KeyQ');
   key('keydown', 'KeyE');
   const controls = sample();
-  assert.deepEqual(controls.actions, ['dash', 'wave', 'interact']);
+  // Q is its own technique slot now; it no longer repeats the wave (§2.1).
+  assert.deepEqual(controls.actions, ['dash', 'slot:q', 'interact']);
   assert.ok(controls.moveX < 0 && controls.moveY < 0);
   assert.ok(Math.abs(Math.hypot(controls.moveX, controls.moveY) - 1) < 1e-12);
   assert.equal(controls.aimX, controls.moveX);

@@ -1,0 +1,2189 @@
+{
+  "schemaVersion": 2,
+  "status": "ready",
+  "nativePixelsPerUnit": 32,
+  "appearanceIndependent": true,
+  "monkAtlas": {
+    "manifest": "assets/game/pixel-v17/monk-side/manifest.json",
+    "keys": 407
+  },
+  "palette": {
+    "ink": [
+      "15121f",
+      "0d0a14"
+    ],
+    "wood": [
+      "c79a66",
+      "8a5d3b",
+      "553829"
+    ],
+    "metal": [
+      "fff2d6",
+      "e5b66e",
+      "b07a36",
+      "4a3024"
+    ],
+    "flare": [
+      "ffffff"
+    ],
+    "smear": [
+      "f2e4c6",
+      "c7b99e"
+    ]
+  },
+  "knuckles": {
+    "path": "knuckles.png",
+    "cell": 96,
+    "columns": 16,
+    "rows": 32,
+    "anchor": [
+      48,
+      84
+    ],
+    "filter": "nearest",
+    "mipmaps": false,
+    "clips": {
+      "knuckleStrike1": {
+        "contactKey": 4,
+        "sourceKeys": [
+          0,
+          0.5,
+          1,
+          1.5,
+          2,
+          3,
+          4,
+          5
+        ],
+        "sourceCount": 6,
+        "keyTimesMs": [
+          0.0,
+          15.0,
+          30.0,
+          45.0,
+          60.0,
+          82.5,
+          114.0,
+          133.33333333333334
+        ],
+        "front": [
+          {
+            "frame": 155,
+            "overlay": 407
+          },
+          {
+            "frame": 156,
+            "overlay": 408
+          },
+          {
+            "frame": 157,
+            "overlay": 409
+          },
+          {
+            "frame": 158,
+            "overlay": 410
+          },
+          {
+            "frame": 159,
+            "overlay": 411
+          },
+          {
+            "frame": 160,
+            "overlay": 412
+          },
+          {
+            "frame": 161,
+            "overlay": 413
+          },
+          {
+            "frame": 162,
+            "overlay": 414
+          }
+        ],
+        "back": [
+          {
+            "frame": 163,
+            "overlay": 415
+          },
+          {
+            "frame": 164,
+            "overlay": 416
+          },
+          {
+            "frame": 165,
+            "overlay": 417
+          },
+          {
+            "frame": 166,
+            "overlay": 418
+          },
+          {
+            "frame": 167,
+            "overlay": 419
+          },
+          {
+            "frame": 168,
+            "overlay": 420
+          },
+          {
+            "frame": 169,
+            "overlay": 421
+          },
+          {
+            "frame": 170,
+            "overlay": 422
+          }
+        ],
+        "side": [
+          {
+            "frame": 171,
+            "overlay": 423
+          },
+          {
+            "frame": 172,
+            "overlay": 424
+          },
+          {
+            "frame": 173,
+            "overlay": 425
+          },
+          {
+            "frame": 174,
+            "overlay": 426
+          },
+          {
+            "frame": 175,
+            "overlay": 427
+          },
+          {
+            "frame": 176,
+            "overlay": 428
+          },
+          {
+            "frame": 177,
+            "overlay": 429
+          },
+          {
+            "frame": 178,
+            "overlay": 430
+          }
+        ]
+      },
+      "knuckleStrike2": {
+        "contactKey": 3,
+        "sourceKeys": [
+          0,
+          0.5,
+          1,
+          2,
+          2.5,
+          3,
+          4,
+          5
+        ],
+        "sourceCount": 6,
+        "keyTimesMs": [
+          0.0,
+          15.0,
+          30.0,
+          60.0,
+          71.25,
+          82.5,
+          114.0,
+          133.33333333333334
+        ],
+        "front": [
+          {
+            "frame": 179,
+            "overlay": 431
+          },
+          {
+            "frame": 180,
+            "overlay": 432
+          },
+          {
+            "frame": 181,
+            "overlay": 433
+          },
+          {
+            "frame": 182,
+            "overlay": 434
+          },
+          {
+            "frame": 183,
+            "overlay": 435
+          },
+          {
+            "frame": 184,
+            "overlay": 436
+          },
+          {
+            "frame": 185,
+            "overlay": 437
+          },
+          {
+            "frame": 186,
+            "overlay": 438
+          }
+        ],
+        "back": [
+          {
+            "frame": 187,
+            "overlay": 439
+          },
+          {
+            "frame": 188,
+            "overlay": 440
+          },
+          {
+            "frame": 189,
+            "overlay": 441
+          },
+          {
+            "frame": 190,
+            "overlay": 442
+          },
+          {
+            "frame": 191,
+            "overlay": 443
+          },
+          {
+            "frame": 192,
+            "overlay": 444
+          },
+          {
+            "frame": 193,
+            "overlay": 445
+          },
+          {
+            "frame": 194,
+            "overlay": 446
+          }
+        ],
+        "side": [
+          {
+            "frame": 195,
+            "overlay": 447
+          },
+          {
+            "frame": 196,
+            "overlay": 448
+          },
+          {
+            "frame": 197,
+            "overlay": 449
+          },
+          {
+            "frame": 198,
+            "overlay": 450
+          },
+          {
+            "frame": 199,
+            "overlay": 451
+          },
+          {
+            "frame": 200,
+            "overlay": 452
+          },
+          {
+            "frame": 201,
+            "overlay": 453
+          },
+          {
+            "frame": 202,
+            "overlay": 454
+          }
+        ]
+      },
+      "knuckleStrike3": {
+        "contactKey": 2,
+        "sourceKeys": [
+          0,
+          1,
+          2,
+          2.5,
+          3,
+          3.5,
+          4,
+          5
+        ],
+        "sourceCount": 6,
+        "keyTimesMs": [
+          0.0,
+          40.0,
+          80.0,
+          91.25,
+          102.5,
+          118.25,
+          134.0,
+          153.33333333333334
+        ],
+        "front": [
+          {
+            "frame": 203,
+            "overlay": 455
+          },
+          {
+            "frame": 204,
+            "overlay": 456
+          },
+          {
+            "frame": 205,
+            "overlay": 457
+          },
+          {
+            "frame": 206,
+            "overlay": 458
+          },
+          {
+            "frame": 207,
+            "overlay": 459
+          },
+          {
+            "frame": 208,
+            "overlay": 460
+          },
+          {
+            "frame": 209,
+            "overlay": 461
+          },
+          {
+            "frame": 210,
+            "overlay": 462
+          }
+        ],
+        "back": [
+          {
+            "frame": 211,
+            "overlay": 463
+          },
+          {
+            "frame": 212,
+            "overlay": 464
+          },
+          {
+            "frame": 213,
+            "overlay": 465
+          },
+          {
+            "frame": 214,
+            "overlay": 466
+          },
+          {
+            "frame": 215,
+            "overlay": 467
+          },
+          {
+            "frame": 216,
+            "overlay": 468
+          },
+          {
+            "frame": 217,
+            "overlay": 469
+          },
+          {
+            "frame": 218,
+            "overlay": 470
+          }
+        ],
+        "side": [
+          {
+            "frame": 219,
+            "overlay": 471
+          },
+          {
+            "frame": 220,
+            "overlay": 472
+          },
+          {
+            "frame": 221,
+            "overlay": 473
+          },
+          {
+            "frame": 222,
+            "overlay": 474
+          },
+          {
+            "frame": 223,
+            "overlay": 475
+          },
+          {
+            "frame": 224,
+            "overlay": 476
+          },
+          {
+            "frame": 225,
+            "overlay": 477
+          },
+          {
+            "frame": 226,
+            "overlay": 478
+          }
+        ]
+      },
+      "knuckleStrike4": {
+        "contactKey": 3,
+        "sourceKeys": [
+          0,
+          0.5,
+          1,
+          2,
+          2.5,
+          3,
+          4,
+          5
+        ],
+        "sourceCount": 6,
+        "keyTimesMs": [
+          0.0,
+          32.5,
+          65.0,
+          130.0,
+          147.5,
+          165.0,
+          214.0,
+          253.33333333333334
+        ],
+        "front": [
+          {
+            "frame": 311,
+            "overlay": 479
+          },
+          {
+            "frame": 312,
+            "overlay": 480
+          },
+          {
+            "frame": 313,
+            "overlay": 481
+          },
+          {
+            "frame": 314,
+            "overlay": 482
+          },
+          {
+            "frame": 315,
+            "overlay": 483
+          },
+          {
+            "frame": 316,
+            "overlay": 484
+          },
+          {
+            "frame": 317,
+            "overlay": 485
+          },
+          {
+            "frame": 318,
+            "overlay": 486
+          }
+        ],
+        "back": [
+          {
+            "frame": 319,
+            "overlay": 487
+          },
+          {
+            "frame": 320,
+            "overlay": 488
+          },
+          {
+            "frame": 321,
+            "overlay": 489
+          },
+          {
+            "frame": 322,
+            "overlay": 490
+          },
+          {
+            "frame": 323,
+            "overlay": 491
+          },
+          {
+            "frame": 324,
+            "overlay": 492
+          },
+          {
+            "frame": 325,
+            "overlay": 493
+          },
+          {
+            "frame": 326,
+            "overlay": 494
+          }
+        ],
+        "side": [
+          {
+            "frame": 327,
+            "overlay": 495
+          },
+          {
+            "frame": 328,
+            "overlay": 496
+          },
+          {
+            "frame": 329,
+            "overlay": 497
+          },
+          {
+            "frame": 330,
+            "overlay": 498
+          },
+          {
+            "frame": 331,
+            "overlay": 499
+          },
+          {
+            "frame": 332,
+            "overlay": 500
+          },
+          {
+            "frame": 333,
+            "overlay": 501
+          },
+          {
+            "frame": 334,
+            "overlay": 502
+          }
+        ]
+      }
+    }
+  },
+  "staff": {
+    "path": "staff.png",
+    "cell": 96,
+    "columns": 16,
+    "rows": 26,
+    "anchor": [
+      48,
+      84
+    ],
+    "filter": "nearest",
+    "mipmaps": false
+  },
+  "staffAttacks": {
+    "path": "staff-attacks.png",
+    "cell": [
+      192,
+      144
+    ],
+    "columns": 16,
+    "rows": 5,
+    "anchor": [
+      96,
+      104
+    ],
+    "filter": "nearest",
+    "mipmaps": false,
+    "clips": {
+      "staffAttack1": {
+        "contactKey": 3,
+        "sourceKeys": [
+          0,
+          0.5,
+          1,
+          2,
+          2.5,
+          3,
+          4,
+          5
+        ],
+        "sourceCount": 6,
+        "name": "forehand sweep",
+        "arc": "±102°",
+        "front": [
+          {
+            "frame": 335,
+            "mirrorBody": false,
+            "staff": 0,
+            "grip": [
+              114.22,
+              71.04
+            ],
+            "butt": [
+              108.13,
+              86.6
+            ],
+            "tip": [
+              128.42,
+              34.74
+            ],
+            "depth": [
+              0.873,
+              -0.87
+            ]
+          },
+          {
+            "frame": 336,
+            "mirrorBody": false,
+            "staff": 1,
+            "grip": [
+              114.22,
+              71.04
+            ],
+            "butt": [
+              101.1,
+              82.56
+            ],
+            "tip": [
+              144.82,
+              44.14
+            ],
+            "depth": [
+              0.76,
+              -0.606
+            ]
+          },
+          {
+            "frame": 337,
+            "mirrorBody": false,
+            "staff": 2,
+            "grip": [
+              121.83,
+              59.81
+            ],
+            "butt": [
+              103.97,
+              65.73
+            ],
+            "tip": [
+              163.52,
+              45.99
+            ],
+            "depth": [
+              0.553,
+              -0.124
+            ]
+          },
+          {
+            "frame": 338,
+            "mirrorBody": false,
+            "staff": 3,
+            "grip": [
+              123.8,
+              62.87
+            ],
+            "butt": [
+              113.85,
+              57.89
+            ],
+            "tip": [
+              159.1,
+              80.52
+            ],
+            "depth": [
+              0.039,
+              1.453
+            ]
+          },
+          {
+            "frame": 339,
+            "mirrorBody": false,
+            "staff": 4,
+            "grip": [
+              123.45,
+              62.23
+            ],
+            "butt": [
+              119.22,
+              55.03
+            ],
+            "tip": [
+              138.45,
+              87.76
+            ],
+            "depth": [
+              -0.069,
+              1.837
+            ]
+          },
+          {
+            "frame": 340,
+            "mirrorBody": false,
+            "staff": 5,
+            "grip": [
+              123.9,
+              62.6
+            ],
+            "butt": [
+              126.67,
+              53.63
+            ],
+            "tip": [
+              115.58,
+              89.53
+            ],
+            "depth": [
+              -0.141,
+              1.824
+            ]
+          },
+          {
+            "frame": 341,
+            "mirrorBody": false,
+            "staff": 6,
+            "grip": [
+              112.61,
+              68.19
+            ],
+            "butt": [
+              129.08,
+              60.76
+            ],
+            "tip": [
+              74.19,
+              85.51
+            ],
+            "depth": [
+              0.053,
+              1.043
+            ]
+          },
+          {
+            "frame": 342,
+            "mirrorBody": false,
+            "staff": 7,
+            "grip": [
+              119.68,
+              60.77
+            ],
+            "butt": [
+              74.82,
+              72.47
+            ],
+            "tip": [
+              132.88,
+              57.32
+            ],
+            "depth": [
+              1,
+              1
+            ]
+          }
+        ],
+        "back": [
+          {
+            "frame": 343,
+            "mirrorBody": false,
+            "staff": 8,
+            "grip": [
+              82.18,
+              71.5
+            ],
+            "butt": [
+              98.91,
+              81.74
+            ],
+            "tip": [
+              43.14,
+              47.61
+            ],
+            "depth": [
+              -0.16,
+              -0.794
+            ]
+          },
+          {
+            "frame": 344,
+            "mirrorBody": false,
+            "staff": 9,
+            "grip": [
+              82.18,
+              71.5
+            ],
+            "butt": [
+              95.29,
+              83.03
+            ],
+            "tip": [
+              51.58,
+              44.61
+            ],
+            "depth": [
+              0.06,
+              -1.306
+            ]
+          },
+          {
+            "frame": 345,
+            "mirrorBody": false,
+            "staff": 10,
+            "grip": [
+              120.76,
+              59.92
+            ],
+            "butt": [
+              127.26,
+              71.53
+            ],
+            "tip": [
+              105.59,
+              32.84
+            ],
+            "depth": [
+              0.208,
+              -1.653
+            ]
+          },
+          {
+            "frame": 346,
+            "mirrorBody": false,
+            "staff": 11,
+            "grip": [
+              121.83,
+              54.71
+            ],
+            "butt": [
+              111.87,
+              59.69
+            ],
+            "tip": [
+              157.13,
+              37.06
+            ],
+            "depth": [
+              -0.039,
+              -1.453
+            ]
+          },
+          {
+            "frame": 347,
+            "mirrorBody": false,
+            "staff": 12,
+            "grip": [
+              121.4,
+              55.24
+            ],
+            "butt": [
+              107.98,
+              56.86
+            ],
+            "tip": [
+              168.98,
+              49.48
+            ],
+            "depth": [
+              -0.218,
+              -0.819
+            ]
+          },
+          {
+            "frame": 348,
+            "mirrorBody": false,
+            "staff": 13,
+            "grip": [
+              120.96,
+              54.99
+            ],
+            "butt": [
+              105.24,
+              52.49
+            ],
+            "tip": [
+              168.11,
+              62.5
+            ],
+            "depth": [
+              -0.437,
+              -0.09
+            ]
+          },
+          {
+            "frame": 349,
+            "mirrorBody": false,
+            "staff": 14,
+            "grip": [
+              112.5,
+              66.62
+            ],
+            "butt": [
+              102.99,
+              55.71
+            ],
+            "tip": [
+              134.68,
+              92.06
+            ],
+            "depth": [
+              -0.865,
+              0.851
+            ]
+          },
+          {
+            "frame": 350,
+            "mirrorBody": false,
+            "staff": 15,
+            "grip": [
+              119.5,
+              57.26
+            ],
+            "butt": [
+              72.0,
+              71.35
+            ],
+            "tip": [
+              129.52,
+              54.28
+            ],
+            "depth": [
+              -1,
+              -1
+            ]
+          }
+        ],
+        "side": [
+          {
+            "frame": 351,
+            "mirrorBody": false,
+            "staff": 16,
+            "grip": [
+              82.09,
+              72.47
+            ],
+            "butt": [
+              90.79,
+              88.12
+            ],
+            "tip": [
+              61.79,
+              35.96
+            ],
+            "depth": [
+              0.821,
+              -0.749
+            ]
+          },
+          {
+            "frame": 352,
+            "mirrorBody": false,
+            "staff": 17,
+            "grip": [
+              82.09,
+              72.47
+            ],
+            "butt": [
+              82.09,
+              87.4
+            ],
+            "tip": [
+              82.09,
+              37.64
+            ],
+            "depth": [
+              0.922,
+              -0.985
+            ]
+          },
+          {
+            "frame": 353,
+            "mirrorBody": false,
+            "staff": 18,
+            "grip": [
+              113.5,
+              61.94
+            ],
+            "butt": [
+              104.05,
+              73.47
+            ],
+            "tip": [
+              135.56,
+              35.06
+            ],
+            "depth": [
+              0.862,
+              -0.844
+            ]
+          },
+          {
+            "frame": 354,
+            "mirrorBody": false,
+            "staff": 19,
+            "grip": [
+              119.34,
+              63.95
+            ],
+            "butt": [
+              105.26,
+              63.95
+            ],
+            "tip": [
+              169.26,
+              63.95
+            ],
+            "depth": [
+              0.35,
+              0.35
+            ]
+          },
+          {
+            "frame": 355,
+            "mirrorBody": false,
+            "staff": 20,
+            "grip": [
+              119.34,
+              63.95
+            ],
+            "butt": [
+              107.16,
+              59.94
+            ],
+            "tip": [
+              162.55,
+              78.16
+            ],
+            "depth": [
+              0.13,
+              1.13
+            ]
+          },
+          {
+            "frame": 356,
+            "mirrorBody": false,
+            "staff": 21,
+            "grip": [
+              119.34,
+              63.95
+            ],
+            "butt": [
+              111.36,
+              55.92
+            ],
+            "tip": [
+              143.28,
+              88.03
+            ],
+            "depth": [
+              -0.082,
+              1.646
+            ]
+          },
+          {
+            "frame": 357,
+            "mirrorBody": false,
+            "staff": 22,
+            "grip": [
+              113.5,
+              62.94
+            ],
+            "butt": [
+              120.0,
+              51.34
+            ],
+            "tip": [
+              98.33,
+              90.02
+            ],
+            "depth": [
+              -0.208,
+              1.653
+            ]
+          },
+          {
+            "frame": 358,
+            "mirrorBody": false,
+            "staff": 23,
+            "grip": [
+              113.5,
+              62.94
+            ],
+            "butt": [
+              69.09,
+              76.42
+            ],
+            "tip": [
+              126.5,
+              59.0
+            ],
+            "depth": [
+              1,
+              1
+            ]
+          }
+        ],
+        "keyTimesMs": [
+          0.0,
+          32.5,
+          65.0,
+          130.0,
+          151.25,
+          172.5,
+          232.0,
+          283.3333333333333
+        ]
+      },
+      "staffAttack2": {
+        "contactKey": 3,
+        "sourceKeys": [
+          0,
+          0.5,
+          1,
+          2,
+          2.5,
+          3,
+          4,
+          5
+        ],
+        "sourceCount": 6,
+        "name": "backhand sweep",
+        "arc": "±102°",
+        "front": [
+          {
+            "frame": 359,
+            "mirrorBody": false,
+            "staff": 24,
+            "grip": [
+              93.58,
+              68.85
+            ],
+            "butt": [
+              111.23,
+              69.63
+            ],
+            "tip": [
+              52.41,
+              67.03
+            ],
+            "depth": [
+              0.149,
+              0.818
+            ]
+          },
+          {
+            "frame": 360,
+            "mirrorBody": false,
+            "staff": 25,
+            "grip": [
+              93.58,
+              68.85
+            ],
+            "butt": [
+              108.65,
+              65.91
+            ],
+            "tip": [
+              58.43,
+              75.72
+            ],
+            "depth": [
+              -0.011,
+              1.193
+            ]
+          },
+          {
+            "frame": 361,
+            "mirrorBody": false,
+            "staff": 26,
+            "grip": [
+              117.84,
+              64.71
+            ],
+            "butt": [
+              128.81,
+              58.55
+            ],
+            "tip": [
+              92.24,
+              79.09
+            ],
+            "depth": [
+              -0.14,
+              1.492
+            ]
+          },
+          {
+            "frame": 362,
+            "mirrorBody": false,
+            "staff": 27,
+            "grip": [
+              125.12,
+              57.79
+            ],
+            "butt": [
+              114.33,
+              53.26
+            ],
+            "tip": [
+              163.36,
+              73.83
+            ],
+            "depth": [
+              0.067,
+              1.353
+            ]
+          },
+          {
+            "frame": 363,
+            "mirrorBody": false,
+            "staff": 28,
+            "grip": [
+              124.11,
+              56.89
+            ],
+            "butt": [
+              110.25,
+              56.16
+            ],
+            "tip": [
+              173.24,
+              59.48
+            ],
+            "depth": [
+              0.274,
+              0.621
+            ]
+          },
+          {
+            "frame": 364,
+            "mirrorBody": false,
+            "staff": 29,
+            "grip": [
+              123.56,
+              56.29
+            ],
+            "butt": [
+              108.56,
+              60.14
+            ],
+            "tip": [
+              168.55,
+              44.76
+            ],
+            "depth": [
+              0.521,
+              -0.162
+            ]
+          },
+          {
+            "frame": 365,
+            "mirrorBody": false,
+            "staff": 30,
+            "grip": [
+              117.84,
+              64.71
+            ],
+            "butt": [
+              108.82,
+              79.09
+            ],
+            "tip": [
+              138.89,
+              31.16
+            ],
+            "depth": [
+              0.838,
+              -0.789
+            ]
+          },
+          {
+            "frame": 366,
+            "mirrorBody": false,
+            "staff": 31,
+            "grip": [
+              121.83,
+              59.81
+            ],
+            "butt": [
+              76.96,
+              72.32
+            ],
+            "tip": [
+              134.75,
+              56.21
+            ],
+            "depth": [
+              1,
+              1
+            ]
+          }
+        ],
+        "back": [
+          {
+            "frame": 367,
+            "mirrorBody": false,
+            "staff": 32,
+            "grip": [
+              112.5,
+              66.62
+            ],
+            "butt": [
+              106.08,
+              61.78
+            ],
+            "tip": [
+              127.49,
+              77.89
+            ],
+            "depth": [
+              -0.901,
+              0.937
+            ]
+          },
+          {
+            "frame": 368,
+            "mirrorBody": false,
+            "staff": 33,
+            "grip": [
+              112.5,
+              66.62
+            ],
+            "butt": [
+              99.07,
+              62.74
+            ],
+            "tip": [
+              143.83,
+              75.66
+            ],
+            "depth": [
+              -0.77,
+              0.629
+            ]
+          },
+          {
+            "frame": 369,
+            "mirrorBody": false,
+            "staff": 34,
+            "grip": [
+              120.16,
+              62.45
+            ],
+            "butt": [
+              102.18,
+              60.85
+            ],
+            "tip": [
+              162.1,
+              66.17
+            ],
+            "depth": [
+              -0.554,
+              0.127
+            ]
+          },
+          {
+            "frame": 370,
+            "mirrorBody": false,
+            "staff": 35,
+            "grip": [
+              125.2,
+              57.92
+            ],
+            "butt": [
+              116.15,
+              63.31
+            ],
+            "tip": [
+              157.29,
+              38.8
+            ],
+            "depth": [
+              -0.013,
+              -1.545
+            ]
+          },
+          {
+            "frame": 371,
+            "mirrorBody": false,
+            "staff": 36,
+            "grip": [
+              126.3,
+              57.67
+            ],
+            "butt": [
+              123.86,
+              65.1
+            ],
+            "tip": [
+              134.96,
+              31.37
+            ],
+            "depth": [
+              0.083,
+              -1.885
+            ]
+          },
+          {
+            "frame": 372,
+            "mirrorBody": false,
+            "staff": 37,
+            "grip": [
+              126.26,
+              50.72
+            ],
+            "butt": [
+              131.72,
+              59.33
+            ],
+            "tip": [
+              109.88,
+              24.87
+            ],
+            "depth": [
+              0.119,
+              -1.756
+            ]
+          },
+          {
+            "frame": 373,
+            "mirrorBody": false,
+            "staff": 38,
+            "grip": [
+              120.16,
+              62.45
+            ],
+            "butt": [
+              135.78,
+              73.52
+            ],
+            "tip": [
+              83.7,
+              36.6
+            ],
+            "depth": [
+              -0.068,
+              -1.008
+            ]
+          },
+          {
+            "frame": 374,
+            "mirrorBody": false,
+            "staff": 39,
+            "grip": [
+              120.76,
+              59.92
+            ],
+            "butt": [
+              74.46,
+              72.68
+            ],
+            "tip": [
+              132.3,
+              56.74
+            ],
+            "depth": [
+              -1,
+              -1
+            ]
+          }
+        ],
+        "side": [
+          {
+            "frame": 375,
+            "mirrorBody": false,
+            "staff": 40,
+            "grip": [
+              82.09,
+              72.47
+            ],
+            "butt": [
+              90.03,
+              67.96
+            ],
+            "tip": [
+              63.57,
+              83.02
+            ],
+            "depth": [
+              -0.182,
+              1.591
+            ]
+          },
+          {
+            "frame": 376,
+            "mirrorBody": false,
+            "staff": 41,
+            "grip": [
+              82.09,
+              72.47
+            ],
+            "butt": [
+              82.09,
+              65.82
+            ],
+            "tip": [
+              82.09,
+              88.01
+            ],
+            "depth": [
+              -0.243,
+              1.735
+            ]
+          },
+          {
+            "frame": 377,
+            "mirrorBody": false,
+            "staff": 42,
+            "grip": [
+              113.5,
+              63.94
+            ],
+            "butt": [
+              105.42,
+              56.95
+            ],
+            "tip": [
+              132.36,
+              80.26
+            ],
+            "depth": [
+              -0.192,
+              1.614
+            ]
+          },
+          {
+            "frame": 378,
+            "mirrorBody": false,
+            "staff": 43,
+            "grip": [
+              107.82,
+              64.92
+            ],
+            "butt": [
+              93.8,
+              65.53
+            ],
+            "tip": [
+              157.55,
+              62.74
+            ],
+            "depth": [
+              0.388,
+              0.214
+            ]
+          },
+          {
+            "frame": 379,
+            "mirrorBody": false,
+            "staff": 44,
+            "grip": [
+              107.82,
+              64.92
+            ],
+            "butt": [
+              96.3,
+              69.45
+            ],
+            "tip": [
+              148.69,
+              48.87
+            ],
+            "depth": [
+              0.602,
+              -0.544
+            ]
+          },
+          {
+            "frame": 380,
+            "mirrorBody": false,
+            "staff": 45,
+            "grip": [
+              107.82,
+              64.92
+            ],
+            "butt": [
+              101.08,
+              73.27
+            ],
+            "tip": [
+              128.06,
+              39.87
+            ],
+            "depth": [
+              0.802,
+              -1.006
+            ]
+          },
+          {
+            "frame": 381,
+            "mirrorBody": false,
+            "staff": 46,
+            "grip": [
+              113.5,
+              61.94
+            ],
+            "butt": [
+              118.17,
+              77.22
+            ],
+            "tip": [
+              102.6,
+              26.29
+            ],
+            "depth": [
+              0.895,
+              -0.921
+            ]
+          },
+          {
+            "frame": 382,
+            "mirrorBody": false,
+            "staff": 47,
+            "grip": [
+              113.5,
+              61.94
+            ],
+            "butt": [
+              69.09,
+              75.42
+            ],
+            "tip": [
+              126.5,
+              58.0
+            ],
+            "depth": [
+              1,
+              1
+            ]
+          }
+        ],
+        "keyTimesMs": [
+          0.0,
+          35.0,
+          70.0,
+          140.0,
+          162.5,
+          185.0,
+          248.0,
+          303.3333333333333
+        ]
+      },
+      "staffAttack3": {
+        "contactKey": 3,
+        "sourceKeys": [
+          0,
+          0.5,
+          1,
+          2,
+          2.5,
+          3,
+          4,
+          5
+        ],
+        "sourceCount": 6,
+        "name": "spin",
+        "arc": "360°",
+        "front": [
+          {
+            "frame": 383,
+            "mirrorBody": false,
+            "staff": 48,
+            "grip": [
+              100.35,
+              70.84
+            ],
+            "butt": [
+              124.99,
+              69.77
+            ],
+            "tip": [
+              63.4,
+              72.44
+            ],
+            "depth": [
+              0.144,
+              0.659
+            ]
+          },
+          {
+            "frame": 384,
+            "mirrorBody": false,
+            "staff": 49,
+            "grip": [
+              100.35,
+              71.57
+            ],
+            "butt": [
+              87.56,
+              61.61
+            ],
+            "tip": [
+              119.53,
+              86.51
+            ],
+            "depth": [
+              -0.342,
+              1.388
+            ]
+          },
+          {
+            "frame": 385,
+            "mirrorBody": false,
+            "staff": 50,
+            "grip": [
+              125.2,
+              57.92
+            ],
+            "butt": [
+              116.15,
+              62.44
+            ],
+            "tip": [
+              161.4,
+              39.82
+            ],
+            "depth": [
+              0.633,
+              -0.781
+            ]
+          },
+          {
+            "frame": 386,
+            "mirrorBody": true,
+            "staff": 51,
+            "grip": [
+              66.8,
+              57.92
+            ],
+            "butt": [
+              75.85,
+              62.44
+            ],
+            "tip": [
+              30.6,
+              39.82
+            ],
+            "depth": [
+              0.633,
+              -0.781
+            ]
+          },
+          {
+            "frame": 387,
+            "mirrorBody": true,
+            "staff": 52,
+            "grip": [
+              66.8,
+              57.92
+            ],
+            "butt": [
+              79.6,
+              57.92
+            ],
+            "tip": [
+              15.6,
+              57.92
+            ],
+            "depth": [
+              0.35,
+              0.35
+            ]
+          },
+          {
+            "frame": 388,
+            "mirrorBody": true,
+            "staff": 53,
+            "grip": [
+              66.88,
+              57.79
+            ],
+            "butt": [
+              75.93,
+              53.26
+            ],
+            "tip": [
+              30.68,
+              75.89
+            ],
+            "depth": [
+              0.067,
+              1.481
+            ]
+          },
+          {
+            "frame": 389,
+            "mirrorBody": false,
+            "staff": 54,
+            "grip": [
+              125.12,
+              57.79
+            ],
+            "butt": [
+              116.07,
+              53.26
+            ],
+            "tip": [
+              161.32,
+              75.89
+            ],
+            "depth": [
+              0.067,
+              1.481
+            ]
+          },
+          {
+            "frame": 390,
+            "mirrorBody": false,
+            "staff": 55,
+            "grip": [
+              119.68,
+              60.77
+            ],
+            "butt": [
+              74.82,
+              72.47
+            ],
+            "tip": [
+              132.88,
+              57.32
+            ],
+            "depth": [
+              1,
+              1
+            ]
+          }
+        ],
+        "back": [
+          {
+            "frame": 391,
+            "mirrorBody": false,
+            "staff": 56,
+            "grip": [
+              110.85,
+              68.75
+            ],
+            "butt": [
+              87.03,
+              67.97
+            ],
+            "tip": [
+              146.58,
+              69.9
+            ],
+            "depth": [
+              -0.621,
+              0.056
+            ]
+          },
+          {
+            "frame": 392,
+            "mirrorBody": false,
+            "staff": 57,
+            "grip": [
+              110.85,
+              68.75
+            ],
+            "butt": [
+              97.13,
+              81.3
+            ],
+            "tip": [
+              131.43,
+              49.91
+            ],
+            "depth": [
+              0.323,
+              -1.36
+            ]
+          },
+          {
+            "frame": 393,
+            "mirrorBody": true,
+            "staff": 58,
+            "grip": [
+              66.8,
+              57.92
+            ],
+            "butt": [
+              75.85,
+              62.44
+            ],
+            "tip": [
+              30.6,
+              39.82
+            ],
+            "depth": [
+              -0.067,
+              -1.481
+            ]
+          },
+          {
+            "frame": 394,
+            "mirrorBody": true,
+            "staff": 59,
+            "grip": [
+              66.88,
+              57.79
+            ],
+            "butt": [
+              75.93,
+              53.26
+            ],
+            "tip": [
+              30.68,
+              75.89
+            ],
+            "depth": [
+              -0.633,
+              0.781
+            ]
+          },
+          {
+            "frame": 395,
+            "mirrorBody": true,
+            "staff": 60,
+            "grip": [
+              66.88,
+              57.79
+            ],
+            "butt": [
+              66.88,
+              51.39
+            ],
+            "tip": [
+              66.88,
+              83.39
+            ],
+            "depth": [
+              -0.75,
+              1.25
+            ]
+          },
+          {
+            "frame": 396,
+            "mirrorBody": false,
+            "staff": 61,
+            "grip": [
+              125.12,
+              57.79
+            ],
+            "butt": [
+              116.07,
+              53.26
+            ],
+            "tip": [
+              161.32,
+              75.89
+            ],
+            "depth": [
+              -0.633,
+              0.781
+            ]
+          },
+          {
+            "frame": 397,
+            "mirrorBody": false,
+            "staff": 62,
+            "grip": [
+              125.2,
+              57.92
+            ],
+            "butt": [
+              116.15,
+              62.44
+            ],
+            "tip": [
+              161.4,
+              39.82
+            ],
+            "depth": [
+              -0.067,
+              -1.481
+            ]
+          },
+          {
+            "frame": 398,
+            "mirrorBody": false,
+            "staff": 63,
+            "grip": [
+              119.5,
+              57.26
+            ],
+            "butt": [
+              72.0,
+              71.35
+            ],
+            "tip": [
+              129.52,
+              54.28
+            ],
+            "depth": [
+              -1,
+              -1
+            ]
+          }
+        ],
+        "side": [
+          {
+            "frame": 399,
+            "mirrorBody": false,
+            "staff": 64,
+            "grip": [
+              82.09,
+              72.47
+            ],
+            "butt": [
+              104.04,
+              69.7
+            ],
+            "tip": [
+              49.16,
+              76.64
+            ],
+            "depth": [
+              -0.046,
+              0.944
+            ]
+          },
+          {
+            "frame": 400,
+            "mirrorBody": false,
+            "staff": 65,
+            "grip": [
+              82.09,
+              72.47
+            ],
+            "butt": [
+              66.54,
+              64.13
+            ],
+            "tip": [
+              105.41,
+              84.99
+            ],
+            "depth": [
+              -0.283,
+              1.3
+            ]
+          },
+          {
+            "frame": 401,
+            "mirrorBody": false,
+            "staff": 66,
+            "grip": [
+              125.2,
+              57.92
+            ],
+            "butt": [
+              116.15,
+              62.44
+            ],
+            "tip": [
+              161.4,
+              39.82
+            ],
+            "depth": [
+              0.633,
+              -0.781
+            ]
+          },
+          {
+            "frame": 402,
+            "mirrorBody": true,
+            "staff": 67,
+            "grip": [
+              66.8,
+              57.92
+            ],
+            "butt": [
+              75.85,
+              62.44
+            ],
+            "tip": [
+              30.6,
+              39.82
+            ],
+            "depth": [
+              0.633,
+              -0.781
+            ]
+          },
+          {
+            "frame": 403,
+            "mirrorBody": true,
+            "staff": 68,
+            "grip": [
+              66.8,
+              57.92
+            ],
+            "butt": [
+              79.6,
+              57.92
+            ],
+            "tip": [
+              15.6,
+              57.92
+            ],
+            "depth": [
+              0.35,
+              0.35
+            ]
+          },
+          {
+            "frame": 404,
+            "mirrorBody": true,
+            "staff": 69,
+            "grip": [
+              66.88,
+              57.79
+            ],
+            "butt": [
+              75.93,
+              53.26
+            ],
+            "tip": [
+              30.68,
+              75.89
+            ],
+            "depth": [
+              0.067,
+              1.481
+            ]
+          },
+          {
+            "frame": 405,
+            "mirrorBody": false,
+            "staff": 70,
+            "grip": [
+              125.12,
+              57.79
+            ],
+            "butt": [
+              116.07,
+              53.26
+            ],
+            "tip": [
+              161.32,
+              75.89
+            ],
+            "depth": [
+              0.067,
+              1.481
+            ]
+          },
+          {
+            "frame": 406,
+            "mirrorBody": false,
+            "staff": 71,
+            "grip": [
+              113.5,
+              62.94
+            ],
+            "butt": [
+              69.09,
+              76.42
+            ],
+            "tip": [
+              126.5,
+              59.0
+            ],
+            "depth": [
+              1,
+              1
+            ]
+          }
+        ],
+        "keyTimesMs": [
+          0.0,
+          55.0,
+          110.0,
+          220.0,
+          247.5,
+          275.0,
+          352.0,
+          423.3333333333333
+        ]
+      }
+    }
+  }
+}

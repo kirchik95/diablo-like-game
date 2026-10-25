@@ -5,7 +5,7 @@ import { Input } from '../src/input.js';
 import { isWalkable } from '../src/world.js';
 import { LOCATIONS } from '../src/campaign.js';
 import { monkPose } from '../src/pixel-animation.js';
-import monkPackage from '../assets/game/pixel-v2/monk/manifest.json' with { type: 'json' };
+import monkPackage from '../assets/game/pixel-v17/monk-side/manifest.json' with { type: 'json' };
 
 const close = (actual, expected, label) => assert.ok(Math.abs(actual - expected) < 1e-8,
   `${label}: expected ${expected}, got ${actual}`);
@@ -99,10 +99,14 @@ test('a delayed update still moves only one maximum simulation step', () => {
 });
 
 test('run frames follow actual faster travel without a second animation speed multiplier', () => {
-  const game = openGround(), keys = [];
+  const game = openGround(), keys = [], clip = monkPackage.monk.clips.run;
   for (let tick = 0; tick < 8; tick++) {
     updateGame(game, { ...idle, moveY: 1 }, .05);
-    keys.push(monkPackage.monk.clips.run.front.indexOf(monkPose(game.player).frame));
+    const key = clip.front.indexOf(monkPose(game.player).frame);
+    assert.ok(key >= 0, 'default pose belongs to the active run');
+    const phase = clip.sourceKeys[key], nextPhase = clip.sourceKeys[key + 1] ?? clip.sourceCount;
+    assert.ok(game.player.distance >= phase * .56 && game.player.distance < nextPhase * .56, 'drawn phase contains actual travel');
+    keys.push(Math.floor(phase));
   }
   // .27u per tick against .56u per key: the gait follows travel, never ticks.
   assert.deepEqual(keys, [0, 0, 1, 1, 2, 2, 3, 3]);
@@ -116,10 +120,10 @@ test('run frames follow actual faster travel without a second animation speed mu
 const tent = LOCATIONS.camp.setDressing.find(p => p.id === 'tent-left').collider;
 const monkRadius = createAdventure().player.radius;
 for (const { name, from, input, axis, contact } of [
-  { name: 'campfire circle', from: [-1, -2], input: { moveX: -1 }, axis: 'x', contact: -1.3325 },
+  { name: 'campfire circle', from: [-2.2, -2.8], input: { moveX: -1 }, axis: 'x', contact: -2.5325 },
   { name: 'tent rectangle', from: [tent.x, tent.y + tent.halfDepth + 1.2], input: { moveY: -1 }, axis: 'y',
     contact: tent.y + tent.halfDepth + monkRadius },
-  { name: 'outer northern walk-mask edge', from: [0, -96], input: { moveY: -1 }, axis: 'y', contact: -96.27 },
+  { name: 'outer northern walk-mask edge', from: [0, -136], input: { moveY: -1 }, axis: 'y', contact: -136.27 },
 ]) {
   test(`maximum-dt running stops at the ${name} and can retreat`, () => {
     const game = createAdventure();

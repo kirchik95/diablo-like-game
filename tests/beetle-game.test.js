@@ -13,6 +13,9 @@ const angleToPlayer = (game, e) => {
   return Math.acos(Math.max(-1, Math.min(1, (x * e.dx + y * e.dy) / Math.hypot(x, y))));
 };
 const beetleHp = MONK_RULES.enemyHp.beetle;
+// The six packs and their wanderers on the road and in the courtyard; the side zones' monsters
+// have their own tests (side-encounters.test.js).
+const spine = e => e.zoneId === 'road' || e.zoneId === 'courtyard';
 
 // Seeded randomness for sweeps: the same seeds and offsets in every run.
 function random(seed) {
@@ -362,8 +365,8 @@ test('safe-camp retreat waits for a committed beetle state instead of sliding or
 });
 
 for (const dt of [.01, .05]) test(`displaced beetles walk home at pack speed without healing at dt=${dt}`, () => {
-  const game = createAdventure(), beetles = game.enemies.filter(e => e.kind === 'beetle');
-  assert.equal(beetles.length, 5);
+  const game = createAdventure(), beetles = game.enemies.filter(e => e.kind === 'beetle' && spine(e));
+  assert.equal(beetles.length, 8);
   for (const e of beetles) {
     e.hp -= 9; e.active = true; e.state = 'chase';
     const start = { x: e.x, y: e.y };
@@ -385,10 +388,12 @@ for (const dt of [.01, .05]) test(`displaced beetles walk home at pack speed wit
 });
 
 test('adventure beetles start idle with their own HP, radius and closed guard; kills follow the usual rules', () => {
-  const game = createAdventure(), beetles = game.enemies.filter(e => e.kind === 'beetle');
+  const game = createAdventure(), beetles = game.enemies.filter(e => e.kind === 'beetle' && spine(e));
   assert.equal(beetleHp, 160);
   for (const e of beetles) {
-    assert.deepEqual([e.hp, e.maxHp, e.radius, e.state, e.exposed], [160, 160, BEETLE_STATS.radius, 'idle', false]);
+    // Courtyard beetles have monster level 2: 160 × 1.18 = 189 (§6.1, §6.3).
+    const hp = e.zoneId === 'courtyard' ? 189 : 160;
+    assert.deepEqual([e.hp, e.maxHp, e.radius, e.state, e.exposed], [hp, hp, BEETLE_STATS.radius, 'idle', false]);
     assert.ok(isWalkable(e.x, e.y, e.radius, game.world));
   }
   assert.equal(game.enemies.find(e => e.kind === 'hound').radius, .29);
@@ -404,19 +409,18 @@ test('adventure beetles start idle with their own HP, radius and closed guard; k
   assert.ok(game.events.some(event => event.type === 'death' && event.id === e.id));
 });
 
-test('placement: 34 ordinary monsters with 5 beetles, 10 wraiths and 12 courtyard guards', () => {
-  const world = createOverworld(DEFAULT_WORLD_SEED), enemies = world.encounters;
-  assert.equal(enemies.length, 34);
+test('placement: the six packs keep 8 beetles, 3 of them in the courtyard, beside the wanderers', () => {
+  const world = createOverworld(DEFAULT_WORLD_SEED), enemies = world.encounters, packs = enemies.filter(e => !e.wander && spine(e));
   const count = kind => enemies.filter(e => e.kind === kind).length;
-  assert.deepEqual([count('hound'), count('wraith'), count('beetle')], [19, 10, 5]);
-  assert.equal(new Set(enemies.map(e => e.packId)).size, 6);
-  assert.deepEqual(enemies.filter(e => e.kind === 'beetle').map(e => e.packId),
-    ['road-crossing', 'road-gate', 'road-thicket', 'court-entrance', 'court-source']);
-  assert.equal(enemies.filter(e => e.zoneId === 'courtyard').length, 12);
-  assert.equal(enemies.filter(e => e.zoneId === 'courtyard' && e.kind === 'beetle').length, 2);
+  assert.equal(count('hound') + count('wraith') + count('beetle'), enemies.length);
+  assert.equal(new Set(packs.map(e => e.packId)).size, 6);
+  assert.deepEqual(packs.filter(e => e.kind === 'beetle').map(e => e.packId),
+    ['road-crossing', 'road-gate', 'road-gate', 'road-thicket', 'road-thicket', 'court-entrance', 'court-source', 'court-source']);
+  assert.equal(packs.filter(e => e.zoneId === 'courtyard' && e.kind === 'beetle').length, 3);
   const game = createAdventure();
-  assert.equal(game.enemies.filter(e => e.kind !== 'ritual').length, 34);
-  assert.equal(game.enemies.filter(e => e.zoneId === 'courtyard' && e.kind !== 'ritual').length, 12);
+  assert.equal(game.enemies.filter(e => e.kind !== 'ritual').length, enemies.length);
+  assert.equal(game.enemies.filter(e => e.zoneId === 'courtyard' && e.kind !== 'ritual').length,
+    enemies.filter(e => e.zoneId === 'courtyard').length);
 });
 
 test('placement is deterministic per seed, including the monster kinds', () => {
@@ -435,16 +439,15 @@ test('placement respects spacing, beetle clearance and reachability across 200 s
   const seeds = [0, 1, 4294967295, DEFAULT_WORLD_SEED, ...Array.from({ length: 196 }, () => Math.floor(next() * 4294967296))];
   for (const seed of seeds) {
     const world = createOverworld(seed), enemies = world.encounters;
-    assert.equal(enemies.length, 34, `${seed}`);
-    assert.equal(enemies.filter(e => e.kind === 'beetle').length, 5, `${seed}`);
-    assert.equal(enemies.filter(e => e.kind === 'wraith').length, 10, `${seed}`);
-    assert.equal(enemies.filter(e => e.zoneId === 'courtyard').length, 12, `${seed}`);
+    // The six packs keep their 8 beetles; a wandering beetle only walks the courtyard or the orchard.
+    assert.equal(enemies.filter(e => e.kind === 'beetle' && !e.wander && spine(e)).length, 8, `${seed}`);
+    assert.ok(enemies.every(e => e.kind !== 'beetle' || !e.wander || ['courtyard', 'orchard'].includes(e.zoneId)), `${seed}`);
     for (const [i, e] of enemies.entries()) {
       const clearance = e.kind === 'beetle' ? BEETLE_STATS.radius + .25 : .54;
       assert.ok(isWalkable(e.x, e.y, clearance, world), `${seed}:${e.id}: collision margin`);
       assert.equal(getOverworldZone(e.x, e.y).id, e.zoneId);
       assert.ok(e.y < world.safeArea.minY - 7, `${seed}:${e.id}: camp buffer`);
-      assert.ok(Math.abs(e.y + 70.5) >= 3, `${seed}:${e.id}: courtyard seam buffer`);
+      assert.ok(Math.abs(e.y + 99.5) >= 3, `${seed}:${e.id}: courtyard seam buffer`);
       for (const point of [world.shrine, world.secret, world.ritual]) assert.ok(distance(e, point) >= 2.2, `${seed}:${e.id}: reserved`);
       for (const other of enemies.slice(i + 1)) assert.ok(distance(e, other) >= 1.35 - 1e-8, `${seed}: spacing`);
     }

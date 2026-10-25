@@ -42,8 +42,8 @@ test('only a guard break shows the exposed underside; guarded hits block or flin
 test('presentation routes block and impact events to the struck beetle only', () => {
   const game = createAdventure({}, { seed: 12345 });
   const view = new PresentationState(game);
-  const beetles = game.enemies.filter(e => e.kind === 'beetle');
-  assert.equal(beetles.length, 5);
+  const beetles = game.enemies.filter(e => e.kind === 'beetle' && (e.zoneId === 'road' || e.zoneId === 'courtyard'));
+  assert.equal(beetles.length, 8);
   const [a, b] = beetles, ia = game.enemies.indexOf(a), ib = game.enemies.indexOf(b);
   game.events.push({ type: 'block', x: a.x, y: a.y, id: a.id, dx: 1, dy: 0 });
   game.events.push({ type: 'impact', x: b.x, y: b.y, id: b.id, dx: 1, dy: 0 });

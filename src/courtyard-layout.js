@@ -1,10 +1,12 @@
 // One shared placement contract for the courtyard's gameplay, rendering and
 // tests, in the courtyard's local coordinates (OVERWORLD moves the zone by
-// y -85). Like CAMP_LAYOUT: x/y register the sprite's lower anchor;
+// y -120). Like CAMP_LAYOUT: x/y register the sprite's lower anchor;
 // collider(s) are absolute ground centres whose sizes already include scale.
 import panoramaPackage from '../assets/game/pixel-v9/camp-panorama/manifest.json' with { type: 'json' };
 import ruinsPackage from '../assets/game/pixel-v11/monastery-ruins/manifest.json' with { type: 'json' };
 import { isWalkable, clearLine } from './world.js';
+import { ORCHARD_LAYOUT } from './orchard-layout.js';
+import { SIDE_ZONES } from './side-zones.js';
 
 const freeze = value => {
   if (value && typeof value === 'object') {
@@ -43,21 +45,29 @@ const DRAWN_BASE = {
 // The authored footprint contract of a frame kind, or null (braziers).
 export const courtyardFootprint = kind => ATLASES.find(atlas => atlas.footprints[kind])?.footprints[kind] ?? null;
 
-// The road seam (world y -70.5). Road-area props own everything beyond it.
-export const COURTYARD_SEAM = 14.5;
-// The cloister, a 17×20 rectangle inside its walls, and the road mouth.
-const regionsIn = [[-8, 8, -11, 8], [-3, 3, 9, 14]];
+// The road seam (world y -99.5). Road-area props own everything beyond it.
+export const COURTYARD_SEAM = 20.5;
+// The cloister, a 17×20 rectangle inside its walls, the road mouth and the breach in the
+// back wall (cells x -9, y 1..3) that opens onto the orchard.
+const regionsIn = [[-12, 12, -16, 12], [-4, 4, 13, 20], [-13, -13, 1, 4]];
 const tiles = new Map();
 for (const [x0, x1, y0, y1] of regionsIn) for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) tiles.set(key(x, y), { x, y });
-// The road mouth stays open between its verges up to the seam.
-const corridor = (x, y) => y > 8.6 && Math.abs(x) < 3.7;
+// The road mouth stays open between its verges up to the seam; the breach stays open to the orchard.
+const corridor = (x, y) => (y > 12.6 && Math.abs(x) < 5) || (x < -11.8 && y > .4 && y < 5.6);
+// The orchard (side-zones.js) owns every prop west of x -9.5. Its walk cells, in courtyard
+// coordinates, count as playable ground behind the courtyard's props.
+const westSide = x => x < -13.5;
+const orchardCells = new Set();
+for (const [x0, x1, y0, y1] of ORCHARD_LAYOUT.regions) for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) {
+  orchardCells.add(key(x + SIDE_ZONES.orchard.offset.x, y + SIDE_ZONES.orchard.offset.y + 120));
+}
 
 const setDressing = [];
 const ids = new Map();
 // The pink pair flanks the dais on screen (at the source's screen depth, 3u
 // to each side): behind it, the tall v11 obelisk would seem to carry a bowl.
 const braziers = [{ x: 2.12, y: -8.12, color: 'pink' }, { x: -2.12, y: -3.88, color: 'pink' },
-  { x: -6, y: 1, color: 'cyan' }, { x: 6, y: 1, color: 'cyan' }];
+  { x: -6, y: 1, color: 'cyan' }, { x: 6, y: 1, color: 'cyan' }].map(p => ({ ...p, x: p.x * 1.4, y: p.y * 1.4 }));
 const pick = (n, table) => {
   let total = 0;
   for (const [kind, weight] of table) if ((total += weight) > n) return kind;
@@ -106,6 +116,8 @@ function sizeOf(p) {
 const gap = (p, x, y) => Math.min(...extentsOf(p).map(e => Math.hypot(Math.max(0, Math.abs(x - e.x) - e.rx),
   Math.max(0, Math.abs(y - e.y) - e.ry))));
 
+const authored = (kind, x, y, options) => put(kind, x * 1.4, y * 1.4, options);
+
 // Ruined walls stand just outside the cloister. Back walls (min x and min y,
 // the top of the screen) show their inner face and stand tall; the front
 // walls (max x and max y) would hide the hero, so they are low parapets.
@@ -124,57 +136,63 @@ function wallRun(side, along, line, normal, from, pieces) {
 // Corners: the inner back corner L at the top of the screen, the outer front
 // corner L at the bottom, a broken stump on the right; the north wall's
 // crumbling head turns the left corner.
-put('wall-corner', -7.8, -10.8, { id: 'corner-back' });
-put('parapet-corner', 7.6, 7.6, { id: 'corner-front' });
-put('corner-stump', -9.25, 9.25, { id: 'corner-right' });
-// North (min y): behind the arch, a breach and a broken end at the left corner.
-wallRun('north', 'x', -11.5, -1, -6.3, [['wall-run-x'], .3, ['wall-breach-x'], .4, ['wall-window-x'], .3, ['wall-end-x']]);
-// The long back wall (min x) steps down toward the road side.
-wallRun('back', 'y', -8.5, -1, -9.3, [['wall-run-y'], .3, ['wall-window-y'], .9, ['wall-run-y'], .6, ['wall-end-y']]);
-// Front (max x) and south (max y): low parapets, some broken in two, with
-// gaps of rubble.
-wallRun('front', 'y', 8.5, 1, -11.3, [['parapet-y'], .8, ['parapet-broken-y'], 1.1, ['parapet-y'], .5, ['parapet-broken-y']]);
-wallRun('south-left', 'x', 8.5, 1, -8.5, [['parapet-broken-x']]);
-put('rubble-small', -5, 8.95, { id: 'wall-south-left-rubble' });
+put('wall-corner', -11.8, -15.8, { id: 'corner-back' });
+put('parapet-corner', 11.6, 11.6, { id: 'corner-front' });
+put('corner-stump', -12.9, 12.9, { id: 'corner-right' });
+// Native-size masonry is re-tiled over the larger perimeter. Small joints keep a continuous face.
+wallRun('north', 'x', -16.5, -1, -10.3,
+  [['wall-run-x'], .04, ['wall-breach-x'], .04, ['wall-window-x'], .04, ['wall-run-x'], .04, ['wall-window-x'], .04, ['wall-end-x']]);
+wallRun('back', 'y', -12.5, -1, -14.6,
+  [['wall-run-y'], ['wall-window-y'], ['wall-run-y'], ['wall-end-y']]);
+// The four-cell breach is clear; a low ruined jamb keeps the orchard corridor visible.
+put('rubble-pile', -13.4, -.35, { id: 'breach-rubble' });
+put('rubble-small', -13, 5, { id: 'breach-rubble-south' });
+wallRun('back-south', 'y', -12.5, -1, 8, [['wall-end-y']]);
+wallRun('front', 'y', 12.5, 1, -16.3,
+  [['parapet-y'], .1, ['parapet-broken-y'], .1, ['parapet-y'], .1, ['parapet-broken-y'], .1,
+    ['parapet-y'], .1, ['parapet-broken-y'], .1, ['parapet-y']]);
+wallRun('south-left', 'x', 12.5, 1, -12.5, [['parapet-x'], .1, ['parapet-broken-x']]);
+wallRun('south-right', 'x', 12.5, 1, 5.4, [['parapet-broken-x'], .1, ['parapet-x']]);
+put('rubble-small', -5, 12.95, { id: 'wall-south-left-rubble' });
 // A broken parapet's bare middle opens onto the meadow; a shrub closes it.
 for (const p of setDressing.filter(p => p.kind.startsWith('parapet-broken-'))) {
   const [a, b] = p.colliders, alongX = p.kind.endsWith('-x');
   const mid = alongX ? (a.x + a.halfWidth + b.x - b.halfWidth) / 2 : (a.y + a.halfDepth + b.y - b.halfDepth) / 2;
   const out = (alongX ? a.y + a.halfDepth : a.x + a.halfWidth) + .55;
-  put('bush-round', alongX ? mid : out, alongX ? out : mid, { scale: .8, id: `${p.id}-shrub` });
+  authored('bush-round', alongX ? mid : out, alongX ? out : mid, { scale: .8, id: `${p.id}-shrub` });
 }
-put('rubble-pile', 5.35, 9.3, { id: 'wall-south-right-0' });
+put('rubble-pile', 4.9, 13.3, { id: 'wall-south-right-rubble' });
 // Broken gate posts frame the road mouth.
-for (const [i, x] of [[0, -4], [1, 4]]) put('column-broken', x, 9, { id: `gate-post-${i}` });
+for (const [i, x] of [[0, -4], [1, 4]]) authored('column-broken', x, 9, { id: `gate-post-${i}` });
 // The open arch stands free behind the source, the last of a lost facade.
-put('arch-gate', 0, -9.6, { id: 'arch' });
+authored('arch-gate', 0, -9.6, { id: 'arch' });
 // The source stands in the socket of its low octagonal dais. No collider:
 // melee needs a clear line to the source's own body. The renderer swaps the
 // rune frame in while the guards hold the seal.
-put('ritual-plinth', 0, -6, { id: 'ritual-plinth', layer: 'ground' });
+authored('ritual-plinth', 0, -6, { id: 'ritual-plinth', layer: 'ground' });
 
 // The colonnade keeps its four columns. Only the one behind the source stands
 // whole; the others are broken, so none of them covers the source on screen.
 const columns = [[-5, -3, 3.27], [5, -3, 1.9], [-5, 4, 1.9], [5, 4, 1.9]];
 for (const [i, [x, y, height]] of columns.entries()) {
-  put(height > 2 ? 'column-intact' : 'column-broken', x, y, { id: `column-${i}` });
+  authored(height > 2 ? 'column-intact' : 'column-broken', x, y, { id: `column-${i}` });
 }
 // Fallen masonry by the walls, outside the guards' gathering areas, and
 // toppled drums in the grass behind the breach.
-for (const [kind, x, y] of [['fallen-lintel', 5.8, -10.35], ['fallen-blocks', -6.9, 6.9], ['fallen-block', 7.4, -1.2],
-  ['rubble-pile', -7.3, -6.8], ['column-drums', .4, -13.9], ['fallen-block', -2.6, -13.4]]) put(kind, x, y);
+for (const [kind, x, y] of [['fallen-lintel', 5.1, -9.6], ['fallen-blocks', -6.9, 6.9], ['fallen-block', 7.4, -1.2],
+  ['rubble-pile', -7.3, -6.8], ['column-drums', .4, -13.9], ['fallen-block', -2.6, -13.4]]) authored(kind, x, y);
 // Flat ruin decals break the 4u repeat of the flagstone surface: cracks,
 // moss, loose slabs and grit on a jittered grid. They lie under every actor
 // and combat tell and keep off the dais and the brazier feet.
 const decalAreas = [];
-for (let row = 0, gy = -10.2; gy <= 7.6; row++, gy += 2.55) for (let gx = -7 + (row % 2) * 1.3; gx <= 7.2; gx += 2.6) {
+for (let row = 0, gy = -15.2; gy <= 11.6; row++, gy += 2.55) for (let gx = -11 + (row % 2) * 1.3; gx <= 11.2; gx += 2.6) {
   const ix = Math.round(gx * 10), iy = Math.round(gy * 10);
   if (hash(ix, iy, 71) < .32) continue;
   const x = gx + (hash(ix, iy, 72) - .5) * 1.4, y = gy + (hash(ix, iy, 73) - .5) * 1.4;
   const kind = pick(hash(ix, iy, 74), [['flagstone-cracks', .38], ['moss-patch', .26], ['flagstones-broken', .22], ['rubble-scatter', .14]]);
   const { f } = footprintOf(kind);
   const clearOf = (cx, cy, r) => Math.hypot(Math.max(0, Math.abs(cx - x) - f.halfWidth), Math.max(0, Math.abs(cy - y) - f.halfDepth)) > r;
-  if (!clearOf(0, -6, 1.7) || !braziers.every(b => clearOf(b.x, b.y, .5))) continue;
+  if (!clearOf(0, -8.4, 1.7) || !braziers.every(b => clearOf(b.x, b.y, .5))) continue;
   if (decalAreas.some(a => Math.abs(a.x - x) < a.w + f.halfWidth - .4 && Math.abs(a.y - y) < a.d + f.halfDepth - .4)) continue;
   decalAreas.push({ x, y, w: f.halfWidth, d: f.halfDepth });
   put(kind, x, y);
@@ -184,7 +202,7 @@ for (let row = 0, gy = -10.2; gy <= 7.6; row++, gy += 2.55) for (let gx = -7 + (
 // uncovered edges, just outside the mask, with rubble and shrubs.
 const edges = [];
 for (const p of tiles.values()) for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
-  if (!tiles.has(key(p.x + dx, p.y + dy)) && !(p.y + dy > COURTYARD_SEAM)) edges.push({ x: p.x, y: p.y, dx, dy });
+  if (!tiles.has(key(p.x + dx, p.y + dy)) && !(p.y + dy > COURTYARD_SEAM) && !westSide(p.x + dx)) edges.push({ x: p.x, y: p.y, dx, dy });
 }
 edges.sort((a, b) => a.y - b.y || a.x - b.x || a.dy - b.dy || a.dx - b.dx);
 for (const e of edges) {
@@ -210,7 +228,7 @@ const edgeDistance = (x, y) => {
   }
   return 4;
 };
-for (let y = -11; y <= 8; y++) for (let x = -8; x <= 8; x++) {
+for (let y = -16; y <= 12; y++) for (let x = -12; x <= 12; x++) {
   if (hash(x, y, 21) < .45) continue;
   const px = x + (hash(x, y, 22) - .5) * .9, py = y + (hash(x, y, 23) - .5) * .9;
   if (!tiles.has(key(Math.round(px), Math.round(py))) || Math.abs(px) < 1.9 && py > -8) continue;
@@ -245,14 +263,19 @@ const shapes = {
   'dead-tree': .5, 'dead-tree-snag': .4, 'fallen-block': .7, 'ivy-clump': .5, 'rubble-pile': .9, 'rubble-small': .5,
 };
 const grow = (kind, x, y, scale, flip, id, own) => {
-  if (!clear(x, y, shapes[kind] * scale, own) || corridor(x, y) || y > COURTYARD_SEAM - .9) return null;
+  const h = footprintOf(kind).f.height * scale;
+  if (h > 1.1 && groundBehind(x, y) < 2 * h + 1) return null;
+  if (!clear(x, y, shapes[kind] * scale, own) || corridor(x, y) || y > COURTYARD_SEAM - .9 || westSide(x)) return null;
   if ((reachGrid.get(key(Math.round(x), Math.round(y))) ?? 99) < 2) return null;
   return put(kind, x, y, { scale, flip, id });
 };
 // Screen depth to playable ground straight behind a point (up the screen).
 // Tall props there would hide the hero, so the near side stays low.
 const groundBehind = (x, y) => {
-  for (let k = 1; k <= 18; k++) if (tiles.has(key(Math.round(x - k * Math.SQRT1_2), Math.round(y - k * Math.SQRT1_2)))) return k;
+  for (let k = 1; k <= 18; k++) {
+    const cell = key(Math.round(x - k * Math.SQRT1_2), Math.round(y - k * Math.SQRT1_2));
+    if (tiles.has(cell) || orchardCells.has(cell)) return k;
+  }
   return Infinity;
 };
 
@@ -291,7 +314,7 @@ function stoneRun(first, ix, iy) {
 
 // The monastery spills into the meadow: fallen masonry, ivy and the old
 // courtyard's dead trees, a few cells beyond the walls. Native size only.
-for (let row = 0, gy = -18; gy <= COURTYARD_SEAM; row++, gy += 3.1) for (let gx = -15 + (row % 2) * 1.5; gx <= 15; gx += 3.1) {
+for (let row = 0, gy = -24; gy <= COURTYARD_SEAM; row++, gy += 3.1) for (let gx = -21 + (row % 2) * 1.5; gx <= 21; gx += 3.1) {
   const ix = Math.round(gx * 10), iy = Math.round(gy * 10);
   const x = gx + (hash(ix, iy, 61) - .5) * 2.4, y = gy + (hash(ix, iy, 62) - .5) * 2.4;
   const d = reachGrid.get(key(Math.round(x), Math.round(y)));
@@ -303,7 +326,7 @@ for (let row = 0, gy = -18; gy <= COURTYARD_SEAM; row++, gy += 3.1) for (let gx 
 
 // Outer country: the camp's stone masses, cypress groves and shrubs. Rows
 // are staggered and jittered by most of a cell, so no grid lines show.
-for (let row = 0, gy = -38; gy <= COURTYARD_SEAM; row++, gy += 2.4) for (let gx = -34 + (row % 2) * 1.2; gx <= 34; gx += 2.4) {
+for (let row = 0, gy = -44; gy <= COURTYARD_SEAM; row++, gy += 2.4) for (let gx = -40 + (row % 2) * 1.2; gx <= 40; gx += 2.4) {
   const ix = Math.round(gx * 10), iy = Math.round(gy * 10);
   const x = gx + (hash(ix, iy, 41) - .5) * 2.2, y = gy + (hash(ix, iy, 42) - .5) * 2.2;
   const d = reachGrid.get(key(Math.round(x), Math.round(y)));
@@ -348,7 +371,7 @@ for (const [i, b] of braziers.entries()) {
 
 // Drop cells that the props have sealed off, so the walk mask has no
 // unreachable pockets behind walls or columns.
-const spawn = { x: 0, y: 10 };
+const spawn = { x: 0, y: 14 };
 for (const radius of [.23, .29]) {
   const probe = { tiles: [...tiles.values()], obstacles: setDressing.flatMap(p => p.colliders ?? (p.collider ? [p.collider] : [])) };
   const usable = new Map(probe.tiles.filter(p => isWalkable(p.x, p.y, radius, probe)).map(p => [key(p.x, p.y), p]));
@@ -369,12 +392,12 @@ for (const p of [...tiles.values()].sort((a, b) => a.y - b.y || a.x - b.x)) {
 
 export const COURTYARD_LAYOUT = freeze({
   regions,
-  pavingRoutes: [{ width: 2.4, points: [[0, 12.5], [0, -6]] }],
-  spawn, entries: { road: { x: 0, y: 10 } },
-  exit: { x: 0, y: -9 }, ritual: { x: 0, y: -6 },
-  pillars: columns.map(([x, y, height]) => ({ x, y, height })),
+  pavingRoutes: [{ width: 2.4, points: [[0, 19], [0, -8.4]] }],
+  spawn, entries: { road: { x: 0, y: 14 } },
+  exit: { x: 0, y: -13 }, ritual: { x: 0, y: -8.4 },
+  pillars: columns.map(([x, y, height]) => ({ x: x * 1.4, y: y * 1.4, height })),
   braziers,
   // Flagstone floor inside the walls, for the ground surface.
-  flagstones: [[-8.5, -11.5], [8.5, -11.5], [8.5, 8.5], [-8.5, 8.5]],
+  flagstones: [[-12.5, -16.5], [12.5, -16.5], [12.5, 12.5], [-12.5, 12.5]],
   setDressing,
 });

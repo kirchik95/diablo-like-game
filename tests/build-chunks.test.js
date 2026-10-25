@@ -19,6 +19,23 @@ test('every built JS chunk is at most 500 kB', { skip }, () => {
   }
 });
 
+// Game code grows (gamepad, touch); the entry chunk keeps this much of the budget free.
+const entryHeadroomBytes = 80 * 1024;
+
+test('the entry chunk keeps at least 80 kB of the chunk budget free', { skip }, () => {
+  const entry = readdirSync(assetsDir).find((name) => /^index-.*\.js$/.test(name));
+  assert.ok(entry, 'expected an index-*.js entry chunk');
+  const size = statSync(join(assetsDir, entry)).size;
+  assert.ok(size <= maxChunkBytes - entryHeadroomBytes,
+    `${entry} is ${size} bytes; split game code in vite.config.js to keep ${entryHeadroomBytes} bytes free`);
+});
+
+test('recorded sounds stay separate files and are never inlined into a chunk', { skip }, () => {
+  const inlined = readdirSync(assetsDir).filter((name) => name.endsWith('.js'))
+    .filter((name) => readFileSync(join(assetsDir, name), 'utf8').includes('data:audio/'));
+  assert.deepEqual(inlined, []);
+});
+
 test('dist/index.html references only existing files', { skip }, () => {
   const html = readFileSync(indexPath, 'utf8');
   const urls = [...html.matchAll(/\b(?:src|href)="(\/[^"]*)"/g)].map((match) => match[1]);

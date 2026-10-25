@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "nativePixelsPerUnit": 32,
+  "cache": {
+    "path": "cache.png",
+    "cell": 96,
+    "columns": 4,
+    "rows": 5,
+    "anchor": [
+      48,
+      80
+    ],
+    "frames": [
+      "closed-0",
+      "closed-1",
+      "closed-2",
+      "closed-3",
+      "opening-0",
+      "opening-1",
+      "opening-2",
+      "open-empty",
+      "motes-0",
+      "motes-1",
+      "motes-2",
+      "motes-3",
+      "motes-4",
+      "motes-5",
+      "motes-6",
+      "motes-7",
+      "ground-pool"
+    ],
+    "filter": "nearest",
+    "mipmaps": false,
+    "opaqueBounds": [
+      [
+        34,
+        58,
+        63,
+        87
+      ],
+      [
+        34,
+        58,
+        63,
+        87
+      ],
+      [
+        34,
+        58,
+        63,
+        87
+      ],
+      [
+        34,
+        58,
+        63,
+        87
+      ],
+      [
+        35,
+        58,
+        63,
+        87
+      ],
+      [
+        35,
+        55,
+        64,
+        87
+      ],
+      [
+        35,
+        49,
+        64,
+        87
+      ],
+      [
+        35,
+        45,
+        64,
+        87
+      ],
+      [
+        39,
+        35,
+        55,
+        61
+      ],
+      [
+        39,
+        31,
+        55,
+        61
+      ],
+      [
+        39,
+        27,
+        56,
+        61
+      ],
+      [
+        39,
+        35,
+        56,
+        61
+      ],
+      [
+        39,
+        31,
+        56,
+        61
+      ],
+      [
+        40,
+        27,
+        56,
+        61
+      ],
+      [
+        40,
+        34,
+        55,
+        61
+      ],
+      [
+        40,
+        30,
+        55,
+        61
+      ],
+      [
+        15,
+        69,
+        82,
+        92
+      ]
+    ]
+  },
+  "footprint": {
+    "width": 0.68,
+    "depth": 0.44,
+    "lidWidth": 0.73,
+    "lidDepth": 0.49,
+    "collision": "unchanged; owned by world layout",
+    "pickable": false
+  },
+  "timing": {
+    "pulseSeconds": 1.6,
+    "openingStepSeconds": 0.1,
+    "fadeSeconds": 0.5
+  },
+  "alpha": {
+    "chest": "binary",
+    "motes": "translucent",
+    "pool": "smooth cubic radial fade; no hard rim"
+  },
+  "palette": {
+    "ink": "#0e121d",
+    "deep": "#1f2737",
+    "wood": "#6e4f45",
+    "woodHi": "#9f7960",
+    "woodLight": "#b09c82",
+    "woodShade": "#4a3438",
+    "grain": "#2f2230",
+    "iron": "#5c5258",
+    "ironHi": "#9f9280",
+    "ironLight": "#c9b79b",
+    "ironShade": "#30344a",
+    "brass": "#b8935c",
+    "brassHi": "#d3bb8f",
+    "runeDeep": "#14707e",
+    "rune": "#24ced5",
+    "runeHi": "#92faf1",
+    "white": "#e6fffb"
+  },
+  "provenance": {
+    "script": "scripts/build-cache-assets.py",
+    "method": "Original deterministic pixel geometry; no image generation or external inputs",
+    "pillow": "12.3.0"
+  },
+  "files": {
+    "cache.png": "adc309415bf2e08c6e27eec5b69b520922d2c815d8b63da6ae62419183c69306",
+    "hit-masks.json": "226b7b4fc9884efa830239f37f85f5b4ece3f55539421f94a08161625a215673",
+    "contact-sheet.png": "d40a8d192ec41c4ef28cbf60aa60b7e83aa3d18807387c5db421366c451a64af"
+  }
+}

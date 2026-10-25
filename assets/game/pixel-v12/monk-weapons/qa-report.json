@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "toolchain": {"python": "3.14.4", "pillow": "12.3.0"},
+  "keys": 110,
+  "hands": 201,
+  "keysWithKnuckleBand": 108,
+  "knuckleBandPixels": 2311,
+  "knuckleStrikeCells": 48,
+  "staffKeys": 110,
+  "staffModes": {"two-hand": 86, "one-hand": 16, "free": 8},
+  "swingCells": 54,
+  "binaryAlpha": true,
+  "transparentRgbZero": true,
+  "paletteOnly": true,
+  "noSkinPixels": true,
+  "bandsOnSkinOnly": true,
+  "atlases": {"knuckles.png": [960, 1536], "staff-attacks.png": [1600, 864], "staff.png": [960, 1056]},
+  "artifactCount": 10,
+  "sourceCount": 6,
+  "rebuildMatches": true,
+  "sourceHashesMatch": true,
+  "mode": "build"
+}

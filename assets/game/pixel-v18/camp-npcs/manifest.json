@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "nativePixelsPerUnit": 32,
+  "campNpcs": {
+    "path": "camp-npcs.png",
+    "cell": 96,
+    "columns": 4,
+    "rows": 4,
+    "anchor": [
+      48,
+      84
+    ],
+    "frames": [
+      "pilgrim-idle-0",
+      "pilgrim-idle-1",
+      "pilgrim-idle-2",
+      "pilgrim-idle-3",
+      "wanderer-idle-0",
+      "wanderer-idle-1",
+      "wanderer-idle-2",
+      "wanderer-idle-3",
+      "sentry-idle-0",
+      "sentry-idle-1",
+      "sentry-idle-2",
+      "sentry-idle-3",
+      "contact-shadow"
+    ],
+    "shadowFrame": 12,
+    "clips": {
+      "pilgrim": {
+        "frames": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "frameDurationMs": 600
+      },
+      "wanderer": {
+        "frames": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "frameDurationMs": 780
+      },
+      "sentry": {
+        "frames": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "frameDurationMs": 700
+      }
+    }
+  },
+  "palette": [
+    "#211a28",
+    "#233a3d",
+    "#2c303d",
+    "#3d3032",
+    "#3d5756",
+    "#453430",
+    "#465365",
+    "#483329",
+    "#51403b",
+    "#607771",
+    "#655049",
+    "#694739",
+    "#6a7b89",
+    "#735238",
+    "#78553a",
+    "#806149",
+    "#81827d",
+    "#8e9a80",
+    "#937563",
+    "#9daaa6",
+    "#a87e46",
+    "#a97150",
+    "#ad8150",
+    "#c4c1a5",
+    "#ceaa66",
+    "#ceb47a",
+    "#d99a66",
+    "#edb97f"
+  ],
+  "technical": {
+    "filter": "nearest",
+    "mipmaps": false,
+    "bodyAlpha": "binary",
+    "shadowAlpha": [
+      0,
+      160,
+      255
+    ],
+    "drawCalls": 2
+  },
+  "provenance": {
+    "origin": "Original offline pixel-cluster drawings, authored in scripts/build-camp-npc-assets.py.",
+    "reference": "Project camp pixel-v9 palette and pixel-v17 monk proportions. No source pixels copied.",
+    "tool": "Python3/Pillow 12.3.0",
+    "externalServices": false,
+    "rights": "Original project art; same project terms as the authored builder. No external assets.",
+    "changes": "Three original silhouettes and muted garment ramps; four anchored idle poses each."
+  }
+}

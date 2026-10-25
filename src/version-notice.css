@@ -1,0 +1,57 @@
+/* Reuses the notice's amber bevel and stone frame without its transient timer. */
+html body #version-update.notice.version-update {
+  z-index: 20;
+  top: auto;
+  bottom: max(var(--edge), env(safe-area-inset-bottom));
+  max-width: min(420px, calc(100% - 24px));
+  pointer-events: auto;
+  white-space: normal;
+}
+.version-update button {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--amber);
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.version-update button:disabled { cursor: default; opacity: 1; }
+.version-update button:focus-visible { outline: var(--u) solid var(--teal, #6dd6cb); }
+.version-update span { display: block; font-size: 12px; line-height: 1.4; color: var(--muted); }
+@media (max-height: 420px) {
+  html body #version-update.notice.version-update { left: 50%; bottom: max(4px, env(safe-area-inset-bottom)); padding: 2px 6px; }
+  .version-update button { min-height: 32px; font-size: 12px; }
+  .version-update span { font-size: 10px; }
+}
+/* During a run leave the bottom combat controls free; this read-only notice passes input through. */
+html body:not(.menu-open) #version-update.notice.version-update {
+  top: calc(var(--edge) + 96px);
+  bottom: auto;
+  pointer-events: none;
+}
+/* A passive update waits outside the menu; it must leave the monk sheet fully visible. */
+html body.menu-open #version-update.notice.version-update:has(button:disabled) {
+  display: none;
+}
+/* The left edge of the combat arc is 97u from the right edge: reserve 100u,
+   plus the notice's 4u left margin, so its text cannot cover a technique. */
+@media (width < 648px) {
+  html.touch-ui body:not(.menu-open) #version-update.notice.version-update {
+    left: calc(var(--safe-left) + var(--u) * 4);
+    max-width: calc(100% - var(--safe-left) - var(--safe-right) - var(--u) * 104);
+    transform: none;
+  }
+}
+/* Result menus scroll above the actionable update, which owns a bottom strip. */
+html body.menu-open:has(#version-update button:not(:disabled)):has(#run-summary:not([hidden])) .overlay {
+  padding-bottom: max(calc(var(--u) * 48), calc(env(safe-area-inset-bottom, 0px) + var(--u) * 44));
+}
+@media (max-height: 420px) {
+  html body.menu-open:has(#version-update button:not(:disabled)):has(#run-summary:not([hidden])) .overlay {
+    padding-bottom: max(calc(var(--u) * 32), calc(env(safe-area-inset-bottom, 0px) + var(--u) * 30));
+  }
+}

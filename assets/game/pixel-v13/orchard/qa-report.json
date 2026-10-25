@@ -1,0 +1,1322 @@
+{
+  "schemaVersion": 1,
+  "atlas": {
+    "size": [
+      1024,
+      2048
+    ],
+    "opaqueColors": 45,
+    "sharedColors": 38,
+    "binaryAlpha": true,
+    "glowColors": []
+  },
+  "frames": [
+    {
+      "frame": "olive-tree-a",
+      "bbox": [
+        85,
+        126,
+        175,
+        232
+      ],
+      "size": [
+        90,
+        106
+      ],
+      "groundSizeU": [
+        0.6,
+        0.6
+      ],
+      "drawnHeightU": 3.61,
+      "opaquePixels": 4422,
+      "colors": 14,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 140,
+      "contactCenter": [
+        128,
+        226.0
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "olive-tree-b",
+      "bbox": [
+        81,
+        134,
+        170,
+        232
+      ],
+      "size": [
+        89,
+        98
+      ],
+      "groundSizeU": [
+        0.56,
+        0.56
+      ],
+      "drawnHeightU": 3.34,
+      "opaquePixels": 4798,
+      "colors": 14,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 130,
+      "contactCenter": [
+        128,
+        226.5
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "olive-tree-c",
+      "bbox": [
+        73,
+        121,
+        182,
+        232
+      ],
+      "size": [
+        109,
+        111
+      ],
+      "groundSizeU": [
+        0.68,
+        0.68
+      ],
+      "drawnHeightU": 3.77,
+      "opaquePixels": 5720,
+      "colors": 14,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 182,
+      "contactCenter": [
+        128,
+        225.5
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "olive-tree-old",
+      "bbox": [
+        61,
+        102,
+        192,
+        232
+      ],
+      "size": [
+        131,
+        130
+      ],
+      "groundSizeU": [
+        1.24,
+        1.24
+      ],
+      "drawnHeightU": 4.29,
+      "opaquePixels": 9097,
+      "colors": 17,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 604,
+      "contactCenter": [
+        128,
+        221.0
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "olive-dead",
+      "bbox": [
+        98,
+        150,
+        160,
+        232
+      ],
+      "size": [
+        62,
+        82
+      ],
+      "groundSizeU": [
+        0.52,
+        0.52
+      ],
+      "drawnHeightU": 2.77,
+      "opaquePixels": 1539,
+      "colors": 18,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 104,
+      "contactCenter": [
+        128,
+        226.75
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "fig-young",
+      "bbox": [
+        96,
+        170,
+        159,
+        232
+      ],
+      "size": [
+        63,
+        62
+      ],
+      "groundSizeU": [
+        0.44,
+        0.44
+      ],
+      "drawnHeightU": 2.07,
+      "opaquePixels": 2104,
+      "colors": 15,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 78,
+      "contactCenter": [
+        128,
+        227.25
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "well",
+      "bbox": [
+        98,
+        141,
+        158,
+        232
+      ],
+      "size": [
+        60,
+        91
+      ],
+      "groundSizeU": [
+        1.6,
+        1.6
+      ],
+      "drawnHeightU": 2.78,
+      "opaquePixels": 3560,
+      "colors": 32,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 1008,
+      "contactCenter": [
+        128,
+        218.0
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "olive-press",
+      "bbox": [
+        99,
+        175,
+        156,
+        232
+      ],
+      "size": [
+        57,
+        57
+      ],
+      "groundSizeU": [
+        1.7,
+        1.7
+      ],
+      "drawnHeightU": 1.52,
+      "opaquePixels": 2177,
+      "colors": 27,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 1134,
+      "contactCenter": [
+        128,
+        217.25
+      ],
+      "role": "solid"
+    },
+    {
+      "frame": "pergola-x",
+      "bbox": [
+        75,
+        98,
+        182,
+        232
+      ],
+      "size": [
+        107,
+        134
+      ],
+      "groundSizeU": [
+        2.88,
+        1.62
+      ],
+      "drawnHeightU": 3.88,
+      "opaquePixels": 7380,
+      "colors": 28,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 875,
+      "contactCenter": [
+        128,
+        205.5
+      ],
+      "role": "solid",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.52
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.39
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.22
+        },
+        {
+          "collider": 1,
+          "corner": "front",
+          "gap": 0.47
+        },
+        {
+          "collider": 1,
+          "corner": "left",
+          "gap": 0.96
+        },
+        {
+          "collider": 1,
+          "corner": "right",
+          "gap": 0.25
+        },
+        {
+          "collider": 2,
+          "corner": "front",
+          "gap": 0.25
+        },
+        {
+          "collider": 2,
+          "corner": "left",
+          "gap": 0.25
+        },
+        {
+          "collider": 2,
+          "corner": "right",
+          "gap": 1.2
+        },
+        {
+          "collider": 3,
+          "corner": "front",
+          "gap": 0.28
+        },
+        {
+          "collider": 3,
+          "corner": "left",
+          "gap": 0.22
+        },
+        {
+          "collider": 3,
+          "corner": "right",
+          "gap": 0.39
+        }
+      ],
+      "maxContactGap": 1.2
+    },
+    {
+      "frame": "pergola-y",
+      "bbox": [
+        74,
+        97,
+        182,
+        232
+      ],
+      "size": [
+        108,
+        135
+      ],
+      "groundSizeU": [
+        1.62,
+        2.88
+      ],
+      "drawnHeightU": 3.92,
+      "opaquePixels": 7358,
+      "colors": 30,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 878,
+      "contactCenter": [
+        128,
+        205.5
+      ],
+      "role": "solid",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.52
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.22
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.39
+        },
+        {
+          "collider": 1,
+          "corner": "front",
+          "gap": 0.47
+        },
+        {
+          "collider": 1,
+          "corner": "left",
+          "gap": 0.25
+        },
+        {
+          "collider": 1,
+          "corner": "right",
+          "gap": 0.43
+        },
+        {
+          "collider": 2,
+          "corner": "front",
+          "gap": 0.25
+        },
+        {
+          "collider": 2,
+          "corner": "left",
+          "gap": 0.43
+        },
+        {
+          "collider": 2,
+          "corner": "right",
+          "gap": 0.25
+        },
+        {
+          "collider": 3,
+          "corner": "front",
+          "gap": 0.28
+        },
+        {
+          "collider": 3,
+          "corner": "left",
+          "gap": 0.39
+        },
+        {
+          "collider": 3,
+          "corner": "right",
+          "gap": 0.22
+        }
+      ],
+      "maxContactGap": 0.52
+    },
+    {
+      "frame": "pergola-broken-x",
+      "bbox": [
+        74,
+        97,
+        182,
+        232
+      ],
+      "size": [
+        108,
+        135
+      ],
+      "groundSizeU": [
+        2.88,
+        1.62
+      ],
+      "drawnHeightU": 3.92,
+      "opaquePixels": 7358,
+      "colors": 28,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 1418,
+      "contactCenter": [
+        128,
+        205.5
+      ],
+      "role": "solid",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.52
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.39
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.22
+        },
+        {
+          "collider": 1,
+          "corner": "front",
+          "gap": 0.47
+        },
+        {
+          "collider": 1,
+          "corner": "left",
+          "gap": 0.43
+        },
+        {
+          "collider": 1,
+          "corner": "right",
+          "gap": 0.25
+        },
+        {
+          "collider": 2,
+          "corner": "front",
+          "gap": 0.25
+        },
+        {
+          "collider": 2,
+          "corner": "left",
+          "gap": 0.25
+        },
+        {
+          "collider": 2,
+          "corner": "right",
+          "gap": 0.43
+        },
+        {
+          "collider": 3,
+          "corner": "front",
+          "gap": 0.28
+        },
+        {
+          "collider": 3,
+          "corner": "left",
+          "gap": 0.22
+        },
+        {
+          "collider": 3,
+          "corner": "right",
+          "gap": 0.39
+        }
+      ],
+      "maxContactGap": 0.52
+    },
+    {
+      "frame": "pergola-broken-y",
+      "bbox": [
+        74,
+        98,
+        182,
+        232
+      ],
+      "size": [
+        108,
+        134
+      ],
+      "groundSizeU": [
+        1.62,
+        2.88
+      ],
+      "drawnHeightU": 3.88,
+      "opaquePixels": 7292,
+      "colors": 27,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 1416,
+      "contactCenter": [
+        128,
+        205.5
+      ],
+      "role": "solid",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.52
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.22
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.39
+        },
+        {
+          "collider": 1,
+          "corner": "front",
+          "gap": 0.47
+        },
+        {
+          "collider": 1,
+          "corner": "left",
+          "gap": 0.25
+        },
+        {
+          "collider": 1,
+          "corner": "right",
+          "gap": 0.43
+        },
+        {
+          "collider": 2,
+          "corner": "front",
+          "gap": 0.25
+        },
+        {
+          "collider": 2,
+          "corner": "left",
+          "gap": 0.43
+        },
+        {
+          "collider": 2,
+          "corner": "right",
+          "gap": 0.25
+        },
+        {
+          "collider": 3,
+          "corner": "front",
+          "gap": 0.28
+        },
+        {
+          "collider": 3,
+          "corner": "left",
+          "gap": 0.39
+        },
+        {
+          "collider": 3,
+          "corner": "right",
+          "gap": 0.22
+        }
+      ],
+      "maxContactGap": 0.52
+    },
+    {
+      "frame": "trellis-x",
+      "bbox": [
+        98,
+        174,
+        158,
+        232
+      ],
+      "size": [
+        60,
+        58
+      ],
+      "groundSizeU": [
+        2.4,
+        0.12
+      ],
+      "drawnHeightU": 1.53,
+      "opaquePixels": 1444,
+      "colors": 19,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 61,
+      "contactCenter": [
+        128,
+        216.5
+      ],
+      "role": "low",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.39
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.1
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.1
+        }
+      ],
+      "maxContactGap": 0.39
+    },
+    {
+      "frame": "trellis-y",
+      "bbox": [
+        98,
+        174,
+        158,
+        232
+      ],
+      "size": [
+        60,
+        58
+      ],
+      "groundSizeU": [
+        0.12,
+        2.4
+      ],
+      "drawnHeightU": 1.53,
+      "opaquePixels": 1426,
+      "colors": 20,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 57,
+      "contactCenter": [
+        128,
+        216.5
+      ],
+      "role": "low",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.39
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.1
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.1
+        }
+      ],
+      "maxContactGap": 0.39
+    },
+    {
+      "frame": "beehive-pair",
+      "bbox": [
+        105,
+        191,
+        155,
+        232
+      ],
+      "size": [
+        50,
+        41
+      ],
+      "groundSizeU": [
+        1.4,
+        0.6
+      ],
+      "drawnHeightU": 1.03,
+      "opaquePixels": 1130,
+      "colors": 24,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 365,
+      "contactCenter": [
+        128,
+        219.5
+      ],
+      "role": "low",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.55
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.49
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.49
+        }
+      ],
+      "maxContactGap": 0.55
+    },
+    {
+      "frame": "beehive-fallen",
+      "bbox": [
+        105,
+        188,
+        160,
+        232
+      ],
+      "size": [
+        55,
+        44
+      ],
+      "groundSizeU": [
+        1.48,
+        1.0
+      ],
+      "drawnHeightU": 1.04,
+      "opaquePixels": 1043,
+      "colors": 23,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 606,
+      "contactCenter": [
+        128,
+        216.75
+      ],
+      "role": "low"
+    },
+    {
+      "frame": "stone-basin",
+      "bbox": [
+        101,
+        190,
+        155,
+        232
+      ],
+      "size": [
+        54,
+        42
+      ],
+      "groundSizeU": [
+        1.5,
+        0.84
+      ],
+      "drawnHeightU": 1.0,
+      "opaquePixels": 1553,
+      "colors": 21,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 653,
+      "contactCenter": [
+        128,
+        217.75
+      ],
+      "role": "low",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.49
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.03
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.48
+        }
+      ],
+      "maxContactGap": 0.49
+    },
+    {
+      "frame": "garden-bench-x",
+      "bbox": [
+        103,
+        183,
+        153,
+        232
+      ],
+      "size": [
+        50,
+        49
+      ],
+      "groundSizeU": [
+        1.6,
+        0.5
+      ],
+      "drawnHeightU": 1.3,
+      "opaquePixels": 1317,
+      "colors": 20,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 272,
+      "contactCenter": [
+        128,
+        219.0
+      ],
+      "role": "low",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.38
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.38
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.38
+        }
+      ],
+      "maxContactGap": 0.38
+    },
+    {
+      "frame": "garden-bench-y",
+      "bbox": [
+        103,
+        182,
+        152,
+        232
+      ],
+      "size": [
+        49,
+        50
+      ],
+      "groundSizeU": [
+        0.5,
+        1.6
+      ],
+      "drawnHeightU": 1.34,
+      "opaquePixels": 1323,
+      "colors": 23,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 273,
+      "contactCenter": [
+        128,
+        219.0
+      ],
+      "role": "low",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.38
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.38
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.38
+        }
+      ],
+      "maxContactGap": 0.38
+    },
+    {
+      "frame": "cart-broken-x",
+      "bbox": [
+        95,
+        189,
+        156,
+        227
+      ],
+      "size": [
+        61,
+        38
+      ],
+      "groundSizeU": [
+        1.9,
+        1.44
+      ],
+      "drawnHeightU": 0.83,
+      "opaquePixels": 1143,
+      "colors": 10,
+      "maxOpaqueRow": 226,
+      "opaqueOnFootprint": 851,
+      "contactCenter": [
+        128,
+        212.0
+      ],
+      "role": "low"
+    },
+    {
+      "frame": "cart-broken-y",
+      "bbox": [
+        105,
+        189,
+        160,
+        227
+      ],
+      "size": [
+        55,
+        38
+      ],
+      "groundSizeU": [
+        1.44,
+        1.9
+      ],
+      "drawnHeightU": 0.83,
+      "opaquePixels": 1131,
+      "colors": 9,
+      "maxOpaqueRow": 226,
+      "opaqueOnFootprint": 865,
+      "contactCenter": [
+        128,
+        212.0
+      ],
+      "role": "low"
+    },
+    {
+      "frame": "olive-baskets",
+      "bbox": [
+        112,
+        202,
+        148,
+        232
+      ],
+      "size": [
+        36,
+        30
+      ],
+      "groundSizeU": [
+        1.1,
+        1.1
+      ],
+      "drawnHeightU": 0.72,
+      "opaquePixels": 686,
+      "colors": 15,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 347,
+      "contactCenter": [
+        128,
+        222.0
+      ],
+      "role": "low"
+    },
+    {
+      "frame": "terracotta-jars",
+      "bbox": [
+        108,
+        179,
+        147,
+        227
+      ],
+      "size": [
+        39,
+        48
+      ],
+      "groundSizeU": [
+        1.2,
+        1.2
+      ],
+      "drawnHeightU": 1.38,
+      "opaquePixels": 1178,
+      "colors": 11,
+      "maxOpaqueRow": 226,
+      "opaqueOnFootprint": 553,
+      "contactCenter": [
+        128,
+        217.25
+      ],
+      "role": "low"
+    },
+    {
+      "frame": "monk-statue",
+      "bbox": [
+        102,
+        168,
+        154,
+        232
+      ],
+      "size": [
+        52,
+        64
+      ],
+      "groundSizeU": [
+        1.1,
+        1.1
+      ],
+      "drawnHeightU": 1.82,
+      "opaquePixels": 1837,
+      "colors": 25,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 626,
+      "contactCenter": [
+        128,
+        218.5
+      ],
+      "role": "solid",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.67
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.39
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.39
+        }
+      ],
+      "maxContactGap": 0.67
+    },
+    {
+      "frame": "herb-bed-x",
+      "bbox": [
+        93,
+        182,
+        164,
+        232
+      ],
+      "size": [
+        71,
+        50
+      ],
+      "groundSizeU": [
+        2.2,
+        0.9
+      ],
+      "drawnHeightU": 1.13,
+      "opaquePixels": 1889,
+      "colors": 30,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 1015,
+      "contactCenter": [
+        128,
+        213.25
+      ],
+      "role": "low",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.35
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.58
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.58
+        }
+      ],
+      "maxContactGap": 0.58
+    },
+    {
+      "frame": "herb-bed-y",
+      "bbox": [
+        92,
+        183,
+        163,
+        232
+      ],
+      "size": [
+        71,
+        49
+      ],
+      "groundSizeU": [
+        0.9,
+        2.2
+      ],
+      "drawnHeightU": 1.09,
+      "opaquePixels": 1880,
+      "colors": 28,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 1015,
+      "contactCenter": [
+        128,
+        213.25
+      ],
+      "role": "low",
+      "contactGaps": [
+        {
+          "collider": 0,
+          "corner": "front",
+          "gap": 0.35
+        },
+        {
+          "collider": 0,
+          "corner": "left",
+          "gap": 0.58
+        },
+        {
+          "collider": 0,
+          "corner": "right",
+          "gap": 0.58
+        }
+      ],
+      "maxContactGap": 0.58
+    },
+    {
+      "frame": "herb-bed-overgrown",
+      "bbox": [
+        89,
+        187,
+        160,
+        232
+      ],
+      "size": [
+        71,
+        45
+      ],
+      "groundSizeU": [
+        1.6,
+        1.2
+      ],
+      "drawnHeightU": 1.01,
+      "opaquePixels": 1723,
+      "colors": 31,
+      "maxOpaqueRow": 231,
+      "opaqueOnFootprint": 966,
+      "contactCenter": [
+        128,
+        215.0
+      ],
+      "role": "low"
+    },
+    {
+      "frame": "vine-clump",
+      "bbox": [
+        109,
+        199,
+        147,
+        230
+      ],
+      "size": [
+        38,
+        31
+      ],
+      "groundSizeU": [
+        0.8,
+        0.8
+      ],
+      "drawnHeightU": 0.92,
+      "opaquePixels": 828,
+      "colors": 12,
+      "maxOpaqueRow": 229,
+      "opaqueOnFootprint": 210,
+      "contactCenter": [
+        128,
+        224.5
+      ],
+      "role": "low"
+    },
+    {
+      "frame": "fallen-olives",
+      "bbox": [
+        113,
+        204,
+        152,
+        223
+      ],
+      "size": [
+        39,
+        19
+      ],
+      "groundSizeU": [
+        1.8,
+        1.4
+      ],
+      "drawnHeightU": 0.32,
+      "opaquePixels": 240,
+      "colors": 9,
+      "maxOpaqueRow": 222,
+      "opaqueOnFootprint": 240,
+      "contactCenter": [
+        128,
+        212.75
+      ],
+      "role": "flat",
+      "pixelsOutsideRect": 0
+    },
+    {
+      "frame": "leaf-litter",
+      "bbox": [
+        100,
+        199,
+        150,
+        223
+      ],
+      "size": [
+        50,
+        24
+      ],
+      "groundSizeU": [
+        2.0,
+        1.6
+      ],
+      "drawnHeightU": 0.41,
+      "opaquePixels": 394,
+      "colors": 7,
+      "maxOpaqueRow": 222,
+      "opaqueOnFootprint": 394,
+      "contactCenter": [
+        128,
+        210.5
+      ],
+      "role": "flat",
+      "pixelsOutsideRect": 0
+    },
+    {
+      "frame": "gravel-path",
+      "bbox": [
+        92,
+        185,
+        164,
+        221
+      ],
+      "size": [
+        72,
+        36
+      ],
+      "groundSizeU": [
+        2.8,
+        2.0
+      ],
+      "drawnHeightU": 0.68,
+      "opaquePixels": 1668,
+      "colors": 14,
+      "maxOpaqueRow": 220,
+      "opaqueOnFootprint": 1668,
+      "contactCenter": [
+        128,
+        203.75
+      ],
+      "role": "flat",
+      "pixelsOutsideRect": 0
+    },
+    {
+      "frame": "pruned-branches",
+      "bbox": [
+        103,
+        199,
+        150,
+        223
+      ],
+      "size": [
+        47,
+        24
+      ],
+      "groundSizeU": [
+        2.0,
+        1.2
+      ],
+      "drawnHeightU": 0.5,
+      "opaquePixels": 441,
+      "colors": 13,
+      "maxOpaqueRow": 222,
+      "opaqueOnFootprint": 440,
+      "contactCenter": [
+        128,
+        212.75
+      ],
+      "role": "flat",
+      "pixelsOutsideRect": 0
+    }
+  ],
+  "surfaces": {
+    "orchardGrass": {
+      "size": [
+        128,
+        128
+      ],
+      "colors": 10,
+      "mean": [
+        105.0,
+        114.4,
+        71.7
+      ],
+      "interiorStepX": 22.06,
+      "interiorStepY": 22.14,
+      "seamStepX": 18.05,
+      "seamStepY": 29.5,
+      "trefoils": 378,
+      "cloverHeads": 14,
+      "campGrassMean": [
+        114.9,
+        112.1,
+        73.3
+      ]
+    }
+  }
+}

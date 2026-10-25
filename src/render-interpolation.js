@@ -6,9 +6,16 @@
 // (teleport, restart, area reset), is drawn where it is instead of smeared.
 export const SNAP_DISTANCE = 1;
 
+function captureBody(previous, next, body) {
+  const record = previous.get(body) ?? {};
+  record.x = body.x; record.y = body.y;
+  next.set(body, record);
+}
+
 export class MotionHistory {
   constructor() {
     this.previous = new Map(); this.spare = new Map();
+    this.drawn = new WeakMap();
     this.game = null; this.alpha = 1; this.valid = false;
   }
 
@@ -16,14 +23,10 @@ export class MotionHistory {
   capture(game) {
     const next = this.spare;
     next.clear();
-    const keep = body => {
-      const record = this.previous.get(body) ?? {};
-      record.x = body.x; record.y = body.y;
-      next.set(body, record);
-    };
-    keep(game.player);
-    for (const body of game.enemies) keep(body);
-    for (const body of game.projectiles ?? []) keep(body);
+    captureBody(this.previous, next, game.player);
+    for (let i = 0; i < game.enemies.length; i++) captureBody(this.previous, next, game.enemies[i]);
+    if (game.projectiles) for (let i = 0; i < game.projectiles.length; i++) captureBody(this.previous, next, game.projectiles[i]);
+    if (game.monkShots) for (let i = 0; i < game.monkShots.length; i++) captureBody(this.previous, next, game.monkShots[i]);
     this.spare = this.previous; this.previous = next;
     this.game = game; this.revision = game.locationRevision; this.world = game.world;
   }
@@ -36,10 +39,15 @@ export class MotionHistory {
   }
 
   // Where a body is drawn this frame; the body itself when it must not blend.
+  // A blended point is reused by the next query for that body; different bodies never alias.
   at(body) {
     const from = this.valid ? this.previous.get(body) : null;
     if (!from || Math.hypot(body.x - from.x, body.y - from.y) > SNAP_DISTANCE) return body;
     const a = this.alpha;
-    return { x: from.x * (1 - a) + body.x * a, y: from.y * (1 - a) + body.y * a };
+    let point = this.drawn.get(body);
+    if (!point) { point = { x: 0, y: 0 }; this.drawn.set(body, point); }
+    point.x = from.x * (1 - a) + body.x * a;
+    point.y = from.y * (1 - a) + body.y * a;
+    return point;
   }
 }

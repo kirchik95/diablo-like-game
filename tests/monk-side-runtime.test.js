@@ -4,6 +4,7 @@ import { monkPose, houndPose, stableFacing, SIDE_BAND, FACING_HYSTERESIS, MONK_R
 import { createAdventure, createGame, updateGame } from '../src/game.js';
 import { MONK_RULES } from '../src/monk-combat.js';
 import sidePackage from '../assets/game/pixel-v10/monk-side/manifest.json' with { type: 'json' };
+import activePackage from '../assets/game/pixel-v17/monk-side/manifest.json' with { type: 'json' };
 import v2Package from '../assets/game/pixel-v2/monk/manifest.json' with { type: 'json' };
 import houndPackage from '../assets/game/pixel-v2/hound-world/manifest.json' with { type: 'json' };
 
@@ -122,12 +123,12 @@ test('atlases without side keys (the v2 monk, monsters) keep their exact previou
   }
 });
 
-test('the renderer atlas from pixel-assets.js is the 110-key side package', async () => {
+test('the renderer atlas from pixel-assets.js is the active animation package', async () => {
   const { pixelAtlases } = await import('../src/pixel-assets.js');
-  assert.deepEqual(pixelAtlases.monk.clips, clips);
-  assert.equal(pixelAtlases.monk.rows, atlas.rows);
+  assert.deepEqual(pixelAtlases.monk, activePackage.monk);
   // render.js passes { ...pixelAtlases.monk, texture }: a horizontal run reaches the side keys.
   const frame = monkPose(at(0, { moving: true, distance: 0 }), pixelAtlases.monk).frame;
-  assert.equal(frame, clips.run.side[0]);
+  assert.equal(frame, activePackage.monk.clips.run.side[0]);
+  assert.equal(monkPose(at(0, { moving: true, distance: 0 })).frame, frame, 'default pose and renderer use the same package');
   assert.ok(frame < pixelAtlases.monk.columns * pixelAtlases.monk.rows);
 });

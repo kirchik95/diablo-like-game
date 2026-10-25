@@ -1,15 +1,130 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" class="booting">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#171321" />
+    <!-- Phones: the home-screen icon opens the game without browser bars (docs/design/mobile-touch.md, question 10). -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="description" content="Ночной ритуал — изометрическая action RPG. Монах, руины монастыря и тени, которые обрели плоть." />
     <title>Ночной ритуал — Путь сквозь пепел</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' shape-rendering='crispEdges'%3E%3Cpath fill='%23171321' d='M0 0h24v24H0z'/%3E%3Cpath fill='%236C6179' d='M10 2h4v2h2v2h2v2h2v8h-2v2h-2v2H8v-2H6v-2H4V8h2V6h2V4h2z'/%3E%3Cpath fill='%23171321' d='M10 6h4v2h2v2h2v4h-2v2h-2v2h-4v-2H8v-2H6v-4h2V8h2z'/%3E%3Cpath fill='%236DD6CB' d='M11 9h2v2h2v2h-2v2h-2v-2H9v-2h2z'/%3E%3C/svg%3E" />
+    <!-- The home-screen app: full screen in landscape; the portrait icons use a native 60px grid (scripts/build-app-icons.py). -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/night-ritual-monk-v2-180.png" />
+    <!-- Boot splash and preloader: drawn at once, before the game's CSS and JS exist; src/boot-splash.js loads
+         every game file and hides it. It uses no external file. 1 unit (--bu) = 2 CSS px, 3 px from 1920×1080
+         and 4 px from 2560×1440, as --u. -->
+    <style>
+      html.booting, html.booting body { height: 100%; margin: 0; overflow: hidden; background: #171321; }
+      html.booting body > :not(#boot-splash) { visibility: hidden; }
+      #boot-splash {
+        --bu: 2px;
+        position: fixed; z-index: 100; inset: 0;
+        display: grid; place-items: center;
+        padding: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+        background: #171321; color: #b4aaba;
+        font: 600 calc(var(--bu) * 6.5) / calc(var(--bu) * 9) -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        text-align: center;
+        transition: opacity .3s linear;
+      }
+      @media (min-width: 1920px) and (min-height: 1080px) { #boot-splash { --bu: 3px; } }
+      @media (min-width: 2560px) and (min-height: 1440px) { #boot-splash { --bu: 4px; } }
+      #boot-splash.boot-leaving { opacity: 0; pointer-events: none; }
+      .boot-card { display: grid; justify-items: center; gap: calc(var(--bu) * 5); }
+      .boot-card svg { display: block; width: calc(var(--bu) * 24); height: calc(var(--bu) * 24); image-rendering: pixelated; }
+      .boot-title { margin: 0; color: #eee0ce; font-size: calc(var(--bu) * 13); line-height: calc(var(--bu) * 18); font-weight: 700; }
+      /* A 90-unit track; --boot-fill is the filled width in whole units. */
+      .boot-bar { width: calc(var(--bu) * 90); height: calc(var(--bu) * 4); margin: 0 auto; border: var(--bu) solid #0d0a14; background: #3b3127; }
+      .boot-fill { position: relative; width: calc(var(--bu) * var(--boot-fill, 0)); height: 100%; background: #e5b66e; }
+      /* One unit after the fill blinks, so a long wait still shows life. */
+      .boot-fill::after { content: ""; position: absolute; top: 0; left: 100%; width: var(--bu); height: 100%; background: #8f734f; animation: boot-blink 1s steps(1, end) infinite; }
+      @keyframes boot-blink { 50% { opacity: 0; } }
+      .boot-label, .boot-error p { margin: 0; }
+      /* Tabular figures: the percent and the megabytes change without moving the line. */
+      .boot-label { margin-top: calc(var(--bu) * 3); font-variant-numeric: tabular-nums; }
+      .boot-label b { color: #eee0ce; }
+      .boot-error { display: none; max-width: calc(var(--bu) * 180); }
+      .boot-error .boot-error-title { color: #ef8e83; }
+      .boot-error button {
+        min-height: calc(var(--bu) * 17); margin-top: calc(var(--bu) * 5); padding: 0 calc(var(--bu) * 10);
+        border: 0; background: #e5d1ad; color: #171321; font: inherit; cursor: pointer;
+        box-shadow: 0 0 0 var(--bu) #0d0a14, inset 0 var(--bu) #fff0d9, inset 0 calc(var(--bu) * -2) #8a7152;
+      }
+      .boot-error button:focus-visible { outline: var(--bu) solid #6dd6cb; outline-offset: calc(var(--bu) * 2); }
+      @media (pointer: coarse) { .boot-error button { min-height: calc(var(--bu) * 22); } }
+      html.boot-failed .boot-progress { display: none; }
+      html.boot-failed .boot-error { display: block; }
+      @media (prefers-reduced-motion: reduce) {
+        #boot-splash { transition: none; }
+        .boot-fill::after { animation: none; }
+      }
+    </style>
+    <script>
+      // Before the game module runs, a script or stylesheet that fails to load, or an error thrown while
+      // the page boots, turns the splash into the error message. A failure stays: «Обновить» reloads.
+      // It runs in the head, before the build's script, preload and stylesheet tags start to load.
+      (() => {
+        const root = document.documentElement;
+        addEventListener('error', event => {
+          const target = event.target, tag = target && target.tagName;
+          const lost = tag === 'SCRIPT' || (tag === 'LINK' && /stylesheet|modulepreload/.test(target.rel));
+          if (root.classList.contains('booting') && (lost || event instanceof ErrorEvent)) root.classList.add('boot-failed');
+        }, true);
+        document.addEventListener('click', event => { if (event.target.id === 'boot-reload') location.reload(); });
+        // The code stage: until the game module runs, the bar counts the scripts that arrived, up to 29 of
+        // the 30 percent of BOOT_SHARES.code. A build lists its chunks (modulepreload), so its share is exact;
+        // the dev server finds modules as it goes, so its share approaches the end. boot-splash.js takes over.
+        const boot = window.bootProgress = { percent: 0, takenOver: false, observer: null };
+        const CODE = 30, TRACK = 90, arrived = new Set();
+        const draw = () => {
+          const bar = document.getElementById('boot-bar'), percent = document.getElementById('boot-percent');
+          if (boot.takenOver || !bar || !percent) return;
+          bar.style.setProperty('--boot-fill', String(Math.floor(boot.percent / 100 * TRACK)));
+          bar.setAttribute('aria-valuenow', String(boot.percent));
+          percent.textContent = boot.percent + '%';
+        };
+        const count = list => {
+          for (const entry of list.getEntries()) arrived.add(entry.name);
+          const listed = [...document.querySelectorAll('script[type="module"][src], link[rel="modulepreload"], link[rel="stylesheet"]')]
+            .map(node => node.src || node.href);
+          const share = document.querySelector('link[rel="modulepreload"]')
+            ? listed.filter(url => arrived.has(url)).length / listed.length : 1 - Math.exp(-arrived.size / 150);
+          boot.percent = Math.max(boot.percent, Math.min(CODE - 1, Math.floor(share * CODE)));
+          draw();
+        };
+        try {
+          boot.observer = new PerformanceObserver(count);
+          boot.observer.observe({ type: 'resource', buffered: true });
+        } catch (error) { /* No resource timing: the bar waits for the module at 0%. */ }
+        document.addEventListener('DOMContentLoaded', draw);
+      })();
+    </script>
   </head>
   <body>
-    <canvas id="game" tabindex="0" aria-label="Изометрическая игра Ночной ритуал. WASD или стрелки — движение, левая кнопка мыши — удар, пробел — рывок, правая кнопка или Q — волна, E — взаимодействие, Escape — пауза."></canvas>
+    <!-- Shown until every game file is loaded and the world is drawn (src/boot-splash.js). -->
+    <div id="boot-splash" aria-busy="true">
+      <div class="boot-card">
+        <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+          <path fill="#6C6179" d="M5 0h2v1h1v1h1v1h1v1h1v1h1v2h-1v1h-1v1H9v1H8v1H7v1H5v-1H4v-1H3V9H2V8H1V7H0V5h1V4h1V3h1V2h1V1h1z" />
+          <path fill="#171321" d="M5 2h2v1h1v1h1v1h1v2H9v1H8v1H7v1H5V9H4V8H3V7H2V5h1V4h1V3h1z" />
+          <path fill="#6DD6CB" d="M5 4h2v1h1v2H7v1H5V7H4V5h1z" />
+        </svg>
+        <p class="boot-title">Ночной ритуал</p>
+        <div class="boot-progress">
+          <div id="boot-bar" class="boot-bar" role="progressbar" aria-label="Загрузка игры" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="boot-fill"></div></div>
+          <p class="boot-label"><b id="boot-percent">0%</b> · <span id="boot-stage">Загружаем код игры…</span></p>
+        </div>
+        <div class="boot-error" role="alert">
+          <p id="boot-error-title" class="boot-error-title">Не удалось загрузить игру</p>
+          <p id="boot-error-copy">Проверь соединение и обнови страницу.</p>
+          <button id="boot-reload" type="button">Обновить</button>
+        </div>
+      </div>
+    </div>
+    <canvas id="game" tabindex="0" aria-label="Изометрическая игра Ночной ритуал. WASD или стрелки — движение, левая кнопка мыши — удар, пробел — рывок, правая кнопка — волна духа, Q и F — техники со 2 и 4 уровня, E — взаимодействие, C, I и K — панель монаха, Escape — пауза. Геймпад PlayStation или Xbox тоже управляет игрой."></canvas>
     <canvas id="effects" aria-hidden="true"></canvas>
     <div class="vignette" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>
@@ -24,157 +139,293 @@
     </aside>
 
     <header class="world-info" aria-label="Местность и карта">
-      <div class="map-head">
-        <strong id="location-title">Лагерь странников</strong>
-        <nav class="tools" aria-label="Настройки игры">
-          <button id="sound" class="icon-button" type="button" aria-label="Выключить звук" aria-pressed="false" aria-keyshortcuts="m" title="Выключить звук (M)">
-            <svg viewBox="0 0 9 7" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
-              <path d="M0 2h2V1h1V0h1v7H3V6H2V5H0z" />
-              <path class="sound-waves" d="M5 3h1v1H5zM6 1h1v1H6zM7 2h1v3H7zM6 5h1v1H6z" />
-              <path class="mute-mark" d="M6 2h1v1H6zM8 2h1v1H8zM7 3h1v1H7zM6 4h1v1H6zM8 4h1v1H8z" />
-            </svg>
-          </button>
-          <button id="pause" class="icon-button" type="button" aria-label="Пауза" aria-keyshortcuts="Escape" title="Пауза (Esc)">
-            <svg viewBox="0 0 9 7" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><path d="M2 0h2v7H2zM5 0h2v7H5z" /></svg>
-          </button>
-        </nav>
-      </div>
+      <button id="pause" class="icon-button" type="button" aria-label="Пауза" aria-keyshortcuts="Escape" title="Пауза (Esc)">
+        <svg viewBox="0 0 9 7" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><path d="M2 0h2v7H2zM5 0h2v7H5z" /></svg>
+      </button>
       <div class="map-frame">
-        <!-- main.js keeps the backing store at 2× the CSS size; render.js margins are cropped by CSS. -->
-        <canvas id="minimap" width="384" height="224" aria-label="Карта локации"></canvas>
+        <!-- render.js draws the round map and its pixel ring; main.js keeps the backing store at 2× the CSS size. -->
+        <canvas id="minimap" width="288" height="288" aria-label="Карта локации"></canvas>
         <span class="map-north" aria-hidden="true">N</span>
       </div>
-      <ol class="map-zones" aria-label="Области пути">
-        <li id="zone-camp">Лагерь</li>
-        <li id="zone-road">Дорога</li>
-        <li id="zone-courtyard">Монастырь</li>
-      </ol>
+      <div class="map-plate">
+        <strong id="location-title">Лагерь странников</strong>
+        <ol class="map-zones" aria-label="Области пути">
+          <li id="zone-camp">Лагерь</li>
+          <li id="zone-road">Дорога</li>
+          <li id="zone-cemetery" hidden>Кладбище</li>
+          <li id="zone-courtyard">Монастырь</li>
+          <li id="zone-orchard" hidden>Сад</li>
+        </ol>
+      </div>
     </header>
 
     <div id="notice" class="notice" role="status" aria-live="polite"></div>
-    <div id="interaction-prompt" class="interaction-prompt" role="status" aria-live="polite" hidden><kbd>E</kbd><span id="interaction-copy"></span></div>
+    <aside id="onboarding" class="onboarding" aria-label="Обучение" hidden></aside>
+    <div id="interaction-prompt" class="interaction-prompt" role="status" aria-live="polite" hidden><kbd id="interaction-key">E</kbd><span id="interaction-copy"></span></div>
 
     <footer class="hud">
-      <section class="vitals" aria-label="Состояние персонажа">
-        <div class="portrait" aria-hidden="true"><img id="hero-portrait" width="96" height="96" alt="" draggable="false" /></div>
-        <div class="vital-bars">
-          <svg class="vital-icon" viewBox="0 0 5 5" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
-            <path fill="#ef8e83" d="M1 0h1v1h1V0h1v1h1v2H4v1H3v1H2V4H1V3H0V1h1z" />
-            <path fill="#f8c4ab" d="M1 1h1v1H1z" />
-          </svg>
-          <div class="health-track" role="progressbar" aria-label="Здоровье" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="health-bar"><div id="health-fill"></div></div>
-          <span class="vital-value"><span class="sr-only">Здоровье </span><span id="health-text">100 <i>/ 100</i></span></span>
-          <svg class="vital-icon" viewBox="0 0 5 5" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
-            <path fill="#6dd6cb" d="M2 0h1v1h1v1h1v1H4v1H3v1H2V4H1V3H0V2h1V1h1z" />
-            <path fill="#c2f0dd" d="M2 1h1v1H2z" />
-          </svg>
-          <div class="spirit-track" role="progressbar" aria-label="Дух" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" id="spirit-bar"><div id="spirit-fill"></div></div>
-          <span class="vital-value spirit-value"><span class="sr-only">Дух </span><span id="spirit-text">60 / 100</span></span>
-          <span class="vital-meta"><span class="sr-only">Монах: </span><span id="combat-state">ДЫХАНИЕ РОВНОЕ</span></span>
+      <svg class="hud-sprite" aria-hidden="true" focusable="false">
+        <defs>
+          <!-- Orbs on a 37u grid (§5.2): 1u outline, 2u stone ring, 1u glass edge, a 29u glass circle. -->
+          <path id="orb-glass" d="M15 4h7v1h-7zM12 5h13v1H12zM10 6h17v1H10zM9 7h19v1H9zM8 8h21v1H8zM7 9h23v1H7zM6 10h25v2H6zM5 12h27v3H5zM4 15h29v7H4zM5 22h27v3H5zM6 25h25v2H6zM7 27h23v1H7zM8 28h21v1H8zM9 29h19v1H9zM10 30h17v1H10zM12 31h13v1H12zM15 32h7v1h-7z" />
+          <clipPath id="orb-glass-clip"><path d="M15 4h7v1h-7zM12 5h13v1H12zM10 6h17v1H10zM9 7h19v1H9zM8 8h21v1H8zM7 9h23v1H7zM6 10h25v2H6zM5 12h27v3H5zM4 15h29v7H4zM5 22h27v3H5zM6 25h25v2H6zM7 27h23v1H7zM8 28h21v1H8zM9 29h19v1H9zM10 30h17v1H10zM12 31h13v1H12zM15 32h7v1h-7z" /></clipPath>
+          <path id="orb-shade" d="M32 15h1v4h-1zM31 19h2v2h-2zM30 21h3v1h-3zM30 22h2v1h-2zM29 23h3v2h-3zM28 25h3v1h-3zM27 26h4v1h-4zM26 27h4v1h-4zM24 28h5v1h-5zM22 29h6v1h-6zM10 30h1v1h-1zM20 30h7v1h-7zM12 31h13v1h-13zM15 32h7v1h-7z" />
+          <path id="orb-glint" d="M13 7h1v1h-1zM11 8h2v1h-2zM10 9h2v1h-2zM9 10h2v1h-2zM8 11h2v1h-2zM8 12h1v1h-1z" />
+          <path id="orb-outline" d="M14 0h9v1h-9zM11 1h3v1h-3zM23 1h3v1h-3zM9 2h2v1h-2zM26 2h2v1h-2zM8 3h1v1h-1zM15 3h7v1h-7zM28 3h1v1h-1zM6 4h2v1h-2zM12 4h3v1h-3zM22 4h3v1h-3zM29 4h2v1h-2zM5 5h2v1h-2zM10 5h2v1h-2zM25 5h2v1h-2zM30 5h2v1h-2zM4 6h2v1h-2zM9 6h1v1h-1zM27 6h1v1h-1zM31 6h2v1h-2zM4 7h1v1h-1zM8 7h1v1h-1zM28 7h1v1h-1zM32 7h1v1h-1zM3 8h1v1h-1zM7 8h1v1h-1zM29 8h1v1h-1zM33 8h1v1h-1zM2 9h1v1h-1zM6 9h1v1h-1zM30 9h1v1h-1zM34 9h1v1h-1zM2 10h1v1h-1zM5 10h1v1h-1zM31 10h1v1h-1zM34 10h1v1h-1zM1 11h1v1h-1zM5 11h1v1h-1zM31 11h1v1h-1zM35 11h1v1h-1zM1 12h1v1h-1zM4 12h1v1h-1zM32 12h1v1h-1zM35 12h1v1h-1zM1 13h1v1h-1zM4 13h1v1h-1zM32 13h1v1h-1zM35 13h1v1h-1zM0 14h1v1h-1zM4 14h1v1h-1zM32 14h1v1h-1zM36 14h1v1h-1zM0 15h1v1h-1zM3 15h1v1h-1zM33 15h1v1h-1zM36 15h1v1h-1zM0 16h1v1h-1zM3 16h1v1h-1zM33 16h1v1h-1zM36 16h1v1h-1zM0 17h1v1h-1zM3 17h1v1h-1zM33 17h1v1h-1zM36 17h1v1h-1zM0 18h1v1h-1zM3 18h1v1h-1zM33 18h1v1h-1zM36 18h1v1h-1zM0 19h1v1h-1zM3 19h1v1h-1zM33 19h1v1h-1zM36 19h1v1h-1zM0 20h1v1h-1zM3 20h1v1h-1zM33 20h1v1h-1zM36 20h1v1h-1zM0 21h1v1h-1zM3 21h1v1h-1zM33 21h1v1h-1zM36 21h1v1h-1zM0 22h1v1h-1zM4 22h1v1h-1zM32 22h1v1h-1zM36 22h1v1h-1zM1 23h1v1h-1zM4 23h1v1h-1zM32 23h1v1h-1zM35 23h1v1h-1zM1 24h1v1h-1zM4 24h1v1h-1zM32 24h1v1h-1zM35 24h1v1h-1zM1 25h1v1h-1zM5 25h1v1h-1zM31 25h1v1h-1zM35 25h1v1h-1zM2 26h1v1h-1zM5 26h1v1h-1zM31 26h1v1h-1zM34 26h1v1h-1zM2 27h1v1h-1zM6 27h1v1h-1zM30 27h1v1h-1zM34 27h1v1h-1zM3 28h1v1h-1zM7 28h1v1h-1zM29 28h1v1h-1zM33 28h1v1h-1zM4 29h1v1h-1zM8 29h1v1h-1zM28 29h1v1h-1zM32 29h1v1h-1zM4 30h2v1h-2zM9 30h1v1h-1zM27 30h1v1h-1zM31 30h2v1h-2zM5 31h2v1h-2zM10 31h2v1h-2zM25 31h2v1h-2zM30 31h2v1h-2zM6 32h2v1h-2zM12 32h3v1h-3zM22 32h3v1h-3zM29 32h2v1h-2zM8 33h1v1h-1zM15 33h7v1h-7zM28 33h1v1h-1zM9 34h2v1h-2zM26 34h2v1h-2zM11 35h3v1h-3zM23 35h3v1h-3zM14 36h9v1h-9z" />
+          <path id="orb-ring-top" d="M14 1h9v1h-9zM11 2h13v1h-13zM9 3h6v1h-6zM22 3h2v1h-2zM8 4h4v1h-4zM7 5h3v1h-3zM6 6h3v1h-3zM5 7h3v1h-3zM4 8h3v1h-3zM3 9h3v1h-3zM3 10h2v1h-2zM2 11h3v1h-3zM2 12h2v1h-2zM3 13h1v1h-1z" />
+          <path id="orb-ring-side" d="M24 2h2v1h-2zM24 3h4v1h-4zM25 4h4v1h-4zM27 5h3v1h-3zM28 6h3v1h-3zM29 7h3v1h-3zM30 8h3v1h-3zM31 9h3v1h-3zM32 10h2v1h-2zM32 11h3v1h-3zM33 12h2v1h-2zM2 13h1v1h-1zM33 13h2v1h-2zM1 14h3v1h-3zM33 14h3v1h-3zM1 15h2v1h-2zM34 15h2v1h-2zM1 16h2v1h-2zM34 16h2v1h-2zM1 17h2v1h-2zM34 17h2v1h-2zM1 18h2v1h-2zM34 18h2v1h-2zM1 19h2v1h-2zM34 19h2v1h-2zM1 20h2v1h-2zM34 20h2v1h-2zM1 21h2v1h-2zM35 21h1v1h-1zM1 22h3v1h-3zM2 23h2v1h-2zM2 24h2v1h-2zM2 25h3v1h-3zM3 26h2v1h-2zM3 27h3v1h-3zM4 28h3v1h-3zM5 29h3v1h-3zM6 30h3v1h-3zM7 31h3v1h-3zM8 32h4v1h-4zM9 33h2v1h-2z" />
+          <path id="orb-ring-low" d="M34 21h1v1h-1zM33 22h3v1h-3zM33 23h2v1h-2zM33 24h2v1h-2zM32 25h3v1h-3zM32 26h2v1h-2zM31 27h3v1h-3zM30 28h3v1h-3zM29 29h3v1h-3zM28 30h3v1h-3zM27 31h3v1h-3zM25 32h4v1h-4zM11 33h4v1h-4zM22 33h6v1h-6zM11 34h15v1h-15zM14 35h9v1h-9z" />
+          <!-- Skill icons: 24×24 on the 1u grid. The six techniques come from assets/concepts/systems-01/skills/icons. -->
+          <g id="icon-combo"><path fill="#A74D58" d="M7 3h3V1h4v2h3v3h3v11h-2v3h-3v3H8v-3H5v-3H3v-6h4z" /><path fill="#EF8E83" d="M8 4h2v7h1V2h2v9h1V4h2v8h1V7h2v9h-2v3h-3v3H9v-3H6v-3H4v-4h2v2h2z" /><path fill="#F8C4AB" d="M8 4h2v5H8zM11 2h2v6h-2zM14 4h2v6h-2zM17 7h2v4h-2zM4 12h2v2H4zM10 19h4v2h-4z" /><path fill="#171321" d="M10 13h5v2h-5zM12 15h3v2h-3z" /></g>
+          <g id="icon-dash"><path fill="#397C85" d="M1 8h7v2H1zM3 12h5v2H3zM1 16h5v2H1zM7 18h5v2H7z" /><path fill="#6DD6CB" d="M15 2h4v4h-4zM12 7h7v2h3v2h-6v3h3v3h-3v-2h-4v3H9v3H5v-3h3v-3h3v-4H8V9h4z" /><path fill="#C2F0DD" d="M15 2h4v2h-4zM13 7h5v2h-5zM8 18h3v2H8z" /><path fill="#397C85" d="M16 17h3v2h3v2h-5v-2h-1z" /></g>
+          <g id="icon-wave"><path fill="#397C85" d="M6 9h12v2h4v2h2v5h-2v2h-4v2H6v-2H2v-2H0v-5h2v-2h4zm0 4v2H3v2h3v2h12v-2h3v-2h-3v-2z" fill-rule="evenodd" /><path fill="#6DD6CB" d="M6 8h4v2H6v2H2v4h4v2h12v-2h4v-4h-4v-2h-4V8h4v2h4v2h2v4h-2v2h-4v2H6v-2H2v-2H0v-4h2v-2h4z" /><path fill="#6DD6CB" d="M11 1h2v3h2v4h-2v3h-2V8H9V4h2z" /><path fill="#C2F0DD" d="M11 3h2v4h-2zM6 18h12v2H6zM2 12h2v3H2z" /></g>
+          <g id="icon-palm"><path fill="#397C85" d="M10 3h3v1H10zM9 4h1v1H9zM13 4h1v1H13zM10 5h1v1H10zM14 5h1v1H14zM16 6h5v1H16zM8 8h1v1H8zM1 9h6v1H1zM8 9h1v1H8zM22 9h1v1H22zM8 10h1v1H8zM8 11h1v1H8zM0 12h6v1H0zM8 12h1v1H8zM8 13h1v1H8zM8 14h1v1H8zM2 15h5v1H2zM8 15h1v1H8zM20 15h1v1H20zM8 16h1v1H8zM8 17h2v1H8zM15 17h1v1H15zM9 18h7v1H9z" /><path fill="#171321" d="M16 9h6v1H16zM16 12h7v1H16zM16 15h4v1H16z" /><path fill="#6DD6CB" d="M12 4h1v1H12zM11 5h3v1H11zM12 6h3v1H12zM20 7h1v1H20zM9 8h13v1H9zM9 9h7v1H9zM9 10h1v1H9zM14 10h2v1H14zM22 10h1v1H22zM9 11h1v1H9zM14 11h9v1H14zM9 12h1v1H9zM14 12h2v1H14zM9 13h1v1H9zM14 13h2v1H14zM21 13h1v1H21zM9 14h13v1H9zM9 15h7v1H9zM9 16h11v1H9zM10 17h5v1H10z" /><path fill="#EF8E83" d="M10 10h4v1H10zM10 11h1v1H10zM13 11h1v1H13zM10 12h1v1H10zM13 12h1v1H13zM10 13h4v1H10z" /><path fill="#C2F0DD" d="M10 4h2v1H10zM10 7h10v1H10zM16 10h6v1H16zM16 13h5v1H16z" /><path fill="#F8C4AB" d="M11 11h2v1H11zM11 12h2v1H11z" /></g>
+          <g id="icon-crane"><path fill="#397C85" d="M8 6h2v1H8zM14 6h2v1H14zM6 7h3v1H6zM15 7h3v1H15zM4 8h3v1H4zM17 8h3v1H17zM2 9h3v1H2zM10 9h4v1H10zM19 9h3v1H19zM10 10h2v1H10zM9 11h2v1H9zM8 12h2v1H8zM14 17h3v1H14zM10 18h4v1H10zM17 18h4v1H17zM9 19h1v1H9zM21 19h1v1H21zM8 21h1v1H8zM22 21h1v1H22zM9 22h4v1H9zM18 22h4v1H18zM13 23h5v1H13z" /><path fill="#6DD6CB" d="M10 4h1v1H10zM13 4h1v1H13zM7 5h10v1H7zM5 6h3v1H5zM10 6h4v1H10zM16 6h3v1H16zM3 7h3v1H3zM10 7h4v1H10zM18 7h3v1H18zM1 8h3v1H1zM10 8h4v1H10zM20 8h3v1H20zM13 16h1v1H13zM15 16h3v1H15zM9 17h5v1H9zM17 17h5v1H17zM8 18h2v1H8zM21 18h2v1H21zM8 19h1v1H8zM22 19h1v1H22zM8 20h2v1H8zM21 20h2v1H21zM9 21h5v1H9zM17 21h5v1H17zM13 22h5v1H13z" /><path fill="#EF8E83" d="M11 2h2v1H11z" /><path fill="#C2F0DD" d="M11 3h2v1H11zM8 4h2v1H8zM11 4h2v1H11zM14 4h2v1H14zM5 5h2v1H5zM17 5h2v1H17zM3 6h2v1H3zM19 6h2v1H19zM1 7h2v1H1zM21 7h2v1H21zM5 11h1v1H5zM13 13h1v1H13zM4 14h1v1H4zM14 16h1v1H14zM3 17h1v1H3zM3 20h1v1H3z" /></g>
+          <g id="icon-deflect"><path fill="#397C85" d="M11 2h2v1H11zM7 3h3v1H7zM14 3h3v1H14zM2 10h1v1H2zM21 10h1v1H21zM1 15h1v1H1zM22 15h1v1H22zM2 17h1v1H2zM21 17h1v1H21zM3 19h1v1H3zM20 19h1v1H20zM5 21h2v1H5zM17 21h2v1H17zM7 22h2v1H7zM15 22h2v1H15zM9 23h6v1H9z" /><path fill="#A74D58" d="M3 7h4v1H3zM17 7h4v1H17zM5 8h1v1H5zM18 8h1v1H18zM6 9h1v1H6zM17 9h1v1H17zM7 10h1v1H7zM16 10h1v1H16zM8 11h1v1H8zM15 11h1v1H15zM10 13h1v1H10zM11 14h1v1H11zM11 15h2v1H11zM10 16h1v1H10zM13 16h1v1H13zM9 17h1v1H9zM14 17h1v1H14zM8 18h1v1H8zM15 18h1v1H15zM7 19h1v1H7zM16 19h1v1H16zM4 20h3v1H4zM17 20h3v1H17z" /><path fill="#8F734F" d="M9 12h6v1H9z" /><path fill="#6DD6CB" d="M10 1h1v1H10zM13 1h1v1H13zM7 2h3v1H7zM14 2h3v1H14zM2 7h1v1H2zM21 7h1v1H21zM2 8h1v1H2zM21 8h1v1H21zM1 9h2v1H1zM21 9h2v1H21zM1 10h1v1H1zM22 10h1v1H22zM1 11h1v1H1zM22 11h1v1H22zM1 12h1v1H1zM22 12h1v1H22zM1 13h1v1H1zM22 13h1v1H22zM1 14h2v1H1zM21 14h2v1H21zM2 15h1v1H2zM21 15h1v1H21zM2 16h1v1H2zM21 16h1v1H21zM3 17h1v1H3zM20 17h1v1H20zM3 18h1v1H3zM20 18h1v1H20zM7 21h3v1H7zM14 21h3v1H14zM9 22h6v1H9z" /><path fill="#EF8E83" d="M3 3h1v1H3zM6 3h1v1H6zM17 3h1v1H17zM20 3h1v1H20zM3 4h4v1H3zM17 4h4v1H17zM3 5h5v1H3zM16 5h5v1H16zM3 6h6v1H3zM15 6h6v1H15zM7 7h3v1H7zM14 7h3v1H14zM6 8h2v1H6zM9 8h2v1H9zM13 8h5v1H13zM7 9h2v1H7zM10 9h7v1H10zM8 10h2v1H8zM11 10h5v1H11zM8 13h2v1H8zM11 13h2v1H11zM14 13h2v1H14zM7 14h4v1H7zM12 14h2v1H12zM15 14h2v1H15zM6 15h5v1H6zM13 15h2v1H13zM16 15h2v1H16zM5 16h5v1H5zM14 16h2v1H14zM17 16h2v1H17zM4 17h5v1H4zM15 17h2v1H15zM18 17h2v1H18zM4 18h4v1H4zM16 18h4v1H16zM4 19h3v1H4zM17 19h3v1H17z" /><path fill="#E5B66E" d="M9 11h6v1H9z" /><path fill="#F8C4AB" d="M9 1h1v1H9zM14 1h1v1H14zM4 3h2v1H4zM18 3h2v1H18zM8 8h1v1H8zM9 9h1v1H9zM10 10h1v1H10zM13 13h1v1H13zM14 14h1v1H14zM15 15h1v1H15zM16 16h1v1H16zM17 17h1v1H17z" /><path fill="#EEE0CE" d="M11 0h2v1H11zM11 1h2v1H11zM10 2h1v1H10zM13 2h1v1H13z" /></g>
+          <g id="icon-bell"><path fill="#8F734F" d="M11 1h2v1H11zM11 2h2v1H11zM9 3h1v1H9zM14 3h1v1H14zM8 4h1v1H8zM15 4h1v1H15zM7 5h2v1H7zM16 5h1v1H16zM7 6h2v1H7zM16 6h1v1H16zM7 7h2v1H7zM16 7h1v1H16zM6 8h2v1H6zM17 8h1v1H17zM6 9h2v1H6zM17 9h1v1H17zM6 10h2v1H6zM17 10h1v1H17zM6 11h12v1H6zM5 12h2v1H5zM18 12h1v1H18zM5 13h2v1H5zM18 13h1v1H18zM4 14h2v1H4zM19 14h1v1H19zM3 15h1v1H3zM20 15h1v1H20zM3 16h18v1H3zM11 18h2v1H11z" /><path fill="#171321" d="M4 17h7v1H4zM13 17h7v1H13z" /><path fill="#6DD6CB" d="M6 18h1v1H6zM8 18h2v1H8zM14 18h2v1H14zM17 18h1v1H17zM3 19h2v1H3zM6 19h1v1H6zM17 19h1v1H17zM19 19h2v1H19zM2 20h1v1H2zM21 20h2v1H21zM2 21h1v1H2zM21 21h1v1H21zM3 22h2v1H3zM6 22h1v1H6zM17 22h1v1H17zM19 22h2v1H19zM6 23h1v1H6zM8 23h2v1H8zM11 23h2v1H11zM14 23h2v1H14zM17 23h1v1H17z" /><path fill="#E5B66E" d="M10 3h4v1H10zM9 4h1v1H9zM12 4h3v1H12zM9 5h1v1H9zM11 5h5v1H11zM9 6h1v1H9zM11 6h5v1H11zM9 7h1v1H9zM11 7h5v1H11zM8 8h1v1H8zM10 8h7v1H10zM8 9h1v1H8zM10 9h7v1H10zM8 10h1v1H8zM10 10h7v1H10zM7 12h11v1H7zM7 13h11v1H7zM6 14h13v1H6zM4 15h16v1H4zM11 17h2v1H11z" /><path fill="#C2F0DD" d="M2 7h1v1H2zM21 7h1v1H21zM1 8h1v1H1zM22 8h1v1H22zM1 9h1v1H1zM22 9h1v1H22zM2 10h1v1H2zM21 10h1v1H21z" /><path fill="#EEE0CE" d="M10 4h2v1H10zM10 5h1v1H10zM10 6h1v1H10zM10 7h1v1H10zM9 8h1v1H9zM9 9h1v1H9zM9 10h1v1H9z" /></g>
+          <g id="icon-mantra"><path fill="#397C85" d="M8 10h1v1H8zM15 10h1v1H15zM8 11h1v1H8zM15 11h1v1H15zM9 12h1v1H9zM14 12h1v1H14zM10 13h1v1H10zM13 13h1v1H13zM11 14h2v1H11zM11 20h1v1H11zM13 20h1v1H13zM11 21h1v1H11zM13 21h1v1H13zM11 22h1v1H11zM13 22h1v1H13z" /><path fill="#8F734F" d="M11 3h3v1H11zM6 5h3v1H6zM15 5h3v1H15zM3 9h3v1H3zM18 9h3v1H18zM3 14h3v1H3zM18 14h3v1H18zM6 18h3v1H6zM15 18h3v1H15zM10 20h1v1H10zM14 20h1v1H14z" /><path fill="#6DD6CB" d="M11 7h2v1H11zM10 8h4v1H10zM9 9h1v1H9zM12 9h3v1H12zM9 10h1v1H9zM12 10h3v1H12zM9 11h6v1H9zM10 12h4v1H10zM11 13h2v1H11zM12 20h1v1H12zM12 21h1v1H12zM12 22h1v1H12zM12 23h1v1H12z" /><path fill="#E5B66E" d="M12 1h2v1H12zM11 2h3v1H11zM7 3h2v1H7zM16 3h2v1H16zM6 4h3v1H6zM15 4h3v1H15zM4 7h2v1H4zM19 7h2v1H19zM3 8h3v1H3zM18 8h3v1H18zM4 12h2v1H4zM19 12h2v1H19zM3 13h3v1H3zM18 13h3v1H18zM7 16h2v1H7zM10 16h1v1H10zM12 16h3v1H12zM16 16h2v1H16zM6 17h3v1H6zM10 17h8v1H10zM10 18h5v1H10zM10 19h5v1H10z" /><path fill="#C2F0DD" d="M10 9h2v1H10zM10 10h2v1H10zM11 23h1v1H11zM13 23h1v1H13z" /><path fill="#EEE0CE" d="M11 1h1v1H11zM6 3h1v1H6zM15 3h1v1H15zM3 7h1v1H3zM18 7h1v1H18zM3 12h1v1H3zM18 12h1v1H18zM6 16h1v1H6zM11 16h1v1H11zM15 16h1v1H15z" /></g>
+          <g id="icon-sevenStrikes"><path fill="#397C85" d="M13 3h1v1H13zM13 4h1v1H13zM13 5h1v1H13zM4 6h1v1H4zM13 6h1v1H13zM19 6h2v1H19zM4 7h2v1H4zM12 7h2v1H12zM18 7h3v1H18zM5 8h2v1H5zM12 8h2v1H12zM17 8h3v1H17zM6 9h3v1H6zM16 9h3v1H16zM7 10h2v1H7zM16 10h2v1H16zM5 14h3v1H5zM17 14h2v1H17zM2 15h6v1H2zM17 15h6v1H17zM2 16h3v1H2zM20 16h3v1H20zM10 17h1v1H10zM15 17h1v1H15zM9 18h2v1H9zM14 18h1v1H14zM9 19h2v1H9zM14 19h1v1H14zM16 19h1v1H16zM8 20h2v1H8zM8 21h2v1H8zM17 21h1v1H17zM7 22h2v1H7zM16 22h2v1H16zM7 23h2v1H7zM16 23h2v1H16z" /><path fill="#A74D58" d="M9 12h1v1H9zM14 12h1v1H14zM10 13h1v1H10zM13 13h1v1H13zM11 14h2v1H11z" /><path fill="#6DD6CB" d="M12 1h1v1H12zM11 2h2v1H11zM12 3h1v1H12zM4 4h1v1H4zM12 4h1v1H12zM19 4h1v1H19zM3 5h2v1H3zM12 5h1v1H12zM18 5h2v1H18zM5 6h1v1H5zM12 6h1v1H12zM18 6h1v1H18zM6 7h1v1H6zM17 7h1v1H17zM7 8h1v1H7zM16 8h1v1H16zM2 13h1v1H2zM5 13h2v1H5zM17 13h2v1H17zM21 13h1v1H21zM1 14h4v1H1zM19 14h3v1H19zM9 16h1v1H9zM14 16h1v1H14zM9 17h1v1H9zM14 17h1v1H14zM8 18h1v1H8zM15 18h1v1H15zM8 19h1v1H8zM15 19h1v1H15zM7 20h1v1H7zM16 20h1v1H16zM6 21h2v1H6zM15 21h2v1H15z" /><path fill="#EF8E83" d="M11 9h2v1H11zM10 10h1v1H10zM13 10h1v1H13zM9 11h2v1H9zM13 11h2v1H13zM10 12h4v1H10zM11 13h2v1H11z" /><path fill="#C2F0DD" d="M11 1h1v1H11zM3 4h1v1H3zM18 4h1v1H18zM1 13h1v1H1zM20 13h1v1H20zM6 20h1v1H6zM15 20h1v1H15z" /><path fill="#F8C4AB" d="M11 10h2v1H11zM11 11h2v1H11z" /></g>
+          <g id="icon-lock"><path fill="#85798F" d="M3 1h6v1h1v4H8V3H4v3H2V2h1zM1 6h10v6H1z" /><path fill="#B4AABA" d="M1 6h10v1H1z" /><path fill="#0D0A14" d="M5 8h2v2H5z" /></g>
+          <!-- Item icons: 16×16. Relic knuckles are bronze with a spirit spark. -->
+          <g id="item-knuckles"><path fill="#44394F" d="M2 5h13v6H2zM4 11h9v2H4z" /><path fill="#85798F" d="M2 4h13v6H2zM4 10h9v2H4z" /><path fill="#B4AABA" d="M2 4h13v1H2z" /><path fill="#0D0A14" d="M3 6h2v2H3zM6 6h2v2H6zM9 6h2v2H9zM12 6h2v2h-2z" /></g>
+          <g id="item-knuckles-relic"><path fill="#6B4937" d="M2 5h13v6H2zM4 11h9v2H4z" /><path fill="#C38B48" d="M2 4h13v6H2zM4 10h9v2H4z" /><path fill="#FFDF9F" d="M2 4h13v1H2z" /><path fill="#0D0A14" d="M3 6h2v2H3zM6 6h2v2H6zM9 6h2v2H9zM12 6h2v2h-2z" /><path fill="#6DD6CB" d="M14 0h1v1h-1zM13 1h1v1h-1zM15 1h1v1h-1z" /></g>
+          <g id="item-staff"><path fill="#805345" d="M3 12h2v1H3zM4 11h2v1H4zM5 10h2v1H5zM6 9h2v1H6zM7 8h2v1H7zM8 7h2v1H8zM9 6h2v1H9zM10 5h2v1h-2z" /><path fill="#C58A68" d="M2 12h2v1H2zM3 11h2v1H3zM4 10h2v1H4zM5 9h2v1H5zM6 8h2v1H6zM7 7h2v1H7zM8 6h2v1H8zM9 5h2v1H9zM10 4h2v1h-2z" /><path fill="#85798F" d="M1 13h2v2H1zM12 2h2v2h-2z" /><path fill="#B4AABA" d="M1 13h1v1H1zM12 2h1v1h-1zM13 1h1v1h-1z" /></g>
+          <!-- «Монах» panel marks: the 5×5 «новое» dot, small locks and the four future gear slots (18×18, --stone-dark with a --dim lock). -->
+          <g id="mark-new"><path fill="#0D0A14" d="M1 0h3v1h1v3H4v1H1V4H0V1h1z" /><path fill="#E5B66E" d="M1 1h3v3H1z" /><path fill="#FFDF9F" d="M1 1h2v1H1zM1 2h1v1H1z" /></g>
+          <g id="lock-small"><path fill="#6C6179" d="M1 0h3v1h1v2H4V1H1v2H0V1h1z" /><path fill="#85798F" d="M0 3h5v3H0z" /><path fill="#171321" d="M2 4h1v1H2z" /></g>
+          <g id="lock-badge"><path fill="#85798F" d="M1 0h3v1h1v2H4V1H1v2H0V1h1z" /><path fill="#B4AABA" d="M0 3h5v3H0z" /><path fill="#0D0A14" d="M2 4h1v1H2z" /></g>
+          <g id="lock-hint"><path fill="#85798F" d="M1 0h4v1h1v2H5V1H1v2H0V1h1zM0 3h6v4H0z" /><path fill="#171321" d="M2 4h2v2H2z" /></g>
+          <g id="gear-beads"><path fill="#44394F" d="M8 2h2v2H8zM12 3h2v2h-2zM14 7h2v2h-2zM12 11h2v2h-2zM8 12h2v2H8zM4 11h2v2H4zM2 7h2v2H2zM4 3h2v2H4zM8 14h2v3H8z" /><path fill="#85798F" d="M12 10h4v1h1v2h-1v-2h-4v2h-1v-2h1zM11 13h6v4h-6z" /><path fill="#1A1523" d="M13 14h2v2h-2z" /></g>
+          <g id="gear-robe"><path fill="#44394F" d="M5 2h3v1h2V2h3v1h3v5h-3v8H5V8H2V3h3z" /><path fill="#85798F" d="M12 10h4v1h1v2h-1v-2h-4v2h-1v-2h1zM11 13h6v4h-6z" /><path fill="#1A1523" d="M13 14h2v2h-2z" /></g>
+          <g id="gear-belt"><path fill="#44394F" d="M1 5h16v3H1zM7 4h4v5H7zM6 9h2v5H6zM9 9h2v4H9z" /><path fill="#85798F" d="M12 10h4v1h1v2h-1v-2h-4v2h-1v-2h1zM11 13h6v4h-6z" /><path fill="#1A1523" d="M13 14h2v2h-2z" /></g>
+          <g id="gear-wraps"><path fill="#44394F" d="M11 1h4v3h-1v2h-1v2h-1v2h-1v2H9v2H5v-3h1V9h1V7h1V5h1V3h1V1z" /><path fill="#2C2437" d="M10 4h3v1h-3zM9 6h3v1H9zM8 8h3v1H8zM7 10h3v1H7z" /><path fill="#85798F" d="M12 10h4v1h1v2h-1v-2h-4v2h-1v-2h1zM11 13h6v4h-6z" /><path fill="#1A1523" d="M13 14h2v2h-2z" /></g>
+        </defs>
+      </svg>
+
+      <p id="breath-warning" class="breath-warning" role="status" hidden>дыши. и продолжай.</p>
+      <div class="orb health-orb" id="health-orb" role="progressbar" aria-label="Здоровье" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+        <svg class="orb-art" viewBox="0 0 37 37" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+          <clipPath id="health-level-clip"><rect id="health-level" x="0" y="4" width="37" height="29" /></clipPath>
+          <use class="orb-empty" href="#orb-glass" />
+          <g clip-path="url(#health-level-clip)"><use class="orb-liquid" href="#orb-glass" /><use class="orb-shade" href="#orb-shade" /></g>
+          <rect id="health-surface" class="orb-surface" x="0" y="4" width="37" height="0" clip-path="url(#orb-glass-clip)" />
+          <use class="orb-glint" href="#orb-glint" />
+          <use class="ring-outline" href="#orb-outline" /><use class="ring-top" href="#orb-ring-top" /><use class="ring-side" href="#orb-ring-side" /><use class="ring-low" href="#orb-ring-low" />
+        </svg>
+        <span class="orb-plate"><span class="sr-only">Здоровье </span><span id="health-text"><b>100</b> <i>/ 100</i></span></span>
+      </div>
+      <div class="orb spirit-orb" id="spirit-orb" role="progressbar" aria-label="Дух" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+        <svg class="orb-art" viewBox="0 0 37 37" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+          <clipPath id="spirit-level-clip"><rect id="spirit-level" x="0" y="4" width="37" height="29" /></clipPath>
+          <use class="orb-empty" href="#orb-glass" />
+          <g clip-path="url(#spirit-level-clip)"><use class="orb-liquid" href="#orb-glass" /><use class="orb-shade" href="#orb-shade" /></g>
+          <rect id="spirit-surface" class="orb-surface" x="0" y="4" width="37" height="0" clip-path="url(#orb-glass-clip)" />
+          <use class="orb-glint" href="#orb-glint" />
+          <use class="ring-outline" href="#orb-outline" /><use class="ring-top" href="#orb-ring-top" /><use class="ring-side" href="#orb-ring-side" /><use class="ring-low" href="#orb-ring-low" />
+        </svg>
+        <span class="orb-plate"><span class="sr-only">Дух </span><span id="spirit-text"><b>60</b> <i>/ 100</i></span></span>
+      </div>
+
+      <span class="level-badge"><span class="sr-only">Уровень </span><b id="level-value">1</b></span>
+      <button id="level-points-button" class="icon-button level-points-button" type="button" aria-label="Распределить очки пути" aria-controls="monk-panel" aria-keyshortcuts="c" title="Распределить очки пути" hidden>
+        <span id="point-mark" class="point-mark" hidden><span class="point-glyph" aria-hidden="true">+</span><span id="point-count">1</span></span>
+        <kbd class="points-key" aria-hidden="true">C</kbd>
+      </button>
+      <div class="xp-track" id="xp-bar" role="progressbar" aria-label="Опыт уровня" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0"><div class="xp-cells"><div id="xp-fill"></div></div></div>
+
+      <section class="skills" aria-label="Боевые умения">
+        <div class="skill" id="slot-lmb">
+          <span class="keycap">ЛКМ</span>
+          <div class="skill-well">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="#icon-combo" /></svg>
+            <div class="skill-shade"></div>
+            <span class="cooldown"></span>
+          </div>
+          <svg class="skill-lock" viewBox="0 0 12 12" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="#icon-lock" /></svg>
+          <span class="skill-unlock"></span>
+          <span class="skill-blank" aria-hidden="true">K</span>
+          <i class="skill-new" aria-hidden="true"></i>
+          <span class="skill-name">Серия ударов</span>
+          <span class="skill-cost"></span>
+          <div class="combo-pips" id="combo-pips" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="skill" id="slot-space">
+          <span class="keycap">Пробел</span>
+          <div class="skill-well">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="#icon-dash" /></svg>
+            <div class="skill-shade"></div>
+            <span class="cooldown"></span>
+          </div>
+          <svg class="skill-lock" viewBox="0 0 12 12" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="#icon-lock" /></svg>
+          <span class="skill-unlock"></span>
+          <span class="skill-blank" aria-hidden="true">K</span>
+          <i class="skill-new" aria-hidden="true"></i>
+          <span class="skill-name">Пробивающий шаг</span>
+          <span class="skill-cost"></span>
+          <div class="combo-pips charge-pips" id="charge-pips" aria-hidden="true" hidden><i></i><i></i></div>
+        </div>
+        <div class="skill" id="slot-rmb">
+          <span class="keycap">ПКМ</span>
+          <div class="skill-well">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="#icon-wave" /></svg>
+            <div class="skill-shade"></div>
+            <span class="cooldown"></span>
+          </div>
+          <svg class="skill-lock" viewBox="0 0 12 12" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="#icon-lock" /></svg>
+          <span class="skill-unlock"></span>
+          <span class="skill-blank" aria-hidden="true">K</span>
+          <i class="skill-new" aria-hidden="true"></i>
+          <span class="skill-name">Волна духа</span>
+          <span class="skill-cost">40</span>
+        </div>
+        <div class="skill locked" id="slot-q">
+          <span class="keycap">Q</span>
+          <div class="skill-well">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="#icon-palm" /></svg>
+            <div class="skill-shade"></div>
+            <span class="cooldown"></span>
+          </div>
+          <svg class="skill-lock" viewBox="0 0 12 12" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="#icon-lock" /></svg>
+          <span class="skill-unlock">ур. 2</span>
+          <span class="skill-blank" aria-hidden="true">K</span>
+          <i class="skill-new" aria-hidden="true"></i>
+          <span class="skill-name">Ладонь духа</span>
+          <span class="skill-cost"></span>
+        </div>
+        <div class="skill locked" id="slot-f">
+          <span class="keycap">F</span>
+          <div class="skill-well">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="#icon-crane" /></svg>
+            <div class="skill-shade"></div>
+            <span class="cooldown"></span>
+          </div>
+          <svg class="skill-lock" viewBox="0 0 12 12" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><use href="#icon-lock" /></svg>
+          <span class="skill-unlock">ур. 4</span>
+          <span class="skill-blank" aria-hidden="true">K</span>
+          <i class="skill-new" aria-hidden="true"></i>
+          <span class="skill-name">Прыжок журавля</span>
+          <span class="skill-cost"></span>
         </div>
       </section>
 
-      <section class="skills" aria-label="Боевые умения">
-        <div class="skill" id="skill-attack">
-          <span class="keycap">ЛКМ</span>
-          <div class="skill-well">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
-              <path fill="#A74D58" d="M7 3h3V1h4v2h3v3h3v11h-2v3h-3v3H8v-3H5v-3H3v-6h4z" />
-              <path fill="#EF8E83" d="M8 4h2v7h1V2h2v9h1V4h2v8h1V7h2v9h-2v3h-3v3H9v-3H6v-3H4v-4h2v2h2z" />
-              <path fill="#F8C4AB" d="M8 4h2v5H8zM11 2h2v6h-2zM14 4h2v6h-2zM17 7h2v4h-2zM4 12h2v2H4zM10 19h4v2h-4z" />
-              <path fill="#171321" d="M10 13h5v2h-5zM12 15h3v2h-3z" />
-            </svg>
-            <div class="skill-shade"></div>
-          </div>
-          <span class="skill-name">Серия ударов</span>
-          <div class="combo-pips" aria-label="Три удара в серии"><i></i><i></i><i></i></div>
-        </div>
-        <div class="skill" id="skill-dash">
-          <span class="keycap">Пробел</span>
-          <div class="skill-well">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
-              <path fill="#397C85" d="M1 8h7v2H1zM3 12h5v2H3zM1 16h5v2H1zM7 18h5v2H7z" />
-              <path fill="#6DD6CB" d="M15 2h4v4h-4zM12 7h7v2h3v2h-6v3h3v3h-3v-2h-4v3H9v3H5v-3h3v-3h3v-4H8V9h4z" />
-              <path fill="#C2F0DD" d="M15 2h4v2h-4zM13 7h5v2h-5zM8 18h3v2H8z" />
-              <path fill="#397C85" d="M16 17h3v2h3v2h-5v-2h-1z" />
-            </svg>
-            <div class="skill-shade"></div>
-            <span class="cooldown"></span>
-          </div>
-          <span class="skill-name">Пробивающий шаг</span>
-        </div>
-        <div class="skill" id="skill-wave">
-          <span class="keycap">ПКМ/Q</span>
-          <div class="skill-well">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
-              <path fill="#397C85" d="M6 9h12v2h4v2h2v5h-2v2h-4v2H6v-2H2v-2H0v-5h2v-2h4zm0 4v2H3v2h3v2h12v-2h3v-2h-3v-2z" fill-rule="evenodd" />
-              <path fill="#6DD6CB" d="M6 8h4v2H6v2H2v4h4v2h12v-2h4v-4h-4v-2h-4V8h4v2h4v2h2v4h-2v2h-4v2H6v-2H2v-2H0v-4h2v-2h4z" />
-              <path fill="#6DD6CB" d="M11 1h2v3h2v4h-2v3h-2V8H9V4h2z" />
-              <path fill="#C2F0DD" d="M11 3h2v4h-2zM6 18h12v2H6zM2 12h2v3H2z" />
-            </svg>
-            <div class="skill-shade"></div>
-            <span class="cooldown"></span>
-          </div>
-          <span class="skill-name">Волна духа</span>
-          <span class="skill-cost"><span id="wave-cost">40</span><span class="sr-only"> духа</span></span>
-        </div>
-      </section>
+      <div id="loot-lines" class="loot-lines" role="status" aria-live="polite"></div>
     </footer>
+
+    <!-- «Монах» (§5.5): one 288×208u frame for three tabs; src/monk-panel.js fills #monk-content. The game pauses while it is open. -->
+    <div id="monk-panel" class="monk-layer" hidden>
+      <div class="monk-backdrop" aria-hidden="true"></div>
+      <div class="monk-place">
+        <section id="monk-dialog" class="monk-panel" role="dialog" aria-modal="true" aria-label="Монах" tabindex="-1">
+          <div class="monk-tabs" role="tablist" aria-label="Вкладки панели «Монах»">
+            <button id="monk-tab-character" class="monk-tab" type="button" role="tab" data-tab="character" aria-controls="monk-content" aria-keyshortcuts="c"><span>Персонаж</span><kbd>C</kbd><b id="monk-tab-points" class="monk-tab-points" hidden>+1</b></button>
+            <button id="monk-tab-gear" class="monk-tab" type="button" role="tab" data-tab="gear" aria-controls="monk-content" aria-keyshortcuts="i"><span>Снаряжение</span><kbd>I</kbd></button>
+            <button id="monk-tab-skills" class="monk-tab" type="button" role="tab" data-tab="skills" aria-controls="monk-content" aria-keyshortcuts="k"><span>Умения</span><kbd>K</kbd></button>
+            <span id="monk-tabs-hint" class="monk-tabs-hint">Tab — вкладки</span>
+            <button id="monk-close" class="monk-close" type="button" data-close aria-label="Закрыть" aria-keyshortcuts="Escape" title="Закрыть (Esc)">Esc</button>
+          </div>
+          <div id="monk-content" class="monk-content" role="tabpanel"></div>
+        </section>
+      </div>
+    </div>
 
     <div id="overlay" class="overlay">
       <section class="intro-panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" aria-describedby="panel-copy">
-        <p class="wordmark">
-          <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
-            <path fill="#6C6179" d="M5 0h2v1h1v1h1v1h1v1h1v1h1v2h-1v1h-1v1H9v1H8v1H7v1H5v-1H4v-1H3V9H2V8H1V7H0V5h1V4h1V3h1V2h1V1h1z" />
-            <path fill="#171321" d="M5 2h2v1h1v1h1v1h1v2H9v1H8v1H7v1H5V9H4V8H3V7H2V5h1V4h1V3h1z" />
-            <path fill="#EEE0CE" d="M5 4h2v1h1v2H7v1H5V7H4V5h1z" />
-          </svg>
-          <span>Ночной ритуал</span>
-        </p>
-        <span class="eyebrow" id="panel-eyebrow">От огня — к монастырю</span>
-        <h1 id="panel-title">Путь<br/> сквозь пепел</h1>
-        <div class="title-rule" aria-hidden="true"><span></span><i></i><span></span></div>
-        <p id="panel-copy">От лагеря до монастыря — единый мир. Пробейся сквозь стаи, погаси ритуал и вернись к огню.</p>
-        <div id="appearance-picker" class="appearance-picker" aria-label="Облик странника">
-          <div class="appearance-preview"><span class="preview-crop"><img id="appearance-preview" width="96" height="96" alt="Облик странника" draggable="false" /></span><span>Твой странник</span></div>
-          <div class="appearance-fields">
-            <fieldset><legend>Кожа <span id="skin-value"></span></legend><div id="skin-options" class="appearance-options"></div></fieldset>
-            <fieldset><legend>Волосы</legend><div id="hair-options" class="appearance-options"></div></fieldset>
-            <fieldset><legend>Пояс <span id="sash-value"></span></legend><div id="sash-options" class="appearance-options"></div></fieldset>
+        <!-- The stone frame stays on .intro-panel; this box scrolls inside it (as .monk-panel and .monk-content). -->
+        <div class="intro-scroll">
+          <p class="wordmark">
+            <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+              <path fill="#6C6179" d="M5 0h2v1h1v1h1v1h1v1h1v1h1v2h-1v1h-1v1H9v1H8v1H7v1H5v-1H4v-1H3V9H2V8H1V7H0V5h1V4h1V3h1V2h1V1h1z" />
+              <path fill="#171321" d="M5 2h2v1h1v1h1v1h1v2H9v1H8v1H7v1H5V9H4V8H3V7H2V5h1V4h1V3h1z" />
+              <path fill="#EEE0CE" d="M5 4h2v1h1v2H7v1H5V7H4V5h1z" />
+            </svg>
+            <span>Ночной ритуал</span>
+          </p>
+          <span class="eyebrow" id="panel-eyebrow">От огня — к монастырю</span>
+          <h1 id="panel-title">Путь<br/> сквозь пепел</h1>
+          <div class="title-rule" aria-hidden="true"><span></span><i></i><span></span></div>
+          <p id="panel-copy">От лагеря до монастыря — единый мир. Пробейся сквозь стаи, погаси ритуал и вернись к огню.</p>
+          <div id="appearance-picker" class="appearance-picker" aria-label="Облик странника">
+            <div class="appearance-preview"><span class="preview-crop"><img id="appearance-preview" width="96" height="96" alt="Облик странника" draggable="false" /></span><span>Твой странник</span></div>
+            <div class="appearance-fields">
+              <fieldset><legend>Кожа <span id="skin-value"></span></legend><div id="skin-options" class="appearance-options"></div></fieldset>
+              <fieldset><legend>Волосы</legend><div id="hair-options" class="appearance-options"></div></fieldset>
+              <fieldset><legend>Пояс <span id="sash-value"></span></legend><div id="sash-options" class="appearance-options"></div></fieldset>
+            </div>
+            <span id="appearance-description" class="sr-only" aria-live="polite"></span>
+            <div id="appearance-loading" class="appearance-loading">
+              <span id="appearance-status" role="status" aria-atomic="true">Загружаем облик…</span>
+              <button id="appearance-retry" class="appearance-retry" type="button" hidden>Повторить</button>
+            </div>
           </div>
-          <span id="appearance-description" class="sr-only" aria-live="polite"></span>
-          <div id="appearance-loading" class="appearance-loading">
-            <span id="appearance-status" role="status" aria-atomic="true">Загружаем облик…</span>
-            <button id="appearance-retry" class="appearance-retry" type="button" hidden>Повторить</button>
+          <div id="run-trophy" class="run-trophy" hidden>
+            <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+              <path fill="#6b4937" d="M12 2h8v4h4v4h4v14h-4v4H8v-4H4V10h4V6h4z" />
+              <path fill="#c38b48" d="M12 6h8v4h4v12h-4v4h-8v-4H8V10h4z" />
+              <path fill="#e5b66e" d="M12 6h8v4h4v8h-4v4H8V10h4z" />
+              <path fill="#ffdf9f" d="M12 8h6v4h-6zM10 12h4v6h-4z" />
+              <path fill="#6b4937" d="M16 13h4v6h-4z" />
+            </svg>
+            <span><strong>Янтарная бусина</strong><small>1 трофей этого пути</small></span>
           </div>
-        </div>
-        <div id="run-trophy" class="run-trophy" hidden>
-          <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
-            <path fill="#6b4937" d="M12 2h8v4h4v4h4v14h-4v4H8v-4H4V10h4V6h4z" />
-            <path fill="#c38b48" d="M12 6h8v4h4v12h-4v4h-8v-4H8V10h4z" />
-            <path fill="#e5b66e" d="M12 6h8v4h4v8h-4v4H8V10h4z" />
-            <path fill="#ffdf9f" d="M12 8h6v4h-6zM10 12h4v6h-4z" />
-            <path fill="#6b4937" d="M16 13h4v6h-4z" />
-          </svg>
-          <span><strong>Янтарная бусина</strong><small>1 трофей этого пути</small></span>
-        </div>
-        <dl id="run-summary" class="run-summary" hidden>
-          <div><dt>Время в пути</dt><dd id="summary-time"></dd></div>
-          <div><dt>Побеждено</dt><dd id="summary-kills"></dd></div>
-          <div><dt>Тайник</dt><dd id="summary-secret"></dd></div>
-          <div><dt>Мест открыто</dt><dd id="summary-places"></dd></div>
-        </dl>
-        <button id="play" class="primary-button" type="button" disabled><span>Пробуждаем мир…</span><span aria-hidden="true"><svg viewBox="0 0 8 8" focusable="false" shape-rendering="crispEdges"><path d="M4 0h1v1h1v1h1v1h1v2H7v1H6v1H5v1H4V6h1V5H0V3h5V2H4z" /></svg></span></button>
-        <button id="restart" class="text-button" type="button" hidden>Начать заново</button>
-        <p class="entry-hint" id="entry-hint">WASD&nbsp;— идти · мышь&nbsp;— бой · E&nbsp;—&nbsp;действие</p>
-        <div id="pause-controls" hidden>
-          <p><kbd>WASD</kbd> движение · или стрелки</p>
-          <p><kbd>ЛКМ</kbd> серия ударов накапливает дух</p>
-          <p><kbd>ПРОБЕЛ</kbd> пробивающий шаг: рывок сквозь врагов с уроном</p>
-          <p><kbd>ПКМ / Q</kbd> волна духа: круговая волна · 40 духа</p>
-          <p><kbd>E</kbd> взаимодействие: тайник и награда</p>
-          <p><kbd>M</kbd> звук <kbd>Esc</kbd> пауза</p>
-          <p>Удерживай ЛКМ для серии. Целься мышью.<br/>Уходи с линии прыжка или выстрела духа.<br/>Панцирник держит удары спереди: бей в спину, рывок и волна раскалывают панцирь.</p>
+          <dl id="run-summary" class="run-summary" hidden>
+            <div><dt>Время в пути</dt><dd id="summary-time"></dd></div>
+            <div><dt>Побеждено</dt><dd id="summary-kills"></dd></div>
+            <div><dt>Тайники</dt><dd id="summary-secret"></dd></div>
+            <div><dt>Мест открыто</dt><dd id="summary-places"></dd></div>
+          </dl>
+          <button id="continue-run" class="primary-button save-continue" type="button" hidden disabled><span>Продолжить забег</span><small id="continue-detail"></small></button>
+          <button id="play" class="primary-button" type="button" disabled><span>Пробуждаем мир…</span><span aria-hidden="true"><svg viewBox="0 0 8 8" focusable="false" shape-rendering="crispEdges"><path d="M4 0h1v1h1v1h1v1h1v2H7v1H6v1H5v1H4V6h1V5H0V3h5V2H4z" /></svg></span></button>
+          <button id="restart" class="text-button" type="button" hidden>Начать заново</button>
+          <p class="entry-hint" id="entry-hint">WASD&nbsp;— идти · мышь&nbsp;— бой · E&nbsp;—&nbsp;действие</p>
+          <!-- One .setting row per option; main.js keeps the switches in step with the game. -->
+          <section id="pause-settings" class="settings" aria-labelledby="settings-title" hidden>
+            <h2 id="settings-title">Настройки</h2>
+            <div class="setting">
+              <span id="sound-label">Звук</span>
+              <button id="sound" class="setting-switch" type="button" role="switch" aria-checked="true" aria-labelledby="sound-label" aria-keyshortcuts="m" title="Выключить звук (M)">Вкл</button>
+            </div>
+            <div class="setting">
+              <span id="graphics-label">Графика</span>
+              <button id="graphics" class="setting-switch" type="button" role="switch" aria-checked="true" aria-labelledby="graphics-label" title="Выключить эффекты графики">Вкл</button>
+            </div>
+            <div class="setting">
+              <span id="perf-label">FPS</span>
+              <button id="perf" class="setting-switch" type="button" role="switch" aria-checked="false" aria-labelledby="perf-label" title="Показать счётчик FPS">Выкл</button>
+            </div>
+            <div class="setting">
+              <span id="minimap-label">Миникарта</span>
+              <button id="minimap-toggle" class="setting-switch" type="button" role="switch" aria-checked="true" aria-labelledby="minimap-label" title="Скрыть миникарту">Вкл</button>
+            </div>
+            <!-- HD-2D core: independent presentation quality; stage-0 switch above is unchanged. -->
+            <div class="setting hd2d-setting">
+              <span id="hd2d-label">HD-2D</span>
+              <div id="hd2d-options" role="group" aria-labelledby="hd2d-label">
+                <!-- HD-2D adaptive: reset visit-local automatic quality. -->
+                <button id="hd2d-auto" class="setting-switch" type="button" data-hd-tier="auto" aria-pressed="false">Авто</button>
+                <button id="hd2d-off" class="setting-switch" type="button" data-hd-tier="off" aria-pressed="false">Выкл</button>
+                <button id="hd2d-low" class="setting-switch" type="button" data-hd-tier="low" aria-pressed="false">Низко</button>
+                <button id="hd2d-high" class="setting-switch" type="button" data-hd-tier="high" aria-pressed="false">Высоко</button>
+              </div>
+            </div>
+            <div class="setting onboarding-setting">
+              <span id="onboarding-label">Обучение</span>
+              <button id="onboarding-replay" class="setting-switch" type="button" aria-describedby="onboarding-label">Пройти заново</button>
+            </div>
+          </section>
+          <!-- Keycaps follow the last used device: main.js swaps them to PS or Xbox glyphs and back (gamepad.js). -->
+          <div id="pause-controls" hidden>
+            <p id="legend-move"><kbd>WASD</kbd> <span>движение · или стрелки</span></p>
+            <p id="legend-attack"><kbd>ЛКМ</kbd> серия ударов накапливает дух</p>
+            <p id="legend-dash"><kbd>ПРОБЕЛ</kbd> пробивающий шаг: рывок сквозь врагов с уроном</p>
+            <!-- RMB, Q and F follow the loadout (§5.9); main.js rewrites them when the pause opens. -->
+            <p id="legend-rmb"><kbd>ПКМ</kbd> <span>волна духа: круговая волна · 40 духа</span></p>
+            <p id="legend-q" class="locked"><kbd>Q</kbd> <span>вторая техника · откроется на ур. 2</span></p>
+            <p id="legend-f" class="locked"><kbd>F</kbd> <span>третья техника · откроется на ур. 4</span></p>
+            <p id="legend-panel"><kbd>C / I / K</kbd> монах: персонаж · снаряжение · умения</p>
+            <p id="legend-interact"><kbd>E</kbd> взаимодействие: припасы, тайник и награда</p>
+            <p id="legend-system"><kbd>M</kbd> <span>звук <kbd>Esc</kbd> пауза</span></p>
+            <p><span id="legend-aim">Удерживай ЛКМ для серии. Целься мышью.</span><br/>Уходи с линии прыжка или выстрела духа.<br/>Панцирник держит удары спереди: бей в спину, рывок и волна раскалывают панцирь.</p>
+          </div>
         </div>
       </section>
       <span class="version" hidden aria-hidden="true"></span>

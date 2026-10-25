@@ -1,26 +1,47 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { GameAudio, GAITS, CROWD_STEPS, VOICE_LIMITS, contactIndex, surfaceAt } from '../src/audio.js';
-import { monkPose, houndPose, beetlePose } from '../src/pixel-animation.js';
-import { createAdventure, updateGame, startDash, startWave } from '../src/game.js';
-import monkPackage from '../assets/game/pixel-v2/monk/manifest.json' with { type: 'json' };
+import { monkPose, houndPose, beetlePose, PresentationState } from '../src/pixel-animation.js';
+import { createGame, createAdventure, updateGame, startDash, startWave, useSlot } from '../src/game.js';
+import { gainXp } from '../src/run-progress.js';
+import monkPackage from '../assets/game/pixel-v17/monk-side/manifest.json' with { type: 'json' };
 import houndPackage from '../assets/game/pixel-v2/hound-world/manifest.json' with { type: 'json' };
 import beetlePackage from '../assets/game/pixel-v7/beetle/manifest.json' with { type: 'json' };
+import { SURFACES } from '../src/sfx.js';
 import { FakeContext } from './helpers/fake-audio-context.js';
+import { LoadedSamples, recordSounds } from './helpers/fake-samples.js';
 
 function setup() {
   let context;
-  // Sound effects alone: tests/audio-music.test.js covers the music.
-  const audio = new GameAudio({ AudioContext: class { constructor() { context = new FakeContext(); return context; } }, random: () => .5, music: null });
+  // Sound effects alone, every recorded sound decoded: tests/audio-music.test.js covers the music,
+  // tests/audio-sfx.test.js the loading of the recorded files.
+  const audio = new GameAudio({ AudioContext: class { constructor() { context = new FakeContext(); return context; } }, random: () => .5,
+    music: null, samples: LoadedSamples });
   audio.unlock();
-  const cues = [];
-  const cue = audio.cue;
-  audio.cue = function(name, options = {}) { cues.push({ name, ...options }); return cue.call(this, name, options); };
+  const cues = recordSounds(audio);
   return { audio, context, cues, named: prefix => cues.filter(c => c.name.startsWith(prefix)) };
 }
 
 // One full step: three run keys of the monk's drawing.
 const STRIDE = GAITS.monk.key * 3;
+
+test('crane flight and its landing frame never play grounded monk footsteps', () => {
+  const h = setup(), game = createGame();
+  game.enemies = [];
+  gainXp(game, 450);
+  game.events = [];
+  h.audio.frame(game);
+  assert.equal(useSlot(game, 'f', 0, -4).ok, true);
+  for (let i = 0; i < 40; i++) {
+    for (let step = 0; step < 2; step++) updateGame(game, {}, 1 / 120);
+    h.context.advance(1 / 60);
+    h.audio.frame(game);
+    game.events = [];
+  }
+  assert.equal(h.named('step:').length, 0, 'the crane pose has no ground contacts');
+  run(h, game, STRIDE);
+  assert.equal(h.named('step:').length, 1, 'normal footfalls resume after the flight');
+});
 const monk = (extra = {}) => ({ x: 4, y: 4, dx: 0, dy: 1, hp: 100, distance: 0, dashTime: 0, moving: true, attack: null, ...extra });
 const gameAt = (extra = {}) => ({ phase: 'playing', events: [], enemies: [], locationId: 'road',
   world: { paving: [{ x: 0, y: 0 }] }, player: monk(), ...extra });
@@ -100,7 +121,7 @@ test('the monk steps once per contact key over a known distance', () => {
 });
 
 test('footfalls land exactly on the run drawings that plant a foot', () => {
-  const runFrames = monkPackage.monk.clips.run.front;
+  const clip = monkPackage.monk.clips.run, runFrames = clip.front;
   const h = setup(), game = gameAt(), keys = [];
   h.audio.frame(game);
   // Record the drawn key whenever a step fires.
@@ -108,10 +129,14 @@ test('footfalls land exactly on the run drawings that plant a foot', () => {
     game.player.distance = distance; h.context.currentTime += 1 / 60;
     const before = h.named('step:').length;
     h.audio.frame(game);
-    if (h.named('step:').length > before) keys.push(runFrames.indexOf(monkPose(game.player).frame));
+    if (h.named('step:').length > before) {
+      const key = runFrames.indexOf(monkPose(game.player).frame);
+      assert.ok(key >= 0, 'footfall uses an active run drawing');
+      keys.push(clip.sourceKeys[key]);
+    }
   }
   assert.equal(keys.length, 5);
-  // Run keys 01 and 04 (indices 0 and 3) are the right and left foot contacts.
+  // Source phases 0 and 3 remain the right and left foot contacts after subdivision.
   for (const key of keys) assert.ok(key === 0 || key === 3, `step on run key ${key}`);
   // Monster contact keys follow their own drawings too.
   for (const [pose, atlas, clip, kind] of [[houndPose, houndPackage.hound, 'run', 'hound'], [beetlePose, beetlePackage.beetle, 'walk', 'beetle']]) {
@@ -230,7 +255,8 @@ test('impact layers follow the target: flesh, spirit, shell, crystal, stone guar
   h.audio.frame(game);
   game.events = [{ type: 'impact', id: 'b', source: 'dash', strength: 'heavy' }, { type: 'guard-break', id: 'b', source: 'dash' }];
   h.audio.frame(game);
-  assert.deepEqual(h.cues.map(c => c.name), ['impact:flesh', 'impact:spirit', 'impact:shell', 'impact:crystal', 'block',
+  // The synthesized layers; tests/audio-sfx.test.js covers the hurt cries after each hit.
+  assert.deepEqual(h.cues.filter(c => c.method === 'cue').map(c => c.name), ['impact:flesh', 'impact:spirit', 'impact:shell', 'impact:crystal', 'block',
     'impact:shell', 'guard-break', 'punch']);
   // The guard break outranks the dash kick.
   assert.equal(h.named('punch')[0].gain, .9);
@@ -248,7 +274,9 @@ test('a wave across many bodies merges into one layer per kind and respects the 
   assert.equal(names.filter(n => n === 'impact:flesh').length, 2);
   assert.equal(names.filter(n => n === 'impact:shell').length, 2);
   assert.equal(names.filter(n => n === 'guard-break').length, 1);
-  assert.equal(names.filter(n => n === 'death').length, 2);
+  // One death cry per kind, and no hurt cry from a body that dies in the same frame.
+  assert.deepEqual(names.filter(n => /:death$|^death$/.test(n)), ['hound:death', 'beetle:death']);
+  assert.ok(!names.some(n => n.endsWith(':hurt')));
   assert.equal(names.filter(n => n === 'punch').length, 1);
   const flesh = h.cues.find(c => c.name === 'impact:flesh');
   assert.ok(flesh.gain <= .9 * 1.6 + 1e-9 && flesh.gain > .9);
@@ -286,7 +314,7 @@ test('the real simulation steps only while running on foot', () => {
   // The loop's last frame is the one the dash ends in.
   while (game.player.dashTime > 0) frame();
   assert.equal(h.named('step:').length, steps);
-  assert.ok(h.named('step:').every(c => ['step:grass', 'step:earth', 'step:stone'].includes(c.name)));
+  assert.ok(h.named('step:').every(c => SURFACES.includes(c.name.slice(5))));
 });
 
 test('real combat events pick the right layers: combo on each kind, guarded front, wave', () => {
@@ -325,4 +353,30 @@ test('real combat events pick the right layers: combo on each kind, guarded fron
   frame({});
   const names = h.cues.slice(before).map(c => c.name);
   for (const name of ['wave', 'impact:shell', 'guard-break', 'punch']) assert.ok(names.includes(name), `${name} in ${names}`);
+});
+
+
+test('real render presentation stays on the audible foot contacts after stop and resume', () => {
+  const clip = monkPackage.monk.clips.run;
+  for (const stopAge of [.08, .16]) {
+    const h = setup(), game = gameAt(), view = new PresentationState(game);
+    h.audio.frame(game);
+    Object.assign(game.player, { moving: true, distance: .7, dx: 0, dy: 1 });
+    view.update(game, .1); h.audio.frame(game);
+    game.player.moving = false; view.update(game, stopAge); h.audio.frame(game);
+    Object.assign(game.player, { moving: true, distance: .71 }); view.update(game, .01); h.audio.frame(game);
+    let heard = 0;
+    for (const distance of [1, 1.4, 1.68, 1.9, 2.2, 3.36]) {
+      game.player.distance = distance; view.update(game, .1); h.context.advance(.1);
+      const before = h.named('step:').length; h.audio.frame(game);
+      if (h.named('step:').length > before) {
+        const key = clip.front.indexOf(monkPose(game.player, monkPackage.monk, view.player).frame);
+        assert.ok(key >= 0);
+        const phase = clip.sourceKeys[key];
+        assert.ok(phase === 0 || phase === 3, `stop ${stopAge}: audible foot at phase ${phase}`);
+        heard++;
+      }
+    }
+    assert.equal(heard, 2, 'both unchanged distance contacts are audible');
+  }
 });

@@ -1,0 +1,1133 @@
+{
+  "schemaVersion": 1,
+  "generator": "scripts/build-normal-maps.py",
+  "algorithmVersion": 1,
+  "encoding": {
+    "rgb": "linear tangent normal; +X right, +Y up, +Z toward viewer",
+    "alpha": "height; 0 outside silhouette; use albedo alpha for coverage",
+    "directions": [
+      [
+        128,
+        128,
+        255
+      ],
+      [
+        51,
+        128,
+        230
+      ],
+      [
+        204,
+        128,
+        230
+      ],
+      [
+        128,
+        204,
+        230
+      ],
+      [
+        128,
+        51,
+        230
+      ]
+    ],
+    "filter": "nearest",
+    "mipmaps": false
+  },
+  "atlases": [
+    {
+      "source": "assets/game/pixel-v1/environment.png",
+      "keys": [
+        "environment"
+      ],
+      "id": "pixel-v1-environment",
+      "width": 480,
+      "height": 320,
+      "cell": [
+        160,
+        160
+      ],
+      "columns": 3,
+      "rows": 2,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "0df94d8e940591649ab883c2986ae22badf21510b347faa68e0dc1267ae0db68",
+      "sha256": "99cf1b4cb657137a026661b7a3d78e1af7c67b778e3f828d9e1c8e89ae1536ed",
+      "downloadBytes": 15760,
+      "gpuBytes": 614400
+    },
+    {
+      "source": "assets/game/pixel-v1/floor.png",
+      "keys": [
+        "floor"
+      ],
+      "id": "pixel-v1-floor",
+      "width": 32,
+      "height": 32,
+      "cell": [
+        32,
+        32
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": true,
+      "sourceSha256": "6f4894b7f4a538504def073685ff793e6c9e5cac34b6b2f492d8f4b5e78066e9",
+      "sha256": "ad5d26fdb4ab44cbc12b80118179ee4a569905bc7d5631ee5ff7a0cf3ac843ba",
+      "downloadBytes": 216,
+      "gpuBytes": 4096
+    },
+    {
+      "source": "assets/game/pixel-v11/monastery-ruins/courtyard-flagstone.png",
+      "keys": [
+        "courtyardFlagstone"
+      ],
+      "id": "pixel-v11-monastery-ruins-courtyard-flagstone",
+      "width": 128,
+      "height": 128,
+      "cell": [
+        128,
+        128
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": true,
+      "sourceSha256": "84e6bffb7da3f52ded3ebe0727f7dba203f4c1876cea95a7360bcda554e56c4f",
+      "sha256": "2c25191c34a010339df83a6a45004f19315e06eda2f0c64e631efb937b4d0f32",
+      "downloadBytes": 1066,
+      "gpuBytes": 65536
+    },
+    {
+      "source": "assets/game/pixel-v11/monastery-ruins/monastery-ruins.png",
+      "keys": [
+        "monasteryRuins"
+      ],
+      "id": "pixel-v11-monastery-ruins-monastery-ruins",
+      "width": 1024,
+      "height": 2048,
+      "cell": [
+        256,
+        256
+      ],
+      "columns": 4,
+      "rows": 8,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "09e718d5ae53612a278c8c6e26f214816e20301ed0946b94faac4b35f24773e0",
+      "sha256": "6123342b016038059da7b6dae5935ea1cb393448067fa1c9c6c78c5b48aa3f91",
+      "downloadBytes": 80876,
+      "gpuBytes": 8388608
+    },
+    {
+      "source": "assets/game/pixel-v11/monastery-ruins/monastery-world.png",
+      "keys": [
+        "monasteryWorld"
+      ],
+      "id": "pixel-v11-monastery-ruins-monastery-world",
+      "width": 960,
+      "height": 640,
+      "cell": [
+        160,
+        160
+      ],
+      "columns": 6,
+      "rows": 4,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "4fdda27b60225cc23820ff64626d0e98397f8eeb52bd94c86be11361a188f30c",
+      "sha256": "cc946d833e98de8fb8bbd3221c4d7614a36e0dd504e2bbd1e1ad1ee0da6725cf",
+      "downloadBytes": 23450,
+      "gpuBytes": 2457600
+    },
+    {
+      "source": "assets/game/pixel-v12/loot-ground/camp-supplies.png",
+      "keys": [
+        "campSupplies"
+      ],
+      "id": "pixel-v12-loot-ground-camp-supplies",
+      "width": 144,
+      "height": 52,
+      "cell": [
+        72,
+        52
+      ],
+      "columns": 2,
+      "rows": 1,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "02834fb489a3659987c8f21829e9eeaf792953c276698bf0784775183fbf4dc1",
+      "sha256": "99389cba50a0c7f2c8012165d1b554cd62663e0f864fc207565af855be41ce9a",
+      "downloadBytes": 1615,
+      "gpuBytes": 29952
+    },
+    {
+      "source": "assets/game/pixel-v12/loot-ground/loot-ground.png",
+      "keys": [
+        "lootGround"
+      ],
+      "id": "pixel-v12-loot-ground-loot-ground",
+      "width": 384,
+      "height": 192,
+      "cell": [
+        48,
+        48
+      ],
+      "columns": 8,
+      "rows": 4,
+      "tiled": false,
+      "relight": false,
+      "sourceSha256": "8fac3febdcb84b4bbe57dbb033bfb0c99478ecec405e5d6a8155b3111ed23bea",
+      "sha256": "060730927c5c90dd418f4f8e9bc9a5897e1eb19c775c5490aad15152e85477ac",
+      "downloadBytes": 2031,
+      "gpuBytes": 294912
+    },
+    {
+      "source": "assets/game/pixel-v13/cemetery/cemetery.png",
+      "keys": [
+        "cemetery"
+      ],
+      "id": "pixel-v13-cemetery-cemetery",
+      "width": 1024,
+      "height": 2048,
+      "cell": [
+        256,
+        256
+      ],
+      "columns": 4,
+      "rows": 8,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "6e1d3fdb9e341dbc595094f8c7fe8288ac9f7216e0f3e38b131b03c5ca03b0b4",
+      "sha256": "2779cbd2f4d5804d20ed7d34c2dca7c926c66dc34a4380c584ba6d4e55b8787f",
+      "downloadBytes": 50412,
+      "gpuBytes": 8388608
+    },
+    {
+      "source": "assets/game/pixel-v13/orchard/orchard.png",
+      "keys": [
+        "orchard"
+      ],
+      "id": "pixel-v13-orchard-orchard",
+      "width": 1024,
+      "height": 2048,
+      "cell": [
+        256,
+        256
+      ],
+      "columns": 4,
+      "rows": 8,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "3ed9c90c0fea4cce2c281f33fae6026a9928b320d0fe4d257ced8858a084ce0a",
+      "sha256": "84ff141ec83fff2f15e6f83dbbda41e4cc910ac393a38f88b522a12fba7b71e1",
+      "downloadBytes": 85122,
+      "gpuBytes": 8388608
+    },
+    {
+      "source": "assets/game/pixel-v15/cache/cache.png",
+      "keys": [
+        "cache"
+      ],
+      "id": "pixel-v15-cache-cache",
+      "width": 1024,
+      "height": 768,
+      "cell": [
+        128,
+        128
+      ],
+      "columns": 8,
+      "rows": 6,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "8d0dd67434bd4ac6326ab36cd74b2885a6be7804f0b5be3f04763bed8201efda",
+      "sha256": "c551ee48727f32b27cb0193bc422fd20fa40820ff441d14c3b80deb59391854b",
+      "downloadBytes": 15562,
+      "gpuBytes": 3145728
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/deep-shaved-ochre.png",
+      "keys": [],
+      "appearanceId": "deep-shaved-ochre",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-wine.png",
+      "id": "pixel-v17-monk-side-appearance-deep-shaved-ochre",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "a900401495b189787d3389b630b55e6db793b48b040076e6cb104ad168cb3639",
+      "sha256": "3c5fd662290b3c0c34699bcbb683000c8af3b548cd8e46f2eba3f49a1b0dbf0a",
+      "downloadBytes": 524187,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/deep-shaved-teal.png",
+      "keys": [],
+      "appearanceId": "deep-shaved-teal",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-wine.png",
+      "id": "pixel-v17-monk-side-appearance-deep-shaved-teal",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "eb5acdcff5fa68027ba1a3cf5f9fe9d27cbbea4728ca954eb20ba19bac53899a",
+      "sha256": "3c5fd662290b3c0c34699bcbb683000c8af3b548cd8e46f2eba3f49a1b0dbf0a",
+      "downloadBytes": 524187,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/deep-shaved-wine.png",
+      "keys": [],
+      "appearanceId": "deep-shaved-wine",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-wine.png",
+      "id": "pixel-v17-monk-side-appearance-deep-shaved-wine",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "d4ea563dad003d70926065615e24760532b9cac4c2e5fb51ec20bd58e86ba23e",
+      "sha256": "3c5fd662290b3c0c34699bcbb683000c8af3b548cd8e46f2eba3f49a1b0dbf0a",
+      "downloadBytes": 524187,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/deep-short-ochre.png",
+      "keys": [],
+      "appearanceId": "deep-short-ochre",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-short-wine.png",
+      "id": "pixel-v17-monk-side-appearance-deep-short-ochre",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "a143ed8feb78a9d71011dd310aee7ba9c4c020971eab7264d617a2bb76ddd997",
+      "sha256": "db9c68eb3c0fb5e652420fd6700d42592953041f45147aeb7a42b41eeae131ba",
+      "downloadBytes": 521092,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/deep-short-teal.png",
+      "keys": [],
+      "appearanceId": "deep-short-teal",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-short-wine.png",
+      "id": "pixel-v17-monk-side-appearance-deep-short-teal",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "f26f56fbf1c20468f977f711bce06d107a4fbb3f07c4d2b67cacbca38f85b321",
+      "sha256": "db9c68eb3c0fb5e652420fd6700d42592953041f45147aeb7a42b41eeae131ba",
+      "downloadBytes": 521092,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/deep-short-wine.png",
+      "keys": [],
+      "appearanceId": "deep-short-wine",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-short-wine.png",
+      "id": "pixel-v17-monk-side-appearance-deep-short-wine",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "c40c0159456b316379a77ab3619e313c194d4236121b39416ac88201d7e6bb29",
+      "sha256": "db9c68eb3c0fb5e652420fd6700d42592953041f45147aeb7a42b41eeae131ba",
+      "downloadBytes": 521092,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/pale-shaved-ochre.png",
+      "keys": [],
+      "appearanceId": "pale-shaved-ochre",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-wine.png",
+      "id": "pixel-v17-monk-side-appearance-pale-shaved-ochre",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "76cebe7447325be0b4c8e8359598dff4c3d108a4400e321eb5614826d4d8d03b",
+      "sha256": "3c5fd662290b3c0c34699bcbb683000c8af3b548cd8e46f2eba3f49a1b0dbf0a",
+      "downloadBytes": 524187,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/pale-shaved-teal.png",
+      "keys": [],
+      "appearanceId": "pale-shaved-teal",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-wine.png",
+      "id": "pixel-v17-monk-side-appearance-pale-shaved-teal",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "703adcac64e5dbdc91e798576806c6636e0eff9f73f98e5a395d5b8e6be5c0da",
+      "sha256": "3c5fd662290b3c0c34699bcbb683000c8af3b548cd8e46f2eba3f49a1b0dbf0a",
+      "downloadBytes": 524187,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/pale-shaved-wine.png",
+      "keys": [],
+      "appearanceId": "pale-shaved-wine",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-wine.png",
+      "id": "pixel-v17-monk-side-appearance-pale-shaved-wine",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "8ac206d028985ce9d4dbeb2599a55c449c89604a49441502123c05a1348e9b30",
+      "sha256": "3c5fd662290b3c0c34699bcbb683000c8af3b548cd8e46f2eba3f49a1b0dbf0a",
+      "downloadBytes": 524187,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/pale-short-ochre.png",
+      "keys": [],
+      "appearanceId": "pale-short-ochre",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-short-wine.png",
+      "id": "pixel-v17-monk-side-appearance-pale-short-ochre",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "38de11f71e0dacbda19f67085dbf1924bceb7a4b3d6d0ec2e85df2a625a02019",
+      "sha256": "db9c68eb3c0fb5e652420fd6700d42592953041f45147aeb7a42b41eeae131ba",
+      "downloadBytes": 521092,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/pale-short-teal.png",
+      "keys": [],
+      "appearanceId": "pale-short-teal",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-short-wine.png",
+      "id": "pixel-v17-monk-side-appearance-pale-short-teal",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "bc09d02cc3e2adb1dd6a67ea8dc951a307b9c0ffe769e96fca49b13614dc37e2",
+      "sha256": "db9c68eb3c0fb5e652420fd6700d42592953041f45147aeb7a42b41eeae131ba",
+      "downloadBytes": 521092,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/pale-short-wine.png",
+      "keys": [],
+      "appearanceId": "pale-short-wine",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-short-wine.png",
+      "id": "pixel-v17-monk-side-appearance-pale-short-wine",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "7b05a3d660a87109bbc5095ceca75a79c2f64cd2afa685cbb03a61f4e94c97e3",
+      "sha256": "db9c68eb3c0fb5e652420fd6700d42592953041f45147aeb7a42b41eeae131ba",
+      "downloadBytes": 521092,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-ochre.png",
+      "keys": [],
+      "appearanceId": "warm-shaved-ochre",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-wine.png",
+      "id": "pixel-v17-monk-side-appearance-warm-shaved-ochre",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "2435985776d1b6988212f42836f700bb1efe3b4590d99213b8aa5dc770863806",
+      "sha256": "3c5fd662290b3c0c34699bcbb683000c8af3b548cd8e46f2eba3f49a1b0dbf0a",
+      "downloadBytes": 524187,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-teal.png",
+      "keys": [],
+      "appearanceId": "warm-shaved-teal",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-wine.png",
+      "id": "pixel-v17-monk-side-appearance-warm-shaved-teal",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "d1489a3133a294aaeb1b9c56a71ce529acfc09e093d5c181adeb0fb6b1bcaf21",
+      "sha256": "3c5fd662290b3c0c34699bcbb683000c8af3b548cd8e46f2eba3f49a1b0dbf0a",
+      "downloadBytes": 524187,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-wine.png",
+      "keys": [],
+      "appearanceId": "warm-shaved-wine",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-shaved-wine.png",
+      "id": "pixel-v17-monk-side-appearance-warm-shaved-wine",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "639f04cbf09d91e3b9a4f34f7ad93211097957e2c0338c5b697fc753272de570",
+      "sha256": "3c5fd662290b3c0c34699bcbb683000c8af3b548cd8e46f2eba3f49a1b0dbf0a",
+      "downloadBytes": 524187,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/warm-short-ochre.png",
+      "keys": [],
+      "appearanceId": "warm-short-ochre",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-short-wine.png",
+      "id": "pixel-v17-monk-side-appearance-warm-short-ochre",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "9825e9a99ff455f93a93f3d57fef854097c172f5576faa8e22d5370ba15bbedb",
+      "sha256": "db9c68eb3c0fb5e652420fd6700d42592953041f45147aeb7a42b41eeae131ba",
+      "downloadBytes": 521092,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/warm-short-teal.png",
+      "keys": [],
+      "appearanceId": "warm-short-teal",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-short-wine.png",
+      "id": "pixel-v17-monk-side-appearance-warm-short-teal",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "7a68eaf21f51c4f00ebc136dd73a8acd84adbf6bde9e83b0e37c18a0ebf7bbec",
+      "sha256": "db9c68eb3c0fb5e652420fd6700d42592953041f45147aeb7a42b41eeae131ba",
+      "downloadBytes": 521092,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/appearance/warm-short-wine.png",
+      "keys": [],
+      "appearanceId": "warm-short-wine",
+      "geometrySource": "assets/game/pixel-v17/monk-side/appearance/warm-short-wine.png",
+      "id": "pixel-v17-monk-side-appearance-warm-short-wine",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "dda0570544a51a32e20c8af10af76437c4a1143518c0436545b5bbe3ebcb1da9",
+      "sha256": "db9c68eb3c0fb5e652420fd6700d42592953041f45147aeb7a42b41eeae131ba",
+      "downloadBytes": 521092,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-side/monk-side.png",
+      "keys": [
+        "monk",
+        "url"
+      ],
+      "id": "pixel-v17-monk-side-monk-side",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "639f04cbf09d91e3b9a4f34f7ad93211097957e2c0338c5b697fc753272de570",
+      "sha256": "3c5fd662290b3c0c34699bcbb683000c8af3b548cd8e46f2eba3f49a1b0dbf0a",
+      "downloadBytes": 524187,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-weapons/knuckles.png",
+      "keys": [
+        "knuckles"
+      ],
+      "id": "pixel-v17-monk-weapons-knuckles",
+      "width": 1536,
+      "height": 3072,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 32,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "5e828535068ac7109b7d38e4aeff68b81bd9bdb558cc1fb0cfc5cfcf55a8f833",
+      "sha256": "784a3abca9bc03654696a7a244a7f34fe0ba0c6585d186f84e32035aa4c4200c",
+      "downloadBytes": 51920,
+      "gpuBytes": 18874368
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-weapons/staff-attacks.png",
+      "keys": [
+        "staffAttacks"
+      ],
+      "id": "pixel-v17-monk-weapons-staff-attacks",
+      "width": 3072,
+      "height": 720,
+      "cell": [
+        192,
+        144
+      ],
+      "columns": 16,
+      "rows": 5,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "9b238b714ec04df7d39a1f53ce19b1b43f9e1cb6b8f3c817a61bec7a7feac21e",
+      "sha256": "f9cabfecc9898191387806ca2487534b52478c2187106072c5bb6767c220d5d9",
+      "downloadBytes": 34004,
+      "gpuBytes": 8847360
+    },
+    {
+      "source": "assets/game/pixel-v17/monk-weapons/staff.png",
+      "keys": [
+        "staff"
+      ],
+      "id": "pixel-v17-monk-weapons-staff",
+      "width": 1536,
+      "height": 2496,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 16,
+      "rows": 26,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "43c9735677d171dcef1be20588a0ecae6fd9e17180cdd04e4f70be6b6550039a",
+      "sha256": "c56c49b298120c9e0adf66cd273abbdb3cfcf74f9a62212b7dd0f0884f5402d2",
+      "downloadBytes": 84335,
+      "gpuBytes": 15335424
+    },
+    {
+      "source": "assets/game/pixel-v18/camp-npcs/camp-npcs.png",
+      "keys": [
+        "campNpcs"
+      ],
+      "id": "pixel-v18-camp-npcs-camp-npcs",
+      "width": 384,
+      "height": 384,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 4,
+      "rows": 4,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "7f8a5ae27edf4d1745e7dac77b44f908d03c205891f3597e6e3444879662b632",
+      "sha256": "46d9a6f603ee0786df98140437c6cae45b86c0f29de2493634a6ec9043955505",
+      "downloadBytes": 7846,
+      "gpuBytes": 589824
+    },
+    {
+      "source": "assets/game/pixel-v2/hound-world/effects-v2.png",
+      "keys": [
+        "effects"
+      ],
+      "id": "pixel-v2-hound-world-effects-v2",
+      "width": 1152,
+      "height": 576,
+      "cell": [
+        192,
+        192
+      ],
+      "columns": 6,
+      "rows": 3,
+      "tiled": false,
+      "relight": false,
+      "sourceSha256": "96d10158ca2b8e827c9f5ddf6d32ebd5115faa4aefa84d758775231f78a24fd5",
+      "sha256": "11ddcbc8f017a326c9a11126e36e1c28bc64e928b9bcf85a39c2b972b2001591",
+      "downloadBytes": 5710,
+      "gpuBytes": 2654208
+    },
+    {
+      "source": "assets/game/pixel-v2/hound-world/hound-v2.png",
+      "keys": [
+        "hound"
+      ],
+      "id": "pixel-v2-hound-world-hound-v2",
+      "width": 1248,
+      "height": 384,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 13,
+      "rows": 4,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "20c98c7e78e05c41e2b8926bf53ef9cf465ae0b0a9a93236e2b31e7a77ae1ea7",
+      "sha256": "89ca1613c6ed93f22847a1dde42a308a22720fa3202fe72affd9ec77062a774f",
+      "downloadBytes": 63236,
+      "gpuBytes": 1916928
+    },
+    {
+      "source": "assets/game/pixel-v2/hound-world/world-v2.png",
+      "keys": [
+        "world"
+      ],
+      "id": "pixel-v2-hound-world-world-v2",
+      "width": 960,
+      "height": 640,
+      "cell": [
+        160,
+        160
+      ],
+      "columns": 6,
+      "rows": 4,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "c47a38ad6179a89e703e4ea4ecc3eb4e15585772f5c2d7c62ad059e63db2a537",
+      "sha256": "3c82d4eee4e84eb0be8ad5c33796e9dbc832010121996dba9ea16054798cbea1",
+      "downloadBytes": 59821,
+      "gpuBytes": 2457600
+    },
+    {
+      "source": "assets/game/pixel-v3/wraith/wraith.png",
+      "keys": [
+        "wraith"
+      ],
+      "id": "pixel-v3-wraith-wraith",
+      "width": 1248,
+      "height": 384,
+      "cell": [
+        96,
+        96
+      ],
+      "columns": 13,
+      "rows": 4,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "2b4eff54ee9922d9402c089314e877f2ef291c18a59edc87e3dda92d179f059d",
+      "sha256": "679178e899045d599190e5ad749fb01c99bdc8f0cb5bddb3821d8db516175fd0",
+      "downloadBytes": 57532,
+      "gpuBytes": 1916928
+    },
+    {
+      "source": "assets/game/pixel-v4/landscape/cliff.png",
+      "keys": [
+        "cliff"
+      ],
+      "id": "pixel-v4-landscape-cliff",
+      "width": 32,
+      "height": 32,
+      "cell": [
+        32,
+        32
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": true,
+      "sourceSha256": "98062fa01790c597a1a1ff7c6e7d8b71f4fc24f0d67c34f01828d3e83e8c2e6b",
+      "sha256": "ea750eac55a8b9e48d979a4960c8176ee9bc75b50a6bc1940e225b723be2137c",
+      "downloadBytes": 103,
+      "gpuBytes": 4096
+    },
+    {
+      "source": "assets/game/pixel-v4/landscape/earth.png",
+      "keys": [
+        "earth"
+      ],
+      "id": "pixel-v4-landscape-earth",
+      "width": 32,
+      "height": 32,
+      "cell": [
+        32,
+        32
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": true,
+      "sourceSha256": "39e10d1600d1db9bae0ba85edc45bb674ceb812a98b35f7f16ac95c8437aa956",
+      "sha256": "ea750eac55a8b9e48d979a4960c8176ee9bc75b50a6bc1940e225b723be2137c",
+      "downloadBytes": 103,
+      "gpuBytes": 4096
+    },
+    {
+      "source": "assets/game/pixel-v4/landscape/landscape.png",
+      "keys": [
+        "landscape"
+      ],
+      "id": "pixel-v4-landscape-landscape",
+      "width": 640,
+      "height": 320,
+      "cell": [
+        160,
+        160
+      ],
+      "columns": 4,
+      "rows": 2,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "e80f173debc203d590a9e17607c45fd5becc9a3dbb7fecbcb8bebac3275cc731",
+      "sha256": "ac2df737b050c3c10e32e611ded85cf4aab52899a8071593989af0c5efe2cd56",
+      "downloadBytes": 13499,
+      "gpuBytes": 819200
+    },
+    {
+      "source": "assets/game/pixel-v4/landscape/moss.png",
+      "keys": [
+        "moss"
+      ],
+      "id": "pixel-v4-landscape-moss",
+      "width": 32,
+      "height": 32,
+      "cell": [
+        32,
+        32
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": true,
+      "sourceSha256": "86d1cfc74e29c2437f72656e045252e64aaa1d9a273de20d9af63b3f8df24e09",
+      "sha256": "ea750eac55a8b9e48d979a4960c8176ee9bc75b50a6bc1940e225b723be2137c",
+      "downloadBytes": 103,
+      "gpuBytes": 4096
+    },
+    {
+      "source": "assets/game/pixel-v5/camp/camp-flame.png",
+      "keys": [
+        "campFlame"
+      ],
+      "id": "pixel-v5-camp-camp-flame",
+      "width": 512,
+      "height": 128,
+      "cell": [
+        128,
+        128
+      ],
+      "columns": 4,
+      "rows": 1,
+      "tiled": false,
+      "relight": false,
+      "sourceSha256": "cd83e7ab9e899a382a52930d41c9ae8655efd0654a941ca1457250fe52679ecd",
+      "sha256": "3e33ab05c884efad34b29e9854e53523bec740dcd7be7eb64c297eed46bdbf6c",
+      "downloadBytes": 1188,
+      "gpuBytes": 262144
+    },
+    {
+      "source": "assets/game/pixel-v5/camp/camp.png",
+      "keys": [
+        "camp"
+      ],
+      "id": "pixel-v5-camp-camp",
+      "width": 768,
+      "height": 512,
+      "cell": [
+        256,
+        256
+      ],
+      "columns": 3,
+      "rows": 2,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "786d9f620359216a382a1ff2d06699c404caeb01ea4d9eb4a73c2205e4af47f6",
+      "sha256": "5415ef6e4ab9553ce36893b122ade3f45b56080677319651fa87edfab6b8da55",
+      "downloadBytes": 25382,
+      "gpuBytes": 1572864
+    },
+    {
+      "source": "assets/game/pixel-v6/country/details.png",
+      "keys": [
+        "countryDetails"
+      ],
+      "id": "pixel-v6-country-details",
+      "width": 256,
+      "height": 128,
+      "cell": [
+        64,
+        64
+      ],
+      "columns": 4,
+      "rows": 2,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "3795d28ac5fbb6626b7b8600645a768e5de29599278036c3c53927c6b5d5f049",
+      "sha256": "4d635dd44383c23a0d9f6471e5bed4bf41863c19ecb7b8ac6f27a946255c338b",
+      "downloadBytes": 3326,
+      "gpuBytes": 131072
+    },
+    {
+      "source": "assets/game/pixel-v6/country/grass.png",
+      "keys": [
+        "countryGrass"
+      ],
+      "id": "pixel-v6-country-grass",
+      "width": 128,
+      "height": 128,
+      "cell": [
+        128,
+        128
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": true,
+      "sourceSha256": "c26d61c2bd8bc7fef9d54eb4876a33141c0a2371fb356fc912e9746d6d6703ec",
+      "sha256": "aa74d4028616e7188d3badb2472c6256bec7e844d5a207781c693c31743c0859",
+      "downloadBytes": 355,
+      "gpuBytes": 65536
+    },
+    {
+      "source": "assets/game/pixel-v6/country/soil.png",
+      "keys": [
+        "countrySoil"
+      ],
+      "id": "pixel-v6-country-soil",
+      "width": 128,
+      "height": 128,
+      "cell": [
+        128,
+        128
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": true,
+      "sourceSha256": "bde9ab4ac37e767502640921425b9288950d2d541669e2e4ff4f85d2ae73b80f",
+      "sha256": "59a478b266edfbc1e160f3b57f7e3782ce8b1c958e62c822c1ee6faf7e706345",
+      "downloadBytes": 297,
+      "gpuBytes": 65536
+    },
+    {
+      "source": "assets/game/pixel-v6/country/stone.png",
+      "keys": [
+        "countryStone"
+      ],
+      "id": "pixel-v6-country-stone",
+      "width": 128,
+      "height": 128,
+      "cell": [
+        128,
+        128
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": true,
+      "sourceSha256": "281157796bec5a278bf23c9796a5084667b320dbe572e7da3b89f215e8004e36",
+      "sha256": "5e5bb635d96fa6714bb687896e9542d8096915e96a9c0cf36838d56d8612da11",
+      "downloadBytes": 517,
+      "gpuBytes": 65536
+    },
+    {
+      "source": "assets/game/pixel-v7/beetle/beetle.png",
+      "keys": [
+        "beetle"
+      ],
+      "id": "pixel-v7-beetle-beetle",
+      "width": 1280,
+      "height": 1024,
+      "cell": [
+        128,
+        128
+      ],
+      "columns": 10,
+      "rows": 8,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "2392a22a924833b2d4a2b7d9d94ea991498ef15e7e1b9a071cef2a8f3692abd1",
+      "sha256": "98e437f93d4a371751cc8b70c5a2e65c1b8aefed29d1ddbeebff9627f23e6a88",
+      "downloadBytes": 134251,
+      "gpuBytes": 5242880
+    },
+    {
+      "source": "assets/game/pixel-v9/camp-panorama/camp-earth.png",
+      "keys": [
+        "campEarth"
+      ],
+      "id": "pixel-v9-camp-panorama-camp-earth",
+      "width": 128,
+      "height": 128,
+      "cell": [
+        128,
+        128
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": true,
+      "sourceSha256": "5c9784a83f99220051d6158b7dd9692b22473f62254f4a390ed26a6bff75058c",
+      "sha256": "10634e44c29d53ad174d178e5c6a5ad9f3a548bdb45a434deb26a2e5f4a1e82f",
+      "downloadBytes": 1086,
+      "gpuBytes": 65536
+    },
+    {
+      "source": "assets/game/pixel-v9/camp-panorama/camp-grass.png",
+      "keys": [
+        "campGrass"
+      ],
+      "id": "pixel-v9-camp-panorama-camp-grass",
+      "width": 128,
+      "height": 128,
+      "cell": [
+        128,
+        128
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": true,
+      "sourceSha256": "a1492ca4969181f5b34d77b7fa757d8fa736635a63d9cdd0bdcbc78f951d0402",
+      "sha256": "647167010d78e15ae7f05277ba2f0ad232dbcb675c33ccc7463bb01296f28786",
+      "downloadBytes": 670,
+      "gpuBytes": 65536
+    },
+    {
+      "source": "assets/game/pixel-v9/camp-panorama/camp-panorama.png",
+      "keys": [
+        "campPanorama"
+      ],
+      "id": "pixel-v9-camp-panorama-camp-panorama",
+      "width": 1024,
+      "height": 1536,
+      "cell": [
+        256,
+        256
+      ],
+      "columns": 4,
+      "rows": 6,
+      "tiled": false,
+      "relight": true,
+      "sourceSha256": "5fe74e29d7dd112c7413ee41fb1edfbdc629cd7db362ff8f9a54c792f66b3209",
+      "sha256": "de0531672b09f1a5e9074ecdea5a26524671362db2f6719001f07f5f1adcd5f9",
+      "downloadBytes": 60628,
+      "gpuBytes": 6291456
+    },
+    {
+      "source": "assets/game/pixel-v9/camp-panorama/mountains.png",
+      "keys": [
+        "campBackdrop"
+      ],
+      "id": "pixel-v9-camp-panorama-mountains",
+      "width": 2048,
+      "height": 1280,
+      "cell": [
+        2048,
+        1280
+      ],
+      "columns": 1,
+      "rows": 1,
+      "tiled": true,
+      "relight": false,
+      "sourceSha256": "90a6a72eac683a5aa745f67354ea0b846e61b0c1671bea73ddc7b2a754e7f3a7",
+      "sha256": "3510ac51bb0729f87dfdd1a514d9772d0c25d54f2651d1be5f52dfcc686427b0",
+      "downloadBytes": 12784,
+      "gpuBytes": 10485760
+    }
+  ]
+}

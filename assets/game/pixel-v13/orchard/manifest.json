@@ -1,0 +1,1170 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "nativePixelsPerUnit": 32,
+  "orchard": {
+    "path": "orchard.png",
+    "cell": 256,
+    "columns": 4,
+    "rows": 8,
+    "anchor": [
+      128,
+      232
+    ],
+    "frames": [
+      "olive-tree-a",
+      "olive-tree-b",
+      "olive-tree-c",
+      "olive-tree-old",
+      "olive-dead",
+      "fig-young",
+      "well",
+      "olive-press",
+      "pergola-x",
+      "pergola-y",
+      "pergola-broken-x",
+      "pergola-broken-y",
+      "trellis-x",
+      "trellis-y",
+      "beehive-pair",
+      "beehive-fallen",
+      "stone-basin",
+      "garden-bench-x",
+      "garden-bench-y",
+      "cart-broken-x",
+      "cart-broken-y",
+      "olive-baskets",
+      "terracotta-jars",
+      "monk-statue",
+      "herb-bed-x",
+      "herb-bed-y",
+      "herb-bed-overgrown",
+      "vine-clump",
+      "fallen-olives",
+      "leaf-litter",
+      "gravel-path",
+      "pruned-branches"
+    ],
+    "filter": "nearest",
+    "mipmaps": false
+  },
+  "surfaces": {
+    "orchardGrass": {
+      "path": "orchard-grass.png",
+      "size": [
+        128,
+        128
+      ],
+      "filter": "nearest",
+      "mipmaps": false
+    }
+  },
+  "footprints": {
+    "olive-tree-a": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        226.0
+      ],
+      "height": 3.15,
+      "radius": 0.3,
+      "contact": "loose",
+      "tall": true,
+      "canopy": 1.25
+    },
+    "olive-tree-b": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        226.5
+      ],
+      "height": 2.95,
+      "radius": 0.28,
+      "contact": "loose",
+      "tall": true,
+      "canopy": 1.35
+    },
+    "olive-tree-c": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        225.5
+      ],
+      "height": 3.35,
+      "radius": 0.34,
+      "contact": "loose",
+      "tall": true,
+      "canopy": 1.35
+    },
+    "olive-tree-old": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        221.0
+      ],
+      "height": 3.85,
+      "radius": 0.62,
+      "contact": "loose",
+      "tall": true,
+      "canopy": 1.75,
+      "landmark": true
+    },
+    "olive-dead": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        226.75
+      ],
+      "height": 2.75,
+      "radius": 0.26,
+      "contact": "loose",
+      "tall": true
+    },
+    "fig-young": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        227.25
+      ],
+      "height": 1.9,
+      "radius": 0.22,
+      "contact": "loose",
+      "tall": true,
+      "canopy": 0.75
+    },
+    "well": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        218.0
+      ],
+      "height": 2.35,
+      "radius": 0.8,
+      "contact": "loose",
+      "landmark": true
+    },
+    "olive-press": {
+      "shape": "circle",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        217.25
+      ],
+      "height": 1.42,
+      "radius": 0.85,
+      "contact": "loose",
+      "landmark": true
+    },
+    "pergola-x": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        205.5
+      ],
+      "height": 2.95,
+      "halfWidth": 1.44,
+      "halfDepth": 0.81,
+      "polygon": [
+        [
+          142.26,
+          180.04
+        ],
+        [
+          77.09,
+          212.63
+        ],
+        [
+          113.74,
+          230.96
+        ],
+        [
+          178.91,
+          198.37
+        ]
+      ],
+      "axis": "x",
+      "contact": "corners",
+      "tall": true,
+      "colliders": [
+        {
+          "x": 1.25,
+          "y": 0.62,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        },
+        {
+          "x": 1.25,
+          "y": -0.62,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        },
+        {
+          "x": -1.25,
+          "y": 0.62,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        },
+        {
+          "x": -1.25,
+          "y": -0.62,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        }
+      ]
+    },
+    "pergola-y": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        205.5
+      ],
+      "height": 2.95,
+      "halfWidth": 0.81,
+      "halfDepth": 1.44,
+      "polygon": [
+        [
+          113.74,
+          180.04
+        ],
+        [
+          77.09,
+          198.37
+        ],
+        [
+          142.26,
+          230.96
+        ],
+        [
+          178.91,
+          212.63
+        ]
+      ],
+      "axis": "y",
+      "contact": "corners",
+      "tall": true,
+      "colliders": [
+        {
+          "x": 0.62,
+          "y": 1.25,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        },
+        {
+          "x": -0.62,
+          "y": 1.25,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        },
+        {
+          "x": 0.62,
+          "y": -1.25,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        },
+        {
+          "x": -0.62,
+          "y": -1.25,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        }
+      ]
+    },
+    "pergola-broken-x": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        205.5
+      ],
+      "height": 2.95,
+      "halfWidth": 1.44,
+      "halfDepth": 0.81,
+      "polygon": [
+        [
+          142.26,
+          180.04
+        ],
+        [
+          77.09,
+          212.63
+        ],
+        [
+          113.74,
+          230.96
+        ],
+        [
+          178.91,
+          198.37
+        ]
+      ],
+      "axis": "x",
+      "contact": "corners",
+      "tall": true,
+      "colliders": [
+        {
+          "x": 1.25,
+          "y": 0.62,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19,
+          "note": "stump"
+        },
+        {
+          "x": 1.25,
+          "y": -0.62,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        },
+        {
+          "x": -1.25,
+          "y": 0.62,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        },
+        {
+          "x": -1.25,
+          "y": -0.62,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        }
+      ]
+    },
+    "pergola-broken-y": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        205.5
+      ],
+      "height": 2.95,
+      "halfWidth": 0.81,
+      "halfDepth": 1.44,
+      "polygon": [
+        [
+          113.74,
+          180.04
+        ],
+        [
+          77.09,
+          198.37
+        ],
+        [
+          142.26,
+          230.96
+        ],
+        [
+          178.91,
+          212.63
+        ]
+      ],
+      "axis": "y",
+      "contact": "corners",
+      "tall": true,
+      "colliders": [
+        {
+          "x": 0.62,
+          "y": 1.25,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19,
+          "note": "stump"
+        },
+        {
+          "x": -0.62,
+          "y": 1.25,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        },
+        {
+          "x": 0.62,
+          "y": -1.25,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        },
+        {
+          "x": -0.62,
+          "y": -1.25,
+          "halfWidth": 0.19,
+          "halfDepth": 0.19
+        }
+      ]
+    },
+    "trellis-x": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        216.5
+      ],
+      "height": 1.05,
+      "halfWidth": 1.2,
+      "halfDepth": 0.06,
+      "polygon": [
+        [
+          153.8,
+          202.24
+        ],
+        [
+          99.49,
+          229.4
+        ],
+        [
+          102.2,
+          230.76
+        ],
+        [
+          156.51,
+          203.6
+        ]
+      ],
+      "axis": "x",
+      "contact": "corners"
+    },
+    "trellis-y": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        216.5
+      ],
+      "height": 1.05,
+      "halfWidth": 0.06,
+      "halfDepth": 1.2,
+      "polygon": [
+        [
+          102.2,
+          202.24
+        ],
+        [
+          99.49,
+          203.6
+        ],
+        [
+          153.8,
+          230.76
+        ],
+        [
+          156.51,
+          229.4
+        ]
+      ],
+      "axis": "y",
+      "contact": "corners"
+    },
+    "beehive-pair": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        219.5
+      ],
+      "height": 1.0,
+      "halfWidth": 0.7,
+      "halfDepth": 0.3,
+      "polygon": [
+        [
+          137.05,
+          208.19
+        ],
+        [
+          105.37,
+          224.03
+        ],
+        [
+          118.95,
+          230.81
+        ],
+        [
+          150.63,
+          214.97
+        ]
+      ],
+      "contact": "corners"
+    },
+    "beehive-fallen": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        216.75
+      ],
+      "height": 0.72,
+      "halfWidth": 0.74,
+      "halfDepth": 0.5,
+      "polygon": [
+        [
+          133.43,
+          202.72
+        ],
+        [
+          99.94,
+          219.47
+        ],
+        [
+          122.57,
+          230.78
+        ],
+        [
+          156.06,
+          214.03
+        ]
+      ],
+      "contact": "loose"
+    },
+    "stone-basin": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        217.75
+      ],
+      "height": 0.55,
+      "halfWidth": 0.75,
+      "halfDepth": 0.42,
+      "polygon": [
+        [
+          135.47,
+          204.51
+        ],
+        [
+          101.53,
+          221.48
+        ],
+        [
+          120.53,
+          230.99
+        ],
+        [
+          154.47,
+          214.02
+        ]
+      ],
+      "contact": "corners"
+    },
+    "garden-bench-x": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        219.0
+      ],
+      "height": 0.92,
+      "halfWidth": 0.8,
+      "halfDepth": 0.25,
+      "polygon": [
+        [
+          140.45,
+          207.12
+        ],
+        [
+          104.24,
+          225.22
+        ],
+        [
+          115.55,
+          230.88
+        ],
+        [
+          151.76,
+          212.78
+        ]
+      ],
+      "axis": "x",
+      "contact": "corners"
+    },
+    "garden-bench-y": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        219.0
+      ],
+      "height": 0.92,
+      "halfWidth": 0.25,
+      "halfDepth": 0.8,
+      "polygon": [
+        [
+          115.55,
+          207.12
+        ],
+        [
+          104.24,
+          212.78
+        ],
+        [
+          140.45,
+          230.88
+        ],
+        [
+          151.76,
+          225.22
+        ]
+      ],
+      "axis": "y",
+      "contact": "corners"
+    },
+    "cart-broken-x": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        212.0
+      ],
+      "height": 0.8,
+      "halfWidth": 0.95,
+      "halfDepth": 0.72,
+      "polygon": [
+        [
+          133.2,
+          193.11
+        ],
+        [
+          90.21,
+          214.6
+        ],
+        [
+          122.8,
+          230.89
+        ],
+        [
+          165.79,
+          209.4
+        ]
+      ],
+      "axis": "x",
+      "contact": "loose"
+    },
+    "cart-broken-y": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        212.0
+      ],
+      "height": 0.8,
+      "halfWidth": 0.72,
+      "halfDepth": 0.95,
+      "polygon": [
+        [
+          122.8,
+          193.11
+        ],
+        [
+          90.21,
+          209.4
+        ],
+        [
+          133.2,
+          230.89
+        ],
+        [
+          165.79,
+          214.6
+        ]
+      ],
+      "axis": "y",
+      "contact": "loose"
+    },
+    "olive-baskets": {
+      "shape": "circle",
+      "role": "low",
+      "contactCenter": [
+        128,
+        222.0
+      ],
+      "height": 0.5,
+      "radius": 0.55,
+      "contact": "loose"
+    },
+    "terracotta-jars": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        217.25
+      ],
+      "height": 1.05,
+      "halfWidth": 0.6,
+      "halfDepth": 0.6,
+      "polygon": [
+        [
+          128.0,
+          203.67
+        ],
+        [
+          100.85,
+          217.25
+        ],
+        [
+          128.0,
+          230.83
+        ],
+        [
+          155.15,
+          217.25
+        ]
+      ],
+      "contact": "loose"
+    },
+    "monk-statue": {
+      "shape": "box",
+      "role": "solid",
+      "contactCenter": [
+        128,
+        218.5
+      ],
+      "height": 1.8,
+      "halfWidth": 0.55,
+      "halfDepth": 0.55,
+      "polygon": [
+        [
+          128.0,
+          206.05
+        ],
+        [
+          103.11,
+          218.5
+        ],
+        [
+          128.0,
+          230.95
+        ],
+        [
+          152.89,
+          218.5
+        ]
+      ],
+      "contact": "corners",
+      "landmark": true
+    },
+    "herb-bed-x": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        213.25
+      ],
+      "height": 0.62,
+      "halfWidth": 1.1,
+      "halfDepth": 0.45,
+      "polygon": [
+        [
+          142.71,
+          195.71
+        ],
+        [
+          92.93,
+          220.6
+        ],
+        [
+          113.29,
+          230.79
+        ],
+        [
+          163.07,
+          205.9
+        ]
+      ],
+      "axis": "x",
+      "contact": "corners"
+    },
+    "herb-bed-y": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        213.25
+      ],
+      "height": 0.62,
+      "halfWidth": 0.45,
+      "halfDepth": 1.1,
+      "polygon": [
+        [
+          113.29,
+          195.71
+        ],
+        [
+          92.93,
+          205.9
+        ],
+        [
+          142.71,
+          230.79
+        ],
+        [
+          163.07,
+          220.6
+        ]
+      ],
+      "axis": "y",
+      "contact": "corners"
+    },
+    "herb-bed-overgrown": {
+      "shape": "box",
+      "role": "low",
+      "contactCenter": [
+        128,
+        215.0
+      ],
+      "height": 0.7,
+      "halfWidth": 0.8,
+      "halfDepth": 0.6,
+      "polygon": [
+        [
+          132.53,
+          199.16
+        ],
+        [
+          96.32,
+          217.26
+        ],
+        [
+          123.47,
+          230.84
+        ],
+        [
+          159.68,
+          212.74
+        ]
+      ],
+      "contact": "loose"
+    },
+    "vine-clump": {
+      "shape": "circle",
+      "role": "low",
+      "contactCenter": [
+        128,
+        224.5
+      ],
+      "height": 0.72,
+      "radius": 0.4,
+      "contact": "loose"
+    },
+    "fallen-olives": {
+      "shape": "rect",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        212.75
+      ],
+      "height": 0,
+      "halfWidth": 0.9,
+      "halfDepth": 0.7,
+      "polygon": [
+        [
+          132.53,
+          194.65
+        ],
+        [
+          91.8,
+          215.01
+        ],
+        [
+          123.47,
+          230.85
+        ],
+        [
+          164.2,
+          210.49
+        ]
+      ],
+      "contact": "none"
+    },
+    "leaf-litter": {
+      "shape": "rect",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        210.5
+      ],
+      "height": 0,
+      "halfWidth": 1.0,
+      "halfDepth": 0.8,
+      "polygon": [
+        [
+          132.53,
+          190.14
+        ],
+        [
+          87.27,
+          212.76
+        ],
+        [
+          123.47,
+          230.86
+        ],
+        [
+          168.73,
+          208.24
+        ]
+      ],
+      "contact": "none"
+    },
+    "gravel-path": {
+      "shape": "rect",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        203.75
+      ],
+      "height": 0,
+      "halfWidth": 1.4,
+      "halfDepth": 1.0,
+      "polygon": [
+        [
+          137.05,
+          176.6
+        ],
+        [
+          73.69,
+          208.28
+        ],
+        [
+          118.95,
+          230.9
+        ],
+        [
+          182.31,
+          199.22
+        ]
+      ],
+      "contact": "none",
+      "mirror": true
+    },
+    "pruned-branches": {
+      "shape": "rect",
+      "role": "flat",
+      "contactCenter": [
+        128,
+        212.75
+      ],
+      "height": 0,
+      "halfWidth": 1.0,
+      "halfDepth": 0.6,
+      "polygon": [
+        [
+          137.05,
+          194.65
+        ],
+        [
+          91.8,
+          217.28
+        ],
+        [
+          118.95,
+          230.85
+        ],
+        [
+          164.2,
+          208.22
+        ]
+      ],
+      "contact": "none"
+    }
+  },
+  "opaqueBounds": {
+    "olive-tree-a": [
+      85,
+      126,
+      175,
+      232
+    ],
+    "olive-tree-b": [
+      81,
+      134,
+      170,
+      232
+    ],
+    "olive-tree-c": [
+      73,
+      121,
+      182,
+      232
+    ],
+    "olive-tree-old": [
+      61,
+      102,
+      192,
+      232
+    ],
+    "olive-dead": [
+      98,
+      150,
+      160,
+      232
+    ],
+    "fig-young": [
+      96,
+      170,
+      159,
+      232
+    ],
+    "well": [
+      98,
+      141,
+      158,
+      232
+    ],
+    "olive-press": [
+      99,
+      175,
+      156,
+      232
+    ],
+    "pergola-x": [
+      75,
+      98,
+      182,
+      232
+    ],
+    "pergola-y": [
+      74,
+      97,
+      182,
+      232
+    ],
+    "pergola-broken-x": [
+      74,
+      97,
+      182,
+      232
+    ],
+    "pergola-broken-y": [
+      74,
+      98,
+      182,
+      232
+    ],
+    "trellis-x": [
+      98,
+      174,
+      158,
+      232
+    ],
+    "trellis-y": [
+      98,
+      174,
+      158,
+      232
+    ],
+    "beehive-pair": [
+      105,
+      191,
+      155,
+      232
+    ],
+    "beehive-fallen": [
+      105,
+      188,
+      160,
+      232
+    ],
+    "stone-basin": [
+      101,
+      190,
+      155,
+      232
+    ],
+    "garden-bench-x": [
+      103,
+      183,
+      153,
+      232
+    ],
+    "garden-bench-y": [
+      103,
+      182,
+      152,
+      232
+    ],
+    "cart-broken-x": [
+      95,
+      189,
+      156,
+      227
+    ],
+    "cart-broken-y": [
+      105,
+      189,
+      160,
+      227
+    ],
+    "olive-baskets": [
+      112,
+      202,
+      148,
+      232
+    ],
+    "terracotta-jars": [
+      108,
+      179,
+      147,
+      227
+    ],
+    "monk-statue": [
+      102,
+      168,
+      154,
+      232
+    ],
+    "herb-bed-x": [
+      93,
+      182,
+      164,
+      232
+    ],
+    "herb-bed-y": [
+      92,
+      183,
+      163,
+      232
+    ],
+    "herb-bed-overgrown": [
+      89,
+      187,
+      160,
+      232
+    ],
+    "vine-clump": [
+      109,
+      199,
+      147,
+      230
+    ],
+    "fallen-olives": [
+      113,
+      204,
+      152,
+      223
+    ],
+    "leaf-litter": [
+      100,
+      199,
+      150,
+      223
+    ],
+    "gravel-path": [
+      92,
+      185,
+      164,
+      221
+    ],
+    "pruned-branches": [
+      103,
+      199,
+      150,
+      223
+    ]
+  },
+  "hitMasks": "hit-masks.json",
+  "provenance": "source/provenance.json",
+  "palette": "source/palette.json",
+  "previews": "previews/contact-native.png"
+}

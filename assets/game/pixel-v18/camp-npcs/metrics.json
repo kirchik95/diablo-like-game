@@ -1,0 +1,489 @@
+{
+  "schema": 1,
+  "source": "actual delivered RGBA atlas pixels",
+  "pixelDensity": 32,
+  "gate": "height/head ±1px; hip and soles 0px; lower-body RGBA byte-identical to key0",
+  "characters": {
+    "pilgrim": {
+      "frames": [
+        {
+          "frame": 0,
+          "rgbaHash": "690319b0fa6f2f3304620ac74dc31153fdc01b5413a820024a34466fb56426d4",
+          "bounds": [
+            25,
+            33,
+            72,
+            84
+          ],
+          "height": 51,
+          "headTop": 33,
+          "hipBounds": [
+            10,
+            0,
+            37,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              16,
+              6
+            ],
+            [
+              0,
+              0,
+              16,
+              6
+            ]
+          ],
+          "lowerBodyHash": "a8db48f6cf7daba908c97639877b6d76168ed41301f44757e2f01476fb61f6a7",
+          "heightDelta": 0,
+          "headTopDelta": 0,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        },
+        {
+          "frame": 1,
+          "rgbaHash": "34f18786489577a3d75ef1d95759270e225d8d343777c286f5401b9b6caf08a1",
+          "bounds": [
+            25,
+            32,
+            72,
+            84
+          ],
+          "height": 52,
+          "headTop": 32,
+          "hipBounds": [
+            10,
+            0,
+            37,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              16,
+              6
+            ],
+            [
+              0,
+              0,
+              16,
+              6
+            ]
+          ],
+          "lowerBodyHash": "a8db48f6cf7daba908c97639877b6d76168ed41301f44757e2f01476fb61f6a7",
+          "heightDelta": 1,
+          "headTopDelta": 1,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        },
+        {
+          "frame": 2,
+          "rgbaHash": "ebbfe9bbc603ddceee4f3c309abcab94a3985f4bdd1d774e17e84387f2ce3ec5",
+          "bounds": [
+            25,
+            33,
+            72,
+            84
+          ],
+          "height": 51,
+          "headTop": 33,
+          "hipBounds": [
+            10,
+            0,
+            37,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              16,
+              6
+            ],
+            [
+              0,
+              0,
+              16,
+              6
+            ]
+          ],
+          "lowerBodyHash": "a8db48f6cf7daba908c97639877b6d76168ed41301f44757e2f01476fb61f6a7",
+          "heightDelta": 0,
+          "headTopDelta": 0,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        },
+        {
+          "frame": 3,
+          "rgbaHash": "ce5bf5f0b4abe02398549ceb27224fbc72fc11c41a483c7460a7dc3254f64529",
+          "bounds": [
+            25,
+            33,
+            72,
+            84
+          ],
+          "height": 51,
+          "headTop": 33,
+          "hipBounds": [
+            10,
+            0,
+            37,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              16,
+              6
+            ],
+            [
+              0,
+              0,
+              16,
+              6
+            ]
+          ],
+          "lowerBodyHash": "a8db48f6cf7daba908c97639877b6d76168ed41301f44757e2f01476fb61f6a7",
+          "heightDelta": 0,
+          "headTopDelta": 0,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        }
+      ]
+    },
+    "wanderer": {
+      "frames": [
+        {
+          "frame": 4,
+          "rgbaHash": "98c8e6c9b2b32b600f4edae0f9a0dac2f1edb490f9ffa6d349224cf20ba5b005",
+          "bounds": [
+            27,
+            15,
+            68,
+            84
+          ],
+          "height": 69,
+          "headTop": 15,
+          "hipBounds": [
+            3,
+            0,
+            40,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              14,
+              5
+            ],
+            [
+              1,
+              0,
+              16,
+              5
+            ]
+          ],
+          "lowerBodyHash": "bcddeef75d3fb40988ec70cbed3d1b76f497ffa8f4402e512aa8f167517d7466",
+          "heightDelta": 0,
+          "headTopDelta": 0,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        },
+        {
+          "frame": 5,
+          "rgbaHash": "7ab3626d787dc4dc7149f71b695d3cf4f14c3ef4076a546cec995b2a04d1ab96",
+          "bounds": [
+            27,
+            14,
+            68,
+            84
+          ],
+          "height": 70,
+          "headTop": 14,
+          "hipBounds": [
+            3,
+            0,
+            40,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              14,
+              5
+            ],
+            [
+              1,
+              0,
+              16,
+              5
+            ]
+          ],
+          "lowerBodyHash": "bcddeef75d3fb40988ec70cbed3d1b76f497ffa8f4402e512aa8f167517d7466",
+          "heightDelta": 1,
+          "headTopDelta": 1,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        },
+        {
+          "frame": 6,
+          "rgbaHash": "f8529e6f7ad5f42b3c6e16336a5c533b91d1e9f131708d27716ea18729525a9e",
+          "bounds": [
+            27,
+            15,
+            68,
+            84
+          ],
+          "height": 69,
+          "headTop": 15,
+          "hipBounds": [
+            3,
+            0,
+            40,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              14,
+              5
+            ],
+            [
+              1,
+              0,
+              16,
+              5
+            ]
+          ],
+          "lowerBodyHash": "bcddeef75d3fb40988ec70cbed3d1b76f497ffa8f4402e512aa8f167517d7466",
+          "heightDelta": 0,
+          "headTopDelta": 0,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        },
+        {
+          "frame": 7,
+          "rgbaHash": "849729279b8a005c2623cdf169052042e92ba846e62c797964443902a4bffedc",
+          "bounds": [
+            27,
+            15,
+            68,
+            84
+          ],
+          "height": 69,
+          "headTop": 15,
+          "hipBounds": [
+            3,
+            0,
+            40,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              14,
+              5
+            ],
+            [
+              1,
+              0,
+              16,
+              5
+            ]
+          ],
+          "lowerBodyHash": "bcddeef75d3fb40988ec70cbed3d1b76f497ffa8f4402e512aa8f167517d7466",
+          "heightDelta": 0,
+          "headTopDelta": 0,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        }
+      ]
+    },
+    "sentry": {
+      "frames": [
+        {
+          "frame": 8,
+          "rgbaHash": "168302f484c0a822d694165228a51a62f7aba6096dcee7d4c069dffc30da2cdc",
+          "bounds": [
+            31,
+            14,
+            72,
+            84
+          ],
+          "height": 70,
+          "headTop": 15,
+          "hipBounds": [
+            8,
+            0,
+            46,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              15,
+              4
+            ],
+            [
+              0,
+              0,
+              13,
+              4
+            ]
+          ],
+          "lowerBodyHash": "68c5759a8c80f4ef951695224e6f38079978419bfdc6333cf541fdf2c0414b00",
+          "heightDelta": 0,
+          "headTopDelta": 0,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        },
+        {
+          "frame": 9,
+          "rgbaHash": "808bbd5d97151480ad5908df33eebb01db15439bc289e8b49047f703c6e0e2e9",
+          "bounds": [
+            31,
+            14,
+            72,
+            84
+          ],
+          "height": 70,
+          "headTop": 14,
+          "hipBounds": [
+            8,
+            0,
+            46,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              15,
+              4
+            ],
+            [
+              0,
+              0,
+              13,
+              4
+            ]
+          ],
+          "lowerBodyHash": "68c5759a8c80f4ef951695224e6f38079978419bfdc6333cf541fdf2c0414b00",
+          "heightDelta": 0,
+          "headTopDelta": 1,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        },
+        {
+          "frame": 10,
+          "rgbaHash": "bf1acfe71a96ab45e2b5d8ad3e748599452e6be12996ded3bd83fd6928083595",
+          "bounds": [
+            31,
+            14,
+            72,
+            84
+          ],
+          "height": 70,
+          "headTop": 15,
+          "hipBounds": [
+            8,
+            0,
+            46,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              15,
+              4
+            ],
+            [
+              0,
+              0,
+              13,
+              4
+            ]
+          ],
+          "lowerBodyHash": "68c5759a8c80f4ef951695224e6f38079978419bfdc6333cf541fdf2c0414b00",
+          "heightDelta": 0,
+          "headTopDelta": 0,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        },
+        {
+          "frame": 11,
+          "rgbaHash": "4eed4c87e998db52572695dc1d048539b1d434f90183a34eda20fbe9bbed804e",
+          "bounds": [
+            31,
+            14,
+            72,
+            84
+          ],
+          "height": 70,
+          "headTop": 15,
+          "hipBounds": [
+            8,
+            0,
+            46,
+            1
+          ],
+          "footBounds": [
+            [
+              1,
+              0,
+              15,
+              4
+            ],
+            [
+              0,
+              0,
+              13,
+              4
+            ]
+          ],
+          "lowerBodyHash": "68c5759a8c80f4ef951695224e6f38079978419bfdc6333cf541fdf2c0414b00",
+          "heightDelta": 0,
+          "headTopDelta": 0,
+          "hipDelta": 0,
+          "footDelta": 0,
+          "lowerBodyStable": true,
+          "passes": true
+        }
+      ]
+    }
+  },
+  "failed": 0
+}

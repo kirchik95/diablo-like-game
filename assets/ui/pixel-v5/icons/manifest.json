@@ -1,0 +1,736 @@
+{
+  "schemaVersion": 1,
+  "artSize": [
+    14,
+    14
+  ],
+  "scales": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "outline": "--night",
+  "palette": {
+    "--night": "#0d0a14",
+    "--ink": "#171321",
+    "--coal": "#211a2b",
+    "--slate": "#2c2437",
+    "--stone-dark": "#44394f",
+    "--stone": "#6c6179",
+    "--dim": "#85798f",
+    "--muted": "#b4aaba",
+    "--ivory": "#eee0ce",
+    "--coral": "#ef8e83",
+    "--coral-light": "#f8c4ab",
+    "--coral-dark": "#9d4e5c",
+    "--spirit": "#6dd6cb",
+    "--spirit-light": "#c2f0dd",
+    "--spirit-dark": "#397c85",
+    "--amber": "#e5b66e",
+    "--amber-dark": "#8f734f"
+  },
+  "skills": {
+    "combo": "skill-combo-bare",
+    "dash": "skill-dash",
+    "wave": "skill-wave",
+    "palm": "skill-palm",
+    "crane": "skill-crane",
+    "deflect": "skill-deflect",
+    "bell": "skill-bell",
+    "mantra": "skill-mantra",
+    "sevenStrikes": "skill-seven-strikes"
+  },
+  "combo": {
+    "bare": "skill-combo-bare",
+    "knuckles": "skill-combo-knuckles",
+    "staff": "skill-combo-staff"
+  },
+  "weapons": {
+    "novice-knuckles": "weapon-novice-knuckles",
+    "bronze-knuckles": "weapon-bronze-knuckles",
+    "pilgrim-knuckles": "weapon-pilgrim-knuckles",
+    "novice-staff": "weapon-novice-staff",
+    "ash-staff": "weapon-ash-staff",
+    "pilgrim-staff": "weapon-pilgrim-staff"
+  },
+  "relics": {
+    "quiet-thunder": "relic-quiet-thunder",
+    "crane-neck": "relic-crane-neck"
+  },
+  "lock": "lock",
+  "icons": {
+    "skill-combo-bare": {
+      "kind": "skill",
+      "id": "combo",
+      "files": {
+        "1": "skill-combo-bare@1x.png",
+        "2": "skill-combo-bare@2x.png",
+        "3": "skill-combo-bare@3x.png",
+        "4": "skill-combo-bare@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "skill-combo-knuckles": {
+      "kind": "skill",
+      "id": "combo",
+      "files": {
+        "1": "skill-combo-knuckles@1x.png",
+        "2": "skill-combo-knuckles@2x.png",
+        "3": "skill-combo-knuckles@3x.png",
+        "4": "skill-combo-knuckles@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "skill-combo-staff": {
+      "kind": "skill",
+      "id": "combo",
+      "files": {
+        "1": "skill-combo-staff@1x.png",
+        "2": "skill-combo-staff@2x.png",
+        "3": "skill-combo-staff@3x.png",
+        "4": "skill-combo-staff@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "skill-dash": {
+      "kind": "skill",
+      "id": "dash",
+      "files": {
+        "1": "skill-dash@1x.png",
+        "2": "skill-dash@2x.png",
+        "3": "skill-dash@3x.png",
+        "4": "skill-dash@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "skill-wave": {
+      "kind": "skill",
+      "id": "wave",
+      "files": {
+        "1": "skill-wave@1x.png",
+        "2": "skill-wave@2x.png",
+        "3": "skill-wave@3x.png",
+        "4": "skill-wave@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "skill-palm": {
+      "kind": "skill",
+      "id": "palm",
+      "files": {
+        "1": "skill-palm@1x.png",
+        "2": "skill-palm@2x.png",
+        "3": "skill-palm@3x.png",
+        "4": "skill-palm@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "skill-crane": {
+      "kind": "skill",
+      "id": "crane",
+      "files": {
+        "1": "skill-crane@1x.png",
+        "2": "skill-crane@2x.png",
+        "3": "skill-crane@3x.png",
+        "4": "skill-crane@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "skill-deflect": {
+      "kind": "skill",
+      "id": "deflect",
+      "files": {
+        "1": "skill-deflect@1x.png",
+        "2": "skill-deflect@2x.png",
+        "3": "skill-deflect@3x.png",
+        "4": "skill-deflect@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "skill-bell": {
+      "kind": "skill",
+      "id": "bell",
+      "files": {
+        "1": "skill-bell@1x.png",
+        "2": "skill-bell@2x.png",
+        "3": "skill-bell@3x.png",
+        "4": "skill-bell@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "skill-mantra": {
+      "kind": "skill",
+      "id": "mantra",
+      "files": {
+        "1": "skill-mantra@1x.png",
+        "2": "skill-mantra@2x.png",
+        "3": "skill-mantra@3x.png",
+        "4": "skill-mantra@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "skill-seven-strikes": {
+      "kind": "skill",
+      "id": "sevenStrikes",
+      "files": {
+        "1": "skill-seven-strikes@1x.png",
+        "2": "skill-seven-strikes@2x.png",
+        "3": "skill-seven-strikes@3x.png",
+        "4": "skill-seven-strikes@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "lock": {
+      "kind": "ui",
+      "id": "lock",
+      "files": {
+        "1": "lock@1x.png",
+        "2": "lock@2x.png",
+        "3": "lock@3x.png",
+        "4": "lock@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "weapon-novice-knuckles": {
+      "kind": "weapon",
+      "id": "novice-knuckles",
+      "files": {
+        "1": "weapon-novice-knuckles@1x.png",
+        "2": "weapon-novice-knuckles@2x.png",
+        "3": "weapon-novice-knuckles@3x.png",
+        "4": "weapon-novice-knuckles@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "weapon-bronze-knuckles": {
+      "kind": "weapon",
+      "id": "bronze-knuckles",
+      "files": {
+        "1": "weapon-bronze-knuckles@1x.png",
+        "2": "weapon-bronze-knuckles@2x.png",
+        "3": "weapon-bronze-knuckles@3x.png",
+        "4": "weapon-bronze-knuckles@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "weapon-pilgrim-knuckles": {
+      "kind": "weapon",
+      "id": "pilgrim-knuckles",
+      "files": {
+        "1": "weapon-pilgrim-knuckles@1x.png",
+        "2": "weapon-pilgrim-knuckles@2x.png",
+        "3": "weapon-pilgrim-knuckles@3x.png",
+        "4": "weapon-pilgrim-knuckles@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "weapon-novice-staff": {
+      "kind": "weapon",
+      "id": "novice-staff",
+      "files": {
+        "1": "weapon-novice-staff@1x.png",
+        "2": "weapon-novice-staff@2x.png",
+        "3": "weapon-novice-staff@3x.png",
+        "4": "weapon-novice-staff@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "weapon-ash-staff": {
+      "kind": "weapon",
+      "id": "ash-staff",
+      "files": {
+        "1": "weapon-ash-staff@1x.png",
+        "2": "weapon-ash-staff@2x.png",
+        "3": "weapon-ash-staff@3x.png",
+        "4": "weapon-ash-staff@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "weapon-pilgrim-staff": {
+      "kind": "weapon",
+      "id": "pilgrim-staff",
+      "files": {
+        "1": "weapon-pilgrim-staff@1x.png",
+        "2": "weapon-pilgrim-staff@2x.png",
+        "3": "weapon-pilgrim-staff@3x.png",
+        "4": "weapon-pilgrim-staff@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "relic-quiet-thunder": {
+      "kind": "relic",
+      "id": "quiet-thunder",
+      "files": {
+        "1": "relic-quiet-thunder@1x.png",
+        "2": "relic-quiet-thunder@2x.png",
+        "3": "relic-quiet-thunder@3x.png",
+        "4": "relic-quiet-thunder@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    },
+    "relic-crane-neck": {
+      "kind": "relic",
+      "id": "crane-neck",
+      "files": {
+        "1": "relic-crane-neck@1x.png",
+        "2": "relic-crane-neck@2x.png",
+        "3": "relic-crane-neck@3x.png",
+        "4": "relic-crane-neck@4x.png"
+      },
+      "sizes": {
+        "1": [
+          14,
+          14
+        ],
+        "2": [
+          28,
+          28
+        ],
+        "3": [
+          42,
+          42
+        ],
+        "4": [
+          56,
+          56
+        ]
+      }
+    }
+  },
+  "contactSheet": {
+    "file": "contact-sheet.png",
+    "rows": [
+      [
+        "skill-combo-bare",
+        "skill-combo-knuckles",
+        "skill-combo-staff",
+        "skill-dash",
+        "skill-wave",
+        "skill-palm",
+        "skill-crane",
+        "skill-deflect",
+        "skill-bell",
+        "skill-mantra",
+        "skill-seven-strikes",
+        "lock"
+      ],
+      [
+        "weapon-novice-knuckles",
+        "weapon-bronze-knuckles",
+        "weapon-pilgrim-knuckles",
+        "weapon-novice-staff",
+        "weapon-ash-staff",
+        "weapon-pilgrim-staff",
+        "relic-quiet-thunder",
+        "relic-crane-neck"
+      ]
+    ]
+  },
+  "files": {
+    "contact-sheet.png": "07661c6c10d81496c510ac57ec87e78ce038b15b401abdbbae6453a7a03e3f62",
+    "lock@1x.png": "66c24ea69e33148cf7e6c66f0df8dc12ae587de85f929e89ebfe6b1f1f2f23b0",
+    "lock@2x.png": "2b84a1ad1c56ee1d78d92b5e28e48b8cf5185207dc27a8915b340e7490d51791",
+    "lock@3x.png": "5fd23188b2561eaf09524ac61f918eefd5a713ac5fda44181fa47cb3e0b0f99e",
+    "lock@4x.png": "d48b88276f2aa7919222741cb6eae773d783162fee97a165f1ec46f78a93b930",
+    "relic-crane-neck@1x.png": "50feab36b9da01f13cf220b65d240f134821c5a0879d119d3b0066667ae79b27",
+    "relic-crane-neck@2x.png": "ca8d409641c3ce4de845c4421038aab1eb0b65dcb861c0670d1b80515495725a",
+    "relic-crane-neck@3x.png": "5989c50f51fec44803e62a3d7c2082d83e0003620a97c465cf804e6746bd7efb",
+    "relic-crane-neck@4x.png": "eedd131f68f027577c5c547de559d3e50178f383706f2705591283c41953efbe",
+    "relic-quiet-thunder@1x.png": "3ea1999d6e73754a51356aa3d1627476a75a746d0b129eee58f024940cf126d5",
+    "relic-quiet-thunder@2x.png": "035bce2d9b7e6a2a9ef229e2401fc194d684f027e519eb14b7d6b387ceb2d7d8",
+    "relic-quiet-thunder@3x.png": "7233e5c49b0ed70fe6df9453c7e89cb14902cc3cdde07dc39f27fa9d255104aa",
+    "relic-quiet-thunder@4x.png": "b1c06ca9bf31df288a34749bd595829b83bc9bd20a61aecef7f98247938d4a5b",
+    "skill-bell@1x.png": "951725618d623d5f249535cc62c5adc5f3ddf3022fd406d0293fbb3a08f642c2",
+    "skill-bell@2x.png": "5d4415303325d390b449e6a0bf3e8826446861b5fbf52d8831392eadba0575c7",
+    "skill-bell@3x.png": "cc0ae2aaf6be1a90e2cd364492dd752fc4af0ae5e6f2747d64ca9c532408ba19",
+    "skill-bell@4x.png": "37ebdb383c85b6802c96a506928f5157ca523201fd8f8815712ccc444b7a31ad",
+    "skill-combo-bare@1x.png": "15aa862943167cd6b684f18ce85f2db4c1ba496cd967fff77eddb09ee591d5eb",
+    "skill-combo-bare@2x.png": "b20c3a9e3c736c353ad93554cff42cf1e853c86da52364f510fc6247b764e540",
+    "skill-combo-bare@3x.png": "cb0852d9c6e8705290b6eeed9828bc09c2fe9b010b0466c195800d517f1e0eff",
+    "skill-combo-bare@4x.png": "bfba1774c1e6a63c2821a907232f5f3421630e84f996308e035010d2944afbdf",
+    "skill-combo-knuckles@1x.png": "ab6e5127ae7620bf2a1a110379a906c70572767d0e79332ea5d6cb0797eaa1d8",
+    "skill-combo-knuckles@2x.png": "a4fb0b58b501d699221533963a716b7d1abbea134e02e0f2b86c55c76159773c",
+    "skill-combo-knuckles@3x.png": "28af3128dabd5da89f9f8398182244622d3b7458417a170a3fc6085102399c9f",
+    "skill-combo-knuckles@4x.png": "1892516f9e72a4991cd569d4a5a9cf3fe6d091e398227785630fdebcb8a0e82f",
+    "skill-combo-staff@1x.png": "8b09971fd89c950e0ae273f838ec03ef8b3a46c8e4b070cc279388434ed18199",
+    "skill-combo-staff@2x.png": "74423f8d91a2d730bd93dc1096e3e0a9b2cfa989027d2183a650c882122e4e69",
+    "skill-combo-staff@3x.png": "0694d96a383af457dea7b37fc36310c8d29e25993276eed02b3e73efc4d82cf9",
+    "skill-combo-staff@4x.png": "e653ddef8acacb8505787600fc5fa9fd5f811c8842c9b1920d22a2d6dc78e00f",
+    "skill-crane@1x.png": "2ccd3c154c0c01a89154e0b77b4f952c0e533eca331f2e92147f9bfedb7e6be1",
+    "skill-crane@2x.png": "da177de16865ef6003270e519c46c1271a29421f6a6f0c99379dd8a83c4e51c0",
+    "skill-crane@3x.png": "f13f4696c9fe77fc67f5c244122b95e551c524ec79d6eb3dbdb9c25d1a3629bd",
+    "skill-crane@4x.png": "637236e216e816763e5f6e7adb024a85753a2c2a6ecc3da11f0d95c6c44b044e",
+    "skill-dash@1x.png": "7697e6b4c08b5aaf69686383ba07f16d8ba2d79cfb43ac868edd72d7e83155c1",
+    "skill-dash@2x.png": "683e23936dea9fbce6cf9e95fd9dea715c0daca5680b0c5090616f8dc90bae28",
+    "skill-dash@3x.png": "ce8e7426e6d58a3ae3bebed4a450c485c17612328cd62393e396b1b1fa0ab1cd",
+    "skill-dash@4x.png": "c497add6ee8e0c97c20f1f88560e9832721a82f2d01964e3f15d634180dca2b0",
+    "skill-deflect@1x.png": "9f989b683081f2ec9bea5e6024cce748e3a067e50ea68ca4d1710dfc25a1a978",
+    "skill-deflect@2x.png": "f11c6999e3d5670bc4d7d18b5a4f8f35cc47925a53a500419588dd29dc50b5e5",
+    "skill-deflect@3x.png": "ac91738f7afd6c14a010e665751a9c1359da01280168cdf5a6f9cf29b32e49a5",
+    "skill-deflect@4x.png": "2ad4ba064b24facbe741e036ade57972da20ead026e9f45bd4ed8bdd50dbf2a5",
+    "skill-mantra@1x.png": "bdabb835bfbcbc2f2089a4a20e6b7c404a8068f4f3db09796676c4d23781c605",
+    "skill-mantra@2x.png": "022cf8efcd0689acbd702ac42296ce4249b8eb3b719c2846545a591615194885",
+    "skill-mantra@3x.png": "2095c9fc379d60f34a0bfda8d1e0126a37bb8a9487edb198bcaae90a370aef59",
+    "skill-mantra@4x.png": "050e0c5d099950cc7a32fd27cf7215e34d587b152b7992d05a6a4f008cc9d23d",
+    "skill-palm@1x.png": "a23bd7fbb53e6a7a31d2e9b6e8663f04dc0e1d4870c2fc8ef31c4cb301aac4a9",
+    "skill-palm@2x.png": "790be6e709c51d7b9bf3126b3f37dc041ab07a13c0d432d90bcbc4e11d4938dc",
+    "skill-palm@3x.png": "9b4d031b4def24fb98db735dc2e630eb3756e7f7122de38e470f04e1048163f1",
+    "skill-palm@4x.png": "36fc9fc69ac847830837b8991539f657ea5b9fab7d73cb90302b17350edee343",
+    "skill-seven-strikes@1x.png": "cd9af01986b56b9956b3194c53ab74e08d499b4e97342592491d9308afb9a843",
+    "skill-seven-strikes@2x.png": "92635f4cb5f4dbe69ad7976f8bf011f534935b55d0ff71c665d6778ad370358d",
+    "skill-seven-strikes@3x.png": "b22dacb8f72661cc2bd7f6306c39486469a5b93d65e69f780dc10df8c7d86763",
+    "skill-seven-strikes@4x.png": "014e36b440e6153f04dcfb718a4b8110d404389a18d7e499057cc5788681c54a",
+    "skill-wave@1x.png": "a2ec191daaa0285ab31a7136c3ba439f25dc0d68fa4d3f1994d2e1ad3b8ba188",
+    "skill-wave@2x.png": "ed61cbfc0554fc86b190c7c9d5ff9c9c8d65f8105a53e2a3b18cc1255d7d918c",
+    "skill-wave@3x.png": "9d8fad38e7d8b0b94eda10cc12233dfeceae1c19a65c7dae02fd6d11ad170e07",
+    "skill-wave@4x.png": "770369bc4573a93601f23d437f52add516fb2223b68ebcfe0acf833217e5780b",
+    "weapon-ash-staff@1x.png": "22389166cfb2ab40c606a758835cbc6fa2165e9185bf4a10afb11d9d420985b8",
+    "weapon-ash-staff@2x.png": "82117017bb4596a482ee6cb04b42c3c2307282f9bad48265fdeeed44d459cb2a",
+    "weapon-ash-staff@3x.png": "287b6b51cec229385dc61d9741c0118ee06258893c7acc34b869da57264d2628",
+    "weapon-ash-staff@4x.png": "6ff4bb540aadc71b75d8098aa79dbe35ad0e6e6ee98fd433a4149f39091fa9b4",
+    "weapon-bronze-knuckles@1x.png": "60db1300c27d499ad68a6b8aa2f8d49ca1afbc54d08328a66e8c7d0ad3976f0e",
+    "weapon-bronze-knuckles@2x.png": "c449f01de53e18da1fbb03339861f6856e6c5e04b2cf045d8b0e63e60fc89859",
+    "weapon-bronze-knuckles@3x.png": "6ac5b1a49a352efbbedc49811059c2980a74bc2948d33bf7c1669965931477d3",
+    "weapon-bronze-knuckles@4x.png": "c017301259af776c1acc66dca74c7efa72ba26ae813f812157d8e268e193684a",
+    "weapon-novice-knuckles@1x.png": "ad2d1d05ccc43ee7f54669fdb392f677b4bb8d1a7e2af3703450557dcca21826",
+    "weapon-novice-knuckles@2x.png": "d0307a8830356d5fc95169e22bbd5d75fabd3f132c50b899526a36a78e0436eb",
+    "weapon-novice-knuckles@3x.png": "fb948b0ba05e8add0039a5356109f4e6744c59a504a2f01da4561800c5c86b28",
+    "weapon-novice-knuckles@4x.png": "35a660d53413abfa82cd438009cb28688c5a52e90459f62344bc71a939e5ba0d",
+    "weapon-novice-staff@1x.png": "2a045f2cf918f2a48e29f838cd9f694fd91766819bdfff66b3b3bf5bfa4a4e0d",
+    "weapon-novice-staff@2x.png": "5a0ac0b7b3290b7d849d3d2d1d5ff4566030b66d37b7368cd88e0180d6dec97b",
+    "weapon-novice-staff@3x.png": "9c7270fd6af3b8198411963bfce5a9b04e2b6802b0a0f19f6d30ffb48d7d9ae1",
+    "weapon-novice-staff@4x.png": "566eca99c1c77d47f0207dfbc78fe4001400d7767ee5925198626191649e779d",
+    "weapon-pilgrim-knuckles@1x.png": "ccb0d84f87521f1fb9e76b2e3d94217dbd7e17c539ea24cd9226ac4740d92e2e",
+    "weapon-pilgrim-knuckles@2x.png": "a06bd9f62641b9018ecb076113979f0549540cc09bc12b75de03a5f8f745a294",
+    "weapon-pilgrim-knuckles@3x.png": "256c7d64e0ef18d646606a2fdd2e3e0cb9d183441284ab75af71bb2b8008fa08",
+    "weapon-pilgrim-knuckles@4x.png": "26223db87e5f6299ec5820760374b84a410bfd216b12f68676c48cf389cc9ffe",
+    "weapon-pilgrim-staff@1x.png": "cc3fc82b39fff4fc36b91e4f37d34c640bf4ad78d55ce33b5e39f4003cb20a9d",
+    "weapon-pilgrim-staff@2x.png": "299c54c930c2326e79d27b87d3069d3d0a56c3aacf3c82e7f46e2bc9d7e8d694",
+    "weapon-pilgrim-staff@3x.png": "f162006e62c5ab7db3695c5849446485bca2ad0d575d36e75f2f5426fa90d223",
+    "weapon-pilgrim-staff@4x.png": "f3e80b6a6251083cf5b770a5651b4bd0d0e917fef1accc071a568312315c1ecb"
+  }
+}

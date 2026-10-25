@@ -21,7 +21,7 @@ const choices = {
 // only its small previews, not its 100-key atlases.
 const variants = new Map(manifest.variants.map(variant => [variant.id, Object.freeze({
   ...variant,
-  url: new URL(`../assets/game/pixel-v10/monk-side/appearance/${variant.id}.png`, import.meta.url).href,
+  url: new URL(`../assets/game/pixel-v17/monk-side/appearance/${variant.id}.png`, import.meta.url).href,
   previewUrl: new URL(`../assets/game/pixel-v3/appearance/${variant.id}-preview.png`, import.meta.url).href,
 })]));
 

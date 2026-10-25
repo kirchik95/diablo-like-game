@@ -1,0 +1,2638 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "nativePixelsPerUnit": 32,
+  "monkAtlas": {
+    "manifest": "assets/game/pixel-v10/monk-side/manifest.json",
+    "cell": 96,
+    "columns": 10,
+    "rows": 11,
+    "anchor": [48, 84],
+    "keys": 110
+  },
+  "drawOrder": ["monk appearance atlas", "weapon layer (hands already cut out where they grip)"],
+  "appearanceIndependent": true,
+  "knuckles": {
+    "path": "knuckles.png",
+    "cell": 96,
+    "columns": 10,
+    "rows": 16,
+    "anchor": [48, 84],
+    "filter": "nearest",
+    "mipmaps": false,
+    "keyCells": "cell i overlays monk key i (0-109); same anchor and flip as the monk key",
+    "strikeCells": "110-157: band plus hit accent per strike key",
+    "clips": {
+      "knuckleStrike1": {
+        "source": "attack1",
+        "contactKey": 2,
+        "keyTimesMs": [0, 30, 60, 83, 114, 133],
+        "playback": "one-shot-hold",
+        "accent": [null, null, "hit", "fade", null, null],
+        "front": [
+          {"frame": 10, "overlay": 110},
+          {"frame": 11, "overlay": 111},
+          {"frame": 12, "overlay": 112},
+          {"frame": 13, "overlay": 113},
+          {"frame": 14, "overlay": 114},
+          {"frame": 15, "overlay": 115}
+        ],
+        "back": [
+          {"frame": 60, "overlay": 116},
+          {"frame": 61, "overlay": 117},
+          {"frame": 62, "overlay": 118},
+          {"frame": 63, "overlay": 119},
+          {"frame": 64, "overlay": 120},
+          {"frame": 65, "overlay": 121}
+        ]
+      },
+      "knuckleStrike2": {
+        "source": "attack2",
+        "contactKey": 2,
+        "keyTimesMs": [0, 30, 60, 83, 114, 133],
+        "playback": "one-shot-hold",
+        "accent": [null, null, "hit", "fade", null, null],
+        "front": [
+          {"frame": 16, "overlay": 122},
+          {"frame": 17, "overlay": 123},
+          {"frame": 18, "overlay": 124},
+          {"frame": 19, "overlay": 125},
+          {"frame": 20, "overlay": 126},
+          {"frame": 21, "overlay": 127}
+        ],
+        "back": [
+          {"frame": 66, "overlay": 128},
+          {"frame": 67, "overlay": 129},
+          {"frame": 68, "overlay": 130},
+          {"frame": 69, "overlay": 131},
+          {"frame": 70, "overlay": 132},
+          {"frame": 71, "overlay": 133}
+        ]
+      },
+      "knuckleStrike3": {
+        "source": "attack3",
+        "contactKey": 2,
+        "keyTimesMs": [0, 40, 80, 103, 134, 153],
+        "playback": "one-shot-hold",
+        "accent": [null, null, "hit", "fade", null, null],
+        "front": [
+          {"frame": 22, "overlay": 134},
+          {"frame": 23, "overlay": 135},
+          {"frame": 24, "overlay": 136},
+          {"frame": 25, "overlay": 137},
+          {"frame": 26, "overlay": 138},
+          {"frame": 27, "overlay": 139}
+        ],
+        "back": [
+          {"frame": 72, "overlay": 140},
+          {"frame": 73, "overlay": 141},
+          {"frame": 74, "overlay": 142},
+          {"frame": 75, "overlay": 143},
+          {"frame": 76, "overlay": 144},
+          {"frame": 77, "overlay": 145}
+        ]
+      },
+      "knuckleStrike4": {
+        "source": "attack3/attack2 composite",
+        "contactKey": 2,
+        "keyTimesMs": [0, 65, 130, 165, 214, 253],
+        "playback": "one-shot-hold",
+        "accent": [null, "glint", "heavy", "afterglow", null, null],
+        "front": [
+          {"frame": 23, "overlay": 146},
+          {"frame": 17, "overlay": 147},
+          {"frame": 19, "overlay": 148},
+          {"frame": 19, "overlay": 149},
+          {"frame": 20, "overlay": 150},
+          {"frame": 27, "overlay": 151}
+        ],
+        "back": [
+          {"frame": 73, "overlay": 152},
+          {"frame": 67, "overlay": 153},
+          {"frame": 69, "overlay": 154},
+          {"frame": 69, "overlay": 155},
+          {"frame": 70, "overlay": 156},
+          {"frame": 77, "overlay": 157}
+        ]
+      }
+    }
+  },
+  "staff": {
+    "path": "staff.png",
+    "cell": 96,
+    "columns": 10,
+    "rows": 11,
+    "anchor": [48, 84],
+    "filter": "nearest",
+    "mipmaps": false,
+    "lengthPixels": 60,
+    "lengthUnits": 2.0,
+    "keyCells": "cell i is the staff held in monk key i (0-109); same anchor and flip as the monk key"
+  },
+  "staffAttacks": {
+    "path": "staff-attacks.png",
+    "cell": [160, 144],
+    "columns": 10,
+    "rows": 6,
+    "anchor": [80, 104],
+    "monkCellOffset": [32, 20],
+    "filter": "nearest",
+    "mipmaps": false,
+    "facingAzimuth": {"front": 45, "back": -45, "side": 0},
+    "note": "Body: monk key `frame`, flipped when mirrorBody differs from the facing's flipX. Staff: cell `staff`, flipped with the facing. Both share the ground anchor.",
+    "clips": {
+      "staffAttack1": {
+        "name": "forehand sweep",
+        "arc": "±102°",
+        "contactKey": 2,
+        "keyTimesMs": [0, 65, 130, 172, 232, 283],
+        "playback": "one-shot-hold",
+        "front": [
+          {
+            "frame": 22,
+            "mirrorBody": false,
+            "staff": 0,
+            "grip": [98.26, 70.99],
+            "butt": [92.17, 86.54],
+            "tip": [112.46, 34.69],
+            "depth": [0.873, -0.87]
+          },
+          {
+            "frame": 21,
+            "mirrorBody": false,
+            "staff": 1,
+            "grip": [105.82, 60.11],
+            "butt": [87.95, 66.03],
+            "tip": [147.51, 46.29],
+            "depth": [0.553, -0.124]
+          },
+          {
+            "frame": 24,
+            "mirrorBody": false,
+            "staff": 2,
+            "grip": [108.19, 62.64],
+            "butt": [98.23, 57.66],
+            "tip": [143.49, 80.29],
+            "depth": [0.039, 1.453]
+          },
+          {
+            "frame": 25,
+            "mirrorBody": false,
+            "staff": 3,
+            "grip": [108.01, 62.54],
+            "butt": [110.78, 53.56],
+            "tip": [99.7, 89.47],
+            "depth": [-0.141, 1.824]
+          },
+          {
+            "frame": 26,
+            "mirrorBody": false,
+            "staff": 4,
+            "grip": [96.91, 67.56],
+            "butt": [113.38, 60.13],
+            "tip": [58.49, 84.88],
+            "depth": [0.053, 1.043]
+          },
+          {
+            "frame": 27,
+            "mirrorBody": false,
+            "staff": 5,
+            "grip": [103.79, 60.76],
+            "butt": [59.06, 72.72],
+            "tip": [117.03, 57.22],
+            "depth": [1, 1]
+          }
+        ],
+        "back": [
+          {
+            "frame": 72,
+            "mirrorBody": false,
+            "staff": 6,
+            "grip": [66.87, 71.55],
+            "butt": [83.6, 81.79],
+            "tip": [27.84, 47.67],
+            "depth": [-0.16, -0.794]
+          },
+          {
+            "frame": 71,
+            "mirrorBody": false,
+            "staff": 7,
+            "grip": [104.8, 60.14],
+            "butt": [111.3, 71.74],
+            "tip": [89.62, 33.06],
+            "depth": [0.208, -1.653]
+          },
+          {
+            "frame": 74,
+            "mirrorBody": false,
+            "staff": 8,
+            "grip": [106.04, 54.7],
+            "butt": [96.08, 59.68],
+            "tip": [141.34, 37.05],
+            "depth": [-0.039, -1.453]
+          },
+          {
+            "frame": 75,
+            "mirrorBody": false,
+            "staff": 9,
+            "grip": [105.17, 55.1],
+            "butt": [89.46, 52.6],
+            "tip": [152.33, 62.61],
+            "depth": [-0.437, -0.09]
+          },
+          {
+            "frame": 76,
+            "mirrorBody": false,
+            "staff": 10,
+            "grip": [96.94, 66.22],
+            "butt": [87.44, 55.32],
+            "tip": [119.13, 91.67],
+            "depth": [-0.865, 0.851]
+          },
+          {
+            "frame": 77,
+            "mirrorBody": false,
+            "staff": 11,
+            "grip": [103.36, 57.57],
+            "butt": [56.96, 73.01],
+            "tip": [113.9, 54.06],
+            "depth": [-1, -1]
+          }
+        ],
+        "side": [
+          {
+            "frame": 100,
+            "mirrorBody": false,
+            "staff": 12,
+            "grip": [66.82, 72.79],
+            "butt": [75.52, 88.44],
+            "tip": [46.52, 36.28],
+            "depth": [0.821, -0.749]
+          },
+          {
+            "frame": 101,
+            "mirrorBody": false,
+            "staff": 13,
+            "grip": [97.5, 61.94],
+            "butt": [88.05, 73.47],
+            "tip": [119.56, 35.06],
+            "depth": [0.862, -0.844]
+          },
+          {
+            "frame": 104,
+            "mirrorBody": false,
+            "staff": 14,
+            "grip": [103.34, 63.95],
+            "butt": [89.26, 63.95],
+            "tip": [153.26, 63.95],
+            "depth": [0.35, 0.35]
+          },
+          {
+            "frame": 104,
+            "mirrorBody": false,
+            "staff": 15,
+            "grip": [103.34, 63.95],
+            "butt": [95.36, 55.92],
+            "tip": [127.28, 88.03],
+            "depth": [-0.082, 1.646]
+          },
+          {
+            "frame": 102,
+            "mirrorBody": false,
+            "staff": 16,
+            "grip": [97.5, 62.94],
+            "butt": [104.0, 51.34],
+            "tip": [82.33, 90.02],
+            "depth": [-0.208, 1.653]
+          },
+          {
+            "frame": 100,
+            "mirrorBody": false,
+            "staff": 17,
+            "grip": [97.5, 62.94],
+            "butt": [53.6, 77.04],
+            "tip": [110.73, 58.7],
+            "depth": [1, 1]
+          }
+        ]
+      },
+      "staffAttack2": {
+        "name": "backhand sweep",
+        "arc": "±102°",
+        "contactKey": 2,
+        "keyTimesMs": [0, 70, 140, 185, 248, 303],
+        "playback": "one-shot-hold",
+        "front": [
+          {
+            "frame": 26,
+            "mirrorBody": false,
+            "staff": 18,
+            "grip": [77.62, 69.13],
+            "butt": [95.27, 69.91],
+            "tip": [36.44, 67.31],
+            "depth": [0.149, 0.818]
+          },
+          {
+            "frame": 20,
+            "mirrorBody": false,
+            "staff": 19,
+            "grip": [102.09, 64.89],
+            "butt": [113.06, 58.73],
+            "tip": [76.49, 79.26],
+            "depth": [-0.14, 1.492]
+          },
+          {
+            "frame": 19,
+            "mirrorBody": false,
+            "staff": 20,
+            "grip": [109.53, 57.44],
+            "butt": [98.74, 52.92],
+            "tip": [147.77, 73.49],
+            "depth": [0.067, 1.353]
+          },
+          {
+            "frame": 18,
+            "mirrorBody": false,
+            "staff": 21,
+            "grip": [107.73, 56.11],
+            "butt": [92.73, 59.96],
+            "tip": [152.72, 44.58],
+            "depth": [0.521, -0.162]
+          },
+          {
+            "frame": 20,
+            "mirrorBody": false,
+            "staff": 22,
+            "grip": [102.09, 64.89],
+            "butt": [93.06, 79.27],
+            "tip": [123.13, 31.34],
+            "depth": [0.838, -0.789]
+          },
+          {
+            "frame": 21,
+            "mirrorBody": false,
+            "staff": 23,
+            "grip": [105.82, 60.11],
+            "butt": [61.15, 72.58],
+            "tip": [118.94, 56.44],
+            "depth": [1, 1]
+          }
+        ],
+        "back": [
+          {
+            "frame": 76,
+            "mirrorBody": false,
+            "staff": 24,
+            "grip": [96.94, 66.22],
+            "butt": [90.52, 61.39],
+            "tip": [111.93, 77.5],
+            "depth": [-0.901, 0.937]
+          },
+          {
+            "frame": 70,
+            "mirrorBody": false,
+            "staff": 25,
+            "grip": [104.18, 62.29],
+            "butt": [86.21, 60.69],
+            "tip": [146.12, 66.01],
+            "depth": [-0.554, 0.127]
+          },
+          {
+            "frame": 69,
+            "mirrorBody": false,
+            "staff": 26,
+            "grip": [109.34, 57.66],
+            "butt": [100.29, 63.06],
+            "tip": [141.43, 38.54],
+            "depth": [-0.013, -1.545]
+          },
+          {
+            "frame": 68,
+            "mirrorBody": false,
+            "staff": 27,
+            "grip": [110.5, 50.58],
+            "butt": [115.96, 59.19],
+            "tip": [94.12, 24.73],
+            "depth": [0.119, -1.756]
+          },
+          {
+            "frame": 70,
+            "mirrorBody": false,
+            "staff": 28,
+            "grip": [104.18, 62.29],
+            "butt": [119.8, 73.36],
+            "tip": [67.72, 36.44],
+            "depth": [-0.068, -1.008]
+          },
+          {
+            "frame": 71,
+            "mirrorBody": false,
+            "staff": 29,
+            "grip": [104.8, 60.14],
+            "butt": [58.43, 72.61],
+            "tip": [116.37, 57.02],
+            "depth": [-1, -1]
+          }
+        ],
+        "side": [
+          {
+            "frame": 102,
+            "mirrorBody": false,
+            "staff": 30,
+            "grip": [66.82, 72.79],
+            "butt": [74.76, 68.27],
+            "tip": [48.3, 83.33],
+            "depth": [-0.182, 1.591]
+          },
+          {
+            "frame": 103,
+            "mirrorBody": false,
+            "staff": 31,
+            "grip": [97.5, 63.94],
+            "butt": [89.42, 56.95],
+            "tip": [116.36, 80.26],
+            "depth": [-0.192, 1.614]
+          },
+          {
+            "frame": 107,
+            "mirrorBody": false,
+            "staff": 32,
+            "grip": [91.98, 64.95],
+            "butt": [77.96, 65.56],
+            "tip": [141.71, 62.77],
+            "depth": [0.388, 0.214]
+          },
+          {
+            "frame": 107,
+            "mirrorBody": false,
+            "staff": 33,
+            "grip": [91.98, 64.95],
+            "butt": [85.24, 73.3],
+            "tip": [112.22, 39.9],
+            "depth": [0.802, -1.006]
+          },
+          {
+            "frame": 101,
+            "mirrorBody": false,
+            "staff": 34,
+            "grip": [97.5, 61.94],
+            "butt": [102.17, 77.22],
+            "tip": [86.6, 26.29],
+            "depth": [0.895, -0.921]
+          },
+          {
+            "frame": 101,
+            "mirrorBody": false,
+            "staff": 35,
+            "grip": [97.5, 61.94],
+            "butt": [53.6, 76.04],
+            "tip": [110.73, 57.7],
+            "depth": [1, 1]
+          }
+        ]
+      },
+      "staffAttack3": {
+        "name": "spin",
+        "arc": "360°",
+        "contactKey": 2,
+        "keyTimesMs": [0, 110, 220, 275, 352, 423],
+        "playback": "one-shot-hold",
+        "front": [
+          {
+            "frame": 23,
+            "mirrorBody": false,
+            "staff": 36,
+            "grip": [84.28, 70.8],
+            "butt": [108.91, 69.73],
+            "tip": [47.33, 72.4],
+            "depth": [0.144, 0.659]
+          },
+          {
+            "frame": 69,
+            "mirrorBody": false,
+            "staff": 37,
+            "grip": [109.34, 57.66],
+            "butt": [100.29, 62.19],
+            "tip": [145.54, 39.56],
+            "depth": [-0.067, -1.481]
+          },
+          {
+            "frame": 69,
+            "mirrorBody": true,
+            "staff": 38,
+            "grip": [50.66, 57.66],
+            "butt": [59.71, 62.19],
+            "tip": [14.46, 39.56],
+            "depth": [-0.067, -1.481]
+          },
+          {
+            "frame": 19,
+            "mirrorBody": true,
+            "staff": 39,
+            "grip": [50.47, 57.44],
+            "butt": [59.52, 52.92],
+            "tip": [14.27, 75.55],
+            "depth": [0.067, 1.481]
+          },
+          {
+            "frame": 19,
+            "mirrorBody": false,
+            "staff": 40,
+            "grip": [109.53, 57.44],
+            "butt": [100.48, 52.92],
+            "tip": [145.73, 75.55],
+            "depth": [0.067, 1.481]
+          },
+          {
+            "frame": 27,
+            "mirrorBody": false,
+            "staff": 41,
+            "grip": [103.79, 60.76],
+            "butt": [59.06, 72.72],
+            "tip": [117.03, 57.22],
+            "depth": [1, 1]
+          }
+        ],
+        "back": [
+          {
+            "frame": 72,
+            "mirrorBody": false,
+            "staff": 42,
+            "grip": [94.59, 68.63],
+            "butt": [70.77, 67.86],
+            "tip": [130.33, 69.79],
+            "depth": [-0.621, 0.056]
+          },
+          {
+            "frame": 69,
+            "mirrorBody": true,
+            "staff": 43,
+            "grip": [50.66, 57.66],
+            "butt": [59.71, 62.19],
+            "tip": [14.46, 39.56],
+            "depth": [-0.067, -1.481]
+          },
+          {
+            "frame": 19,
+            "mirrorBody": true,
+            "staff": 44,
+            "grip": [50.47, 57.44],
+            "butt": [59.52, 52.92],
+            "tip": [14.27, 75.55],
+            "depth": [0.067, 1.481]
+          },
+          {
+            "frame": 19,
+            "mirrorBody": false,
+            "staff": 45,
+            "grip": [109.53, 57.44],
+            "butt": [100.48, 52.92],
+            "tip": [145.73, 75.55],
+            "depth": [0.067, 1.481]
+          },
+          {
+            "frame": 69,
+            "mirrorBody": false,
+            "staff": 46,
+            "grip": [109.34, 57.66],
+            "butt": [100.29, 62.19],
+            "tip": [145.54, 39.56],
+            "depth": [-0.067, -1.481]
+          },
+          {
+            "frame": 77,
+            "mirrorBody": false,
+            "staff": 47,
+            "grip": [103.36, 57.57],
+            "butt": [56.96, 73.01],
+            "tip": [113.9, 54.06],
+            "depth": [-1, -1]
+          }
+        ],
+        "side": [
+          {
+            "frame": 100,
+            "mirrorBody": false,
+            "staff": 48,
+            "grip": [66.82, 72.79],
+            "butt": [88.78, 70.02],
+            "tip": [33.89, 76.95],
+            "depth": [-0.046, 0.944]
+          },
+          {
+            "frame": 69,
+            "mirrorBody": false,
+            "staff": 49,
+            "grip": [109.34, 57.66],
+            "butt": [100.29, 62.19],
+            "tip": [145.54, 39.56],
+            "depth": [-0.067, -1.481]
+          },
+          {
+            "frame": 69,
+            "mirrorBody": true,
+            "staff": 50,
+            "grip": [50.66, 57.66],
+            "butt": [59.71, 62.19],
+            "tip": [14.46, 39.56],
+            "depth": [-0.067, -1.481]
+          },
+          {
+            "frame": 19,
+            "mirrorBody": true,
+            "staff": 51,
+            "grip": [50.47, 57.44],
+            "butt": [59.52, 52.92],
+            "tip": [14.27, 75.55],
+            "depth": [0.067, 1.481]
+          },
+          {
+            "frame": 19,
+            "mirrorBody": false,
+            "staff": 52,
+            "grip": [109.53, 57.44],
+            "butt": [100.48, 52.92],
+            "tip": [145.73, 75.55],
+            "depth": [0.067, 1.481]
+          },
+          {
+            "frame": 100,
+            "mirrorBody": false,
+            "staff": 53,
+            "grip": [97.5, 62.94],
+            "butt": [53.6, 77.04],
+            "tip": [110.73, 58.7],
+            "depth": [1, 1]
+          }
+        ]
+      }
+    }
+  },
+  "keys": [
+    {
+      "index": 0,
+      "name": "idle-front-01",
+      "hands": [
+        {"centre": [42.2, 49.35], "axis": [0.97, 0.25], "pixels": 34, "knuckles": true},
+        {"centre": [72.55, 39.06], "axis": [0.66, -0.75], "pixels": 46, "knuckles": true}
+      ],
+      "knuckles": {"cell": 0, "pixels": 27},
+      "staff": {
+        "cell": 0,
+        "mode": "two-hand",
+        "grips": [[72.55, 39.06], [42.2, 49.35]],
+        "angle": -18.7,
+        "butt": [28.97, 53.84],
+        "tip": [85.78, 34.57],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 1,
+      "name": "idle-front-02",
+      "hands": [
+        {"centre": [40.1, 49.46], "axis": [0.66, 0.75], "pixels": 35, "knuckles": true},
+        {"centre": [76.03, 37.71], "axis": [0.61, -0.8], "pixels": 43, "knuckles": true}
+      ],
+      "knuckles": {"cell": 1, "pixels": 27},
+      "staff": {
+        "cell": 1,
+        "mode": "two-hand",
+        "grips": [[76.03, 37.71], [40.1, 49.46]],
+        "angle": -18.1,
+        "butt": [29.55, 52.91],
+        "tip": [86.58, 34.26],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 2,
+      "name": "idle-front-03",
+      "hands": [
+        {"centre": [38.25, 52.42], "axis": [0.58, 0.82], "pixels": 37, "knuckles": true},
+        {"centre": [72.26, 43.17], "axis": [0.53, -0.85], "pixels": 37, "knuckles": true}
+      ],
+      "knuckles": {"cell": 2, "pixels": 27},
+      "staff": {
+        "cell": 2,
+        "mode": "two-hand",
+        "grips": [[72.26, 43.17], [38.25, 52.42]],
+        "angle": -15.2,
+        "butt": [26.31, 55.67],
+        "tip": [84.2, 39.92],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 3,
+      "name": "idle-front-04",
+      "hands": [
+        {"centre": [46.96, 50.54], "axis": [0.91, 0.42], "pixels": 30, "knuckles": true},
+        {"centre": [78.92, 42.98], "axis": [0.73, -0.68], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 3, "pixels": 25},
+      "staff": {
+        "cell": 3,
+        "mode": "two-hand",
+        "grips": [[78.92, 42.98], [46.96, 50.54]],
+        "angle": -13.3,
+        "butt": [33.74, 53.67],
+        "tip": [92.13, 39.86],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 4,
+      "name": "run-front-01",
+      "hands": [
+        {"centre": [29.95, 47.15], "axis": [-0.46, 0.89], "pixels": 33, "knuckles": true},
+        {"centre": [73.34, 42.95], "axis": [0.71, -0.7], "pixels": 38, "knuckles": true}
+      ],
+      "knuckles": {"cell": 4, "pixels": 27},
+      "staff": {
+        "cell": 4,
+        "mode": "two-hand",
+        "grips": [[73.34, 42.95], [29.95, 47.15]],
+        "angle": -5.5,
+        "butt": [21.79, 47.94],
+        "tip": [81.51, 42.16],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 5,
+      "name": "run-front-02",
+      "hands": [
+        {"centre": [42.72, 55.15], "axis": [0.21, 0.98], "pixels": 33, "knuckles": true},
+        {"centre": [72.92, 52.5], "axis": [0.49, -0.87], "pixels": 35, "knuckles": true}
+      ],
+      "knuckles": {"cell": 5, "pixels": 24},
+      "staff": {
+        "cell": 5,
+        "mode": "two-hand",
+        "grips": [[72.92, 52.5], [42.72, 55.15]],
+        "angle": -5.0,
+        "butt": [27.93, 56.45],
+        "tip": [87.7, 51.2],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 6,
+      "name": "run-front-03",
+      "hands": [
+        {"centre": [28.54, 41.46], "axis": [-0.63, 0.78], "pixels": 35, "knuckles": true},
+        {"centre": [71.71, 39.47], "axis": [0.51, -0.86], "pixels": 37, "knuckles": true}
+      ],
+      "knuckles": {"cell": 6, "pixels": 23},
+      "staff": {
+        "cell": 6,
+        "mode": "two-hand",
+        "grips": [[71.71, 39.47], [28.54, 41.46]],
+        "angle": -2.6,
+        "butt": [20.16, 41.84],
+        "tip": [80.09, 39.08],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 7,
+      "name": "run-front-04",
+      "hands": [
+        {"centre": [40.12, 42.12], "axis": [0.56, 0.83], "pixels": 33, "knuckles": true},
+        {"centre": [64.98, 42.95], "axis": [0.86, -0.5], "pixels": 31, "knuckles": true}
+      ],
+      "knuckles": {"cell": 7, "pixels": 18},
+      "staff": {
+        "cell": 7,
+        "mode": "two-hand",
+        "grips": [[64.98, 42.95], [40.12, 42.12]],
+        "angle": 1.9,
+        "butt": [22.57, 41.54],
+        "tip": [82.54, 43.53],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 8,
+      "name": "run-front-05",
+      "hands": [
+        {"centre": [40.5, 42.64], "axis": [0.38, 0.92], "pixels": 29, "knuckles": true},
+        {"centre": [69.95, 42.59], "axis": [0.81, -0.58], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 8, "pixels": 19},
+      "staff": {
+        "cell": 8,
+        "mode": "two-hand",
+        "grips": [[69.95, 42.59], [40.5, 42.64]],
+        "angle": -0.1,
+        "butt": [25.23, 42.67],
+        "tip": [85.23, 42.56],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 9,
+      "name": "run-front-06",
+      "hands": [
+        {"centre": [43.17, 38.77], "axis": [0.62, 0.79], "pixels": 32, "knuckles": true},
+        {"centre": [65.88, 39.53], "axis": [0.99, -0.15], "pixels": 33, "knuckles": true}
+      ],
+      "knuckles": {"cell": 9, "pixels": 21},
+      "staff": {
+        "cell": 9,
+        "mode": "two-hand",
+        "grips": [[65.88, 39.53], [43.17, 38.77]],
+        "angle": 1.9,
+        "butt": [24.54, 38.14],
+        "tip": [84.5, 40.16],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 10,
+      "name": "attack1-front-01",
+      "hands": [
+        {"centre": [42.47, 49.81], "axis": [0.94, 0.35], "pixels": 36, "knuckles": true},
+        {"centre": [73.85, 41.23], "axis": [0.73, -0.69], "pixels": 42, "knuckles": true}
+      ],
+      "knuckles": {"cell": 10, "pixels": 27},
+      "staff": {
+        "cell": 10,
+        "mode": "two-hand",
+        "grips": [[73.85, 41.23], [42.47, 49.81]],
+        "angle": -15.3,
+        "butt": [29.22, 53.44],
+        "tip": [87.1, 37.61],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 11,
+      "name": "attack1-front-02",
+      "hands": [
+        {"centre": [36.72, 42.5], "axis": [0.89, 0.46], "pixels": 45, "knuckles": true},
+        {"centre": [75.21, 42.87], "axis": [0.78, -0.62], "pixels": 48, "knuckles": true}
+      ],
+      "knuckles": {"cell": 11, "pixels": 28},
+      "staff": {
+        "cell": 11,
+        "mode": "two-hand",
+        "grips": [[75.21, 42.87], [36.72, 42.5]],
+        "angle": 0.5,
+        "butt": [25.96, 42.4],
+        "tip": [85.96, 42.97],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 12,
+      "name": "attack1-front-03",
+      "hands": [
+        {"centre": [39.21, 51.93], "axis": [0.88, 0.48], "pixels": 33, "knuckles": true},
+        {"centre": [78.59, 35.59], "axis": [0.79, -0.62], "pixels": 39, "knuckles": true}
+      ],
+      "knuckles": {"cell": 12, "pixels": 27},
+      "staff": {
+        "cell": 12,
+        "mode": "two-hand",
+        "grips": [[78.59, 35.59], [39.21, 51.93]],
+        "angle": -22.5,
+        "butt": [31.19, 55.26],
+        "tip": [86.61, 32.26],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 13,
+      "name": "attack1-front-04",
+      "hands": [
+        {"centre": [40.5, 50.31], "axis": [0.65, 0.76], "pixels": 36, "knuckles": true},
+        {"centre": [78.58, 35.99], "axis": [0.72, -0.7], "pixels": 43, "knuckles": true}
+      ],
+      "knuckles": {"cell": 13, "pixels": 22},
+      "staff": {
+        "cell": 13,
+        "mode": "two-hand",
+        "grips": [[78.58, 35.99], [40.5, 50.31]],
+        "angle": -20.6,
+        "butt": [31.46, 53.71],
+        "tip": [87.62, 32.59],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 14,
+      "name": "attack1-front-05",
+      "hands": [
+        {"centre": [38.82, 48.79], "axis": [0.95, 0.31], "pixels": 39, "knuckles": true},
+        {"centre": [69.5, 38.94], "axis": [0.58, -0.81], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 14, "pixels": 26},
+      "staff": {
+        "cell": 14,
+        "mode": "two-hand",
+        "grips": [[69.5, 38.94], [38.82, 48.79]],
+        "angle": -17.8,
+        "butt": [25.6, 53.04],
+        "tip": [82.73, 34.7],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 15,
+      "name": "attack1-front-06",
+      "hands": [
+        {"centre": [42.43, 49.2], "axis": [0.96, 0.27], "pixels": 39, "knuckles": true},
+        {"centre": [74.62, 40.76], "axis": [0.68, -0.73], "pixels": 47, "knuckles": true}
+      ],
+      "knuckles": {"cell": 15, "pixels": 30},
+      "staff": {
+        "cell": 15,
+        "mode": "two-hand",
+        "grips": [[74.62, 40.76], [42.43, 49.2]],
+        "angle": -14.7,
+        "butt": [29.51, 52.59],
+        "tip": [87.54, 37.36],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 16,
+      "name": "attack2-front-01",
+      "hands": [
+        {"centre": [43.69, 45.95], "axis": [0.99, 0.14], "pixels": 40, "knuckles": true},
+        {"centre": [68.71, 39.53], "axis": [0.6, -0.8], "pixels": 43, "knuckles": true}
+      ],
+      "knuckles": {"cell": 16, "pixels": 29},
+      "staff": {
+        "cell": 16,
+        "mode": "two-hand",
+        "grips": [[68.71, 39.53], [43.69, 45.95]],
+        "angle": -14.4,
+        "butt": [27.14, 50.2],
+        "tip": [85.26, 35.27],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 17,
+      "name": "attack2-front-02",
+      "hands": [
+        {"centre": [34.53, 29.02], "axis": [0.4, -0.92], "pixels": 37, "knuckles": true},
+        {"centre": [48.56, 58.53], "axis": [-0.47, 0.88], "pixels": 41, "knuckles": true}
+      ],
+      "knuckles": {"cell": 17, "pixels": 25},
+      "staff": {
+        "cell": 17,
+        "mode": "two-hand",
+        "grips": [[34.53, 29.02], [48.56, 58.53]],
+        "angle": -115.4,
+        "butt": [54.43, 70.87],
+        "tip": [28.67, 16.68],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 18,
+      "name": "attack2-front-03",
+      "hands": [{"centre": [75.73, 36.11], "axis": [0.69, -0.73], "pixels": 34, "knuckles": true}],
+      "knuckles": {"cell": 18, "pixels": 9},
+      "staff": {
+        "cell": 18,
+        "mode": "one-hand",
+        "grips": [[75.73, 36.11]],
+        "angle": -12.0,
+        "butt": [63.99, 38.61],
+        "tip": [93.0, 32.44],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 19,
+      "name": "attack2-front-04",
+      "hands": [{"centre": [77.53, 37.44], "axis": [0.81, -0.59], "pixels": 42, "knuckles": true}],
+      "knuckles": {"cell": 19, "pixels": 13},
+      "staff": {
+        "cell": 19,
+        "mode": "one-hand",
+        "grips": [[77.53, 37.44]],
+        "angle": -10.0,
+        "butt": [65.71, 39.53],
+        "tip": [93.0, 34.72],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 20,
+      "name": "attack2-front-05",
+      "hands": [
+        {"centre": [45.81, 47.81], "axis": [0.95, 0.3], "pixels": 38, "knuckles": true},
+        {"centre": [70.09, 44.89], "axis": [1.0, 0.04], "pixels": 47, "knuckles": true}
+      ],
+      "knuckles": {"cell": 20, "pixels": 29},
+      "staff": {
+        "cell": 20,
+        "mode": "two-hand",
+        "grips": [[70.09, 44.89], [45.81, 47.81]],
+        "angle": -6.9,
+        "butt": [28.16, 49.93],
+        "tip": [87.73, 42.77],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 21,
+      "name": "attack2-front-06",
+      "hands": [
+        {"centre": [42.27, 48.92], "axis": [0.95, 0.3], "pixels": 37, "knuckles": true},
+        {"centre": [73.82, 40.11], "axis": [0.58, -0.81], "pixels": 45, "knuckles": true}
+      ],
+      "knuckles": {"cell": 21, "pixels": 29},
+      "staff": {
+        "cell": 21,
+        "mode": "two-hand",
+        "grips": [[73.82, 40.11], [42.27, 48.92]],
+        "angle": -15.6,
+        "butt": [29.15, 52.58],
+        "tip": [86.94, 36.44],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 22,
+      "name": "attack3-front-01",
+      "hands": [
+        {"centre": [34.54, 54.25], "axis": [0.83, 0.55], "pixels": 35, "knuckles": true},
+        {"centre": [66.26, 50.99], "axis": [0.97, -0.25], "pixels": 39, "knuckles": true}
+      ],
+      "knuckles": {"cell": 22, "pixels": 27},
+      "staff": {
+        "cell": 22,
+        "mode": "two-hand",
+        "grips": [[66.26, 50.99], [34.54, 54.25]],
+        "angle": -5.9,
+        "butt": [20.55, 55.69],
+        "tip": [80.24, 49.55],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 23,
+      "name": "attack3-front-02",
+      "hands": [
+        {"centre": [48.99, 50.77], "axis": [0.86, -0.5], "pixels": 42, "knuckles": true},
+        {"centre": [55.58, 50.83], "axis": [-0.9, -0.43], "pixels": 44, "knuckles": true}
+      ],
+      "knuckles": {"cell": 23, "pixels": 29},
+      "staff": {
+        "cell": 23,
+        "mode": "one-hand",
+        "grips": [[52.28, 50.8]],
+        "angle": 22.0,
+        "butt": [38.37, 45.18],
+        "tip": [84.73, 63.91],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 24,
+      "name": "attack3-front-03",
+      "hands": [
+        {"centre": [73.47, 44.53], "axis": [0.83, -0.56], "pixels": 42, "knuckles": true},
+        {"centre": [78.91, 40.74], "axis": [0.99, -0.1], "pixels": 29, "knuckles": true}
+      ],
+      "knuckles": {"cell": 24, "pixels": 29},
+      "staff": {
+        "cell": 24,
+        "mode": "one-hand",
+        "grips": [[76.19, 42.64]],
+        "angle": -18.0,
+        "butt": [56.22, 49.13],
+        "tip": [93.0, 37.18],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 25,
+      "name": "attack3-front-04",
+      "hands": [
+        {"centre": [72.04, 43.01], "axis": [0.86, -0.51], "pixels": 43, "knuckles": true},
+        {"centre": [79.98, 42.07], "axis": [1.0, -0.06], "pixels": 25, "knuckles": true}
+      ],
+      "knuckles": {"cell": 25, "pixels": 22},
+      "staff": {
+        "cell": 25,
+        "mode": "one-hand",
+        "grips": [[76.01, 42.54]],
+        "angle": -18.0,
+        "butt": [56.04, 49.03],
+        "tip": [93.0, 37.02],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 26,
+      "name": "attack3-front-05",
+      "hands": [
+        {"centre": [45.62, 49.13], "axis": [0.97, -0.25], "pixels": 48, "knuckles": true},
+        {"centre": [64.91, 47.56], "axis": [0.98, 0.21], "pixels": 45, "knuckles": true}
+      ],
+      "knuckles": {"cell": 26, "pixels": 20},
+      "staff": {
+        "cell": 26,
+        "mode": "two-hand",
+        "grips": [[64.91, 47.56], [45.62, 49.13]],
+        "angle": -4.7,
+        "butt": [25.37, 50.79],
+        "tip": [85.17, 45.9],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 27,
+      "name": "attack3-front-06",
+      "hands": [
+        {"centre": [40.31, 49.18], "axis": [0.96, 0.28], "pixels": 40, "knuckles": true},
+        {"centre": [71.79, 40.76], "axis": [0.61, -0.79], "pixels": 45, "knuckles": true}
+      ],
+      "knuckles": {"cell": 27, "pixels": 29},
+      "staff": {
+        "cell": 27,
+        "mode": "two-hand",
+        "grips": [[71.79, 40.76], [40.31, 49.18]],
+        "angle": -15.0,
+        "butt": [27.06, 52.72],
+        "tip": [85.03, 37.22],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 28,
+      "name": "dash-front-01",
+      "hands": [
+        {"centre": [55.55, 79.88], "axis": [0.12, 0.99], "pixels": 27, "knuckles": true},
+        {"centre": [81.09, 60.99], "axis": [0.57, 0.82], "pixels": 39, "knuckles": true}
+      ],
+      "knuckles": {"cell": 28, "pixels": 25},
+      "staff": {
+        "cell": 28,
+        "mode": "two-hand",
+        "grips": [[55.55, 79.88], [81.09, 60.99]],
+        "angle": 143.5,
+        "butt": [91.64, 53.19],
+        "tip": [45.01, 87.68],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 29,
+      "name": "dash-front-02",
+      "hands": [{"centre": [31.6, 37.35], "axis": [-0.99, 0.14], "pixels": 41, "knuckles": true}],
+      "knuckles": {"cell": 29, "pixels": 10},
+      "staff": {
+        "cell": 29,
+        "mode": "one-hand",
+        "grips": [[31.6, 37.35]],
+        "angle": 168.0,
+        "butt": [49.2, 33.61],
+        "tip": [3.0, 43.43],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 30,
+      "name": "dash-front-03",
+      "hands": [
+        {"centre": [38.39, 39.61], "axis": [-0.08, 1.0], "pixels": 47, "knuckles": true},
+        {"centre": [86.26, 31.77], "axis": [0.73, -0.68], "pixels": 38, "knuckles": true}
+      ],
+      "knuckles": {"cell": 30, "pixels": 26},
+      "staff": {
+        "cell": 30,
+        "mode": "two-hand",
+        "grips": [[86.26, 31.77], [38.39, 39.61]],
+        "angle": -9.3,
+        "butt": [31.48, 40.74],
+        "tip": [93.0, 30.67],
+        "depth": [-1, 0.4]
+      }
+    },
+    {
+      "index": 31,
+      "name": "dash-front-04",
+      "hands": [
+        {"centre": [47.53, 37.8], "axis": [0.96, 0.29], "pixels": 41, "knuckles": true},
+        {"centre": [72.07, 33.82], "axis": [0.83, -0.56], "pixels": 32, "knuckles": true}
+      ],
+      "knuckles": {"cell": 31, "pixels": 31},
+      "staff": {
+        "cell": 31,
+        "mode": "two-hand",
+        "grips": [[72.07, 33.82], [47.53, 37.8]],
+        "angle": -9.2,
+        "butt": [30.19, 40.62],
+        "tip": [89.41, 31.01],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 32,
+      "name": "dash-front-05",
+      "hands": [
+        {"centre": [31.64, 38.17], "axis": [-0.99, 0.13], "pixels": 34, "knuckles": true},
+        {"centre": [83.37, 73.27], "axis": [0.38, 0.93], "pixels": 37, "knuckles": true}
+      ],
+      "knuckles": {"cell": 32, "pixels": 22},
+      "staff": {
+        "cell": 32,
+        "mode": "two-hand",
+        "grips": [[83.37, 73.27], [31.64, 38.17]],
+        "angle": 34.2,
+        "butt": [25.85, 34.24],
+        "tip": [89.16, 77.2],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 33,
+      "name": "dash-front-06",
+      "hands": [
+        {"centre": [43.12, 47.97], "axis": [0.97, 0.25], "pixels": 39, "knuckles": true},
+        {"centre": [75.76, 39.9], "axis": [0.64, -0.76], "pixels": 44, "knuckles": true}
+      ],
+      "knuckles": {"cell": 33, "pixels": 29},
+      "staff": {
+        "cell": 33,
+        "mode": "two-hand",
+        "grips": [[75.76, 39.9], [43.12, 47.97]],
+        "angle": -13.9,
+        "butt": [30.32, 51.13],
+        "tip": [88.56, 36.74],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 34,
+      "name": "wave-front-01",
+      "hands": [
+        {"centre": [41.61, 46.44], "axis": [-0.93, 0.36], "pixels": 41, "knuckles": true},
+        {"centre": [66.43, 43.96], "axis": [1.0, -0.0], "pixels": 45, "knuckles": true}
+      ],
+      "knuckles": {"cell": 34, "pixels": 24},
+      "staff": {
+        "cell": 34,
+        "mode": "two-hand",
+        "grips": [[66.43, 43.96], [41.61, 46.44]],
+        "angle": -5.7,
+        "butt": [24.17, 48.19],
+        "tip": [83.87, 42.22],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 35,
+      "name": "wave-front-02",
+      "hands": [
+        {"centre": [24.29, 44.17], "axis": [-1.0, 0.0], "pixels": 49, "knuckles": true},
+        {"centre": [75.53, 44.59], "axis": [1.0, -0.05], "pixels": 42, "knuckles": true}
+      ],
+      "knuckles": {"cell": 35, "pixels": 25},
+      "staff": {
+        "cell": 35,
+        "mode": "two-hand",
+        "grips": [[75.53, 44.59], [24.29, 44.17]],
+        "angle": 0.5,
+        "butt": [17.29, 44.11],
+        "tip": [82.53, 44.64],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 36,
+      "name": "wave-front-03",
+      "hands": [
+        {"centre": [18.17, 41.31], "axis": [-0.97, -0.25], "pixels": 44, "knuckles": true},
+        {"centre": [79.19, 40.48], "axis": [0.98, -0.19], "pixels": 45, "knuckles": true}
+      ],
+      "knuckles": {"cell": 36, "pixels": 29},
+      "staff": {
+        "cell": 36,
+        "mode": "two-hand",
+        "grips": [[79.19, 40.48], [18.17, 41.31]],
+        "angle": -0.8,
+        "butt": [11.17, 41.41],
+        "tip": [86.19, 40.38],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 37,
+      "name": "wave-front-04",
+      "hands": [
+        {"centre": [22.73, 51.21], "axis": [-0.9, 0.43], "pixels": 39, "knuckles": true},
+        {"centre": [73.47, 47.76], "axis": [0.97, 0.25], "pixels": 40, "knuckles": true}
+      ],
+      "knuckles": {"cell": 37, "pixels": 29},
+      "staff": {
+        "cell": 37,
+        "mode": "two-hand",
+        "grips": [[73.47, 47.76], [22.73, 51.21]],
+        "angle": -3.9,
+        "butt": [15.74, 51.68],
+        "tip": [80.45, 47.29],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 38,
+      "name": "wave-front-05",
+      "hands": [
+        {"centre": [37.04, 49.73], "axis": [0.74, 0.67], "pixels": 36, "knuckles": true},
+        {"centre": [68.8, 50.46], "axis": [0.9, 0.44], "pixels": 34, "knuckles": true}
+      ],
+      "knuckles": {"cell": 38, "pixels": 30},
+      "staff": {
+        "cell": 38,
+        "mode": "two-hand",
+        "grips": [[68.8, 50.46], [37.04, 49.73]],
+        "angle": 1.3,
+        "butt": [22.93, 49.41],
+        "tip": [82.91, 50.78],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 39,
+      "name": "wave-front-06",
+      "hands": [
+        {"centre": [45.07, 46.59], "axis": [0.99, 0.12], "pixels": 25, "knuckles": true},
+        {"centre": [71.04, 39.82], "axis": [0.65, -0.76], "pixels": 35, "knuckles": true}
+      ],
+      "knuckles": {"cell": 39, "pixels": 24},
+      "staff": {
+        "cell": 39,
+        "mode": "two-hand",
+        "grips": [[71.04, 39.82], [45.07, 46.59]],
+        "angle": -14.6,
+        "butt": [29.02, 50.77],
+        "tip": [87.08, 35.64],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 40,
+      "name": "hurt-front-01",
+      "hands": [
+        {"centre": [32.81, 54.04], "axis": [0.06, 1.0], "pixels": 27, "knuckles": true},
+        {"centre": [71.38, 32.95], "axis": [0.55, -0.84], "pixels": 42, "knuckles": true}
+      ],
+      "knuckles": {"cell": 40, "pixels": 23},
+      "staff": {
+        "cell": 40,
+        "mode": "two-hand",
+        "grips": [[71.38, 32.95], [32.81, 54.04]],
+        "angle": -28.7,
+        "butt": [25.77, 57.89],
+        "tip": [78.41, 29.1],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 41,
+      "name": "hurt-front-02",
+      "hands": [
+        {"centre": [20.81, 44.99], "axis": [-0.9, -0.44], "pixels": 41, "knuckles": true},
+        {"centre": [62.34, 26.81], "axis": [0.58, -0.81], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 41, "pixels": 27},
+      "staff": {
+        "cell": 41,
+        "mode": "two-hand",
+        "grips": [[62.34, 26.81], [20.81, 44.99]],
+        "angle": -23.6,
+        "butt": [14.09, 47.93],
+        "tip": [69.06, 23.87],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 42,
+      "name": "hurt-front-03",
+      "hands": [
+        {"centre": [41.15, 51.79], "axis": [0.77, 0.63], "pixels": 40, "knuckles": true},
+        {"centre": [64.6, 46.11], "axis": [-0.89, -0.45], "pixels": 37, "knuckles": true}
+      ],
+      "knuckles": {"cell": 42, "pixels": 28},
+      "staff": {
+        "cell": 42,
+        "mode": "two-hand",
+        "grips": [[64.6, 46.11], [41.15, 51.79]],
+        "angle": -13.6,
+        "butt": [23.72, 56.02],
+        "tip": [82.03, 41.89],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 43,
+      "name": "hurt-front-04",
+      "hands": [
+        {"centre": [42.8, 46.97], "axis": [0.96, 0.29], "pixels": 38, "knuckles": true},
+        {"centre": [71.17, 37.92], "axis": [0.66, -0.75], "pixels": 48, "knuckles": true}
+      ],
+      "knuckles": {"cell": 43, "pixels": 28},
+      "staff": {
+        "cell": 43,
+        "mode": "two-hand",
+        "grips": [[71.17, 37.92], [42.8, 46.97]],
+        "angle": -17.7,
+        "butt": [28.41, 51.56],
+        "tip": [85.57, 33.33],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 44,
+      "name": "death-front-01",
+      "hands": [
+        {"centre": [41.82, 56.04], "axis": [0.13, 0.99], "pixels": 42, "knuckles": true},
+        {"centre": [75.97, 51.5], "axis": [0.85, 0.53], "pixels": 32, "knuckles": true}
+      ],
+      "knuckles": {"cell": 44, "pixels": 23},
+      "staff": {
+        "cell": 44,
+        "mode": "two-hand",
+        "grips": [[75.97, 51.5], [41.82, 56.04]],
+        "angle": -7.6,
+        "butt": [31.14, 57.46],
+        "tip": [86.65, 50.08],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 45,
+      "name": "death-front-02",
+      "hands": [
+        {"centre": [47.38, 66.72], "axis": [0.58, 0.81], "pixels": 44, "knuckles": true},
+        {"centre": [75.2, 62.53], "axis": [0.68, 0.73], "pixels": 34, "knuckles": true}
+      ],
+      "knuckles": {"cell": 45, "pixels": 21},
+      "staff": {
+        "cell": 45,
+        "mode": "two-hand",
+        "grips": [[47.38, 66.72], [75.2, 62.53]],
+        "angle": 171.4,
+        "butt": [87.99, 60.61],
+        "tip": [34.59, 68.64],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 46,
+      "name": "death-front-03",
+      "hands": [
+        {"centre": [46.25, 77.89], "axis": [0.51, 0.86], "pixels": 42, "knuckles": true},
+        {"centre": [68.25, 80.21], "axis": [0.3, 0.95], "pixels": 32, "knuckles": true}
+      ],
+      "knuckles": {"cell": 46, "pixels": 24},
+      "staff": {
+        "cell": 46,
+        "mode": "free",
+        "grips": [],
+        "angle": 0.0,
+        "butt": [14.5, 83.5],
+        "tip": [54.5, 83.5],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 47,
+      "name": "death-front-04",
+      "hands": [
+        {"centre": [44.14, 73.68], "axis": [0.06, 1.0], "pixels": 37, "knuckles": true},
+        {"centre": [67.37, 79.3], "axis": [-0.96, 0.27], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 47, "pixels": 28},
+      "staff": {
+        "cell": 47,
+        "mode": "free",
+        "grips": [],
+        "angle": 1.4,
+        "butt": [10.5, 84.5],
+        "tip": [52.5, 85.5],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 48,
+      "name": "death-front-05",
+      "hands": [{"centre": [62.83, 80.35], "axis": [0.95, 0.3], "pixels": 37, "knuckles": true}],
+      "knuckles": {"cell": 48, "pixels": 13},
+      "staff": {
+        "cell": 48,
+        "mode": "free",
+        "grips": [],
+        "angle": 1.4,
+        "butt": [8.5, 85.5],
+        "tip": [50.5, 86.5],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 49,
+      "name": "death-front-06",
+      "hands": [{"centre": [76.45, 77.33], "axis": [1.0, -0.04], "pixels": 44, "knuckles": true}],
+      "knuckles": {"cell": 49, "pixels": 13},
+      "staff": {
+        "cell": 49,
+        "mode": "free",
+        "grips": [],
+        "angle": 1.4,
+        "butt": [8.5, 85.5],
+        "tip": [50.5, 86.5],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 50,
+      "name": "idle-back-01",
+      "hands": [
+        {"centre": [38.83, 48.33], "axis": [0.89, 0.46], "pixels": 21, "knuckles": true},
+        {"centre": [73.35, 40.23], "axis": [0.35, -0.94], "pixels": 38, "knuckles": true}
+      ],
+      "knuckles": {"cell": 50, "pixels": 17},
+      "staff": {
+        "cell": 50,
+        "mode": "two-hand",
+        "grips": [[73.35, 40.23], [38.83, 48.33]],
+        "angle": -13.2,
+        "butt": [26.89, 51.14],
+        "tip": [85.3, 37.42],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 51,
+      "name": "idle-back-02",
+      "hands": [
+        {"centre": [39.25, 47.75], "axis": [0.96, 0.29], "pixels": 18, "knuckles": false},
+        {"centre": [73.44, 38.94], "axis": [0.37, -0.93], "pixels": 41, "knuckles": true}
+      ],
+      "knuckles": {"cell": 51, "pixels": 10},
+      "staff": {
+        "cell": 51,
+        "mode": "two-hand",
+        "grips": [[73.44, 38.94], [39.25, 47.75]],
+        "angle": -14.4,
+        "butt": [27.3, 50.83],
+        "tip": [85.4, 35.87],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 52,
+      "name": "idle-back-03",
+      "hands": [
+        {"centre": [38.83, 51.33], "axis": [0.8, 0.6], "pixels": 21, "knuckles": true},
+        {"centre": [74.36, 42.89], "axis": [0.41, -0.91], "pixels": 43, "knuckles": true}
+      ],
+      "knuckles": {"cell": 52, "pixels": 17},
+      "staff": {
+        "cell": 52,
+        "mode": "two-hand",
+        "grips": [[74.36, 42.89], [38.83, 51.33]],
+        "angle": -13.4,
+        "butt": [27.41, 54.05],
+        "tip": [85.78, 40.17],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 53,
+      "name": "idle-back-04",
+      "hands": [
+        {"centre": [38.83, 48.33], "axis": [0.78, 0.62], "pixels": 20, "knuckles": true},
+        {"centre": [73.44, 39.79], "axis": [0.44, -0.9], "pixels": 39, "knuckles": true}
+      ],
+      "knuckles": {"cell": 53, "pixels": 18},
+      "staff": {
+        "cell": 53,
+        "mode": "two-hand",
+        "grips": [[73.44, 39.79], [38.83, 48.33]],
+        "angle": -13.9,
+        "butt": [27.01, 51.25],
+        "tip": [85.26, 36.88],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 54,
+      "name": "run-back-01",
+      "hands": [
+        {"centre": [38.2, 49.4], "axis": [0.81, 0.59], "pixels": 23, "knuckles": true},
+        {"centre": [75.62, 38.62], "axis": [0.36, -0.93], "pixels": 37, "knuckles": true}
+      ],
+      "knuckles": {"cell": 54, "pixels": 19},
+      "staff": {
+        "cell": 54,
+        "mode": "two-hand",
+        "grips": [[75.62, 38.62], [38.2, 49.4]],
+        "angle": -16.1,
+        "butt": [28.08, 52.31],
+        "tip": [85.74, 35.71],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 55,
+      "name": "run-back-02",
+      "hands": [
+        {"centre": [40.19, 48.44], "axis": [0.39, 0.92], "pixels": 33, "knuckles": true},
+        {"centre": [74.7, 45.8], "axis": [0.3, -0.95], "pixels": 32, "knuckles": true}
+      ],
+      "knuckles": {"cell": 55, "pixels": 18},
+      "staff": {
+        "cell": 55,
+        "mode": "two-hand",
+        "grips": [[74.7, 45.8], [40.19, 48.44]],
+        "angle": -4.4,
+        "butt": [27.53, 49.4],
+        "tip": [87.36, 44.83],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 56,
+      "name": "run-back-03",
+      "hands": [
+        {"centre": [32.5, 38.64], "axis": [-0.59, 0.81], "pixels": 33, "knuckles": true},
+        {"centre": [71.96, 35.29], "axis": [0.16, -0.99], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 56, "pixels": 20},
+      "staff": {
+        "cell": 56,
+        "mode": "two-hand",
+        "grips": [[71.96, 35.29], [32.5, 38.64]],
+        "angle": -4.9,
+        "butt": [22.34, 39.51],
+        "tip": [82.12, 34.43],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 57,
+      "name": "run-back-04",
+      "hands": [
+        {"centre": [31.61, 52.0], "axis": [-0.59, 0.81], "pixels": 40, "knuckles": true},
+        {"centre": [71.4, 36.8], "axis": [0.96, -0.29], "pixels": 11, "knuckles": true}
+      ],
+      "knuckles": {"cell": 57, "pixels": 17},
+      "staff": {
+        "cell": 57,
+        "mode": "two-hand",
+        "grips": [[71.4, 36.8], [31.61, 52.0]],
+        "angle": -20.9,
+        "butt": [23.48, 55.11],
+        "tip": [79.53, 33.69],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 58,
+      "name": "run-back-05",
+      "hands": [
+        {"centre": [33.3, 55.7], "axis": [-0.5, 0.87], "pixels": 45, "knuckles": true},
+        {"centre": [70.61, 39.94], "axis": [0.9, 0.44], "pixels": 10, "knuckles": true}
+      ],
+      "knuckles": {"cell": 58, "pixels": 19},
+      "staff": {
+        "cell": 58,
+        "mode": "two-hand",
+        "grips": [[70.61, 39.94], [33.3, 55.7]],
+        "angle": -22.9,
+        "butt": [24.32, 59.49],
+        "tip": [79.59, 36.15],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 59,
+      "name": "run-back-06",
+      "hands": [
+        {"centre": [28.6, 50.76], "axis": [-0.53, 0.85], "pixels": 47, "knuckles": true},
+        {"centre": [69.38, 32.25], "axis": [0.88, -0.48], "pixels": 10, "knuckles": true}
+      ],
+      "knuckles": {"cell": 59, "pixels": 18},
+      "staff": {
+        "cell": 59,
+        "mode": "two-hand",
+        "grips": [[69.38, 32.25], [28.6, 50.76]],
+        "angle": -24.4,
+        "butt": [21.67, 53.91],
+        "tip": [76.3, 29.11],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 60,
+      "name": "attack1-back-01",
+      "hands": [
+        {"centre": [36.9, 48.9], "axis": [0.57, 0.82], "pixels": 25, "knuckles": false},
+        {"centre": [72.85, 40.13], "axis": [0.39, -0.92], "pixels": 50, "knuckles": true}
+      ],
+      "knuckles": {"cell": 60, "pixels": 14},
+      "staff": {
+        "cell": 60,
+        "mode": "two-hand",
+        "grips": [[72.85, 40.13], [36.9, 48.9]],
+        "angle": -13.7,
+        "butt": [25.73, 51.63],
+        "tip": [84.02, 37.4],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 61,
+      "name": "attack1-back-02",
+      "hands": [{"centre": [71.33, 39.7], "axis": [0.51, -0.86], "pixels": 45, "knuckles": true}],
+      "knuckles": {"cell": 61, "pixels": 14},
+      "staff": {
+        "cell": 61,
+        "mode": "one-hand",
+        "grips": [[71.33, 39.7]],
+        "angle": -18.0,
+        "butt": [51.35, 46.19],
+        "tip": [93.0, 32.66],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 62,
+      "name": "attack1-back-03",
+      "hands": [
+        {"centre": [30.75, 51.0], "axis": [0.91, 0.42], "pixels": 30, "knuckles": false},
+        {"centre": [78.29, 34.61], "axis": [0.76, -0.66], "pixels": 46, "knuckles": true}
+      ],
+      "knuckles": {"cell": 62, "pixels": 13},
+      "staff": {
+        "cell": 62,
+        "mode": "two-hand",
+        "grips": [[78.29, 34.61], [30.75, 51.0]],
+        "angle": -19.0,
+        "butt": [24.13, 53.28],
+        "tip": [84.91, 32.32],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 63,
+      "name": "attack1-back-04",
+      "hands": [
+        {"centre": [35.25, 49.25], "axis": [0.04, 1.0], "pixels": 22, "knuckles": false},
+        {"centre": [77.47, 39.84], "axis": [0.68, -0.73], "pixels": 44, "knuckles": true}
+      ],
+      "knuckles": {"cell": 63, "pixels": 12},
+      "staff": {
+        "cell": 63,
+        "mode": "two-hand",
+        "grips": [[77.47, 39.84], [35.25, 49.25]],
+        "angle": -12.6,
+        "butt": [27.08, 51.07],
+        "tip": [85.64, 38.02],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 64,
+      "name": "attack1-back-05",
+      "hands": [
+        {"centre": [35.47, 41.08], "axis": [-0.31, -0.95], "pixels": 41, "knuckles": true},
+        {"centre": [69.18, 39.38], "axis": [0.46, -0.89], "pixels": 49, "knuckles": true}
+      ],
+      "knuckles": {"cell": 64, "pixels": 25},
+      "staff": {
+        "cell": 64,
+        "mode": "two-hand",
+        "grips": [[69.18, 39.38], [35.47, 41.08]],
+        "angle": -2.9,
+        "butt": [22.37, 41.75],
+        "tip": [82.29, 38.72],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 65,
+      "name": "attack1-back-06",
+      "hands": [
+        {"centre": [37.28, 48.94], "axis": [1.0, 0.01], "pixels": 27, "knuckles": true},
+        {"centre": [71.98, 39.83], "axis": [0.35, -0.94], "pixels": 49, "knuckles": true}
+      ],
+      "knuckles": {"cell": 65, "pixels": 14},
+      "staff": {
+        "cell": 65,
+        "mode": "two-hand",
+        "grips": [[71.98, 39.83], [37.28, 48.94]],
+        "angle": -14.7,
+        "butt": [25.61, 52.01],
+        "tip": [83.64, 36.76],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 66,
+      "name": "attack2-back-01",
+      "hands": [
+        {"centre": [38.83, 47.33], "axis": [0.98, 0.22], "pixels": 24, "knuckles": true},
+        {"centre": [74.67, 40.04], "axis": [0.5, -0.86], "pixels": 51, "knuckles": true}
+      ],
+      "knuckles": {"cell": 66, "pixels": 18},
+      "staff": {
+        "cell": 66,
+        "mode": "two-hand",
+        "grips": [[74.67, 40.04], [38.83, 47.33]],
+        "angle": -11.5,
+        "butt": [27.36, 49.67],
+        "tip": [86.15, 37.71],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 67,
+      "name": "attack2-back-02",
+      "hands": [
+        {"centre": [36.72, 32.63], "axis": [-0.7, -0.71], "pixels": 26, "knuckles": true},
+        {"centre": [65.38, 50.44], "axis": [0.99, -0.1], "pixels": 31, "knuckles": true}
+      ],
+      "knuckles": {"cell": 67, "pixels": 23},
+      "staff": {
+        "cell": 67,
+        "mode": "two-hand",
+        "grips": [[65.38, 50.44], [36.72, 32.63]],
+        "angle": 31.9,
+        "butt": [25.56, 25.7],
+        "tip": [76.53, 57.37],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 68,
+      "name": "attack2-back-03",
+      "hands": [{"centre": [78.5, 30.58], "axis": [0.6, -0.8], "pixels": 46, "knuckles": true}],
+      "knuckles": {"cell": 68, "pixels": 13},
+      "staff": {
+        "cell": 68,
+        "mode": "one-hand",
+        "grips": [[78.5, 30.58]],
+        "angle": -14.0,
+        "butt": [63.95, 34.21],
+        "tip": [93.0, 26.96],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 69,
+      "name": "attack2-back-04",
+      "hands": [
+        {"centre": [36.36, 49.5], "axis": [0.99, 0.11], "pixels": 22, "knuckles": true},
+        {"centre": [77.34, 37.66], "axis": [0.64, -0.77], "pixels": 43, "knuckles": true}
+      ],
+      "knuckles": {"cell": 69, "pixels": 13},
+      "staff": {
+        "cell": 69,
+        "mode": "two-hand",
+        "grips": [[77.34, 37.66], [36.36, 49.5]],
+        "angle": -16.1,
+        "butt": [28.03, 51.91],
+        "tip": [85.67, 35.26],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 70,
+      "name": "attack2-back-05",
+      "hands": [
+        {"centre": [40.66, 48.66], "axis": [0.92, 0.39], "pixels": 31, "knuckles": true},
+        {"centre": [72.18, 42.29], "axis": [-0.02, -1.0], "pixels": 38, "knuckles": true}
+      ],
+      "knuckles": {"cell": 70, "pixels": 22},
+      "staff": {
+        "cell": 70,
+        "mode": "two-hand",
+        "grips": [[72.18, 42.29], [40.66, 48.66]],
+        "angle": -11.4,
+        "butt": [27.01, 51.42],
+        "tip": [85.82, 39.53],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 71,
+      "name": "attack2-back-06",
+      "hands": [
+        {"centre": [38.0, 49.5], "axis": [0.84, 0.55], "pixels": 4, "knuckles": false},
+        {"centre": [72.8, 40.14], "axis": [0.44, -0.9], "pixels": 50, "knuckles": true}
+      ],
+      "knuckles": {"cell": 71, "pixels": 15},
+      "staff": {
+        "cell": 71,
+        "mode": "two-hand",
+        "grips": [[72.8, 40.14], [38.0, 49.5]],
+        "angle": -15.1,
+        "butt": [26.43, 52.61],
+        "tip": [84.37, 37.02],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 72,
+      "name": "attack3-back-01",
+      "hands": [
+        {"centre": [34.87, 51.55], "axis": [0.96, 0.3], "pixels": 31, "knuckles": true},
+        {"centre": [62.59, 48.63], "axis": [0.77, -0.64], "pixels": 57, "knuckles": true}
+      ],
+      "knuckles": {"cell": 72, "pixels": 23},
+      "staff": {
+        "cell": 72,
+        "mode": "two-hand",
+        "grips": [[62.59, 48.63], [34.87, 51.55]],
+        "angle": -6.0,
+        "butt": [18.9, 53.24],
+        "tip": [78.57, 46.95],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 73,
+      "name": "attack3-back-02",
+      "hands": [],
+      "knuckles": {"cell": 73, "pixels": 0},
+      "staff": {
+        "cell": 73,
+        "mode": "one-hand",
+        "grips": [[52.5, 47.5]],
+        "angle": -16.0,
+        "butt": [23.66, 55.77],
+        "tip": [81.34, 39.23],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 74,
+      "name": "attack3-back-03",
+      "hands": [
+        {"centre": [70.47, 33.47], "axis": [-0.38, -0.92], "pixels": 37, "knuckles": true},
+        {"centre": [77.61, 35.93], "axis": [0.77, -0.63], "pixels": 45, "knuckles": true}
+      ],
+      "knuckles": {"cell": 74, "pixels": 26},
+      "staff": {
+        "cell": 74,
+        "mode": "one-hand",
+        "grips": [[74.04, 34.7]],
+        "angle": -18.0,
+        "butt": [54.07, 41.19],
+        "tip": [93.0, 28.54],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 75,
+      "name": "attack3-back-04",
+      "hands": [
+        {"centre": [68.85, 34.37], "axis": [-0.44, -0.9], "pixels": 27, "knuckles": true},
+        {"centre": [77.5, 35.83], "axis": [0.71, -0.7], "pixels": 45, "knuckles": true}
+      ],
+      "knuckles": {"cell": 75, "pixels": 24},
+      "staff": {
+        "cell": 75,
+        "mode": "one-hand",
+        "grips": [[73.17, 35.1]],
+        "angle": -18.0,
+        "butt": [53.2, 41.59],
+        "tip": [93.0, 28.66],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 76,
+      "name": "attack3-back-05",
+      "hands": [
+        {"centre": [34.09, 42.82], "axis": [-0.86, -0.51], "pixels": 48, "knuckles": true},
+        {"centre": [64.94, 46.22], "axis": [0.97, -0.23], "pixels": 43, "knuckles": true}
+      ],
+      "knuckles": {"cell": 76, "pixels": 32},
+      "staff": {
+        "cell": 76,
+        "mode": "two-hand",
+        "grips": [[64.94, 46.22], [34.09, 42.82]],
+        "angle": 6.3,
+        "butt": [19.7, 41.24],
+        "tip": [79.34, 47.81],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 77,
+      "name": "attack3-back-06",
+      "hands": [
+        {"centre": [35.5, 49.5], "axis": [0.98, 0.21], "pixels": 25, "knuckles": true},
+        {"centre": [71.36, 37.57], "axis": [0.31, -0.95], "pixels": 49, "knuckles": true}
+      ],
+      "knuckles": {"cell": 77, "pixels": 18},
+      "staff": {
+        "cell": 77,
+        "mode": "two-hand",
+        "grips": [[71.36, 37.57], [35.5, 49.5]],
+        "angle": -18.4,
+        "butt": [24.96, 53.01],
+        "tip": [81.9, 34.06],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 78,
+      "name": "dash-back-01",
+      "hands": [{"centre": [74.53, 79.42], "axis": [0.42, 0.91], "pixels": 51, "knuckles": true}],
+      "knuckles": {"cell": 78, "pixels": 12},
+      "staff": {
+        "cell": 78,
+        "mode": "one-hand",
+        "grips": [[74.53, 79.42]],
+        "angle": -18.0,
+        "butt": [54.55, 85.91],
+        "tip": [93.0, 73.42],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 79,
+      "name": "dash-back-02",
+      "hands": [
+        {"centre": [27.45, 39.96], "axis": [-0.88, 0.47], "pixels": 50, "knuckles": true},
+        {"centre": [78.21, 45.79], "axis": [-0.06, -1.0], "pixels": 29, "knuckles": true}
+      ],
+      "knuckles": {"cell": 79, "pixels": 17},
+      "staff": {
+        "cell": 79,
+        "mode": "two-hand",
+        "grips": [[78.21, 45.79], [27.45, 39.96]],
+        "angle": 6.6,
+        "butt": [20.49, 39.16],
+        "tip": [85.16, 46.59],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 80,
+      "name": "dash-back-03",
+      "hands": [{"centre": [84.45, 33.05], "axis": [0.38, -0.92], "pixels": 48, "knuckles": true}],
+      "knuckles": {"cell": 80, "pixels": 15},
+      "staff": {
+        "cell": 80,
+        "mode": "one-hand",
+        "grips": [[84.45, 33.05]],
+        "angle": -12.0,
+        "butt": [66.84, 36.8],
+        "tip": [93.0, 31.23],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 81,
+      "name": "dash-back-04",
+      "hands": [{"centre": [70.97, 35.4], "axis": [0.26, -0.97], "pixels": 40, "knuckles": true}],
+      "knuckles": {"cell": 81, "pixels": 14},
+      "staff": {
+        "cell": 81,
+        "mode": "one-hand",
+        "grips": [[70.97, 35.4]],
+        "angle": -20.0,
+        "butt": [48.41, 43.61],
+        "tip": [93.0, 27.38],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 82,
+      "name": "dash-back-05",
+      "hands": [
+        {"centre": [28.96, 42.53], "axis": [-0.99, 0.16], "pixels": 45, "knuckles": true},
+        {"centre": [79.12, 74.62], "axis": [0.39, 0.92], "pixels": 41, "knuckles": true}
+      ],
+      "knuckles": {"cell": 82, "pixels": 28},
+      "staff": {
+        "cell": 82,
+        "mode": "two-hand",
+        "grips": [[79.12, 74.62], [28.96, 42.53]],
+        "angle": 32.6,
+        "butt": [23.07, 38.75],
+        "tip": [85.02, 78.4],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 83,
+      "name": "dash-back-06",
+      "hands": [
+        {"centre": [36.79, 48.21], "axis": [0.99, 0.11], "pixels": 24, "knuckles": true},
+        {"centre": [74.42, 38.4], "axis": [0.47, -0.89], "pixels": 45, "knuckles": true}
+      ],
+      "knuckles": {"cell": 83, "pixels": 14},
+      "staff": {
+        "cell": 83,
+        "mode": "two-hand",
+        "grips": [[74.42, 38.4], [36.79, 48.21]],
+        "angle": -14.6,
+        "butt": [26.58, 50.88],
+        "tip": [84.63, 35.73],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 84,
+      "name": "wave-back-01",
+      "hands": [
+        {"centre": [61.0, 35.67], "axis": [-0.84, -0.54], "pixels": 26, "knuckles": true},
+        {"centre": [72.78, 35.56], "axis": [0.53, -0.85], "pixels": 44, "knuckles": true}
+      ],
+      "knuckles": {"cell": 84, "pixels": 20},
+      "staff": {
+        "cell": 84,
+        "mode": "two-hand",
+        "grips": [[72.78, 35.56], [61.0, 35.67]],
+        "angle": -0.5,
+        "butt": [36.89, 35.89],
+        "tip": [93.0, 35.36],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 85,
+      "name": "wave-back-02",
+      "hands": [
+        {"centre": [19.23, 41.68], "axis": [-0.95, -0.31], "pixels": 55, "knuckles": true},
+        {"centre": [76.32, 37.91], "axis": [0.85, -0.53], "pixels": 51, "knuckles": true}
+      ],
+      "knuckles": {"cell": 85, "pixels": 30},
+      "staff": {
+        "cell": 85,
+        "mode": "two-hand",
+        "grips": [[76.32, 37.91], [19.23, 41.68]],
+        "angle": -3.8,
+        "butt": [12.24, 42.14],
+        "tip": [83.3, 37.45],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 86,
+      "name": "wave-back-03",
+      "hands": [
+        {"centre": [16.56, 42.53], "axis": [-0.99, -0.15], "pixels": 39, "knuckles": true},
+        {"centre": [79.45, 35.91], "axis": [0.91, -0.41], "pixels": 52, "knuckles": true}
+      ],
+      "knuckles": {"cell": 86, "pixels": 22},
+      "staff": {
+        "cell": 86,
+        "mode": "two-hand",
+        "grips": [[79.45, 35.91], [16.56, 42.53]],
+        "angle": -6.0,
+        "butt": [9.6, 43.26],
+        "tip": [86.41, 35.18],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 87,
+      "name": "wave-back-04",
+      "hands": [
+        {"centre": [19.99, 48.76], "axis": [-0.99, 0.16], "pixels": 50, "knuckles": true},
+        {"centre": [76.29, 49.03], "axis": [0.99, 0.13], "pixels": 50, "knuckles": true}
+      ],
+      "knuckles": {"cell": 87, "pixels": 30},
+      "staff": {
+        "cell": 87,
+        "mode": "two-hand",
+        "grips": [[76.29, 49.03], [19.99, 48.76]],
+        "angle": 0.3,
+        "butt": [12.99, 48.72],
+        "tip": [83.29, 49.06],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 88,
+      "name": "wave-back-05",
+      "hands": [
+        {"centre": [32.89, 53.83], "axis": [0.48, 0.88], "pixels": 37, "knuckles": true},
+        {"centre": [71.08, 52.95], "axis": [0.99, 0.12], "pixels": 42, "knuckles": true}
+      ],
+      "knuckles": {"cell": 88, "pixels": 24},
+      "staff": {
+        "cell": 88,
+        "mode": "two-hand",
+        "grips": [[71.08, 52.95], [32.89, 53.83]],
+        "angle": -1.3,
+        "butt": [21.99, 54.08],
+        "tip": [81.98, 52.7],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 89,
+      "name": "wave-back-06",
+      "hands": [
+        {"centre": [37.38, 49.12], "axis": [0.93, 0.37], "pixels": 25, "knuckles": true},
+        {"centre": [73.83, 38.24], "axis": [0.38, -0.92], "pixels": 48, "knuckles": true}
+      ],
+      "knuckles": {"cell": 89, "pixels": 15},
+      "staff": {
+        "cell": 89,
+        "mode": "two-hand",
+        "grips": [[73.83, 38.24], [37.38, 49.12]],
+        "angle": -16.6,
+        "butt": [26.86, 52.27],
+        "tip": [84.35, 35.1],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 90,
+      "name": "hurt-back-01",
+      "hands": [
+        {"centre": [35.12, 44.62], "axis": [0.76, 0.66], "pixels": 30, "knuckles": true},
+        {"centre": [71.26, 30.97], "axis": [-0.13, -0.99], "pixels": 47, "knuckles": true}
+      ],
+      "knuckles": {"cell": 90, "pixels": 22},
+      "staff": {
+        "cell": 90,
+        "mode": "two-hand",
+        "grips": [[71.26, 30.97], [35.12, 44.62]],
+        "angle": -20.7,
+        "butt": [25.13, 48.4],
+        "tip": [81.26, 27.2],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 91,
+      "name": "hurt-back-02",
+      "hands": [
+        {"centre": [20.68, 44.79], "axis": [-1.0, -0.08], "pixels": 42, "knuckles": true},
+        {"centre": [59.63, 17.79], "axis": [-0.21, -0.98], "pixels": 56, "knuckles": true}
+      ],
+      "knuckles": {"cell": 91, "pixels": 31},
+      "staff": {
+        "cell": 91,
+        "mode": "two-hand",
+        "grips": [[59.63, 17.79], [20.68, 44.79]],
+        "angle": -34.7,
+        "butt": [14.93, 48.78],
+        "tip": [65.39, 13.8],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 92,
+      "name": "hurt-back-03",
+      "hands": [{"centre": [70.23, 48.83], "axis": [0.49, -0.87], "pixels": 29, "knuckles": true}],
+      "knuckles": {"cell": 92, "pixels": 5},
+      "staff": {
+        "cell": 92,
+        "mode": "one-hand",
+        "grips": [[70.23, 48.83]],
+        "angle": 30.0,
+        "butt": [54.64, 39.83],
+        "tip": [93.0, 61.98],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 93,
+      "name": "hurt-back-04",
+      "hands": [
+        {"centre": [36.0, 47.0], "axis": [1.0, -0.05], "pixels": 32, "knuckles": true},
+        {"centre": [74.37, 38.99], "axis": [0.44, -0.9], "pixels": 49, "knuckles": true}
+      ],
+      "knuckles": {"cell": 93, "pixels": 13},
+      "staff": {
+        "cell": 93,
+        "mode": "two-hand",
+        "grips": [[74.37, 38.99], [36.0, 47.0]],
+        "angle": -11.8,
+        "butt": [25.82, 49.13],
+        "tip": [84.55, 36.86],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 94,
+      "name": "death-back-01",
+      "hands": [
+        {"centre": [37.17, 50.0], "axis": [0.14, 0.99], "pixels": 18, "knuckles": true},
+        {"centre": [71.5, 58.76], "axis": [0.62, 0.78], "pixels": 32, "knuckles": true}
+      ],
+      "knuckles": {"cell": 94, "pixels": 14},
+      "staff": {
+        "cell": 94,
+        "mode": "two-hand",
+        "grips": [[71.5, 58.76], [37.17, 50.0]],
+        "angle": 14.3,
+        "butt": [25.26, 46.96],
+        "tip": [83.4, 61.8],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 95,
+      "name": "death-back-02",
+      "hands": [{"centre": [71.39, 63.78], "axis": [0.62, 0.78], "pixels": 29, "knuckles": true}],
+      "knuckles": {"cell": 95, "pixels": 6},
+      "staff": {
+        "cell": 95,
+        "mode": "one-hand",
+        "grips": [[71.39, 63.78]],
+        "angle": 40.0,
+        "butt": [59.9, 54.14],
+        "tip": [93.0, 81.91],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 96,
+      "name": "death-back-03",
+      "hands": [{"centre": [70.58, 75.46], "axis": [0.75, 0.67], "pixels": 33, "knuckles": true}],
+      "knuckles": {"cell": 96, "pixels": 12},
+      "staff": {
+        "cell": 96,
+        "mode": "free",
+        "grips": [],
+        "angle": 1.4,
+        "butt": [40.5, 82.5],
+        "tip": [82.5, 83.5],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 97,
+      "name": "death-back-04",
+      "hands": [{"centre": [70.5, 74.92], "axis": [-0.49, -0.87], "pixels": 25, "knuckles": true}],
+      "knuckles": {"cell": 97, "pixels": 5},
+      "staff": {
+        "cell": 97,
+        "mode": "free",
+        "grips": [],
+        "angle": 1.4,
+        "butt": [34.5, 82.5],
+        "tip": [76.5, 83.5],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 98,
+      "name": "death-back-05",
+      "hands": [],
+      "knuckles": {"cell": 98, "pixels": 0},
+      "staff": {
+        "cell": 98,
+        "mode": "free",
+        "grips": [],
+        "angle": 1.4,
+        "butt": [30.5, 82.5],
+        "tip": [72.5, 83.5],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 99,
+      "name": "death-back-06",
+      "hands": [{"centre": [71.57, 70.9], "axis": [0.41, -0.91], "pixels": 41, "knuckles": true}],
+      "knuckles": {"cell": 99, "pixels": 14},
+      "staff": {
+        "cell": 99,
+        "mode": "free",
+        "grips": [],
+        "angle": 1.4,
+        "butt": [30.5, 82.5],
+        "tip": [72.5, 83.5],
+        "depth": [-1, -1]
+      }
+    },
+    {
+      "index": 100,
+      "name": "idle-side-01",
+      "hands": [
+        {"centre": [34.82, 52.79], "axis": [0.95, 0.31], "pixels": 39, "knuckles": true},
+        {"centre": [65.5, 42.94], "axis": [0.58, -0.81], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 100, "pixels": 26},
+      "staff": {
+        "cell": 100,
+        "mode": "two-hand",
+        "grips": [[65.5, 42.94], [34.82, 52.79]],
+        "angle": -17.8,
+        "butt": [21.6, 57.04],
+        "tip": [78.73, 38.7],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 101,
+      "name": "idle-side-02",
+      "hands": [
+        {"centre": [34.82, 51.79], "axis": [0.95, 0.31], "pixels": 39, "knuckles": true},
+        {"centre": [65.5, 41.94], "axis": [0.58, -0.81], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 101, "pixels": 26},
+      "staff": {
+        "cell": 101,
+        "mode": "two-hand",
+        "grips": [[65.5, 41.94], [34.82, 51.79]],
+        "angle": -17.8,
+        "butt": [21.6, 56.04],
+        "tip": [78.73, 37.7],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 102,
+      "name": "idle-side-03",
+      "hands": [
+        {"centre": [34.82, 52.79], "axis": [0.95, 0.31], "pixels": 39, "knuckles": true},
+        {"centre": [65.5, 42.94], "axis": [0.58, -0.81], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 102, "pixels": 26},
+      "staff": {
+        "cell": 102,
+        "mode": "two-hand",
+        "grips": [[65.5, 42.94], [34.82, 52.79]],
+        "angle": -17.8,
+        "butt": [21.6, 57.04],
+        "tip": [78.73, 38.7],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 103,
+      "name": "idle-side-04",
+      "hands": [
+        {"centre": [34.82, 53.79], "axis": [0.95, 0.31], "pixels": 39, "knuckles": true},
+        {"centre": [65.5, 43.94], "axis": [0.58, -0.81], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 103, "pixels": 26},
+      "staff": {
+        "cell": 103,
+        "mode": "two-hand",
+        "grips": [[65.5, 43.94], [34.82, 53.79]],
+        "angle": -17.8,
+        "butt": [21.6, 58.04],
+        "tip": [78.73, 39.7],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 104,
+      "name": "run-side-01",
+      "hands": [
+        {"centre": [27.95, 48.15], "axis": [-0.46, 0.89], "pixels": 33, "knuckles": true},
+        {"centre": [71.34, 43.95], "axis": [0.71, -0.7], "pixels": 38, "knuckles": true}
+      ],
+      "knuckles": {"cell": 104, "pixels": 27},
+      "staff": {
+        "cell": 104,
+        "mode": "two-hand",
+        "grips": [[71.34, 43.95], [27.95, 48.15]],
+        "angle": -5.5,
+        "butt": [19.79, 48.94],
+        "tip": [79.51, 43.16],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 105,
+      "name": "run-side-02",
+      "hands": [
+        {"centre": [38.72, 54.15], "axis": [0.21, 0.98], "pixels": 33, "knuckles": true},
+        {"centre": [68.92, 51.5], "axis": [0.49, -0.87], "pixels": 35, "knuckles": true}
+      ],
+      "knuckles": {"cell": 105, "pixels": 24},
+      "staff": {
+        "cell": 105,
+        "mode": "two-hand",
+        "grips": [[68.92, 51.5], [38.72, 54.15]],
+        "angle": -5.0,
+        "butt": [23.93, 55.45],
+        "tip": [83.7, 50.2],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 106,
+      "name": "run-side-03",
+      "hands": [
+        {"centre": [24.54, 45.46], "axis": [-0.63, 0.78], "pixels": 35, "knuckles": true},
+        {"centre": [67.71, 43.47], "axis": [0.51, -0.86], "pixels": 37, "knuckles": true}
+      ],
+      "knuckles": {"cell": 106, "pixels": 23},
+      "staff": {
+        "cell": 106,
+        "mode": "two-hand",
+        "grips": [[67.71, 43.47], [24.54, 45.46]],
+        "angle": -2.6,
+        "butt": [16.16, 45.84],
+        "tip": [76.09, 43.08],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 107,
+      "name": "run-side-04",
+      "hands": [
+        {"centre": [35.12, 44.12], "axis": [0.56, 0.83], "pixels": 33, "knuckles": true},
+        {"centre": [59.98, 44.95], "axis": [0.86, -0.5], "pixels": 31, "knuckles": true}
+      ],
+      "knuckles": {"cell": 107, "pixels": 18},
+      "staff": {
+        "cell": 107,
+        "mode": "two-hand",
+        "grips": [[59.98, 44.95], [35.12, 44.12]],
+        "angle": 1.9,
+        "butt": [17.57, 43.54],
+        "tip": [77.54, 45.53],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 108,
+      "name": "run-side-05",
+      "hands": [
+        {"centre": [34.5, 46.64], "axis": [0.38, 0.92], "pixels": 29, "knuckles": true},
+        {"centre": [63.95, 46.59], "axis": [0.81, -0.58], "pixels": 36, "knuckles": true}
+      ],
+      "knuckles": {"cell": 108, "pixels": 19},
+      "staff": {
+        "cell": 108,
+        "mode": "two-hand",
+        "grips": [[63.95, 46.59], [34.5, 46.64]],
+        "angle": -0.1,
+        "butt": [19.23, 46.67],
+        "tip": [79.23, 46.56],
+        "depth": [1, 1]
+      }
+    },
+    {
+      "index": 109,
+      "name": "run-side-06",
+      "hands": [
+        {"centre": [37.17, 40.77], "axis": [0.62, 0.79], "pixels": 32, "knuckles": true},
+        {"centre": [59.88, 41.53], "axis": [0.99, -0.15], "pixels": 33, "knuckles": true}
+      ],
+      "knuckles": {"cell": 109, "pixels": 21},
+      "staff": {
+        "cell": 109,
+        "mode": "two-hand",
+        "grips": [[59.88, 41.53], [37.17, 40.77]],
+        "angle": 1.9,
+        "butt": [18.54, 40.14],
+        "tip": [78.5, 42.16],
+        "depth": [1, 1]
+      }
+    }
+  ],
+  "palette": {
+    "ink": ["15121f", "0d0a14"],
+    "wood": ["c79a66", "8a5d3b", "553829"],
+    "metal": ["fff2d6", "e5b66e", "b07a36", "4a3024"],
+    "flare": ["ffffff"],
+    "smear": ["f2e4c6", "c7b99e"]
+  },
+  "provenance": "provenance.json",
+  "previews": [
+    "previews/game-scale-3x.png",
+    "previews/game-scale.png",
+    "previews/knuckle-strikes.png",
+    "previews/knuckles-keys.png",
+    "previews/staff-attacks.png",
+    "previews/staff-keys.png"
+  ],
+  "files": [
+    {
+      "path": "knuckles.png",
+      "bytes": 11201,
+      "sha256": "586dc10b9cb2ac16fc72eb5496eb34e34cceaae18186c0b321408f70d0ed0d53",
+      "size": [960, 1536]
+    },
+    {
+      "path": "staff-attacks.png",
+      "bytes": 20620,
+      "sha256": "a69819ac7246362add8c26214956274aa0fe68055c0258c7b42d4f7f95d669a4",
+      "size": [1600, 864]
+    },
+    {
+      "path": "staff.png",
+      "bytes": 20727,
+      "sha256": "2f181bff6f49d802fddc2557c1b14c7938f36940a15b56ae9ebd66d9d8448af0",
+      "size": [960, 1056]
+    }
+  ]
+}

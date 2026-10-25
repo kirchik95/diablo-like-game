@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "art_direction_brief": "docs/art-direction.md",
+  "assets": [
+    {
+      "id": "weapon-contacts-v3",
+      "role": "Presentation-only melee contact effects: warm dust, metallic spark, wood crescent",
+      "path": "assets/game/pixel-v19/weapon-hit-3/contacts.png",
+      "status": "agent-validated",
+      "technical": {
+        "dimensions": "1152x2304",
+        "alpha": "binary 0/255",
+        "anchor": [
+          48,
+          48
+        ],
+        "cell": [
+          96,
+          96
+        ],
+        "frames": 288,
+        "filtering": "nearest",
+        "pixels_per_unit": 32,
+        "mipmaps": false,
+        "collision": "none",
+        "packing": "logicalRow=(family*2+heavy)*8+direction; x=((logicalRow//24)*6+frame)*96; y=(logicalRow%24)*96",
+        "timing_seconds": {
+          "hands": [
+            0.23,
+            0.29
+          ],
+          "knuckles": [
+            0.14,
+            0.18
+          ],
+          "staff": [
+            0.25,
+            0.3
+          ]
+        },
+        "decoded_rgba_bytes": 10616832,
+        "scale_light": [
+          1.15,
+          1.75,
+          1.8
+        ],
+        "scale_finisher": [
+          1.4,
+          2.05,
+          2.1
+        ],
+        "contact_anchor": "Upper 35% of target hit-mask bounds, biased 22% toward the monk; staff normal follows the current tip trail",
+        "knuckle_core_seconds": 0.05,
+        "pool_capacity": 96,
+        "bare_hand_dust": {
+          "puffs_light": 3,
+          "puffs_finisher": 5,
+          "effective_alpha_max": 0.72,
+          "fade": "quadratic from impact",
+          "motion": "radial spread by 1.8x within .23/.29 seconds",
+          "central_pixel": "transparent in every frame",
+          "palette": [
+            "#6c665e",
+            "#999183",
+            "#c0b8a8"
+          ],
+          "shadow": "dark lower rows, lit upper rows",
+          "accepted_non_hand_cells": "RGBA-identical to weapon-hit-2"
+        }
+      },
+      "visual_locks": [
+        "hard pixel edges",
+        "shared muted palette",
+        "fixed contact anchor",
+        "8 isometric directions",
+        "larger finishers"
+      ],
+      "source": {
+        "kind": "original procedural pixel art",
+        "url_or_tool": "Python/Pillow 12.3.0",
+        "creator": "Codex for this project",
+        "created_at": "2026-10-25",
+        "license": "Original project artwork; no third-party source assets used.",
+        "attribution": "No external source assets.",
+        "prompt_or_source_record": "build.py; user cx-hitfx brief",
+        "edit_history": [
+          "Original dust/spark/crescent family",
+          "Added transparent padding to preserve the staff splinter tips",
+          "Revision 2: body mask contact, denser dust, centred bright core for three 60Hz frames, thicker staff crescent and 1.65–2.1x display scale",
+          "Revision 3: bare hands only; 3/5 separated ragged grey-beige puffs, .72 alpha cap, outward breakup; accepted knuckles/staff unchanged"
+        ]
+      },
+      "verification": {
+        "native_scale_reviewed": true,
+        "in_engine_reviewed": true,
+        "technical_checks_passed": true,
+        "approved_by": "Agent selection under the delegated task brief; no user visual approval claimed"
+      }
+    }
+  ]
+}

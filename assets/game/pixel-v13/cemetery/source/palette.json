@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "method": "No new colours: camp panorama ramps reused by name and hex, plus the monastery ruins' lit-face tone, soil, turquoise and magenta ramps. The surface uses six campGrass colours and four prop colours.",
+  "props": {
+    "OUT": {
+      "hex": "#0e121d",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "DEEP": {
+      "hex": "#1f2737",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "DEEP2": {
+      "hex": "#2d2f40",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_HI": {
+      "hex": "#c9b79b",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_W1": {
+      "hex": "#b09c82",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_T1": {
+      "hex": "#9f9280",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_T2": {
+      "hex": "#877d72",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_T3": {
+      "hex": "#6c6564",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_L0": {
+      "hex": "#7b7270",
+      "source": "monasteryRuins",
+      "usedInAtlas": true
+    },
+    "Q_L1": {
+      "hex": "#706968",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_L2": {
+      "hex": "#5c5258",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_M": {
+      "hex": "#4a4753",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_S1": {
+      "hex": "#3d3e4c",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_S2": {
+      "hex": "#30344a",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Q_AMB": {
+      "hex": "#3c4b52",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "M_HI": {
+      "hex": "#9a9358",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "M1": {
+      "hex": "#7d7b4f",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "M2": {
+      "hex": "#626445",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "M3": {
+      "hex": "#4a523f",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "F4": {
+      "hex": "#0f2b3c",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "F5": {
+      "hex": "#081a2b",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "B_HI": {
+      "hex": "#6f8467",
+      "source": "campPanorama",
+      "usedInAtlas": false
+    },
+    "B1": {
+      "hex": "#4f6759",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "B2": {
+      "hex": "#37504b",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "B3": {
+      "hex": "#263c3e",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "G_HI": {
+      "hex": "#6f8a64",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "G1": {
+      "hex": "#4c6a55",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "G2": {
+      "hex": "#33504a",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "T1": {
+      "hex": "#6e4f45",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "T2": {
+      "hex": "#4a3438",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "T3": {
+      "hex": "#2f2230",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Y1": {
+      "hex": "#b8935c",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Y2": {
+      "hex": "#8c6c46",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "Y3": {
+      "hex": "#d3bb8f",
+      "source": "campPanorama",
+      "usedInAtlas": true
+    },
+    "SOIL1": {
+      "hex": "#82664c",
+      "source": "monasteryRuins",
+      "usedInAtlas": true
+    },
+    "SOIL2": {
+      "hex": "#6c5440",
+      "source": "monasteryRuins",
+      "usedInAtlas": true
+    },
+    "SOIL3": {
+      "hex": "#4b3a33",
+      "source": "monasteryRuins",
+      "usedInAtlas": true
+    },
+    "C0": {
+      "hex": "#e6fffb",
+      "source": "monasteryRuins",
+      "usedInAtlas": true
+    },
+    "C1": {
+      "hex": "#92faf1",
+      "source": "monasteryRuins",
+      "usedInAtlas": true
+    },
+    "C2": {
+      "hex": "#24ced5",
+      "source": "monasteryRuins",
+      "usedInAtlas": false
+    },
+    "C3": {
+      "hex": "#1cabb8",
+      "source": "monasteryRuins",
+      "usedInAtlas": false
+    },
+    "C4": {
+      "hex": "#14707e",
+      "source": "monasteryRuins",
+      "usedInAtlas": true
+    },
+    "RUNE1": {
+      "hex": "#ff4bb7",
+      "source": "monasteryRuins",
+      "usedInAtlas": true
+    },
+    "RUNE2": {
+      "hex": "#cf1b87",
+      "source": "monasteryRuins",
+      "usedInAtlas": true
+    },
+    "RUNE3": {
+      "hex": "#7c3767",
+      "source": "monasteryRuins",
+      "usedInAtlas": true
+    }
+  },
+  "surfaces": {
+    "cemeteryEarth": {
+      "G_SH": {
+        "hex": "#454a34",
+        "source": "campGrass"
+      },
+      "G_D2": {
+        "hex": "#58553c",
+        "source": "campGrass"
+      },
+      "G_D1": {
+        "hex": "#666243",
+        "source": "campGrass"
+      },
+      "G_B": {
+        "hex": "#74704a",
+        "source": "campGrass"
+      },
+      "G_G": {
+        "hex": "#70764a",
+        "source": "campGrass"
+      },
+      "G_H1": {
+        "hex": "#948c55",
+        "source": "campGrass"
+      },
+      "L1": {
+        "hex": "#8c6c46",
+        "source": "props"
+      },
+      "L2": {
+        "hex": "#6e4f45",
+        "source": "props"
+      },
+      "L3": {
+        "hex": "#4b3a33",
+        "source": "props"
+      },
+      "L_HI": {
+        "hex": "#b8935c",
+        "source": "props"
+      }
+    }
+  },
+  "sharedWithCampPanorama": [
+    "B1",
+    "B2",
+    "B3",
+    "B_HI",
+    "DEEP",
+    "DEEP2",
+    "F4",
+    "F5",
+    "G1",
+    "G2",
+    "G_HI",
+    "M1",
+    "M2",
+    "M3",
+    "M_HI",
+    "OUT",
+    "Q_AMB",
+    "Q_HI",
+    "Q_L1",
+    "Q_L2",
+    "Q_M",
+    "Q_S1",
+    "Q_S2",
+    "Q_T1",
+    "Q_T2",
+    "Q_T3",
+    "Q_W1",
+    "T1",
+    "T2",
+    "T3",
+    "Y1",
+    "Y2",
+    "Y3"
+  ],
+  "sharedWithMonasteryRuins": [
+    "C0",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "Q_L0",
+    "RUNE1",
+    "RUNE2",
+    "RUNE3",
+    "SOIL1",
+    "SOIL2",
+    "SOIL3"
+  ],
+  "atlasColors": 42,
+  "budget": 48
+}

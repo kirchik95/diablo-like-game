@@ -1,8 +1,8 @@
 // The road area in the style of "Лагерь странников": the camp's pixel-v9
 // stone masses and wall runs, cypress groves, round bushes, tufts and ruined
-// pillars around the unchanged road walk mask. Nothing here collides: every
+// pillars around the expanded road walk mask. Nothing here collides: every
 // standing footprint stays outside the walkable cells, so movement, paths and
-// encounter placement are exactly those of the road regions.
+// encounter placement follow only the road regions.
 import panorama from '../assets/game/pixel-v9/camp-panorama/manifest.json' with { type: 'json' };
 import ruins from '../assets/game/pixel-v11/monastery-ruins/manifest.json' with { type: 'json' };
 import { inBackdrop } from './camp-layout.js';
@@ -86,7 +86,7 @@ export const ROAD_FEATURES = [
   ['ruin-pillar', -4.6, -15.2, .95], ['ruin-stump', 4.6, -14.4, .95, true],
   ['cypress-tall', -5.1, -12], ['cypress-medium', -5.5, -18, .9], ['outcrop-crag', -7.2, -16.4, .95],
   ['ruin-fallen', 6.3, -17.6, .9, true], ['bush-round', 4.5, -11.6, .85],
-];
+].map(([kind, x, y, ...style]) => [kind, x * 1.4, y * 1.4, ...style]);
 
 // Weighted kinds by screen depth to playable ground straight behind a point:
 // tall props there would hide the hero, so the near side stays low.
@@ -262,7 +262,9 @@ export function layoutRoadCountry({ world, walk, distance, extent, zoneAt, backd
     }
   };
   const ys = road.tiles.map(p => p.y), top = Math.max(...ys) + .5, bottom = Math.min(...ys) - .5;
-  const left = extent.minX, right = extent.maxX;
+  // The lattice keeps the phase of the spine's extent (min x -59): the side zones widen the map
+  // without moving the road's groves.
+  const left = -59 - 2.4 * Math.ceil((-59 - extent.minX) / 2.4), right = extent.maxX;
   for (let row = 0, gy = top + (world.zones ? 0 : 26); gy >= bottom - (world.zones ? 0 : 26); row++, gy -= 2.4) {
     for (let gx = left + (row % 2) * 1.2; gx <= right; gx += 2.4) {
       const ix = Math.round(gx * 10), iy = Math.round(gy * 10);
@@ -285,7 +287,7 @@ export function layoutRoadCountry({ world, walk, distance, extent, zoneAt, backd
     return false;
   };
   const spots = [...road.tiles].sort((a, b) => a.y - b.y || a.x - b.x)
-    .filter(p => !((p.x + p.y) % 2 || hash(p.x, p.y, 21) < .5))
+    .filter(p => !((p.x + p.y) % 2 || hash(p.x, p.y, 21) < .72))
     .map(p => ({ x: p.x + (hash(p.x, p.y, 22) - .5) * 1.6, y: p.y + (hash(p.x, p.y, 23) - .5) * 1.6, seed: [p.x, p.y] }));
   for (const { x, y, seed: [i, j] } of [...spots, ...tufts]) {
     if (!walk.has(key(Math.round(x), Math.round(y))) || !inRoad(x, y) || nearPaving(x, y)) continue;

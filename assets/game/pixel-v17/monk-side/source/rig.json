@@ -1,0 +1,3672 @@
+[
+  {
+    "source": 0,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 0,
+    "b": 0,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 1,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 1,
+    "b": 1,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 2,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 2,
+    "b": 2,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 3,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 3,
+    "b": 3,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 4,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 4,
+    "b": 4,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 5,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 5,
+    "b": 5,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 6,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 6,
+    "b": 6,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 7,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 7,
+    "b": 7,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 8,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 8,
+    "b": 8,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 9,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 9,
+    "b": 9,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 10,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 10,
+    "b": 10,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 11,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 11,
+    "b": 11,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 12,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 12,
+    "b": 12,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 13,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 13,
+    "b": 13,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 14,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 14,
+    "b": 14,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 15,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 15,
+    "b": 15,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 16,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 16,
+    "b": 16,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 17,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 17,
+    "b": 17,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 18,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 18,
+    "b": 18,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 20,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 20,
+    "b": 20,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 21,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 21,
+    "b": 21,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 22,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 22,
+    "b": 22,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 23,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 23,
+    "b": 23,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 24,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 24,
+    "b": 24,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 25,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 25,
+    "b": 25,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 26,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 26,
+    "b": 26,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 27,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 27,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 28,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 28,
+    "b": 28,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 29,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 29,
+    "b": 29,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 30,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 30,
+    "b": 30,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 31,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 31,
+    "b": 31,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 32,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 32,
+    "b": 32,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 33,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 33,
+    "b": 33,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 34,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 34,
+    "b": 34,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 35,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 35,
+    "b": 35,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 36,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 36,
+    "b": 36,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 37,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 37,
+    "b": 37,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 38,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 38,
+    "b": 38,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 39,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 39,
+    "b": 39,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 40,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 40,
+    "b": 40,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 41,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 41,
+    "b": 41,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 42,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 42,
+    "b": 42,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 43,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 43,
+    "b": 43,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 44,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 44,
+    "b": 44,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 45,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 45,
+    "b": 45,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 46,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 46,
+    "b": 46,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 47,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 47,
+    "b": 47,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 48,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 48,
+    "b": 48,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 49,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 49,
+    "b": 49,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 50,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 50,
+    "b": 50,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 51,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 51,
+    "b": 51,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 52,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 52,
+    "b": 52,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 53,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 53,
+    "b": 53,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 54,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 54,
+    "b": 54,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 55,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 55,
+    "b": 55,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 56,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 56,
+    "b": 56,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 57,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 57,
+    "b": 57,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 58,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 58,
+    "b": 58,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 59,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 59,
+    "b": 59,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 60,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 60,
+    "b": 60,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 61,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 61,
+    "b": 61,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 62,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 62,
+    "b": 62,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 63,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 63,
+    "b": 63,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 64,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 64,
+    "b": 64,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 65,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 65,
+    "b": 65,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 66,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 66,
+    "b": 66,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 67,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 67,
+    "b": 67,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 68,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 68,
+    "b": 68,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 69,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 70,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 70,
+    "b": 70,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 71,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 71,
+    "b": 71,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 72,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 72,
+    "b": 72,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 73,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 73,
+    "b": 73,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 74,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 74,
+    "b": 74,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 75,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 75,
+    "b": 75,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 76,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 76,
+    "b": 76,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 77,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 77,
+    "b": 77,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 78,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 78,
+    "b": 78,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 79,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 79,
+    "b": 79,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 80,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 80,
+    "b": 80,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 81,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 81,
+    "b": 81,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 82,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 82,
+    "b": 82,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 83,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 83,
+    "b": 83,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 84,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 84,
+    "b": 84,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 85,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 85,
+    "b": 85,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 86,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 86,
+    "b": 86,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 87,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 87,
+    "b": 87,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 88,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 88,
+    "b": 88,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 89,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 89,
+    "b": 89,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 90,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 90,
+    "b": 90,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 91,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 91,
+    "b": 91,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 92,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 92,
+    "b": 92,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 93,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 93,
+    "b": 93,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 94,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 94,
+    "b": 94,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 95,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 95,
+    "b": 95,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 96,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 96,
+    "b": 96,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 97,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 97,
+    "b": 97,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 98,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 98,
+    "b": 98,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 99,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 99,
+    "b": 99,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 100,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 100,
+    "b": 100,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 101,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 101,
+    "b": 101,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 102,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 102,
+    "b": 102,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 103,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 103,
+    "b": 103,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 104,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 104,
+    "b": 104,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 105,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 105,
+    "b": 105,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 106,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 106,
+    "b": 106,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 107,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 107,
+    "b": 107,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 108,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 108,
+    "b": 108,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 109,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 109,
+    "b": 109,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 0,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 0,
+    "b": 1,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 0,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 0,
+    "b": 1,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 1,
+    "facing": "front",
+    "oldPhase": 1,
+    "a": 1,
+    "b": 2,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 1,
+    "facing": "front",
+    "oldPhase": 1.5,
+    "a": 1,
+    "b": 2,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 2,
+    "facing": "front",
+    "oldPhase": 2,
+    "a": 2,
+    "b": 3,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 2,
+    "facing": "front",
+    "oldPhase": 2.5,
+    "a": 2,
+    "b": 3,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 3,
+    "facing": "front",
+    "oldPhase": 3,
+    "a": 3,
+    "b": 0,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 50,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 50,
+    "b": 51,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 50,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 50,
+    "b": 51,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 51,
+    "facing": "back",
+    "oldPhase": 1,
+    "a": 51,
+    "b": 52,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 51,
+    "facing": "back",
+    "oldPhase": 1.5,
+    "a": 51,
+    "b": 52,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 52,
+    "facing": "back",
+    "oldPhase": 2,
+    "a": 52,
+    "b": 53,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 52,
+    "facing": "back",
+    "oldPhase": 2.5,
+    "a": 52,
+    "b": 53,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 53,
+    "facing": "back",
+    "oldPhase": 3,
+    "a": 53,
+    "b": 50,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 100,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 100,
+    "b": 101,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 100,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 100,
+    "b": 101,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 101,
+    "facing": "side",
+    "oldPhase": 1,
+    "a": 101,
+    "b": 102,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 101,
+    "facing": "side",
+    "oldPhase": 1.5,
+    "a": 101,
+    "b": 102,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 102,
+    "facing": "side",
+    "oldPhase": 2,
+    "a": 102,
+    "b": 103,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 102,
+    "facing": "side",
+    "oldPhase": 2.5,
+    "a": 102,
+    "b": 103,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 103,
+    "facing": "side",
+    "oldPhase": 3,
+    "a": 103,
+    "b": 100,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 4,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 4,
+    "b": 5,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 4,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 4,
+    "b": 5,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 5,
+    "facing": "front",
+    "oldPhase": 1,
+    "a": 5,
+    "b": 6,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 6,
+    "facing": "front",
+    "oldPhase": 2,
+    "a": 6,
+    "b": 7,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 6,
+    "facing": "front",
+    "oldPhase": 2.5,
+    "a": 6,
+    "b": 7,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 7,
+    "facing": "front",
+    "oldPhase": 3,
+    "a": 7,
+    "b": 8,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 8,
+    "facing": "front",
+    "oldPhase": 4,
+    "a": 8,
+    "b": 9,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 9,
+    "facing": "front",
+    "oldPhase": 5,
+    "a": 9,
+    "b": 9,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 54,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 54,
+    "b": 55,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 54,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 54,
+    "b": 55,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 55,
+    "facing": "back",
+    "oldPhase": 1,
+    "a": 55,
+    "b": 56,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 56,
+    "facing": "back",
+    "oldPhase": 2,
+    "a": 56,
+    "b": 57,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 56,
+    "facing": "back",
+    "oldPhase": 2.5,
+    "a": 56,
+    "b": 57,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 57,
+    "facing": "back",
+    "oldPhase": 3,
+    "a": 57,
+    "b": 58,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 58,
+    "facing": "back",
+    "oldPhase": 4,
+    "a": 58,
+    "b": 59,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 59,
+    "facing": "back",
+    "oldPhase": 5,
+    "a": 59,
+    "b": 59,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 104,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 104,
+    "b": 105,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 104,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 104,
+    "b": 105,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 105,
+    "facing": "side",
+    "oldPhase": 1,
+    "a": 105,
+    "b": 106,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 106,
+    "facing": "side",
+    "oldPhase": 2,
+    "a": 106,
+    "b": 107,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 106,
+    "facing": "side",
+    "oldPhase": 2.5,
+    "a": 106,
+    "b": 107,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 107,
+    "facing": "side",
+    "oldPhase": 3,
+    "a": 107,
+    "b": 108,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 108,
+    "facing": "side",
+    "oldPhase": 4,
+    "a": 108,
+    "b": 109,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 109,
+    "facing": "side",
+    "oldPhase": 5,
+    "a": 109,
+    "b": 109,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 10,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 10,
+    "b": 11,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 10,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 10,
+    "b": 11,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 11,
+    "facing": "front",
+    "oldPhase": 1,
+    "a": 11,
+    "b": 12,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 11,
+    "facing": "front",
+    "oldPhase": 1.5,
+    "a": 11,
+    "b": 12,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 12,
+    "facing": "front",
+    "oldPhase": 2,
+    "a": 12,
+    "b": 13,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 13,
+    "facing": "front",
+    "oldPhase": 3,
+    "a": 13,
+    "b": 14,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 14,
+    "facing": "front",
+    "oldPhase": 4,
+    "a": 14,
+    "b": 15,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 15,
+    "facing": "front",
+    "oldPhase": 5,
+    "a": 15,
+    "b": 15,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 60,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 60,
+    "b": 61,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 60,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 60,
+    "b": 61,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 61,
+    "facing": "back",
+    "oldPhase": 1,
+    "a": 61,
+    "b": 62,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 61,
+    "facing": "back",
+    "oldPhase": 1.5,
+    "a": 61,
+    "b": 62,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 62,
+    "facing": "back",
+    "oldPhase": 2,
+    "a": 62,
+    "b": 63,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 63,
+    "facing": "back",
+    "oldPhase": 3,
+    "a": 63,
+    "b": 64,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 64,
+    "facing": "back",
+    "oldPhase": 4,
+    "a": 64,
+    "b": 65,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 65,
+    "facing": "back",
+    "oldPhase": 5,
+    "a": 65,
+    "b": 65,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 10,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 10,
+    "b": 11,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 10,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 10,
+    "b": 11,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 11,
+    "facing": "side",
+    "oldPhase": 1,
+    "a": 11,
+    "b": 12,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 11,
+    "facing": "side",
+    "oldPhase": 1.5,
+    "a": 11,
+    "b": 12,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 12,
+    "facing": "side",
+    "oldPhase": 2,
+    "a": 12,
+    "b": 13,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 13,
+    "facing": "side",
+    "oldPhase": 3,
+    "a": 13,
+    "b": 14,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 14,
+    "facing": "side",
+    "oldPhase": 4,
+    "a": 14,
+    "b": 15,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 15,
+    "facing": "side",
+    "oldPhase": 5,
+    "a": 15,
+    "b": 15,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 16,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 16,
+    "b": 17,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 16,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 16,
+    "b": 17,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 17,
+    "facing": "front",
+    "oldPhase": 1,
+    "a": 17,
+    "b": 18,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 18,
+    "facing": "front",
+    "oldPhase": 2,
+    "a": 18,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 18,
+    "facing": "front",
+    "oldPhase": 2.5,
+    "a": 18,
+    "b": 19,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 19,
+    "facing": "front",
+    "oldPhase": 3,
+    "a": 19,
+    "b": 20,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 20,
+    "facing": "front",
+    "oldPhase": 4,
+    "a": 20,
+    "b": 21,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 21,
+    "facing": "front",
+    "oldPhase": 5,
+    "a": 21,
+    "b": 21,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 66,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 66,
+    "b": 67,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 66,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 66,
+    "b": 67,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 67,
+    "facing": "back",
+    "oldPhase": 1,
+    "a": 67,
+    "b": 68,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 68,
+    "facing": "back",
+    "oldPhase": 2,
+    "a": 68,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 68,
+    "facing": "back",
+    "oldPhase": 2.5,
+    "a": 68,
+    "b": 69,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 69,
+    "facing": "back",
+    "oldPhase": 3,
+    "a": 69,
+    "b": 70,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 70,
+    "facing": "back",
+    "oldPhase": 4,
+    "a": 70,
+    "b": 71,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 71,
+    "facing": "back",
+    "oldPhase": 5,
+    "a": 71,
+    "b": 71,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 16,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 16,
+    "b": 17,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 16,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 16,
+    "b": 17,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 17,
+    "facing": "side",
+    "oldPhase": 1,
+    "a": 17,
+    "b": 18,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 18,
+    "facing": "side",
+    "oldPhase": 2,
+    "a": 18,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 18,
+    "facing": "side",
+    "oldPhase": 2.5,
+    "a": 18,
+    "b": 19,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 19,
+    "facing": "side",
+    "oldPhase": 3,
+    "a": 19,
+    "b": 20,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 20,
+    "facing": "side",
+    "oldPhase": 4,
+    "a": 20,
+    "b": 21,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 21,
+    "facing": "side",
+    "oldPhase": 5,
+    "a": 21,
+    "b": 21,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 22,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 22,
+    "b": 23,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 23,
+    "facing": "front",
+    "oldPhase": 1,
+    "a": 23,
+    "b": 24,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 24,
+    "facing": "front",
+    "oldPhase": 2,
+    "a": 24,
+    "b": 25,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 24,
+    "facing": "front",
+    "oldPhase": 2.5,
+    "a": 24,
+    "b": 25,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 25,
+    "facing": "front",
+    "oldPhase": 3,
+    "a": 25,
+    "b": 26,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 25,
+    "facing": "front",
+    "oldPhase": 3.5,
+    "a": 25,
+    "b": 26,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 26,
+    "facing": "front",
+    "oldPhase": 4,
+    "a": 26,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 27,
+    "facing": "front",
+    "oldPhase": 5,
+    "a": 27,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 72,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 72,
+    "b": 73,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 73,
+    "facing": "back",
+    "oldPhase": 1,
+    "a": 73,
+    "b": 74,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 74,
+    "facing": "back",
+    "oldPhase": 2,
+    "a": 74,
+    "b": 75,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 74,
+    "facing": "back",
+    "oldPhase": 2.5,
+    "a": 74,
+    "b": 75,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 75,
+    "facing": "back",
+    "oldPhase": 3,
+    "a": 75,
+    "b": 76,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 75,
+    "facing": "back",
+    "oldPhase": 3.5,
+    "a": 75,
+    "b": 76,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 76,
+    "facing": "back",
+    "oldPhase": 4,
+    "a": 76,
+    "b": 77,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 77,
+    "facing": "back",
+    "oldPhase": 5,
+    "a": 77,
+    "b": 77,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 22,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 22,
+    "b": 23,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 23,
+    "facing": "side",
+    "oldPhase": 1,
+    "a": 23,
+    "b": 24,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 24,
+    "facing": "side",
+    "oldPhase": 2,
+    "a": 24,
+    "b": 25,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 24,
+    "facing": "side",
+    "oldPhase": 2.5,
+    "a": 24,
+    "b": 25,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 25,
+    "facing": "side",
+    "oldPhase": 3,
+    "a": 25,
+    "b": 26,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 25,
+    "facing": "side",
+    "oldPhase": 3.5,
+    "a": 25,
+    "b": 26,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 26,
+    "facing": "side",
+    "oldPhase": 4,
+    "a": 26,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 27,
+    "facing": "side",
+    "oldPhase": 5,
+    "a": 27,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 28,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 28,
+    "b": 29,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 29,
+    "facing": "front",
+    "oldPhase": 1,
+    "a": 29,
+    "b": 30,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 29,
+    "facing": "front",
+    "oldPhase": 1.5,
+    "a": 29,
+    "b": 30,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 30,
+    "facing": "front",
+    "oldPhase": 2,
+    "a": 30,
+    "b": 31,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 30,
+    "facing": "front",
+    "oldPhase": 2.5,
+    "a": 30,
+    "b": 31,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 31,
+    "facing": "front",
+    "oldPhase": 3,
+    "a": 31,
+    "b": 32,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 32,
+    "facing": "front",
+    "oldPhase": 4,
+    "a": 32,
+    "b": 33,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 33,
+    "facing": "front",
+    "oldPhase": 5,
+    "a": 33,
+    "b": 33,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 78,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 78,
+    "b": 79,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 79,
+    "facing": "back",
+    "oldPhase": 1,
+    "a": 79,
+    "b": 80,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 79,
+    "facing": "back",
+    "oldPhase": 1.5,
+    "a": 79,
+    "b": 80,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 80,
+    "facing": "back",
+    "oldPhase": 2,
+    "a": 80,
+    "b": 81,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 80,
+    "facing": "back",
+    "oldPhase": 2.5,
+    "a": 80,
+    "b": 81,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 81,
+    "facing": "back",
+    "oldPhase": 3,
+    "a": 81,
+    "b": 82,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 82,
+    "facing": "back",
+    "oldPhase": 4,
+    "a": 82,
+    "b": 83,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 83,
+    "facing": "back",
+    "oldPhase": 5,
+    "a": 83,
+    "b": 83,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 28,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 28,
+    "b": 29,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 29,
+    "facing": "side",
+    "oldPhase": 1,
+    "a": 29,
+    "b": 30,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 29,
+    "facing": "side",
+    "oldPhase": 1.5,
+    "a": 29,
+    "b": 30,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 30,
+    "facing": "side",
+    "oldPhase": 2,
+    "a": 30,
+    "b": 31,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 30,
+    "facing": "side",
+    "oldPhase": 2.5,
+    "a": 30,
+    "b": 31,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 31,
+    "facing": "side",
+    "oldPhase": 3,
+    "a": 31,
+    "b": 32,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 32,
+    "facing": "side",
+    "oldPhase": 4,
+    "a": 32,
+    "b": 33,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 33,
+    "facing": "side",
+    "oldPhase": 5,
+    "a": 33,
+    "b": 33,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 34,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 34,
+    "b": 35,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 34,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 34,
+    "b": 35,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 35,
+    "facing": "front",
+    "oldPhase": 1,
+    "a": 35,
+    "b": 36,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 36,
+    "facing": "front",
+    "oldPhase": 2,
+    "a": 36,
+    "b": 37,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 36,
+    "facing": "front",
+    "oldPhase": 2.5,
+    "a": 36,
+    "b": 37,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 37,
+    "facing": "front",
+    "oldPhase": 3,
+    "a": 37,
+    "b": 38,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 38,
+    "facing": "front",
+    "oldPhase": 4,
+    "a": 38,
+    "b": 39,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 39,
+    "facing": "front",
+    "oldPhase": 5,
+    "a": 39,
+    "b": 39,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 84,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 84,
+    "b": 85,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 84,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 84,
+    "b": 85,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 85,
+    "facing": "back",
+    "oldPhase": 1,
+    "a": 85,
+    "b": 86,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 86,
+    "facing": "back",
+    "oldPhase": 2,
+    "a": 86,
+    "b": 87,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 86,
+    "facing": "back",
+    "oldPhase": 2.5,
+    "a": 86,
+    "b": 87,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 87,
+    "facing": "back",
+    "oldPhase": 3,
+    "a": 87,
+    "b": 88,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 88,
+    "facing": "back",
+    "oldPhase": 4,
+    "a": 88,
+    "b": 89,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 89,
+    "facing": "back",
+    "oldPhase": 5,
+    "a": 89,
+    "b": 89,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 34,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 34,
+    "b": 35,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 34,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 34,
+    "b": 35,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 35,
+    "facing": "side",
+    "oldPhase": 1,
+    "a": 35,
+    "b": 36,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 36,
+    "facing": "side",
+    "oldPhase": 2,
+    "a": 36,
+    "b": 37,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 36,
+    "facing": "side",
+    "oldPhase": 2.5,
+    "a": 36,
+    "b": 37,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 37,
+    "facing": "side",
+    "oldPhase": 3,
+    "a": 37,
+    "b": 38,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 38,
+    "facing": "side",
+    "oldPhase": 4,
+    "a": 38,
+    "b": 39,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 39,
+    "facing": "side",
+    "oldPhase": 5,
+    "a": 39,
+    "b": 39,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 40,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 40,
+    "b": 41,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 40,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 40,
+    "b": 41,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 41,
+    "facing": "front",
+    "oldPhase": 1,
+    "a": 41,
+    "b": 42,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 41,
+    "facing": "front",
+    "oldPhase": 1.5,
+    "a": 41,
+    "b": 42,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 42,
+    "facing": "front",
+    "oldPhase": 2,
+    "a": 42,
+    "b": 43,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 43,
+    "facing": "front",
+    "oldPhase": 3,
+    "a": 43,
+    "b": 43,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 90,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 90,
+    "b": 91,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 90,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 90,
+    "b": 91,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 91,
+    "facing": "back",
+    "oldPhase": 1,
+    "a": 91,
+    "b": 92,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 91,
+    "facing": "back",
+    "oldPhase": 1.5,
+    "a": 91,
+    "b": 92,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 92,
+    "facing": "back",
+    "oldPhase": 2,
+    "a": 92,
+    "b": 93,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 93,
+    "facing": "back",
+    "oldPhase": 3,
+    "a": 93,
+    "b": 93,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 40,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 40,
+    "b": 41,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 40,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 40,
+    "b": 41,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 41,
+    "facing": "side",
+    "oldPhase": 1,
+    "a": 41,
+    "b": 42,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 41,
+    "facing": "side",
+    "oldPhase": 1.5,
+    "a": 41,
+    "b": 42,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 42,
+    "facing": "side",
+    "oldPhase": 2,
+    "a": 42,
+    "b": 43,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 43,
+    "facing": "side",
+    "oldPhase": 3,
+    "a": 43,
+    "b": 43,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 44,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 44,
+    "b": 45,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 45,
+    "facing": "front",
+    "oldPhase": 1,
+    "a": 45,
+    "b": 46,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 46,
+    "facing": "front",
+    "oldPhase": 2,
+    "a": 46,
+    "b": 47,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 47,
+    "facing": "front",
+    "oldPhase": 3,
+    "a": 47,
+    "b": 48,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 48,
+    "facing": "front",
+    "oldPhase": 4,
+    "a": 48,
+    "b": 49,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 49,
+    "facing": "front",
+    "oldPhase": 5,
+    "a": 49,
+    "b": 49,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 94,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 94,
+    "b": 95,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 95,
+    "facing": "back",
+    "oldPhase": 1,
+    "a": 95,
+    "b": 96,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 96,
+    "facing": "back",
+    "oldPhase": 2,
+    "a": 96,
+    "b": 97,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 97,
+    "facing": "back",
+    "oldPhase": 3,
+    "a": 97,
+    "b": 98,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 98,
+    "facing": "back",
+    "oldPhase": 4,
+    "a": 98,
+    "b": 99,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 99,
+    "facing": "back",
+    "oldPhase": 5,
+    "a": 99,
+    "b": 99,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 44,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 44,
+    "b": 45,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 45,
+    "facing": "side",
+    "oldPhase": 1,
+    "a": 45,
+    "b": 46,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 46,
+    "facing": "side",
+    "oldPhase": 2,
+    "a": 46,
+    "b": 47,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 47,
+    "facing": "side",
+    "oldPhase": 3,
+    "a": 47,
+    "b": 48,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 48,
+    "facing": "side",
+    "oldPhase": 4,
+    "a": 48,
+    "b": 49,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 49,
+    "facing": "side",
+    "oldPhase": 5,
+    "a": 49,
+    "b": 49,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 23,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 23,
+    "b": 17,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 23,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 23,
+    "b": 17,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 17,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 17,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 19,
+    "b": 19,
+    "fraction": 0.5,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 20,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 20,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 20,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 27,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 27,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 73,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 73,
+    "b": 67,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 73,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 73,
+    "b": 73,
+    "fraction": 0,
+    "isKey": true,
+    "rejected": true
+  },
+  {
+    "source": 67,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 67,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 69,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 69,
+    "b": 69,
+    "fraction": 0.5,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 69,
+    "b": 70,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 70,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 70,
+    "b": 77,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 77,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 77,
+    "b": 77,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 23,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 23,
+    "b": 17,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 23,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 23,
+    "b": 17,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 17,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 17,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 19,
+    "b": 19,
+    "fraction": 0.5,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 20,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 20,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 20,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 27,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 27,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 22,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 22,
+    "b": 21,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 22,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 22,
+    "b": 22,
+    "fraction": 0,
+    "isKey": true,
+    "rejected": true
+  },
+  {
+    "source": 21,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 21,
+    "b": 24,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 24,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 24,
+    "b": 25,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 24,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 24,
+    "b": 25,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 25,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 25,
+    "b": 26,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 26,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 26,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 27,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 27,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 72,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 72,
+    "b": 71,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 72,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 72,
+    "b": 72,
+    "fraction": 0,
+    "isKey": true,
+    "rejected": true
+  },
+  {
+    "source": 71,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 71,
+    "b": 74,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 74,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 74,
+    "b": 75,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 74,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 74,
+    "b": 75,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 75,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 75,
+    "b": 76,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 76,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 76,
+    "b": 77,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 77,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 77,
+    "b": 77,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 100,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 100,
+    "b": 101,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 100,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 100,
+    "b": 101,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 101,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 101,
+    "b": 104,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 104,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 104,
+    "b": 104,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 104,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 104,
+    "b": 104,
+    "fraction": 0.5,
+    "isKey": true
+  },
+  {
+    "source": 104,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 104,
+    "b": 102,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 102,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 102,
+    "b": 100,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 100,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 100,
+    "b": 100,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 26,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 26,
+    "b": 20,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 26,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 26,
+    "b": 26,
+    "fraction": 0,
+    "isKey": true,
+    "rejected": true
+  },
+  {
+    "source": 20,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 20,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 18,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 19,
+    "b": 18,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 18,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 18,
+    "b": 20,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 20,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 20,
+    "b": 21,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 21,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 21,
+    "b": 21,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 76,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 76,
+    "b": 70,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 76,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 76,
+    "b": 76,
+    "fraction": 0,
+    "isKey": true,
+    "rejected": true
+  },
+  {
+    "source": 70,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 70,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 69,
+    "b": 68,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "back",
+    "oldPhase": 0.5,
+    "a": 69,
+    "b": 68,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 68,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 68,
+    "b": 70,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 70,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 70,
+    "b": 71,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 71,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 71,
+    "b": 71,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 102,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 102,
+    "b": 103,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 102,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 102,
+    "b": 103,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 103,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 103,
+    "b": 107,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 107,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 107,
+    "b": 107,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 107,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 107,
+    "b": 107,
+    "fraction": 0.5,
+    "isKey": true
+  },
+  {
+    "source": 107,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 107,
+    "b": 101,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 101,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 101,
+    "b": 101,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 101,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 101,
+    "b": 101,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 23,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 23,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 23,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 23,
+    "b": 69,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 69,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 69,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 69,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "front",
+    "oldPhase": 0.5,
+    "a": 69,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true,
+    "rejected": true
+  },
+  {
+    "source": 19,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 27,
+    "facing": "front",
+    "oldPhase": 0,
+    "a": 27,
+    "b": 27,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 72,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 72,
+    "b": 72,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 72,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 72,
+    "b": 72,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 69,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 69,
+    "b": 77,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 77,
+    "facing": "back",
+    "oldPhase": 0,
+    "a": 77,
+    "b": 77,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 100,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 100,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 100,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 100,
+    "b": 69,
+    "fraction": 0.5,
+    "isKey": false
+  },
+  {
+    "source": 69,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 69,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 69,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 69,
+    "facing": "side",
+    "oldPhase": 0.5,
+    "a": 69,
+    "b": 69,
+    "fraction": 0,
+    "isKey": true,
+    "rejected": true
+  },
+  {
+    "source": 19,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 19,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 19,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 19,
+    "b": 100,
+    "fraction": 0,
+    "isKey": true
+  },
+  {
+    "source": 100,
+    "facing": "side",
+    "oldPhase": 0,
+    "a": 100,
+    "b": 100,
+    "fraction": 0,
+    "isKey": true
+  }
+]

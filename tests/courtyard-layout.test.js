@@ -16,7 +16,7 @@ const key = p => `${p.x},${p.y}`;
 const court = () => LOCATIONS.courtyard;
 const props = () => COURTYARD_LAYOUT.setDressing;
 const byId = id => props().find(p => p.id === id);
-const OFFSET = -85;
+const OFFSET = -120;
 
 function walk(world, from, target, radius = .23) {
   const path = findPath(from, target, radius, world);
@@ -70,20 +70,20 @@ test('the courtyard exports one immutable deterministic layout used by the campa
 
 test('the gameplay anchors keep their accepted places', () => {
   const world = court();
-  assert.deepEqual(world.ritual, { x: 0, y: -6 });
-  assert.deepEqual(world.spawn, { x: 0, y: 10 });
-  assert.deepEqual(world.entries, { road: { x: 0, y: 10 } });
+  assert.deepEqual(world.ritual, { x: 0, y: -8.4 });
+  assert.deepEqual(world.spawn, { x: 0, y: 14 });
+  assert.deepEqual(world.entries, { road: { x: 0, y: 14 } });
   assert.deepEqual(world.braziers.map(b => [b.x, b.y, b.color]),
-    [[2.12, -8.12, 'pink'], [-2.12, -3.88, 'pink'], [-6, 1, 'cyan'], [6, 1, 'cyan']]);
+    [[2.12, -8.12, 'pink'], [-2.12, -3.88, 'pink'], [-6, 1, 'cyan'], [6, 1, 'cyan']].map(([x, y, color]) => [x * 1.4, y * 1.4, color]));
   // The pink pair flanks the source on screen instead of standing behind it:
   // the same screen depth v, 3u to either side along screen u.
   const screen = p => ({ u: (p.y - p.x) * Math.SQRT1_2, v: (p.x + p.y) / (2 * Math.SQRT2) });
   const source = screen(world.ritual);
   for (const b of world.braziers.filter(b => b.color === 'pink')) {
     const s = screen(b);
-    assert.ok(Math.abs(s.v - source.v) < .05 && Math.abs(Math.abs(s.u - source.u) - 3) < .05, `brazier ${b.x},${b.y}`);
+    assert.ok(Math.abs(s.v - source.v) < .05 && Math.abs(Math.abs(s.u - source.u) - 4.2) < .05, `brazier ${b.x},${b.y}`);
   }
-  assert.deepEqual(world.portals.map(p => [p.id, p.x, p.y, p.target]), [['courtyard-road', 0, 12.5, 'road']]);
+  assert.deepEqual(world.portals.map(p => [p.id, p.x, p.y, p.target]), [['courtyard-road', 0, 17.5, 'road']]);
   // Brazier colliders fit the drawn pixel-v11 stone foot (footprint radius).
   const foot = ruins.monasteryWorld.footprints['brazier-cyan'].radius;
   for (const b of world.braziers) assert.ok(world.obstacles.some(o => o.x === b.x && o.y === b.y && o.radius === foot));
@@ -96,24 +96,49 @@ test('the cloister is one connected walk mask with one road mouth at the shared 
     assert.ok(p.y <= COURTYARD_SEAM - .5);
     assert.equal(getOverworldZone(p.x, p.y + OFFSET).id, 'courtyard');
   }
-  for (let x = -1; x <= 1; x++) assert.ok(hasTile(x, 14, world), `road mouth cell ${x},14`);
+  for (let x = -1; x <= 1; x++) assert.ok(hasTile(x, 20, world), `road mouth cell ${x},14`);
   for (const radius of [.23, .29, .63]) {
     const usable = world.tiles.filter(p => isWalkable(p.x, p.y, radius, world));
     assert.ok(usable.length > world.tiles.length * .6, `${radius}: room to move`);
     if (radius < .5) assert.equal(reach(world, usable, radius), usable.length, 'no disconnected pockets behind ruins');
   }
-  for (const target of [world.ritual, { x: 0, y: -10.5 }, { x: -7, y: -3 }, { x: 7, y: 5 }]) walk(world, world.spawn, target);
+  for (const target of [world.ritual, { x: 0, y: -10.5 }, { x: -7, y: -3 }, { x: 10, y: 7 }]) walk(world, world.spawn, target);
 });
 
 test('encounters fit on open flagstones for many seeds and stay reachable', () => {
   for (const seed of [20261023, 1, 7, 12345, 4294967295, 99, 31337]) {
     const world = createOverworld(seed), guards = world.encounters.filter(e => e.zoneId === 'courtyard');
-    assert.equal(guards.length, 12);
+    assert.ok(guards.length >= 8, `${seed}: two packs of at least 4`);
     for (const e of guards) {
       assert.ok(isWalkable(e.x, e.y, e.kind === 'beetle' ? .63 : .54, world), `${seed}: ${e.id} spawns in a wall`);
       assert.ok(findPath(world.zones[2].spawn, e, .29, world).length, `${seed}: ${e.id} is unreachable`);
     }
   }
+});
+
+test('the breach in the back wall leads into the orchard; its rubble keeps the old wall face', () => {
+  const world = court();
+  for (let y = 1; y <= 4; y++) {
+    assert.ok(hasTile(-13, y, world), `breach cell -9,${y}`);
+    for (const radius of [.23, .29]) assert.ok(isWalkable(-13, y, radius, world), `breach cell -9,${y} at ${radius}`);
+  }
+  // The back wall keeps two pieces and its broken end; the third piece fell.
+  assert.deepEqual(props().filter(p => /^wall-back-\d+$/.test(p.id)).map(p => [p.id, p.kind]),
+    [['wall-back-0', 'wall-run-y'], ['wall-back-1', 'wall-window-y'], ['wall-back-2', 'wall-run-y'], ['wall-back-3', 'wall-end-y']]);
+  // The rubble closes both jambs and stops at the wall's inner face (x -8.5), so the cloister's
+  // free floor is unchanged.
+  for (const id of ['breach-rubble', 'breach-rubble-south']) {
+    const c = byId(id).collider;
+    assert.ok(Math.abs(c.x + c.halfWidth + 12.5) < 1e-9, `${id} reaches x ${c.x + c.halfWidth}`);
+  }
+  // No courtyard prop stands west of x -9.5: the orchard owns that ground.
+  for (const p of props()) {
+    const c = p.collider ?? p.contact ?? p.colliders[0];
+    assert.ok(c.x >= -13.5, `${p.id} stands in the orchard at ${c.x},${c.y}`);
+  }
+  // In the world, the courtyard's entry reaches the orchard's.
+  const orchard = OVERWORLD.zones.find(z => z.id === 'orchard');
+  for (const radius of [.23, .29]) walk(OVERWORLD, OVERWORLD.zones[2].spawn, orchard.entries.courtyard, radius);
 });
 
 // Blocker extent on the ground: colliders, or the visible core of decor that
@@ -136,7 +161,8 @@ test('every edge of the walk mask is marked by a wall, column, rubble, shrub or 
     .filter(Boolean);
   let edges = 0;
   for (const p of world.tiles) for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
-    if (cells.has(key({ x: p.x + dx, y: p.y + dy })) || p.y + dy > COURTYARD_SEAM) continue;
+    // The breach opens onto the orchard's corridor: no edge there (orchard-layout.test.js).
+    if (cells.has(key({ x: p.x + dx, y: p.y + dy })) || p.y + dy > COURTYARD_SEAM || p.x + dx < -13.5) continue;
     const x = p.x + dx * .5, y = p.y + dy * .5;
     assert.ok(blockers.some(e => gap(e, x, y) < 1.15), `invisible wall at ${x},${y}`);
     edges++;
@@ -176,7 +202,8 @@ test('the outer country is filled with the camp’s stone masses, cypress groves
   let checked = 0;
   for (let y = -26; y <= 12; y += 3) for (let x = -26; x <= 26; x += 3) {
     const d = Math.min(...tiles.map(t => Math.abs(t.x - x) + Math.abs(t.y - y)));
-    if (d < 4 || d > 16 || (y > 8 && Math.abs(x) < 6)) continue;
+    // West of x -9.5 the orchard dresses the meadow (orchard-layout.test.js).
+    if (d < 4 || d > 16 || (y > 8 && Math.abs(x) < 6) || x < -9.5) continue;
     assert.ok(props().some(p => { const c = p.collider ?? p.contact ?? p.colliders[0]; return Math.hypot(c.x - x, c.y - y) < 4; }),
       `empty meadow at ${x},${y}`);
     checked++;
@@ -300,7 +327,7 @@ test('the dais runes glow only while the guards hold the seal, never after it op
   const { rim } = dais.placement;
   assert.ok(world.ritual.rings.every(ring => ring.position.y > rim.height), 'bindings lie on top of the dais rim');
   for (const mesh of [...world.ritual.rings.map(ring => ({ r: ring.getBoundingInfo().boundingBox.extendSize.x })),
-    ...world.ritual.shards.map(post => ({ r: Math.hypot(post.position.x, post.position.z + 6) }))]) {
+    ...world.ritual.shards.map(post => ({ r: Math.hypot(post.position.x, post.position.z - court().ritual.y) }))]) {
     assert.ok(mesh.r > rim.inner && mesh.r < rim.outer, 'bindings and posts stand on the rim, around the socket');
   }
 });
@@ -338,24 +365,26 @@ test('courtyard and road braziers and the road shrine use the restyled pixel-v11
 
 // Pins of the restyled courtyard. The v11 columns (0.5 boxes instead of the
 // old √½ squares) and the moved braziers changed where the encounter rules
-// place the 12 guards for many seeds; that placement is accepted. A later art
+// place the guards for many seeds; that placement is accepted. A later art
 // or layout edit must not move guards or gameplay anchors silently: update
-// these hashes on purpose and say so in the report.
+// these hashes on purpose and say so in the report. The orchard breach widened the rows y 1..3
+// to x -9 (the contract hash); the guards kept their places.
 test('the courtyard gameplay contract and its guard placement stay pinned', () => {
   const sha = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
   const world = court();
   const contract = ['id', 'title', 'subtitle', 'regions', 'encounters', 'portals', 'spawn', 'entries', 'exit', 'ritual', 'braziers', 'pillars']
     .map(field => [field, world[field]]);
-  assert.equal(sha(contract), 'f1482948d9520507e23ef648d62a6ac238b162d0f1853c2c1440955698dd4b02');
+  assert.equal(sha(contract), '26f4e8c430dce0f6536b656745187aeac1d19a8e17aadc709da0e223b1ede05f');
+  // Seeded wanderers and pack sizes (encounter-layout §4.3) re-pinned the guards.
   const expected = {
-    20261023: '9dc639229d216293922f2b2e552de9cc9eba01338ef0b006e2efc92321f31602',
-    1: 'd43208e17c0cac52e1a0baadcd3460ce5acc573425afaf803a42950efa43ef16',
-    12345: '71dc7ba799d3767f0838dbc53ac5d217b15cb926a8fda0c205d8e91418d487ca',
+    20261023: [19, '9be5dbd9f17f252cfb6bfa71e24d1a377ec203244a3f2529d861dd8ee620c794'],
+    1: [17, '82876ee50d91d70888d0d9ac0577075d6141b182f9c5c37cb1b98967b2985a79'],
+    12345: [22, '134293a35bb9c010560ce5f1233336c77f3e161629ee0580dd3a6fc3b2f7dd89'],
   };
-  for (const [seed, hash] of Object.entries(expected)) {
+  for (const [seed, [count, hash]] of Object.entries(expected)) {
     const guards = createOverworld(Number(seed)).encounters.filter(e => e.zoneId === 'courtyard')
       .map(e => [e.id, e.kind, +e.x.toFixed(4), +e.y.toFixed(4)]);
-    assert.equal(guards.length, 12);
+    assert.equal(guards.length, count);
     assert.equal(sha(guards), hash, `seed ${seed}: courtyard guards moved`);
   }
 });

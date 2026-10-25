@@ -4,18 +4,21 @@ import { readFileSync } from 'node:fs';
 import { pixelAtlases, pixelAssetUrls } from '../src/pixel-scene.js';
 import { decodeHitMask, opaqueSpritePixel } from '../src/pixel-picking.js';
 import { readPng } from './helpers/png.js';
+import monkPackage from '../assets/game/pixel-v17/monk-side/manifest.json' with { type: 'json' };
+import legacyMonkPackage from '../assets/game/pixel-v10/monk-side/manifest.json' with { type: 'json' };
+import weapons from '../assets/game/pixel-v17/monk-weapons/manifest.json' with { type: 'json' };
 
-// The monk is either the 100-key v2 atlas or the 110-key side package (v2 + idle/run side keys).
-const sideMonk = pixelAtlases.monk.path === 'monk-side.png';
+// Body clips retain the old keys for legacy support; weapon clips also name body cells.
+const facings = clip => ['front', 'back', 'side'].flatMap(name => clip[name] ? [clip[name]] : []);
 const packages = {
-  monk: new URL(sideMonk ? '../assets/game/pixel-v10/monk-side/' : '../assets/game/pixel-v2/monk/', import.meta.url),
+  monk: new URL('../assets/game/pixel-v17/monk-side/', import.meta.url),
   hound: new URL('../assets/game/pixel-v2/hound-world/', import.meta.url),
   world: new URL('../assets/game/pixel-v2/hound-world/', import.meta.url),
   effects: new URL('../assets/game/pixel-v2/hound-world/', import.meta.url),
 };
 
-for (const [name, count, size] of [['monk', sideMonk ? 110 : 100, 96], ['hound', 52, 96], ['world', 24, 160], ['effects', 18, 192]]) {
-  test(`v2 delivery: ${name} runtime atlas and current-frame masks match the real PNG in both mirrors`, () => {
+for (const [name, count, size] of [['monk', monkPackage.monk.frames.length, monkPackage.monk.cell], ['hound', 52, 96], ['world', 24, 160], ['effects', 18, 192]]) {
+  test(`active delivery: ${name} runtime atlas and current-frame masks match the real PNG in both mirrors`, () => {
     const atlas = pixelAtlases[name], root = packages[name];
     assert.equal(atlas.cell, size);
     assert.equal(atlas.frames.length, count);
@@ -28,8 +31,18 @@ for (const [name, count, size] of [['monk', sideMonk ? 110 : 100, 96], ['hound',
     assert.equal(mask.width, png.width);
     const sprite = { atlas: { ...atlas, mask }, frame: 0, flip: false };
     const origin = { x: 17.25, y: 83.75 }, referenced = new Set();
-    for (const clip of Object.values(atlas.clips)) for (const frames of Object.values(clip)) {
-      for (const frame of frames) { assert.ok(frame >= 0 && frame < count); referenced.add(frame); }
+    const bodyClips = Object.values(atlas.clips);
+    if (name === 'monk') {
+      assert.deepEqual(atlas, monkPackage.monk, 'the renderer uses the active body manifest');
+      bodyClips.push(...Object.values(legacyMonkPackage.monk.clips));
+      for (const layer of [weapons.knuckles, weapons.staffAttacks]) for (const clip of Object.values(layer.clips)) {
+        for (const steps of facings(clip)) for (const { frame } of steps) {
+          assert.ok(Number.isInteger(frame) && frame >= 0 && frame < count); referenced.add(frame);
+        }
+      }
+    }
+    for (const clip of bodyClips) for (const frames of facings(clip)) {
+      for (const frame of frames) { assert.ok(Number.isInteger(frame) && frame >= 0 && frame < count); referenced.add(frame); }
     }
     assert.equal(referenced.size, count, 'every delivered frame must be reachable through named clips');
     for (let frame = 0; frame < count; frame++) {

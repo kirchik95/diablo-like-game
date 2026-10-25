@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createGame, updateGame, startAttack, startDash, startWave } from '../src/game.js';
 import { Input } from '../src/input.js';
 import { monkPose, houndPose, PresentationState } from '../src/pixel-animation.js';
-import monkPackage from '../assets/game/pixel-v2/monk/manifest.json' with { type: 'json' };
+import monkPackage from '../assets/game/pixel-v17/monk-side/manifest.json' with { type: 'json' };
 import { BRAZIERS, EXIT, SHRINE, clearLine, findPath, isWalkable } from '../src/world.js';
 
 const STEP = 1 / 120;
@@ -110,7 +110,8 @@ test('pixel slice: dash follows its initial heading despite changed aim and held
     assert.equal(startAttack(game, -dx, -dy), false);
     assert.equal(startWave(game), false);
     const pose = monkPose(game.player);
-    const frames = monkPackage.monk.clips.dash[dx + dy < 0 ? 'back' : 'front'];
+    const clip = monkPackage.monk.clips.dash;
+    const frames = clip[Math.abs(dx + dy) < 1e-9 ? 'side' : dx + dy < 0 ? 'back' : 'front'];
     const shown = new Set([pose.frame]);
     let ticks = 0;
     while (game.player.dashTime > 0) {
@@ -124,7 +125,7 @@ test('pixel slice: dash follows its initial heading despite changed aim and held
         shown.add(current.frame);
       }
     }
-    assert.equal(shown.size, 6, 'all six dash keys must be observable within its unchanged duration');
+    assert.equal(shown.size, frames.length, 'all active dash keys must be observable within its unchanged duration');
     assert.ok(game.player.x * dx + game.player.y * dy > 0);
     assert.ok(Math.abs(game.player.x * dy - game.player.y * dx) < 1e-8);
     assert.ok(isWalkable(game.player.x, game.player.y, game.player.radius));

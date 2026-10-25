@@ -1,0 +1,17 @@
+{
+  "frames": 407,
+  "paletteColors": 34,
+  "violations": 0,
+  "allLegPixelsPreserved": true,
+  "clipCounts": {
+    "idle": 7,
+    "run": 8,
+    "attack1": 8,
+    "attack2": 8,
+    "attack3": 8,
+    "dash": 8,
+    "wave": 8,
+    "hurt": 6,
+    "death": 6
+  }
+}

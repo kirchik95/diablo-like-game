@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "method": "Camp panorama and monastery ruins ramps reused by name and hex (stone, moss, bush foliage, bark, crate wood, rope straw, soil); seven additions for the olive leaf, fresh leaf, terracotta and lavender.",
+  "props": {
+    "OUT": {
+      "hex": "#0e121d",
+      "source": "campPanorama"
+    },
+    "DEEP": {
+      "hex": "#1f2737",
+      "source": "campPanorama"
+    },
+    "DEEP2": {
+      "hex": "#2d2f40",
+      "source": "campPanorama"
+    },
+    "Q_HI": {
+      "hex": "#c9b79b",
+      "source": "campPanorama"
+    },
+    "Q_W1": {
+      "hex": "#b09c82",
+      "source": "campPanorama"
+    },
+    "Q_T1": {
+      "hex": "#9f9280",
+      "source": "campPanorama"
+    },
+    "Q_T2": {
+      "hex": "#877d72",
+      "source": "campPanorama"
+    },
+    "Q_T3": {
+      "hex": "#6c6564",
+      "source": "campPanorama"
+    },
+    "Q_L0": {
+      "hex": "#7b7270",
+      "source": "monasteryRuins"
+    },
+    "Q_L1": {
+      "hex": "#706968",
+      "source": "campPanorama"
+    },
+    "Q_L2": {
+      "hex": "#5c5258",
+      "source": "campPanorama"
+    },
+    "Q_M": {
+      "hex": "#4a4753",
+      "source": "campPanorama"
+    },
+    "Q_S1": {
+      "hex": "#3d3e4c",
+      "source": "campPanorama"
+    },
+    "Q_S2": {
+      "hex": "#30344a",
+      "source": "campPanorama"
+    },
+    "Q_AMB": {
+      "hex": "#3c4b52",
+      "source": "campPanorama"
+    },
+    "M_HI": {
+      "hex": "#9a9358",
+      "source": "campPanorama"
+    },
+    "M1": {
+      "hex": "#7d7b4f",
+      "source": "campPanorama"
+    },
+    "M2": {
+      "hex": "#626445",
+      "source": "campPanorama"
+    },
+    "M3": {
+      "hex": "#4a523f",
+      "source": "campPanorama"
+    },
+    "B_HI": {
+      "hex": "#6f8467",
+      "source": "campPanorama"
+    },
+    "B1": {
+      "hex": "#4f6759",
+      "source": "campPanorama"
+    },
+    "B2": {
+      "hex": "#37504b",
+      "source": "campPanorama"
+    },
+    "B3": {
+      "hex": "#263c3e",
+      "source": "campPanorama"
+    },
+    "F4": {
+      "hex": "#0f2b3c",
+      "source": "campPanorama"
+    },
+    "T1": {
+      "hex": "#6e4f45",
+      "source": "campPanorama"
+    },
+    "T2": {
+      "hex": "#4a3438",
+      "source": "campPanorama"
+    },
+    "T3": {
+      "hex": "#2f2230",
+      "source": "campPanorama"
+    },
+    "W_HI": {
+      "hex": "#b4754b",
+      "source": "campPanorama"
+    },
+    "W1": {
+      "hex": "#8d5c48",
+      "source": "campPanorama"
+    },
+    "W2": {
+      "hex": "#6b453e",
+      "source": "campPanorama"
+    },
+    "W3": {
+      "hex": "#573a3a",
+      "source": "campPanorama"
+    },
+    "W4": {
+      "hex": "#352430",
+      "source": "campPanorama"
+    },
+    "Y1": {
+      "hex": "#b8935c",
+      "source": "campPanorama"
+    },
+    "Y2": {
+      "hex": "#8c6c46",
+      "source": "campPanorama"
+    },
+    "Y3": {
+      "hex": "#d3bb8f",
+      "source": "campPanorama"
+    },
+    "SOIL1": {
+      "hex": "#82664c",
+      "source": "monasteryRuins"
+    },
+    "SOIL2": {
+      "hex": "#6c5440",
+      "source": "monasteryRuins"
+    },
+    "SOIL3": {
+      "hex": "#4b3a33",
+      "source": "monasteryRuins"
+    },
+    "O_HI": {
+      "hex": "#b0b78f",
+      "source": "new",
+      "note": "olive leaf, lit silver side"
+    },
+    "O1": {
+      "hex": "#8f9a77",
+      "source": "new",
+      "note": "olive leaf, silver-green"
+    },
+    "V_HI": {
+      "hex": "#87a35f",
+      "source": "new",
+      "note": "vine and fig leaf, lit"
+    },
+    "V1": {
+      "hex": "#5f7f4d",
+      "source": "new",
+      "note": "vine and fig leaf"
+    },
+    "TC_HI": {
+      "hex": "#d4905e",
+      "source": "new",
+      "note": "terracotta, lit"
+    },
+    "TC1": {
+      "hex": "#b4683f",
+      "source": "new",
+      "note": "terracotta"
+    },
+    "LV": {
+      "hex": "#8f86b0",
+      "source": "new",
+      "note": "lavender spikes"
+    }
+  },
+  "surfaces": {
+    "orchardGrass": {
+      "G_SH": {
+        "hex": "#454a34",
+        "source": "campPanorama campGrass"
+      },
+      "OG_D2": {
+        "hex": "#525b3d",
+        "source": "new"
+      },
+      "OG_D1": {
+        "hex": "#5f6843",
+        "source": "new"
+      },
+      "OG_B": {
+        "hex": "#6b7349",
+        "source": "new"
+      },
+      "OG_L": {
+        "hex": "#7a8150",
+        "source": "new"
+      },
+      "OG_H1": {
+        "hex": "#8d9256",
+        "source": "new"
+      },
+      "G_H2": {
+        "hex": "#a89f5d",
+        "source": "campPanorama campGrass"
+      },
+      "CL1": {
+        "hex": "#58703f",
+        "source": "new"
+      },
+      "CL_HI": {
+        "hex": "#73904c",
+        "source": "new"
+      },
+      "FL": {
+        "hex": "#cfcbb0",
+        "source": "new"
+      }
+    }
+  },
+  "sharedWithCampPanorama": [
+    "B1",
+    "B2",
+    "B3",
+    "B_HI",
+    "DEEP",
+    "DEEP2",
+    "F4",
+    "M1",
+    "M2",
+    "M3",
+    "M_HI",
+    "OUT",
+    "Q_AMB",
+    "Q_HI",
+    "Q_L1",
+    "Q_L2",
+    "Q_M",
+    "Q_S1",
+    "Q_S2",
+    "Q_T1",
+    "Q_T2",
+    "Q_T3",
+    "Q_W1",
+    "T1",
+    "T2",
+    "T3",
+    "W1",
+    "W2",
+    "W3",
+    "W4",
+    "W_HI",
+    "Y1",
+    "Y2",
+    "Y3"
+  ],
+  "sharedWithMonasteryRuins": [
+    "B1",
+    "B2",
+    "B3",
+    "B_HI",
+    "DEEP",
+    "DEEP2",
+    "F4",
+    "M1",
+    "M2",
+    "M3",
+    "M_HI",
+    "OUT",
+    "Q_AMB",
+    "Q_HI",
+    "Q_L0",
+    "Q_L1",
+    "Q_L2",
+    "Q_M",
+    "Q_S1",
+    "Q_S2",
+    "Q_T1",
+    "Q_T2",
+    "Q_T3",
+    "Q_W1",
+    "SOIL1",
+    "SOIL2",
+    "SOIL3",
+    "T1",
+    "T2",
+    "T3",
+    "Y1",
+    "Y2",
+    "Y3"
+  ],
+  "sharedColors": 38
+}

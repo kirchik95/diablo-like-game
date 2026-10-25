@@ -48,7 +48,8 @@
 @media (min-width: 5120px) and (min-height: 2880px) { :root { --u: 8px; } }
 
 *, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+/* 100dvh is the visible height: iPhone Safari's toolbar does not cover the page. No rubber band, no pull to refresh. */
+html, body { margin: 0; width: 100%; height: 100%; height: 100dvh; overflow: hidden; overscroll-behavior: none; }
 /* Pixel cursors from scripts/build-cursor-assets.py: arrow in menus, amber over controls, reticle over the field. */
 html { cursor: default; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow@2x.png") 2x) 0 0, default; }
 button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent; }
@@ -71,13 +72,13 @@ img, svg, canvas { image-rendering: pixelated; }
 
 /* Stone frame: dark outline, light top bevel, darker lower and right faces, notched corners.
    The frame is a clipped pseudo-element, so tabs, badges and focus outlines stay whole. */
-.quest, .world-info, .vitals, .skill, .icon-button, .notice, .interaction-prompt,
-.intro-panel, .primary-button, .appearance-preview, .run-trophy {
+.quest, .map-plate, .level-badge, .skill, .loot-line, .icon-button, .notice, .interaction-prompt,
+.intro-panel, .primary-button, .appearance-preview, .run-trophy, .monk-panel {
   isolation: isolate;
 }
-.quest::before, .world-info::before, .vitals::before, .skill::before, .icon-button::before,
+.quest::before, .map-plate::before, .level-badge::before, .skill::before, .loot-line::before, .icon-button::before,
 .notice::before, .interaction-prompt::before, .intro-panel::before, .primary-button::before,
-.appearance-preview::before, .run-trophy::before {
+.appearance-preview::before, .run-trophy::before, .monk-panel::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -112,19 +113,23 @@ img, svg, canvas { image-rendering: pixelated; }
 .kill-dots i.done { background: var(--amber); }
 .quest .quest-total { display: flex; justify-content: space-between; gap: calc(var(--u) * 3); margin-top: calc(var(--u) * 2); }
 
-/* Location, map and settings: top-right. */
+/* Location, round map and pause: top-right. The pause button stands in the free corner left of the
+   circle; the zone name and the strip sit on a plate under it. Sound lives in the pause «Настройки». */
 .world-info {
   position: fixed;
   z-index: 5;
   top: var(--edge);
   right: var(--edge);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(var(--u) * 72);
+  grid-template-areas: "pause map" "plate plate";
+  gap: var(--u) calc(var(--u) * 2);
   width: calc(var(--u) * 104);
-  padding: calc(var(--u) * 2);
   pointer-events: none;
 }
-.map-head { display: flex; align-items: center; justify-content: space-between; gap: calc(var(--u) * 2); height: calc(var(--u) * 11); padding-left: var(--u); }
-#location-title { min-width: 0; overflow: hidden; color: var(--ivory); white-space: nowrap; text-overflow: ellipsis; }
-.tools { display: flex; flex: none; gap: var(--u); }
+.world-info #pause { grid-area: pause; justify-self: end; }
+.map-plate { position: relative; grid-area: plate; padding: calc(var(--u) * 2) calc(var(--u) * 2) calc(var(--u) * 3); }
+#location-title { display: block; overflow: hidden; padding: 0 var(--u); color: var(--ivory); line-height: calc(var(--u) * 9); white-space: nowrap; text-overflow: ellipsis; }
 .icon-button {
   position: relative;
   display: grid;
@@ -142,61 +147,172 @@ img, svg, canvas { image-rendering: pixelated; }
 .icon-button svg { width: calc(var(--u) * 9); height: calc(var(--u) * 7); fill: currentColor; }
 .icon-button:hover { --frame-fill: #3b3147; }
 .icon-button:active { --frame-fill: var(--stone-dark); --frame-top: var(--night); }
-.icon-button[aria-pressed="true"] { color: var(--coral); }
-.mute-mark, .icon-button[aria-pressed="true"] .sound-waves { display: none; }
-.icon-button[aria-pressed="true"] .mute-mark { display: block; }
-.map-frame { position: relative; height: calc(var(--u) * 40); margin-top: var(--u); overflow: hidden; background: #120e1a; box-shadow: inset 0 var(--u) var(--night); }
-/* render.js reserves 34 + 30 canvas pixels for its own captions; at 2× they are 17 + 15 CSS pixels. */
-#minimap { position: absolute; top: -17px; left: 0; width: 100%; height: calc(100% + 32px); image-rendering: auto; }
-.map-north { position: absolute; top: var(--u); right: calc(var(--u) * 2); color: var(--dim); }
-.map-zones { display: flex; justify-content: space-between; gap: var(--u); margin: var(--u) 0 0; padding: 0 var(--u); list-style: none; color: var(--dim); white-space: nowrap; }
+/* render.js draws the pixel circle in MAP_CELLS = 72 cells of --u, ring included; the corners stay clear. */
+.map-frame { position: relative; grid-area: map; width: calc(var(--u) * 72); height: calc(var(--u) * 72); }
+body.minimap-off:not(.touch-map) .map-frame { display: none; }
+#minimap { display: block; width: 100%; height: 100%; image-rendering: auto; }
+/* «N» sits on the rim where north (−y) points on this projection: up and left, not up. */
+.map-north { position: absolute; top: calc(var(--u) * 20); left: calc(var(--u) * 8); color: var(--muted); line-height: 1; text-shadow: var(--outline); }
+/* Five zones are wider than the map: the strip wraps in route order. Three zones still fill one line. */
+.map-zones { display: flex; flex-wrap: wrap; column-gap: calc(var(--u) * 5); margin: var(--u) 0 0; padding: 0 var(--u); list-style: none; color: var(--dim); white-space: nowrap; }
 .map-zones .visited { color: var(--muted); }
 .map-zones .current { color: var(--ivory); }
 .map-zones .current::before { content: ""; display: inline-block; width: calc(var(--u) * 2); height: calc(var(--u) * 2); margin: 0 var(--u) calc(var(--u) * 2) 0; background: #dcf7dd; }
 
-/* Vitals and skills: bottom edge. */
+/* Orbs, experience and slots: one group at the bottom centre, 44u above the window margin (§5.2).
+   The health orb sits left of the slot row, the spirit orb right of it, the experience bar above it. */
 .hud {
   position: fixed;
   z-index: 5;
   left: var(--edge);
   right: var(--edge);
   bottom: var(--edge);
-  display: flex;
-  align-items: flex-end;
+  height: calc(var(--u) * 44);
   pointer-events: none;
+  /* Ten 12u experience cells: the track is 131u, as wide as the slot row and its keycaps. */
+  --xp-cell: calc(var(--u) * 12);
 }
-.vitals { position: relative; display: flex; gap: calc(var(--u) * 3); padding: calc(var(--u) * 3); }
-.portrait { position: relative; flex: none; width: calc(var(--u) * 22); height: calc(var(--u) * 27); overflow: hidden; background: var(--slate); box-shadow: inset 0 var(--u) var(--night); }
-.portrait img { position: absolute; top: calc(var(--u) * -18); left: calc(var(--u) * -40); width: calc(var(--u) * 96); height: calc(var(--u) * 96); max-width: none; }
-/* Fixed columns keep the panel still while numbers and the breathing line change. */
-.vital-bars { display: grid; grid-template-columns: calc(var(--u) * 5) calc(var(--u) * 51) calc(var(--u) * 40); grid-auto-rows: var(--t); align-items: center; column-gap: calc(var(--u) * 2); }
-.vital-icon { width: calc(var(--u) * 5); height: calc(var(--u) * 5); }
-.vital-value { justify-self: end; white-space: nowrap; }
-#health-text { color: var(--ivory); }
-#health-text i { color: var(--muted); font-style: normal; }
-#spirit-text { color: var(--spirit); }
-.vital-meta { grid-column: 1 / -1; overflow: hidden; white-space: nowrap; }
-#combat-state { color: var(--muted); text-transform: lowercase; }
-#combat-state.warning { color: var(--coral); }
-/* Segments are 4 units of fill and 1 unit of gap, so the inner 49 units hold ten whole cells. */
-.health-track, .spirit-track { position: relative; height: calc(var(--u) * 7); padding: var(--u); background: var(--night); }
-.spirit-track { height: calc(var(--u) * 5); }
-.health-track::before, .spirit-track::before, .health-track::after, .spirit-track::after {
+.hud-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+/* A soft shadow under the group keeps the orbs and the slots readable on light ground. */
+.hud::before {
   content: "";
   position: absolute;
-  inset: var(--u);
-  pointer-events: none;
+  left: 50%;
+  bottom: calc(var(--edge) * -1);
+  width: calc(var(--u) * 300);
+  height: calc(var(--u) * 76);
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse 50% 70% at 50% 100%, #0d0a14cc 0%, #0d0a1466 55%, #0d0a1400 100%);
 }
-.health-track::before { background: repeating-linear-gradient(90deg, #3a2430 0 calc(var(--u) * 4), transparent calc(var(--u) * 4) calc(var(--u) * 5)); }
-.spirit-track::before { background: repeating-linear-gradient(90deg, #1f363b 0 calc(var(--u) * 4), transparent calc(var(--u) * 4) calc(var(--u) * 5)); }
-.health-track::after, .spirit-track::after { z-index: 1; background: repeating-linear-gradient(90deg, transparent 0 calc(var(--u) * 4), var(--night) calc(var(--u) * 4) calc(var(--u) * 5)); }
-#health-fill, #spirit-fill { position: relative; height: 100%; }
-#health-fill { width: 100%; background: linear-gradient(var(--coral-light) 0 var(--u), var(--coral) var(--u) calc(100% - var(--u)), var(--coral-dark) calc(100% - var(--u))); transition: width .14s steps(4, end); }
-#spirit-fill { width: 60%; background: linear-gradient(var(--spirit-light) 0 var(--u), var(--spirit) var(--u)); transition: width .12s steps(3, end); }
 
-.skills { position: absolute; bottom: 0; left: 50%; display: flex; gap: calc(var(--u) * 3); padding-top: calc(var(--u) * 4); transform: translateX(-50%); }
+.orb {
+  position: absolute;
+  bottom: 0;
+  width: calc(var(--u) * 37);
+  height: calc(var(--u) * 44);
+  --orb-accent: var(--coral);
+  --liquid: var(--coral);
+  --liquid-light: var(--coral-light);
+  --liquid-dark: var(--coral-dark);
+  --orb-empty: #3a2430;
+  --ring-top: var(--stone);
+}
+/* 4u from the slot row (152u): 76u + 4u + 37u from the centre. */
+.health-orb { left: calc(50% - var(--u) * 117); }
+.spirit-orb {
+  left: calc(50% + var(--u) * 80);
+  --orb-accent: var(--spirit);
+  --liquid: var(--spirit);
+  --liquid-light: var(--spirit-light);
+  --liquid-dark: var(--spirit-dark);
+  --orb-empty: #1f363b;
+}
+.orb-art { width: calc(var(--u) * 37); height: calc(var(--u) * 37); }
+.orb-empty { fill: var(--orb-empty); }
+.orb-liquid { fill: var(--liquid); }
+.orb-shade { fill: var(--liquid-dark); }
+.orb-surface { fill: var(--liquid-light); }
+.orb-glint { fill: #eee0cecc; }
+.ring-outline { fill: var(--night); }
+.ring-top { fill: var(--ring-top); }
+.ring-side { fill: var(--stone-dark); }
+.ring-low { fill: #130f1b; }
+/* The number plate overlaps the ring by 2u, like a slot keycap. */
+.orb-plate {
+  position: absolute;
+  bottom: 0;
+  left: var(--u);
+  width: calc(var(--u) * 35);
+  height: calc(var(--u) * 9);
+  border: var(--u) solid var(--night);
+  background: var(--slate);
+  box-shadow: inset 0 var(--u) var(--orb-accent);
+  line-height: calc(var(--u) * 7);
+  text-align: center;
+  white-space: nowrap;
+}
+.orb-plate b { color: var(--ivory); }
+.orb-plate i { color: var(--muted); font-style: normal; }
+.spirit-orb .orb-plate b, .spirit-orb .orb-plate i { color: var(--spirit); }
+.orb.low { --ring-top: var(--coral); }
+.orb.low .orb-plate b, .orb.drained .orb-plate b { color: var(--coral); }
+/* Low health: the empty glass blinks in two 0.5 s steps; reduced motion keeps step 1. */
+.orb.low .orb-empty { animation: orb-blink 1s steps(1, end) infinite; }
+@keyframes orb-blink { 50%, to { fill: var(--coral-dark); } }
+.breath-warning { position: absolute; left: calc(50% - var(--u) * 117); bottom: calc(var(--u) * 46); margin: 0; color: var(--coral); text-shadow: var(--outline); white-space: nowrap; }
+
+/* Level frame and the experience bar above the slot row; the free point mark above the health orb. */
+.level-badge {
+  position: absolute;
+  left: calc(50% - var(--u) * 78);
+  bottom: calc(var(--u) * 45);
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 9);
+  height: calc(var(--u) * 9);
+  color: var(--amber);
+  line-height: calc(var(--u) * 7);
+  --frame-top: var(--amber-dark);
+}
+.level-points-button {
+  position: absolute;
+  left: calc(50% - var(--u) * 110);
+  bottom: calc(var(--u) * 49);
+  width: calc(var(--u) * 24);
+  height: calc(var(--u) * 24);
+  color: var(--spirit-light);
+  box-shadow: 0 0 0 var(--u) var(--amber-dark);
+  animation: point-pulse 1.4s steps(2, end) infinite;
+  --frame-top: var(--amber);
+  --frame-side: var(--amber-dark);
+  --frame-fill: #332a24;
+}
+.point-mark { display: flex; align-items: center; gap: var(--u); pointer-events: none; }
+.point-glyph { color: var(--amber); font-size: calc(var(--u) * 16); font-weight: 800; line-height: 1; }
+#point-count { font-size: calc(var(--u) * 8); font-weight: 700; }
+.points-key { position: absolute; right: calc(var(--u) * -2); bottom: calc(var(--u) * -3); padding: 0 calc(var(--u) * 2); border: var(--u) solid var(--night); background: var(--slate); color: var(--ivory); font: inherit; line-height: calc(var(--u) * 7); }
+.level-points-button.burst { animation: point-burst .5s steps(2, end) 4; }
+@keyframes point-pulse {
+  50% { box-shadow: 0 0 0 calc(var(--u) * 2) #e5b66e88; --frame-fill: #4b3d2c; }
+}
+@keyframes point-burst {
+  50% { box-shadow: 0 0 0 calc(var(--u) * 3) var(--amber), 0 0 0 calc(var(--u) * 6) #e5b66e66; --frame-fill: #655138; }
+}
+.hud:has(.level-points-button:not([hidden])) .breath-warning { bottom: calc(var(--u) * 77); }
+/* The touch HUD puts health at the top. Keep a 24u target below its plate, inside the safe area. */
+html.touch-ui .level-points-button { top: calc(var(--safe-top) + var(--u) * 44); bottom: auto; left: calc(var(--safe-left) + var(--u) * 7); }
+html.touch-ui .level-points-button .point-mark { position: static; }
+html.touch-ui .points-key { display: none; }
+html.touch-ui .hud:has(.level-points-button:not([hidden])) .breath-warning { top: calc(var(--safe-top) + var(--u) * 71); bottom: auto; }
+.xp-track {
+  position: absolute;
+  left: calc(50% - var(--u) * 66);
+  bottom: calc(var(--u) * 47);
+  width: calc(var(--xp-cell) * 10 + var(--u) * 11);
+  height: calc(var(--u) * 5);
+  padding: var(--u);
+  background: var(--night);
+}
+.xp-cells { position: relative; height: 100%; background: #3b3127; }
+/* 1u gaps over the fill split the bar into ten cells. */
+.xp-cells::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent 0 var(--xp-cell), var(--night) var(--xp-cell) calc(var(--xp-cell) + var(--u)));
+}
+#xp-fill { width: 0; height: 100%; background: linear-gradient(#ffdf9f 0 var(--u), var(--amber) var(--u)); }
+@supports (width: round(down, 50%, 2px)) {
+  .xp-cells { overflow: hidden; }
+  #xp-fill { width: 100%; transform: translateX(-100%); }
+}
+.xp-track.flash .xp-cells { background: #ffdf9f; }
+.xp-track.flash #xp-fill { visibility: hidden; }
+
+/* Five slots, 152u: LMB · Space · RMB · Q · F. Key tops line up with the orb tops at 48u. */
+.skills { position: absolute; bottom: calc(var(--u) * 12); left: 50%; display: flex; gap: calc(var(--u) * 3); transform: translateX(-50%); }
 .skill { position: relative; width: calc(var(--u) * 28); height: calc(var(--u) * 28); --skill-accent: var(--spirit); --frame-top: var(--skill-accent); --frame-fill: #1a1523; }
-#skill-attack { --skill-accent: var(--coral); }
+#slot-lmb { --skill-accent: var(--coral); }
 .keycap {
   position: absolute;
   z-index: 2;
@@ -214,14 +330,51 @@ img, svg, canvas { image-rendering: pixelated; }
 .skill-well { position: absolute; top: calc(var(--u) * 2); left: calc(var(--u) * 2); width: calc(var(--u) * 24); height: calc(var(--u) * 24); overflow: hidden; }
 .skill-well svg { width: 100%; height: 100%; }
 .skill.insufficient .skill-well svg { opacity: .35; }
-.skill-shade { position: absolute; bottom: 0; left: 0; width: 100%; height: 0; background: #0d0a14c0; pointer-events: none; }
+.skill-shade { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: #0d0a14c0; pointer-events: none;
+  /* main.js sets --shade, the share of the cooldown left: a scale repaints without a layout. */
+  transform: scaleY(var(--shade, 0)); transform-origin: bottom center; }
 .cooldown { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; color: var(--ivory); background: #0d0a1499; text-shadow: var(--outline); }
 .cooldown:empty { display: none; }
 .skill-cost { position: absolute; z-index: 2; right: var(--u); bottom: 0; color: var(--spirit); text-shadow: var(--outline); }
+.skill-cost:empty { display: none; }
 .skill.insufficient .skill-cost { color: var(--coral); }
 .combo-pips { position: absolute; z-index: 2; bottom: calc(var(--u) * -1); left: 50%; display: flex; gap: var(--u); padding: var(--u); transform: translateX(-50%); background: var(--night); }
 .combo-pips i { width: calc(var(--u) * 5); height: calc(var(--u) * 2); background: #453846; }
 .combo-pips i.on { background: var(--coral); box-shadow: inset 0 var(--u) var(--coral-light); }
+.charge-pips i.on { background: var(--spirit); box-shadow: inset 0 var(--u) var(--spirit-light); }
+/* Locked: a lock and «ур. N» in --dim. Empty: a dashed well and K. New: an amber dot until the first cast. */
+.skill-lock, .skill-unlock, .skill-blank, .skill-new { display: none; }
+.skill.locked, .skill.empty { --skill-accent: var(--stone-dark); }
+.skill.locked .keycap { color: var(--dim); }
+.skill.locked .skill-well, .skill.locked .skill-cost, .skill.empty .skill-well, .skill.empty .skill-cost { display: none; }
+.skill.locked .skill-lock { position: absolute; top: calc(var(--u) * 4); left: calc(var(--u) * 8); display: block; width: calc(var(--u) * 12); height: calc(var(--u) * 12); }
+.skill.locked .skill-unlock { position: absolute; right: 0; bottom: var(--u); left: 0; display: block; color: var(--dim); text-align: center; }
+.skill.empty .skill-blank { position: absolute; inset: calc(var(--u) * 4); display: grid; place-items: center; border: var(--u) dashed var(--dim); color: var(--muted); }
+.skill.new .skill-new { position: absolute; z-index: 2; top: calc(var(--u) * 3); right: calc(var(--u) * 3); display: block; width: calc(var(--u) * 3); height: calc(var(--u) * 3); background: var(--amber); box-shadow: 0 0 0 var(--u) var(--night); }
+
+/* Loot lines (§5.4): above the spirit orb at every width, newest at the bottom, up to three. */
+.loot-lines { position: absolute; right: 0; bottom: calc(var(--u) * 48); display: flex; flex-direction: column; align-items: flex-end; gap: calc(var(--u) * 2); }
+.loot-line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 4);
+  width: max-content;
+  min-width: calc(var(--u) * 120);
+  max-width: calc(var(--u) * 160);
+  padding: calc(var(--u) * 2) calc(var(--u) * 4) calc(var(--u) * 2) calc(var(--u) * 2);
+  --frame-top: var(--amber-dark);
+}
+.loot-line.bag-full { min-width: 0; padding: calc(var(--u) * 3) calc(var(--u) * 5); --frame-top: var(--coral); }
+.loot-icon { position: relative; flex: none; width: calc(var(--u) * 20); height: calc(var(--u) * 20); border: var(--u) solid var(--night); background: var(--slate); box-shadow: inset 0 var(--u) var(--night); }
+.loot-icon svg { position: absolute; top: var(--u); left: var(--u); width: calc(var(--u) * 16); height: calc(var(--u) * 16); }
+.loot-gems { position: absolute; right: calc(var(--u) * -2); bottom: calc(var(--u) * -2); display: flex; gap: var(--u); padding: var(--u); background: var(--night); }
+.loot-gems i { width: calc(var(--u) * 3); height: calc(var(--u) * 3); background: currentColor; }
+.loot-text { min-width: 0; }
+.loot-text > span { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.loot-compare { color: var(--muted); }
+.loot-compare.better { color: var(--spirit-light); }
+.loot-compare.worse { color: var(--coral); }
 
 kbd {
   display: inline-block;
@@ -251,14 +404,22 @@ kbd {
   text-align: center;
   opacity: 0;
   transition: opacity .18s, transform .18s steps(2, end);
+  will-change: transform, opacity;
   pointer-events: none;
   --frame-top: var(--amber);
 }
 .notice.show { opacity: 1; transform: translate(-50%, 0); }
+/* z 10 keeps a notice over the «Монах» backdrop (8). The start, pause and end panels (z 7) and the map
+   cover it instead: its timer runs on under them. */
+body:has(#overlay:not(.closed)) .notice { z-index: 6; }
+.notice-title { display: block; color: var(--amber); }
+.notice-title + span { display: block; }
+.notice-title + span::first-letter { color: var(--amber); font-weight: 800; }
 .interaction-prompt {
   position: fixed;
   z-index: 6;
-  bottom: calc(var(--edge) + var(--u) * 38);
+  /* 6u above the experience bar top (52u): 58u = 116 px at --u: 2px. */
+  bottom: calc(var(--edge) + var(--u) * 58);
   left: 50%;
   display: flex;
   align-items: center;
@@ -286,16 +447,20 @@ kbd {
 .overlay.closed { opacity: 0; pointer-events: none; }
 .intro-panel {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: min(calc(var(--u) * 176), 100%);
+  /* min-height: 0 keeps the overlay's grid row from growing to the text, so max-height clamps the panel. */
+  min-height: 0;
   max-height: 100%;
-  overflow: auto;
   padding: calc(var(--u) * 7) calc(var(--u) * 8) calc(var(--u) * 8);
   color: var(--muted);
-  scrollbar-width: thin;
-  scrollbar-color: var(--stone) var(--ink);
   --frame-top: #8d7f99;
   --frame-fill: var(--ink);
 }
+/* A panel taller than the screen scrolls inside its frame: the frame is .intro-panel::before, and a box
+   that scrolls would carry it away with the text (as .monk-panel and .monk-content). */
+.intro-scroll { min-height: 0; overflow: auto; scrollbar-width: thin; scrollbar-color: var(--stone) var(--ink); }
 .intro-panel .wordmark { display: flex; align-items: center; gap: calc(var(--u) * 2); margin: 0 0 calc(var(--u) * 3); color: var(--dim); text-transform: uppercase; }
 .wordmark svg { width: calc(var(--u) * 6); height: calc(var(--u) * 6); }
 .intro-panel .eyebrow { display: block; color: var(--amber); text-transform: uppercase; }
@@ -304,7 +469,7 @@ kbd {
 .title-rule { display: flex; align-items: center; gap: var(--u); width: calc(var(--u) * 33); height: calc(var(--u) * 3); }
 .title-rule span { flex: 1; height: var(--u); background: var(--amber-dark); }
 .title-rule i { width: calc(var(--u) * 3); height: calc(var(--u) * 3); background: var(--amber); }
-.intro-panel > p { margin: calc(var(--u) * 4) 0 calc(var(--u) * 5); color: var(--ivory); line-height: calc(var(--u) * 11); }
+.intro-scroll > p { margin: calc(var(--u) * 4) 0 calc(var(--u) * 5); color: var(--ivory); line-height: calc(var(--u) * 11); }
 .appearance-picker { display: grid; grid-template-columns: calc(var(--u) * 60) minmax(0, 1fr); gap: calc(var(--u) * 3) calc(var(--u) * 5); margin: 0 0 calc(var(--u) * 5); }
 .appearance-preview { position: relative; display: flex; flex-direction: column; align-items: center; padding: calc(var(--u) * 2) 0 calc(var(--u) * 2); --frame-fill: var(--slate); }
 .preview-crop { position: relative; display: block; width: calc(var(--u) * 56); height: calc(var(--u) * 62); overflow: hidden; }
@@ -360,11 +525,23 @@ kbd {
   --frame-side: #f2e1c2;
   --frame-low: #8a7152;
 }
+.save-continue { flex-direction: column; align-items: flex-start; gap: 0; margin-bottom: calc(var(--u) * 3); }
+html.touch-ui .intro-scroll:has(> #appearance-picker:not([hidden])) > #continue-run { grid-row: -5; align-self: end; }
+.save-continue small { font: inherit; font-size: calc(var(--fs) * .85); opacity: .8; }
+.primary-button.save-new-run { --frame-fill: var(--stone-dark); --frame-top: var(--stone); --frame-side: var(--stone); --frame-low: var(--ink); color: var(--ivory); }
+.primary-button.save-new-run:hover:not(:disabled) { --frame-fill: var(--stone); }
 .primary-button svg { width: calc(var(--u) * 8); height: calc(var(--u) * 8); fill: currentColor; }
 .primary-button:hover:not(:disabled) { --frame-fill: #f5e4c7; }
 .primary-button:active:not(:disabled) { --frame-fill: #cdb28d; --frame-top: #8a7152; }
 .primary-button:disabled { opacity: .55; }
 .primary-button:focus-visible { outline-color: var(--spirit-dark); }
+/* Pad navigation moves the focus by script, which browsers may not mark :focus-visible; body.pad-input shows the same ring. */
+.pad-input button:focus { outline: var(--u) solid var(--spirit); outline-offset: calc(var(--u) * -2); }
+.pad-input .primary-button:focus { outline-color: var(--spirit-dark); }
+.pad-input .appearance-choice input:focus + .appearance-chip { outline: var(--u) solid var(--spirit); outline-offset: var(--u); }
+/* On the pad an empty slot names the panel button (Create, View), and the C · I · K tab keys give way to L1 / R1. */
+.pad-input .skill-blank { font-size: calc(var(--fs) * .7); }
+.pad-input .monk-tab kbd { display: none; }
 .intro-panel .entry-hint { margin: calc(var(--u) * 4) 0 0; color: var(--dim); line-height: calc(var(--u) * 11); }
 .version { display: none; }
 .text-button { display: block; margin-top: calc(var(--u) * 3); padding: var(--u) 0; border: 0; background: none; color: var(--muted); line-height: calc(var(--u) * 11); text-decoration: underline; text-decoration-color: var(--stone); text-decoration-thickness: var(--u); text-underline-offset: calc(var(--u) * 2); cursor: pointer; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-active.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-active@2x.png") 2x) 0 0, pointer; }
@@ -372,28 +549,357 @@ kbd {
 /* Pause: a wider panel keeps each control on one or two lines. */
 .intro-panel:has(#pause-controls:not([hidden])) { width: min(calc(var(--u) * 208), 100%); }
 .intro-panel:has(#pause-controls:not([hidden])) .title-rule { display: none; }
+/* «Настройки» in the pause menu: a titled block of rows, each a name and its switch. */
+.settings { margin-top: calc(var(--u) * 5); padding-top: calc(var(--u) * 4); border-top: var(--u) solid var(--stone-dark); color: var(--muted); }
+.settings h2 { margin: 0 0 calc(var(--u) * 2); color: var(--amber); font-size: inherit; }
+.setting { display: flex; align-items: center; justify-content: space-between; gap: calc(var(--u) * 4); }
+.setting-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--u) * 3);
+  min-width: calc(var(--u) * 30);
+  height: calc(var(--u) * 13);
+  padding: 0 calc(var(--u) * 4);
+  border: var(--u) solid var(--stone-dark);
+  border-bottom-width: calc(var(--u) * 2);
+  background: var(--ink);
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-active.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-active@2x.png") 2x) 0 0, pointer;
+}
+.setting-switch::before { content: ""; flex: none; width: calc(var(--u) * 4); height: calc(var(--u) * 4); border: var(--u) solid var(--stone); }
+.setting-switch:hover { background: var(--slate); }
+.setting-switch[aria-checked="true"] { border-color: var(--amber-dark); color: var(--ivory); }
+.setting-switch[aria-checked="true"]::before { border-color: var(--amber); background: var(--amber); }
 #pause-controls { display: grid; grid-template-columns: calc(var(--u) * 37) minmax(0, 1fr); gap: calc(var(--u) * 3) calc(var(--u) * 3); margin-top: calc(var(--u) * 5); padding-top: calc(var(--u) * 4); border-top: var(--u) solid var(--stone-dark); color: var(--muted); }
 #pause-controls p { display: contents; }
 #pause-controls kbd { align-self: start; }
 #pause-controls p:last-child { display: block; grid-column: 1 / -1; margin: var(--u) 0 0; color: var(--dim); }
+#pause-controls p.locked, #pause-controls p.locked kbd { color: var(--dim); }
 #screen-warning { display: none; }
 body.menu-open .hud { opacity: .25; }
 body.menu-open .quest { opacity: .6; }
 body.menu-open .world-info { z-index: 9; }
 
+/* «Монах» panel (§5.5–5.9): one 288×208u frame for «Персонаж», «Снаряжение» and «Умения».
+   The world pauses under the dithered backdrop; the map stays above it and the panel above both.
+   Side padding is one value for all three tabs: 8u from the outer edge (7u inside the frame). */
+.monk-backdrop {
+  position: fixed;
+  z-index: 8;
+  inset: 0;
+  background: repeating-conic-gradient(#0d0a14b8 0 25%, #0d0a1470 0 50%) 0 0 / calc(var(--u) * 2) calc(var(--u) * 2);
+}
+.monk-place { position: fixed; z-index: 10; inset: 0; pointer-events: none; }
+/* Centred on whole --u, so the frame and the pixel icons never land between screen pixels. */
+.monk-panel {
+  position: absolute;
+  top: max(0px, calc(50% - var(--u) * 104));
+  left: max(0px, calc(50% - var(--u) * 144));
+  display: flex;
+  flex-direction: column;
+  width: calc(var(--u) * 288);
+  height: calc(var(--u) * 208);
+  max-width: 100%;
+  max-height: 100%;
+  padding: calc(var(--u) * 7) calc(var(--u) * 8);
+  overflow: hidden;
+  color: var(--muted);
+  pointer-events: auto;
+  outline: none;
+  --frame-top: #8d7f99;
+  --frame-fill: var(--ink);
+}
+@supports (width: round(down, 1px, 1px)) {
+  .monk-panel { top: max(0px, round(down, 50% - var(--u) * 104, var(--u))); left: max(0px, round(down, 50% - var(--u) * 144, var(--u))); }
+}
+.monk-panel button { padding: 0; border: 0; background: none; text-align: left; }
+.monk-panel button:disabled { cursor: inherit; }
+.monk-panel dl, .monk-panel dd, .monk-panel p { margin: 0; }
+.monk-panel .t-ivory { color: var(--ivory); }
+.monk-panel .t-muted { color: var(--muted); }
+.monk-panel .t-dim { color: var(--dim); }
+.monk-panel .t-stone { color: var(--stone); }
+.monk-panel .t-amber { color: var(--amber); }
+.monk-panel .t-coral, .monk-panel .t-worse { color: var(--coral); }
+.monk-panel .t-spirit { color: var(--spirit); }
+.monk-panel .t-spirit-light, .monk-panel .t-better { color: var(--spirit-light); }
+.mp-line { display: flex; justify-content: space-between; gap: calc(var(--u) * 3); min-width: 0; white-space: nowrap; }
+.mp-spacer { flex: 1; }
+.mp-name { color: var(--rarity, var(--ivory)); }
+.monk-panel .rarity-common { --rarity-edge: var(--stone); }
+.monk-panel .rarity-rare { --rarity-edge: var(--spirit-dark); --gem: var(--spirit); --gem-light: var(--spirit-light); }
+.monk-panel .rarity-relic { --rarity-edge: var(--amber); --gem: var(--amber); --gem-light: #ffdf9f; }
+.mp-icon { width: calc(var(--u) * 14); height: calc(var(--u) * 14); }
+.mp-icon.x2 { width: calc(var(--u) * 28); height: calc(var(--u) * 28); }
+.mp-gems { display: flex; gap: var(--u); }
+.mp-gems i { width: calc(var(--u) * 3); height: calc(var(--u) * 3); background: var(--gem); box-shadow: inset var(--u) var(--u) var(--gem-light); }
+.mp-new { position: absolute; top: var(--u); left: var(--u); width: calc(var(--u) * 5); height: calc(var(--u) * 5); }
+/* Pixel dashes, 2u line and 1u gap: «без слота» and an empty card (§5.8). */
+.mp-dashed {
+  background:
+    repeating-linear-gradient(90deg, var(--dash) 0 calc(var(--u) * 2), transparent 0 calc(var(--u) * 3)) top / 100% var(--u) no-repeat,
+    repeating-linear-gradient(90deg, var(--dash) 0 calc(var(--u) * 2), transparent 0 calc(var(--u) * 3)) bottom / 100% var(--u) no-repeat,
+    repeating-linear-gradient(180deg, var(--dash) 0 calc(var(--u) * 2), transparent 0 calc(var(--u) * 3)) left / var(--u) 100% no-repeat,
+    repeating-linear-gradient(180deg, var(--dash) 0 calc(var(--u) * 2), transparent 0 calc(var(--u) * 3)) right / var(--u) 100% no-repeat;
+}
+
+/* Tabs: 12u, the active one amber on #3c3033. «+1» marks a free path point. */
+.monk-tabs { display: flex; flex: none; align-items: center; gap: calc(var(--u) * 3); height: calc(var(--u) * 16); padding-bottom: calc(var(--u) * 3); border-bottom: var(--u) solid var(--stone-dark); }
+.monk-tab, .monk-close, .monk-backdrop, .mp-node, .mp-button, .mp-weapon, .mp-cell, .mp-slot, .mp-skill, .mp-mod {
+  cursor: pointer; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-active.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-active@2x.png") 2x) 0 0, pointer;
+}
+.monk-panel .monk-tab {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: calc(var(--u) * 3);
+  height: calc(var(--u) * 12);
+  padding: 0 calc(var(--u) * 2) 0 calc(var(--u) * 4);
+  border: var(--u) solid var(--stone-dark);
+  border-bottom-width: calc(var(--u) * 2);
+  background: var(--ink);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.monk-panel .monk-tab:hover { background: #393043; }
+.monk-panel .monk-tab.active { border-color: var(--amber); background: #3c3033; color: var(--ivory); }
+.monk-tab kbd, .monk-tab-points { min-width: 0; padding: 0 calc(var(--u) * 2); border: 0; box-shadow: none; line-height: calc(var(--u) * 8); }
+.monk-tab-points { background: var(--amber); color: var(--ink); }
+.monk-tabs-hint { margin-left: auto; color: var(--dim); white-space: nowrap; }
+.monk-panel .monk-close {
+  flex: none;
+  padding: 0 calc(var(--u) * 2) 0 calc(var(--u) * 3);
+  border: var(--u) solid var(--night);
+  background: var(--slate);
+  box-shadow: inset 0 var(--u) var(--stone);
+  color: var(--ivory);
+  line-height: calc(var(--u) * 9);
+}
+.monk-panel .monk-close:hover { background: #3b3147; }
+.monk-content { display: flex; flex: 1; min-height: 0; margin-top: calc(var(--u) * 3); }
+.monk-content.tab-character { gap: calc(var(--u) * 8); padding-top: calc(var(--u) * 2); }
+.monk-content.tab-gear, .monk-content.tab-skills { flex-direction: column; gap: calc(var(--u) * 3); }
+
+/* «Персонаж» (§5.6): 99u monk column, 8u gap, 165u path column. */
+.mp-monk { display: flex; flex: none; flex-direction: column; gap: calc(var(--u) * 4); width: calc(var(--u) * 99); }
+.mp-portrait-row { display: flex; align-items: flex-end; gap: calc(var(--u) * 5); }
+.mp-portrait { position: relative; flex: none; width: calc(var(--u) * 42); height: calc(var(--u) * 50); overflow: hidden; border: var(--u) solid var(--night); background: var(--slate); }
+.mp-portrait img { position: absolute; top: calc(var(--u) * -20); left: calc(var(--u) * -28); width: calc(var(--u) * 96); height: calc(var(--u) * 96); max-width: none; }
+.mp-level-badge {
+  position: absolute;
+  bottom: var(--u);
+  left: var(--u);
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 11);
+  height: calc(var(--u) * 11);
+  border: var(--u) solid var(--night);
+  background: var(--coal);
+  box-shadow: inset 0 var(--u) var(--amber);
+  color: var(--amber);
+  line-height: calc(var(--u) * 8);
+}
+.mp-level { display: flex; flex-direction: column; min-width: 0; white-space: nowrap; }
+.mp-level strong { color: var(--amber); font-size: calc(var(--u) * 20); line-height: calc(var(--u) * 22); font-weight: 700; }
+.mp-xp { display: flex; flex-direction: column; gap: var(--u); }
+.mp-xp-cells { display: flex; gap: var(--u); height: calc(var(--u) * 5); padding: var(--u); background: var(--night); }
+.mp-xp-cells i { flex: 1; background: var(--amber-dark); }
+.mp-xp-cells i.on { background: var(--amber); }
+.mp-stats { padding-top: calc(var(--u) * 2); border-top: var(--u) solid var(--stone-dark); }
+.mp-path { display: flex; flex: none; flex-direction: column; gap: calc(var(--u) * 3); width: calc(var(--u) * 165); }
+/* Tree 3 × 4: 20u nodes on 51u columns and 23u rows, 2u links (§4.5). */
+.mp-tree { position: relative; flex: none; height: calc(var(--u) * 100); }
+.mp-branch { position: absolute; top: 0; left: calc(var(--u) * var(--x)); width: calc(var(--u) * 30); text-align: center; }
+.mp-row-level { position: absolute; top: calc(var(--u) * var(--y)); left: 0; line-height: calc(var(--u) * 20); white-space: nowrap; }
+.mp-link { position: absolute; top: calc(var(--u) * var(--y)); left: calc(var(--u) * var(--x)); width: calc(var(--u) * 2); height: calc(var(--u) * 3); background: var(--stone-dark); }
+.mp-link.lit { background: var(--amber-dark); }
+.monk-panel .mp-node {
+  position: absolute;
+  top: calc(var(--u) * var(--y));
+  left: calc(var(--u) * var(--x));
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 20);
+  height: calc(var(--u) * 20);
+  border: var(--u) solid var(--stone-dark);
+  background: #1a1523;
+  --node-bg: #1a1523;
+  --ring: 0 0 0 transparent;
+}
+.mp-node.body { --branch: var(--coral); --branch-light: var(--coral-light); --branch-dark: var(--coral-dark); }
+.mp-node.spirit { --branch: var(--spirit); --branch-light: var(--spirit-light); --branch-dark: var(--spirit-dark); }
+.mp-node.strike { --branch: var(--ivory); --branch-light: #fff6ea; --branch-dark: var(--muted); }
+.mp-node-icon { width: calc(var(--u) * 10); height: calc(var(--u) * 10); }
+.mp-node .shape { fill: var(--branch); }
+.mp-node .light { fill: var(--branch-light); }
+.mp-node.strike .light { fill: var(--node-bg); }
+/* Closed by level: a dim outline and the branch sign at 30%. */
+.mp-node.level .mp-node-icon { opacity: .3; }
+.mp-node.level .light { fill: var(--branch); }
+.mp-node.level.strike .light { fill: var(--node-bg); }
+.monk-panel .mp-node.available { border-color: var(--amber); background: var(--coal); --node-bg: var(--coal); }
+.monk-panel .mp-node.order { border-color: var(--night); background: var(--stone-dark); --node-bg: var(--stone-dark); }
+.mp-node.order .shape { fill: var(--stone); }
+.mp-node.order .light { fill: var(--stone-dark); }
+.monk-panel .mp-node.taken {
+  border-color: var(--night);
+  background: var(--branch);
+  box-shadow: inset 0 var(--u) var(--branch-light), inset 0 calc(var(--u) * -1) var(--branch-dark), var(--ring);
+  --node-bg: var(--branch);
+}
+.mp-node.taken .shape, .mp-node.taken:not(.strike) .light { fill: var(--ink); }
+/* The described node: a night and ivory ring outside its frame. */
+.mp-node.focus { --ring: 0 0 0 var(--u) var(--night), 0 0 0 calc(var(--u) * 2) var(--ivory); box-shadow: var(--ring); }
+.monk-panel .mp-node.focus.available { background: #3c3033; --node-bg: #3c3033; }
+/* Name, an effect of up to two lines, the condition: one fixed height, so hovering never moves the column. */
+.mp-node-info { display: flex; flex: none; flex-direction: column; height: calc(var(--u) * 40); padding: calc(var(--u) * 2) calc(var(--u) * 4); background: var(--coal); box-shadow: inset var(--u) 0 var(--branch); }
+.mp-node-info > span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.monk-panel .mp-node-info > .mp-node-effect { display: -webkit-box; flex: none; max-height: calc(var(--u) * 18); white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
+.mp-respec { display: flex; flex: none; align-items: center; gap: calc(var(--u) * 3); white-space: nowrap; }
+.mp-points { padding: 0 calc(var(--u) * 3); background: var(--amber); color: var(--ink); line-height: calc(var(--u) * 10); }
+.mp-points.none { background: var(--stone-dark); color: var(--dim); }
+.monk-panel .mp-button { padding: 0 calc(var(--u) * 5); border: var(--u) solid var(--amber-dark); border-bottom-width: calc(var(--u) * 2); background: var(--coal); color: var(--amber); line-height: calc(var(--u) * 11); }
+.monk-panel .mp-button:hover:not(:disabled) { background: #393043; color: var(--ivory); }
+.monk-panel .mp-button:disabled { border-color: var(--stone-dark); color: var(--dim); }
+
+/* «Снаряжение» (§5.7): 59u top row, 100u comparison, 9u hint. */
+.mp-gear-top { display: flex; flex: none; gap: calc(var(--u) * 5); height: calc(var(--u) * 59); }
+.mp-equipment { display: flex; flex: none; flex-direction: column; gap: calc(var(--u) * 7); width: calc(var(--u) * 83); }
+.mp-weapon-row { display: flex; gap: calc(var(--u) * 4); height: calc(var(--u) * 32); }
+.monk-panel .mp-weapon, .monk-panel .mp-cell, .mp-future-slot, .mp-card { border: var(--u) solid var(--night); clip-path: var(--notch); }
+.monk-panel .mp-weapon {
+  position: relative;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: calc(var(--u) * 32);
+  height: calc(var(--u) * 32);
+  background: #1a1523;
+  box-shadow: inset 0 var(--u) var(--rarity-edge, var(--stone-dark)), inset var(--u) 0 var(--stone-dark),
+    inset 0 calc(var(--u) * -1) #130f1b, inset calc(var(--u) * -1) 0 #130f1b;
+}
+.mp-weapon .mp-gems { position: absolute; right: calc(var(--u) * 2); bottom: calc(var(--u) * 2); }
+.mp-weapon-text { display: flex; flex-direction: column; min-width: 0; padding-top: calc(var(--u) * 2); }
+.mp-weapon-text > span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.mp-future { display: flex; gap: var(--u); height: calc(var(--u) * 20); }
+.mp-future-slot { display: grid; place-items: center; width: calc(var(--u) * 20); height: calc(var(--u) * 20); background: #1a1523; box-shadow: inset 0 var(--u) var(--stone-dark); }
+.mp-future-icon { width: calc(var(--u) * 18); height: calc(var(--u) * 18); }
+.mp-bag { display: flex; flex: none; flex-direction: column; gap: calc(var(--u) * 2); width: calc(var(--u) * 102); }
+.mp-head { height: calc(var(--u) * 7); line-height: calc(var(--u) * 7); }
+.mp-cells { display: grid; grid-template-columns: repeat(4, calc(var(--u) * 24)); gap: calc(var(--u) * 2); }
+.monk-panel .mp-cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 24);
+  height: calc(var(--u) * 24);
+  background: var(--slate);
+  box-shadow: inset 0 var(--u) var(--stone), inset 0 calc(var(--u) * -1) #130f1b;
+}
+.monk-panel .mp-cell:hover { background: #393043; }
+.monk-panel .mp-cell.empty { background: #1a1523; box-shadow: inset 0 var(--u) var(--stone-dark); }
+.monk-panel .mp-cell.selected { border-color: var(--amber); background: #3c3033; box-shadow: inset 0 0 0 var(--u) var(--night); clip-path: none; }
+.mp-cell .mp-gems { position: absolute; right: calc(var(--u) * 2); bottom: calc(var(--u) * 2); }
+/* Held RMB: the cell fills coral from the bottom in six steps over 0.6 s, then the item drops. */
+.mp-cell.holding::after { content: ""; position: absolute; right: 0; bottom: 0; left: 0; height: 100%; background: #ef8e8366; transform-origin: bottom center; animation: mp-hold .6s steps(6, end) both; }
+@keyframes mp-hold { from { transform: scaleY(0); } }
+.mp-summary { display: flex; flex: 1; flex-direction: column; gap: calc(var(--u) * 2); min-width: 0; }
+.mp-compare { display: flex; flex: none; flex-direction: column; gap: calc(var(--u) * 2); height: calc(var(--u) * 100); }
+.mp-card-labels, .mp-cards { display: flex; gap: calc(var(--u) * 8); }
+.mp-card-labels { height: calc(var(--u) * 7); line-height: calc(var(--u) * 7); }
+.mp-card-labels > .mp-line { flex: none; width: calc(var(--u) * 132); }
+.mp-card {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: calc(var(--u) * 132);
+  height: calc(var(--u) * 91);
+  padding: calc(var(--u) * 2) 0;
+  overflow: hidden;
+  background: var(--coal);
+  box-shadow: inset 0 var(--u) var(--rarity-edge, var(--stone)), inset var(--u) 0 var(--stone-dark),
+    inset 0 calc(var(--u) * -1) #130f1b, inset calc(var(--u) * -1) 0 #130f1b;
+}
+.mp-card-row { display: flex; flex: none; align-items: center; gap: calc(var(--u) * 3); height: calc(var(--u) * 9); padding: 0 calc(var(--u) * 4); overflow: hidden; white-space: nowrap; }
+.mp-card-row > span { flex: none; }
+.mp-card-row > .mp-name, .mp-card-row > .mp-shrink { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.mp-card-row > .mp-spacer { flex: 1; }
+.mp-dps { align-items: baseline; height: calc(var(--u) * 13); background: var(--ink); }
+.mp-dps strong { color: var(--ivory); font-size: calc(var(--u) * 11); line-height: calc(var(--u) * 13); font-weight: 700; }
+.mp-lane { width: calc(var(--u) * 21); }
+.mp-affix i { flex: none; width: calc(var(--u) * 2); height: calc(var(--u) * 2); background: var(--stone); }
+.mp-affix.t-amber i { background: var(--amber); }
+.mp-affix.t-coral i { background: var(--coral); }
+.mp-card.mp-card-empty { align-items: center; justify-content: center; gap: var(--u); padding: 0 calc(var(--u) * 6); border: 0; clip-path: none; box-shadow: none; text-align: center; --dash: var(--stone-dark); }
+.mp-hint { display: flex; flex: none; align-items: center; gap: calc(var(--u) * 3); height: calc(var(--u) * 9); white-space: nowrap; }
+.mp-hint kbd { min-width: 0; padding: 0 calc(var(--u) * 2) 0 calc(var(--u) * 3); box-shadow: inset 0 var(--u) var(--stone); line-height: calc(var(--u) * 7); }
+.mp-lock { width: calc(var(--u) * 6); height: calc(var(--u) * 7); }
+
+/* «Умения» (§5.8): the 28u slot row as in the HUD, a 120u list and a 148u description. */
+.mp-slot-row { display: flex; flex: none; align-items: flex-end; gap: calc(var(--u) * 8); height: calc(var(--u) * 32); padding-top: calc(var(--u) * 4); }
+.mp-slots { display: flex; flex: none; gap: calc(var(--u) * 3); }
+.mp-slot .skill-well { pointer-events: none; }
+.mp-slot.selected::after, .mp-slot.target::after { content: ""; position: absolute; inset: calc(var(--u) * -3); border: var(--u) solid var(--amber); pointer-events: none; }
+.mp-slot.target:not(.selected)::after { border-color: var(--amber-dark); }
+.mp-slot .combo-pips { bottom: calc(var(--u) * -2); }
+.mp-fixed { position: absolute; z-index: 2; top: calc(var(--u) * 16); left: calc(var(--u) * 18); display: grid; place-items: center; width: calc(var(--u) * 7); height: calc(var(--u) * 8); background: var(--night); }
+.mp-fixed svg { width: calc(var(--u) * 5); height: calc(var(--u) * 6); }
+.mp-slot-hint { display: flex; flex-direction: column; min-width: 0; white-space: nowrap; }
+.mp-skill-body { display: flex; flex: 1; gap: calc(var(--u) * 4); min-height: 0; padding-top: calc(var(--u) * 2); }
+.mp-skill-list { display: flex; flex: none; flex-direction: column; gap: var(--u); width: calc(var(--u) * 120); }
+.monk-panel .mp-skill { display: flex; flex: none; align-items: center; gap: calc(var(--u) * 3); height: calc(var(--u) * 14); padding-right: calc(var(--u) * 2); color: var(--ivory); white-space: nowrap; }
+.monk-panel .mp-skill:hover { background: var(--coal); }
+.monk-panel .mp-skill.selected, .monk-panel .mp-skill.picked { background: #3c3033; box-shadow: inset 0 0 0 var(--u) var(--amber); }
+.mp-skill-icon { position: relative; flex: none; width: calc(var(--u) * 14); height: calc(var(--u) * 14); background: #1a1523; }
+.mp-skill-new { position: absolute; top: 0; left: calc(var(--u) * 10); width: calc(var(--u) * 4); height: calc(var(--u) * 4); border: var(--u) solid var(--night); background: var(--amber); }
+.mp-skill-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.mp-skill.locked .mp-skill-name { color: var(--dim); }
+.mp-skill.locked .mp-icon { opacity: .35; }
+.mp-skill-key { display: flex; flex: none; min-width: calc(var(--u) * 18); }
+.mp-skill-key kbd { min-width: 0; padding: 0 calc(var(--u) * 3); border: 0; box-shadow: inset 0 var(--u) var(--spirit); }
+.mp-skill-key kbd.combo { padding: 0 var(--u); box-shadow: inset 0 var(--u) var(--coral); }
+.mp-skill-key kbd.dash { padding: 0 calc(var(--u) * 2); box-shadow: inset 0 var(--u) var(--stone); }
+.mp-skill-cost { flex: none; width: calc(var(--u) * 12); text-align: right; }
+.mp-skill-locked { display: flex; flex: none; align-items: center; gap: calc(var(--u) * 2); color: var(--dim); }
+.mp-skill-locked svg { width: calc(var(--u) * 5); height: calc(var(--u) * 6); }
+.mp-unslotted { flex: none; padding: 0 calc(var(--u) * 2); color: var(--muted); --dash: var(--dim); }
+.mp-detail { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+.mp-detail-head { display: flex; flex: none; align-items: baseline; justify-content: space-between; gap: calc(var(--u) * 3); height: calc(var(--u) * 16); white-space: nowrap; }
+.mp-detail-head strong { min-width: 0; overflow: hidden; color: var(--ivory); font-size: calc(var(--u) * 13); line-height: calc(var(--u) * 16); font-weight: 700; text-overflow: ellipsis; }
+/* Long names step down, so the name and its slot fit one 148u line. */
+.mp-detail-head strong.long { font-size: calc(var(--u) * 11); }
+.mp-detail-head strong.longer { font-size: calc(var(--u) * 10); }
+.mp-detail-text { display: -webkit-box; flex: none; height: calc(var(--u) * 19); padding-top: var(--u); overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
+.mp-numbers { display: grid; flex: none; grid-template-columns: calc(var(--u) * 22) calc(var(--u) * 48) calc(var(--u) * 33) minmax(0, 1fr); gap: var(--u); margin-top: calc(var(--u) * 2); background: var(--ink); }
+.mp-numbers > div { display: flex; flex-direction: column; min-width: 0; padding: var(--u) calc(var(--u) * 2) 0; background: var(--coal); box-shadow: inset 0 var(--u) var(--stone-dark); white-space: nowrap; }
+.mp-shell { display: flex; flex: none; align-items: center; gap: calc(var(--u) * 3); height: calc(var(--u) * 14); white-space: nowrap; }
+.mp-shell b { padding: 0 calc(var(--u) * 3); background: var(--slate); box-shadow: inset 0 var(--u) var(--stone); color: var(--ivory); line-height: calc(var(--u) * 10); }
+.mp-mod-head { flex: none; height: calc(var(--u) * 10); }
+.mp-mods { display: flex; flex-direction: column; gap: var(--u); }
+.monk-panel .mp-mod { position: relative; display: flex; flex: none; flex-direction: column; height: calc(var(--u) * 18); padding: 0 calc(var(--u) * 3) 0 calc(var(--u) * 11); background: var(--coal); }
+.mp-mod::before { content: ""; position: absolute; top: calc(var(--u) * 3); left: calc(var(--u) * 3); width: calc(var(--u) * 4); height: calc(var(--u) * 4); border: var(--u) solid var(--stone); }
+.mp-mod > span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.monk-panel .mp-mod:hover:not(:disabled) { background: var(--slate); }
+.monk-panel .mp-mod.selected { background: #3c3033; box-shadow: inset var(--u) 0 var(--amber); }
+.mp-mod.selected::before { border-color: var(--amber); background: var(--amber); }
+.mp-mod.locked::before { border-color: var(--stone-dark); }
+.mp-mod-none { display: flex; flex-direction: column; padding: calc(var(--u) * 2) calc(var(--u) * 4); background: var(--coal); white-space: nowrap; }
+
 /* Short screens: drop the decorative rule and tighten the panel. */
 @media (max-height: 640px) {
   .intro-panel { padding: calc(var(--u) * 5) calc(var(--u) * 7) calc(var(--u) * 6); }
   .title-rule { display: none; }
-  .intro-panel > p { margin: calc(var(--u) * 3) 0 calc(var(--u) * 4); }
+  .intro-scroll > p { margin: calc(var(--u) * 3) 0 calc(var(--u) * 4); }
   .appearance-picker { margin-bottom: calc(var(--u) * 4); }
   #pause-controls { margin-top: calc(var(--u) * 3); padding-top: calc(var(--u) * 3); }
   #pause-controls p { margin-bottom: var(--u); }
 }
 
-/* Below 720px the vitals panel would reach the centred skill bar (8px + 131u vs W/2 − 90px at --u: 2px). */
-@media (max-width: 719px), (pointer: coarse) {
-  #screen-warning {
+/* Below 720px the HUD hides. The orbs and the centred slot row need 2 × 45u + 152u = 484px at --u: 2px (§5.2).
+   A touch device gets the phone layout of src/mobile.css instead (html.touch-ui). */
+@media (max-width: 719px) {
+  html:not(.touch-ui) #screen-warning {
     display: block;
     position: fixed;
     z-index: 20;
@@ -408,8 +914,8 @@ body.menu-open .world-info { z-index: 9; }
     text-align: center;
     pointer-events: none;
   }
-  .quest, .map-frame, .map-zones, .hud { display: none; }
-  .world-info { width: auto; }
+  html:not(.touch-ui) :is(.quest, .map-frame, .map-zones, .hud) { display: none; }
+  html:not(.touch-ui) .world-info { width: auto; grid-template-columns: auto auto; grid-template-areas: "plate pause"; }
   .intro-panel { width: min(calc(var(--u) * 176), calc(100% - var(--u) * 4)); }
   .notice { max-width: calc(100% - var(--u) * 16); }
 }
@@ -427,7 +933,9 @@ body.menu-open .world-info { z-index: 9; }
   .appearance-choice,
   .appearance-retry,
   .primary-button,
-  .text-button { cursor: pointer; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-active-u3.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-active-u3@2x.png") 2x) 0 0, pointer; }
+  .text-button,
+  .setting-switch,
+  .monk-tab, .monk-close, .monk-backdrop, .mp-node, .mp-button, .mp-weapon, .mp-cell, .mp-slot, .mp-skill, .mp-mod { cursor: pointer; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-active-u3.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-active-u3@2x.png") 2x) 0 0, pointer; }
 }
 @media (min-width: 2560px) and (min-height: 1440px) {
   html { cursor: default; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-u4.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-u4@2x.png") 2x) 0 0, default; }
@@ -436,5 +944,17 @@ body.menu-open .world-info { z-index: 9; }
   .appearance-choice,
   .appearance-retry,
   .primary-button,
-  .text-button { cursor: pointer; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-active-u4.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-active-u4@2x.png") 2x) 0 0, pointer; }
+  .text-button,
+  .setting-switch,
+  .monk-tab, .monk-close, .monk-backdrop, .mp-node, .mp-button, .mp-weapon, .mp-cell, .mp-slot, .mp-skill, .mp-mod { cursor: pointer; cursor: image-set(url("../assets/ui/pixel-v4/cursor/arrow-active-u4.png") 1x, url("../assets/ui/pixel-v4/cursor/arrow-active-u4@2x.png") 2x) 0 0, pointer; }
+}
+
+/* HUD shells lay out on their own, so a health digit does not relayout the page.
+   A coarse pointer never shows the pixel cursor, so the image-set is not decoded there. */
+.hud, .quest, .world-info, .notice, .loot-lines, .overlay, .monk-panel { contain: layout; }
+@media (pointer: coarse) {
+  html, #game, button, .icon-button, .appearance-choice, .appearance-retry, .primary-button, .text-button, .setting-switch,
+  .monk-tab, .monk-close, .monk-backdrop, .mp-node, .mp-button, .mp-weapon, .mp-cell, .mp-slot, .mp-skill, .mp-mod {
+    cursor: auto;
+  }
 }

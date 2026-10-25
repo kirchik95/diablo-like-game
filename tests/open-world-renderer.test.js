@@ -92,17 +92,17 @@ test('union borders only its exterior and keeps both continuous route seams clea
     assert.equal(walk.has(key(Math.round(p.contact.x), Math.round(p.contact.y))), p.layer === 'ground', p.frame);
     assert.ok(!['camp', 'courtyard'].includes(getOverworldZone(p.contact.x, p.contact.y).id), 'camp and courtyard retain their authored country');
   }
-  assert.ok(layout.border.some(p => p.frame.startsWith('cypress-') && p.contact.y > -70.5 && p.contact.y < -29.5));
+  assert.ok(layout.border.some(p => p.frame.startsWith('cypress-') && p.contact.y > -99.5 && p.contact.y < -41.5));
   const weights = (x, y) => {
     const map = layout.surfaceMap, offset = (Math.floor((y - map.origin.y) * 8) * map.width + Math.floor((x - map.origin.x) * 8)) * 4;
     return [...map.data.subarray(offset, offset + 3)];
   };
-  for (const seam of [-29.5, -70.5]) for (let y = seam - 2; y <= seam + 2; y += .5) {
+  for (const seam of [-41.5, -99.5]) for (let y = seam - 2; y <= seam + 2; y += .5) {
     assert.ok(isWalkable(0, y, .29, OVERWORLD));
     assert.ok(weights(0, y)[0] < 128, `worn route interrupted at ${y}`);
     assert.ok(layout.border.every(p => Math.hypot(p.contact.x, p.contact.y - y) > 1.5));
   }
-  assert.ok(weights(0, -90)[2] > 128, 'court gets stone from its zone instead of the world id');
+  assert.ok(weights(0, -128)[2] > 128, 'court gets stone from its zone instead of the world id');
   assert.equal(JSON.stringify(OVERWORLD), before);
   for (const p of layout.groundCover) {
     assert.ok(OVERWORLD.encounters.every(e => Math.hypot(e.x - p.x, e.y - p.y) >= 2.2));
@@ -119,7 +119,7 @@ test('area label changes preserve world, actors, effects and GPU resources at na
   const built = r.world, floor = built.floor, mask = built.landscape.groundMaterial;
   const actors = [...r.hounds], effects = [...r.fxSprites.values()], shot = r.projectiles.get('shot');
   const initial = counts(scene), time = r.presentation.time;
-  for (const y of [-29.6, -70.6, -70.4, -29.4]) {
+  for (const y of [-41.6, -99.6, -99.4, -41.4]) {
     game.locationId = getOverworldZone(0, y).id; game.player.y = y;
     r.render(game, 0);
     assert.equal(r.world, built); assert.equal(r.world.floor, floor); assert.equal(built.landscape.groundMaterial, mask);
@@ -150,7 +150,7 @@ test('health drops stay anchored, freeze when paused and release meshes/material
 
 test('map keeps a legible local scale and names the current area across both seams', () => {
   let scale;
-  for (const y of [10, -29.6, -60, -70.6, -90]) {
+  for (const y of [10, -41.6, -60, -99.6, -90]) {
     const game = { world: OVERWORLD, player: { x: 0, y }, locationId: getOverworldZone(0, y).id };
     const map = adventureMapLayout(game);
     assert.ok(map.scale >= 5, 'do not squeeze the long region into unreadable pixels');
@@ -166,9 +166,9 @@ test('map keeps a legible local scale and names the current area across both sea
 test('combo keyframes fit shared timings including the final recovery drawing', () => {
   const body = { hp: 100, dx: 0, dy: 1, dashTime: 0 };
   MONK_RULES.combo.duration.forEach((duration, index) => {
-    const frames = pixelAtlases.monk.clips[`attack${index + 1}`].front;
+    const clip = pixelAtlases.monk.clips[`attack${index + 1}`], frames = clip.front;
     const pose = age => monkPose({ ...body, attack: { index, age } }).frame;
-    assert.equal(pose(MONK_RULES.combo.hitTime[index]), frames[2]);
+    assert.equal(pose(MONK_RULES.combo.hitTime[index]), frames[clip.contactKey]);
     assert.equal(pose(duration - 1 / 120), frames.at(-1));
   });
 });
@@ -215,5 +215,7 @@ test('wave rings and sparks reach the real 3.4u radius without overshooting it',
   }
   renderer.map = context;
   assert.doesNotThrow(() => Renderer.prototype.drawMap.call(renderer, game));
-  assert.ok(operations.some(([name, title]) => name === 'fillText' && title === getOverworldZone(p.x, p.y).title));
+  // The round map draws no text: #location-title on the plate under it names the zone (tests/minimap-round.test.js).
+  assert.ok(!operations.some(([name]) => name === 'fillText'));
+  assert.equal(adventureMapLayout(game).title, getOverworldZone(p.x, p.y).title);
 });

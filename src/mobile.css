@@ -1,0 +1,506 @@
+/* Phone touch controls (docs/design/mobile-touch.md). touch-ui.js builds them and sets html.touch-ui
+   only on a touch device, so nothing here reaches the desktop. Sizes follow --u (2 CSS px on a phone).
+   touch.js places the cluster, the stick, the aim circle and «Отмена» in px from the same numbers,
+   so drawn buttons and touch zones match. Edges follow the safe area (§2). */
+html.touch-ui {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
+/* No text selection, no long-press menu, no page pan or zoom on the game (§10.9). The two boxes that
+   scroll (.intro-scroll, .monk-content) are scroll containers with their own pan-y. */
+html.touch-ui, html.touch-ui body {
+  touch-action: none;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.touch-layer { position: fixed; z-index: 5; inset: 0; pointer-events: none; contain: layout; }
+.touch-layer svg { display: block; width: 100%; height: 100%; }
+.touch-safe { position: fixed; top: 0; left: 0; padding: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left); visibility: hidden; }
+/* The pause menu and the «Монах» sheet hide the fight controls (§12). */
+body.menu-open .touch-play { visibility: hidden; }
+
+/* Stick (§4.3): a 35% shadow at rest; under the finger the base is 70%, the knob 100%. */
+.touch-stick { position: absolute; inset: 0; opacity: .35; }
+.touch-stick.held { opacity: 1; }
+.touch-stick.held .touch-stick-base { opacity: .7; }
+.touch-stick-base, .touch-stick-knob { position: absolute; left: 0; top: 0; }
+.touch-stick-base { width: calc(var(--u) * 52); height: calc(var(--u) * 52); }
+.touch-stick-knob { width: calc(var(--u) * 22); height: calc(var(--u) * 22); }
+
+/* Aim circle (§8.2): 36u around the button, the finger mark and the line between them. */
+.touch-aim i { position: absolute; display: block; }
+.touch-aim-circle { width: calc(var(--u) * 72); height: calc(var(--u) * 72); border: var(--u) dashed #eee0cecc; border-radius: 50%; background: #0d0a1426; }
+.touch-aim-finger { width: calc(var(--u) * 22); height: calc(var(--u) * 22); border: var(--u) dashed #eee0ceb3; border-radius: 50%; background: #eee0ce26; }
+.touch-aim-line { height: var(--u); background: #eee0ceb3; transform-origin: 0 50%; }
+
+/* «Удар» (§4.2): a 40u ring with a coral top; pressed, the face turns --slate and the icon drops 1u (§7). */
+.touch-attack { position: absolute; width: calc(var(--u) * 40); height: calc(var(--u) * 40); --face: #1a1523; }
+.touch-ring { position: absolute; inset: 0; }
+.touch-attack .touch-face { fill: var(--face); }
+.touch-attack.pressed { --face: var(--slate); }
+.touch-attack-icon { position: absolute; top: calc(var(--u) * 8); left: calc(var(--u) * 8); width: calc(var(--u) * 24); height: calc(var(--u) * 24); }
+.touch-attack.pressed .touch-attack-icon { transform: translateY(var(--u)); }
+.touch-pips { position: absolute; z-index: 2; bottom: calc(var(--u) * -1); left: 50%; display: flex; gap: var(--u); padding: var(--u); transform: translateX(-50%); background: var(--night); }
+.touch-pips i { width: calc(var(--u) * 5); height: calc(var(--u) * 2); background: #453846; }
+.touch-pips i.on { background: var(--coral); box-shadow: inset 0 var(--u) var(--coral-light); }
+.touch-charges i.on { background: var(--spirit); box-shadow: inset 0 var(--u) var(--spirit-light); }
+
+/* «Шаг» and techniques 1–3: the 28u slots of the desktop, frame 100%, fill 90%, no keycaps (§4.2, §9). */
+.touch-slot { position: absolute; isolation: isolate; width: calc(var(--u) * 28); height: calc(var(--u) * 28); --accent: var(--spirit); --fill: #1a1523e6; }
+.touch-slot::before, .touch-system button::before, .touch-interact::before, .touch-cancel::before, .touch-screen-panel::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border: var(--u) solid var(--night);
+  background: var(--fill);
+  box-shadow: inset 0 var(--u) var(--accent), inset var(--u) 0 var(--stone-dark),
+    inset 0 calc(var(--u) * -1) #130f1b, inset calc(var(--u) * -1) 0 #130f1b;
+  clip-path: var(--notch);
+  pointer-events: none;
+}
+.touch-slot.pressed { --fill: var(--slate); }
+.touch-well { position: absolute; top: calc(var(--u) * 2); left: calc(var(--u) * 2); width: calc(var(--u) * 24); height: calc(var(--u) * 24); overflow: hidden; }
+.touch-slot.pressed .touch-well { transform: translateY(var(--u)); }
+.touch-icon-holder { position: absolute; inset: 0; }
+.touch-shade { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: #0d0a14c0; transform: scaleY(var(--shade, 0)); transform-origin: bottom center; }
+.touch-cooldown { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; background: #0d0a1499; color: var(--ivory); text-shadow: var(--outline); }
+.touch-cooldown:empty { display: none; }
+.touch-cost { position: absolute; z-index: 2; right: var(--u); bottom: 0; color: var(--spirit); text-shadow: var(--outline); }
+.touch-cost:empty { display: none; }
+.touch-slot.insufficient .touch-icon { opacity: .35; }
+.touch-slot.insufficient .touch-cost { color: var(--coral); }
+/* Locked: a lock and «ур. N» in --dim. Empty: a dashed well. New: an amber dot until the first cast. */
+.touch-lock, .touch-unlock, .touch-blank, .touch-new { display: none; }
+.touch-slot.locked, .touch-slot.empty { --accent: var(--stone-dark); }
+.touch-slot.locked .touch-well, .touch-slot.locked .touch-cost, .touch-slot.empty .touch-well, .touch-slot.empty .touch-cost { display: none; }
+.touch-slot.locked .touch-lock { position: absolute; top: calc(var(--u) * 4); left: calc(var(--u) * 8); display: block; width: calc(var(--u) * 12); height: calc(var(--u) * 12); }
+.touch-slot.locked .touch-unlock { position: absolute; right: 0; bottom: var(--u); left: 0; display: block; color: var(--dim); text-align: center; }
+.touch-slot.empty .touch-blank { position: absolute; inset: calc(var(--u) * 4); display: block; border: var(--u) dashed var(--dim); }
+.touch-slot.new .touch-new { position: absolute; z-index: 2; top: calc(var(--u) * 3); right: calc(var(--u) * 3); display: block; width: calc(var(--u) * 3); height: calc(var(--u) * 3); background: var(--amber); box-shadow: 0 0 0 var(--u) var(--night); }
+
+/* Buttons the DOM hit-tests: «E», «Монах», «Пауза». ::after widens the touch zone by 1u on each side (§9). */
+.touch-interact, .touch-system button {
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ivory);
+  pointer-events: auto;
+  /* A finger that slides off the button never pans the page and cancels the touch. */
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.touch-interact::after, .touch-system button::after { content: ""; position: absolute; inset: calc(var(--u) * -1); }
+
+/* «E» по месту (§4.2): 22u high, the verb without key names, an amber top; touch.js places it by «Шаг». */
+.touch-interact { position: absolute; display: flex; align-items: center; gap: calc(var(--u) * 4); height: calc(var(--u) * 22); padding: 0 calc(var(--u) * 7) 0 calc(var(--u) * 4); white-space: nowrap; --accent: var(--amber); --fill: #211a2be6; }
+.touch-interact.pressed { --fill: var(--slate); }
+.touch-interact-icon { flex: none; width: calc(var(--u) * 12); height: calc(var(--u) * 12); }
+
+/* «Монах» and «Пауза» (§4.1): 20u frames at 85% in 22u zones, 4u apart, 8u left of the spirit orb. */
+.touch-system { position: absolute; top: calc(var(--safe-top) + var(--u) * 3); right: calc(var(--safe-right) + var(--u) * 40); display: flex; gap: calc(var(--u) * 2); }
+.touch-system button { width: calc(var(--u) * 22); height: calc(var(--u) * 22); opacity: .85; --accent: var(--stone); --fill: #211a2bd9; }
+.touch-system button::before { inset: var(--u); }
+.touch-system button.pressed { opacity: 1; --fill: var(--slate); }
+.touch-system-icon { position: absolute; top: calc(var(--u) * 5); left: calc(var(--u) * 5); width: calc(var(--u) * 12); height: calc(var(--u) * 12); }
+.touch-dot { position: absolute; z-index: 1; top: 0; right: 0; width: calc(var(--u) * 5); height: calc(var(--u) * 5); border: var(--u) solid var(--night); background: var(--amber); }
+
+/* «Отмена» (§8.2): 40×22u under the spirit plate, only in aim mode; coral under the finger. */
+.touch-cancel { position: absolute; isolation: isolate; display: flex; align-items: center; justify-content: center; gap: calc(var(--u) * 3); color: var(--coral); --accent: var(--coral); --fill: #211a2be6; }
+.touch-cancel::before { box-shadow: inset 0 var(--u) var(--accent), inset 0 calc(var(--u) * -1) #130f1b; }
+.touch-cancel.over { color: var(--ink); --fill: var(--coral); --accent: var(--coral-light); }
+.touch-cancel-icon { flex: none; width: calc(var(--u) * 6); height: calc(var(--u) * 6); }
+
+/* «Поверни телефон» (§11) and «Экран слишком мал» (§2.5): the world dimmed by --night 82%, a 156u panel. */
+.touch-screen { position: fixed; z-index: 30; inset: 0; display: grid; place-items: center; padding: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left); background: #0d0a14d1; pointer-events: auto; touch-action: none; }
+.touch-screen-panel { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; gap: calc(var(--u) * 10); width: calc(var(--u) * 156); padding: calc(var(--u) * 16) calc(var(--u) * 14) calc(var(--u) * 14); text-align: center; --accent: var(--stone); --fill: var(--ink); }
+.touch-screen-art { width: calc(var(--u) * 80); height: calc(var(--u) * 64); }
+.touch-screen-copy { display: flex; flex-direction: column; align-items: center; gap: calc(var(--u) * 4); }
+.touch-screen h2 { margin: 0; color: var(--ivory); font-size: calc(var(--u) * 12); font-weight: 700; letter-spacing: -.01em; line-height: calc(var(--u) * 15); }
+.touch-screen p { width: calc(var(--u) * 128); margin: 0; color: var(--muted); font-size: calc(var(--u) * 7.5); line-height: calc(var(--u) * 10.5); }
+.touch-screen hr { width: calc(var(--u) * 128); height: var(--u); margin: 0; border: 0; background: var(--slate); }
+.touch-screen small { width: calc(var(--u) * 128); color: var(--dim); font-size: var(--fs); line-height: var(--t); }
+
+/* iPhone: how to get the full screen, inside the pause menu (question 10). */
+.touch-home-hint { margin: calc(var(--u) * 3) 0 0; padding: var(--u) 0 var(--u) calc(var(--u) * 4); border-left: var(--u) solid var(--amber); color: var(--muted); text-align: left; }
+.touch-home-hint b { display: block; color: var(--amber); }
+
+/* ── Top bar (§4.1) ───────────────────────────────────────────────────────────────────────────
+   The desktop HUD keeps its elements; on the phone they move to the top edge of the safe area.
+   The orbs are the 29u ones of the touch layer; the slot row, the map and «E» give way to the touch controls. */
+html.touch-ui .hud {
+  inset: 0;
+  height: auto;
+  /* Ten experience cells from «+1» to 8u before «Монах»: c = floor((L − 165u) / 10) of the safe width L. */
+  --xp-cell: calc((100vw - var(--safe-left) - var(--safe-right) - var(--u) * 165) / 10);
+}
+/* 100dvw is the visible width: iPhone Safari's 100vw can be wider and pan the page sideways. */
+@supports (width: 100dvw) {
+  html.touch-ui .hud { --xp-cell: calc((100dvw - var(--safe-left) - var(--safe-right) - var(--u) * 165) / 10); }
+}
+/* 100dvw carries a float error: 844 px gives 41.99… instead of 42; one layout unit (1px / 64) keeps an exact cell
+   from rounding down, as in styles.css. Every browser with round() has dvw. */
+@supports (width: round(down, 1px, 1px)) {
+  html.touch-ui .hud { --xp-cell: round(down, (100dvw - var(--safe-left) - var(--safe-right) - var(--u) * 165) / 10 + 1px / 64, var(--u)); }
+}
+html.touch-ui :is(.hud .orb, .skills, .interaction-prompt, .world-info), html.touch-ui #screen-warning { display: none; }
+html.touch-ui .hud::before { display: none; }
+/* During play only the compact disc is shown. The full plate remains in pause → «Карта». */
+html.touch-ui body:not(.menu-open):not(.minimap-off) .world-info {
+  display: block;
+  top: calc(var(--safe-top) + var(--u) * 56);
+  left: calc(var(--safe-left) + var(--u) * 4);
+  right: auto;
+  width: calc(var(--u) * 48);
+}
+html.touch-ui body:not(.menu-open) .world-info :is(#pause, .map-plate) { display: none; }
+html.touch-ui body:not(.menu-open) .map-frame { width: calc(var(--u) * 48); height: calc(var(--u) * 48); }
+html.touch-ui body:not(.menu-open) .map-north { top: calc(var(--u) * 13); left: calc(var(--u) * 5); font-size: calc(var(--u) * 5); }
+html.touch-ui body:not(.menu-open):not(.minimap-off) { --perf-left: calc(var(--safe-left) + var(--u) * 56); }
+html.touch-ui .level-badge { top: calc(var(--safe-top) + var(--u) * 6); bottom: auto; left: calc(var(--safe-left) + var(--u) * 39); }
+html.touch-ui .point-mark { top: calc(var(--safe-top) + var(--u) * 6); bottom: auto; left: calc(var(--safe-left) + var(--u) * 47); }
+html.touch-ui .xp-track { top: calc(var(--safe-top) + var(--u) * 8); bottom: auto; left: calc(var(--safe-left) + var(--u) * 61); }
+/* «дыши. и продолжай.» under the health plate: there is no room above the orb. */
+html.touch-ui .breath-warning { top: calc(var(--safe-top) + var(--u) * 44); bottom: auto; left: calc(var(--safe-left) + var(--u) * 4); }
+/* The ?perf=1 panel (perf-overlay.js) leaves the top centre to the quest line and the notices: it sits on
+   the left edge under the «дыши» line, which ends at 53u. */
+html.touch-ui { --perf-top: calc(var(--safe-top) + var(--u) * 56); --perf-left: calc(var(--safe-left) + var(--u) * 4); --perf-shift: none; }
+/* Loot lines under the spirit plate, two at most; below 380 px main.js sends them to the notices (§2.4). */
+html.touch-ui .loot-lines { top: calc(var(--safe-top) + var(--u) * 45); right: calc(var(--safe-right) + var(--u) * 4); bottom: auto; }
+html.touch-ui .loot-line:nth-last-child(n + 3) { display: none; }
+@media (max-height: 379px) { html.touch-ui .loot-lines { display: none; } }
+html.touch-ui .notice { top: calc(var(--safe-top) + var(--u) * 31); max-width: calc(100% - var(--safe-left) - var(--safe-right) - var(--u) * 100); }
+
+/* The quest as one outlined line under the experience bar: the amber goal and the ivory count, no frame. */
+html.touch-ui .quest {
+  top: calc(var(--safe-top) + var(--u) * 18);
+  left: calc(var(--safe-left) + var(--u) * 39);
+  display: flex;
+  gap: calc(var(--u) * 3);
+  width: auto;
+  max-width: calc(100% - var(--safe-left) - var(--safe-right) - var(--u) * 140);
+  padding: 0;
+  white-space: nowrap;
+  text-shadow: var(--outline);
+}
+html.touch-ui .quest::before, html.touch-ui :is(#quest-copy, .kill-dots, .quest-total, #encounter-label) { display: none; }
+html.touch-ui .quest h2 { min-width: 0; overflow: hidden; font-size: inherit; text-overflow: ellipsis; }
+html.touch-ui .quest-progress { margin: 0; }
+html.touch-ui .quest b { color: var(--ivory); }
+html.touch-ui .quest:has(#kill-count:empty) #encounter-label { display: inline; color: var(--muted); text-transform: lowercase; }
+html.touch-ui .quest:has(#kill-count:empty) #encounter-label::before { content: "· "; }
+
+/* Orbs (§4.1): 29u glass in the top corners, the 33×9u plate overlapping the ring by 2u. */
+.touch-hud { contain: layout; }
+.touch-orb {
+  position: absolute;
+  contain: layout;
+  top: calc(var(--safe-top) + var(--u) * 4);
+  width: calc(var(--u) * 33);
+  height: calc(var(--u) * 36);
+  --orb-accent: var(--coral);
+  --liquid: var(--coral);
+  --liquid-light: var(--coral-light);
+  --liquid-dark: var(--coral-dark);
+  --orb-empty: #3a2430;
+  --ring-top: var(--stone);
+}
+.touch-orb-health { left: calc(var(--safe-left) + var(--u) * 2); }
+.touch-orb-spirit {
+  right: calc(var(--safe-right) + var(--u) * 2);
+  --orb-accent: var(--spirit);
+  --liquid: var(--spirit);
+  --liquid-light: var(--spirit-light);
+  --liquid-dark: var(--spirit-dark);
+  --orb-empty: #1f363b;
+}
+.touch-orb-art { position: absolute; top: 0; left: calc(var(--u) * 2); width: calc(var(--u) * 29); height: calc(var(--u) * 29); }
+.touch-orb-plate {
+  position: absolute;
+  top: calc(var(--u) * 27);
+  left: 0;
+  width: calc(var(--u) * 33);
+  height: calc(var(--u) * 9);
+  border: var(--u) solid var(--night);
+  background: var(--slate);
+  box-shadow: inset 0 var(--u) var(--orb-accent);
+  line-height: calc(var(--u) * 7);
+  text-align: center;
+  white-space: nowrap;
+}
+.touch-orb-plate b { color: var(--ivory); }
+.touch-orb-plate i { color: var(--muted); font-style: normal; }
+.touch-orb-spirit .touch-orb-plate :is(b, i) { color: var(--spirit); }
+.touch-orb.low { --ring-top: var(--coral); }
+.touch-orb:is(.low, .drained) .touch-orb-plate b { color: var(--coral); }
+.touch-orb.low .orb-empty { animation: orb-blink 1s steps(1, end) infinite; }
+body.menu-open .touch-hud { opacity: .25; }
+
+/* ── Menus ────────────────────────────────────────────────────────────────────────────────────
+   The start, pause and end panels keep their screens with 22u buttons and the safe area (question 14). */
+html.touch-ui .overlay {
+  padding: max(var(--edge), var(--safe-top)) max(var(--edge), var(--safe-right)) max(var(--edge), var(--safe-bottom)) max(var(--edge), var(--safe-left));
+  /* The dimmer around the panel: no pan, no pull to refresh, no double-tap zoom. */
+  touch-action: none;
+}
+html.touch-ui .intro-scroll { overscroll-behavior: contain; touch-action: pan-y; }
+/* iPhone Safari zooms into a focused field under 16 px and keeps the zoom: the look chips focus a radio. */
+html.touch-ui .appearance-choice input { font-size: 16px; }
+html.touch-ui .primary-button { min-height: calc(var(--u) * 22); }
+html.touch-ui .text-button { min-height: calc(var(--u) * 22); }
+html.touch-ui .appearance-chip { height: calc(var(--u) * 22); min-width: calc(var(--u) * 22); }
+html.touch-ui .appearance-retry { min-height: calc(var(--u) * 22); }
+/* The start screen in two columns, so «Начать путь» shows on a landscape phone without a scroll: the title,
+   the story and the button on the left, the look of the wanderer on the right. The 1fr row takes the height
+   of a taller picker, so the button and the hint stay at the bottom. Only the start screen shows the picker.
+   On the smallest screen (568×320) the picker scrolls; «safe» keeps its top inside the scroll. */
+html.touch-ui .intro-panel:has(#appearance-picker:not([hidden])) { width: min(calc(var(--u) * 384), 100%); }
+html.touch-ui .intro-scroll:has(> #appearance-picker:not([hidden])) {
+  display: grid;
+  grid-template-columns: minmax(calc(var(--u) * 120), 1fr) auto;
+  grid-template-rows: repeat(5, auto) 1fr repeat(3, auto);
+  column-gap: calc(var(--u) * 8);
+}
+html.touch-ui .intro-scroll:has(> #appearance-picker:not([hidden])) > * { grid-column: 1; min-width: 0; }
+html.touch-ui .intro-scroll:has(> #appearance-picker:not([hidden])) > #play { grid-row: -4; margin-top: calc(var(--u) * 3); }
+html.touch-ui .intro-scroll:has(> #appearance-picker:not([hidden])) > #restart { grid-row: -3; }
+html.touch-ui .intro-scroll:has(> #appearance-picker:not([hidden])) > .entry-hint { grid-row: -2; }
+html.touch-ui .intro-scroll:has(> #appearance-picker:not([hidden])) > .appearance-picker { grid-column: 2; grid-row: 1 / -1; align-self: safe center; margin: 0; }
+/* The pause screen in two columns too: the title and the buttons on the left, the legend on the right, so the
+   whole legend shows on an 844×390 phone without a scroll. The reading order stays the order of index.html. */
+html.touch-ui .intro-panel:has(#pause-controls:not([hidden])) { width: min(calc(var(--u) * 384), 100%); container: pause-menu / inline-size; }
+html.touch-ui .intro-scroll:has(> #pause-controls:not([hidden])) {
+  display: grid;
+  grid-template-columns: minmax(calc(var(--u) * 112), 1fr) minmax(0, 2fr);
+  grid-template-rows: repeat(7, auto) 1fr;
+  column-gap: calc(var(--u) * 8);
+}
+html.touch-ui .intro-scroll:has(> #pause-controls:not([hidden])) > * { grid-column: 1; min-width: 0; }
+html.touch-ui .intro-scroll:has(> #pause-controls:not([hidden])) > #restart { justify-self: start; }
+html.touch-ui .intro-scroll:has(> #pause-controls:not([hidden])) > #pause-controls {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: start;
+  row-gap: calc(var(--u) * 2);
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+/* «Настройки»: finger-size switches under the buttons. From 592 px of panel content (a 640 px wide phone and up)
+   the legend column has room for them at the free end of its «Карта» row, so the left column keeps only the title
+   and the buttons. Their title stays for screen readers. The z-index keeps the switches over that row's empty end. */
+html.touch-ui .setting-switch { height: calc(var(--u) * 22); touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+@container pause-menu (width >= 592px) {
+  html.touch-ui .intro-scroll:has(> #pause-controls:not([hidden])) > #pause-settings {
+    z-index: 1;
+    display: flex;
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: start;
+    justify-self: end;
+    align-items: center;
+    gap: calc(var(--u) * 6);
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  /* Four switches use two reserved rows above the legend instead of overlapping its text. */
+  html.touch-ui .intro-scroll:has(> #pause-controls:not([hidden])) > #pause-settings {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: calc(var(--u) * 160);
+    max-width: 100%;
+    gap: var(--u) calc(var(--u) * 6);
+  }
+  html.touch-ui .intro-scroll:has(> #pause-controls:not([hidden])) > #pause-controls { padding-top: calc(var(--u) * 48); }
+  html.touch-ui #pause-settings h2 { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  html.touch-ui #pause-settings .setting { gap: calc(var(--u) * 3); }
+}
+/* A 375 px high phone: the legend rows close up by 1u, so the legend fits an 812×375 screen without a scroll. */
+@media (max-height: 389px) {
+  html.touch-ui .intro-scroll:has(> #pause-controls:not([hidden])) > #pause-controls { row-gap: var(--u); }
+}
+/* The pause legend names the touch controls; the map is a button above it (question 15). */
+html.touch-ui #legend-system { display: none; }
+.touch-tools { grid-column: 1 / -1; display: flex; gap: calc(var(--u) * 3); }
+.touch-tool {
+  height: calc(var(--u) * 22);
+  padding: 0 calc(var(--u) * 6);
+  border: var(--u) solid var(--stone-dark);
+  border-bottom-width: calc(var(--u) * 2);
+  background: var(--ink);
+  color: var(--ivory);
+  font: inherit;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.touch-tool:active { background: var(--slate); }
+.touch-tool[aria-pressed="true"] { border-color: var(--amber); background: #3c3033; }
+.touch-home-hint { grid-column: 1 / -1; }
+
+/* The map over the pause menu: the round map and its plate side by side at 2×, so the circle fits
+   a 390 px high screen; a tap anywhere closes it. The pause menu stays under it, so #pause hides. */
+.touch-map-close { display: none; }
+html.touch-ui body.menu-open.touch-map .touch-map-close { position: fixed; z-index: 11; inset: 0; display: block; margin: 0; padding: 0; border: 0; background: #0d0a14b3; }
+html.touch-ui body.menu-open.touch-map .world-info {
+  z-index: 12;
+  top: 50%;
+  right: auto;
+  left: 50%;
+  display: grid;
+  grid-template-columns: calc(var(--u) * 72) calc(var(--u) * 88);
+  grid-template-areas: "map plate";
+  align-items: center;
+  width: auto;
+  transform: translate(-50%, -50%) scale(2);
+}
+html.touch-ui body.touch-map .world-info #pause { display: none; }
+/* The 72u map, 88u plate and 2u gap need 648 px at 2× on a phone (--u = 2px).
+   Below that width keep the whole map inside the viewport at its native scale. */
+@media (width < 648px) {
+  html.touch-ui body.menu-open.touch-map .world-info {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ── «Монах» (§12) ───────────────────────────────────────────────────────────────────────────
+   A sheet over the whole safe area: 22u tabs and ✕, no key letters, scrolling content.
+   A touch chooses; «Взять», «Надеть», «Снять» and «Держи — выбросить» act. */
+html.touch-ui .monk-panel {
+  top: var(--safe-top);
+  right: var(--safe-right);
+  bottom: var(--safe-bottom);
+  left: var(--safe-left);
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  container: monk-sheet / inline-size;
+}
+html.touch-ui .monk-tabs { height: calc(var(--u) * 26); }
+html.touch-ui .monk-panel .monk-tab { height: calc(var(--u) * 22); padding: 0 calc(var(--u) * 6); }
+html.touch-ui :is(.monk-tab kbd, .monk-tabs-hint) { display: none; }
+html.touch-ui .monk-panel .monk-close { display: grid; width: calc(var(--u) * 22); height: calc(var(--u) * 22); margin-left: auto; padding: 0; place-items: center; }
+html.touch-ui .monk-content { padding-right: calc(var(--u) * 3); overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; touch-action: pan-y; scrollbar-width: thin; scrollbar-color: var(--stone) var(--ink); }
+html.touch-ui .monk-panel button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+html.touch-ui .monk-panel .mp-button { min-height: calc(var(--u) * 22); }
+html.touch-ui .monk-content.tab-character > * { flex: none; }
+/* «Персонаж»: the description stands beside the tree with «Взять» under it, so both stay on screen (§12). */
+html.touch-ui .monk-content.tab-character > .mp-path {
+  display: grid;
+  flex: 1;
+  grid-template-columns: calc(var(--u) * 158) minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  gap: calc(var(--u) * 3) calc(var(--u) * 6);
+  align-content: start;
+  width: auto;
+  min-width: 0;
+}
+html.touch-ui .mp-path > .mp-line { grid-column: 1 / -1; justify-content: flex-start; gap: calc(var(--u) * 8); }
+html.touch-ui .mp-path > .mp-tree { grid-row: 2 / 4; }
+html.touch-ui .mp-path > .mp-node-info { height: auto; min-height: calc(var(--u) * 40); }
+html.touch-ui .mp-path > .mp-node-info > span { white-space: normal; }
+html.touch-ui .monk-panel .mp-path > .mp-node-info > .mp-node-effect { display: block; max-height: none; }
+html.touch-ui .mp-path > .mp-respec { flex-wrap: wrap; align-self: start; white-space: normal; }
+html.touch-ui .mp-respec .mp-button { flex: 1 0 100%; text-align: center; }
+/* Path nodes stay 20u to draw; the touch zone is 22u (§9). */
+html.touch-ui .mp-node::after { content: ""; position: absolute; inset: calc(var(--u) * -2); }
+
+/* «Снаряжение»: weapon and bag 108u | the chosen card 132u | «Если надеть» and the buttons. */
+html.touch-ui .mp-gear-touch { display: grid; grid-template-columns: calc(var(--u) * 108) calc(var(--u) * 132) minmax(calc(var(--u) * 96), calc(var(--u) * 132)); gap: calc(var(--u) * 8); }
+html.touch-ui .mp-gear-col { display: flex; flex-direction: column; gap: calc(var(--u) * 4); min-width: 0; }
+html.touch-ui .mp-gear-touch .mp-bag { width: auto; }
+html.touch-ui .mp-gear-touch .mp-worn { line-height: calc(var(--u) * 9); }
+html.touch-ui .mp-gear-touch .mp-worn .mp-shrink { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+html.touch-ui .mp-gear-touch .mp-summary { flex: none; }
+html.touch-ui .mp-note { margin: 0; line-height: calc(var(--u) * 9); }
+html.touch-ui .mp-actions { display: flex; flex-direction: column; gap: calc(var(--u) * 4); margin-top: auto; }
+html.touch-ui .monk-panel .mp-action {
+  position: relative;
+  overflow: hidden;
+  height: calc(var(--u) * 22);
+  padding: 0 calc(var(--u) * 6);
+  border: var(--u) solid var(--night);
+  background: var(--coal);
+  box-shadow: inset 0 var(--u) var(--stone);
+  color: var(--ivory);
+  text-align: center;
+  white-space: nowrap;
+}
+html.touch-ui .monk-panel .mp-action.equip { background: var(--amber); box-shadow: inset 0 var(--u) #ffdf9f; color: var(--ink); }
+html.touch-ui .monk-panel .mp-action.drop { box-shadow: inset 0 var(--u) var(--coral); color: var(--coral); touch-action: none; }
+/* The finger on «Держи — выбросить»: --coral-dark grows left to right over 0.6 s, then the item drops. */
+html.touch-ui .mp-action.drop.holding::after { content: ""; position: absolute; z-index: -1; inset: 0; background: var(--coral-dark); transform-origin: 0 50%; animation: mp-drop .6s steps(12, end) both; }
+html.touch-ui .mp-action.drop { isolation: isolate; }
+@keyframes mp-drop { from { transform: scaleX(0); } }
+
+/* «Умения»: the list in 22u rows | the 148u description | the right-hand buttons as in the fight, 1 · 2 · 3 over them.
+   110 + 148 + 92u and two 3u gaps fit the 356u an iPhone 14 leaves between its safe edges and the scrollbar. */
+html.touch-ui .monk-content.tab-skills { display: grid; grid-template-columns: calc(var(--u) * 110) minmax(calc(var(--u) * 148), 1fr) calc(var(--u) * 92); gap: calc(var(--u) * 3); }
+html.touch-ui .tab-skills .mp-skill-body { display: contents; }
+html.touch-ui .tab-skills .mp-skill-list { width: auto; }
+html.touch-ui .monk-panel .mp-skill { height: calc(var(--u) * 22); }
+/* The series and the step never change slot: their rows carry no label (§12). */
+html.touch-ui .mp-skill-key:has(kbd.combo, kbd.dash) { min-width: 0; }
+html.touch-ui .mp-skill-key :is(kbd.combo, kbd.dash) { display: none; }
+html.touch-ui .monk-panel .mp-mod { height: calc(var(--u) * 22); justify-content: center; }
+html.touch-ui .tab-skills .mp-slot-row { grid-column: 3; grid-row: 1; flex-direction: column; align-items: stretch; gap: calc(var(--u) * 4); height: auto; padding-top: 0; }
+html.touch-ui .tab-skills .mp-slots { position: relative; flex: none; width: calc(var(--u) * 92); height: calc(var(--u) * 108); }
+html.touch-ui .tab-skills .mp-slot { position: absolute; }
+/* Centres from «Удар» as on the screen (§4.2): «Шаг» −50, +18 · 1 −50, −20 · 2 −24, −54 · 3 +14, −46. */
+html.touch-ui .mp-slot[data-slot="lmb"] { top: calc(var(--u) * 62); left: calc(var(--u) * 50); }
+html.touch-ui .mp-slot[data-slot="space"] { top: calc(var(--u) * 80); left: 0; }
+html.touch-ui .mp-slot[data-slot="rmb"] { top: calc(var(--u) * 42); left: 0; }
+html.touch-ui .mp-slot[data-slot="q"] { top: calc(var(--u) * 8); left: calc(var(--u) * 26); }
+html.touch-ui .mp-slot[data-slot="f"] { top: calc(var(--u) * 16); left: calc(var(--u) * 64); }
+/* «Удар» and «Шаг» never change: 35%, without labels. */
+html.touch-ui .mp-slot:is([data-slot="lmb"], [data-slot="space"]) { opacity: .35; }
+html.touch-ui .mp-slot:is([data-slot="lmb"], [data-slot="space"]) .keycap, html.touch-ui .mp-slot .skill-blank { font-size: 0; }
+html.touch-ui .mp-slot:is([data-slot="lmb"], [data-slot="space"]) .keycap { display: none; }
+html.touch-ui .tab-skills .mp-slot-hint { white-space: normal; }
+
+/* The sheet narrower than the three columns (356u + the 3u scrollbar gap = 718 px at the phone's 2 px --u):
+   568×320, an iPhone SE, an iPhone mini between its notches. Every button stays inside the sheet; the rest
+   scrolls down (pan-y). A container query, because the safe-area insets decide the width, not the screen. */
+@container monk-sheet (width < 718px) {
+  /* «Персонаж»: the path first, its tree beside «Взять»; the portrait and the numbers under it. */
+  html.touch-ui .monk-content.tab-character { flex-direction: column; }
+  html.touch-ui .monk-content.tab-character > .mp-path { order: -1; }
+  /* «Снаряжение»: weapon and bag | the chosen item with «Надеть» and «Держи — выбросить» under its name;
+     «Если надеть» across the sheet below. */
+  html.touch-ui .mp-gear-touch {
+    grid-template-columns: calc(var(--u) * 108) minmax(0, 1fr);
+    grid-template-areas: "left head" "left note" "left actions" "left card" "left worn" "summary summary";
+    row-gap: calc(var(--u) * 4);
+  }
+  html.touch-ui .mp-gear-touch > .mp-gear-col:first-child { grid-area: left; }
+  html.touch-ui .mp-gear-touch > .mp-gear-col:not(:first-child) { display: contents; }
+  html.touch-ui .mp-gear-touch > .mp-gear-col > .mp-head { grid-area: head; }
+  html.touch-ui .mp-gear-touch > .mp-gear-col > .mp-card { grid-area: card; }
+  html.touch-ui .mp-gear-touch > .mp-gear-col > .mp-worn { grid-area: worn; }
+  html.touch-ui .mp-gear-touch > .mp-gear-col > .mp-summary { grid-area: summary; }
+  html.touch-ui .mp-gear-touch > .mp-gear-col > .mp-note { grid-area: note; }
+  html.touch-ui .mp-gear-touch > .mp-gear-col > .mp-actions { grid-area: actions; flex-direction: row; margin-top: 0; }
+  html.touch-ui .mp-gear-touch .mp-action { flex: 1 1 auto; }
+  /* «Умения»: the hint across the top, then the list and the description under it | the buttons 1 · 2 · 3,
+     which stay in view while the column scrolls. The column beside them stays clear, so nothing slides under them. */
+  html.touch-ui .monk-content.tab-skills { grid-template-columns: minmax(0, 1fr) calc(var(--u) * 92); }
+  html.touch-ui .tab-skills .mp-slot-row { display: contents; }
+  html.touch-ui .tab-skills .mp-slot-hint { grid-column: 1 / -1; grid-row: 1; flex-flow: row wrap; column-gap: calc(var(--u) * 2); }
+  html.touch-ui .tab-skills .mp-skill-list { grid-column: 1; grid-row: 2; }
+  html.touch-ui .tab-skills .mp-slots { grid-column: 2; grid-row: 2; position: sticky; top: 0; align-self: start; }
+  html.touch-ui .tab-skills .mp-detail { grid-column: 1; grid-row: 3; }
+}
+
+/* HD-2D core: a full-width quality row, with the existing stage-0 switches above. */
+@container pause-menu (width >= 592px) {
+  html.touch-ui .intro-scroll:has(> #pause-controls:not([hidden])) > #pause-controls { padding-top: calc(var(--u) * 64); }
+}

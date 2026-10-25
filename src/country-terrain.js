@@ -1,3 +1,5 @@
+// HD-2D lights: shared point-light equations and uniforms.
+import { pointDeclarations, pointFunction } from './hd2d/lights.js';
 import { Vector2, Vector4 } from '@babylonjs/core/Maths/math.vector.js';
 import { ShaderMaterial } from '@babylonjs/core/Materials/shaderMaterial.js';
 import { Texture } from '@babylonjs/core/Materials/Textures/texture.js';
@@ -20,6 +22,43 @@ function noise(x, y, size, salt) {
   const sx = smooth(0, 1, u - ix), sy = smooth(0, 1, v - iy);
   return mix(mix(hash(ix, iy, salt), hash(ix + 1, iy, salt), sx),
     mix(hash(ix, iy + 1, salt), hash(ix + 1, iy + 1, salt), sx), sy);
+}
+
+// noise() over a grid of sample points: x = xs[column] for every row, y set once per row by row(y).
+// Each column's lattice cell and blend weight are computed once, and its blends along the two lattice
+// lines of a lattice row once per lattice row (on the first read there), all with noise()'s own
+// arithmetic: at(column) and fill(values) return exactly noise(xs[column], y).
+function gridNoise(size, salt, xs) {
+  const count = xs.length, cells = new Int32Array(count), weights = new Float64Array(count);
+  for (let column = 0; column < count; column++) {
+    const u = xs[column] / size, ix = Math.floor(u);
+    cells[column] = ix; weights[column] = smooth(0, 1, u - ix);
+  }
+  const first = cells[0], span = cells[count - 1] - first + 2, low = new Float64Array(span), high = new Float64Array(span);
+  const top = new Float64Array(count), bottom = new Float64Array(count);
+  let iy = NaN, cell = NaN, sy = 0;
+  const lines = () => {
+    iy = cell;
+    for (let k = 0; k < span; k++) { low[k] = hash(first + k, iy, salt); high[k] = hash(first + k, iy + 1, salt); }
+    for (let column = 0; column < count; column++) {
+      const k = cells[column] - first, sx = weights[column];
+      top[column] = mix(low[k], low[k + 1], sx); bottom[column] = mix(high[k], high[k + 1], sx);
+    }
+  };
+  return {
+    row(y) {
+      const v = y / size;
+      cell = Math.floor(v); sy = smooth(0, 1, v - cell);
+    },
+    at(column) {
+      if (cell !== iy) lines();
+      return mix(top[column], bottom[column], sy);
+    },
+    fill(values) {
+      if (cell !== iy) lines();
+      for (let column = 0; column < count; column++) values[column] = mix(top[column], bottom[column], sy);
+    },
+  };
 }
 
 // Signed distance to a closed outline of [x, y] points, negative inside.
@@ -57,7 +96,15 @@ const zoneOf = (world, id) => world.zones?.find(zone => zone.id === id) ?? (worl
 function wearField(world, extent) {
   const padding = 4, x0 = extent.minX - padding, y0 = extent.minY - padding;
   const width = extent.maxX - x0 + padding + 1, height = extent.maxY - y0 + padding + 1;
-  const paving = new Set((world.paving ?? world.tiles).map(p => key(p.x, p.y)));
+  // Paving as a grid with a 3-cell margin: every neighbour the 7 × 7 search reads lies on it.
+  const gridWidth = width + 6, grid = new Uint8Array(gridWidth * (height + 6));
+  for (const p of world.paving ?? world.tiles) {
+    const column = p.x - x0 + 3, row = p.y - y0 + 3;
+    if (column >= 0 && row >= 0 && column < gridWidth && row < height + 6) grid[row * gridWidth + column] = 1;
+  }
+  const paved = (column, row) => grid[(row + 3) * gridWidth + column + 3] === 1;
+  const reach = [];
+  for (let dy = -3; dy <= 3; dy++) for (let dx = -3; dx <= 3; dx++) reach.push(dx, dy, Math.hypot(dx, dy) - .5);
   const field = new Float32Array(width * height);
   const camp = zoneOf(world, 'camp'), road = zoneOf(world, 'road');
   const clearings = [...camp ? [
@@ -71,10 +118,10 @@ function wearField(world, extent) {
     ...road.pillars.map(p => ({ ...p, radius: 1.3 })), ...road.braziers.map(p => ({ ...p, radius: 1.05 })),
   ] : []];
   for (let row = 0; row < height; row++) for (let column = 0; column < width; column++) {
-    const x = x0 + column, y = y0 + row, inside = paving.has(key(x, y));
+    const inside = paved(column, row);
     let distance = 3;
-    for (let dy = -3; dy <= 3; dy++) for (let dx = -3; dx <= 3; dx++) {
-      if (paving.has(key(x + dx, y + dy)) !== inside) distance = Math.min(distance, Math.hypot(dx, dy) - .5);
+    for (let k = 0; k < reach.length; k += 3) {
+      if (paved(column + reach[k], row + reach[k + 1]) !== inside) distance = Math.min(distance, reach[k + 2]);
     }
     distance *= inside ? -1 : 1;
     field[row * width + column] = distance;
@@ -132,36 +179,50 @@ export function countrySurfaceMap(world, extent) {
     minY: Math.min(...floor.map(p => p[1])) - 2, maxY: Math.max(...floor.map(p => p[1])) + 2 };
   const floorDistance = (x, y) => floor && x > floorBox.minX && x < floorBox.maxX && y > floorBox.minY && y < floorBox.maxY
     ? polygonDistance(floor, x, y) : 3;
+  // smooth(low, high, wy + (noise − .5) × 2): the noise moves the edge by less than 1, so beyond that
+  // reach of the band the result is exactly 0 or 1 and the noise is not sampled.
+  const band = (low, high, wy, sampler, column) => wy - 1 > high + 1e-9 ? 1 : wy + 1 < low - 1e-9 ? 0
+    : smooth(low, high, wy + (sampler.at(column) - .5) * 2);
+  // Every noise below is sampled at the texel centres: the same x in every row.
+  const xs = Float64Array.from({ length: width }, (_, column) => origin.x + (column + .5) / pixelsPerUnit);
+  const n = Object.fromEntries([[5, 31], [1.4, 32], [5, 33], [1.4, 34], [8, 37], [8, 38], [9, 40], [3, 41], [3, 35], [3, 36],
+    [1.6, 42], [.7, 43]].map(([size, salt]) => [salt, gridNoise(size, salt, xs)]));
+  const samplers = Object.values(n);
+  // The warp, wander and broad noises are read at every texel: they are filled a row at a time.
+  const [warpX, fineX, warpY, fineY, wanderX, wanderY, broadLow, broadFine] = Array.from({ length: 8 }, () => new Float64Array(width));
   for (let row = 0; row < height; row++) {
     const y = origin.y + (row + .5) / pixelsPerUnit;
+    for (const sampler of samplers) sampler.row(y);
     // Blend the region's stone into the shared path over six world units. The
     // same world-space noise and wear field continue through both area seams.
     const courtWeight = court ? 1 - smooth(courtEdge - 3, courtEdge + 3, y) : Number(world.id === 'courtyard');
     const reach = wander(y) * 1.3;
+    n[31].fill(warpX); n[32].fill(fineX); n[33].fill(warpY); n[34].fill(fineY); n[40].fill(broadLow); n[41].fill(broadFine);
+    if (reach) { n[37].fill(wanderX); n[38].fill(wanderY); }
     for (let column = 0; column < width; column++) {
-      const x = origin.x + (column + .5) / pixelsPerUnit;
+      const x = xs[column];
       // Low-frequency warping breaks the grid silhouette, with just enough finer
       // variation to leave pixel-scale tufts at the edge instead of smooth blur.
-      const wx = x + (noise(x, y, 5, 31) - .5) * .9 + (noise(x, y, 1.4, 32) - .5) * .22;
-      const wy = y + (noise(x, y, 5, 33) - .5) * .9 + (noise(x, y, 1.4, 34) - .5) * .22;
+      const wx = x + (warpX[column] - .5) * .9 + (fineX[column] - .5) * .22;
+      const wy = y + (warpY[column] - .5) * .9 + (fineY[column] - .5) * .22;
       // The road's extra wander moves only its worn edge, never the seams or the courtyard floor.
-      const worn = 1 - smooth(-.35, .55, reach ? wear(wx + (noise(x, y, 8, 37) - .5) * reach, wy + (noise(x, y, 8, 38) - .5) * reach) : wear(wx, wy));
-      const broad = noise(x, y, 9, 40) * .8 + noise(x, y, 3, 41) * .2;
+      const worn = 1 - smooth(-.35, .55, reach ? wear(wx + (wanderX[column] - .5) * reach, wy + (wanderY[column] - .5) * reach) : wear(wx, wy));
+      const broad = broadLow[column] * .8 + broadFine[column] * .2;
       // Alpha selects the camp's own meadow and packed earth. It fades over
       // a warped band across the seam, so the shared route stays continuous;
       // the shader interleaves both meadows in patches across the band.
-      const campWeight = camp ? smooth(campEdge - 4.9, campEdge + 4.5, wy + (noise(x, y, 3, 35) - .5) * 2)
-        : Number(world.id === 'camp');
+      const campWeight = camp ? band(campEdge - 4.9, campEdge + 4.5, wy, n[35], column) : Number(world.id === 'camp');
       // The camp and road meadow is unbroken grass; bare earth stays on worn ground.
-      const style = wanderer.enabled ? smooth(wanderer.seam - wanderer.below, wanderer.seam + wanderer.above,
-        wy + (noise(x, y, 3, 36) - .5) * 2) : 0;
+      const style = wanderer.enabled ? band(wanderer.seam - wanderer.below, wanderer.seam + wanderer.above, wy, n[36], column) : 0;
       // The ruined courtyard stands in the same meadow (alpha) as the camp.
       const meadow = Math.max(campWeight, courtWeight * Number(!!floor));
       const soilPatch = smooth(.58, .78, broad) * .9 * (1 - .8 * Math.max(meadow, style));
       // Flagstones cover the courtyard floor. Grass takes more of it near the
       // wall feet than in the middle; the road wears earth up to the walls.
-      const inside = floorDistance(wx, wy), inner = smooth(.25, -1.5, inside), rim = smooth(-4.5, -.8, inside);
-      const cracks = smooth(.74 - .16 * rim, .86 - .16 * rim, noise(x, y, 1.6, 42) * .75 + noise(x, y, .7, 43) * .25);
+      const inside = floorDistance(wx, wy), inner = smooth(.25, -1.5, inside);
+      // Cracks only show on the floor (inner > 0); with inner 0 they drop out of stone and soil.
+      const rim = floor && inner > 0 ? smooth(-4.5, -.8, inside) : 0;
+      const cracks = floor && inner > 0 ? smooth(.74 - .16 * rim, .86 - .16 * rim, n[42].at(column) * .75 + n[43].at(column) * .25) : 0;
       const stone = floor ? courtWeight * inner * (1 - .9 * cracks) * (.8 + .2 * smooth(.2, .6, broad))
         : courtWeight * Math.max(smooth(.34, .72, broad) * .7, worn * .78);
       // Half of each crack is bare earth, like a missing slab.
@@ -202,8 +263,10 @@ function nearbyPoints(points, radius) {
 
 export function countryGroundCover(world, bounds, surfaceMap) {
   const zoneAt = countryZoneLookup(world);
+  // Every cache and shrine (world.caches, world.shrines), or the road's one of each.
   const clear = [...(world.portals ?? []), ...(world.pillars ?? []), ...(world.encounters ?? []), ...(world.braziers ?? []),
-    world.shrine, world.secret, world.ritual, world.reward, world.spawn, ...Object.values(world.entries ?? {})].filter(Boolean);
+    ...(world.shrines ?? [world.shrine]), ...(world.caches ?? [world.secret]), world.ritual, world.reward, world.spawn,
+    ...Object.values(world.entries ?? {})].filter(Boolean);
   const nearPaving = nearbyPoints(world.paving ?? world.tiles, 1.8), nearReserved = nearbyPoints(clear, 2.2);
   // Walkable ground art such as the camp rug keeps its surface free of tufts.
   const camp = world.zones?.find(zone => zone.id === 'camp') ?? (world.id === 'camp' ? world : null);
@@ -244,7 +307,7 @@ export function countryGroundCover(world, bounds, surfaceMap) {
   for (let y = Math.floor(bounds.minY / 3) * 3 + 1.5; y <= bounds.maxY; y += 3) {
     for (let x = Math.floor(bounds.minX / 3) * 3 + 1.5; x <= bounds.maxX; x += 3) {
       const zone = zoneAt(x, y).id;
-      const traceThreshold = zone === 'courtyard' ? .15 : zone === 'road' ? .65 : .55;
+      const traceThreshold = zone === 'courtyard' ? .35 : zone === 'road' ? .65 : .55;
       if (hash(x, y, 70) < traceThreshold) continue;
       const cx = x + (hash(x, y, 71) - .5) * .6, cy = y + (hash(x, y, 72) - .5) * .6;
       const group = [], cluster = `traces:${key(x, y)}`;
@@ -281,7 +344,9 @@ function horizonTexture(scene, backdrop, frame) {
   return texture;
 }
 
-export function countryGroundMaterial(scene, assets, map, world = {}) {
+// shade: bakePropShade's field (prop-shade.js), or null. The renderer switches the shade and the
+// light pools (`artFlags`) and uploads the packed pools (scene-light.js).
+export function countryGroundMaterial(scene, assets, map, world = {}, shade = null) {
   const mask = RawTexture.CreateRGBATexture(map.data, map.width, map.height, scene, false, false, Texture.NEAREST_SAMPLINGMODE);
   mask.name = 'country-surface-mask';
   const backdrop = campBackdrop(world), art = assets.campBackdrop;
@@ -316,6 +381,17 @@ export function countryGroundMaterial(scene, assets, map, world = {}) {
       uniform vec4 backdropFrame;
       uniform float backdropEnabled;
       uniform vec4 fireGlow;
+      uniform vec4 artFlags;
+      uniform vec4 shadeBounds;
+      uniform vec4 lightPos[8];
+      uniform vec4 lightTint[8];
+      uniform vec4 lightAdd[8];
+      // HD-2D lights: an off branch leaves the complete stage-0 path intact.
+      uniform float hdLightEnabled;
+      #define HD_LIGHT_COUNT 8
+      #define HD_LIGHT_SMOOTH_GROUND
+      ${pointDeclarations}
+      ${pointFunction}
       uniform vec4 meadowGrade;
       uniform vec4 wandererBand;
       uniform sampler2D surfaceMask;
@@ -327,6 +403,46 @@ export function countryGroundMaterial(scene, assets, map, world = {}) {
       uniform sampler2D campEarthTexture;
       uniform sampler2D horizonTexture;
       uniform sampler2D backdropTexture;
+      uniform sampler2D propShade;
+      // HD-2D shadows: independent receiver. Zero flags preserve the original frame.
+      uniform vec4 hdShadowFlags;
+      uniform vec4 hdShadowBounds;
+      uniform vec4 hdShadowMapBounds;
+      uniform sampler2D hdStaticShadow;
+      uniform sampler2D hdActorShadow;
+      // HD-2D shadows: end declarations.
+      // HD-2D atmos: optional sky/haze. All uniforms default to zero in stage 0.
+      uniform float hdAtmos;
+      uniform float hdTime;
+      uniform vec4 hdFocus; // fixed-camera screen centre, far range, haze strength
+      uniform vec4 hdHaze; // RGB, unused
+      vec3 hdNightSky(vec3 art, vec2 q) {
+        // The original mountains retain their silhouette below the open sky.
+        // Four flat sky inks from the existing mountain backdrop. Preserve every
+        // mountain silhouette, including the peaks above the moon's altitude.
+        float skyError = min(min(distance(art, vec3(93.,109.,136.) / 255.),
+          distance(art, vec3(102.,119.,143.) / 255.)),
+          min(distance(art, vec3(111.,128.,151.) / 255.), distance(art, vec3(122.,138.,159.) / 255.)));
+        float openSky = 1.0 - step(.003, skyError);
+        vec2 pixel = floor(q * vec2(1706.0, 1066.0)) / vec2(1706.0, 1066.0);
+        vec2 moon = (pixel - vec2(.53, .67)) * vec2(1.6, 1.0);
+        float r = length(moon);
+        float disc = 1.0 - step(.026, r);
+        float halo = max(0.0, 1.0 - r / .11);
+        vec3 sky = mix(vec3(.028, .041, .083), vec3(.074, .12, .16), clamp(q.y * 1.6, 0.0, 1.0));
+        sky += vec3(.12, .23, .25) * halo * halo;
+        float crater = step(.005, length(moon + vec2(.008, -.003))) * step(.007, length(moon - vec2(.005, .009)));
+        sky = mix(sky, vec3(.59, .80, .77) + crater * .13, disc);
+        if (hdAtmos > 1.5) {
+          // Broad six-step cloud bands, drifting at a quantized world-pixel cadence.
+          float t = floor(hdTime * 4.0) / 4.0;
+          float bands = sin(pixel.x * 32.0 + t * .035) + sin(pixel.x * 13.0 - pixel.y * 38.0 + t * .027);
+          float cloud = floor(smoothstep(.4, 1.7, bands) * 5.0) / 5.0;
+          sky = mix(sky, vec3(.08, .12, .16), cloud * .38);
+        }
+        return mix(art * vec3(.61, .72, .84), sky, openSky);
+      }
+      // HD-2D atmos end.
       float hash12(vec2 p) {
         vec3 q = fract(vec3(p.xyx) * .1031);
         q += dot(q, q.yzx + 33.33);
@@ -359,14 +475,21 @@ export function countryGroundMaterial(scene, assets, map, world = {}) {
         float lip = 1.0;
         if (backdropEnabled > .5) {
           vec4 h = texture2D(horizonTexture, vec2((screenPosition.x - horizonFrame.x) / horizonFrame.y, .5));
-          float horizon = horizonFrame.z + (h.r * 65280.0 + h.g * 255.0) / 65535.0 * horizonFrame.w;
-          if (screenPosition.y < horizon) {
+          float code = h.r * 65280.0 + h.g * 255.0;
+          float horizon = horizonFrame.z + code / 65535.0 * horizonFrame.w;
+          // Code 0 is the climbing rim clamped to the range floor: there the rim stands far above
+          // every ground, as horizonAt says. Without this test, ground far north (the orchard)
+          // showed the flat backdrop under a straight line.
+          if (code > .5 && screenPosition.y < horizon) {
             vec2 q = (backdropPosition - backdropFrame.xy) / backdropFrame.zw;
-            gl_FragColor = vec4(texture2D(backdropTexture, vec2(q.x, 1.0 - clamp(q.y, .0005, .9995))).rgb, 1.0);
+            vec3 distant = texture2D(backdropTexture, vec2(q.x, 1.0 - clamp(q.y, .0005, .9995))).rgb;
+            // HD-2D atmos: the off branch returns the unmodified original texel.
+            if (hdAtmos > .5) distant = hdNightSky(distant, q);
+            gl_FragColor = vec4(distant, 1.0);
             return;
           }
           // One dark framebuffer row marks where the plateau drops away.
-          if (screenPosition.y - horizon < .0375) lip = .5;
+          if (code > .5 && screenPosition.y - horizon < .0375) lip = .5;
         }
         vec2 world = groundPosition.xz, uv = world / 4.0;
         // World-fixed screen pixels: dither that never swims with the camera.
@@ -415,16 +538,91 @@ export function countryGroundMaterial(scene, assets, map, world = {}) {
           float slabAbove = maskAt(above).b + (valueNoise(above * 3.1 + 5.0) - .5) * .34 + (hash12(pixel - vec2(0.0, 1.0) + 29.0) - .5) * .16;
           color = slabAbove <= .5 ? flag * .8 : flag;
         }
-        // Campfire light on the packed earth: three hard steps, no gradient.
-        float glow = floor(clamp(1.0 - length(world - fireGlow.xy) / fireGlow.z, 0.0, 1.0) * 3.0 + .35) / 3.0;
-        color = mix(color, color * vec3(1.3, 1.08, .8) + vec3(.05, .025, 0.0), glow * fireGlow.w);
+        // Contact shade under the props: two hard steps, scalloped by world noise and dithered.
+        if (artFlags.x > .5) {
+          vec2 st = (world - shadeBounds.xy) / shadeBounds.zw;
+          if (st.x > 0.0 && st.y > 0.0 && st.x < 1.0 && st.y < 1.0) {
+            float s = texture2D(propShade, st).r + (valueNoise(world * 5.0) - .5) * .16 + (hash12(pixel + 51.0) - .5) * .12;
+            if (s > .58) color *= vec3(.6, .62, .72);
+            else if (s > .16) color *= vec3(.8, .82, .88);
+          }
+        }
+        // HD-2D shadows: alpha silhouettes, filtered then quantised on the world pixel lattice.
+        if (hdShadowFlags.x > .5) {
+          vec2 wp = (floor(world * 32.0) + .5) / 32.0;
+          vec2 st = (wp - hdShadowBounds.xy) / hdShadowBounds.zw;
+          float shadow = 0.0;
+          if (st.x > 0.0 && st.y > 0.0 && st.x < 1.0 && st.y < 1.0) {
+            vec2 d = hdShadowFlags.zw;
+            shadow = texture2D(hdStaticShadow, st).r * .5
+              + (texture2D(hdStaticShadow, st + vec2(d.x, 0.0)).r
+              + texture2D(hdStaticShadow, st - vec2(d.x, 0.0)).r
+              + texture2D(hdStaticShadow, st + vec2(0.0, d.y)).r
+              + texture2D(hdStaticShadow, st - vec2(0.0, d.y)).r) * .125;
+          }
+          if (hdShadowFlags.y > .5) {
+            vec2 mt = (wp - hdShadowMapBounds.xy) / hdShadowMapBounds.zw;
+            if (mt.x > 0.0 && mt.y > 0.0 && mt.x < 1.0 && mt.y < 1.0)
+              shadow = max(shadow, texture2D(hdActorShadow, mt).r);
+          }
+          float stepped = floor(shadow * 4.0 + hash12(pixel + 73.0)) * .25;
+          color *= mix(vec3(1.0), vec3(.66, .69, .79), stepped);
+        }
+        // HD-2D shadows: end receiver.
+        // Bayer 4x4, anchored to 32 world texels/u, not to the camera. Evaluate the
+        // falloff at each texel centre: no blur or gradient within a ground texel.
+        vec2 lightTexel = floor(world * 32.0);
+        vec2 poolPoint = (lightTexel + .5) / 32.0;
+        vec2 low = mod(lightTexel, 2.0), high = mod(floor(lightTexel * .5), 2.0);
+        float bayer = (4.0 * (low.x * (2.0 - 4.0 * low.y) + 3.0 * low.y)
+          + high.x * (2.0 - 4.0 * high.y) + 3.0 * high.y + .5) / 16.0;
+        // HD-2D lights: smooth falloff sampled at world-texel centres; no Bayer dither.
+        if (hdLightEnabled > .5) {
+          color *= hdPointLight(vec3(poolPoint.x, groundPosition.y, poolPoint.y), vec3(0.0, 1.0, 0.0));
+        } else if (artFlags.y > .5) {
+          // Four crisp light levels interleave over a smooth falloff, without ring edges.
+          // The strongest pool tints the texel, as it does the actors in scene-light.js.
+          vec3 lit = color;
+          float best = 0.0;
+          for (int i = 0; i < 8; i++) {
+            vec4 light = lightPos[i];
+            if (light.w <= 0.0) continue;
+            float t = clamp(1.0 - length(poolPoint - light.xy) / light.z, 0.0, 1.0);
+            float g = floor(t * t * (3.0 - 2.0 * t) * 4.0 + bayer) * .25 * light.w;
+            if (g > best) { best = g; lit = mix(color, color * lightTint[i].rgb + lightAdd[i].rgb, g); }
+          }
+          color = lit;
+        } else {
+          // The legacy campfire uses the same dither when optional pools are off.
+          float t = clamp(1.0 - length(poolPoint - fireGlow.xy) / fireGlow.z, 0.0, 1.0);
+          float glow = floor(t * t * (3.0 - 2.0 * t) * 4.0 + bayer) * .25;
+          color = mix(color, color * vec3(1.3, 1.08, .8) + vec3(.05, .025, 0.0), glow * fireGlow.w);
+        }
+        // HD-2D atmos: distance is along the ground, not a screen overlay on actors.
+        if (hdAtmos > .5) {
+          float farGround = smoothstep(2.0, hdFocus.z, hdFocus.y - screenPosition.y);
+          color = mix(color, hdHaze.rgb, farGround * hdFocus.w);
+        }
         gl_FragColor = vec4(color * lip, 1.0);
       }`,
   }, { attributes: ['position'],
     uniforms: ['world', 'view', 'worldViewProjection', 'maskBounds', 'maskSize', 'horizonFrame', 'backdropFrame', 'backdropView',
-      'backdropEnabled', 'fireGlow', 'meadowGrade', 'wandererBand'],
+      'hdAtmos', 'hdTime', 'hdFocus', 'hdHaze',
+      'hdLightEnabled', 'hdLightPosition', 'hdLightColor', 'hdLightParams', 'hdMoon',
+      'backdropEnabled', 'fireGlow', 'artFlags', 'shadeBounds', 'lightPos', 'lightTint', 'lightAdd', 'meadowGrade', 'wandererBand',
+      // HD-2D shadows: receiver uniforms.
+      'hdShadowFlags', 'hdShadowBounds', 'hdShadowMapBounds'],
     samplers: ['surfaceMask', 'grassTexture', 'soilTexture', 'stoneTexture', 'flagstoneTexture', 'campGrassTexture', 'campEarthTexture',
-      'horizonTexture', 'backdropTexture'] });
+      'horizonTexture', 'backdropTexture', 'propShade',
+      // HD-2D shadows: receiver resources.
+      'hdStaticShadow', 'hdActorShadow'],
+    });
+  material.setVector4('hdShadowFlags', new Vector4(0, 0, 0, 0));
+  material.setTexture('hdStaticShadow', mask);
+  material.setTexture('hdActorShadow', mask);
+  // HD-2D shadows: end resources.
+  // HD-2D lights: default is the untouched stage-0 shader path.
+  material.setFloat('hdLightEnabled', 0);
   material.backFaceCulling = false;
   material.setVector4('maskBounds', new Vector4(map.origin.x, map.origin.y, map.width / map.pixelsPerUnit, map.height / map.pixelsPerUnit));
   material.setVector2('maskSize', new Vector2(map.width, map.height));
@@ -439,6 +637,16 @@ export function countryGroundMaterial(scene, assets, map, world = {}) {
   // Only the camp fire lights the ground, around its stone ring's centre.
   const fire = (world.zones ?? [world]).flatMap(zone => zone.setDressing ?? []).find(p => p.kind === 'campfire-base')?.collider;
   material.setVector4('fireGlow', fire ? new Vector4(fire.x, fire.y, 3.4, .7) : new Vector4(0, 0, 1, 0));
+  // The baked prop shade is on until the renderer says otherwise; the pools need its lights.
+  let shadeTexture = null;
+  if (shade) {
+    shadeTexture = RawTexture.CreateLuminanceTexture(shade.data, shade.width, shade.height, scene, false, false, Texture.BILINEAR_SAMPLINGMODE);
+    shadeTexture.name = 'prop-shade';
+    shadeTexture.wrapU = shadeTexture.wrapV = Texture.CLAMP_ADDRESSMODE;
+  }
+  material.setTexture('propShade', shadeTexture ?? mask);
+  material.setVector4('shadeBounds', shade ? new Vector4(...shade.bounds) : new Vector4(0, 0, 1, 1));
+  material.setVector4('artFlags', new Vector4(Number(!!shade), 0, 0, 0));
   // The camp's ground covers the road; the courtyard grades toward its
   // olive meadow over 8u beyond the seam.
   const band = wandererGround(world);
@@ -453,6 +661,6 @@ export function countryGroundMaterial(scene, assets, map, world = {}) {
   material.setTexture('horizonTexture', horizon ?? mask);
   material.setTexture('backdropTexture', (art ?? assets.countryStone).texture);
   material.metadata = { surface: 'country', surfaceMap: map, backdrop: enabled ? backdrop : null, horizon: horizon?.metadata ?? null,
-    wanderer: band };
+    wanderer: band, propShade: !!shade };
   return material;
 }

@@ -82,7 +82,7 @@ test('the artboard mapping keeps the game scale and puts the fire at its traced 
     assert.ok(Math.abs(back.x - x) < 1e-9 && Math.abs(back.y - y) < 1e-9);
   }
   // Ground contacts traced on the Paper artboard (image pixels).
-  const traced = { fire: [915, 400], tripod: [988, 395], log: [995, 442], 'tent-right': [1135, 300], 'tent-left': [295, 568],
+  const traced = { fire: [915, 400], tripod: [988, 395], log: [972, 432], 'tent-right': [1135, 300], 'tent-left': [295, 568],
     carpet: [675, 552], 'pillar-east': [595, 210], 'pillar-west': [350, 272] };
   for (const [id, [x, y]] of Object.entries(traced)) {
     const p = byId(id), c = p.collider ?? p.contact, a = toArtboard(c.x, c.y);
@@ -99,11 +99,11 @@ test('the camp footprint is one connected safe clearing with one road mouth at t
   assert.ok(world.tiles.length > 600, 'the clearing, grass ring, tents and road keep room to move');
   assert.equal(new Set(world.tiles.map(key)).size, world.tiles.length);
   for (const p of world.tiles) {
-    assert.ok(p.y >= -29 && p.y >= OVERWORLD.safeArea.minY && p.y <= OVERWORLD.safeArea.maxY, `${key(p)} leaves the safe band`);
+    assert.ok(p.y >= -41 && p.y >= OVERWORLD.safeArea.minY && p.y <= OVERWORLD.safeArea.maxY, `${key(p)} leaves the safe band`);
     assert.equal(getOverworldZone(p.x, p.y).id, 'camp');
   }
-  for (let x = -2; x <= 2; x++) assert.ok(hasTile(x, -29, world), `road mouth cell ${x},-29`);
-  assert.deepEqual(world.portals.map(p => [p.id, p.x, p.y, p.target]), [['camp-road', 0, -27, 'road']]);
+  for (let x = -2; x <= 2; x++) assert.ok(hasTile(x, -41, world), `road mouth cell ${x},-29`);
+  assert.deepEqual(world.portals.map(p => [p.id, p.x, p.y, p.target]), [['camp-road', 0, -39, 'road']]);
   for (const radius of [.23, .29]) {
     const usable = world.tiles.filter(p => isWalkable(p.x, p.y, radius, world));
     assert.ok(usable.length > world.tiles.length * .7);
@@ -127,7 +127,7 @@ test('every edge of the walk mask is marked by a visible stone, shrub, tree or c
   const blockers = props().map(extent).filter(Boolean);
   let edges = 0;
   for (const p of world.tiles) for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
-    if (cells.has(key({ x: p.x + dx, y: p.y + dy })) || p.y + dy < -29) continue;
+    if (cells.has(key({ x: p.x + dx, y: p.y + dy })) || p.y + dy < -41) continue;
     const x = p.x + dx * .5, y = p.y + dy * .5;
     assert.ok(blockers.some(e => gap(e, x, y) < 1.15), `invisible wall at ${x},${y}`);
     edges++;
@@ -329,12 +329,12 @@ for (const kind of ['campfire-base', 'supply-cache', 'fallen-log']) {
 
 test('the fire ring keeps its accepted approach, kettle and log beside it', () => {
   const world = LOCATIONS.camp;
-  assert.deepEqual([byId('fire').collider.x, byId('fire').collider.y, byId('fire').collider.radius], [-3, -2, 1.4375]);
-  assert.equal(isWalkable(-1.5, -2, .23, world), false);
+  assert.deepEqual([byId('fire').collider.x, byId('fire').collider.y, byId('fire').collider.radius], [-4.2, -2.8, 1.4375]);
+  assert.equal(isWalkable(-2.7, -2.8, .23, world), false);
   for (const radius of [.23, .29]) {
-    assert.equal(isWalkable(-1, -2, radius, world), true);
-    walk(world, world.spawn, { x: -1, y: -2 }, radius);
-    assert.ok(clearLine({ x: -1, y: -2 }, { x: 0, y: -1 }, radius, world));
+    assert.equal(isWalkable(-2.2, -2.8, radius, world), true);
+    walk(world, world.spawn, { x: -2.2, y: -2.8 }, radius);
+    assert.ok(clearLine({ x: -2.2, y: -2.8 }, { x: 0, y: -1 }, radius, world));
   }
   const fire = byId('fire').collider;
   for (const id of ['tripod', 'log']) {
@@ -349,7 +349,7 @@ test('the clearing and every tent door, the fire, the carpet and the exit are re
   const targets = [
     { x: right.x + right.halfWidth + .9, y: right.y }, // door faces +x, toward the fire
     { x: left.x, y: left.y + left.halfDepth + .9 }, // door faces +y, toward the carpet
-    { x: -1, y: -2 }, world.reward, { x: rug.contact.x - 1.5, y: rug.contact.y + 2.2 }, world.exit,
+    { x: -2.2, y: -2.8 }, world.reward, { x: rug.contact.x - 1.5, y: rug.contact.y + 2.2 }, world.exit,
   ];
   for (const radius of [.23, .29]) {
     for (let x = 0; x <= 3; x += .5) for (let y = -6; y <= -2; y += .5) {
@@ -411,11 +411,11 @@ test('the rebuilt camp keeps seamless round trips, an accessible reward and rest
     }
     assert.ok(Math.hypot(player.x - target.x, player.y - target.y) < 1e-6);
   };
-  follow({ x: 0, y: -27 });
+  follow({ x: 0, y: -39 });
   assert.equal(interact(game), false, 'the former camp portal must not handle E');
-  follow({ x: 0, y: -31 });
+  follow({ x: 0, y: -43 });
   assert.equal(game.locationId, 'road');
-  follow({ x: 0, y: -28 });
+  follow({ x: 0, y: -40 });
   assert.equal(game.locationId, 'camp');
   assert.deepEqual(game.events.filter(e => e.type === 'area-enter').map(e => [e.from, e.to]), [['camp', 'road'], ['road', 'camp']]);
   follow({ x: CAMP_LAYOUT.reward.x - .5, y: CAMP_LAYOUT.reward.y });
@@ -430,8 +430,9 @@ test('the rebuilt camp keeps seamless round trips, an accessible reward and rest
 
 test('the camp rebuild preserves the complete road definition', () => {
   // Immutable non-camp contract, including geometry and encounters. The
-  // courtyard now comes from COURTYARD_LAYOUT (tests/courtyard-layout.test.js).
-  const expected = { road: '749b5aeaa342e9eb6d3c4c8644d001c770670826398720142e3c591f07b11ddd' };
+  // courtyard now comes from COURTYARD_LAYOUT (tests/courtyard-layout.test.js). The road's only
+  // change since is the spur region [7, 10, 4, 6] to the cemetery gate.
+  const expected = { road: '749e2fecebfe0c64a85e1f96efa103fed6f53d1ace5cb97a4189767147f37b56' };
   for (const [id, hash] of Object.entries(expected)) {
     assert.equal(createHash('sha256').update(JSON.stringify(LOCATIONS[id])).digest('hex'), hash);
   }

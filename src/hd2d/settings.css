@@ -1,0 +1,6 @@
+/* HD-2D core: shared settings styling for desktop and touch. */
+#hd2d-options { display: flex; gap: calc(var(--u) * 2); }
+#hd2d-options .setting-switch { min-width: 0; padding-inline: calc(var(--u) * 3); }
+#hd2d-options [aria-pressed="true"] { border-color: var(--amber); color: var(--amber); background: #3c3033; }
+.hd2d-setting { grid-column: 1 / -1; }
+#hd2d-options [aria-pressed="true"]::before { border-color: var(--amber); background: var(--amber); }

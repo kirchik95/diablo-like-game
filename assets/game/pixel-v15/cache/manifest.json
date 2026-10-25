@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "nativePixelsPerUnit": 32,
+  "visualScale": 1.32,
+  "cache": {
+    "path": "cache.png",
+    "cell": 128,
+    "columns": 8,
+    "rows": 6,
+    "anchor": [
+      64,
+      96
+    ],
+    "frames": [
+      "closed-0",
+      "closed-1",
+      "closed-2",
+      "closed-3",
+      "opening-0",
+      "opening-1",
+      "opening-2",
+      "open-empty",
+      "beacon-0",
+      "beacon-1",
+      "beacon-2",
+      "beacon-3",
+      "beacon-4",
+      "beacon-5",
+      "beacon-6",
+      "beacon-7",
+      "beacon-8",
+      "beacon-9",
+      "beacon-10",
+      "beacon-11",
+      "beacon-12",
+      "beacon-13",
+      "beacon-14",
+      "beacon-15",
+      "beacon-16",
+      "beacon-17",
+      "beacon-18",
+      "beacon-19",
+      "beacon-20",
+      "beacon-21",
+      "beacon-22",
+      "beacon-23",
+      "burst-0",
+      "burst-1",
+      "burst-2",
+      "burst-3",
+      "burst-4",
+      "burst-5",
+      "burst-6",
+      "burst-7",
+      "steady",
+      "ground-pool"
+    ],
+    "filter": "nearest",
+    "mipmaps": false,
+    "opaqueBounds": [
+      [
+        46,
+        68,
+        83,
+        105
+      ],
+      [
+        46,
+        68,
+        83,
+        105
+      ],
+      [
+        46,
+        68,
+        83,
+        105
+      ],
+      [
+        46,
+        68,
+        83,
+        105
+      ],
+      [
+        46,
+        67,
+        84,
+        105
+      ],
+      [
+        47,
+        63,
+        85,
+        105
+      ],
+      [
+        47,
+        56,
+        85,
+        105
+      ],
+      [
+        47,
+        50,
+        85,
+        105
+      ],
+      [
+        40,
+        42,
+        87,
+        88
+      ],
+      [
+        40,
+        30,
+        87,
+        86
+      ],
+      [
+        40,
+        21,
+        87,
+        84
+      ],
+      [
+        40,
+        21,
+        87,
+        88
+      ],
+      [
+        40,
+        21,
+        87,
+        86
+      ],
+      [
+        40,
+        21,
+        87,
+        84
+      ],
+      [
+        40,
+        42,
+        87,
+        88
+      ],
+      [
+        40,
+        40,
+        87,
+        86
+      ],
+      [
+        40,
+        38,
+        87,
+        84
+      ],
+      [
+        40,
+        42,
+        87,
+        88
+      ],
+      [
+        40,
+        40,
+        87,
+        86
+      ],
+      [
+        40,
+        38,
+        87,
+        84
+      ],
+      [
+        41,
+        42,
+        86,
+        88
+      ],
+      [
+        41,
+        40,
+        86,
+        86
+      ],
+      [
+        41,
+        38,
+        86,
+        84
+      ],
+      [
+        41,
+        42,
+        86,
+        88
+      ],
+      [
+        41,
+        40,
+        86,
+        86
+      ],
+      [
+        41,
+        38,
+        86,
+        84
+      ],
+      [
+        41,
+        42,
+        86,
+        88
+      ],
+      [
+        41,
+        40,
+        86,
+        86
+      ],
+      [
+        41,
+        38,
+        86,
+        84
+      ],
+      [
+        41,
+        42,
+        86,
+        88
+      ],
+      [
+        41,
+        40,
+        86,
+        86
+      ],
+      [
+        41,
+        38,
+        86,
+        84
+      ],
+      [
+        58,
+        16,
+        71,
+        83
+      ],
+      [
+        51,
+        17,
+        78,
+        85
+      ],
+      [
+        45,
+        17,
+        84,
+        87
+      ],
+      [
+        40,
+        18,
+        89,
+        89
+      ],
+      [
+        37,
+        19,
+        92,
+        89
+      ],
+      [
+        34,
+        20,
+        95,
+        89
+      ],
+      [
+        33,
+        20,
+        96,
+        88
+      ],
+      [
+        32,
+        21,
+        97,
+        87
+      ],
+      [
+        40,
+        28,
+        87,
+        88
+      ],
+      [
+        20,
+        76,
+        109,
+        117
+      ]
+    ]
+  },
+  "footprint": {
+    "width": 0.68,
+    "depth": 0.44,
+    "lidWidth": 0.73,
+    "lidDepth": 0.49,
+    "collision": "unchanged; owned by world layout",
+    "pickable": false
+  },
+  "timing": {
+    "pulseSeconds": 1.6,
+    "callSeconds": 2.4,
+    "shaftSeconds": 0.6,
+    "openingStepSeconds": 0.1,
+    "fadeSeconds": 0.5
+  },
+  "beacon": {
+    "motes": 8,
+    "shaftHeight": 2,
+    "poolRadius": 1.5,
+    "dither": "4x4 Bayer; alpha coverage",
+    "effectFrame": 8,
+    "burstFrame": 32,
+    "steadyFrame": 40,
+    "poolFrame": 41
+  },
+  "alpha": {
+    "chest": "binary",
+    "motes": "translucent",
+    "pool": "ordered dither between alpha levels 0/48/96/144/192; no hard rim"
+  },
+  "palette": {
+    "ink": "#0e121d",
+    "deep": "#1f2737",
+    "wood": "#6e4f45",
+    "woodHi": "#9f7960",
+    "woodLight": "#b09c82",
+    "woodShade": "#4a3438",
+    "grain": "#2f2230",
+    "iron": "#5c5258",
+    "ironHi": "#9f9280",
+    "ironLight": "#c9b79b",
+    "ironShade": "#30344a",
+    "brass": "#b8935c",
+    "brassHi": "#d3bb8f",
+    "runeDeep": "#14707e",
+    "rune": "#24ced5",
+    "runeHi": "#92faf1",
+    "white": "#e6fffb"
+  },
+  "provenance": {
+    "script": "scripts/build-cache-assets.py",
+    "method": "Original deterministic pixel geometry; no image generation or external inputs",
+    "pillow": "12.3.0"
+  },
+  "files": {
+    "cache.png": "8d0dd67434bd4ac6326ab36cd74b2885a6be7804f0b5be3f04763bed8201efda",
+    "hit-masks.json": "b8f3c44013006d6d85410777519406c5bd909a17c4fcdfe96bf92e65f216bfce",
+    "contact-sheet.png": "a818c4f8a171a06b03f34ad664edc1f31546de9c3bb86dbd20dfe7a0cf7e5ed1"
+  }
+}

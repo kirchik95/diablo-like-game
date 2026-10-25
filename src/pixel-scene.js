@@ -1,5 +1,14 @@
+import { flushStaticMaterialDirty } from './static-material-dirty.js';
+import { scheduleStaticObservation } from './static-observation.js';
+import { Observable } from '@babylonjs/core/Misc/observable.js';
+import { captureStaticSpriteState, isCapturedStaticMaterial } from './static-sprite-shape.js';
+// HD-2D lights: material hook; dormant until the host enables the effect.
+import { registerMaterial as registerHdLightMaterial } from './hd2d/lights.js';
+import { StaticSpriteBatch } from './static-batch.js';
 import { Color3 } from '@babylonjs/core/Maths/math.color.js';
 import { Matrix } from '@babylonjs/core/Maths/math.vector.js';
+import { VertexData } from '@babylonjs/core/Meshes/mesh.vertexData.js';
+import { VertexBuffer } from '@babylonjs/core/Buffers/buffer.js';
 import { Mesh } from '@babylonjs/core/Meshes/mesh.js';
 import { MeshBuilder } from '@babylonjs/core/Meshes/meshBuilder.js';
 import { StandardMaterial } from '@babylonjs/core/Materials/standardMaterial.js';
@@ -9,14 +18,27 @@ import { DynamicTexture } from '@babylonjs/core/Materials/Textures/dynamicTextur
 import { RawTexture } from '@babylonjs/core/Materials/Textures/rawTexture.js';
 import { TILES, PILLARS, BRAZIERS, SHRINE, EXIT } from './world.js';
 import { decodeHitMask } from './pixel-picking.js';
-import { PIXELS_PER_UNIT, pixelAtlases, pixelAssetUrls } from './pixel-assets.js';
+import { takePreloadedTexture, takePreloadedResponse } from './preloaded-assets.js';
+import {
+  PIXELS_PER_UNIT, pixelAtlases, pixelAssetUrls, LOOT_GROUND, lootAtlases, lootAssetUrls, monkWeaponsManifestUrl, monkWeaponUrls,
+} from './pixel-assets.js';
 import { buildLandscape } from './landscape.js';
 import { roadPillar } from './road-country.js';
 import { buildCountryDetails } from './country-details.js';
+import { RARITIES } from './items.js';
+import { CAMP_SUPPLIES } from './campaign.js';
+import { CacheGlow, CACHE_FRAMES } from './cache-glow.js';
+import { campNpcPlacements, campNpcFrame, writeCampNpcUvs } from './camp-npcs.js';
+import { lightAt, tintEmissive } from './scene-light.js';
 
-export { PIXELS_PER_UNIT, pixelAtlases, pixelAssetUrls };
+export { PIXELS_PER_UNIT, pixelAtlases, pixelAssetUrls, LOOT_GROUND, lootAtlases, lootAssetUrls, monkWeaponsManifestUrl, monkWeaponUrls };
+// The renderer takes its level-up light from here, with the rest of its pixel art.
+export { LevelUpLight } from './level-up-fx.js';
+// The renderer's optional picture layers, beside its other world helpers.
+export { ScenePolish } from './scene-polish.js';
 const maskPackages = [
-  { url: new URL('../assets/game/pixel-v10/monk-side/hit-masks.json', import.meta.url).href, names: ['monk'] },
+  { url: new URL('../assets/game/pixel-v15/cache/hit-masks.json', import.meta.url).href, names: ['cache'] },
+  { url: new URL('../assets/game/pixel-v17/monk-side/hit-masks.json', import.meta.url).href, names: ['monk'] },
   { url: new URL('../assets/game/pixel-v2/hound-world/hit-masks.json', import.meta.url).href, names: ['hound', 'world', 'effects'] },
   { url: new URL('../assets/game/pixel-v1/hit-masks.json', import.meta.url).href, names: ['environment'] },
   { url: new URL('../assets/game/pixel-v3/wraith/hit-masks.json', import.meta.url).href, names: ['wraith'] },
@@ -26,32 +48,92 @@ const maskPackages = [
   { url: new URL('../assets/game/pixel-v6/country/hit-masks.json', import.meta.url).href, names: ['countryDetails'] },
   { url: new URL('../assets/game/pixel-v9/camp-panorama/hit-masks.json', import.meta.url).href, names: ['campPanorama'] },
   { url: new URL('../assets/game/pixel-v11/monastery-ruins/hit-masks.json', import.meta.url).href, names: ['monasteryRuins', 'monasteryWorld'] },
+  { url: new URL('../assets/game/pixel-v13/cemetery/hit-masks.json', import.meta.url).href, names: ['cemetery'] },
+  { url: new URL('../assets/game/pixel-v13/orchard/hit-masks.json', import.meta.url).href, names: ['orchard'] },
 ];
 
-function flatMaterial(scene, name, hex) {
+// The hit-mask JSON files loadPixelAssets fetches, for a preloader that warms the browser cache.
+export const hitMaskUrls = Object.freeze(maskPackages.map(({ url }) => url));
+const powerOfTwo = n => n > 0 && (n & (n - 1)) === 0;
+
+// The caches and shrines of a world or a zone, by id (world-expansion §6.2). A world without the
+// arrays has the road's one cache ('secret') and one shrine ('road-shrine').
+export const cachesOf = world => world.caches ?? (world.secret ? [{ id: 'secret', ...world.secret }] : []);
+export const shrinesOf = world => world.shrines ?? (world.shrine ? [{ id: 'road-shrine', ...world.shrine }] : []);
+// The atlases an authored zone's props come from, searched in order. A side zone takes its own
+// pixel-v13 atlas first (world-expansion §4.1).
+const PROP_ATLASES = {
+  cemetery: ['cemetery', 'monasteryRuins', 'campPanorama'],
+  orchard: ['orchard', 'monasteryRuins', 'campPanorama'],
+};
+
+function flatMaterial(scene, name, hex, configure = null) {
   const material = new StandardMaterial(name, scene);
-  material.disableLighting = true;
-  material.diffuseColor = Color3.FromHexString(hex);
-  material.emissiveColor = Color3.FromHexString(hex);
-  material.specularColor = Color3.Black();
+  // Runtime impacts and shots otherwise scan every scene submesh for each
+  // setter. Block only the new material, never dirty every scenery material.
+  const block = configure && !scene.blockMaterialDirtyMechanism;
+  if (block) material.blockDirtyMechanism = true;
+  try {
+    material.disableLighting = true;
+    material.diffuseColor = Color3.FromHexString(hex);
+    material.emissiveColor = Color3.FromHexString(hex);
+    material.specularColor = Color3.Black();
+    configure?.(material);
+  } finally {
+    // No mesh has used this brand-new material yet. The public unblock setter
+    // calls markDirty(), which scans every scene mesh even when none can use it.
+    if (block) material._blockDirtyMechanism = false;
+  }
+  // HD-2D lights: keep impact, shadow and purely emissive effects unlit.
+  if (!/shadow|shot|warning|effect|fx-|motes|pool|flame|binding/.test(name)) registerHdLightMaterial(material);
   return material;
 }
 
-export function loadPixelAssets(scene) {
-  const assets = {}, pending = [];
+// Each material change marks every submesh in the scene that may use that material: over a build of
+// hundreds of sprites that is quadratic. A build blocks the marking; the unblock marks every material
+// once (Babylon's own full update). A nested build keeps the outer block.
+export function batchMaterials(scene, build) {
+  if (scene.blockMaterialDirtyMechanism) return build();
+  scene.blockMaterialDirtyMechanism = true;
+  try { return build(); } finally { flushStaticMaterialDirty(scene, scene.materials?.filter(isCapturedStaticMaterial) ?? [], () => { scene.blockMaterialDirtyMechanism = false; }); }
+}
+
+// Blob URLs reuse the splash's PNG bytes without another HTTP request. Creating the
+// internal texture from its URL keeps GPU uploads asynchronous: a decoded `buffer` would upload every
+// atlas inside the synchronous world build. The wrapper preserves the original public texture URL.
+function atlasTexture(scene, url, onLoad, onError, independent = false) {
+  const preloaded = takePreloadedTexture(url);
+  if (!preloaded && !independent) return new Texture(url, scene, true, true, Texture.NEAREST_SAMPLINGMODE, onLoad, onError);
+  const internalTexture = scene.getEngine().createTexture(preloaded?.url ?? url, true, true, scene, Texture.NEAREST_SAMPLINGMODE);
+  return new Texture(url, scene, {
+    internalTexture, noMipmap: true, invertY: true, samplingMode: Texture.NEAREST_SAMPLINGMODE,
+    onLoad: () => { preloaded?.release(); onLoad?.(); },
+    onError: message => { preloaded?.release(); onError?.(message); },
+  });
+}
+
+// onProgress(loaded, total, label) follows the loading for a preloader: once with (0, total, null)
+// before any file arrives, then after each of the `total` items settles, loaded or failed, with its
+// label (an atlas name, 'masks:monk' style for a hit-mask package, or 'monkWeapons'). `ready`
+// still decides failure; a failed item counts as settled.
+export function loadPixelAssets(scene, { onProgress = null } = {}) {
+  const assets = {}, pending = [], labels = [];
+  const track = (label, promise) => { labels.push(label); pending.push(promise); };
   for (const [name, url] of Object.entries(pixelAssetUrls)) {
     const atlas = pixelAtlases[name];
     const surface = Array.isArray(atlas?.size);
     if (!surface && (!Number.isInteger(atlas?.cell) || atlas.cell <= 0)) throw new Error(`Invalid scalar cell for ${name}`);
     let resolve, reject;
-    pending.push(new Promise((yes, no) => { resolve = yes; reject = no; }));
-    const texture = new Texture(url, scene, true, true, Texture.NEAREST_SAMPLINGMODE,
-      resolve, message => reject(new Error(`Не загружен ${name}: ${message || url}`)));
-    texture.wrapU = texture.wrapV = surface ? Texture.WRAP_ADDRESSMODE : Texture.CLAMP_ADDRESSMODE;
+    track(name, new Promise((yes, no) => { resolve = yes; reject = no; }));
+    const texture = atlasTexture(scene, url, resolve, message => reject(new Error(`Не загружен ${name}: ${message || url}`)));
+    // WebGL1 cannot repeat a non-power-of-two texture (it samples black), so there such a surface
+    // clamps; only the 2048×1280 mountain backdrop is one. WebGL2 repeats every surface.
+    const repeat = surface && (scene.getEngine().webGLVersion > 1 || (powerOfTwo(atlas.size[0]) && powerOfTwo(atlas.size[1])));
+    texture.wrapU = texture.wrapV = repeat ? Texture.WRAP_ADDRESSMODE : Texture.CLAMP_ADDRESSMODE;
     texture.hasAlpha = !surface;
     assets[name] = { ...atlas, texture };
   }
-  for (const { url, names } of maskPackages) pending.push(fetch(url).then(async response => {
+  for (const { url, names } of maskPackages) track(`masks:${names.join('+')}`, Promise.resolve(takePreloadedResponse(url) ?? fetch(url)).then(async response => {
     if (!response.ok) throw new Error(`Не загружены hit masks: ${url}`);
     const packed = await response.json();
     for (const name of names) {
@@ -67,26 +149,83 @@ export function loadPixelAssets(scene) {
       atlas.mask = mask;
     }
   }));
+  // Ground loot is optional: a failed atlas is marked and the renderer draws procedural loot
+  // instead. Its load still settles before the world is ready, so nothing pops in later.
+  for (const [name, url] of Object.entries(lootAssetUrls)) {
+    const atlas = assets[name] = { ...lootAtlases[name], failed: false };
+    track(name, new Promise(settle => {
+      atlas.texture = atlasTexture(scene, url, settle, () => { atlas.failed = true; settle(); });
+    }));
+    atlas.texture.wrapU = atlas.texture.wrapV = Texture.CLAMP_ADDRESSMODE;
+    atlas.texture.hasAlpha = true;
+  }
+  // The monk's weapon layers are optional as well. `manifest` is set once the manifest and all three
+  // textures have loaded; until then, or after a failure, armed poses keep the bare-hand drawings.
+  const weapons = assets.monkWeapons = { failed: false, manifest: null };
+  track('monkWeapons', Promise.resolve(takePreloadedResponse(monkWeaponsManifestUrl) ?? fetch(monkWeaponsManifestUrl)).then(response => {
+    if (!response.ok) throw new Error(`Не загружено оружие монаха: ${monkWeaponsManifestUrl}`);
+    return response.json();
+  }).then(manifest => Promise.all(Object.entries(monkWeaponUrls).map(([name, url]) => new Promise((loaded, failed) => {
+    weapons[name] = monkWeaponAtlas(manifest[name]);
+    weapons[name].texture = atlasTexture(scene, url, loaded, message => failed(new Error(`Не загружено оружие монаха: ${message || url}`)));
+    weapons[name].texture.wrapU = weapons[name].texture.wrapV = Texture.CLAMP_ADDRESSMODE;
+    weapons[name].texture.hasAlpha = true;
+  }))).then(() => { weapons.manifest = manifest; })).catch(() => { weapons.failed = true; }));
+  if (onProgress) {
+    let loaded = 0;
+    onProgress(0, pending.length, null);
+    pending.forEach((promise, i) => promise.then(() => {}, () => {}).then(() => onProgress(++loaded, pending.length, labels[i])));
+  }
   // Appearance textures have their own recoverable loading state. Waiting for
   // the entire scene here would also wait for those unrelated requests.
   assets.ready = Promise.all(pending);
   return assets;
 }
 
-export function createSprite(scene, name, atlas, frame = 0) {
-  const size = atlas.cell / PIXELS_PER_UNIT;
-  const mesh = MeshBuilder.CreatePlane(name, { width: size, height: size }, scene);
-  mesh.bakeTransformIntoVertices(Matrix.Translation(0, (atlas.anchor[1] - atlas.cell / 2) / PIXELS_PER_UNIT, 0));
+// A weapon layer atlas for createSprite: the swing cells are 160 × 144, the others square.
+export function monkWeaponAtlas({ cell, ...layer }) {
+  return Array.isArray(cell) ? { ...layer, frameSize: cell } : { ...layer, cell };
+}
+
+// The sprites of one atlas share one anchored plane: its geometry and GPU buffers, built with the first
+// of them. A world builds hundreds of sprites. A sprite whose vertices change takes its own copy
+// first (layOnGround); the plane goes away with its last sprite and the next one builds it again.
+const spritePlanes = new WeakMap();
+function spritePlane(scene, name, atlas) {
+  const shared = spritePlanes.get(atlas);
+  if (shared && !shared.isDisposed() && shared.getScene() === scene) {
+    const mesh = new Mesh(name, scene);
+    shared.applyToMesh(mesh);
+    return mesh;
+  }
+  // Square atlases anchor on their centre column; a frameSize atlas (pixel-v12) also gives its anchor column.
+  const [width, height] = atlas.frameSize ?? [atlas.cell, atlas.cell], anchorX = atlas.frameSize ? atlas.anchor[0] : width / 2;
+  const mesh = MeshBuilder.CreatePlane(name, { width: width / PIXELS_PER_UNIT, height: height / PIXELS_PER_UNIT }, scene);
+  mesh.bakeTransformIntoVertices(Matrix.Translation((width / 2 - anchorX) / PIXELS_PER_UNIT,
+    (atlas.anchor[1] - height / 2) / PIXELS_PER_UNIT, 0));
+  spritePlanes.set(atlas, mesh.geometry);
+  return mesh;
+}
+
+export function createSprite(scene, name, atlas, frame = 0, ink = null) {
+  const mesh = spritePlane(scene, name, atlas);
   mesh.billboardMode = Mesh.BILLBOARDMODE_ALL;
   mesh.isPickable = false;
   mesh.renderingGroupId = 1;
-  const material = flatMaterial(scene, `${name}-ink`, '#ffffff');
   const texture = atlas.texture.clone();
-  material.diffuseTexture = texture;
-  material.useAlphaFromDiffuseTexture = true;
-  material.transparencyMode = Material.MATERIAL_ALPHATEST;
-  material.alphaCutOff = .5;
-  material.backFaceCulling = false;
+  // No identity-matrix shortcut: with it, the first drawn frame scans every material for this texture.
+  // The frame's texture matrix always applies, which gives the same UVs for an identity matrix too.
+  texture.optimizeUVAllocation = false;
+  const material = flatMaterial(scene, `${name}-ink`, '#ffffff', material => {
+    material.diffuseTexture = texture;
+    material.useAlphaFromDiffuseTexture = true;
+    material.transparencyMode = ink?.transparencyMode ?? Material.MATERIAL_ALPHATEST;
+    if (ink?.alpha !== undefined) material.alpha = ink.alpha;
+    material.alphaCutOff = .5;
+    material.backFaceCulling = false;
+  });
+  // HD-2D lights: map cloned atlas textures back to optional normal maps.
+  if (!/shadow|shot|warning|effect|fx-|motes|pool|flame|binding/.test(name)) registerHdLightMaterial(material, atlas);
   mesh.material = material;
   const sprite = { mesh, material, texture, atlas, frame: -1, flip: null };
   setSpriteFrame(sprite, { frame, flip: false });
@@ -114,12 +253,8 @@ export function loadAppearanceTexture(scene, url) {
   return new Promise((resolve, reject) => {
     // SpriteAppearance deduplicates selections. Each accepted load/retry owns
     // its transport instead of joining an older in-flight Babylon cache entry.
-    const internalTexture = scene.getEngine().createTexture(url, true, true, scene, Texture.NEAREST_SAMPLINGMODE);
-    const texture = new Texture(url, scene, {
-      internalTexture, noMipmap: true, invertY: true, samplingMode: Texture.NEAREST_SAMPLINGMODE,
-      onLoad: () => resolve(texture),
-      onError: message => { texture.dispose(); reject(new Error(`Не загружен облик: ${message || url}`)); },
-    });
+    const texture = atlasTexture(scene, url, () => resolve(texture),
+      message => { texture.dispose(); reject(new Error(`Не загружен облик: ${message || url}`)); }, true);
     texture.wrapU = Texture.CLAMP_ADDRESSMODE;
     texture.wrapV = Texture.CLAMP_ADDRESSMODE;
     texture.hasAlpha = true;
@@ -158,6 +293,8 @@ export class SpriteAppearance {
       const pose = { frame: sprite.frame, flip: sprite.flip };
       sprite.texture = texture;
       sprite.material.diffuseTexture = texture;
+      // HD-2D lights: appearance atlases retain the same normal/height layout.
+      registerHdLightMaterial(sprite.material, sprite.atlas);
       sprite.frame = -1;
       setSpriteFrame(sprite, pose);
       previous.dispose();
@@ -186,6 +323,8 @@ const GROUND_BASIS = Matrix.FromValues(
   0, 0, 0, 1);
 export function layOnGround(sprite) {
   sprite.mesh.billboardMode = Mesh.BILLBOARDMODE_NONE;
+  // The plane is shared with the atlas's other sprites (spritePlane).
+  sprite.mesh.makeGeometryUnique();
   sprite.mesh.bakeTransformIntoVertices(GROUND_BASIS);
   sprite.mesh.renderingGroupId = 0;
   sprite.mesh.position.y = .012;
@@ -224,7 +363,8 @@ function shadowTexture(scene, radius) {
   if (!entry) {
     const texture = RawTexture.CreateRGBATexture(data, width, height, scene, false, false, Texture.NEAREST_SAMPLINGMODE);
     texture.name = `contact-shadow-${width}x${height}`;
-    texture.hasAlpha = true;
+    // This new texture has no material users, so there is nothing to invalidate.
+    texture._hasAlpha = true;
     texture.wrapU = texture.wrapV = Texture.CLAMP_ADDRESSMODE;
     cache.set(width, entry = { texture, width, height, users: 0 });
   }
@@ -243,12 +383,13 @@ export function createShadow(scene, name, radius = .55, { alpha = .46 } = {}) {
     -Math.SQRT2, 0, -Math.SQRT2, 0,
     0, 1, 0, 0,
     0, 0, 0, 1));
-  const material = flatMaterial(scene, `${name}-material`, '#141223');
-  material.diffuseTexture = entry.texture;
-  material.useAlphaFromDiffuseTexture = true;
-  material.transparencyMode = Material.MATERIAL_ALPHABLEND;
-  material.backFaceCulling = false;
-  material.alpha = alpha;
+  const material = flatMaterial(scene, `${name}-material`, '#141223', material => {
+    material.diffuseTexture = entry.texture;
+    material.useAlphaFromDiffuseTexture = true;
+    material.transparencyMode = Material.MATERIAL_ALPHABLEND;
+    material.backFaceCulling = false;
+    material.alpha = alpha;
+  });
   mesh.material = material;
   mesh.position.y = .02;
   mesh.isPickable = false;
@@ -260,28 +401,253 @@ export function createShadow(scene, name, radius = .55, { alpha = .46 } = {}) {
   return mesh;
 }
 
+// Placeholder procedural art (§2.3, §5.4) until the authored icons land. Pixel maps are
+// rows from the top; '.' is clear. Every drawn shape gets a one-pixel ink outline.
+const INK = '#211a28';
+// styles.css values of the RARITIES colour tokens.
+const TOKEN_HEX = { '--ivory': '#eee0ce', '--spirit': '#6dd6cb', '--amber': '#e5b66e' };
+export const rarityInk = rarity => TOKEN_HEX[RARITIES[rarity]?.color] ?? TOKEN_HEX['--ivory'];
+const BRONZE = { a: '#f0c987', b: '#c8935a', c: '#8f5f3e' }, WOOD = { a: '#a8764e', b: '#d2c3a6', c: '#5e3b2c' };
+const SPIRIT = { l: '#e4fff5', s: '#6dd6cb', d: '#397c85', c: '#ef8e83' };
+// The wraith's own cast magenta (pixel-v3 wraith.png): enemies alone wear magenta.
+const WRAITH = { l: '#ff81f4', s: '#f254f2', d: '#b11ab1' };
+const ORB = ['..llss..', '.lllsss.', 'llsssssd', 'lsssssdd', 'sssssddd', 'ssssdddd', '.sddddd.', '..dddd..'];
+
+function paint(rows, palette, outline = true) {
+  const height = rows.length, width = rows[0].length, data = new Uint8Array(width * height * 4);
+  const filled = (i, j) => i >= 0 && j >= 0 && i < width && j < height && rows[j][i] !== '.';
+  const set = (i, j, hex) => data.set([...[1, 3, 5].map(k => parseInt(hex.slice(k, k + 2), 16)), 255], (j * width + i) * 4);
+  for (let j = 0; j < height; j++) for (let i = 0; i < width; i++) {
+    if (filled(i, j)) set(i, j, palette[rows[j][i]]);
+    else if (outline && [[1, 0], [-1, 0], [0, 1], [0, -1]].some(([di, dj]) => filled(i + di, j + dj))) set(i, j, INK);
+  }
+  return { width, height, data };
+}
+
+// A 16 × 16 weapon icon (0.5 u): bronze knuckles or a staff, with a rarity-coloured inlay.
+// `anchor` is the row that rests on the ground.
+export function itemIconPixels(family, rarity = 'common') {
+  const palette = { ...(family === 'staff' ? WOOD : BRONZE), r: rarityInk(rarity), o: INK };
+  let rows;
+  if (family === 'staff') {
+    const grid = Array.from({ length: 16 }, () => Array(16).fill('.'));
+    // Two-pixel shaft from bottom left to top right: bone ferrules, the inlay at the grip and the head.
+    for (let t = 0; t < 12; t++) {
+      const x = 2 + t, y = 13 - t, part = t === 0 || t === 10 ? 'b' : t === 5 || t === 6 || t === 11 ? 'r' : null;
+      grid[y][x] = part ?? 'a'; grid[y][x + 1] = part ?? 'c';
+    }
+    grid[1][14] = 'r';
+    rows = grid.map(row => row.join(''));
+  } else {
+    // Four finger rings over the bar, the grip below.
+    rows = [
+      '................', '................', '................', '................', '................',
+      '................', '................', '..aa.aa.aa.aa...', '.a..a..a..a..b..', '.b..b..b..b..c..',
+      '.abbbbbbbbbbbc..', '..ccccccccccc...', '....brrrrrc.....', '.....ccccc......', '................',
+      '................',
+    ];
+  }
+  return { ...paint(rows, palette), anchor: 15 };
+}
+
+// An 8 × 8 monk shot (a quarter unit): a turquoise palm with a coral heart, or the reflected orb.
+export function monkShotPixels(kind = 'palm') {
+  const rows = kind === 'palm'
+    ? ['.l.l.l..', '.s.s.s.l', '.ssssss.', 'lssccsss', '.sccccs.', '.ssccs..', '..sss...', '...s....']
+    : ORB;
+  return { ...paint(rows, SPIRIT, false), anchor: 4 };
+}
+
+// The spirit shot of a wraith (§2.3): the same 8 px orb in magenta.
+export function wraithShotPixels() {
+  return { ...paint(ORB, WRAITH, false), anchor: 4 };
+}
+
+// Atlas frames of one item on the ground (pixel-v12): a relic draws its relic, any other item its
+// base; rarity picks the ring and beam pair. glintOffset is the glint pixel minus the anchor in
+// source pixels (right, down). Null when the package has no drawing for the item.
+const lootFrame = name => LOOT_GROUND.lootGround.frames.indexOf(name);
+export const LOOT_STACK = Object.freeze([...LOOT_GROUND.stack]);
+export function lootGroundFrames(item) {
+  const name = item?.relic ? LOOT_GROUND.relics[item.relic] : LOOT_GROUND.weapons[item?.base];
+  const frame = LOOT_GROUND.frames[name], rarity = LOOT_GROUND.rarity[item?.rarity] ?? LOOT_GROUND.rarity.common;
+  if (!frame || frame.kind !== 'item') return null;
+  const [ax, ay] = LOOT_GROUND.lootGround.anchor;
+  return { item: lootFrame(name), shadow: lootFrame(frame.shadow), ring: rarity.ring.map(lootFrame), beam: rarity.beam.map(lootFrame),
+    glint: LOOT_GROUND.glint.map(lootFrame), glintOffset: [frame.glint[0] - ax, frame.glint[1] - ay], bounds: frame.opaqueBounds };
+}
+// The cloth centre from the E point. The point lies screen-down of the cache (world +x +y), .45u past
+// its +x face; .35u further along +x the cloth clears the collider and the cache drawing covers none of it.
+export const SUPPLIES_CLOTH_SHIFT = Object.freeze({ x: .35, y: 0 });
+export const suppliesClothCenter = (offset = { x: 0, y: 0 }) => ({
+  x: CAMP_SUPPLIES.x + offset.x + SUPPLIES_CLOTH_SHIFT.x, y: CAMP_SUPPLIES.y + offset.y + SUPPLIES_CLOTH_SHIFT.y,
+});
+// A shift of (right, down) source pixels inside a flat ground drawing, as a world offset (GROUND_BASIS).
+export const groundDrawingOffset = (right, down) => ({
+  x: (-right * Math.SQRT1_2 + down * Math.SQRT2) / PIXELS_PER_UNIT, y: (right * Math.SQRT1_2 + down * Math.SQRT2) / PIXELS_PER_UNIT,
+});
+
+// Procedural art of one key shares a texture; the last billboard using it releases it.
+const pixelTextures = new WeakMap();
+export function createPixelBillboard(scene, name, key, draw) {
+  if (!pixelTextures.has(scene)) pixelTextures.set(scene, new Map());
+  const cache = pixelTextures.get(scene);
+  let entry = cache.get(key);
+  if (!entry) {
+    const art = draw(), flipped = new Uint8Array(art.data.length), stride = art.width * 4;
+    // Texture row 0 is the bottom of the plane.
+    for (let j = 0; j < art.height; j++) flipped.set(art.data.subarray(j * stride, (j + 1) * stride), (art.height - 1 - j) * stride);
+    const texture = RawTexture.CreateRGBATexture(flipped, art.width, art.height, scene, false, false, Texture.NEAREST_SAMPLINGMODE);
+    texture.name = `pixel-${key}`;
+    // The first material is attached below; skip the scene-wide hasAlpha scan.
+    texture._hasAlpha = true;
+    texture.wrapU = texture.wrapV = Texture.CLAMP_ADDRESSMODE;
+    cache.set(key, entry = { texture, art, users: 0 });
+  }
+  entry.users++;
+  const { art } = entry;
+  const mesh = MeshBuilder.CreatePlane(name, { width: art.width / PIXELS_PER_UNIT, height: art.height / PIXELS_PER_UNIT }, scene);
+  mesh.bakeTransformIntoVertices(Matrix.Translation(0, (art.anchor - art.height / 2) / PIXELS_PER_UNIT, 0));
+  mesh.billboardMode = Mesh.BILLBOARDMODE_ALL;
+  mesh.isPickable = false;
+  mesh.renderingGroupId = 1;
+  const material = flatMaterial(scene, `${name}-ink`, '#ffffff', material => {
+    material.diffuseTexture = entry.texture;
+    material.useAlphaFromDiffuseTexture = true;
+    material.transparencyMode = Material.MATERIAL_ALPHATEST;
+    material.alphaCutOff = .5;
+    material.backFaceCulling = false;
+  });
+  mesh.material = material;
+  mesh.onDisposeObservable.addOnce(() => {
+    material.dispose();
+    if (--entry.users > 0) return;
+    entry.texture.dispose();
+    if (cache.get(key) === entry) cache.delete(key);
+  });
+  return { mesh, material };
+}
+
 export const legacyWorld = {
   id: 'legacy', tiles: TILES, pillars: PILLARS, braziers: BRAZIERS,
   shrine: SHRINE, exit: EXIT, portals: [], secret: null, ritual: null, reward: null,
 };
 
-export function buildPixelWorld(scene, assets, data = legacyWorld) {
-  const resourceKinds = ['meshes', 'multiMaterials', 'materials', 'textures'];
-  const before = Object.fromEntries(resourceKinds.map(key => [key, new Set(scene[key])]));
-  const landscape = data.id === 'legacy' ? null : buildLandscape(scene, assets, data);
-  const zones = (data.zones ?? [data]).map((zone, index) => buildPixelZone(scene, assets, zone, landscape, index === 0));
-  const built = zones[0];
-  if (data.zones) {
-    for (const key of ['columns', 'fires', 'props', 'portals']) built[key] = zones.flatMap(zone => zone[key]);
-    for (const key of ['gate', 'shrine', 'secret', 'reward', 'ritual']) built[key] = zones.find(zone => zone[key])?.[key] ?? null;
-    built.bounds = landscape.bounds;
-  }
-  const owned = Object.fromEntries(resourceKinds.map(key => [key, scene[key].filter(item => !before[key].has(item))]));
-  let disposed = false;
-  return { ...built, data,
+// Camp NPCs own two draw calls, independent of static-prop batching. Baking
+// the fixed camera's billboard basis into each quad preserves each NPC's real
+// anchor depth. Alpha test writes depth, so actors and props sort per pixel,
+// rather than sorting the three inhabitants as one transparent object.
+export function createCampNpcs(scene, atlas, offset) {
+  const placements = campNpcPlacements(offset), count = placements.length;
+  const template = spritePlane(scene, 'camp-npc-template', atlas);
+  scene.activeCamera?.getViewMatrix(true);
+  const build = (name, ground) => {
+    const mesh = new Mesh(name, scene), data = new VertexData();
+    data.positions = []; data.normals = []; data.indices = [];
+    data.uvs = new Float32Array(count * 8);
+    if (!ground) data.colors = new Float32Array(count * 16).fill(1);
+    template.billboardMode = ground ? Mesh.BILLBOARDMODE_NONE : Mesh.BILLBOARDMODE_ALL;
+    for (let i = 0; i < count; i++) {
+      const at = placements[i], part = VertexData.ExtractFromMesh(template, true, true);
+      if (ground) part.transform(GROUND_BASIS);
+      template.position.set(at.x, ground ? .02 : .025, at.y);
+      part.transform(template.computeWorldMatrix(true));
+      data.positions.push(...part.positions); data.normals.push(...part.normals);
+      data.indices.push(...part.indices.map(index => index + i * 4));
+      writeCampNpcUvs(data.uvs, i, atlas, ground ? atlas.shadowFrame : campNpcFrame(atlas, at, 0), !ground && at.flip);
+    }
+    data.applyToMesh(mesh, !ground);
+    mesh.isPickable = false;
+    mesh.renderingGroupId = ground ? 0 : 1;
+    mesh.material = flatMaterial(scene, `${name}-ink`, '#ffffff', material => {
+      material.diffuseTexture = atlas.texture;
+      material.useAlphaFromDiffuseTexture = true;
+      material.transparencyMode = ground ? Material.MATERIAL_ALPHABLEND : Material.MATERIAL_ALPHATEST;
+      material.alphaCutOff = .5;
+      material.alpha = ground ? .46 : 1;
+      material.backFaceCulling = false;
+    });
+    return { mesh, data };
+  };
+  let bodies, shadows;
+  try { bodies = build('camp-npc-bodies', false); shadows = build('camp-npc-shadows', true); }
+  finally { template.dispose(); }
+  const body = bodies.mesh, shadow = shadows.mesh, uvs = bodies.data.uvs, colors = bodies.data.colors;
+  const shown = placements.map(at => campNpcFrame(atlas, at, 0)), tint = Color3.White();
+  let lit = null, previousLights = null, disposed = false;
+  return { body, shadow, placements,
+    update(time, graphics = {}, reducedMotion = false, lights = []) {
+      if (disposed) return;
+      shadow.setEnabled(graphics.propShade !== false);
+      let changed = false;
+      for (let i = 0; i < count; i++) {
+        const at = placements[i], frame = campNpcFrame(atlas, at, time, reducedMotion);
+        if (frame === shown[i]) continue;
+        shown[i] = frame; changed = true;
+        writeCampNpcUvs(uvs, i, atlas, frame, at.flip);
+      }
+      if (changed) body.updateVerticesData(VertexBuffer.UVKind, uvs, false, false);
+      const pools = graphics.lightPools !== false;
+      if (pools !== lit || lights !== previousLights) {
+        lit = pools; previousLights = lights;
+        for (let i = 0; i < count; i++) {
+          const at = placements[i], light = pools && lightAt(lights, at.x, at.y);
+          tint.set(1, 1, 1);
+          if (light) tintEmissive(tint, light, .55); // Same soft tint as camp props.
+          for (let j = 0; j < 4; j++) colors.set([tint.r, tint.g, tint.b, 1], i * 16 + j * 4);
+        }
+        body.updateVerticesData(VertexBuffer.ColorKind, colors, false, false);
+      }
+    },
     dispose() {
       if (disposed) return;
       disposed = true;
+      body.dispose(); shadow.dispose();
+      body.material.dispose(); shadow.material.dispose(); // Atlas remains asset-loader owned.
+    },
+  };
+}
+
+export function buildPixelWorld(scene, assets, data = legacyWorld) {
+  return batchMaterials(scene, () => buildWorld(scene, assets, data));
+}
+
+function buildWorld(scene, assets, data) {
+  const resourceKinds = ['meshes', 'multiMaterials', 'materials', 'textures'];
+  const before = Object.fromEntries(resourceKinds.map(key => [key, new Set(scene[key])]));
+  let landscape, zones;
+  captureStaticSpriteState(StandardMaterial, Texture, Observable, () => {
+    landscape = data.id === 'legacy' ? null : buildLandscape(scene, assets, data);
+    zones = (data.zones ?? [data]).map((zone, index) => buildPixelZone(scene, assets, zone, landscape, index === 0));
+  }, scene);
+  const built = zones[0];
+  if (data.zones) {
+    for (const key of ['columns', 'fires', 'props', 'portals', 'caches', 'shrines']) built[key] = zones.flatMap(zone => zone[key]);
+    for (const key of ['gate', 'reward', 'ritual', 'supplies']) built[key] = zones.find(zone => zone[key])?.[key] ?? null;
+    built.bounds = landscape.bounds;
+  }
+  // The first cache and shrine (the road's in the union) keep their single names.
+  built.secret = built.caches[0] ?? null;
+  built.shrine = built.shrines[0]?.sprite ?? null;
+  // Only presentation reads these spots; they never become world bodies.
+  const campZone = (data.zones ?? [data]).find(zone => zone.id === 'camp');
+  built.campNpcs = campZone && assets.campNpcs ? createCampNpcs(scene, assets.campNpcs, campZone.offset) : null;
+  const owned = Object.fromEntries(resourceKinds.map(key => [key, scene[key].filter(item => !before[key].has(item))]));
+  let disposed = false, staticBatch;
+  // Renderer.freezeWorld and updateOcclusion finish before scene.render. Defer
+  // instancing until then, and refresh after the original per-sprite effects.
+  const batchObserver = scene.onBeforeRenderObservable.add(() => {
+    if (!staticBatch && !built.props?.every(sprite => sprite.mesh.isWorldMatrixFrozen)) return;
+    staticBatch ??= batchMaterials(scene, () => new StaticSpriteBatch(scene, built, { scheduleObservation: step => scheduleStaticObservation(scene, step) }));
+    staticBatch.update();
+  });
+  // `meshes` lists every mesh this world owns, for the renderer's one-time freeze of static scenery.
+  return { ...built, data, meshes: owned.meshes,
+    dispose() {
+      if (disposed) return;
+      disposed = true;
+      scene.onBeforeRenderObservable.remove(batchObserver);
+      staticBatch?.dispose();
       for (const kind of resourceKinds) for (const resource of owned[kind]) resource.dispose();
     },
   };
@@ -360,14 +726,17 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
   }
   // Authored areas (the camp and the ruined courtyard) own all of their props.
   // Braziers are drawn below from `braziers`; their entries only carry colliders.
-  const authored = !!data.setDressing;
-  const prefix = camp ? 'camp' : 'court';
+  const authored = !!data.setDressing, side = !!PROP_ATLASES[data.id];
+  const prefix = camp ? 'camp' : side ? data.id : 'court';
+  const propAtlases = (PROP_ATLASES[data.id] ?? ['camp', 'campPanorama', 'monasteryRuins', 'landscape']).map(name => assets[name]);
   const campProps = authored ? data.setDressing.filter(p => p.kind !== 'brazier').map(p => {
-    const atlas = [assets.camp, assets.campPanorama, assets.monasteryRuins, assets.landscape].find(a => a?.frames.includes(p.kind));
+    const atlas = propAtlases.find(a => a?.frames.includes(p.kind));
     if (!atlas) throw new Error(`Unknown ${data.id} prop: ${p.kind}`);
     const frame = atlas.frames.indexOf(p.kind);
     const sprite = place(`${prefix}-${p.id}`, frame, p.x, p.y, atlas);
     sprite.placement = p;
+    // A low prop (a pixel-v13 footprint role) never hides an actor: it is never faded.
+    if (atlas.footprints?.[p.kind]?.role === 'low') sprite.noFade = true;
     sprite.mesh.scaling.setAll(p.scale);
     setSpriteFrame(sprite, { frame, flip: p.flip });
     const ground = landscape.cells.get(`${Math.round(p.x)},${Math.round(p.y)}`);
@@ -404,14 +773,14 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
   }
   const gateAtlas = data.id === 'legacy' ? assets.world : assets.environment;
   const authoredGate = campProps.find(sprite => sprite.placement.id === 'arch');
-  const gate = authoredGate ?? (!road && !camp && data.exit
+  const gate = authoredGate ?? (!road && !camp && !side && data.exit
     ? place('monastery-gate', data.id === 'legacy' ? gateAtlas.clips.gate.front[0] : gateAtlas.frames.indexOf('arch'),
       data.exit.x, data.exit.y - .5, gateAtlas) : null);
   // Braziers and the healing shrine use the restyled pixel-v11 world frames
   // (same clips, cells and contacts as v2); the legacy slice keeps v2.
   const worldArt = data.id === 'legacy' ? assets.world : assets.monasteryWorld ?? assets.world;
-  const shrine = data.shrine
-    ? place('healing-shrine', worldArt.clips.shrine.front[0], data.shrine.x - .5, data.shrine.y - .5, worldArt) : null;
+  const shrines = shrinesOf(data).map(({ id, x, y }) =>
+    ({ id, x, y, sprite: place('healing-shrine', worldArt.clips.shrine.front[0], x - .5, y - .5, worldArt) }));
 
   const material = (name, color) => flatMaterial(scene, name, color);
   const box = (name, x, y, h, width, depth, height, ink) => {
@@ -425,7 +794,7 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
     return mesh;
   };
   const markerInk = material('waypoint-ink', palette.ink);
-  const portals = data.portals.map(p => ({ ...p, ring: ring(`portal-${p.id}`, p.x, p.y, .62, markerInk) }));
+  const portals = (data.portals ?? []).map(p => ({ ...p, ring: ring(`portal-${p.id}`, p.x, p.y, .62, markerInk) }));
   for (const p of portals) {
     // Small paired threshold stones mark an interaction, leaving the middle open.
     for (const side of [-1, 1]) box('portal-threshold', p.x + side * .84, p.y, .08, .16, .65, .16, trim);
@@ -439,7 +808,7 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
     // the flame root on top of the static stones without moving either image.
     sprite.material.zOffset = -1;
     return { x: p.x, y: p.y, color: 'amber', base, sprite };
-  }) : data.braziers.map((b, i) => {
+  }) : (data.braziers ?? []).map((b, i) => {
     if (b.color !== 'amber') {
       const clip = b.color === 'cyan' ? 'brazier-cyan' : 'brazier-magenta';
       return { ...b, clip, sprite: place(`brazier-${i}`, worldArt.clips[clip].front[0], b.x, b.y, worldArt) };
@@ -467,14 +836,24 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
     }
   }
 
-  let secret = null, reward = null;
-  if (data.secret) {
-    const p = data.secret, wood = material('cache-wood', '#71524f'), brass = material('cache-brass', '#c49b6c');
-    const chest = box('secret-cache', p.x, p.y, .19, .68, .44, .38, wood);
-    const lid = box('cache-lid', p.x, p.y, .41, .73, .49, .09, brass);
-    box('cache-lock', p.x, p.y + .24, .24, .12, .035, .13, brass);
-    secret = { chest, lid, ring: ring('cache-rune', p.x, p.y, .58, brass) };
-  }
+  // Three draws replace four box/ring draws. UV animation keeps all world matrices static.
+  // Keep these out of props: the old caches were never picked or faded as scenery.
+  const caches = cachesOf(data).map(({ id, x, y }) => {
+    const sprite = createSprite(scene, `cache-${id}`, assets.cache);
+    const motes = createSprite(scene, `cache-motes-${id}`, assets.cache, CACHE_FRAMES.motes);
+    const pool = createSprite(scene, `cache-pool-${id}`, assets.cache, CACHE_FRAMES.pool);
+    sprite.mesh.position.set(x, propHeight, y);
+    motes.mesh.position.copyFrom(sprite.mesh.position);
+    motes.material.zOffset = -1;
+    layOnGround(pool);
+    pool.mesh.position.set(x, .018, y);
+    for (const effect of [motes, pool]) {
+      effect.material.transparencyMode = Material.MATERIAL_ALPHABLEND;
+      effect.material.disableDepthWrite = true;
+    }
+    return { id, x, y, sprite, chest: sprite.mesh, motes, pool, glow: new CacheGlow() };
+  });
+  let reward = null;
   if (data.reward) {
     const p = data.reward, brass = material('reward-amber', '#ffd390');
     if (!camp) box('bead-offering-stone', p.x, p.y, .16, .55, .55, .32, trim);
@@ -533,7 +912,17 @@ function buildPixelZone(scene, assets, data, landscape, includeLandscape) {
     dais.mesh.onDisposeObservable.addOnce(() => scene.onBeforeRenderObservable.remove(observer));
   }
 
-  return { data, columns, gate, shrine, fires, props, portals, secret, reward, ritual, landscape, floor: merged[0],
+  // The camp supplies cloth (pixel-v12) lies flat in front of the cache with the E point
+  // (CAMP_SUPPLIES) on it. The renderer shows it empty once the supplies are taken.
+  let supplies = null;
+  if (camp && assets.campSupplies && !assets.campSupplies.failed) {
+    const atlas = assets.campSupplies, at = suppliesClothCenter(data.offset);
+    supplies = createSprite(scene, 'camp-supplies-cloth', atlas, atlas.frames.indexOf(atlas.full));
+    layOnGround(supplies);
+    supplies.mesh.position.set(at.x, .016, at.y);
+  }
+
+  return { data, columns, gate, shrines, fires, props, portals, caches, reward, ritual, supplies, landscape, floor: merged[0],
     bounds: { minX, maxX, minY, maxY },
   };
 }
